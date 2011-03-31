@@ -1,0 +1,16 @@
+Meteo is a Java library for fetching data made public available by the Norwegian Meteorological Institute.
+
+
+IMPORTANT
+---------
+http://api.met.no/license.html
+---------
+
+The Norwegian Meteorological Institute holds ownership and Intellectual Property Rights to the data and products
+produced by the institute (hereinafter referred to as PRODUCTS). Access and the right to use the selection of
+PRODUCTS available here, shall not have the effect of transfer of such rights.
+
+The Norwegian Meteorological Institute shall not be held liable for any consequences of the use made of the PRODUCTS.
+
+The Norwegian Meteorological Institute does not guarantee regularity in updating of PRODUCTS, and changes in the
+PRODUCTS may occur without notice.
