@@ -5,11 +5,10 @@ import no.api.meteo.test.MeteoTestUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static no.api.meteo.yr.TestConstants.YR_TEST_DATA_1_JSON;
+import static no.api.meteo.yr.TestConstants.YR_TEST_DATA_1_XML;
+
 public class YRContentTest {
-
-    public static final String TEST_DATA_1_XML = "/META-INF/test_data_1.xml";
-
-    public static final String TEST_DATA_1_JSON = "/META-INF/test_data_1.json";
 
     /**
      * Simply check that the test file can be loaded and that is is unmodified
@@ -18,11 +17,11 @@ public class YRContentTest {
      */
     @Test
     public void test_to_xml() throws Exception {
-        String testContent = MeteoTestUtils.getTextResource(TEST_DATA_1_XML);
+        String testContent = MeteoTestUtils.getTextResource(YR_TEST_DATA_1_XML);
         Assert.assertNotNull(testContent);
         YRContent yrContent = new YRContent(testContent);
         Assert.assertNotNull(yrContent.toXML());
-        Assert.assertEquals(15583, yrContent.toXML().length());
+        Assert.assertEquals(16464, yrContent.toXML().length());
     }
 
     @Test(expected = MeteoRuntimeException.class)
@@ -33,9 +32,9 @@ public class YRContentTest {
 
     @Test
     public void test_to_json() throws Exception {
-        String xmlTestContent = MeteoTestUtils.getTextResource(TEST_DATA_1_XML);
+        String xmlTestContent = MeteoTestUtils.getTextResource(YR_TEST_DATA_1_XML);
         YRContent yrContent = new YRContent(xmlTestContent);
-        Assert.assertEquals(MeteoTestUtils.getTextResource(TEST_DATA_1_JSON), yrContent.toJSON());
+        Assert.assertEquals(MeteoTestUtils.getTextResource(YR_TEST_DATA_1_JSON), yrContent.toJSON());
     }
 
 

@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-package no.api.meteo.examples;
+package no.api.meteo.yr;
 
-import no.api.meteo.MeteoData;
-import no.api.meteo.entity.LocationForecast;
-import org.junit.Assert;
-import org.junit.Test;
+public class TestConstants {
 
-public class LocationExampleTest {
+    public static final String YR_TEST_DATA_1_XML = "/META-INF/yr/bergen_nn_1.xml";
 
-    @Test
-    public void test_run_example() throws Exception {
-        LocationExample locationExample = new LocationExample();
-        MeteoData<LocationForecast> meteoData = locationExample.runExample();
-        Assert.assertNotNull(meteoData);
-        Assert.assertNotNull(meteoData.getRawResult());
-        locationExample.shutDown();
-    }
+    public static final String YR_TEST_DATA_1_JSON = "/META-INF/yr/bergen_nn_1.json";
+
+
 }

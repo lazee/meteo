@@ -19,14 +19,17 @@ package no.api.meteo.test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 
 public class MeteoTestUtils {
 
     private static Logger log = LoggerFactory.getLogger(MeteoTestUtils.class);
-    
+
     private MeteoTestUtils() {
         // Intentional
     }
@@ -63,7 +66,7 @@ public class MeteoTestUtils {
         return MeteoTestUtils.class.getResourceAsStream(uri);
     }
 
-    public static String getTextResource(String uri) throws MeteoTestException {
+    public static String getTextResourceOld(String uri) throws MeteoTestException {
         OutputStream output = new OutputStream() {
             private StringBuilder string = new StringBuilder();
 
@@ -78,6 +81,26 @@ public class MeteoTestUtils {
         };
         printResource(output, uri);
         return output.toString();
+    }
+
+    public static String getTextResource(String uri) throws MeteoTestException {
+        InputStream inputStream = getResource(uri);
+        if (inputStream == null) {
+            throw new MeteoTestException("Could not open stream to " + uri);
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        String str;
+        try {
+            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream, "UTF8"));
+            while ((str = in.readLine()) != null) {
+                stringBuilder.append(str + "\n");
+            }
+        } catch (UnsupportedEncodingException e) {
+            throw new MeteoTestException(e);
+        } catch (IOException e) {
+            throw new MeteoTestException(e);
+        }
+        return stringBuilder.toString().substring(0, stringBuilder.toString().length() - 1);
     }
 
 }

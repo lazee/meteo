@@ -14,21 +14,35 @@
  * limitations under the License.
  */
 
-package no.api.meteo.examples;
+package no.api.meteo.yr;
 
-import no.api.meteo.MeteoData;
-import no.api.meteo.entity.LocationForecast;
-import org.junit.Assert;
+import no.api.meteo.client.DefaultMeteoClient;
+import no.api.meteo.client.MeteoClient;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
-public class LocationExampleTest {
+public class YrLocationExampleTest {
 
-    @Test
+ private MeteoClient meteoClient;
+
+ @Before
+ public void before() {
+     meteoClient = new DefaultMeteoClient();
+ }
+
+ @After
+ public void after() {
+     meteoClient.shutdown();
+ }
+
+ @Test
     public void test_run_example() throws Exception {
-        LocationExample locationExample = new LocationExample();
-        MeteoData<LocationForecast> meteoData = locationExample.runExample();
-        Assert.assertNotNull(meteoData);
-        Assert.assertNotNull(meteoData.getRawResult());
-        locationExample.shutDown();
+        YRManager yrManager = new YRManager(meteoClient);
+        YRContent yrContent = yrManager.fetchForecast("Norway/Hordaland/Bergen/Bergen", YRLocale.NN);
+
+     System.out.println(yrContent.toJSON());
+
+
     }
 }

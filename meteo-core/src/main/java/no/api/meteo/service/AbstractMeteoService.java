@@ -16,6 +16,7 @@
 
 package no.api.meteo.service;
 
+import no.api.meteo.MeteoNetUtils;
 import no.api.meteo.MeteoRuntimeException;
 import no.api.meteo.client.MeteoClient;
 import org.xmlpull.v1.XmlPullParser;
@@ -23,7 +24,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.StringReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 
@@ -67,7 +67,6 @@ public abstract class AbstractMeteoService {
     }
     
     protected URL getRequestUrl(Map<String, Object> queryParameters) {
-        try {
             StringBuffer sb = new StringBuffer();
             sb.append(API_MET_NO_SERVICE_PREFIX).append(metServiceName).append("/").append(
                     serviceVersion.toStringVersion()).append("/?");
@@ -77,10 +76,7 @@ public abstract class AbstractMeteoService {
                 sb.append(first ? "" : "&").append(s).append("=").append(queryParameters.get(s).toString());
                 first = false;
             }
-            return new URL(sb.toString());
-        } catch (MalformedURLException e) {
-            return null;
-        }
+            return MeteoNetUtils.createUrl(sb.toString());
     }
 
 }

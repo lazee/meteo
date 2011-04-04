@@ -16,17 +16,15 @@
 
 package no.api.meteo.yr;
 
+import no.api.meteo.MeteoNetUtils;
 import no.api.meteo.MeteoRuntimeException;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoResponse;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class YRManager {
 
     public static final String ERROR_THE_GIVEN_PLACE_NAME_IS_INVALID = "The given placeName is invalid: ";
-    
+
     private String yrUrlPrefix = "http://www.yr.no/";
 
     private String yrUrlPostfix = "/varsel.xml";
@@ -51,13 +49,9 @@ public class YRManager {
         if (!YrUtil.isLegalPlaceName(placeName)) {
             throw new MeteoRuntimeException(ERROR_THE_GIVEN_PLACE_NAME_IS_INVALID + placeName);
         }
-        try {
-            MeteoResponse response = meteoClient.fetchContent(
-                    new URL(yrUrlPrefix + locale.getPlace() + "/" + placeName + yrUrlPostfix));
-            return new YRContent(response.getData());
-        } catch (MalformedURLException e) {
-            throw new MeteoRuntimeException(ERROR_THE_GIVEN_PLACE_NAME_IS_INVALID + placeName);
-        }
+        MeteoResponse response = meteoClient.fetchContent(
+                MeteoNetUtils.createUrl(yrUrlPrefix + locale.getPlace() + "/" + placeName + yrUrlPostfix));
+        return new YRContent(response.getData());
     }
 
 }

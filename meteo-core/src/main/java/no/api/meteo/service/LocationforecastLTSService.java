@@ -18,18 +18,20 @@ package no.api.meteo.service;
 
 import no.api.meteo.MeteoConstants;
 import no.api.meteo.MeteoData;
+import no.api.meteo.MeteoNetUtils;
+import no.api.meteo.MeteoRuntimeException;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoClientException;
 import no.api.meteo.client.MeteoResponse;
 import no.api.meteo.entity.Cloudiness;
 import no.api.meteo.entity.Fog;
-import no.api.meteo.entity.PointForecast;
 import no.api.meteo.entity.HighClouds;
 import no.api.meteo.entity.Humidity;
 import no.api.meteo.entity.Location;
 import no.api.meteo.entity.LocationForecast;
 import no.api.meteo.entity.LowClouds;
 import no.api.meteo.entity.MediumClouds;
+import no.api.meteo.entity.PointForecast;
 import no.api.meteo.entity.Precipitation;
 import no.api.meteo.entity.Pressure;
 import no.api.meteo.entity.Symbol;
@@ -45,8 +47,6 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -249,8 +249,8 @@ public class LocationforecastLTSService extends AbstractMeteoService {
                             getIntegerAttributeValue(xpp, ATTR_VALUE)));
         } else if (MeteoConstants.TAG_META.equals(n)) {
             try {
-                locationForecast.setLicenseUrl(new URL(getAttributeValue(xpp, MeteoConstants.ATTR_LICENSEURL)));
-            } catch (MalformedURLException e) {
+                locationForecast.setLicenseUrl(MeteoNetUtils.createUrl(getAttributeValue(xpp, MeteoConstants.ATTR_LICENSEURL)));
+            } catch (MeteoRuntimeException e) {
                 log.warn("License url not found in feed");
             }
         } else {
