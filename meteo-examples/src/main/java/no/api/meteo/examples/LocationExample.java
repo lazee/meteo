@@ -16,12 +16,13 @@
 
 package no.api.meteo.examples;
 
-import no.api.meteo.MeteoData;
+import no.api.meteo.entity.MeteoData;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoClientException;
-import no.api.meteo.entity.LocationForecast;
-import no.api.meteo.service.LocationforecastLTSService;
+import no.api.meteo.entity.Coordinates;
+import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
+import no.api.meteo.service.locationforecastlts.LocationforecastLTSService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +46,8 @@ public class LocationExample {
         LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
         try {
             // Fetch the data from api.met.no
-            return ltsService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
+
+            return ltsService.fetchContent(new Coordinates(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO));
         } catch (MeteoClientException e) {
             // Got client exception. No data available
             log.error("Caught exception : " + e.getMessage());

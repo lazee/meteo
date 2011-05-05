@@ -16,12 +16,13 @@
 
 package no.api.meteo;
 
+import no.api.meteo.util.MeteoNetUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class MeteoNetUtilsTest {
 
-    @Test(expected = MeteoRuntimeException.class)
+    @Test(expected = MeteoException.class)
     public void test_create_url_error() throws Exception {
         MeteoNetUtils.createUrl("htt://www.ap dm .no");
     }

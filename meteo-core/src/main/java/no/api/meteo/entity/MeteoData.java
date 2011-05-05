@@ -14,21 +14,33 @@
  * limitations under the License.
  */
 
-package no.api.meteo.examples;
+package no.api.meteo.entity;
 
-import no.api.meteo.entity.MeteoData;
-import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
-import org.junit.Assert;
-import org.junit.Test;
+import no.api.meteo.client.MeteoResponse;
+import no.api.meteo.client.MeteoResponseHeader;
 
-public class LocationExampleTest {
+import java.util.List;
 
-    @Test
-    public void test_run_example() throws Exception {
-        LocationExample locationExample = new LocationExample();
-        MeteoData<LocationForecast> meteoData = locationExample.runExample();
-        Assert.assertNotNull(meteoData);
-        Assert.assertNotNull(meteoData.getRawResult());
-        locationExample.shutDown();
+public class MeteoData<E> {
+
+    private E result;
+
+    private MeteoResponse response;
+
+    public MeteoData(E result, MeteoResponse response) {
+        this.result = result;
+        this.response = response;
+    }
+
+    public String getRawResult() {
+        return response.getData();
+    }
+
+    public E getResult() {
+        return result;
+    }
+
+    public List<MeteoResponseHeader> getHttpHeaders() {
+        return response.getResponseHeaders();
     }
 }

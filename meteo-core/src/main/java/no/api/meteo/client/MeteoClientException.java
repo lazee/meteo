@@ -16,9 +16,9 @@
 
 package no.api.meteo.client;
 
-import no.api.meteo.MeteoRuntimeException;
+import no.api.meteo.MeteoException;
 
-public class MeteoClientException extends MeteoRuntimeException {
+public class MeteoClientException extends MeteoException {
 
     public MeteoClientException(String message) {
         super(message);

@@ -18,10 +18,10 @@
     <modules>
         <module>meteo-test</module>
         <module>meteo-core</module>
-        <module>meteo-yr</module>
         <module>meteo-client</module>
         <module>meteo-legacy-client</module>
         <module>meteo-examples</module>
+        <module>meteo-extras</module>
     </modules>
 
     <properties>
@@ -38,11 +38,6 @@
             <dependency>
                 <groupId>no.api.opensource.meteo</groupId>
                 <artifactId>meteo-client</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>no.api.opensource.meteo</groupId>
-                <artifactId>meteo-yr</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -142,7 +137,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -153,17 +147,14 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
 </project>

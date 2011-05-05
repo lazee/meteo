@@ -23,7 +23,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 
 public class MeteoTestUtils {
@@ -34,53 +33,8 @@ public class MeteoTestUtils {
         // Intentional
     }
 
-    public static void printResource(OutputStream os, String uri) throws MeteoTestException {
-        InputStream is = getResource(uri);
-        if (is == null) {
-            throw new MeteoTestException("Could not find resource : " + uri);
-        }
-
-        if (os == null) {
-            throw new MeteoTestException("OutputStream is null");
-        }
-
-        try {
-            int bufferSize = 4096;
-            byte[] buf = new byte[bufferSize];
-            int bytesRead;
-            try {
-                while ((bytesRead = is.read(buf)) != -1) {
-                    os.write(buf, 0, bytesRead);
-                }
-            } finally {
-                is.close();
-                os.close();
-            }
-        } catch (IOException e) {
-            log.error("Got error. Wrapped exception: " + e.getMessage());
-            throw new MeteoTestException(e);
-        }
-    }
-
     public static InputStream getResource(String uri) {
         return MeteoTestUtils.class.getResourceAsStream(uri);
-    }
-
-    public static String getTextResourceOld(String uri) throws MeteoTestException {
-        OutputStream output = new OutputStream() {
-            private StringBuilder string = new StringBuilder();
-
-            @Override
-            public void write(int b) throws IOException {
-                this.string.append((char) b);
-            }
-
-            public String toString() {
-                return this.string.toString();
-            }
-        };
-        printResource(output, uri);
-        return output.toString();
     }
 
     public static String getTextResource(String uri) throws MeteoTestException {

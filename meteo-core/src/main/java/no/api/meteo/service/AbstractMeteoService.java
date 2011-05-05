@@ -16,14 +16,9 @@
 
 package no.api.meteo.service;
 
-import no.api.meteo.MeteoNetUtils;
-import no.api.meteo.MeteoRuntimeException;
+import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.client.MeteoClient;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.StringReader;
 import java.net.URL;
 import java.util.Map;
 
@@ -35,38 +30,20 @@ public abstract class AbstractMeteoService {
 
     private String metServiceName;
 
-    private XmlPullParserFactory factory;
-
     private final MeteoClient meteoClient;
     
     public AbstractMeteoService(MeteoClient meteoClient, String metServiceName, MeteoServiceVersion serviceVersion) {
         this.meteoClient = meteoClient;
         this.metServiceName = metServiceName;
         this.serviceVersion = serviceVersion;
-        try {
-            factory = XmlPullParserFactory.newInstance();
-            factory.setNamespaceAware(false); // TODO Consider true here
-            factory.setValidating(false); // TODO Consider true here
-        } catch (XmlPullParserException e) {
-            throw new MeteoRuntimeException("Could not create XmlPullParserFactory instance.");
-        }
+        
     }
 
     protected MeteoClient getMeteoClient() {
         return meteoClient;
     }
 
-    protected XmlPullParser createNewPullParser(String data) {
-        try {
-            XmlPullParser xpp = factory.newPullParser();
-            xpp.setInput(new StringReader(data));
-            return xpp;
-        } catch (XmlPullParserException e) {
-            throw new MeteoRuntimeException("Could not create XmlPullParser instance.");
-        }
-    }
-    
-    protected URL getRequestUrl(Map<String, Object> queryParameters) {
+    protected URL createRequestUrl(Map<String, Object> queryParameters) {
             StringBuffer sb = new StringBuffer();
             sb.append(API_MET_NO_SERVICE_PREFIX).append(metServiceName).append("/").append(
                     serviceVersion.toStringVersion()).append("/?");
@@ -78,5 +55,6 @@ public abstract class AbstractMeteoService {
             }
             return MeteoNetUtils.createUrl(sb.toString());
     }
+
 
 }

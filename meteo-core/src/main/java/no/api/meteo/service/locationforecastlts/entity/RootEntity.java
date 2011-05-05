@@ -14,21 +14,34 @@
  * limitations under the License.
  */
 
-package no.api.meteo.examples;
+package no.api.meteo.service.locationforecastlts.entity;
 
-import no.api.meteo.entity.MeteoData;
-import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
-import org.junit.Assert;
-import org.junit.Test;
+import net.sf.oval.constraint.NotNull;
 
-public class LocationExampleTest {
+import java.net.URL;
+import java.util.Date;
 
-    @Test
-    public void test_run_example() throws Exception {
-        LocationExample locationExample = new LocationExample();
-        MeteoData<LocationForecast> meteoData = locationExample.runExample();
-        Assert.assertNotNull(meteoData);
-        Assert.assertNotNull(meteoData.getRawResult());
-        locationExample.shutDown();
+public abstract class RootEntity {
+
+    @NotNull
+    private Date created;
+
+    @NotNull
+    private URL licenseUrl;
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public URL getLicenseUrl() {
+        return licenseUrl;
+    }
+
+    public void setLicenseUrl(URL licenseUrl) {
+        this.licenseUrl = licenseUrl;
     }
 }

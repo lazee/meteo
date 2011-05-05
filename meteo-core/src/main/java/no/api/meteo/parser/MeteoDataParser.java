@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-package no.api.meteo.examples;
+package no.api.meteo.parser;
 
-import no.api.meteo.entity.MeteoData;
-import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
-import org.junit.Assert;
-import org.junit.Test;
+/**
+ *
+ */
+public interface MeteoDataParser<E> {
 
-public class LocationExampleTest {
+    public E parse(String data) throws MeteoDataParserException;
 
-    @Test
-    public void test_run_example() throws Exception {
-        LocationExample locationExample = new LocationExample();
-        MeteoData<LocationForecast> meteoData = locationExample.runExample();
-        Assert.assertNotNull(meteoData);
-        Assert.assertNotNull(meteoData.getRawResult());
-        locationExample.shutDown();
-    }
 }

@@ -14,21 +14,31 @@
  * limitations under the License.
  */
 
-package no.api.meteo.examples;
+package no.api.meteo.entity;
 
-import no.api.meteo.entity.MeteoData;
-import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
-import org.junit.Assert;
-import org.junit.Test;
+public class Coordinates {
 
-public class LocationExampleTest {
+    private double longitude;
 
-    @Test
-    public void test_run_example() throws Exception {
-        LocationExample locationExample = new LocationExample();
-        MeteoData<LocationForecast> meteoData = locationExample.runExample();
-        Assert.assertNotNull(meteoData);
-        Assert.assertNotNull(meteoData.getRawResult());
-        locationExample.shutDown();
+    private double latitude;
+
+    private int altitude;
+
+    public Coordinates(double longitude, double latitude, int altitude) {
+        this.altitude = altitude;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public int getAltitude() {
+        return altitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
     }
 }

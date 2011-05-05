@@ -14,21 +14,34 @@
  * limitations under the License.
  */
 
-package no.api.meteo.examples;
+package no.api.meteo.service.locationforecastlts.entity;
 
-import no.api.meteo.entity.MeteoData;
-import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
-import org.junit.Assert;
-import org.junit.Test;
+import net.sf.oval.constraint.NotEmpty;
+import net.sf.oval.constraint.NotNull;
 
-public class LocationExampleTest {
+public class ProbabilityEntity {
 
-    @Test
-    public void test_run_example() throws Exception {
-        LocationExample locationExample = new LocationExample();
-        MeteoData<LocationForecast> meteoData = locationExample.runExample();
-        Assert.assertNotNull(meteoData);
-        Assert.assertNotNull(meteoData.getRawResult());
-        locationExample.shutDown();
+    @NotNull
+    @NotEmpty
+    private String unit;
+
+    @NotNull
+    private Integer value;
+
+    public String getUnit() {
+        return unit;
     }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+
+    public void setValue(Integer value) {
+        this.value = value;
+    }
+
 }

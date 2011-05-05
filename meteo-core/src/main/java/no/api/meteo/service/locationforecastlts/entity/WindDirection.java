@@ -14,21 +14,43 @@
  * limitations under the License.
  */
 
-package no.api.meteo.entity;
+package no.api.meteo.service.locationforecastlts.entity;
 
+import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.IdEntity;
 
-public abstract class PercentEntity extends IdEntity {
+public class WindDirection extends IdEntity {
 
     @NotNull
-    private Double percent;
+    @NotEmpty
+    private String name;
 
-    public Double getPercent() {
-        return percent;
+    @NotNull
+    private Double deg;
+
+    public WindDirection() {
     }
 
-    public void setPercent(Double percent) {
-        this.percent = percent;
+    public WindDirection(String id, String name, Double deg) {
+        setId(id);
+        setName(name);
+        setDeg(deg);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getDeg() {
+        return deg;
+    }
+
+    public void setDeg(Double deg) {
+        this.deg = deg;
     }
 }
