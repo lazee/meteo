@@ -26,8 +26,7 @@ public abstract class RootEntity {
     @NotNull
     private Date created;
 
-    @NotNull
-    private URL licenseUrl;
+    private Meta meta;
 
     public Date getCreated() {
         return created;
@@ -37,11 +36,11 @@ public abstract class RootEntity {
         this.created = created;
     }
 
-    public URL getLicenseUrl() {
-        return licenseUrl;
+    public Meta getMeta() {
+        return meta;
     }
 
-    public void setLicenseUrl(URL licenseUrl) {
-        this.licenseUrl = licenseUrl;
+    public void setMeta(Meta meta) {
+        this.meta = meta;
     }
 }

@@ -18,32 +18,32 @@ package no.api.meteo.service.locationforecastlts.entity;
 
 import net.sf.oval.constraint.NotNull;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
-public class Meta {
+/**
+ *
+ */
+public class AbstractForecast {
 
     @NotNull
-    private URL licenseUrl;
+    private Date fromTime;
 
-    private List<Model> models = new ArrayList<Model>();
+    @NotNull
+    private Date toTime;
 
-    public URL getLicenseUrl() {
-        return licenseUrl;
+    public Date getFromTime() {
+        return fromTime;
     }
 
-    public void setLicenseUrl(URL licenseUrl) {
-        this.licenseUrl = licenseUrl;
+    public void setFromTime(Date fromTime) {
+        this.fromTime = fromTime;
     }
 
-    public List<Model> getModels() {
-        return models;
+    public Date getToTime() {
+        return toTime;
     }
 
-    public void setModels(List<Model> models) {
-        if (models != null) {
-            this.models = models;
-        }
+    public void setToTime(Date toTime) {
+        this.toTime = toTime;
     }
 }

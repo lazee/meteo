@@ -40,6 +40,8 @@ public class MeteoConstants {
 
     public static final String TAG_LOCATION = "location";
 
+    public static final String TAG_MODEL = "model";
+
     public static final String TAG_PRECIPITATION = "precipitation";
 
     public static final String TAG_SYMBOL = "symbol";

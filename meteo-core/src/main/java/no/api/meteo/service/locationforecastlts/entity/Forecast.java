@@ -16,34 +16,11 @@
 
 package no.api.meteo.service.locationforecastlts.entity;
 
-import net.sf.oval.constraint.NotNull;
+import java.util.Date;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+/**
+ *
+ */
+public interface Forecast {
 
-public class Meta {
-
-    @NotNull
-    private URL licenseUrl;
-
-    private List<Model> models = new ArrayList<Model>();
-
-    public URL getLicenseUrl() {
-        return licenseUrl;
-    }
-
-    public void setLicenseUrl(URL licenseUrl) {
-        this.licenseUrl = licenseUrl;
-    }
-
-    public List<Model> getModels() {
-        return models;
-    }
-
-    public void setModels(List<Model> models) {
-        if (models != null) {
-            this.models = models;
-        }
-    }
 }

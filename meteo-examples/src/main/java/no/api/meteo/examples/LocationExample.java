@@ -21,8 +21,11 @@ import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoClientException;
 import no.api.meteo.entity.Coordinates;
+import no.api.meteo.service.locationforecastlts.entity.Location;
 import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
 import no.api.meteo.service.locationforecastlts.LocationforecastLTSService;
+import no.api.meteo.service.locationforecastlts.entity.Model;
+import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,11 +37,12 @@ public class LocationExample {
 
     public static final int ALTITUDE_OSLO = 14;
 
-    private Logger log = LoggerFactory.getLogger(this.getClass());
+    private static final Logger log = LoggerFactory.getLogger(LocationExample.class);
 
     private MeteoClient meteoClient;
 
     public LocationExample() {
+        BasicConfigurator.configure();
         meteoClient = new DefaultMeteoClient();
     }
 
@@ -59,4 +63,14 @@ public class LocationExample {
         meteoClient.shutdown();
     }
 
+    public static void main(String[] args) {
+        LocationExample locationExample = new LocationExample();
+        MeteoData<LocationForecast> data = locationExample.runExample();
+
+        // Just to prove that we have data
+        log.info(data.getResult().getMeta().getLicenseUrl().toString());
+        for (Model m : data.getResult().getMeta().getModels()) {
+            log.info("Model Name: " + m.getName());
+        }
+    }
 }

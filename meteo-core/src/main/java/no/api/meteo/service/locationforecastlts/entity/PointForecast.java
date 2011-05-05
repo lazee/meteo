@@ -20,17 +20,7 @@ import net.sf.oval.constraint.NotNull;
 
 import java.util.Date;
 
-public class PointForecast {
-
-    @NotNull
-    private Date fromTime;
-
-    @NotNull
-    private Date toTime;
-
-    private Symbol symbol;
-
-    private Precipitation precipitation;
+public class PointForecast extends AbstractForecast implements Forecast {
 
     private Fog fog;
 
@@ -56,8 +46,6 @@ public class PointForecast {
 
     private TemperatureProbability temperatureProbability;
 
-    private SymbolProbability symbolProbability;
-
     public WindProbability getWindProbability() {
         return windProbability;
     }
@@ -72,46 +60,6 @@ public class PointForecast {
 
     public void setTemperatureProbability(TemperatureProbability temperatureProbability) {
         this.temperatureProbability = temperatureProbability;
-    }
-
-    public SymbolProbability getSymbolProbability() {
-        return symbolProbability;
-    }
-
-    public void setSymbolProbability(SymbolProbability symbolProbability) {
-        this.symbolProbability = symbolProbability;
-    }
-
-    public Date getFromTime() {
-        return fromTime;
-    }
-
-    public void setFromTime(Date fromTime) {
-        this.fromTime = fromTime;
-    }
-
-    public Date getToTime() {
-        return toTime;
-    }
-
-    public void setToTime(Date toTime) {
-        this.toTime = toTime;
-    }
-
-    public Symbol getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(Symbol symbol) {
-        this.symbol = symbol;
-    }
-
-    public Precipitation getPrecipitation() {
-        return precipitation;
-    }
-
-    public void setPrecipitation(Precipitation precipitation) {
-        this.precipitation = precipitation;
     }
 
     public Fog getFog() {

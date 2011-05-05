@@ -18,6 +18,7 @@ package no.api.meteo.service.locationforecastlts.entity;
 
 import net.sf.oval.constraint.NotNull;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,10 +30,8 @@ public class LocationForecast extends RootEntity {
     @NotNull
     private Date created;
 
-    private Meta meta;
-
     @NotNull
-    private List<PointForecast> forecasts;
+    private List<Forecast> forecasts = new ArrayList<Forecast>();
 
     public Location getLocation() {
         return location;
@@ -42,19 +41,33 @@ public class LocationForecast extends RootEntity {
         this.location = location;
     }
 
-    public Meta getMeta() {
-        return meta;
-    }
-
-    public void setMeta(Meta meta) {
-        this.meta = meta;
-    }
-
-    public List<PointForecast> getForecasts() {
+    public List<Forecast> getForecasts() {
         return forecasts;
     }
 
-    public void setForecasts(List<PointForecast> forecasts) {
-        this.forecasts = forecasts;
+    public List<PointForecast> getPointForecasts() {
+        List<PointForecast> list = new ArrayList<PointForecast>();
+        for (Forecast forecast : forecasts) {
+            if (forecast instanceof PointForecast) {
+                list.add((PointForecast) forecast);
+            }
+        }
+        return list;
+    }
+
+    public List<PeriodForecast> getPeriodForecasts() {
+        List<PeriodForecast> list = new ArrayList<PeriodForecast>();
+        for (Forecast forecast : forecasts) {
+            if (forecast instanceof PeriodForecast) {
+                list.add((PeriodForecast) forecast);
+            }
+        }
+        return list;
+    }
+
+    public void setForecasts(List<Forecast> forecasts) {
+        if (forecasts != null) {
+            this.forecasts = forecasts;
+        }
     }
 }
