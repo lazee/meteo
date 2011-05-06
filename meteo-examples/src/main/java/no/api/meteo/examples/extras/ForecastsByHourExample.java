@@ -14,23 +14,30 @@
  * limitations under the License.
  */
 
-package no.api.meteo.examples;
+package no.api.meteo.examples.extras;
 
 import no.api.meteo.MeteoException;
-import no.api.meteo.entity.MeteoData;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
-import no.api.meteo.client.MeteoClientException;
 import no.api.meteo.entity.Coordinates;
-import no.api.meteo.service.locationforecastlts.entity.Location;
-import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
+import no.api.meteo.entity.MeteoData;
+import no.api.meteo.examples.AbstractExample;
 import no.api.meteo.service.locationforecastlts.LocationforecastLTSService;
+import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
 import no.api.meteo.service.locationforecastlts.entity.Model;
+import no.api.meteo.services.MeteoServiceManagerImpl;
+import no.api.meteo.services.MeteoServicesManager;
+import no.api.meteo.services.entity.MeteoForecastPair;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LocationExample {
+import java.util.List;
+
+/**
+ *
+ */
+public class ForecastsByHourExample extends AbstractExample {
 
     public static final double LONGITUDE_OSLO = 10.7460923576733;
 
@@ -38,26 +45,31 @@ public class LocationExample {
 
     public static final int ALTITUDE_OSLO = 14;
 
-    private static final Logger log = LoggerFactory.getLogger(LocationExample.class);
+    private static final Logger log = LoggerFactory.getLogger(ForecastsByHourExample.class);
 
     private MeteoClient meteoClient;
 
-    public LocationExample() {
-        BasicConfigurator.configure();
+    private MeteoServicesManager servicesManager;
+
+    public ForecastsByHourExample() {
+        configureLog("INFO");
         meteoClient = new DefaultMeteoClient();
+        servicesManager = new MeteoServiceManagerImpl(meteoClient);
     }
 
-    public MeteoData<LocationForecast> runExample() {
-        LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
+    public void runExample() {
         try {
-            // Fetch the data from api.met.no
+            List<MeteoForecastPair> list =  servicesManager.fetchPointForecastsByHour(10,
+                    new Coordinates(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO));
 
-            return ltsService.fetchContent(new Coordinates(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO));
+            log.info("Got " + list.size() + " forecasts.");
+            for (MeteoForecastPair pair : list) {
+                prettyLogPeriodForecast(pair.getPeriodForecast());
+            }
         } catch (MeteoException e) {
-            // Got client exception. No data available
-            log.error("Caught exception : " + e.getMessage());
-            return null;
+            log.error("Something went wrong", e);
         }
+
     }
 
     public void shutDown() {
@@ -65,13 +77,7 @@ public class LocationExample {
     }
 
     public static void main(String[] args) {
-        LocationExample locationExample = new LocationExample();
-        MeteoData<LocationForecast> data = locationExample.runExample();
-
-        // Just to prove that we have data
-        log.info(data.getResult().getMeta().getLicenseUrl().toString());
-        for (Model m : data.getResult().getMeta().getModels()) {
-            log.info("Model Name: " + m.getName());
-        }
+        ForecastsByHourExample forecastsByHourExample = new ForecastsByHourExample();
+        forecastsByHourExample.runExample();
     }
 }
