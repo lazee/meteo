@@ -45,26 +45,6 @@ public class LocationForecast extends RootEntity {
         return forecasts;
     }
 
-    public List<PointForecast> getPointForecasts() {
-        List<PointForecast> list = new ArrayList<PointForecast>();
-        for (Forecast forecast : forecasts) {
-            if (forecast instanceof PointForecast) {
-                list.add((PointForecast) forecast);
-            }
-        }
-        return list;
-    }
-
-    public List<PeriodForecast> getPeriodForecasts() {
-        List<PeriodForecast> list = new ArrayList<PeriodForecast>();
-        for (Forecast forecast : forecasts) {
-            if (forecast instanceof PeriodForecast) {
-                list.add((PeriodForecast) forecast);
-            }
-        }
-        return list;
-    }
-
     public void setForecasts(List<Forecast> forecasts) {
         if (forecasts != null) {
             this.forecasts = forecasts;

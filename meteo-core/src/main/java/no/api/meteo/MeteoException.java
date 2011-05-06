@@ -16,7 +16,7 @@
 
 package no.api.meteo;
 
-public class MeteoException extends RuntimeException {
+public class MeteoException extends Exception {
 
     public MeteoException() {
     }

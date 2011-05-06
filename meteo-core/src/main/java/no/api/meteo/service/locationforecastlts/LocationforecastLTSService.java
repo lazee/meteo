@@ -16,6 +16,7 @@
 
 package no.api.meteo.service.locationforecastlts;
 
+import no.api.meteo.client.MeteoClientException;
 import no.api.meteo.entity.MeteoData;
 import no.api.meteo.parser.MeteoDataParser;
 import no.api.meteo.MeteoException;
@@ -50,12 +51,12 @@ public class LocationforecastLTSService extends AbstractMeteoService {
         parser = new LocationforcastLTSParser();
     }
 
-    public MeteoData<LocationForecast> fetchContent(Coordinates coordinates) {
+    public MeteoData<LocationForecast> fetchContent(Coordinates coordinates) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(createServiceUrl(coordinates));
         return new MeteoData<LocationForecast>(parser.parse(response.getData()), response);
     }
 
-    public URL createServiceUrl(Coordinates coordinates) {
+    public URL createServiceUrl(Coordinates coordinates) throws MeteoException {
         if (coordinates == null) {
             throw new MeteoException("The provided coordinates is null");
         }

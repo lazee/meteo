@@ -16,6 +16,7 @@
 
 package no.api.meteo.service;
 
+import no.api.meteo.MeteoException;
 import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.client.MeteoClient;
 
@@ -43,7 +44,7 @@ public abstract class AbstractMeteoService {
         return meteoClient;
     }
 
-    protected URL createRequestUrl(Map<String, Object> queryParameters) {
+    protected URL createRequestUrl(Map<String, Object> queryParameters) throws MeteoException {
             StringBuffer sb = new StringBuffer();
             sb.append(API_MET_NO_SERVICE_PREFIX).append(metServiceName).append("/").append(
                     serviceVersion.toStringVersion()).append("/?");

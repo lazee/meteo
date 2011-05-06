@@ -16,11 +16,13 @@
 
 package no.api.meteo.parser;
 
+import no.api.meteo.MeteoException;
+
 /**
  *
  */
 public interface MeteoDataParser<E> {
 
-    public E parse(String data) throws MeteoDataParserException;
+    public E parse(String data) throws MeteoException;
 
 }

@@ -33,7 +33,7 @@ public class MeteoParserUtils {
         // Intentional
     }
 
-    public static Date metDatestringToDate(String dateStr) {
+    public static Date metDatestringToDate(String dateStr) throws MeteoException {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         try {
             return format.parse(dateStr);
@@ -72,7 +72,7 @@ public class MeteoParserUtils {
         }
     }
 
-    public static Date getDateAttributeValue(XmlPullParser xpp, String name) {
+    public static Date getDateAttributeValue(XmlPullParser xpp, String name) throws MeteoException {
         return metDatestringToDate(getAttributeValue(xpp, name));
     }
 }

@@ -105,7 +105,7 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public LocationForecast parse(String data) throws MeteoDataParserException {
+    public LocationForecast parse(String data) throws MeteoException {
         try {
             LocationForecast locationForecast = new LocationForecast();
             locationForecast.setForecasts(new ArrayList<Forecast>());
@@ -241,11 +241,16 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
         } else if (TAG_MODEL.equals(n)) {
             Model model = new Model();
             model.setName(getAttributeValue(xpp, "name"));
-            model.setFrom(getDateAttributeValue(xpp, "from"));
-            model.setTo(getDateAttributeValue(xpp, "to"));
-            model.setRunEnded(getDateAttributeValue(xpp, "runended"));
-            model.setNextRun(getDateAttributeValue(xpp, "nextrun"));
-            model.setTermin(getDateAttributeValue(xpp, "termin"));
+            try {
+                model.setFrom(getDateAttributeValue(xpp, "from"));
+                model.setTo(getDateAttributeValue(xpp, "to"));
+                model.setRunEnded(getDateAttributeValue(xpp, "runended"));
+                model.setNextRun(getDateAttributeValue(xpp, "nextrun"));
+                model.setTermin(getDateAttributeValue(xpp, "termin"));
+            } catch (MeteoException e) {
+                log.warn("Could not convert model dates found in returned xml", e);
+            }
+
             locationForecast.getMeta().getModels().add(model);
         } else {
             log.trace("Unhandled start tag: " + xpp.getName());
@@ -279,13 +284,22 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
 
     private void handleTimeDataTag(Stack<Forecast> stack, XmlPullParser xpp) {
         PointForecast forecast = new PointForecast();
-        forecast.setToTime(getDateAttributeValue(xpp, ATTR_TO));
-        forecast.setFromTime(getDateAttributeValue(xpp, ATTR_FROM));
+        try {
+            forecast.setToTime(getDateAttributeValue(xpp, ATTR_TO));
+            forecast.setFromTime(getDateAttributeValue(xpp, ATTR_FROM));
+        } catch (MeteoException e) {
+            log.warn("Could not convert time dates from xml", e);
+        }
+
         stack.push(forecast);
     }
 
     private void handleWeatherDataTag(LocationForecast locationForecast, XmlPullParser xpp) {
-        locationForecast.setCreated(getDateAttributeValue(xpp, ATTR_CREATED));
+        try {
+            locationForecast.setCreated(getDateAttributeValue(xpp, ATTR_CREATED));
+        } catch (MeteoException e) {
+            log.warn("Could not convert created data from weatherData tag", e);
+        }
     }
 
     private void handleLocationDataTag(LocationForecast locationForecast, XmlPullParser xpp) {
