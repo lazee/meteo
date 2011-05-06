@@ -42,6 +42,11 @@
             </dependency>
             <dependency>
                 <groupId>no.api.opensource.meteo</groupId>
+                <artifactId>meteo-extras</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>no.api.opensource.meteo</groupId>
                 <artifactId>meteo-test</artifactId>
                 <version>${project.version}</version>
                 <scope>test</scope>
@@ -130,6 +135,11 @@
                 <version>1.8.5</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>1.6.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -155,6 +165,11 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>no.api.opensource.meteo</groupId>
+            <artifactId>meteo-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

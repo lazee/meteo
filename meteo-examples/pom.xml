@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>no.api.opensource.meteo</groupId>
-            <artifactId>meteo-yr</artifactId>
+            <artifactId>meteo-extras</artifactId>
         </dependency>
         <dependency>
             <groupId>no.api.opensource.meteo</groupId>

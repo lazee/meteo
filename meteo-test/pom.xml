@@ -12,4 +12,6 @@
     <groupId>no.api.opensource.meteo</groupId>
     <artifactId>meteo-test</artifactId>
     <version>0.1-SNAPSHOT</version>
+
+    
 </project>

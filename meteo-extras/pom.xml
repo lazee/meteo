@@ -26,12 +26,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>no.api.opensource.meteo</groupId>
-    <artifactId>meteo-services</artifactId>
+    <artifactId>meteo-extras</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>no.api.opensource.meteo</groupId>
             <artifactId>meteo-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
         </dependency>
     </dependencies>
 
