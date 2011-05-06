@@ -34,9 +34,15 @@
             <artifactId>meteo-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>no.api.opensource.meteo</groupId>
+            <artifactId>meteo-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>

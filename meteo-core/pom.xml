@@ -22,5 +22,10 @@
             <groupId>net.sf.oval</groupId>
             <artifactId>oval</artifactId>
         </dependency>
+          <dependency>
+            <groupId>no.api.opensource.meteo</groupId>
+            <artifactId>meteo-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
