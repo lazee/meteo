@@ -25,7 +25,7 @@ import java.io.StringReader;
 
 public class XppUtils {
 
-    public static XmlPullParser createNewPullParser(String data) {
+    public static XmlPullParser createNewPullParser(String data) throws MeteoException {
         try {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(false); // TODO Consider true here
