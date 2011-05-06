@@ -16,8 +16,10 @@
 
 package no.api.meteo.services;
 
+import no.api.meteo.MeteoException;
 import no.api.meteo.entity.Coordinates;
 import no.api.meteo.service.locationforecastlts.entity.PointForecast;
+import no.api.meteo.services.entity.MeteoForecastPair;
 
 import java.util.List;
 
@@ -26,5 +28,5 @@ import java.util.List;
  */
 public interface MeteoServicesManager {
 
-    List<PointForecast> fetchPointForecastsByHour(int hours, Coordinates coordinates);
+    List<MeteoForecastPair> fetchPointForecastsByHour(int hours, Coordinates coordinates) throws MeteoException;
 }

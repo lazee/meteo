@@ -20,15 +20,10 @@ import no.api.meteo.MeteoException;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.entity.Coordinates;
-import no.api.meteo.entity.MeteoData;
 import no.api.meteo.examples.AbstractExample;
-import no.api.meteo.service.locationforecastlts.LocationforecastLTSService;
-import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
-import no.api.meteo.service.locationforecastlts.entity.Model;
-import no.api.meteo.services.MeteoServiceManagerImpl;
+import no.api.meteo.services.MeteoServicesManagerImpl;
 import no.api.meteo.services.MeteoServicesManager;
 import no.api.meteo.services.entity.MeteoForecastPair;
-import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,7 +49,7 @@ public class ForecastsByHourExample extends AbstractExample {
     public ForecastsByHourExample() {
         configureLog("INFO");
         meteoClient = new DefaultMeteoClient();
-        servicesManager = new MeteoServiceManagerImpl(meteoClient);
+        servicesManager = new MeteoServicesManagerImpl(meteoClient);
     }
 
     public void runExample() {
