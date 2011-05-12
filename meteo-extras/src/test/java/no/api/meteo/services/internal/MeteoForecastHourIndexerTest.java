@@ -63,7 +63,7 @@ public class MeteoForecastHourIndexerTest {
         Assert.assertNull(indexer.getTightestFitPeriodForecast(null));
         PointForecast pointForecast = (PointForecast) locationForecast.getForecasts().get(12);
         Assert.assertNotNull(pointForecast);
-        MeteoForecastHourIndexer.ScoreForecast matchingScoreForecast =
+        ScoreForecast matchingScoreForecast =
                 indexer.getTightestFitScoreForecast(new DateTime(pointForecast.getFromTime()));
         Assert.assertNotNull(matchingScoreForecast);
         Assert.assertEquals(1, matchingScoreForecast.getTightScore());
@@ -78,7 +78,7 @@ public class MeteoForecastHourIndexerTest {
         Assert.assertNull(indexer.getWidestFitPeriodForecast(null));
         PointForecast pointForecast = (PointForecast) locationForecast.getForecasts().get(12);
         Assert.assertNotNull(pointForecast);
-        MeteoForecastHourIndexer.ScoreForecast matchingScoreForecast = indexer.getWidestFitScoreForecast(new DateTime(pointForecast.getFromTime()));
+        ScoreForecast matchingScoreForecast = indexer.getWidestFitScoreForecast(new DateTime(pointForecast.getFromTime()));
         Assert.assertNotNull(matchingScoreForecast);
         PeriodForecast periodForecast = indexer.getWidestFitPeriodForecast(new DateTime(pointForecast.getFromTime()));
         Assert.assertNotNull(periodForecast);

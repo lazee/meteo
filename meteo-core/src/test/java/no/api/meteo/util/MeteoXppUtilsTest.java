@@ -66,7 +66,7 @@ public class MeteoXppUtilsTest {
                     Assert.assertNull(MeteoXppUtils.getDoubleAttributeValue(xpp, "foo"));
                     // Boolean
                     Assert.assertEquals(Boolean.TRUE, MeteoXppUtils.getBooleanAttributeValue(xpp, "boolean"));
-                    Assert.assertNull(MeteoXppUtils.getBooleanAttributeValue(xpp, "foo"));
+                    Assert.assertFalse(MeteoXppUtils.getBooleanAttributeValue(xpp, "foo"));
                     // Simple date
                     Date simpleDate = MeteoXppUtils.getSimpleDateAttributeValue(xpp, "simple");
                     Assert.assertNull(MeteoXppUtils.getSimpleDateAttributeValue(xpp, "foo"));
