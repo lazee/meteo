@@ -74,28 +74,28 @@ public class MeteoForecastHourIndexer {
     }
 
     /*
-     * Find the period forecast that is the tightest fit for a point forecast.
-     *
-     * <p>We use two rules to decide what the "tightest fit" is. First we look at the time span within a PeriodForecast.
-     * Secondly we look at the distance from the start of the PeriodForecast to the PointForecast. The sum of these two
-     * numbers gives a tightScore. The period forecast with the lowest tightScore is considered to be the tightest
-     * fit.</p>
-     *
-     * <h3>Example</h3>
-     *
-     * <p>Lets says we have a PeriodForecast with fromTime set to 12:00 PM and toTime set to 04:00 PM. This gives us a 4
-     * hour span.</p>
-     *
-     * <pre>
-     *  12:00 PM.................................................................................04:00 PM
-     *
-     *  12:00 PM...............01:00 PM
-     * </pre>
-     *
-     * <p>Then we have a PointForecast for 01:00 PM. The distance from 01:00 PM to 12:00 PM is 1 hour. When we add the
-     * span (4) and the distance (1) we get the tightScore (5).</p>
-     *
-     */
+    * Find the period forecast that is the tightest fit for a point forecast.
+    *
+    * <p>We use two rules to decide what the "tightest fit" is. First we look at the time span within a PeriodForecast.
+    * Secondly we look at the distance from the start of the PeriodForecast to the PointForecast. The sum of these two
+    * numbers gives a tightScore. The period forecast with the lowest tightScore is considered to be the tightest
+    * fit.</p>
+    *
+    * <h3>Example</h3>
+    *
+    * <p>Lets says we have a PeriodForecast with fromTime set to 12:00 PM and toTime set to 04:00 PM. This gives us a 4
+    * hour span.</p>
+    *
+    * <pre>
+    *  12:00 PM.................................................................................04:00 PM
+    *
+    *  12:00 PM...............01:00 PM
+    * </pre>
+    *
+    * <p>Then we have a PointForecast for 01:00 PM. The distance from 01:00 PM to 12:00 PM is 1 hour. When we add the
+    * span (4) and the distance (1) we get the tightScore (5).</p>
+    *
+    */
     public PeriodForecast getTightestFitPeriodForecast(DateTime from) {
         ScoreForecast scoreForecast = getTightestFitScoreForecast(from);
         if (scoreForecast == null) {
@@ -109,12 +109,12 @@ public class MeteoForecastHourIndexer {
     }
 
     /*
-     * Find the period forecast that is the widest fit for a point forecast.
-     *
-     * <p>We use the exact same kind of logic to find the widest fit as we do for the tightest fit. The only change is
-     * that we invert the span tightScore. Meaning that a large span will tightScore lower than a small span</p>
-     *
-     */
+    * Find the period forecast that is the widest fit for a point forecast.
+    *
+    * <p>We use the exact same kind of logic to find the widest fit as we do for the tightest fit. The only change is
+    * that we invert the span tightScore. Meaning that a large span will tightScore lower than a small span</p>
+    *
+    */
     public PeriodForecast getWidestFitPeriodForecast(DateTime from) {
         ScoreForecast scoreForecast = getWidestFitScoreForecast(from);
         if (scoreForecast == null) {
@@ -172,7 +172,8 @@ public class MeteoForecastHourIndexer {
 
     private int calculateScore(PeriodForecast periodForecast, PeriodIndexKey periodIndexKey, int spanWeight) {
         DateTime periodFromTime = new DateTime(periodForecast.getFromTime());
-        return (Hours.hoursBetween(periodFromTime, new DateTime(periodForecast.getToTime())).getHours() * spanWeight) +
+        return (Hours.hoursBetween(periodFromTime, new DateTime(periodForecast.getToTime())).getHours() *
+                spanWeight) +
                 Hours.hoursBetween(periodFromTime, periodIndexKey.getDateTime()).getHours();
     }
 
@@ -205,5 +206,5 @@ public class MeteoForecastHourIndexer {
         return new PeriodIndexKey(pointInTime);
     }
 
-    
+
 }

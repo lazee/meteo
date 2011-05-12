@@ -26,7 +26,7 @@ public class ScoreForecast {
 
     private int wideScore;
 
-    ScoreForecast(PeriodForecast periodForecast, int tightScore, int wideScore) {
+    public ScoreForecast(PeriodForecast periodForecast, int tightScore, int wideScore) {
         this.periodForecast = periodForecast;
         this.tightScore = tightScore;
         this.wideScore = wideScore;

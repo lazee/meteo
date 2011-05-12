@@ -32,7 +32,7 @@ public class PeriodIndexKey {
 
     private int hour;
 
-    PeriodIndexKey(DateTime dateTime) {
+    public PeriodIndexKey(DateTime dateTime) {
         this.dateTime = dateTime;
         day = dateTime.getDayOfMonth();
         month = dateTime.getMonthOfYear();
