@@ -41,12 +41,11 @@ public class LocationServlet extends HttpServlet {
 
     private static final Logger log = LoggerFactory.getLogger(LocationServlet.class);
 
-    private MeteoClient meteoClient;
+    private static final MeteoClient METEO_CLIENT = new DefaultMeteoClient();
 
+    public static final int HOURS_24 = 24;
 
-    public LocationServlet() {
-        meteoClient = new DefaultMeteoClient();
-    }
+    public static final int TWELVE_O_CLOCK = 12;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -62,15 +61,15 @@ public class LocationServlet extends HttpServlet {
 
             try {
                 LocationForecastHelper
-                        helper = LocationForecastHelper.createInstance(meteoClient, longitude, latitude, altitude);
+                        helper = LocationForecastHelper.createInstance(METEO_CLIENT, longitude, latitude, altitude);
                 helper.fetch();
                 
                 req.setAttribute("data", helper.getMeteoData().getResult());
                 req.setAttribute("raw", helper.getMeteoData().getRawResult());
-                List<MeteoExtrasForecast> last24 = helper.getPointForecastsByHour(24);
+                List<MeteoExtrasForecast> last24 = helper.getPointForecastsByHour(HOURS_24);
                 req.setAttribute("last24", last24);
                 DateTime firstDate = new DateTime();
-                firstDate = firstDate.withHourOfDay(12).withMinuteOfHour(0).withSecondOfMinute(0);
+                firstDate = firstDate.withHourOfDay(TWELVE_O_CLOCK).withMinuteOfHour(0).withSecondOfMinute(0);
 
                 MeteoExtrasForecast todayForecast = helper.getNearestForecast(firstDate.toDate());
                 req.setAttribute("today", todayForecast);

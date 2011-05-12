@@ -27,6 +27,7 @@ import no.api.meteo.service.sunrise.entity.PhaseType;
 import no.api.meteo.service.sunrise.entity.Sun;
 import no.api.meteo.service.sunrise.entity.Sunrise;
 import no.api.meteo.service.sunrise.entity.SunriseDate;
+import no.api.meteo.util.MeteoConstants;
 import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.util.MeteoXppUtils;
 import org.slf4j.Logger;
@@ -54,6 +55,8 @@ import static no.api.meteo.util.MeteoXppUtils.getSimpleDateAttributeValue;
 
 public class SunriseParser implements MeteoDataParser<Sunrise> {
 
+    private static final String COULD_NOT_CONVERT_DATE_FROM_XML = "Could not convert date from xml";
+
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override
@@ -70,7 +73,7 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
                 } else if (eventType == XmlPullParser.END_TAG) {
                     handleEndTags(sunrise, xpp, stack);
                 } else {
-                    // Skipping eveything else in the document
+                    log.trace("Skipping event type : " + eventType);
                 }
                 eventType = xpp.next();
             }
@@ -82,7 +85,7 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
         }
     }
 
-    private void handleStartTags(Sunrise sunrise, XmlPullParser xpp, Stack<SunriseDate> stack) {
+    private void handleStartTags(Sunrise sunrise, XmlPullParser xpp, Stack<SunriseDate> stack) { // NOSONAR The complexity is quit alright :)
         String n = xpp.getName();
         if (TAG_META.equals(n)) {
             Meta meta = new Meta();
@@ -97,7 +100,7 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
             try {
                 sunriseDate.setDate(getSimpleDateAttributeValue(xpp, ATTR_DATE));
             } catch (MeteoException e) {
-                log.warn("Could not convert date from xml", e);
+                log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
             }
             stack.push(sunriseDate);
         } else if (TAG_LOCATION.equals(n)) {
@@ -105,48 +108,50 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
                 sunrise.setLocation(new Location(getDoubleAttributeValue(xpp, ATTR_LONGITUDE),
                         getDoubleAttributeValue(xpp, ATTR_LATITUDE), null));
             } else {
-                // Skipping locations since it is already added.
+                log.trace("Skipping locations since it is already added.");
             }
-        } else if ("sun".equals(n)) {
+        } else if (MeteoConstants.TAG_SUN.equals(n)) {
             SunriseDate sunriseDate = stack.peek();
             Sun sun = new Sun();
-            sun.setDaylength(getDoubleAttributeValue(xpp, "daylength"));
+            sun.setDaylength(getDoubleAttributeValue(xpp, MeteoConstants.ATTR_DAYLENGTH));
             try {
-                sun.setRise(getDateAttributeValue(xpp, "rise"));
-                sun.setSet(getDateAttributeValue(xpp, "set"));
+                sun.setRise(getDateAttributeValue(xpp, MeteoConstants.ATTR_RISE));
+                sun.setSet(getDateAttributeValue(xpp, MeteoConstants.ATTR_SET));
             } catch (MeteoException e) {
-                log.warn("Could not convert date from xml", e);
+                log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
             }
-            sun.setNeverRise(getBooleanAttributeValue(xpp, "never_rise"));
-            sun.setNeverSet(getBooleanAttributeValue(xpp, "never_set"));
+            sun.setNeverRise(getBooleanAttributeValue(xpp, MeteoConstants.ATTR_NEVER_RISE));
+            sun.setNeverSet(getBooleanAttributeValue(xpp, MeteoConstants.ATTR_NEVER_SET));
             sunriseDate.setSun(sun);
-        } else if ("noon".equals(n)) {
+        } else if (MeteoConstants.TAG_NOON.equals(n)) {
             SunriseDate sunriseDate = stack.peek();
             Noon noon = new Noon();
             noon.setAltitude(getDoubleAttributeValue(xpp, ATTR_ALTITUDE));
-            noon.setDirection(getDoubleAttributeValue(xpp, "direction"));
+            noon.setDirection(getDoubleAttributeValue(xpp, MeteoConstants.ATTR_DIRECTION));
             try {
-                noon.setTime(getDateAttributeValue(xpp, "time"));
+                noon.setTime(getDateAttributeValue(xpp, MeteoConstants.TIME));
             } catch (MeteoException e) {
-                log.warn("Could not convert date from xml", e);
+                log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
             }
             sunriseDate.getSun().getNoon().add(noon);
         } else if ("error".equals(n)) {
             // FIXME Not implemented yet
+            log.trace("Got error tag. This is not implemented yet");
         } else if ("twilight".equals(n)) {
             // FIXME Not implemented yet
+            log.trace("Got twilight tag. This is not implemented yet");
         } else if ("moon".equals(n)) {
             SunriseDate sunriseDate = stack.peek();
             Moon moon = new Moon();
             try {
-                moon.setRise(getDateAttributeValue(xpp, "rise"));
-                moon.setSet(getDateAttributeValue(xpp, "set"));
+                moon.setRise(getDateAttributeValue(xpp, MeteoConstants.ATTR_RISE));
+                moon.setSet(getDateAttributeValue(xpp, MeteoConstants.ATTR_SET));
             } catch (MeteoException e) {
-                log.warn("Could not convert date from xml", e);
+                log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
             }
-            moon.setNeverRise(getBooleanAttributeValue(xpp, "never_rise"));
-            moon.setNeverSet(getBooleanAttributeValue(xpp, "never_set"));
-            moon.setPhase(PhaseType.findByValue(getAttributeValue(xpp, "phase")));
+            moon.setNeverRise(getBooleanAttributeValue(xpp, MeteoConstants.ATTR_NEVER_RISE));
+            moon.setNeverSet(getBooleanAttributeValue(xpp, MeteoConstants.ATTR_NEVER_SET));
+            moon.setPhase(PhaseType.findByValue(getAttributeValue(xpp, MeteoConstants.ATTR_PHASE)));
             sunriseDate.setMoon(moon);
         } else {
             log.trace("Unhandled start tag: " + xpp.getName());

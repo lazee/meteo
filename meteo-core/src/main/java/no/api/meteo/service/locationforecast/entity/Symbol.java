@@ -29,7 +29,7 @@ public class Symbol extends IdEntity {
 
     public Symbol(String id, Integer number) {
         setId(id);
-        setNumber(number);
+        this.number = number;
     }
 
     public Integer getNumber() {

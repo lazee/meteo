@@ -51,8 +51,8 @@ public abstract class AbstractMeteoService {
                     serviceVersion.toStringVersion()).append("/?");
 
             boolean first = true;
-            for (String s : queryParameters.keySet()) {
-                sb.append(first ? "" : "&").append(s).append("=").append(queryParameters.get(s).toString());
+            for (Map.Entry<String, Object> e : queryParameters.entrySet()) {
+                sb.append(first ? "" : "&").append(e.getKey()).append("=").append(e.getValue().toString());
                 first = false;
             }
             return MeteoNetUtils.createUrl(sb.toString());

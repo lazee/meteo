@@ -19,7 +19,27 @@ package no.api.meteo.util;
 /**
  * Internal constants in use by Meteo.
  */
-public class MeteoConstants {
+public final class MeteoConstants {
+
+    public static final String TAG_SUN = "sun";
+
+    public static final String ATTR_DAYLENGTH = "daylength";
+
+    public static final String ATTR_RISE = "rise";
+
+    public static final String ATTR_SET = "set";
+
+    public static final String ATTR_NEVER_RISE = "never_rise";
+
+    public static final String ATTR_NEVER_SET = "never_set";
+
+    public static final String ATTR_DIRECTION = "direction";
+
+    public static final String TIME = "time";
+
+    public static final String TAG_NOON = "noon";
+
+    public static final String ATTR_PHASE = "phase";
 
     private MeteoConstants() {
         // Intentional

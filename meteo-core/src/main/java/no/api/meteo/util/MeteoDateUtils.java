@@ -27,24 +27,24 @@ import java.util.TimeZone;
 /**
  * Util class for dealing with different date issues in Meteo.
  */
-public class MeteoDateUtils {
+public final class MeteoDateUtils {
 
-    private static final DateFormat yyyyMMdd = new SimpleDateFormat("yyyy-MM-dd");
+    private static final String YYYYMMDD = "yyyy-MM-dd";
 
-    private static final DateFormat hhMM = new SimpleDateFormat("HH:mm");
+    private static final String HHMM = "HH:mm";
 
-    private static final DateFormat fullFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    private static final String FULLFORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
     private MeteoDateUtils() {
         // Intentional
     }
 
     public static Date fullFormatToDate(String dateStr) throws MeteoException {
-        return stringToDate(fullFormat, dateStr);
+        return stringToDate(new SimpleDateFormat(FULLFORMAT), dateStr);
     }
 
     public static Date yyyyMMddToDate(String dateStr) throws MeteoException {
-        return stringToDate(yyyyMMdd, dateStr);
+        return stringToDate(new SimpleDateFormat(YYYYMMDD), dateStr);
     }
 
     private static Date stringToDate(DateFormat format, String dateStr) throws MeteoException {
@@ -55,7 +55,7 @@ public class MeteoDateUtils {
         try {
             return format.parse(dateStr);
         } catch (ParseException e) {
-            throw new MeteoException("Could not parse the date : " + dateStr);
+            throw new MeteoException("Could not parse the date : " + dateStr, e);
         }
     }
 
@@ -71,13 +71,13 @@ public class MeteoDateUtils {
         if (date == null) {
             return null;
         }
-        return yyyyMMdd.format(date);
+        return (new SimpleDateFormat(YYYYMMDD)).format(date);
     }
 
     public static String dateToHHmm(Date date) {
         if (date == null) {
             return null;
         }
-        return hhMM.format(date);
+        return (new SimpleDateFormat(HHMM)).format(date);
     }
 }

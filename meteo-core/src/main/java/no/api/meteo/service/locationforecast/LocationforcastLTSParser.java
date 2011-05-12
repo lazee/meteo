@@ -114,7 +114,7 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
                 } else if (eventType == XmlPullParser.END_TAG) {
                     handleEndTags(locationForecast, xpp, stack);
                 } else {
-                    // Skipping everything else in the document.
+                    log.trace("Skipping event type : " + eventType);
                 }
                 eventType = xpp.next();
             }
@@ -126,7 +126,7 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
         }
     }
 
-    private void handleStartTags(LocationForecast locationForecast, XmlPullParser xpp, Stack<Forecast> stack) {
+    private void handleStartTags(LocationForecast locationForecast, XmlPullParser xpp, Stack<Forecast> stack) { // NOSONAR The complexity is quit alright :)
         String n = xpp.getName();
         if (TAG_WEATHERDATA.equals(n)) {
             handleWeatherDataTag(locationForecast, xpp);
@@ -136,7 +136,7 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
             if (locationForecast.getLocation() == null) {
                 handleLocationDataTag(locationForecast, xpp);
             } else {
-                // Skipping locations since it is already added.
+                log.trace("Skipping locations since it is already added.");
             }
         } else if (TAG_PRECIPITATION.equals(n)) {
             switchStackedObjectToPeriodForecastIfPeriodForecast(stack);

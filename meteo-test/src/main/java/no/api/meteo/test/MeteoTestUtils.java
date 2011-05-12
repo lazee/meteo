@@ -25,7 +25,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
-public class MeteoTestUtils {
+public final class MeteoTestUtils {
 
     private static Logger log = LoggerFactory.getLogger(MeteoTestUtils.class);
 
@@ -44,15 +44,36 @@ public class MeteoTestUtils {
         }
         StringBuilder stringBuilder = new StringBuilder();
         String str;
+        BufferedReader in = null;
+        InputStreamReader reader = null;
         try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream, "UTF8"));
-            while ((str = in.readLine()) != null) {
+            reader = new InputStreamReader(inputStream, "UTF8");
+            in = new BufferedReader(reader);
+            str = in.readLine();
+            while (str != null) {
                 stringBuilder.append(str + "\n");
+                str = in.readLine();
             }
         } catch (UnsupportedEncodingException e) {
             throw new MeteoTestException(e);
         } catch (IOException e) {
             throw new MeteoTestException(e);
+        } finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                log.error("Could not close inputstream");
+            }
+            try {
+                in.close();
+            } catch (IOException e) {
+                log.error("Could not close buffered reader");
+            }
+            try {
+                reader.close();
+            } catch (IOException e) {
+                log.error("Could not close input stream reader");
+            }
         }
         return stringBuilder.toString().substring(0, stringBuilder.toString().length() - 1);
     }

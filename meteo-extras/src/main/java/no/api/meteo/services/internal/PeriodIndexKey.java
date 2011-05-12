@@ -20,6 +20,8 @@ import org.joda.time.DateTime;
 
 public class PeriodIndexKey {
 
+    public static final int HASH_NUMBER = 31;
+
     private DateTime dateTime;
 
     private int day;
@@ -72,9 +74,9 @@ public class PeriodIndexKey {
     @Override
     public int hashCode() {
         int result = day;
-        result = 31 * result + month;
-        result = 31 * result + year;
-        result = 31 * result + hour;
+        result = HASH_NUMBER * result + month;
+        result = HASH_NUMBER * result + year;
+        result = HASH_NUMBER * result + hour;
         return result;
     }
 

@@ -38,6 +38,10 @@ public class ForecastsByHourExample extends AbstractExample {
 
     private static final Logger log = LoggerFactory.getLogger(ForecastsByHourExample.class);
 
+    public static final int HOURS = 10;
+
+    public static final int TWELVE_O_CLOCK = 12;
+
     private MeteoClient meteoClient;
 
     public ForecastsByHourExample() {
@@ -50,14 +54,14 @@ public class ForecastsByHourExample extends AbstractExample {
             LocationForecastHelper locationForecastHelper =
                     LocationForecastHelper.createInstance(meteoClient, LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
             locationForecastHelper.fetch();
-            List<MeteoExtrasForecast> list = locationForecastHelper.getPointForecastsByHour(10);
+            List<MeteoExtrasForecast> list = locationForecastHelper.getPointForecastsByHour(HOURS);
 
-            //log.info("Got " + list.size() + " forecasts.");
+            log.info("Got " + list.size() + " forecasts.");
             for (MeteoExtrasForecast extras : list) {
-                //prettyLogPeriodForecast(extras.getPeriodForecast());
+                prettyLogPeriodForecast(extras.getPeriodForecast());
             }
             DateTime dateTime = new DateTime();
-            dateTime = dateTime.withHourOfDay(12).withMinuteOfHour(0).withSecondOfMinute(0);
+            dateTime = dateTime.withHourOfDay(TWELVE_O_CLOCK).withMinuteOfHour(0).withSecondOfMinute(0);
             locationForecastHelper.getNearestForecast(dateTime.plusDays(2).toDate());
 
         } catch (MeteoException e) {

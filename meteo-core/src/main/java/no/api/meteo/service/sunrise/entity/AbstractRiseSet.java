@@ -25,19 +25,19 @@ public abstract class AbstractRiseSet {
     private Date set;
 
     public Date getRise() {
-        return rise;
+        return (rise == null ? null : (Date) rise.clone());
     }
 
     public void setRise(Date rise) {
-        this.rise = rise;
+        this.rise = (rise == null ? null : (Date) rise.clone());
     }
 
     public Date getSet() {
-        return set;
+        return (set == null ? null : (Date) set.clone());
     }
 
     public void setSet(Date set) {
-        this.set = set;
+        this.set = (set == null ? null : (Date) set.clone());
     }
 
 }

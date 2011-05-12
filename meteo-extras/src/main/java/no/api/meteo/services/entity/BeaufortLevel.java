@@ -200,9 +200,9 @@ public enum BeaufortLevel {
 
     private int id;
 
-    private String name_en;
+    private String nameEN;
 
-    private String name_no;
+    private String nameNO;
 
     private BeaufortRange ms;
 
@@ -210,9 +210,9 @@ public enum BeaufortLevel {
 
     private BeaufortRange kn;
 
-    BeaufortLevel(int id, String name_en, String name_no, BeaufortRange ms, BeaufortRange kmh, BeaufortRange kn) {
-        this.name_en = name_en;
-        this.name_no = name_no;
+    BeaufortLevel(int id, String nameEN, String nameNO, BeaufortRange ms, BeaufortRange kmh, BeaufortRange kn) {
+        this.nameEN = nameEN;
+        this.nameNO = nameNO;
         this.id = id;
         this.ms = ms;
         this.kmh = kmh;
@@ -251,8 +251,8 @@ public enum BeaufortLevel {
      *
      * @return The name of the unit.
      */
-    public String getName_en() {
-        return name_en;
+    public String getNameEN() {
+        return nameEN;
     }
 
     /**
@@ -260,8 +260,8 @@ public enum BeaufortLevel {
      *
      * @return The name of the unit.
      */
-    public String getName_no() {
-        return name_no;
+    public String getNameNO() {
+        return nameNO;
     }
 
     /**

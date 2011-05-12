@@ -27,18 +27,12 @@ import no.api.meteo.service.locationforecast.entity.PointForecast;
 import no.api.meteo.services.entity.MeteoExtrasForecast;
 import no.api.meteo.services.internal.MeteoForecastHourIndexer;
 import org.joda.time.DateTime;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class LocationForecastHelper {
-
-    private Logger log = LoggerFactory.getLogger(this.getClass());
-
-    private MeteoClient meteoClient;
+public final class LocationForecastHelper {
 
     private double longitude;
 
@@ -53,7 +47,6 @@ public class LocationForecastHelper {
     private MeteoForecastHourIndexer indexer = null;
 
     private LocationForecastHelper(MeteoClient meteoClient, double longitude, double latitude, double altitude) {
-        this.meteoClient = meteoClient;
         this.longitude = longitude;
         this.latitude = latitude;
         this.altitude = altitude;
@@ -62,10 +55,7 @@ public class LocationForecastHelper {
 
     public static LocationForecastHelper createInstance
             (MeteoClient meteoClient, double longitude, double latitude, double altitude) {
-
-        LocationForecastHelper
-                locationForecastHelper = new LocationForecastHelper(meteoClient, longitude, latitude, altitude);
-        return locationForecastHelper;
+        return new LocationForecastHelper(meteoClient, longitude, latitude, altitude);
     }
 
     public MeteoData<LocationForecast> getMeteoData() {

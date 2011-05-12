@@ -24,7 +24,7 @@ import java.net.URL;
 /**
  * Util class for dealing with different net issues.
  */
-public class MeteoNetUtils {
+public final class MeteoNetUtils {
 
     private MeteoNetUtils() {
         // Intentional

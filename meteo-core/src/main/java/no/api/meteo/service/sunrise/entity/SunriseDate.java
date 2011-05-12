@@ -27,11 +27,11 @@ public class SunriseDate {
     private Moon moon;
 
     public Date getDate() {
-        return date;
+        return (date == null ? null : (Date) date.clone());
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.date = (date == null ? null : (Date) date.clone());
     }
 
     public Moon getMoon() {

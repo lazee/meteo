@@ -14,33 +14,33 @@
  * limitations under the License.
  */
 
-package no.api.meteo.service.entity;
+package no.api.meteo.services.internal;
 
-import net.sf.oval.constraint.NotNull;
-import no.api.meteo.service.locationforecast.entity.Meta;
+import no.api.meteo.service.locationforecast.entity.PeriodForecast;
 
-import java.util.Date;
+public class ScoreForecast {
 
-public abstract class RootEntity {
+    private PeriodForecast periodForecast;
 
-    @NotNull
-    private Date created;
+    private int tightScore;
 
-    private Meta meta;
+    private int wideScore;
 
-    public Date getCreated() {
-        return (created == null ? null : (Date) created.clone());
+    ScoreForecast(PeriodForecast periodForecast, int tightScore, int wideScore) {
+        this.periodForecast = periodForecast;
+        this.tightScore = tightScore;
+        this.wideScore = wideScore;
     }
 
-    public void setCreated(Date created) {
-        this.created = (created == null ? null : (Date) created.clone());
+    public PeriodForecast getPeriodForecast() {
+        return periodForecast;
     }
 
-    public Meta getMeta() {
-        return meta;
+    public int getTightScore() {
+        return tightScore;
     }
 
-    public void setMeta(Meta meta) {
-        this.meta = meta;
+    public int getWideScore() {
+        return wideScore;
     }
 }

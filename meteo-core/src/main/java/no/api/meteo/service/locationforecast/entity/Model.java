@@ -18,9 +18,6 @@ package no.api.meteo.service.locationforecast.entity;
 
 import java.util.Date;
 
-/**
- *
- */
 public class Model {
 
     private Date to;
@@ -36,11 +33,11 @@ public class Model {
     private String name;
 
     public Date getFrom() {
-        return from;
+        return (from == null ? null : (Date) from.clone());
     }
 
     public void setFrom(Date from) {
-        this.from = from;
+        this.from = (from == null ? null : (Date) from.clone());
     }
 
     public String getName() {
@@ -52,34 +49,34 @@ public class Model {
     }
 
     public Date getNextRun() {
-        return nextRun;
+        return (nextRun == null ? null : (Date) nextRun.clone());
     }
 
     public void setNextRun(Date nextRun) {
-        this.nextRun = nextRun;
+        this.nextRun = (nextRun == null ? null : (Date) nextRun.clone());
     }
 
     public Date getRunEnded() {
-        return runEnded;
+        return (runEnded == null ? null : (Date) runEnded.clone());
     }
 
     public void setRunEnded(Date runEnded) {
-        this.runEnded = runEnded;
+        this.runEnded = (runEnded == null ? null : (Date) runEnded.clone());
     }
 
     public Date getTermin() {
-        return termin;
+        return (termin == null ? null : (Date) termin.clone());
     }
 
     public void setTermin(Date termin) {
-        this.termin = termin;
+        this.termin = (termin == null ? null : (Date) termin.clone());
     }
 
     public Date getTo() {
-        return to;
+        return (to == null ? null : (Date) to.clone());
     }
 
     public void setTo(Date to) {
-        this.to = to;
+        this.to = (to == null ? null : (Date) to.clone());
     }
 }

@@ -20,7 +20,7 @@ import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.service.entity.IdEntity;
 
-public class WindSpeed extends IdEntity {
+public final class WindSpeed extends IdEntity {
 
     @NotNull
     private Integer beaufort;
@@ -38,9 +38,9 @@ public class WindSpeed extends IdEntity {
     public WindSpeed(String id, Integer beaufort,
                      Double mps, String name) {
         setId(id);
-        setBeaufort(beaufort);
-        setMps(mps);
-        setName(name);
+        this.beaufort = beaufort;
+        this.mps = mps;
+        this.name = name;
     }
 
     public Integer getBeaufort() {

@@ -24,7 +24,7 @@ import java.text.DecimalFormat;
 /**
  * Class that helps getting extra information about wind speed.
  */
-public class WindSymbolHelper {
+public final class WindSymbolHelper {
 
     private static DecimalFormat idFormat = new DecimalFormat("00");
 

@@ -16,9 +16,6 @@
 
 package no.api.meteo.service.locationforecast.entity;
 
-/**
- *
- */
 public interface Forecast {
 
 }

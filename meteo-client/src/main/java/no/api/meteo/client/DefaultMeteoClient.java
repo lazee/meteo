@@ -24,6 +24,10 @@ import java.util.concurrent.TimeUnit;
 
 public class DefaultMeteoClient implements MeteoClient {
 
+    public static final int MAXIMUM_CONTENT_LENGTH = 1024000;
+
+    public static final String CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT = "Caught exception while fetching content";
+
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     private DefaultHttpClient httpClient;
@@ -65,7 +69,7 @@ public class DefaultMeteoClient implements MeteoClient {
 
             if (entity != null) {
                 long len = entity.getContentLength();
-                if (len != -1 && len < 1024000) {
+                if (len != -1 && len < MAXIMUM_CONTENT_LENGTH) {
                     return new MeteoResponse(EntityUtils.toString(entity), createMeteoResponseHeaders(response));
                 } else {
                     throw new MeteoClientException("The returned content exceeds the data limit of 1024000 bytes.");
@@ -74,11 +78,11 @@ public class DefaultMeteoClient implements MeteoClient {
                 throw new MeteoClientException("No content returned from request: " + url.toString());
             }
         } catch (URISyntaxException e) {
-            throw new MeteoClientException("Caught exception while fetching content", e);
+            throw new MeteoClientException(CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT, e);
         } catch (ClientProtocolException e) {
-            throw new MeteoClientException("Caught exception while fetching content", e);
+            throw new MeteoClientException(CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT, e);
         } catch (IOException e) {
-            throw new MeteoClientException("Caught exception while fetching content", e);
+            throw new MeteoClientException(CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT, e);
         } finally {
             httpClient.getConnectionManager().closeExpiredConnections();
         }

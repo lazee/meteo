@@ -18,7 +18,7 @@ package no.api.meteo.service.locationforecast.entity;
 
 import net.sf.oval.constraint.NotNull;
 
-public class Precipitation extends UnitEntity {
+public final class Precipitation extends UnitEntity {
 
     @NotNull
     private Double minValue;

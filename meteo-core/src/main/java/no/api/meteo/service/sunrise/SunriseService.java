@@ -41,12 +41,12 @@ public class SunriseService extends AbstractMeteoService {
 
     private static final String MET_SERVICE_NAME = "sunrise";
 
-    private static final MeteoServiceVersion version = new MeteoServiceVersion(1, 0);
+    private static final MeteoServiceVersion VERSION = new MeteoServiceVersion(1, 0);
 
     private MeteoDataParser<Sunrise> parser;
 
     public SunriseService(MeteoClient meteoClient) {
-        super(meteoClient, MET_SERVICE_NAME, version);
+        super(meteoClient, MET_SERVICE_NAME, VERSION);
         parser = new SunriseParser();
     }
 

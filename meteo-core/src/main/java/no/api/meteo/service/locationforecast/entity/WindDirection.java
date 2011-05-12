@@ -20,7 +20,7 @@ import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.service.entity.IdEntity;
 
-public class WindDirection extends IdEntity {
+public final class WindDirection extends IdEntity {
 
     @NotNull
     @NotEmpty
@@ -34,8 +34,8 @@ public class WindDirection extends IdEntity {
 
     public WindDirection(String id, String name, Double deg) {
         setId(id);
-        setName(name);
-        setDeg(deg);
+        this.name = name;
+        this.deg = deg;
     }
 
     public String getName() {

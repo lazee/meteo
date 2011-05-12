@@ -29,7 +29,7 @@ import java.util.Date;
 /**
  * Util class for simplifying different XPP tasks.
  */
-public class MeteoXppUtils {
+public final class MeteoXppUtils {
 
     private static Logger log = LoggerFactory.getLogger(MeteoXppUtils.class);
 
@@ -44,7 +44,7 @@ public class MeteoXppUtils {
             xpp.setInput(new StringReader(data));
             return xpp;
         } catch (XmlPullParserException e) {
-            throw new MeteoException("Could not create XmlPullParser instance.");
+            throw new MeteoException("Could not create XmlPullParser instance.", e);
         }
     }
 
@@ -69,7 +69,7 @@ public class MeteoXppUtils {
     public static Boolean getBooleanAttributeValue(XmlPullParser xpp, String name) {
         String v = getAttributeValue(xpp, name);
         if (v == null) {
-            return null;
+            return false;
         }
         return Boolean.parseBoolean(v);
     }

@@ -20,9 +20,6 @@ import net.sf.oval.constraint.NotNull;
 
 import java.util.Date;
 
-/**
- *
- */
 public class AbstractForecast {
 
     @NotNull
@@ -32,18 +29,18 @@ public class AbstractForecast {
     private Date toTime;
 
     public Date getFromTime() {
-        return fromTime;
+        return (fromTime == null ? null : (Date) fromTime.clone());
     }
 
     public void setFromTime(Date fromTime) {
-        this.fromTime = fromTime;
+        this.fromTime = (fromTime == null ? null : (Date) fromTime.clone());
     }
 
     public Date getToTime() {
-        return toTime;
+        return (toTime == null ? null : (Date) toTime.clone());
     }
 
     public void setToTime(Date toTime) {
-        this.toTime = toTime;
+        this.toTime = (toTime == null ? null : (Date) toTime.clone());
     }
 }

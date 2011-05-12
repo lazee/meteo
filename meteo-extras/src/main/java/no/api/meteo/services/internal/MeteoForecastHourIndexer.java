@@ -205,30 +205,5 @@ public class MeteoForecastHourIndexer {
         return new PeriodIndexKey(pointInTime);
     }
 
-    protected class ScoreForecast {
-
-        private PeriodForecast periodForecast;
-
-        private int tightScore;
-
-        private int wideScore;
-
-        ScoreForecast(PeriodForecast periodForecast, int tightScore, int wideScore) {
-            this.periodForecast = periodForecast;
-            this.tightScore = tightScore;
-            this.wideScore = wideScore;
-        }
-
-        public PeriodForecast getPeriodForecast() {
-            return periodForecast;
-        }
-
-        public int getTightScore() {
-            return tightScore;
-        }
-
-        public int getWideScore() {
-            return wideScore;
-        }
-    }
+    
 }
