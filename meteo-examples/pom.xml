@@ -13,6 +13,59 @@
     <artifactId>meteo-examples</artifactId>
     <version>0.1-SNAPSHOT</version>
 
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <scan.interval.seconds>3</scan.interval.seconds>
+            </properties>
+        </profile>
+        <profile>
+            <id>jrebel</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>jrebel</value>
+                </property>
+            </activation>
+            <properties>
+                <scan.interval.seconds>0</scan.interval.seconds>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.zeroturnaround</groupId>
+                        <artifactId>jrebel-maven-plugin</artifactId>
+                        <configuration>
+                            <packaging>war</packaging>
+                            <rootPath>${project.basedir}</rootPath>
+                            <classpath>
+                                <fallback>default</fallback>
+                                <resources>
+                                    <resource>
+                                        <directory>./jetty</directory>
+                                    </resource>
+                                </resources>
+                            </classpath>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>generate-rebel-xml</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
     <build>
         <plugins>
             <plugin>
@@ -22,7 +75,7 @@
                 <configuration>
                     <webDefaultXml>jetty/webdefault.xml</webDefaultXml>
                     <jettyConfig>jetty/jetty.xml</jettyConfig>
-                    <contextPath>/tailor</contextPath>
+                    <contextPath>/</contextPath>
                     <scanIntervalSeconds>${scan.interval.seconds}</scanIntervalSeconds>
                     <connectors>
                         <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">

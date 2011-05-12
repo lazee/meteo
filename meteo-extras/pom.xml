@@ -28,6 +28,36 @@
     <groupId>no.api.opensource.meteo</groupId>
     <artifactId>meteo-extras</artifactId>
 
+    <profiles>
+        <profile>
+            <id>jrebel</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>jrebel</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.zeroturnaround</groupId>
+                        <artifactId>jrebel-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>generate-rebel-xml</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
     <dependencies>
         <dependency>
             <groupId>no.api.opensource.meteo</groupId>
@@ -38,11 +68,6 @@
             <artifactId>meteo-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-        </dependency>
-
     </dependencies>
 
 </project>

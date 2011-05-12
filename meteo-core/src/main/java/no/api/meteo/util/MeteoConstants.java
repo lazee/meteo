@@ -16,6 +16,9 @@
 
 package no.api.meteo.util;
 
+/**
+ * Internal constants in use by Meteo.
+ */
 public class MeteoConstants {
 
     private MeteoConstants() {
@@ -27,6 +30,13 @@ public class MeteoConstants {
     public static final String PARAM_LATITUDE = "lat";
 
     public static final String PARAM_ALTITUDE = "msl";
+
+    public static final String PARAM_FROM = "from";
+
+    public static final String PARAM_TO = "to";
+
+    public static final String PARAM_DATE = "date";
+
 
     public static final String TAG_META = "meta";
 
@@ -68,6 +78,8 @@ public class MeteoConstants {
 
 
     public static final String ATTR_LICENSEURL = "licenseurl";
+
+    public static final String ATTR_DATE = "date";
     
     public static final String ATTR_CREATED = "created";
 

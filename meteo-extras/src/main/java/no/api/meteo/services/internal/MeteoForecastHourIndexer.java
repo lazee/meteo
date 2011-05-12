@@ -16,9 +16,9 @@
 
 package no.api.meteo.services.internal;
 
-import no.api.meteo.service.locationforecastlts.entity.Forecast;
-import no.api.meteo.service.locationforecastlts.entity.PeriodForecast;
-import no.api.meteo.service.locationforecastlts.entity.PointForecast;
+import no.api.meteo.service.locationforecast.entity.Forecast;
+import no.api.meteo.service.locationforecast.entity.PeriodForecast;
+import no.api.meteo.service.locationforecast.entity.PointForecast;
 import org.joda.time.DateTime;
 import org.joda.time.Hours;
 
@@ -40,7 +40,7 @@ public class MeteoForecastHourIndexer {
 
     /**
      * Get the PointForecast that matches the given date.
-     * 
+     *
      * @param dateTime Date object used to find a matching PointForecast.
      * @return A matching PointForecast if found, else <code>null</code>.
      */
@@ -57,9 +57,9 @@ public class MeteoForecastHourIndexer {
         return null;
     }
 
-    public List<PeriodForecast> getMatchingPeriodForecasts(PointForecast pointForecast) {
+    public List<PeriodForecast> getMatchingPeriodForecasts(DateTime from) {
         List<PeriodForecast> periodForecasts = new ArrayList<PeriodForecast>();
-        List<ScoreForecast> scoreForecasts = getMatchingScoreForecasts(pointForecast);
+        List<ScoreForecast> scoreForecasts = getMatchingScoreForecasts(from);
         if (scoreForecasts == null) {
             return periodForecasts;
         }
@@ -69,11 +69,11 @@ public class MeteoForecastHourIndexer {
         return periodForecasts;
     }
 
-    protected List<ScoreForecast> getMatchingScoreForecasts(PointForecast pointForecast) {
-        return periodIndex.get(createIndexKeyFromDate(new DateTime(pointForecast.getFromTime())));
+    protected List<ScoreForecast> getMatchingScoreForecasts(DateTime from) {
+        return periodIndex.get(createIndexKeyFromDate(new DateTime(from)));
     }
 
-    /**
+    /*
      * Find the period forecast that is the tightest fit for a point forecast.
      *
      * <p>We use two rules to decide what the "tightest fit" is. First we look at the time span within a PeriodForecast.
@@ -95,47 +95,43 @@ public class MeteoForecastHourIndexer {
      * <p>Then we have a PointForecast for 01:00 PM. The distance from 01:00 PM to 12:00 PM is 1 hour. When we add the
      * span (4) and the distance (1) we get the tightScore (5).</p>
      *
-     * @param pointForecast A point forecast from where the system should find a matching period forecast.
-     * @return A matching period forecast or <code>null</code> if no period forecasts was found for the point forecast.
      */
-    public PeriodForecast getTightestFitPeriodForecast(PointForecast pointForecast) {
-        ScoreForecast scoreForecast = getTightestFitScoreForecast(pointForecast);
+    public PeriodForecast getTightestFitPeriodForecast(DateTime from) {
+        ScoreForecast scoreForecast = getTightestFitScoreForecast(from);
         if (scoreForecast == null) {
             return null;
         }
         return scoreForecast.getPeriodForecast();
     }
 
-    protected ScoreForecast getTightestFitScoreForecast(PointForecast pointForecast) {
-        return getXScoreForecast(pointForecast, false);
+    protected ScoreForecast getTightestFitScoreForecast(DateTime from) {
+        return getXScoreForecast(from, false);
     }
 
-    /**
+    /*
      * Find the period forecast that is the widest fit for a point forecast.
      *
      * <p>We use the exact same kind of logic to find the widest fit as we do for the tightest fit. The only change is
      * that we invert the span tightScore. Meaning that a large span will tightScore lower than a small span</p>
      *
-     * @param pointForecast
-     * @return
      */
-    public PeriodForecast getWidestFitPeriodForecast(PointForecast pointForecast) {
-        ScoreForecast scoreForecast = getTightestFitScoreForecast(pointForecast);
+    public PeriodForecast getWidestFitPeriodForecast(DateTime from) {
+        ScoreForecast scoreForecast = getWidestFitScoreForecast(from);
         if (scoreForecast == null) {
             return null;
         }
         return scoreForecast.getPeriodForecast();
     }
 
-    protected ScoreForecast getWidestFitScoreForecast(PointForecast pointForecast) {
-        return getXScoreForecast(pointForecast, true);
+    protected ScoreForecast getWidestFitScoreForecast(DateTime from) {
+        return getXScoreForecast(from, true);
     }
 
-    private ScoreForecast getXScoreForecast(PointForecast pointForecast, boolean widest) {
-        if (pointForecast == null) {
+    private ScoreForecast getXScoreForecast(DateTime from, boolean widest) {
+        if (from == null) {
             return null;
         }
-        PeriodIndexKey periodIndexKey = createIndexKeyFromDate(new DateTime(pointForecast.getFromTime()));
+        PeriodIndexKey periodIndexKey = createIndexKeyFromDate(new DateTime(from));
         List<ScoreForecast> scoreForecasts = periodIndex.get(periodIndexKey);
         if (scoreForecasts == null) {
             return null;
@@ -205,8 +201,8 @@ public class MeteoForecastHourIndexer {
         }
     }
 
-    private PeriodIndexKey createIndexKeyFromDate(DateTime dateTime) {
-        return new PeriodIndexKey(dateTime);
+    private PeriodIndexKey createIndexKeyFromDate(DateTime pointInTime) {
+        return new PeriodIndexKey(pointInTime);
     }
 
     protected class ScoreForecast {

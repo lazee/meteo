@@ -21,6 +21,9 @@ import no.api.meteo.MeteoException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Util class for dealing with different net issues.
+ */
 public class MeteoNetUtils {
 
     private MeteoNetUtils() {

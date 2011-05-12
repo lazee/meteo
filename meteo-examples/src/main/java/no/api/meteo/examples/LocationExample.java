@@ -17,15 +17,12 @@
 package no.api.meteo.examples;
 
 import no.api.meteo.MeteoException;
-import no.api.meteo.entity.MeteoData;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
-import no.api.meteo.client.MeteoClientException;
-import no.api.meteo.entity.Coordinates;
-import no.api.meteo.service.locationforecastlts.entity.Location;
-import no.api.meteo.service.locationforecastlts.entity.LocationForecast;
-import no.api.meteo.service.locationforecastlts.LocationforecastLTSService;
-import no.api.meteo.service.locationforecastlts.entity.Model;
+import no.api.meteo.client.MeteoData;
+import no.api.meteo.service.locationforecast.LocationforecastLTSService;
+import no.api.meteo.service.locationforecast.entity.LocationForecast;
+import no.api.meteo.service.locationforecast.entity.Model;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,7 +49,7 @@ public class LocationExample {
         try {
             // Fetch the data from api.met.no
 
-            return ltsService.fetchContent(new Coordinates(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO));
+            return ltsService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
         } catch (MeteoException e) {
             // Got client exception. No data available
             log.error("Caught exception : " + e.getMessage());
@@ -67,7 +64,6 @@ public class LocationExample {
     public static void main(String[] args) {
         LocationExample locationExample = new LocationExample();
         MeteoData<LocationForecast> data = locationExample.runExample();
-
         // Just to prove that we have data
         log.info(data.getResult().getMeta().getLicenseUrl().toString());
         for (Model m : data.getResult().getMeta().getModels()) {

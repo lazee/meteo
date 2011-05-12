@@ -9,12 +9,19 @@
     <display-name>Meteo Examples</display-name>
     <description>Mete Examples Webapp</description>
 
-
+    <servlet>
+        <servlet-name>locationserver</servlet-name>
+        <servlet-class>no.api.meteo.servlet.LocationServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>locationserver</servlet-name>
+        <url-pattern>/location.html</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-
 
 </web-app>

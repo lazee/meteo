@@ -13,6 +13,36 @@
     <artifactId>meteo-core</artifactId>
     <version>0.1-SNAPSHOT</version>
 
+    <profiles>
+        <profile>
+            <id>jrebel</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>jrebel</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.zeroturnaround</groupId>
+                        <artifactId>jrebel-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>generate-rebel-xml</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
     <dependencies>
         <dependency>
             <groupId>xpp3</groupId>
@@ -22,7 +52,7 @@
             <groupId>net.sf.oval</groupId>
             <artifactId>oval</artifactId>
         </dependency>
-          <dependency>
+        <dependency>
             <groupId>no.api.opensource.meteo</groupId>
             <artifactId>meteo-test</artifactId>
             <scope>test</scope>

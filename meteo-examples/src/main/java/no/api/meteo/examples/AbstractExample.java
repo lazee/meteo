@@ -16,8 +16,9 @@
 
 package no.api.meteo.examples;
 
-import no.api.meteo.service.locationforecastlts.entity.PeriodForecast;
-import no.api.meteo.service.locationforecastlts.entity.Precipitation;
+import no.api.meteo.service.locationforecast.entity.PeriodForecast;
+import no.api.meteo.service.locationforecast.entity.Precipitation;
+import no.api.meteo.util.MeteoDateUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +48,9 @@ public abstract class AbstractExample {
         if (periodForecast == null) {
             log.error("Period forecast -> null");
         } else {
-            log.error("Period forecast -> from:" + periodForecast.getFromTime() + ", to:" + periodForecast.getToTime());
+            log.error("Period forecast -> from:" +
+                    MeteoDateUtils.dateToString(periodForecast.getFromTime(), "yyyy-MM-dd HH:mm") + ", to:" +
+                    MeteoDateUtils.dateToString(periodForecast.getToTime(), "yyyy-MM-dd HH:mm"));
             prettyLogPrecipitation(periodForecast.getPrecipitation());
         }
     }

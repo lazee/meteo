@@ -17,8 +17,9 @@
 package no.api.meteo.service;
 
 import no.api.meteo.MeteoException;
-import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.client.MeteoClient;
+import no.api.meteo.service.entity.MeteoServiceVersion;
+import no.api.meteo.util.MeteoNetUtils;
 
 import java.net.URL;
 import java.util.Map;

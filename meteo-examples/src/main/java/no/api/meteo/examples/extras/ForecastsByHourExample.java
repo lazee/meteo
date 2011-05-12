@@ -19,19 +19,15 @@ package no.api.meteo.examples.extras;
 import no.api.meteo.MeteoException;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
-import no.api.meteo.entity.Coordinates;
 import no.api.meteo.examples.AbstractExample;
-import no.api.meteo.services.MeteoServicesManagerImpl;
-import no.api.meteo.services.MeteoServicesManager;
-import no.api.meteo.services.entity.MeteoForecastPair;
+import no.api.meteo.services.LocationForecastHelper;
+import no.api.meteo.services.entity.MeteoExtrasForecast;
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-/**
- *
- */
 public class ForecastsByHourExample extends AbstractExample {
 
     public static final double LONGITUDE_OSLO = 10.7460923576733;
@@ -44,23 +40,26 @@ public class ForecastsByHourExample extends AbstractExample {
 
     private MeteoClient meteoClient;
 
-    private MeteoServicesManager servicesManager;
-
     public ForecastsByHourExample() {
         configureLog("INFO");
         meteoClient = new DefaultMeteoClient();
-        servicesManager = new MeteoServicesManagerImpl(meteoClient);
     }
 
     public void runExample() {
         try {
-            List<MeteoForecastPair> list =  servicesManager.fetchPointForecastsByHour(10,
-                    new Coordinates(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO));
+            LocationForecastHelper locationForecastHelper =
+                    LocationForecastHelper.createInstance(meteoClient, LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
+            locationForecastHelper.fetch();
+            List<MeteoExtrasForecast> list = locationForecastHelper.getPointForecastsByHour(10);
 
-            log.info("Got " + list.size() + " forecasts.");
-            for (MeteoForecastPair pair : list) {
-                prettyLogPeriodForecast(pair.getPeriodForecast());
+            //log.info("Got " + list.size() + " forecasts.");
+            for (MeteoExtrasForecast extras : list) {
+                //prettyLogPeriodForecast(extras.getPeriodForecast());
             }
+            DateTime dateTime = new DateTime();
+            dateTime = dateTime.withHourOfDay(12).withMinuteOfHour(0).withSecondOfMinute(0);
+            locationForecastHelper.getNearestForecast(dateTime.plusDays(2).toDate());
+
         } catch (MeteoException e) {
             log.error("Something went wrong", e);
         }

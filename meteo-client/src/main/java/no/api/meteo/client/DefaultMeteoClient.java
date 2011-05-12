@@ -8,6 +8,9 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.SchemeRegistryFactory;
+import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
+import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +20,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class DefaultMeteoClient implements MeteoClient {
 
@@ -25,13 +29,24 @@ public class DefaultMeteoClient implements MeteoClient {
     private DefaultHttpClient httpClient;
 
     public DefaultMeteoClient() {
-        httpClient = new DefaultHttpClient();
+        httpClient = new DefaultHttpClient(new ThreadSafeClientConnManager());
+    }
+
+    public DefaultMeteoClient(int timeout) {
+        httpClient = new DefaultHttpClient(
+                new ThreadSafeClientConnManager(SchemeRegistryFactory.createDefault(), timeout, TimeUnit.SECONDS));
     }
 
     @Override
     public void setProxy(String hostname, int port) {
         HttpHost proxy = new HttpHost(hostname, port);
         httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxy);
+    }
+
+    @Override
+    public void setTimeout(int timeout) {
+        HttpConnectionParams.setConnectionTimeout(httpClient.getParams(), timeout);
+        HttpConnectionParams.setSoTimeout(httpClient.getParams(), timeout);
     }
 
     @Override

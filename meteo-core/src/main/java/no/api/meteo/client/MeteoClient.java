@@ -35,6 +35,8 @@ public interface MeteoClient {
      */
     public abstract void setProxy(String hostName, int port);
 
+    public abstract void setTimeout(int timeout);
+
     /**
      * When HttpClient instance is no longer needed, shut down the client to ensure immediate deallocation
      * of all system resources.
