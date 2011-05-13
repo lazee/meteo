@@ -1,7 +1,6 @@
 package no.api.meteo.locationgroups.config;
 
 import no.api.meteo.MeteoException;
-import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.entity.extras.locationgroup.ExtendedLocation;
 import no.api.meteo.entity.extras.locationgroup.LocationGroup;
 import no.api.meteo.service.MeteoDataParser;

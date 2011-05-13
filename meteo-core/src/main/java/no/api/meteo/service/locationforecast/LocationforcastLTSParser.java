@@ -39,7 +39,6 @@ import no.api.meteo.entity.core.service.locationforecast.TemperatureProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindDirection;
 import no.api.meteo.entity.core.service.locationforecast.WindProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindSpeed;
-import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.MeteoDataParserException;
 import no.api.meteo.util.MeteoNetUtils;
