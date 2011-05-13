@@ -19,8 +19,11 @@ package no.api.meteo.examples.extras;
 import no.api.meteo.MeteoException;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
+import no.api.meteo.client.MeteoData;
+import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.examples.AbstractExample;
+import no.api.meteo.service.locationforecast.LocationforecastLTSService;
 import no.api.meteo.services.LocationForecastHelper;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
@@ -51,9 +54,9 @@ public class ForecastsByHourExample extends AbstractExample {
 
     public void runExample() {
         try {
-            LocationForecastHelper locationForecastHelper =
-                    LocationForecastHelper.createInstance(meteoClient, LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
-            locationForecastHelper.fetch();
+            LocationforecastLTSService service = new LocationforecastLTSService(meteoClient);
+            MeteoData<LocationForecast> meteoData = service.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
+            LocationForecastHelper locationForecastHelper = new LocationForecastHelper(meteoData.getResult());
             List<MeteoExtrasForecast> list = locationForecastHelper.getPointForecastsByHour(HOURS);
 
             log.info("Got " + list.size() + " forecasts.");

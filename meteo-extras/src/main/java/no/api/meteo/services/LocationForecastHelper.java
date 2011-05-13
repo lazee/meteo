@@ -34,38 +34,14 @@ import java.util.List;
 
 public final class LocationForecastHelper {
 
-    private double longitude;
-
-    private double latitude;
-
-    private double altitude;
-
-    private MeteoData<LocationForecast> meteoData = null;
-
-    private LocationforecastLTSService locationforecastLTSService;
+    private LocationForecast locationForecast;
 
     private MeteoForecastHourIndexer indexer = null;
 
-    private LocationForecastHelper(MeteoClient meteoClient, double longitude, double latitude, double altitude) {
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.altitude = altitude;
-        locationforecastLTSService = new LocationforecastLTSService(meteoClient);
-    }
-
-    public static LocationForecastHelper createInstance
-            (MeteoClient meteoClient, double longitude, double latitude, double altitude) {
-        return new LocationForecastHelper(meteoClient, longitude, latitude, altitude);
-    }
-
-    public MeteoData<LocationForecast> getMeteoData() {
-        return meteoData;
-    }
-
-    public void fetch() throws MeteoException {
-        meteoData = locationforecastLTSService.fetchContent(longitude, latitude, altitude);
-        if (meteoData != null && meteoData.getResult() != null) {
-            indexer = new MeteoForecastHourIndexer(meteoData.getResult().getForecasts());
+    public LocationForecastHelper(LocationForecast locationForecast) {
+        this.locationForecast = locationForecast;
+        if (this.locationForecast != null) {
+            indexer = new MeteoForecastHourIndexer(locationForecast.getForecasts());
         }
     }
 
@@ -73,8 +49,7 @@ public final class LocationForecastHelper {
             throws MeteoException {
 
         validateIndexer();
-
-        if (validData()) {
+        if (!validData()) {
             return null;
         }
 
@@ -94,10 +69,10 @@ public final class LocationForecastHelper {
     }
 
     private boolean validData() {
-        if (meteoData == null || meteoData.getResult().getForecasts() == null) {
-            return true;
+        if (locationForecast == null) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     private void validateIndexer() throws MeteoException {
@@ -110,13 +85,13 @@ public final class LocationForecastHelper {
     public MeteoExtrasForecast getNearestForecast(Date date) throws MeteoException {
         validateIndexer();
 
-        if (validData()) {
+        if (!validData()) {
             return null;
         }
 
         PointForecast chosenForecast = null;
         DateTime dateTime = new DateTime(date);
-        for (Forecast forecast : meteoData.getResult().getForecasts()) {
+        for (Forecast forecast : locationForecast.getForecasts()) {
             if (forecast instanceof PointForecast) {
                 PointForecast pointForecast = (PointForecast) forecast;
                 if (isDateMatch(dateTime, new DateTime(pointForecast.getFromTime()))) {

@@ -19,6 +19,9 @@ package no.api.meteo.servlet;
 import no.api.meteo.MeteoException;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
+import no.api.meteo.client.MeteoData;
+import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
+import no.api.meteo.service.locationforecast.LocationforecastLTSService;
 import no.api.meteo.services.LocationForecastHelper;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import org.joda.time.DateTime;
@@ -60,12 +63,12 @@ public class LocationServlet extends HttpServlet {
             int altitude = Integer.valueOf(req.getParameter("altitude"));
 
             try {
-                LocationForecastHelper
-                        helper = LocationForecastHelper.createInstance(METEO_CLIENT, longitude, latitude, altitude);
-                helper.fetch();
-                
-                req.setAttribute("data", helper.getMeteoData().getResult());
-                req.setAttribute("raw", helper.getMeteoData().getRawResult());
+                LocationforecastLTSService service = new LocationforecastLTSService(METEO_CLIENT);
+                MeteoData<LocationForecast> meteoData = service.fetchContent(longitude, latitude, altitude);
+                LocationForecastHelper helper = new LocationForecastHelper(meteoData.getResult());
+
+                req.setAttribute("data", meteoData.getResult());
+                req.setAttribute("raw", meteoData.getRawResult());
                 List<MeteoExtrasForecast> last24 = helper.getPointForecastsByHour(HOURS_24);
                 req.setAttribute("last24", last24);
                 DateTime firstDate = new DateTime();
