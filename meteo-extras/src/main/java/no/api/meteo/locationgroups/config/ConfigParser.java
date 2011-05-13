@@ -43,7 +43,7 @@ public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>>
             Stack<LocationGroup> stack = new Stack<LocationGroup>();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
-                    handleStartTags(groups, xpp, stack);
+                    handleStartTags(xpp, stack);
                 } else if (eventType == XmlPullParser.END_TAG) {
                     handleEndTags(groups, xpp, stack);
                 } else {
@@ -59,7 +59,7 @@ public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>>
         }
     }
 
-    private void handleStartTags(Map<String, LocationGroup> groups, XmlPullParser xpp, Stack<LocationGroup> stack) {
+    private void handleStartTags(XmlPullParser xpp, Stack<LocationGroup> stack) {
         String n = xpp.getName();
         if ("group".equals(n)) {
             stack.push(new LocationGroup(getAttributeValue(xpp, "id")));

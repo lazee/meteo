@@ -6,7 +6,7 @@ import no.api.meteo.entity.extras.locationgroup.LocationGroup;
 import java.io.InputStream;
 import java.util.Map;
 
-public class ConfigLoader {
+public final class ConfigLoader {
 
     private ConfigLoader() {
         // Intentional
