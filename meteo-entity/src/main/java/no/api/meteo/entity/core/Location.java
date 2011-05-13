@@ -21,6 +21,8 @@ import net.sf.oval.constraint.NotNull;
 
 public class Location {
 
+    public static final int HASH_CODE = 31;
+
     @NotNull
     @NotNegative
     private Double longitude;
@@ -60,5 +62,46 @@ public class Location {
 
     public void setAltitude(Double altitude) {
         this.altitude = altitude;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Location location = (Location) o;
+
+        if (altitude != null ? !altitude.equals(location.altitude) : location.altitude != null) {
+            return false;
+        }
+        if (latitude != null ? !latitude.equals(location.latitude) : location.latitude != null) {
+            return false;
+        }
+        if (longitude != null ? !longitude.equals(location.longitude) : location.longitude != null) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = longitude != null ? longitude.hashCode() : 0;
+        result = HASH_CODE * result + (latitude != null ? latitude.hashCode() : 0);
+        result = HASH_CODE * result + (altitude != null ? altitude.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "altitude=" + altitude +
+                ", longitude=" + longitude +
+                ", latitude=" + latitude +
+                '}';
     }
 }

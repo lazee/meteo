@@ -23,6 +23,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.InputStream;
 import java.io.StringReader;
 import java.util.Date;
 
@@ -42,6 +43,17 @@ public final class MeteoXppUtils {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             XmlPullParser xpp = factory.newPullParser();
             xpp.setInput(new StringReader(data));
+            return xpp;
+        } catch (XmlPullParserException e) {
+            throw new MeteoException("Could not create XmlPullParser instance.", e);
+        }
+    }
+
+    public static XmlPullParser createNewPullParser(InputStream inputStream) throws MeteoException {
+        try {
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+            XmlPullParser xpp = factory.newPullParser();
+            xpp.setInput(inputStream, "UTF-8");
             return xpp;
         } catch (XmlPullParserException e) {
             throw new MeteoException("Could not create XmlPullParser instance.", e);

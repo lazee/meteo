@@ -39,6 +39,7 @@ import no.api.meteo.entity.core.service.locationforecast.TemperatureProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindDirection;
 import no.api.meteo.entity.core.service.locationforecast.WindProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindSpeed;
+import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.MeteoDataParserException;
 import no.api.meteo.util.MeteoNetUtils;
@@ -49,6 +50,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -100,12 +102,20 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Override
+     @Override
     public LocationForecast parse(String data) throws MeteoException {
+        return doParse(MeteoXppUtils.createNewPullParser(data));
+    }
+
+    @Override
+    public LocationForecast parse(InputStream inputStream) throws MeteoException {
+        return doParse(MeteoXppUtils.createNewPullParser(inputStream));
+    }
+
+    public LocationForecast doParse(XmlPullParser xpp) throws MeteoException {
         try {
             LocationForecast locationForecast = new LocationForecast();
             locationForecast.setForecasts(new ArrayList<Forecast>());
-            XmlPullParser xpp = MeteoXppUtils.createNewPullParser(data);
             int eventType = xpp.getEventType();
             Stack<Forecast> stack = new Stack<Forecast>();
             while (eventType != XmlPullParser.END_DOCUMENT) {

@@ -18,11 +18,12 @@ package no.api.meteo.service;
 
 import no.api.meteo.MeteoException;
 
-/**
- *
- */
+import java.io.InputStream;
+
 public interface MeteoDataParser<E> {
 
     public E parse(String data) throws MeteoException;
+
+    public E parse(InputStream inputStream) throws MeteoException;
 
 }

@@ -26,6 +26,7 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.services.internal.MeteoForecastHourIndexer;
+import org.apache.log4j.helpers.DateTimeDateFormat;
 import org.joda.time.DateTime;
 
 import java.util.ArrayList;
@@ -38,11 +39,26 @@ public final class LocationForecastHelper {
 
     private MeteoForecastHourIndexer indexer = null;
 
+    private String title = null;
+
+    public LocationForecastHelper(LocationForecast locationForecast, String title) {
+        init(locationForecast);
+        this.title = title;
+    }
+
     public LocationForecastHelper(LocationForecast locationForecast) {
+        init(locationForecast);
+    }
+
+    private void init(LocationForecast locationForecast) {
         this.locationForecast = locationForecast;
         if (this.locationForecast != null) {
             indexer = new MeteoForecastHourIndexer(locationForecast.getForecasts());
         }
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public List<MeteoExtrasForecast> getPointForecastsByHour(int hours)
@@ -82,7 +98,18 @@ public final class LocationForecastHelper {
         }
     }
 
+    public MeteoExtrasForecast getNearestForecast() throws MeteoException {
+        return getNearestForecast(new Date());
+    }
+
     public MeteoExtrasForecast getNearestForecast(Date date) throws MeteoException {
+        if (date == null) {
+            throw new MeteoException("Input date is null");
+        }
+        return getNearestForecast(new DateTime(date));
+    }
+
+    public MeteoExtrasForecast getNearestForecast(DateTime date) throws MeteoException {
         validateIndexer();
 
         if (!validData()) {
@@ -90,16 +117,15 @@ public final class LocationForecastHelper {
         }
 
         PointForecast chosenForecast = null;
-        DateTime dateTime = new DateTime(date);
         for (Forecast forecast : locationForecast.getForecasts()) {
             if (forecast instanceof PointForecast) {
                 PointForecast pointForecast = (PointForecast) forecast;
-                if (isDateMatch(dateTime, new DateTime(pointForecast.getFromTime()))) {
+                if (isDateMatch(date, new DateTime(pointForecast.getFromTime()))) {
                     chosenForecast = pointForecast;
                     break;
                 } else if (chosenForecast == null) {
                     chosenForecast = pointForecast;
-                } else if (isNearerDate(new DateTime(pointForecast.getFromTime()), dateTime,
+                } else if (isNearerDate(new DateTime(pointForecast.getFromTime()), date,
                         new DateTime(chosenForecast.getFromTime()))) {
                     chosenForecast = pointForecast;
                 }
@@ -126,8 +152,6 @@ public final class LocationForecastHelper {
         }
         return false;
     }
-
-   
 
 
 }

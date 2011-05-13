@@ -36,6 +36,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -61,10 +62,18 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
 
     @Override
     public Sunrise parse(String data) throws MeteoException {
+        return doParse(MeteoXppUtils.createNewPullParser(data));
+    }
+
+    @Override
+    public Sunrise parse(InputStream inputStream) throws MeteoException {
+        return doParse(MeteoXppUtils.createNewPullParser(inputStream));
+    }
+
+    public Sunrise doParse(XmlPullParser xpp) throws MeteoException {
         try {
             Sunrise sunrise = new Sunrise();
             sunrise.setDates(new ArrayList<SunriseDate>());
-            XmlPullParser xpp = MeteoXppUtils.createNewPullParser(data);
             int eventType = xpp.getEventType();
             Stack<SunriseDate> stack = new Stack<SunriseDate>();
             while (eventType != XmlPullParser.END_DOCUMENT) {
