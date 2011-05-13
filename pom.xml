@@ -14,6 +14,8 @@
     <artifactId>meteo</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>meteo</name>
+    <description>Java library for fetching weather data from api.met.no</description>
 
     <modules>
         <module>meteo-test</module>
