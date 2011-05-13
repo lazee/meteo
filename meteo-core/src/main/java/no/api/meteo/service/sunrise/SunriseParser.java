@@ -17,16 +17,16 @@
 package no.api.meteo.service.sunrise;
 
 import no.api.meteo.MeteoException;
+import no.api.meteo.entity.core.Location;
+import no.api.meteo.entity.core.Meta;
+import no.api.meteo.entity.core.service.sunrise.Moon;
+import no.api.meteo.entity.core.service.sunrise.Noon;
+import no.api.meteo.entity.core.service.sunrise.PhaseType;
+import no.api.meteo.entity.core.service.sunrise.Sun;
+import no.api.meteo.entity.core.service.sunrise.Sunrise;
+import no.api.meteo.entity.core.service.sunrise.SunriseDate;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.MeteoDataParserException;
-import no.api.meteo.service.entity.Location;
-import no.api.meteo.service.locationforecast.entity.Meta;
-import no.api.meteo.service.sunrise.entity.Moon;
-import no.api.meteo.service.sunrise.entity.Noon;
-import no.api.meteo.service.sunrise.entity.PhaseType;
-import no.api.meteo.service.sunrise.entity.Sun;
-import no.api.meteo.service.sunrise.entity.Sunrise;
-import no.api.meteo.service.sunrise.entity.SunriseDate;
 import no.api.meteo.util.MeteoConstants;
 import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.util.MeteoXppUtils;

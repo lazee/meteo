@@ -16,8 +16,8 @@
 
 package no.api.meteo.services;
 
-import no.api.meteo.service.locationforecast.entity.PointForecast;
-import no.api.meteo.services.entity.BeaufortLevel;
+import no.api.meteo.entity.core.service.locationforecast.PointForecast;
+import no.api.meteo.entity.extras.BeaufortLevel;
 
 import java.text.DecimalFormat;
 

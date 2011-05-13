@@ -20,10 +20,10 @@ import no.api.meteo.MeteoException;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoData;
 import no.api.meteo.client.MeteoResponse;
+import no.api.meteo.entity.core.MeteoServiceVersion;
+import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.service.AbstractMeteoService;
 import no.api.meteo.service.MeteoDataParser;
-import no.api.meteo.service.entity.MeteoServiceVersion;
-import no.api.meteo.service.sunrise.entity.Sunrise;
 import no.api.meteo.util.MeteoDateUtils;
 
 import java.net.URL;

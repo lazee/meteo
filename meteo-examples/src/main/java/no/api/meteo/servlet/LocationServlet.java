@@ -20,7 +20,7 @@ import no.api.meteo.MeteoException;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.services.LocationForecastHelper;
-import no.api.meteo.services.entity.MeteoExtrasForecast;
+import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

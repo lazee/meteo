@@ -16,7 +16,7 @@
 
 package no.api.meteo.services.internal;
 
-import no.api.meteo.service.locationforecast.entity.PeriodForecast;
+import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 
 public class ScoreForecast {
 

@@ -16,8 +16,8 @@
 
 package no.api.meteo.examples;
 
-import no.api.meteo.service.locationforecast.entity.PeriodForecast;
-import no.api.meteo.service.locationforecast.entity.Precipitation;
+import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
+import no.api.meteo.entity.core.service.locationforecast.Precipitation;
 import no.api.meteo.util.MeteoDateUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;

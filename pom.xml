@@ -17,6 +17,7 @@
 
     <modules>
         <module>meteo-test</module>
+        <module>meteo-entity</module>
         <module>meteo-core</module>
         <module>meteo-client</module>
         <module>meteo-examples</module>
@@ -29,6 +30,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>no.api.opensource.meteo</groupId>
+                <artifactId>meteo-entity</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>no.api.opensource.meteo</groupId>
                 <artifactId>meteo-core</artifactId>

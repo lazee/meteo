@@ -54,6 +54,10 @@
         </dependency>
         <dependency>
             <groupId>no.api.opensource.meteo</groupId>
+            <artifactId>meteo-entity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>no.api.opensource.meteo</groupId>
             <artifactId>meteo-test</artifactId>
             <scope>test</scope>
         </dependency>

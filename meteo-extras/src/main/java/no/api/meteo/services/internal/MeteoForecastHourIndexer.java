@@ -16,9 +16,9 @@
 
 package no.api.meteo.services.internal;
 
-import no.api.meteo.service.locationforecast.entity.Forecast;
-import no.api.meteo.service.locationforecast.entity.PeriodForecast;
-import no.api.meteo.service.locationforecast.entity.PointForecast;
+import no.api.meteo.entity.core.service.locationforecast.Forecast;
+import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
+import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import org.joda.time.DateTime;
 import org.joda.time.Hours;
 

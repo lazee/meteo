@@ -16,10 +16,10 @@
 
 package no.api.meteo.services;
 
-import no.api.meteo.service.locationforecast.entity.PointForecast;
-import no.api.meteo.service.locationforecast.entity.WindDirection;
-import no.api.meteo.service.locationforecast.entity.WindSpeed;
-import no.api.meteo.services.entity.BeaufortLevel;
+import no.api.meteo.entity.core.service.locationforecast.PointForecast;
+import no.api.meteo.entity.core.service.locationforecast.WindDirection;
+import no.api.meteo.entity.core.service.locationforecast.WindSpeed;
+import no.api.meteo.entity.extras.BeaufortLevel;
 import org.junit.Assert;
 import org.junit.Test;
 

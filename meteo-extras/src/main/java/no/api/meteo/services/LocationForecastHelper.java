@@ -19,12 +19,12 @@ package no.api.meteo.services;
 import no.api.meteo.MeteoException;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoData;
+import no.api.meteo.entity.core.service.locationforecast.Forecast;
+import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
+import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
+import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
-import no.api.meteo.service.locationforecast.entity.Forecast;
-import no.api.meteo.service.locationforecast.entity.LocationForecast;
-import no.api.meteo.service.locationforecast.entity.PeriodForecast;
-import no.api.meteo.service.locationforecast.entity.PointForecast;
-import no.api.meteo.services.entity.MeteoExtrasForecast;
+import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.services.internal.MeteoForecastHourIndexer;
 import org.joda.time.DateTime;
 

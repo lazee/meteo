@@ -20,7 +20,7 @@ import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoClientException;
 import no.api.meteo.client.MeteoData;
 import no.api.meteo.client.MeteoTestClient;
-import no.api.meteo.service.locationforecast.entity.LocationForecast;
+import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.test.MeteoTestUtils;
 import org.junit.Assert;
 import org.junit.Test;

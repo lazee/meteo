@@ -17,10 +17,10 @@
 package no.api.meteo.services.internal;
 
 import no.api.meteo.MeteoException;
+import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
+import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
+import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.service.locationforecast.LocationforcastLTSParser;
-import no.api.meteo.service.locationforecast.entity.LocationForecast;
-import no.api.meteo.service.locationforecast.entity.PeriodForecast;
-import no.api.meteo.service.locationforecast.entity.PointForecast;
 import no.api.meteo.test.MeteoTestException;
 import no.api.meteo.test.MeteoTestUtils;
 import org.joda.time.DateTime;
