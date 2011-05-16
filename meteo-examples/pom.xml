@@ -12,6 +12,8 @@
     <groupId>no.api.opensource.meteo</groupId>
     <artifactId>meteo-examples</artifactId>
     <version>0.1-SNAPSHOT</version>
+    <name>meteo-examples</name>
+    <description>Meteo examples</description>
 
     <profiles>
         <profile>

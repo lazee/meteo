@@ -12,6 +12,8 @@
     <groupId>no.api.opensource.meteo</groupId>
     <artifactId>meteo-core</artifactId>
     <version>0.1-SNAPSHOT</version>
+    <name>meteo-core</name>
+    <description>Core Meteo package</description>
 
     <profiles>
         <profile>

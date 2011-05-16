@@ -13,6 +13,8 @@
     <groupId>no.api.opensource.meteo</groupId>
     <artifactId>meteo-client</artifactId>
     <version>0.1-SNAPSHOT</version>
+    <name>meteo-client</name>
+    <description>Default implementation of a Meteo client.</description>
 
     <profiles>
             <profile>
