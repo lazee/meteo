@@ -13,9 +13,9 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
+import java.util.TreeMap;
 
 import static no.api.meteo.util.MeteoXppUtils.getAttributeValue;
 import static no.api.meteo.util.MeteoXppUtils.getDoubleAttributeValue;
@@ -36,7 +36,7 @@ public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>>
 
     public Map<String, LocationGroup> doParse(XmlPullParser xpp) throws MeteoException {
         try {
-            Map<String, LocationGroup> groups = new HashMap<String, LocationGroup>();
+            Map<String, LocationGroup> groups = new TreeMap<String, LocationGroup>();
 
             int eventType = xpp.getEventType();
             Stack<LocationGroup> stack = new Stack<LocationGroup>();
