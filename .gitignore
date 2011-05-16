@@ -1,0 +1,8 @@
+.idea*
+*.iml
+meteo-client/target*
+meteo-core/target*
+meteo-entity/target*
+meteo-examples/target*
+meteo-extras/target*
+meteo-test/target*
