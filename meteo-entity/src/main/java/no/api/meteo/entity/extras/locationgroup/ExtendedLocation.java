@@ -4,7 +4,7 @@ import no.api.meteo.entity.core.Location;
 
 public class ExtendedLocation extends Location {
 
-    private String name;
+    private String name;    
 
     public ExtendedLocation(String name, Double longitude, Double latitude, Double altitude) {
         super(longitude, latitude, altitude);
