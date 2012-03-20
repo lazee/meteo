@@ -18,6 +18,7 @@ package no.api.meteo.util;
 
 import no.api.meteo.MeteoException;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -92,7 +93,8 @@ public class MeteoDateUtilsTest {
     @Test
     public void testDateToHHmm() throws Exception {
         Assert.assertNull(MeteoDateUtils.dateToHHmm(null));
-        DateTime dt = new DateTime().withHourOfDay(13).withMinuteOfHour(14);
+        DateTime dt = new DateTime().withZone(
+                DateTimeZone.forTimeZone(TimeZone.getTimeZone("GMT+2"))).withHourOfDay(13).withMinuteOfHour(14);
         Assert.assertEquals("13:14", MeteoDateUtils.dateToHHmm(dt.toDate()));
     }
 }
