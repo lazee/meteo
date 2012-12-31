@@ -24,7 +24,6 @@ import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.entity.core.service.sunrise.SunriseDate;
 import no.api.meteo.service.sunrise.SunriseService;
 import no.api.meteo.util.MeteoDateUtils;
-import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +40,6 @@ public class SunriseExample {
     private MeteoClient meteoClient;
 
     public SunriseExample() {
-        BasicConfigurator.configure();
         meteoClient = new DefaultMeteoClient();
     }
 

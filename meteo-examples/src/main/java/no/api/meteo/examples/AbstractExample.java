@@ -19,7 +19,6 @@ package no.api.meteo.examples;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.Precipitation;
 import no.api.meteo.util.MeteoDateUtils;
-import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +29,8 @@ public abstract class AbstractExample {
     private static final Logger log = LoggerFactory.getLogger(AbstractExample.class);
 
     public void configureLog(String level) {
-        PropertyConfigurator.configure(createLogProperties(level));
+        // TODO Presently deactivated as we no longer use log4j
+        //PropertyConfigurator.configure(createLogProperties(level));
     }
 
     private Properties createLogProperties(String level) {

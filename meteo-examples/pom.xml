@@ -84,16 +84,8 @@
                     </connectors>
                     <systemProperties>
                         <systemProperty>
-                            <name>org.apache.commons.logging.Log</name>
-                            <value>org.apache.commons.logging.impl.Log4JLogger</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>slf4j</name>
-                            <value>false</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>log4j.configuration</name>
-                            <value>file:./jetty/log4j.properties</value>
+                            <name>logback.configurationFile</name>
+                            <value>./jetty/logback.xml</value>
                         </systemProperty>
                         <systemProperty>
                             <name>file.encoding</name>

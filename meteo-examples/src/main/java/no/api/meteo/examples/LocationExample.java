@@ -23,7 +23,6 @@ import no.api.meteo.client.MeteoData;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.entity.core.service.locationforecast.Model;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
-import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,7 +39,6 @@ public class LocationExample {
     private MeteoClient meteoClient;
 
     public LocationExample() {
-        BasicConfigurator.configure();
         meteoClient = new DefaultMeteoClient();
     }
 
@@ -65,7 +63,7 @@ public class LocationExample {
         LocationExample locationExample = new LocationExample();
         MeteoData<LocationForecast> data = locationExample.runExample();
         // Just to prove that we have data
-        log.info(data.getResult().getMeta().getLicenseUrl().toString());
+        //log.info(data.getResult().getMeta().getLicenseUrl().toString());
         for (Model m : data.getResult().getMeta().getModels()) {
             log.info("Model Name: " + m.getName());
         }
