@@ -57,7 +57,7 @@ public class ForecastsByHourExample extends AbstractExample {
             LocationforecastLTSService service = new LocationforecastLTSService(meteoClient);
             MeteoData<LocationForecast> meteoData = service.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
             LocationForecastHelper locationForecastHelper = new LocationForecastHelper(meteoData.getResult());
-            List<MeteoExtrasForecast> list = locationForecastHelper.getPointForecastsByHour(HOURS);
+            List<MeteoExtrasForecast> list = locationForecastHelper.getHourlyPointForecastsFromNow(HOURS);
 
             log.info("Got " + list.size() + " forecasts.");
             for (MeteoExtrasForecast extras : list) {

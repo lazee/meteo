@@ -63,14 +63,17 @@ public class LocationServlet extends HttpServlet {
             int altitude = Integer.valueOf(req.getParameter("altitude"));
 
             try {
+
                 LocationforecastLTSService service = new LocationforecastLTSService(METEO_CLIENT);
                 MeteoData<LocationForecast> meteoData = service.fetchContent(longitude, latitude, altitude);
                 LocationForecastHelper helper = new LocationForecastHelper(meteoData.getResult());
 
                 req.setAttribute("data", meteoData.getResult());
                 req.setAttribute("raw", meteoData.getRawResult());
-                List<MeteoExtrasForecast> last24 = helper.getPointForecastsByHour(HOURS_24);
+
+                List<MeteoExtrasForecast> last24 = helper.getHourlyPointForecastsFromNow(HOURS_24);
                 req.setAttribute("last24", last24);
+
                 DateTime firstDate = new DateTime();
                 firstDate = firstDate.withHourOfDay(TWELVE_O_CLOCK).withMinuteOfHour(0).withSecondOfMinute(0);
 

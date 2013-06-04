@@ -22,7 +22,7 @@ import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
-import no.api.meteo.services.internal.MeteoForecastHourIndexer;
+import no.api.meteo.services.internal.MeteoForecastIndexer;
 import org.joda.time.DateTime;
 
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public final class LocationForecastHelper {
 
     private LocationForecast locationForecast;
 
-    private MeteoForecastHourIndexer indexer = null;
+    private MeteoForecastIndexer hourIndexer = null;
 
     private String title = null;
 
@@ -49,7 +49,7 @@ public final class LocationForecastHelper {
     private void init(LocationForecast locationForecast) {
         this.locationForecast = locationForecast;
         if (this.locationForecast != null) {
-            indexer = new MeteoForecastHourIndexer(locationForecast.getForecasts());
+            hourIndexer = new MeteoForecastIndexer(locationForecast.getForecasts());
         }
     }
 
@@ -57,7 +57,15 @@ public final class LocationForecastHelper {
         return title;
     }
 
-    public List<MeteoExtrasForecast> getPointForecastsByHour(int hours)
+    /**
+     * @deprecated Use LocationForecasHelper.getHourlyPointForecastsFromNow(hoursAhead) instead.
+     */
+    @Deprecated
+    public List<MeteoExtrasForecast> getPointForecastsByHour(int hours) throws MeteoException {
+        return getHourlyPointForecastsFromNow(hours);
+    }
+
+    public List<MeteoExtrasForecast> getHourlyPointForecastsFromNow(int hoursAhead)
             throws MeteoException {
 
         validateIndexer();
@@ -68,16 +76,25 @@ public final class LocationForecastHelper {
         List<MeteoExtrasForecast> pointExtrasForecasts = new ArrayList<MeteoExtrasForecast>();
 
         DateTime timeNow = new DateTime();
-        for (int i = 0; i < hours; i++) {
+        for (int i = 0; i < hoursAhead; i++) {
             DateTime dataTime = timeNow.plusHours(i);
-            PointForecast pointForecast = indexer.getPointForecast(dataTime);
+            PointForecast pointForecast = hourIndexer.getPointForecast(dataTime);
             if (pointForecast != null) {
                 PeriodForecast periodForecast =
-                        indexer.getTightestFitPeriodForecast(new DateTime(pointForecast.getFromTime()));
+                        hourIndexer.getTightestFitPeriodForecast(new DateTime(pointForecast.getFromTime()));
                 pointExtrasForecasts.add(new MeteoExtrasForecast(periodForecast, pointForecast));
             }
         }
         return pointExtrasForecasts;
+    }
+
+    public MeteoExtrasForecast getBestForecastForPeriod(DateTime from, DateTime to) {
+        PeriodForecast periodForecast = hourIndexer.getBestFitPeriodForecast(from, to);
+        if (periodForecast == null) {
+            return null;
+        }
+        PointForecast pointForecast = hourIndexer.getPointForecast(new DateTime(periodForecast.getFromTime()));
+        return new MeteoExtrasForecast(periodForecast, pointForecast);
     }
 
     private boolean validData() {
@@ -88,7 +105,7 @@ public final class LocationForecastHelper {
     }
 
     private void validateIndexer() throws MeteoException {
-        if (indexer == null) {
+        if (hourIndexer == null) {
             throw new MeteoException("Indexer haven't been initialized. " +
                     "Something went wrong during fetching of the data");
         }
@@ -127,7 +144,7 @@ public final class LocationForecastHelper {
                 }
             }
         }
-        return new MeteoExtrasForecast(indexer.getWidestFitPeriodForecast(new DateTime(chosenForecast.getFromTime())),
+        return new MeteoExtrasForecast(hourIndexer.getWidestFitPeriodForecast(new DateTime(chosenForecast.getFromTime())),
                 chosenForecast);
     }
 

@@ -22,25 +22,25 @@ public class ScoreForecast {
 
     private PeriodForecast periodForecast;
 
-    private int tightScore;
+    private int pointTightScore;
 
-    private int wideScore;
+    private int pointWideScore;
 
-    public ScoreForecast(PeriodForecast periodForecast, int tightScore, int wideScore) {
+    public ScoreForecast(PeriodForecast periodForecast, int pointTightScore, int pointWideScore) {
         this.periodForecast = periodForecast;
-        this.tightScore = tightScore;
-        this.wideScore = wideScore;
+        this.pointTightScore = pointTightScore;
+        this.pointWideScore = pointWideScore;
     }
 
     public PeriodForecast getPeriodForecast() {
         return periodForecast;
     }
 
-    public int getTightScore() {
-        return tightScore;
+    public int getPointTightScore() {
+        return pointTightScore;
     }
 
-    public int getWideScore() {
-        return wideScore;
+    public int getPointWideScore() {
+        return pointWideScore;
     }
 }

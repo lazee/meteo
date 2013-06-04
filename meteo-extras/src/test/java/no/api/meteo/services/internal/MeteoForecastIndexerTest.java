@@ -30,18 +30,18 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class MeteoForecastHourIndexerTest {
+public class MeteoForecastIndexerTest {
 
     private LocationForecast locationForecast;
 
-    private MeteoForecastHourIndexer indexer;
+    private MeteoForecastIndexer indexer;
 
     @Before
     public void loadResources() throws MeteoTestException, MeteoException {
         String resource = MeteoTestUtils.getTextResource("/META-INF/meteo/locationsforecastlts/test1.xml");
         LocationforcastLTSParser parser = new LocationforcastLTSParser();
         locationForecast = parser.parse(resource);
-        indexer = new MeteoForecastHourIndexer(locationForecast.getForecasts());
+        indexer = new MeteoForecastIndexer(locationForecast.getForecasts());
     }
 
     @Test
@@ -58,6 +58,43 @@ public class MeteoForecastHourIndexerTest {
     }
 
     @Test
+    public void testGetBestFitPeriodForecast1() throws Exception {
+        PeriodForecast p = indexer.getBestFitPeriodForecast(new DateTime("2011-05-06T04:00:00Z"), new DateTime("2011-05-06T10:00:00Z"));
+        Assert.assertNotNull(p);
+        Assert.assertEquals(new Integer(3), p.getSymbol().getNumber());
+        Assert.assertEquals("PARTLYCLOUD", p.getSymbol().getId());
+        DateTime dt = new DateTime(p.getFromTime());
+        Assert.assertEquals(6, dt.getHourOfDay());
+        DateTime tt = new DateTime(p.getToTime());
+        Assert.assertEquals(12, tt.getHourOfDay());
+    }
+
+    @Test
+    public void testGetBestFitPeriodForecast2() throws Exception {
+        PeriodForecast p = indexer.getBestFitPeriodForecast(new DateTime("2011-05-06T03:00:00Z"), new DateTime("2011-05-06T11:00:00Z"));
+        Assert.assertNotNull(p);
+        Assert.assertEquals(new Integer(3), p.getSymbol().getNumber());
+        Assert.assertEquals("PARTLYCLOUD", p.getSymbol().getId());
+        DateTime dt = new DateTime(p.getFromTime());
+        Assert.assertEquals(5, dt.getHourOfDay());
+        DateTime tt = new DateTime(p.getToTime());
+        Assert.assertEquals(11, tt.getHourOfDay());
+    }
+
+    @Test
+    public void testGetBestFitPeriodForecast3() throws Exception {
+        PeriodForecast p = indexer.getBestFitPeriodForecast(new DateTime("2011-05-06T05:00:00Z"), new DateTime("2011-05-06T09:00:00Z"));
+        Assert.assertNotNull(p);
+        Assert.assertEquals(new Integer(3), p.getSymbol().getNumber());
+        Assert.assertEquals("PARTLYCLOUD", p.getSymbol().getId());
+        DateTime dt = new DateTime(p.getFromTime());
+        Assert.assertEquals(6, dt.getHourOfDay());
+        DateTime tt = new DateTime(p.getToTime());
+        Assert.assertEquals(12, tt.getHourOfDay());
+
+    }
+
+    @Test
     public void testGetTightestFitPeriodForecast() throws Exception {
         Assert.assertNull(indexer.getTightestFitScoreForecast(null));
         Assert.assertNull(indexer.getTightestFitPeriodForecast(null));
@@ -66,7 +103,7 @@ public class MeteoForecastHourIndexerTest {
         ScoreForecast matchingScoreForecast =
                 indexer.getTightestFitScoreForecast(new DateTime(pointForecast.getFromTime()));
         Assert.assertNotNull(matchingScoreForecast);
-        Assert.assertEquals(1, matchingScoreForecast.getTightScore());
+        Assert.assertEquals(1, matchingScoreForecast.getPointTightScore());
 
         PeriodForecast periodForecast = indexer.getTightestFitPeriodForecast(new DateTime(pointForecast.getFromTime()));
         Assert.assertEquals(periodForecast.getFromTime(), matchingScoreForecast.getPeriodForecast().getFromTime());
@@ -91,29 +128,29 @@ public class MeteoForecastHourIndexerTest {
 
     @Test
     public void testPeriodIndexKey() throws Exception {
-        PeriodIndexKey p1 = new PeriodIndexKey((new DateTime()).withYear(1970));
-        PeriodIndexKey p2 = new PeriodIndexKey((new DateTime()).withYear(1980));
+        HourIndexKey p1 = new HourIndexKey((new DateTime()).withYear(1970));
+        HourIndexKey p2 = new HourIndexKey((new DateTime()).withYear(1980));
         Assert.assertFalse(p1.equals(null));
         Assert.assertFalse(p2.equals(null));
         Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
-        p1 = new PeriodIndexKey((new DateTime()).withMonthOfYear(2));
-        p2 = new PeriodIndexKey((new DateTime()).withMonthOfYear(3));
+        p1 = new HourIndexKey((new DateTime()).withMonthOfYear(2));
+        p2 = new HourIndexKey((new DateTime()).withMonthOfYear(3));
         Assert.assertFalse(p1.equals(null));
         Assert.assertFalse(p2.equals(null));
         Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
-        p1 = new PeriodIndexKey((new DateTime()).withDayOfMonth(1));
-        p2 = new PeriodIndexKey((new DateTime()).withDayOfMonth(2));
+        p1 = new HourIndexKey((new DateTime()).withDayOfMonth(1));
+        p2 = new HourIndexKey((new DateTime()).withDayOfMonth(2));
         Assert.assertFalse(p1.equals(null));
         Assert.assertFalse(p2.equals(null));
         Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
-        p1 = new PeriodIndexKey((new DateTime()).withHourOfDay(3));
-        p2 = new PeriodIndexKey((new DateTime()).withHourOfDay(5));
+        p1 = new HourIndexKey((new DateTime()).withHourOfDay(3));
+        p2 = new HourIndexKey((new DateTime()).withHourOfDay(5));
         Assert.assertFalse(p1.equals(null));
         Assert.assertFalse(p2.equals(null));
         Assert.assertTrue(p1.equals(p1));

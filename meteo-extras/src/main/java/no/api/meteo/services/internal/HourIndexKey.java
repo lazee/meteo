@@ -18,7 +18,7 @@ package no.api.meteo.services.internal;
 
 import org.joda.time.DateTime;
 
-public class PeriodIndexKey {
+public class HourIndexKey {
 
     public static final int HASH_NUMBER = 31;
 
@@ -32,12 +32,12 @@ public class PeriodIndexKey {
 
     private int hour;
 
-    public PeriodIndexKey(DateTime dateTime) {
+    public HourIndexKey(DateTime dateTime) {
         this.dateTime = dateTime;
-        day = dateTime.getDayOfMonth();
-        month = dateTime.getMonthOfYear();
-        year = dateTime.getYear();
-        hour = dateTime.getHourOfDay();
+        this.day = dateTime.getDayOfMonth();
+        this.month = dateTime.getMonthOfYear();
+        this.year = dateTime.getYear();
+        this.hour = dateTime.getHourOfDay();
     }
 
     public DateTime getDateTime() {
@@ -53,7 +53,7 @@ public class PeriodIndexKey {
             return false;
         }
 
-        PeriodIndexKey that = (PeriodIndexKey) o;
+        HourIndexKey that = (HourIndexKey) o;
 
         if (day != that.day) {
             return false;

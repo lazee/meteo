@@ -43,6 +43,28 @@
         </p>
     </form>
     <c:if test="${search}">
+        <h3>Forecast for the next days</h3>
+        <h4>Today</h4>
+        <table>
+            <tr>
+                <td>Time</td>
+                <td>Prediction</td>
+                <td>Temperature</td>
+                <td>Precipitation</td>
+                <td>Wind</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>22</td>
+                <td>22</td>
+                <td>22</td>
+                <td>22</td>
+            </tr>
+        </table>
+
+        <h4>Tomorrow</h4>
+
+
         <c:choose>
             <c:when test="${param.p == 1}">
                 <p><img src="http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/meteogram.png"/></p>
@@ -57,6 +79,8 @@
                 <p><img src="http://www.yr.no/sted/Norge/Oppland/Gj%C3%B8vik/Gj%C3%B8vik/meteogram.png"/></p>
             </c:when>
         </c:choose>
+
+
         <h3>24 hour presentation</h3>
         <p>
         <c:choose>
