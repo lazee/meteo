@@ -33,11 +33,16 @@ import org.joda.time.format.DateTimeFormatter;
 
 public class LongTermForecastExample {
 
+    //longitude=5.32&latitude=60.39&moh=3.0
+
     public static final double LONGITUDE_OSLO = 10.7460923576733;
+    public static final double LONGITUDE_BERGEN = 5.32;
 
     public static final double LATITUDE_OSLO = 59.912726542422;
+    public static final double LATITUDE_BERGEN = 60.39;
 
     public static final int ALTITUDE_OSLO = 14;
+    public static final int ALTITUDE_BERGEN = 3;
 
     private MeteoClient meteoClient;
 
@@ -50,11 +55,12 @@ public class LongTermForecastExample {
         LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
         try {
             // Fetch the data from api.met.no
-            MeteoData<LocationForecast> data =  ltsService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
+            MeteoData<LocationForecast> data =  ltsService.fetchContent(LONGITUDE_BERGEN, LATITUDE_BERGEN, ALTITUDE_BERGEN);
+            //MeteoData<LocationForecast> data =  ltsService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
 
             LocationForecastHelper locationForecastHelper = new LocationForecastHelper(data.getResult());
 
-            for (MeteoExtrasForecastDay day : locationForecastHelper.createLongTermForecast().getForecastDays()) {
+            for (MeteoExtrasForecastDay day : locationForecastHelper.createSimpleLongTermForecast().getForecastDays()) {
                 System.out.println("\nDATE : " + day.getDay());
 
                 for (MeteoExtrasForecast forecast : day.getForecasts()) {
