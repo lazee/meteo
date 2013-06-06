@@ -71,19 +71,19 @@ public class LocationServlet extends HttpServlet {
                 req.setAttribute("data", meteoData.getResult());
                 req.setAttribute("raw", meteoData.getRawResult());
 
-                List<MeteoExtrasForecast> last24 = helper.getHourlyPointForecastsFromNow(HOURS_24);
+                List<MeteoExtrasForecast> last24 = helper.findHourlyPointForecastsFromNow(HOURS_24);
                 req.setAttribute("last24", last24);
 
                 DateTime firstDate = new DateTime();
                 firstDate = firstDate.withHourOfDay(TWELVE_O_CLOCK).withMinuteOfHour(0).withSecondOfMinute(0);
 
-                MeteoExtrasForecast todayForecast = helper.getNearestForecast(firstDate.toDate());
+                MeteoExtrasForecast todayForecast = helper.findNearestForecast(firstDate.toDate());
                 req.setAttribute("today", todayForecast);
 
-                MeteoExtrasForecast tomorrowForecast = helper.getNearestForecast(firstDate.plusDays(1).toDate());
+                MeteoExtrasForecast tomorrowForecast = helper.findNearestForecast(firstDate.plusDays(1).toDate());
                 req.setAttribute("tomorrow", tomorrowForecast);
 
-                MeteoExtrasForecast afterForecast = helper.getNearestForecast(firstDate.plusDays(2).toDate());
+                MeteoExtrasForecast afterForecast = helper.findNearestForecast(firstDate.plusDays(2).toDate());
                 req.setAttribute("thedayaftertomorrow", afterForecast);
                 
             } catch (MeteoException e) {

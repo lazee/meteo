@@ -21,7 +21,10 @@ import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoData;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
+import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
+import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
+import no.api.meteo.entity.extras.MeteoExtrasForecastDay;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
 import no.api.meteo.services.LocationForecastHelper;
 import org.joda.time.DateTime;
@@ -43,6 +46,7 @@ public class LongTermForecastExample {
     }
 
     public void runExample() {
+        DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm");
         LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
         try {
             // Fetch the data from api.met.no
@@ -50,12 +54,17 @@ public class LongTermForecastExample {
 
             LocationForecastHelper locationForecastHelper = new LocationForecastHelper(data.getResult());
 
-            DateTime dt = DateTime.now().plusDays(2);
+            for (MeteoExtrasForecastDay day : locationForecastHelper.createLongTermForecast().getForecastDays()) {
+                System.out.println("\nDATE : " + day.getDay());
 
-            printForecast(0, 6, locationForecastHelper, dt);
-            printForecast(6, 12, locationForecastHelper, dt);
-            printForecast(12, 18, locationForecastHelper, dt);
-            printForecast(18, 00, locationForecastHelper, dt);
+                for (MeteoExtrasForecast forecast : day.getForecasts()) {
+                    PeriodForecast p = forecast.getPeriodForecast();
+                    PointForecast po = forecast.getPointForecast();
+                    DateTime df = new DateTime(p.getFromTime());
+                    DateTime dt = new DateTime(p.getToTime());
+                    System.out.println(df.toString(fmt)+"-"+dt.toString(fmt)+" | "+p.getSymbol().getId()+" | "+Math.round(po.getTemperature().getValue()) + " | "+p.getPrecipitation().getMinValue() + "-" + p.getPrecipitation().getMaxValue() + "," + p.getPrecipitation().getValue());
+                }
+            }
 
         } catch (MeteoException e) {
             // Got client exception. No data available
@@ -72,16 +81,4 @@ public class LongTermForecastExample {
         longTermForecastExample.runExample();
     }
 
-    private void printForecast(int from, int to, LocationForecastHelper locationForecastHelper, DateTime dt) {
-        DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm");
-        MeteoExtrasForecast extra  = locationForecastHelper.getBestForecastForPeriod(dt.withHourOfDay(from), (to == 0 ? dt.withHourOfDay(to).plusDays(
-                1) : dt.withHourOfDay(to)));
-        if (extra == null) {
-            System.out.println("Something went wrong");
-        } else {
-            DateTime f = new DateTime(extra.getPeriodForecast().getFromTime());
-            DateTime t = new DateTime(extra.getPeriodForecast().getToTime());
-            System.out.println("RETURN OBJECT : " + f.toString(fmt) + " : " + t.toString(fmt) + " : " + extra.getPeriodForecast().getSymbol().getId());
-        }
-    }
 }

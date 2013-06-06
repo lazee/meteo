@@ -40,7 +40,7 @@ public class MeteoForecastIndexer {
 
     private Map<HourIndexKey, List<ScoreForecast>> hourIndex;
 
-    private Map<DayIndexKey, List<PeriodForecast>> periodIndex;
+    private Map<DayIndexKey, List<PeriodForecast>> dayIndex;
 
     public MeteoForecastIndexer(List<Forecast> forecasts) {
         this.forecasts = forecasts;
@@ -113,6 +113,10 @@ public class MeteoForecastIndexer {
         return scoreForecast.getPeriodForecast();
     }
 
+    public boolean hasForecastsForDay(DateTime from) {
+        return dayIndex.containsKey(new DayIndexKey(from));
+    }
+
     protected ScoreForecast getTightestFitScoreForecast(DateTime from) {
         return getXScoreForecast(from, false);
     }
@@ -149,7 +153,7 @@ public class MeteoForecastIndexer {
         DateTime requestTo = to.withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0);
 
         //  Get list of period forecasts for the requested day. Return null if date isn't present
-        List<PeriodForecast> forecasts = periodIndex.get(new DayIndexKey(requestFrom));
+        List<PeriodForecast> forecasts = dayIndex.get(new DayIndexKey(requestFrom));
         if (forecasts == null) {
             return null;
         }
@@ -231,7 +235,7 @@ public class MeteoForecastIndexer {
 
     private void init() {
         hourIndex = new HashMap<HourIndexKey, List<ScoreForecast>>();
-        periodIndex = new HashMap<DayIndexKey, List<PeriodForecast>>();
+        dayIndex = new HashMap<DayIndexKey, List<PeriodForecast>>();
         for (Forecast forecast : forecasts) {
 
             if (forecast instanceof PeriodForecast) {
@@ -283,12 +287,12 @@ public class MeteoForecastIndexer {
     }
 
     private void addForecastToPeriodIndex(DayIndexKey key, PeriodForecast periodForecast) {
-        if (periodIndex.containsKey(key)) {
-            periodIndex.get(key).add(periodForecast);
+        if (dayIndex.containsKey(key)) {
+            dayIndex.get(key).add(periodForecast);
         } else {
             List<PeriodForecast> indexList = new ArrayList<PeriodForecast>();
             indexList.add(periodForecast);
-            periodIndex.put(key, indexList);
+            dayIndex.put(key, indexList);
         }
     }
 

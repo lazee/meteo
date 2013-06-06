@@ -57,7 +57,7 @@ public class ForecastsByHourExample extends AbstractExample {
             LocationforecastLTSService service = new LocationforecastLTSService(meteoClient);
             MeteoData<LocationForecast> meteoData = service.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
             LocationForecastHelper locationForecastHelper = new LocationForecastHelper(meteoData.getResult());
-            List<MeteoExtrasForecast> list = locationForecastHelper.getHourlyPointForecastsFromNow(HOURS);
+            List<MeteoExtrasForecast> list = locationForecastHelper.findHourlyPointForecastsFromNow(HOURS);
 
             log.info("Got " + list.size() + " forecasts.");
             for (MeteoExtrasForecast extras : list) {
@@ -65,7 +65,7 @@ public class ForecastsByHourExample extends AbstractExample {
             }
             DateTime dateTime = new DateTime();
             dateTime = dateTime.withHourOfDay(TWELVE_O_CLOCK).withMinuteOfHour(0).withSecondOfMinute(0);
-            locationForecastHelper.getNearestForecast(dateTime.plusDays(2).toDate());
+            locationForecastHelper.findNearestForecast(dateTime.plusDays(2).toDate());
 
         } catch (MeteoException e) {
             log.error("Something went wrong", e);
