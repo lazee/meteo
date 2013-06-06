@@ -124,9 +124,33 @@ public final class LocationForecastHelper {
         return new MeteoExtrasLongTermForecast(forecastDays);
     }
 
+    public MeteoExtrasLongTermForecast createSimpleLongTermForecast() throws MeteoException {
+        List<MeteoExtrasForecastDay> forecastDays = new ArrayList<MeteoExtrasForecastDay>();
+        DateTime dt = DateTime.now();
+        addSimpleForecastForDay(dt, forecastDays);
+        addSimpleForecastForDay(dt.plusDays(1), forecastDays);
+        addSimpleForecastForDay(dt.plusDays(2), forecastDays);
+        addSimpleForecastForDay(dt.plusDays(3), forecastDays);
+        addSimpleForecastForDay(dt.plusDays(4), forecastDays);
+        addSimpleForecastForDay(dt.plusDays(5), forecastDays);
+        addSimpleForecastForDay(dt.plusDays(6), forecastDays);
+
+        return new MeteoExtrasLongTermForecast(forecastDays);
+    }
+
     private void addForecastForDay(DateTime dt, List<MeteoExtrasForecastDay> lst) {
         if (indexer.hasForecastsForDay(dt)) {
             MeteoExtrasForecastDay mefd = createForcastForDay(dt);
+            if (mefd != null && mefd.getForecasts().size() > 0) {
+                lst.add(mefd);
+
+            }
+        }
+    }
+
+    private void addSimpleForecastForDay(DateTime dt, List<MeteoExtrasForecastDay> lst) throws MeteoException {
+        if (indexer.hasForecastsForDay(dt)) {
+            MeteoExtrasForecastDay mefd = createSimpleForcastForDay(dt);
             if (mefd != null && mefd.getForecasts().size() > 0) {
                 lst.add(mefd);
 
@@ -140,6 +164,12 @@ public final class LocationForecastHelper {
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(6), dt.withHourOfDay(12)), forecasts);
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(12), dt.withHourOfDay(18)), forecasts);
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(18), dt.plusDays(1).withHourOfDay(0)), forecasts);
+        return new MeteoExtrasForecastDay(forecasts, dt.toDate());
+    }
+
+    public MeteoExtrasForecastDay createSimpleForcastForDay(DateTime dt) throws MeteoException {
+        List<MeteoExtrasForecast> forecasts = new ArrayList<MeteoExtrasForecast>();
+        addForecastToList(findNearestForecast(dt.toDate()), forecasts);
         return new MeteoExtrasForecastDay(forecasts, dt.toDate());
     }
 
