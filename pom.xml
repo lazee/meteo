@@ -86,11 +86,14 @@
     </modules>
 
     <build>
-        <!--pluginManagement>
-            <plugins>
-            </plugins>
-        </pluginManagement-->
-
+        <extensions>
+            <!-- maven3 will need wagon-ssh extension in order to be able to release -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>2.2</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
