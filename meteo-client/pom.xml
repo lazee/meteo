@@ -4,13 +4,13 @@
     <parent>
         <artifactId>meteo</artifactId>
         <groupId>no.api.opensource</groupId>
-        <version>0.3</version>
+        <version>0.3-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.api.opensource.meteo</groupId>
     <artifactId>meteo-client</artifactId>
-    <version>0.3</version>
+    <version>0.3-SNAPSHOT</version>
     <name>meteo-client</name>
     <description>Default implementation of a Meteo client.</description>
 
