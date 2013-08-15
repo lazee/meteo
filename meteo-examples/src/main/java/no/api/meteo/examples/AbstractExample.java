@@ -22,27 +22,9 @@ import no.api.meteo.util.MeteoDateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Properties;
-
 public abstract class AbstractExample {
 
     private static final Logger log = LoggerFactory.getLogger(AbstractExample.class);
-
-    public void configureLog(String level) {
-        // TODO Presently deactivated as we no longer use log4j
-        //PropertyConfigurator.configure(createLogProperties(level));
-    }
-
-    private Properties createLogProperties(String level) {
-        Properties props = new Properties();
-        props.setProperty("log4j.rootLogger", level.toUpperCase() + ", A1");
-        props.setProperty("log4j.appender.A1", "org.apache.log4j.ConsoleAppender");
-        props.setProperty("log4j.appender.A1.layout", "org.apache.log4j.PatternLayout");
-        props.setProperty("log4j.appender.A1.layout.ConversionPattern", "%m%n");
-        //props.setProperty("log4j.appender.A1.layout.ConversionPattern", "%d [%t] %-5p %c - %m%n");
-
-        return props;
-    }
 
     public void prettyLogPeriodForecast(PeriodForecast periodForecast) {
         if (periodForecast == null) {

@@ -18,9 +18,6 @@ package no.api.meteo.test;
 
 public class MeteoTestException extends Exception {
 
-    public MeteoTestException() {
-    }
-
     public MeteoTestException(String message) {
         super(message);
     }

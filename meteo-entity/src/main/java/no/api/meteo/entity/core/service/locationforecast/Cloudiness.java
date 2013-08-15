@@ -32,4 +32,6 @@ public class Cloudiness extends PercentEntity {
         setId(id);
         setPercent(percent);
     }
+
+
 }

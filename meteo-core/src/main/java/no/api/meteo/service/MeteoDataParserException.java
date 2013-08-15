@@ -18,12 +18,13 @@ package no.api.meteo.service;
 
 import no.api.meteo.MeteoException;
 
-/**
- *
- */
 public class MeteoDataParserException extends MeteoException {
 
+    /**
+     * Empty constructor
+     */
     public MeteoDataParserException() {
+        super();
     }
 
     public MeteoDataParserException(Throwable cause) {

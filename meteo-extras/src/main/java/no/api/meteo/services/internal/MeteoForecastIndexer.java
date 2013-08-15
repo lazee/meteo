@@ -153,8 +153,8 @@ public class MeteoForecastIndexer {
         DateTime requestTo = to.withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0);
 
         //  Get list of period forecasts for the requested day. Return null if date isn't present
-        List<PeriodForecast> forecasts = dayIndex.get(new DayIndexKey(requestFrom));
-        if (forecasts == null) {
+        List<PeriodForecast> forecastsList = dayIndex.get(new DayIndexKey(requestFrom));
+        if (forecastsList == null) {
             return null;
         }
 
@@ -162,7 +162,7 @@ public class MeteoForecastIndexer {
         int score = 0;
         int tmpScore = 0;
 
-        for (PeriodForecast forecast : forecasts) {
+        for (PeriodForecast forecast : forecastsList) {
             DateTime actualFrom = new DateTime(forecast.getFromTime());
             DateTime actualTo = new DateTime(forecast.getToTime());
 

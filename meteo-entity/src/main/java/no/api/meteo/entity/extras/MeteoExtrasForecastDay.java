@@ -27,7 +27,7 @@ public class MeteoExtrasForecastDay {
 
     public MeteoExtrasForecastDay(List<MeteoExtrasForecast> forecasts, Date date) {
         this.forecasts = forecasts;
-        this.day = date;
+        this.day = date == null ? null : (Date) date.clone();
     }
 
     public List<MeteoExtrasForecast> getForecasts() {
@@ -35,6 +35,6 @@ public class MeteoExtrasForecastDay {
     }
 
     public Date getDay() {
-        return day;
+        return (Date) day.clone();
     }
 }

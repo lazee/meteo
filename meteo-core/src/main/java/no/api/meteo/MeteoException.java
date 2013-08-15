@@ -18,7 +18,11 @@ package no.api.meteo;
 
 public class MeteoException extends Exception {
 
+    /**
+     * Empty constructor
+     */
     public MeteoException() {
+        super();
     }
 
     public MeteoException(String message) {

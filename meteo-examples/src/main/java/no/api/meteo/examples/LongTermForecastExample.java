@@ -61,21 +61,25 @@ public class LongTermForecastExample {
             LocationForecastHelper locationForecastHelper = new LocationForecastHelper(data.getResult());
 
             for (MeteoExtrasForecastDay day : locationForecastHelper.createSimpleLongTermForecast().getForecastDays()) {
-                System.out.println("\nDATE : " + day.getDay());
+                print("\nDATE : " + day.getDay());
 
                 for (MeteoExtrasForecast forecast : day.getForecasts()) {
                     PeriodForecast p = forecast.getPeriodForecast();
                     PointForecast po = forecast.getPointForecast();
                     DateTime df = new DateTime(p.getFromTime());
                     DateTime dt = new DateTime(p.getToTime());
-                    System.out.println(df.toString(fmt)+"-"+dt.toString(fmt)+" | "+p.getSymbol().getId()+" | "+Math.round(po.getTemperature().getValue()) + " | "+p.getPrecipitation().getMinValue() + "-" + p.getPrecipitation().getMaxValue() + "," + p.getPrecipitation().getValue());
+                    print(df.toString(fmt)+"-"+dt.toString(fmt)+" | "+p.getSymbol().getId()+" | "+Math.round(po.getTemperature().getValue()) + " | "+p.getPrecipitation().getMinValue() + "-" + p.getPrecipitation().getMaxValue() + "," + p.getPrecipitation().getValue());
                 }
             }
 
         } catch (MeteoException e) {
             // Got client exception. No data available
-            System.out.println("Caught exception : " + e.getMessage());
+            print("Caught exception : " + e.getMessage());
         }
+    }
+
+    public void print(String s) {
+        System.out.println(s); // NOSONAR This is an example, so println is ok
     }
 
     public void shutDown() {
