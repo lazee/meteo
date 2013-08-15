@@ -20,7 +20,11 @@ import no.api.meteo.entity.core.PercentEntity;
 
 public class Fog extends PercentEntity {
 
+    /**
+     * Constructor with no initial values
+     */
     public Fog() {
+        super();
     }
 
     public Fog(String id, Double percent) {

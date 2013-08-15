@@ -26,7 +26,7 @@ public class Sunrise extends RootEntity {
 
    private Location location;
 
-   private List<SunriseDate> dates = new ArrayList<SunriseDate>();
+   private List<SunriseDate> dates = new ArrayList<>();
 
     public List<SunriseDate> getDates() {
         return dates;

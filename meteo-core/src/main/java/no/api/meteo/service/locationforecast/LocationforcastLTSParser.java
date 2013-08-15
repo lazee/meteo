@@ -92,10 +92,10 @@ import static no.api.meteo.util.MeteoConstants.TAG_WEATHERDATA;
 import static no.api.meteo.util.MeteoConstants.TAG_WIND_DIRECTION;
 import static no.api.meteo.util.MeteoConstants.TAG_WIND_PROBABILITY;
 import static no.api.meteo.util.MeteoConstants.TAG_WIND_SPEED;
-import static no.api.meteo.util.MeteoXppUtils.getAttributeValue;
-import static no.api.meteo.util.MeteoXppUtils.getDateAttributeValue;
-import static no.api.meteo.util.MeteoXppUtils.getDoubleAttributeValue;
-import static no.api.meteo.util.MeteoXppUtils.getIntegerAttributeValue;
+import static no.api.meteo.util.MeteoXppUtils.getString;
+import static no.api.meteo.util.MeteoXppUtils.getDate;
+import static no.api.meteo.util.MeteoXppUtils.getDouble;
+import static no.api.meteo.util.MeteoXppUtils.getInteger;
 
 public class LocationforcastLTSParser implements MeteoDataParser<LocationForecast> {
 
@@ -103,12 +103,12 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
 
      @Override
     public LocationForecast parse(String data) throws MeteoException {
-        return doParse(MeteoXppUtils.createNewPullParser(data));
+        return doParse(MeteoXppUtils.createPullParser(data));
     }
 
     @Override
     public LocationForecast parse(InputStream inputStream) throws MeteoException {
-        return doParse(MeteoXppUtils.createNewPullParser(inputStream));
+        return doParse(MeteoXppUtils.createPullParser(inputStream));
     }
 
     public LocationForecast doParse(XmlPullParser xpp) throws MeteoException {
@@ -116,7 +116,7 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
             LocationForecast locationForecast = new LocationForecast();
             locationForecast.setForecasts(new ArrayList<Forecast>());
             int eventType = xpp.getEventType();
-            Stack<Forecast> stack = new Stack<Forecast>();
+            Stack<Forecast> stack = new Stack<>();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
                     handleStartTags(locationForecast, xpp, stack);
@@ -137,128 +137,150 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
 
     private void handleStartTags(LocationForecast locationForecast, XmlPullParser xpp, Stack<Forecast> stack) { // NOSONAR The complexity is quit alright :)
         String n = xpp.getName();
-        if (TAG_WEATHERDATA.equals(n)) {
-            handleWeatherDataTag(locationForecast, xpp);
-        } else if (TAG_TIME.equals(n)) {
-            handleTimeDataTag(stack, xpp);
-        } else if (TAG_LOCATION.equals(n)) {
-            if (locationForecast.getLocation() == null) {
-                handleLocationDataTag(locationForecast, xpp);
-            } else {
-                log.trace("Skipping locations since it is already added.");
-            }
-        } else if (TAG_PRECIPITATION.equals(n)) {
-            switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
-            ((PeriodForecast) stack.peek()).setPrecipitation(
-                    new Precipitation(
-                            null,
-                            getAttributeValue(xpp, ATTR_UNIT),
-                            getDoubleAttributeValue(xpp, ATTR_MINVALUE),
-                            getDoubleAttributeValue(xpp, ATTR_VALUE),
-                            getDoubleAttributeValue(xpp, ATTR_PROBABILITY),
-                            getDoubleAttributeValue(xpp, ATTR_MAXVALUE)));
-        } else if (TAG_SYMBOL.equals(n)) {
-            switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
-            ((PeriodForecast) stack.peek()).setSymbol(
-                    new Symbol(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getIntegerAttributeValue(xpp, ATTR_NUMBER)));
-        } else if (TAG_FOG.equals(n)) {
-            ((PointForecast) stack.peek()).setFog(
-                    new Fog(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getDoubleAttributeValue(xpp, ATTR_PERCENT)));
-        } else if (TAG_PRESSURE.equals(n)) {
-            ((PointForecast) stack.peek()).setPressure(
-                    new Pressure(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getAttributeValue(xpp, ATTR_UNIT),
-                            getDoubleAttributeValue(xpp, ATTR_VALUE)));
-        } else if (TAG_HIGH_CLOUDS.equals(n)) {
-            ((PointForecast) stack.peek()).setHighClouds(
-                    new HighClouds(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getDoubleAttributeValue(xpp, ATTR_PERCENT)));
-        } else if (TAG_MEDIUM_CLOUDS.equals(n)) {
-            ((PointForecast) stack.peek()).setMediumClouds(
-                    new MediumClouds(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getDoubleAttributeValue(xpp, ATTR_PERCENT)));
-        } else if (TAG_LOW_CLOUDS.equals(n)) {
-            ((PointForecast) stack.peek()).setLowClouds(
-                    new LowClouds(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getDoubleAttributeValue(xpp, ATTR_PERCENT)));
-        } else if (TAG_WIND_DIRECTION.equals(n)) {
-            ((PointForecast) stack.peek()).setWindDirection(
-                    new WindDirection(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getAttributeValue(xpp, ATTR_NAME),
-                            getDoubleAttributeValue(xpp, ATTR_DEG)));
-        } else if (TAG_WIND_SPEED.equals(n)) {
-            ((PointForecast) stack.peek()).setWindSpeed(
-                    new WindSpeed(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getIntegerAttributeValue(xpp, ATTR_BEAUFORT),
-                            getDoubleAttributeValue(xpp, ATTR_MPS),
-                            getAttributeValue(xpp, ATTR_NAME)));
-        } else if (TAG_CLOUDINESS.equals(n)) {
-            ((PointForecast) stack.peek()).setCloudiness(
-                    new Cloudiness(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getDoubleAttributeValue(xpp, ATTR_PERCENT)));
-        } else if (TAG_HUMIDITY.equals(n)) {
-            ((PointForecast) stack.peek()).setHumidity(
-                    new Humidity(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getAttributeValue(xpp, ATTR_UNIT),
-                            getDoubleAttributeValue(xpp, ATTR_VALUE)));
-        } else if (TAG_TEMPERATURE.equals(n)) {
-            ((PointForecast) stack.peek()).setTemperature(
-                    new Temperature(
-                            getAttributeValue(xpp, ATTR_ID),
-                            getAttributeValue(xpp, ATTR_UNIT),
-                            getDoubleAttributeValue(xpp, ATTR_VALUE)));
-        } else if (TAG_WIND_PROBABILITY.equals(n)) {
-            ((PointForecast) stack.peek()).setWindProbability(
-                    new WindProbability(
-                            getAttributeValue(xpp, ATTR_UNIT),
-                            getIntegerAttributeValue(xpp, ATTR_VALUE)));
-        } else if (TAG_SYMBOL_PROBABILITY.equals(n)) {
-            switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
-            ((PeriodForecast) stack.peek()).setSymbolProbability(
-                    new SymbolProbability(
-                            getAttributeValue(xpp, ATTR_UNIT),
-                            getIntegerAttributeValue(xpp, ATTR_VALUE)));
-        } else if (TAG_TEMPERATURE_PROBABILITY.equals(n)) {
-            ((PointForecast) stack.peek()).setTemperatureProbability(
-                    new TemperatureProbability(
-                            getAttributeValue(xpp, ATTR_UNIT),
-                            getIntegerAttributeValue(xpp, ATTR_VALUE)));
-        } else if (TAG_META.equals(n)) {
-            Meta meta = new Meta();
-            try {
-                meta.setLicenseUrl(MeteoNetUtils.createUrl(getAttributeValue(xpp, ATTR_LICENSEURL)));
-            } catch (MeteoException e) {
-                log.debug("License url not found in feed");
-            }
-            locationForecast.setMeta(meta);
-        } else if (TAG_MODEL.equals(n)) {
-            Model model = new Model();
-            model.setName(getAttributeValue(xpp, "name"));
-            try {
-                model.setFrom(getDateAttributeValue(xpp, "from"));
-                model.setTo(getDateAttributeValue(xpp, "to"));
-                model.setRunEnded(getDateAttributeValue(xpp, "runended"));
-                model.setNextRun(getDateAttributeValue(xpp, "nextrun"));
-                model.setTermin(getDateAttributeValue(xpp, "termin"));
-            } catch (MeteoException e) {
-                log.warn("Could not convert model dates found in returned xml", e);
-            }
+        switch (n) {
+            case TAG_WEATHERDATA:
+                handleWeatherDataTag(locationForecast, xpp);
+                break;
+            case TAG_TIME:
+                handleTimeDataTag(stack, xpp);
+                break;
+            case TAG_LOCATION:
+                if (locationForecast.getLocation() == null) {
+                    handleLocationDataTag(locationForecast, xpp);
+                } else {
+                    log.trace("Skipping locations since it is already added.");
+                }
+                break;
+            case TAG_PRECIPITATION:
+                switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
+                ((PeriodForecast) stack.peek()).setPrecipitation(
+                        new Precipitation(
+                                null,
+                                getString(xpp, ATTR_UNIT),
+                                getDouble(xpp, ATTR_MINVALUE),
+                                getDouble(xpp, ATTR_VALUE),
+                                getDouble(xpp, ATTR_PROBABILITY),
+                                getDouble(xpp, ATTR_MAXVALUE)));
+                break;
+            case TAG_SYMBOL:
+                switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
+                ((PeriodForecast) stack.peek()).setSymbol(
+                        new Symbol(
+                                getString(xpp, ATTR_ID),
+                                getInteger(xpp, ATTR_NUMBER)));
+                break;
+            case TAG_FOG:
+                ((PointForecast) stack.peek()).setFog(
+                        new Fog(
+                                getString(xpp, ATTR_ID),
+                                getDouble(xpp, ATTR_PERCENT)));
+                break;
+            case TAG_PRESSURE:
+                ((PointForecast) stack.peek()).setPressure(
+                        new Pressure(
+                                getString(xpp, ATTR_ID),
+                                getString(xpp, ATTR_UNIT),
+                                getDouble(xpp, ATTR_VALUE)));
+                break;
+            case TAG_HIGH_CLOUDS:
+                ((PointForecast) stack.peek()).setHighClouds(
+                        new HighClouds(
+                                getString(xpp, ATTR_ID),
+                                getDouble(xpp, ATTR_PERCENT)));
+                break;
+            case TAG_MEDIUM_CLOUDS:
+                ((PointForecast) stack.peek()).setMediumClouds(
+                        new MediumClouds(
+                                getString(xpp, ATTR_ID),
+                                getDouble(xpp, ATTR_PERCENT)));
+                break;
+            case TAG_LOW_CLOUDS:
+                ((PointForecast) stack.peek()).setLowClouds(
+                        new LowClouds(
+                                getString(xpp, ATTR_ID),
+                                getDouble(xpp, ATTR_PERCENT)));
+                break;
+            case TAG_WIND_DIRECTION:
+                ((PointForecast) stack.peek()).setWindDirection(
+                        new WindDirection(
+                                getString(xpp, ATTR_ID),
+                                getString(xpp, ATTR_NAME),
+                                getDouble(xpp, ATTR_DEG)));
+                break;
+            case TAG_WIND_SPEED:
+                ((PointForecast) stack.peek()).setWindSpeed(
+                        new WindSpeed(
+                                getString(xpp, ATTR_ID),
+                                getInteger(xpp, ATTR_BEAUFORT),
+                                getDouble(xpp, ATTR_MPS),
+                                getString(xpp, ATTR_NAME)));
+                break;
+            case TAG_CLOUDINESS:
+                ((PointForecast) stack.peek()).setCloudiness(
+                        new Cloudiness(
+                                getString(xpp, ATTR_ID),
+                                getDouble(xpp, ATTR_PERCENT)));
+                break;
+            case TAG_HUMIDITY:
+                ((PointForecast) stack.peek()).setHumidity(
+                        new Humidity(
+                                getString(xpp, ATTR_ID),
+                                getString(xpp, ATTR_UNIT),
+                                getDouble(xpp, ATTR_VALUE)));
+                break;
+            case TAG_TEMPERATURE:
+                ((PointForecast) stack.peek()).setTemperature(
+                        new Temperature(
+                                getString(xpp, ATTR_ID),
+                                getString(xpp, ATTR_UNIT),
+                                getDouble(xpp, ATTR_VALUE)));
+                break;
+            case TAG_WIND_PROBABILITY:
+                ((PointForecast) stack.peek()).setWindProbability(
+                        new WindProbability(
+                                getString(xpp, ATTR_UNIT),
+                                getInteger(xpp, ATTR_VALUE)));
+                break;
+            case TAG_SYMBOL_PROBABILITY:
+                switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
+                ((PeriodForecast) stack.peek()).setSymbolProbability(
+                        new SymbolProbability(
+                                getString(xpp, ATTR_UNIT),
+                                getInteger(xpp, ATTR_VALUE)));
+                break;
+            case TAG_TEMPERATURE_PROBABILITY:
+                ((PointForecast) stack.peek()).setTemperatureProbability(
+                        new TemperatureProbability(
+                                getString(xpp, ATTR_UNIT),
+                                getInteger(xpp, ATTR_VALUE)));
+                break;
+            case TAG_META:
+                Meta meta = new Meta();
+                try {
+                    meta.setLicenseUrl(MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)));
+                } catch (MeteoException e) {
+                    log.debug("License url not found in feed");
+                }
+                locationForecast.setMeta(meta);
+                break;
+            case TAG_MODEL:
+                Model model = new Model();
+                model.setName(getString(xpp, "name"));
+                try {
+                    model.setFrom(getDate(xpp, "from"));
+                    model.setTo(getDate(xpp, "to"));
+                    model.setRunEnded(getDate(xpp, "runended"));
+                    model.setNextRun(getDate(xpp, "nextrun"));
+                    model.setTermin(getDate(xpp, "termin"));
+                } catch (MeteoException e) {
+                    log.warn("Could not convert model dates found in returned xml", e);
+                }
 
-            locationForecast.getMeta().getModels().add(model);
-        } else {
-            log.trace("Unhandled start tag: " + xpp.getName());
+                locationForecast.getMeta().getModels().add(model);
+                break;
+            default:
+                log.trace("Unhandled start tag: " + xpp.getName());
+                break;
         }
     }
 
@@ -290,8 +312,8 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
     private void handleTimeDataTag(Stack<Forecast> stack, XmlPullParser xpp) {
         PointForecast forecast = new PointForecast();
         try {
-            forecast.setToTime(getDateAttributeValue(xpp, ATTR_TO));
-            forecast.setFromTime(getDateAttributeValue(xpp, ATTR_FROM));
+            forecast.setToTime(getDate(xpp, ATTR_TO));
+            forecast.setFromTime(getDate(xpp, ATTR_FROM));
         } catch (MeteoException e) {
             log.warn("Could not convert time dates from xml", e);
         }
@@ -301,7 +323,7 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
 
     private void handleWeatherDataTag(LocationForecast locationForecast, XmlPullParser xpp) {
         try {
-            locationForecast.setCreated(getDateAttributeValue(xpp, ATTR_CREATED));
+            locationForecast.setCreated(getDate(xpp, ATTR_CREATED));
         } catch (MeteoException e) {
             log.warn("Could not convert created data from weatherData tag", e);
         }
@@ -309,8 +331,8 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
 
     private void handleLocationDataTag(LocationForecast locationForecast, XmlPullParser xpp) {
         locationForecast.setLocation(
-                new Location(getDoubleAttributeValue(xpp, ATTR_LONGITUDE),
-                        getDoubleAttributeValue(xpp, ATTR_LATITUDE),
-                        getDoubleAttributeValue(xpp, ATTR_ALTITUDE)));
+                new Location(getDouble(xpp, ATTR_LONGITUDE),
+                        getDouble(xpp, ATTR_LATITUDE),
+                        getDouble(xpp, ATTR_ALTITUDE)));
     }
 }

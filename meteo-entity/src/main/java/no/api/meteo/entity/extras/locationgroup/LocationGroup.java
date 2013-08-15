@@ -23,7 +23,7 @@ public class LocationGroup {
 
     private String id;
 
-    private List<ExtendedLocation> locations = new ArrayList<ExtendedLocation>();
+    private List<ExtendedLocation> locations = new ArrayList<>();
 
     public LocationGroup(String id) {
         this.id = id;

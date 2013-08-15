@@ -46,7 +46,7 @@ public abstract class AbstractMeteoService {
     }
 
     protected URL createRequestUrl(Map<String, Object> queryParameters) throws MeteoException {
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             sb.append(API_MET_NO_SERVICE_PREFIX).append(metServiceName).append("/").append(
                     serviceVersion.toStringVersion()).append("/?");
 

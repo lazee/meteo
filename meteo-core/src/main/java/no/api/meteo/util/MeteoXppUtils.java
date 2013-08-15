@@ -38,7 +38,7 @@ public final class MeteoXppUtils {
         // Intentional
     }
 
-    public static XmlPullParser createNewPullParser(String data) throws MeteoException {
+    public static XmlPullParser createPullParser(String data) throws MeteoException {
         try {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             XmlPullParser xpp = factory.newPullParser();
@@ -49,7 +49,7 @@ public final class MeteoXppUtils {
         }
     }
 
-    public static XmlPullParser createNewPullParser(InputStream inputStream) throws MeteoException {
+    public static XmlPullParser createPullParser(InputStream inputStream) throws MeteoException {
         try {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             XmlPullParser xpp = factory.newPullParser();
@@ -60,51 +60,41 @@ public final class MeteoXppUtils {
         }
     }
 
-
-    public static String getAttributeValue(XmlPullParser xpp, String name) {
+    public static String getString(XmlPullParser xpp, String name) {
         return xpp.getAttributeValue(null, name);
     }
 
-    public static Double getDoubleAttributeValue(XmlPullParser xpp, String name) {
+    public static Double getDouble(XmlPullParser xpp, String name) {
         try {
-            String v = getAttributeValue(xpp, name);
-            if (v == null) {
-                return null;
-            }
-            return Double.parseDouble(v);
+            String v = getString(xpp, name);
+            return v == null ? null : Double.parseDouble(v);
         } catch (NumberFormatException e) {
             log.error("Number format exception: " + e.getMessage());
             return null;
         }
     }
 
-    public static Boolean getBooleanAttributeValue(XmlPullParser xpp, String name) {
-        String v = getAttributeValue(xpp, name);
-        if (v == null) {
-            return false;
-        }
-        return Boolean.parseBoolean(v);
+    public static Boolean getBoolean(XmlPullParser xpp, String name) {
+        String v = getString(xpp, name);
+        return  v == null ? false : Boolean.parseBoolean(v);
     }
 
-    public static Integer getIntegerAttributeValue(XmlPullParser xpp, String name) {
+    public static Integer getInteger(XmlPullParser xpp, String name) {
         try {
-            String v = getAttributeValue(xpp, name);
-            if (v == null) {
-                return null;
-            }
-            return Integer.parseInt(v);
+            String v = getString(xpp, name);
+            return v == null ? null : Integer.parseInt(v);
         } catch (NumberFormatException e) {
             log.error("Number format exception: " + e.getMessage());
             return null;
         }
     }
 
-    public static Date getDateAttributeValue(XmlPullParser xpp, String name) throws MeteoException {
-        return MeteoDateUtils.fullFormatToDate(getAttributeValue(xpp, name));
+    public static Date getDate(XmlPullParser xpp, String name) throws MeteoException {
+        return MeteoDateUtils.fullFormatToDate(getString(xpp, name));
     }
 
-    public static Date getSimpleDateAttributeValue(XmlPullParser xpp, String name) throws MeteoException {
-        return MeteoDateUtils.yyyyMMddToDate(getAttributeValue(xpp, name));
+    public static Date getSimpleDate(XmlPullParser xpp, String name) throws MeteoException {
+        return MeteoDateUtils.yyyyMMddToDate(getString(xpp, name));
     }
 
 }

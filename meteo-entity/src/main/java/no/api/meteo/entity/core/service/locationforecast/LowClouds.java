@@ -20,7 +20,11 @@ import no.api.meteo.entity.core.PercentEntity;
 
 public class LowClouds extends PercentEntity {
 
+    /**
+     * Constructor with no initial values
+     */
     public LowClouds() {
+        super();
     }
 
     public LowClouds(String id, Double percent) {

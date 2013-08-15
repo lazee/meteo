@@ -28,9 +28,9 @@ public class Sun extends AbstractType {
 
     private Double daylength;
 
-    private List<Noon> noon = new ArrayList<Noon>();
+    private List<Noon> noon = new ArrayList<>();
 
-    private List<TwilightType> twilight = new ArrayList<TwilightType>();
+    private List<TwilightType> twilight = new ArrayList<>();
 
     public Double getDaylength() {
         return daylength;

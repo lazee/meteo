@@ -20,7 +20,6 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -93,11 +92,7 @@ public class DefaultMeteoClient implements MeteoClient {
             } else {
                 throw new MeteoClientException("No content returned from request: " + url.toString());
             }
-        } catch (URISyntaxException e) {
-            throw new MeteoClientException(CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT, e);
-        } catch (ClientProtocolException e) {
-            throw new MeteoClientException(CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT, e);
-        } catch (IOException e) {
+        } catch (URISyntaxException | IOException e) {
             throw new MeteoClientException(CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT, e);
         } finally {
             httpClient.getConnectionManager().closeExpiredConnections();
@@ -105,7 +100,7 @@ public class DefaultMeteoClient implements MeteoClient {
     }
 
     private List<MeteoResponseHeader> createMeteoResponseHeaders(HttpResponse response) {
-        List<MeteoResponseHeader> headers = new ArrayList<MeteoResponseHeader>();
+        List<MeteoResponseHeader> headers = new ArrayList<>();
         for (Header header : response.getAllHeaders()) {
             log.debug("Adding header : " + header.toString());
 

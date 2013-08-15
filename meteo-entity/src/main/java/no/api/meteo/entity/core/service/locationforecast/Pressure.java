@@ -18,7 +18,11 @@ package no.api.meteo.entity.core.service.locationforecast;
 
 public class Pressure extends UnitEntity {
 
+    /**
+     * Constructor with no initial values
+     */
     public Pressure() {
+        super();
     }
 
     public Pressure(String id, String unit, Double value) {

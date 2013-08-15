@@ -18,8 +18,11 @@ package no.api.meteo.entity.core.service.locationforecast;
 
 public class TemperatureProbability extends ProbabilityEntity {
 
+    /**
+     * Constructor with no initial values
+     */
     public TemperatureProbability() {
-
+        super();
     }
 
     public TemperatureProbability(String unit, Integer value) {

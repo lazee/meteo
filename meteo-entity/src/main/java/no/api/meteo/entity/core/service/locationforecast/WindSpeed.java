@@ -32,7 +32,11 @@ public final class WindSpeed extends IdEntity {
     @NotEmpty
     private String name;
 
+    /**
+     * Constructor with no initial values
+     */
     public WindSpeed() {
+        super();
     }
 
     public WindSpeed(String id, Integer beaufort,

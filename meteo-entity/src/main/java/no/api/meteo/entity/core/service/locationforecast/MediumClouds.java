@@ -20,7 +20,11 @@ import no.api.meteo.entity.core.PercentEntity;
 
 public class MediumClouds extends PercentEntity {
 
+    /**
+     * Constructor with no initial values
+     */
     public MediumClouds() {
+        super();
     }
 
     public MediumClouds(String id, Double percent) {

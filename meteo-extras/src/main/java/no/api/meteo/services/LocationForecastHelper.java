@@ -75,7 +75,7 @@ public final class LocationForecastHelper {
             return null;
         }
 
-        List<MeteoExtrasForecast> pointExtrasForecasts = new ArrayList<MeteoExtrasForecast>();
+        List<MeteoExtrasForecast> pointExtrasForecasts = new ArrayList<>();
 
         DateTime timeNow = new DateTime();
         for (int i = 0; i < hoursAhead; i++) {
@@ -104,14 +104,14 @@ public final class LocationForecastHelper {
             return null;
         }
         PointForecast pointForecast = indexer.getPointForecast(new DateTime(periodForecast.getFromTime()));
-        if (periodForecast == null || pointForecast == null) {
+        if (pointForecast == null) {
             return null;
         }
         return new MeteoExtrasForecast(periodForecast, pointForecast);
     }
 
     public MeteoExtrasLongTermForecast createLongTermForecast() {
-        List<MeteoExtrasForecastDay> forecastDays = new ArrayList<MeteoExtrasForecastDay>();
+        List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
         DateTime dt = DateTime.now();
         addForecastForDay(dt, forecastDays);
         addForecastForDay(dt.plusDays(1), forecastDays);
@@ -125,7 +125,7 @@ public final class LocationForecastHelper {
     }
 
     public MeteoExtrasLongTermForecast createSimpleLongTermForecast() throws MeteoException {
-        List<MeteoExtrasForecastDay> forecastDays = new ArrayList<MeteoExtrasForecastDay>();
+        List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
         DateTime dt = DateTime.now();
         addSimpleForecastForDay(dt, forecastDays);
         addSimpleForecastForDay(dt.plusDays(1), forecastDays);
@@ -159,7 +159,7 @@ public final class LocationForecastHelper {
     }
 
     public MeteoExtrasForecastDay createForcastForDay(DateTime dt) {
-        List<MeteoExtrasForecast> forecasts = new ArrayList<MeteoExtrasForecast>();
+        List<MeteoExtrasForecast> forecasts = new ArrayList<>();
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(0), dt.withHourOfDay(6)), forecasts);
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(6), dt.withHourOfDay(12)), forecasts);
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(12), dt.withHourOfDay(18)), forecasts);
@@ -168,7 +168,7 @@ public final class LocationForecastHelper {
     }
 
     public MeteoExtrasForecastDay createSimpleForcastForDay(DateTime dt) throws MeteoException {
-        List<MeteoExtrasForecast> forecasts = new ArrayList<MeteoExtrasForecast>();
+        List<MeteoExtrasForecast> forecasts = new ArrayList<>();
         addForecastToList(findNearestForecast(dt.withHourOfDay(14).toDate()), forecasts);
         return new MeteoExtrasForecastDay(forecasts, dt.toDate());
     }
@@ -243,8 +243,11 @@ public final class LocationForecastHelper {
                 }
             }
         }
-        return new MeteoExtrasForecast(indexer.getWidestFitPeriodForecast(new DateTime(chosenForecast.getFromTime())),
-                chosenForecast);
+        return (chosenForecast == null ?
+                null :
+                new MeteoExtrasForecast(
+                        indexer.getWidestFitPeriodForecast(
+                                new DateTime(chosenForecast.getFromTime())), chosenForecast));
     }
 
     private boolean isNearerDate(DateTime pointTime, DateTime dateTime, DateTime chosenTime) {

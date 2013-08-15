@@ -35,7 +35,7 @@ public class MeteoTestClient implements MeteoClient {
         } else if ("http://www.fo.no".equals(url.toString())) {
             throw new MeteoClientException("url is empty", new IllegalArgumentException("foo"));
         }
-        List<MeteoResponseHeader> list = new ArrayList<MeteoResponseHeader>();
+        List<MeteoResponseHeader> list = new ArrayList<>();
         list.add(new MeteoResponseHeader("foo", "bar"));
         return new MeteoResponse(content, list);
     }

@@ -56,11 +56,11 @@ public class LocationforecastLTSService extends AbstractMeteoService {
 
     public MeteoData<LocationForecast> fetchContent(double longitude, double latitude, double altitude) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(createServiceUrl(longitude, latitude, altitude));
-        return new MeteoData<LocationForecast>(parser.parse(response.getData()), response);
+        return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
     public URL createServiceUrl(double longitude, double latitude, double altitude) throws MeteoException {
-        Map<String, Object> queryParameters = new HashMap<String, Object>();
+        Map<String, Object> queryParameters = new HashMap<>();
         queryParameters.put(PARAM_LONGITUDE, longitude);
         queryParameters.put(PARAM_LATITUDE, latitude);
         queryParameters.put(PARAM_ALTITUDE, (int) altitude);

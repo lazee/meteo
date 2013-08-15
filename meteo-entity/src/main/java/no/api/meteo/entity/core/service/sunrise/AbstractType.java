@@ -25,7 +25,7 @@ public abstract class AbstractType extends AbstractRiseSet {
 
     private Boolean neverSet;
 
-    private List<ErrorType> error = new ArrayList<ErrorType>();
+    private List<ErrorType> error = new ArrayList<>();
 
     public Boolean isNeverRise() {
         return neverRise;

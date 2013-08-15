@@ -33,8 +33,8 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.TreeMap;
 
-import static no.api.meteo.util.MeteoXppUtils.getAttributeValue;
-import static no.api.meteo.util.MeteoXppUtils.getDoubleAttributeValue;
+import static no.api.meteo.util.MeteoXppUtils.getString;
+import static no.api.meteo.util.MeteoXppUtils.getDouble;
 
 public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>> {
 
@@ -42,20 +42,20 @@ public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>>
 
     @Override
     public Map<String, LocationGroup> parse(String data) throws MeteoException {
-        return doParse(MeteoXppUtils.createNewPullParser(data));
+        return doParse(MeteoXppUtils.createPullParser(data));
     }
 
     @Override
     public Map<String, LocationGroup> parse(InputStream inputStream) throws MeteoException {
-        return doParse(MeteoXppUtils.createNewPullParser(inputStream));
+        return doParse(MeteoXppUtils.createPullParser(inputStream));
     }
 
     public Map<String, LocationGroup> doParse(XmlPullParser xpp) throws MeteoException {
         try {
-            Map<String, LocationGroup> groups = new TreeMap<String, LocationGroup>();
+            Map<String, LocationGroup> groups = new TreeMap<>();
 
             int eventType = xpp.getEventType();
-            Stack<LocationGroup> stack = new Stack<LocationGroup>();
+            Stack<LocationGroup> stack = new Stack<>();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
                     handleStartTags(xpp, stack);
@@ -77,14 +77,14 @@ public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>>
     private void handleStartTags(XmlPullParser xpp, Stack<LocationGroup> stack) {
         String n = xpp.getName();
         if ("group".equals(n)) {
-            stack.push(new LocationGroup(getAttributeValue(xpp, "id")));
+            stack.push(new LocationGroup(getString(xpp, "id")));
         } else if ("location".equals(n)) {
             LocationGroup locationGroup = stack.peek();
             locationGroup.getLocations().add(new ExtendedLocation(
-                    getAttributeValue(xpp, "name"),
-                    getDoubleAttributeValue(xpp, "longitude"),
-                    getDoubleAttributeValue(xpp, "latitude"),
-                    getDoubleAttributeValue(xpp, "moh")));
+                    getString(xpp, "name"),
+                    getDouble(xpp, "longitude"),
+                    getDouble(xpp, "latitude"),
+                    getDouble(xpp, "moh")));
         }
     }
 

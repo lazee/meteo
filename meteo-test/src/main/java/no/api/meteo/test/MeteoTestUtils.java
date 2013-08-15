@@ -16,18 +16,12 @@
 
 package no.api.meteo.test;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 
 public final class MeteoTestUtils {
-
-    private static Logger log = LoggerFactory.getLogger(MeteoTestUtils.class);
 
     private MeteoTestUtils() {
         // Intentional
@@ -38,42 +32,23 @@ public final class MeteoTestUtils {
     }
 
     public static String getTextResource(String uri) throws MeteoTestException {
-        InputStream inputStream = getResource(uri);
-        if (inputStream == null) {
-            throw new MeteoTestException("Could not open stream to " + uri);
-        }
         StringBuilder stringBuilder = new StringBuilder();
         String str;
-        BufferedReader in = null;
-        InputStreamReader reader = null;
-        try {
-            reader = new InputStreamReader(inputStream, "UTF8");
-            in = new BufferedReader(reader);
+        try (InputStream inputStream = getResource(uri);
+             InputStreamReader reader = new InputStreamReader(inputStream, "UTF8");
+             BufferedReader in = new BufferedReader(reader)) {
+
+            if (inputStream == null) {
+                throw new MeteoTestException("Could not open stream to " + uri);
+            }
+
             str = in.readLine();
             while (str != null) {
                 stringBuilder.append(str + "\n");
                 str = in.readLine();
             }
-        } catch (UnsupportedEncodingException e) {
-            throw new MeteoTestException(e);
         } catch (IOException e) {
             throw new MeteoTestException(e);
-        } finally {
-            try {
-                inputStream.close();
-            } catch (IOException e) {
-                log.error("Could not close inputstream");
-            }
-            try {
-                in.close();
-            } catch (IOException e) {
-                log.error("Could not close buffered reader");
-            }
-            try {
-                reader.close();
-            } catch (IOException e) {
-                log.error("Could not close input stream reader");
-            }
         }
         return stringBuilder.toString().substring(0, stringBuilder.toString().length() - 1);
     }

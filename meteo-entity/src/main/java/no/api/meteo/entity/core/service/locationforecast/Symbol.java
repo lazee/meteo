@@ -24,7 +24,11 @@ public class Symbol extends IdEntity {
     @NotNull
     private Integer number;
 
+    /**
+     * Constructor with no initial values
+     */
     public Symbol() {
+        super();
     }
 
     public Symbol(String id, Integer number) {

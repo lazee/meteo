@@ -21,7 +21,11 @@ import no.api.meteo.entity.core.PercentEntity;
 
 public class Cloudiness extends PercentEntity {
 
+    /**
+     * Constructor with no initial values
+     */
     public Cloudiness() {
+        super();
     }
 
     public Cloudiness(String id, Double percent) {

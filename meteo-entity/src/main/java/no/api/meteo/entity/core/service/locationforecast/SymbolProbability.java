@@ -18,8 +18,11 @@ package no.api.meteo.entity.core.service.locationforecast;
 
 public class SymbolProbability extends ProbabilityEntity {
 
+    /**
+     * Constructor with no initial values
+     */
     public SymbolProbability() {
-
+        super();
     }
 
     public SymbolProbability(String unit, Integer value) {

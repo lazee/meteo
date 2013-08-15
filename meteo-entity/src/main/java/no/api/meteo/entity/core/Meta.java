@@ -28,7 +28,7 @@ public class Meta {
     @NotNull
     private URL licenseUrl;
 
-    private List<Model> models = new ArrayList<Model>();
+    private List<Model> models = new ArrayList<>();
 
     public URL getLicenseUrl() {
         return licenseUrl;

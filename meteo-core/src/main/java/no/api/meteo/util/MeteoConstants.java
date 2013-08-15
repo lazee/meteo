@@ -21,6 +21,10 @@ package no.api.meteo.util;
  */
 public final class MeteoConstants {
 
+    private MeteoConstants() {
+        // Intentional
+    }
+
     public static final String TAG_SUN = "sun";
 
     public static final String ATTR_DAYLENGTH = "daylength";
@@ -40,10 +44,6 @@ public final class MeteoConstants {
     public static final String TAG_NOON = "noon";
 
     public static final String ATTR_PHASE = "phase";
-
-    private MeteoConstants() {
-        // Intentional
-    }
 
     public static final String PARAM_LONGITUDE = "lon";
 

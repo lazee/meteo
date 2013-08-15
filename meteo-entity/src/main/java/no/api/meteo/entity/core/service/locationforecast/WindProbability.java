@@ -18,8 +18,11 @@ package no.api.meteo.entity.core.service.locationforecast;
 
 public class WindProbability extends ProbabilityEntity{
 
+    /**
+     * Constructor with no initial values
+     */
     public WindProbability() {
-
+        super();
     }
 
     public WindProbability(String unit, Integer value) {

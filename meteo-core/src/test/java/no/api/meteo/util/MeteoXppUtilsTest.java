@@ -42,42 +42,42 @@ public class MeteoXppUtilsTest {
 
     @Test
     public void testCreateNewPullParser() throws Exception {
-        XmlPullParser xpp = MeteoXppUtils.createNewPullParser(testXml);
+        XmlPullParser xpp = MeteoXppUtils.createPullParser(testXml);
         Assert.assertNotNull(xpp);
     }
 
     @Test
     public void testGetAttributeValue() throws Exception {
-        XmlPullParser xpp = MeteoXppUtils.createNewPullParser(testXml);
+        XmlPullParser xpp = MeteoXppUtils.createPullParser(testXml);
         int eventType = xpp.getEventType();
         while (eventType != XmlPullParser.END_DOCUMENT) {
             if (eventType == XmlPullParser.START_TAG) {
                 if (xpp.getName().equals("entry")) {
                     // String
-                    Assert.assertEquals("foo", MeteoXppUtils.getAttributeValue(xpp, "string"));
-                    Assert.assertNull(MeteoXppUtils.getAttributeValue(xpp, "foo"));
+                    Assert.assertEquals("foo", MeteoXppUtils.getString(xpp, "string"));
+                    Assert.assertNull(MeteoXppUtils.getString(xpp, "foo"));
                     // Integer
-                    Assert.assertEquals(new Integer(7), MeteoXppUtils.getIntegerAttributeValue(xpp, "integer"));
-                    Assert.assertNull(MeteoXppUtils.getIntegerAttributeValue(xpp, "string"));
-                    Assert.assertNull(MeteoXppUtils.getIntegerAttributeValue(xpp, "foo"));
+                    Assert.assertEquals(new Integer(7), MeteoXppUtils.getInteger(xpp, "integer"));
+                    Assert.assertNull(MeteoXppUtils.getInteger(xpp, "string"));
+                    Assert.assertNull(MeteoXppUtils.getInteger(xpp, "foo"));
                     // Double
-                    Assert.assertEquals(1.2, MeteoXppUtils.getDoubleAttributeValue(xpp, "double"), 0.0);
-                    Assert.assertNull(MeteoXppUtils.getDoubleAttributeValue(xpp, "string"));
-                    Assert.assertNull(MeteoXppUtils.getDoubleAttributeValue(xpp, "foo"));
+                    Assert.assertEquals(1.2, MeteoXppUtils.getDouble(xpp, "double"), 0.0);
+                    Assert.assertNull(MeteoXppUtils.getDouble(xpp, "string"));
+                    Assert.assertNull(MeteoXppUtils.getDouble(xpp, "foo"));
                     // Boolean
-                    Assert.assertEquals(Boolean.TRUE, MeteoXppUtils.getBooleanAttributeValue(xpp, "boolean"));
-                    Assert.assertFalse(MeteoXppUtils.getBooleanAttributeValue(xpp, "foo"));
+                    Assert.assertEquals(Boolean.TRUE, MeteoXppUtils.getBoolean(xpp, "boolean"));
+                    Assert.assertFalse(MeteoXppUtils.getBoolean(xpp, "foo"));
                     // Simple date
-                    Date simpleDate = MeteoXppUtils.getSimpleDateAttributeValue(xpp, "simple");
-                    Assert.assertNull(MeteoXppUtils.getSimpleDateAttributeValue(xpp, "foo"));
+                    Date simpleDate = MeteoXppUtils.getSimpleDate(xpp, "simple");
+                    Assert.assertNull(MeteoXppUtils.getSimpleDate(xpp, "foo"));
                     Calendar calendar = new GregorianCalendar();
                     calendar.setTime(simpleDate);
                     Assert.assertEquals(2011, calendar.get(Calendar.YEAR));
                     Assert.assertEquals(3, calendar.get(Calendar.DAY_OF_MONTH));
                     Assert.assertEquals(1, calendar.get(Calendar.MONTH));
                     // Full date 2011-05-06T05:00:00Z
-                    Date date = MeteoXppUtils.getDateAttributeValue(xpp, "date");
-                    Assert.assertNull(MeteoXppUtils.getDateAttributeValue(xpp, "foo"));
+                    Date date = MeteoXppUtils.getDate(xpp, "date");
+                    Assert.assertNull(MeteoXppUtils.getDate(xpp, "foo"));
                     calendar = new GregorianCalendar();
                     calendar.setTime(date);
                     Assert.assertEquals(9, calendar.get(Calendar.MINUTE));

@@ -32,7 +32,11 @@ public final class Precipitation extends UnitEntity {
     @NotNull
     private Double maxValue;
 
+    /**
+     * Constructor with no initial values
+     */
     public Precipitation() {
+        super();
     }
 
     public Precipitation(String id, String unit, Double minValue, Double value,

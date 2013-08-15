@@ -29,7 +29,11 @@ public final class WindDirection extends IdEntity {
     @NotNull
     private Double deg;
 
+    /**
+     * Constructor with no initial values
+     */
     public WindDirection() {
+        super();
     }
 
     public WindDirection(String id, String name, Double deg) {

@@ -29,7 +29,7 @@ public class LocationForecast extends RootEntity {
     private Location location;
 
     @NotNull
-    private List<Forecast> forecasts = new ArrayList<Forecast>();
+    private List<Forecast> forecasts = new ArrayList<>();
 
     public Location getLocation() {
         return location;

@@ -18,7 +18,11 @@ package no.api.meteo.entity.core.service.locationforecast;
 
 public class Temperature extends UnitEntity {
 
+    /**
+     * Constructor with no initial values
+     */
     public Temperature() {
+        super();
     }
 
     public Temperature(String id, String unit, Double value) {
