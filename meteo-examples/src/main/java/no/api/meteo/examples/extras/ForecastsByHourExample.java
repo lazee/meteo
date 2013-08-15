@@ -48,7 +48,6 @@ public class ForecastsByHourExample extends AbstractExample {
     private MeteoClient meteoClient;
 
     public ForecastsByHourExample() {
-        configureLog("INFO");
         meteoClient = new DefaultMeteoClient();
     }
 
