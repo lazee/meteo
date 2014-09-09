@@ -45,7 +45,7 @@ public class LocationforecastLTSService extends AbstractMeteoService {
 
     // Changed for the same reason as MET_SERVICE_NAME
     //private static final MeteoServiceVersion version = new MeteoServiceVersion(1, 0);
-    private static final MeteoServiceVersion VERSION = new MeteoServiceVersion(1, 8);
+    private static final MeteoServiceVersion VERSION = new MeteoServiceVersion(1, 9);
 
     private MeteoDataParser<LocationForecast> parser;
 
