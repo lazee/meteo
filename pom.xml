@@ -30,9 +30,9 @@
 
     <url>https://github.com/amedia/meteo</url>
     <scm>
-        <connection>scm:git:git://github.com/amedia/meteo.git</connection>
+        <connection>scm:git:ssh://git@github.com/amedia/meteo.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/amedia/meteo.git</developerConnection>
-        <url>https://github.com/amedia/meteo</url>
+        <tag>HEAD</tag>
     </scm>
 
     <profiles>
@@ -350,15 +350,14 @@
         <repository>
             <id>api-repository</id>
             <name>API Repository</name>
-            <url>
-                scp://maven.api.no/usr/local/maven/repository
-            </url>
+            <url>scpexe://maven.api.no/usr/local/maven/repository</url>
         </repository>
-        <site>
-            <id>ci.website</id>
-            <name>ci.dev.api.no</name>
-            <url>${site-url}</url>
-        </site>
+
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>nexus Snapshot Repository</name>
+            <url>http://ci.dev.api.no/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <reporting>
