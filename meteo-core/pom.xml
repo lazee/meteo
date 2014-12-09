@@ -3,13 +3,13 @@
     <parent>
         <artifactId>meteo</artifactId>
         <groupId>no.api.opensource</groupId>
-        <version>1.0.2</version>
+        <version>1.0.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>no.api.opensource.meteo</groupId>
     <artifactId>meteo-core</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <name>meteo-core</name>
     <description>Core Meteo package</description>
 
