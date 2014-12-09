@@ -80,15 +80,15 @@ public class DefaultMeteoClient implements MeteoClient {
             HttpGet httpget = new HttpGet(url.toURI());
 
             HttpResponse response = httpClient.execute(httpget);
+            if (response.getStatusLine().getStatusCode() != 200) {
+                throw new MeteoClientException(
+                        "The request failed with error code " + response.getStatusLine().getStatusCode() + " : " +
+                        response.getStatusLine().getReasonPhrase());
+            }
             HttpEntity entity = response.getEntity();
 
             if (entity != null) {
-                long len = entity.getContentLength();
-                if (len != -1 && len < MAXIMUM_CONTENT_LENGTH) {
-                    return new MeteoResponse(EntityUtils.toString(entity), createMeteoResponseHeaders(response));
-                } else {
-                    throw new MeteoClientException("The returned content exceeds the data limit of 1024000 bytes.");
-                }
+                return new MeteoResponse(EntityUtils.toString(entity), createMeteoResponseHeaders(response));
             } else {
                 throw new MeteoClientException("No content returned from request: " + url.toString());
             }
