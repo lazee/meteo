@@ -19,9 +19,9 @@ package no.api.meteo.entity.extras;
 /**
  * Enum representation of the Beaufort scale.
  *
- * <p>Each enum type represents one level/step/class/unit in this scale.</p>
+ * Each enum type represents one level/step/class/unit in this scale.
  *
- * <p>Resource: http://en.wikipedia.org/wiki/Beaufort_scale">Wikipedia</p>
+ * <p>Resource: http://en.wikipedia.org/wiki/Beaufort_scale</p>
  *
  * <p>As for now this implementation has english and norwegian (bokmaal) translations of the name on each level</p>
  */
