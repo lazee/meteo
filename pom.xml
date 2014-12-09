@@ -5,7 +5,7 @@
 
     <groupId>no.api.opensource</groupId>
     <artifactId>meteo</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>meteo</name>
     <description>Java library for fetching weather data from api.met.no</description>
@@ -32,7 +32,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com/amedia/meteo.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/amedia/meteo.git</developerConnection>
-        <tag>meteo-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <profiles>
