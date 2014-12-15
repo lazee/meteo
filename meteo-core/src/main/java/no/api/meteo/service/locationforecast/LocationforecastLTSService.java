@@ -29,13 +29,11 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import static no.api.meteo.util.MeteoConstants.PARAM_ALTITUDE;
-import static no.api.meteo.util.MeteoConstants.PARAM_LATITUDE;
-import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
+import static no.api.meteo.util.MeteoConstants.*;
 
 /**
  * http://api.met.no/weatherapi/locationforecastlts/1.0/documentation
- * http://api.met.no/weatherapi/locationforecast/1.8/documentation
+ * http://api.met.no/weatherapi/locationforecast/1.9/documentation
  */
 public class LocationforecastLTSService extends AbstractMeteoService {
 
@@ -55,15 +53,22 @@ public class LocationforecastLTSService extends AbstractMeteoService {
     }
 
     public MeteoData<LocationForecast> fetchContent(double longitude, double latitude, double altitude) throws MeteoException {
-        MeteoResponse response = getMeteoClient().fetchContent(createServiceUrl(longitude, latitude, altitude));
+        MeteoResponse response = getMeteoClient().fetchContent(createServiceUrl(longitude, latitude, altitude, false));
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
-    public URL createServiceUrl(double longitude, double latitude, double altitude) throws MeteoException {
+    public MeteoData<LocationForecast> fetchContent(double longitude, double latitude) throws MeteoException {
+        MeteoResponse response = getMeteoClient().fetchContent(createServiceUrl(longitude, latitude, 0, true));
+        return new MeteoData<>(parser.parse(response.getData()), response);
+    }
+
+    private URL createServiceUrl(double longitude, double latitude, double altitude, boolean skipAltitude) throws MeteoException {
         Map<String, Object> queryParameters = new HashMap<>();
         queryParameters.put(PARAM_LONGITUDE, longitude);
         queryParameters.put(PARAM_LATITUDE, latitude);
-        queryParameters.put(PARAM_ALTITUDE, (int) altitude);
+        if (!skipAltitude) {
+            queryParameters.put(PARAM_ALTITUDE, (int) altitude);
+        }
         return createRequestUrl(queryParameters);
     }
 

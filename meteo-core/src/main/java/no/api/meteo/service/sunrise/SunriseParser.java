@@ -104,7 +104,7 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
                 } catch (MeteoException e) {
                     log.warn("License url not found in feed");
                 }
-                sunrise.setMeta(meta);
+                   sunrise.setMeta(meta);
                 break;
             case TAG_TIME: {
                 SunriseDate sunriseDate = new SunriseDate();
