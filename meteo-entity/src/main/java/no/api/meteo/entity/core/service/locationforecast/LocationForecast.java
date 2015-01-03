@@ -30,7 +30,7 @@ import java.util.List;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class LocationForecast extends RootEntity {
+public final class LocationForecast extends RootEntity {
 
     @NotNull
     private final Location location;

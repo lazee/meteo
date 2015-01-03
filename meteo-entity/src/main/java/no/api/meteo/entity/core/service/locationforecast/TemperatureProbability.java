@@ -23,7 +23,7 @@ import lombok.Value;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class TemperatureProbability extends ProbabilityEntity {
+public final class TemperatureProbability extends ProbabilityEntity {
 
     public TemperatureProbability(String unit, Integer value) {
         super(unit, value);

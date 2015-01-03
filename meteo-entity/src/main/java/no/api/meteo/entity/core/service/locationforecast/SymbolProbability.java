@@ -23,7 +23,7 @@ import lombok.Value;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class SymbolProbability extends ProbabilityEntity {
+public final class SymbolProbability extends ProbabilityEntity {
 
     public SymbolProbability(String unit, Integer value) {
         super(unit, value);

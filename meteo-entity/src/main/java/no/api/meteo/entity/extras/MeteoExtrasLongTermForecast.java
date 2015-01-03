@@ -16,14 +16,12 @@
 
 package no.api.meteo.entity.extras;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
 import java.util.List;
 
 @Value
-@AllArgsConstructor
-public class MeteoExtrasLongTermForecast {
+public final class MeteoExtrasLongTermForecast {
 
     private final List<MeteoExtrasForecastDay> forecastDays;
 

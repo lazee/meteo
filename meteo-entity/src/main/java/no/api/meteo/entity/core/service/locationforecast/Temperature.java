@@ -23,7 +23,7 @@ import lombok.Value;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Temperature extends UnitEntity {
+public final class Temperature extends UnitEntity {
 
     public Temperature(String id, String unit, Double value) {
         super(id, unit, value);

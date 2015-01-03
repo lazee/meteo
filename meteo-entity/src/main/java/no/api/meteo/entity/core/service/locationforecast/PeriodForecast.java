@@ -25,7 +25,7 @@ import java.util.Date;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class PeriodForecast extends AbstractForecast implements Forecast {
+public final class PeriodForecast extends AbstractForecast implements Forecast {
 
     private final Precipitation precipitation;
 

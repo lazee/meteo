@@ -23,7 +23,7 @@ import lombok.Value;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class WindProbability extends ProbabilityEntity{
+public final class WindProbability extends ProbabilityEntity{
 
     public WindProbability(String unit, Integer value) {
         super(unit, value);

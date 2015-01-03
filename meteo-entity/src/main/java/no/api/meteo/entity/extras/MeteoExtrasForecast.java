@@ -16,7 +16,6 @@
 
 package no.api.meteo.entity.extras;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.PointForecast;
@@ -32,8 +31,7 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
  * at night or not. More data will be added along the way.
  */
 @Value
-@AllArgsConstructor
-public class MeteoExtrasForecast {
+public final class MeteoExtrasForecast {
 
     private final PointForecast pointForecast;
 

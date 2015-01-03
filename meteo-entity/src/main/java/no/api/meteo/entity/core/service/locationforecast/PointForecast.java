@@ -26,7 +26,7 @@ import java.util.Date;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class PointForecast extends AbstractForecast implements Forecast {
+public final class PointForecast extends AbstractForecast implements Forecast {
 
     private final Fog fog;
 

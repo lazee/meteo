@@ -25,7 +25,7 @@ import java.util.Date;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class ErrorType extends AbstractRiseSet {
+public final class ErrorType extends AbstractRiseSet {
 
     public ErrorType(Date rise, Date set) {
         super(rise, set);

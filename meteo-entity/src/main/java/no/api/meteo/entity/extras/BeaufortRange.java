@@ -16,12 +16,10 @@
 
 package no.api.meteo.entity.extras;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
 @Value
-@AllArgsConstructor
-public class BeaufortRange {
+public final class BeaufortRange {
 
     private final double start;
 

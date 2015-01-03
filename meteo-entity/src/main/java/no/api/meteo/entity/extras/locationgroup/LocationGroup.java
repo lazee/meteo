@@ -16,14 +16,12 @@
 
 package no.api.meteo.entity.extras.locationgroup;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
 import java.util.List;
 
 @Value
-@AllArgsConstructor
-public class LocationGroup {
+public final class LocationGroup {
 
     private final String id;
 

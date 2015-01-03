@@ -16,14 +16,12 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
 import java.util.Date;
 
 @Value
-@AllArgsConstructor
-public class Model {
+public final class Model {
 
     private final Date to;
 

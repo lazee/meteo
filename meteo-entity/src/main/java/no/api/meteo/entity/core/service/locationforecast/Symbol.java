@@ -25,7 +25,7 @@ import no.api.meteo.entity.core.IdEntity;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Symbol extends IdEntity {
+public final class Symbol extends IdEntity {
 
     @NotNull
     private final Integer number;

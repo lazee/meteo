@@ -31,7 +31,7 @@ nautical -12 and astronomical -18.
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Sun extends AbstractType {
+public final class Sun extends AbstractType {
 
     private final Double daylength;
 

@@ -16,14 +16,12 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
 import java.util.Date;
 
 @Value
-@AllArgsConstructor
-public class Noon {
+public final class Noon {
 
     private final Date time;
 

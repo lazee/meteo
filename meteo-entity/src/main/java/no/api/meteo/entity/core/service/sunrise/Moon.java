@@ -26,7 +26,7 @@ import java.util.List;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Moon extends AbstractType {
+public final class Moon extends AbstractType {
 
     private final PhaseType phase;
 

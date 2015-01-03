@@ -24,7 +24,7 @@ import no.api.meteo.entity.core.Location;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class ExtendedLocation extends Location {
+public final class ExtendedLocation extends Location {
 
     private final String name;
 

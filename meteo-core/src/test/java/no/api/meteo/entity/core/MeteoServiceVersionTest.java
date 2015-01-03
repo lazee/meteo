@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2013 Amedia AS.
+ * Copyright (c) 2011-2015 Amedia AS.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,17 @@
 
 package no.api.meteo.entity.core;
 
-import lombok.Value;
+import org.junit.Assert;
+import org.junit.Test;
 
-@Value
-public final class MeteoServiceVersion {
+public class MeteoServiceVersionTest {
 
-    private final int major;
-
-    private final int minor;
-
-    public String toStringVersion() {
-        return String.format("%s.%s", major, minor);
+    @Test
+    public void testToStringVersion() throws Exception {
+        MeteoServiceVersion meteoServiceVersion = new MeteoServiceVersion(2, 3);
+        Assert.assertEquals("2.3", meteoServiceVersion.toStringVersion());
+        MeteoServiceVersion meteoServiceVersion1 = new MeteoServiceVersion(2, 3);
+        Assert.assertTrue(meteoServiceVersion1.equals(meteoServiceVersion));
+        Assert.assertEquals(meteoServiceVersion.hashCode(), meteoServiceVersion1.hashCode());
     }
-
 }

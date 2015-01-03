@@ -24,7 +24,7 @@ import no.api.meteo.entity.core.PercentEntity;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class HighClouds extends PercentEntity {
+public final class HighClouds extends PercentEntity {
 
     public HighClouds(String id, Double percent) {
         super(id, percent);

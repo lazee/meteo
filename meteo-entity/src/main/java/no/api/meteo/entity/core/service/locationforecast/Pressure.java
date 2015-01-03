@@ -23,7 +23,7 @@ import lombok.Value;
 @Value
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Pressure extends UnitEntity {
+public final class Pressure extends UnitEntity {
 
     public Pressure(String id, String unit, Double value) {
         super(id, unit, value);

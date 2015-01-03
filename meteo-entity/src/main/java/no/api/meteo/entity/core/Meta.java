@@ -16,7 +16,6 @@
 
 package no.api.meteo.entity.core;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.service.locationforecast.Model;
@@ -25,8 +24,7 @@ import java.net.URL;
 import java.util.List;
 
 @Value
-@AllArgsConstructor
-public class Meta {
+public final class Meta {
 
     @NotNull
     private final URL licenseUrl;
