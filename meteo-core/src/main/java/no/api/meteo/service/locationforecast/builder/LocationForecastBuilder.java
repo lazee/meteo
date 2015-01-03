@@ -35,9 +35,8 @@ public class LocationForecastBuilder {
     @Setter
     private Date created;
 
-    @Setter
     @Getter
-    private MetaBuilder metaBuilder;
+    private MetaBuilder metaBuilder = new MetaBuilder();
 
     @Setter
     @Getter

@@ -40,7 +40,6 @@ import no.api.meteo.entity.core.service.locationforecast.WindSpeed;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.MeteoDataParserException;
 import no.api.meteo.service.locationforecast.builder.LocationForecastBuilder;
-import no.api.meteo.service.locationforecast.builder.MetaBuilder;
 import no.api.meteo.service.locationforecast.builder.PeriodForecastBuilder;
 import no.api.meteo.service.locationforecast.builder.PointForecastBuilder;
 import no.api.meteo.util.EntityBuilder;
@@ -221,9 +220,7 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
             case TAG_META:
 
                 try {
-                    MetaBuilder metaBuilder = new MetaBuilder();
-                    metaBuilder.setLicenseUrl(MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)));
-                    locationForecastBuilder.setMetaBuilder(metaBuilder);
+                    locationForecastBuilder.getMetaBuilder().setLicenseUrl(MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)));
                 } catch (MeteoException e) {
                     log.debug("License url not found in feed");
                 }
