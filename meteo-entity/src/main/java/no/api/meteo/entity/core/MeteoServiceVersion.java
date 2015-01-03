@@ -16,34 +16,19 @@
 
 package no.api.meteo.entity.core;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
+@Value
+@AllArgsConstructor
 public class MeteoServiceVersion {
 
-    private int major;
+    private final int major;
 
-    private int minor;
-
-    public MeteoServiceVersion(int major, int minor) {
-        this.major = major;
-        this.minor = minor;
-    }
-
-    public int getMajor() {
-        return major;
-    }
-
-    public int getMinor() {
-        return minor;
-    }
+    private final int minor;
 
     public String toStringVersion() {
         return major + "." + minor;
     }
 
-    @Override
-    public String toString() {
-        return "ServiceVersion{" +
-                "major=" + major +
-                ", minor=" + minor +
-                '}';
-    }
 }

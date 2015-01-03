@@ -16,37 +16,19 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
 import java.util.Date;
 
+@Value
+@AllArgsConstructor
 public class SunriseDate {
 
-    private Date date;
+    private final Date date;
 
-    private Sun sun;
+    private final Sun sun;
 
-    private Moon moon;
+    private final Moon moon;
 
-    public Date getDate() {
-        return (date == null ? null : (Date) date.clone());
-    }
-
-    public void setDate(Date date) {
-        this.date = (date == null ? null : (Date) date.clone());
-    }
-
-    public Moon getMoon() {
-        return moon;
-    }
-
-    public void setMoon(Moon moon) {
-        this.moon = moon;
-    }
-
-    public Sun getSun() {
-        return sun;
-    }
-
-    public void setSun(Sun sun) {
-        this.sun = sun;
-    }
 }

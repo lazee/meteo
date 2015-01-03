@@ -84,7 +84,7 @@ public final class LocationForecastHelper {
             if (pointForecast != null) {
                 PeriodForecast periodForecast =
                         indexer.getTightestFitPeriodForecast(new DateTime(pointForecast.getFromTime()));
-                pointExtrasForecasts.add(new MeteoExtrasForecast(periodForecast, pointForecast));
+                pointExtrasForecasts.add(new MeteoExtrasForecast(pointForecast, periodForecast));
             }
         }
         return pointExtrasForecasts;
@@ -107,7 +107,7 @@ public final class LocationForecastHelper {
         if (pointForecast == null) {
             return null;
         }
-        return new MeteoExtrasForecast(periodForecast, pointForecast);
+        return new MeteoExtrasForecast(pointForecast, periodForecast);
     }
 
     public MeteoExtrasLongTermForecast createLongTermForecast() {
@@ -164,13 +164,13 @@ public final class LocationForecastHelper {
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(6), dt.withHourOfDay(12)), forecasts);
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(12), dt.withHourOfDay(18)), forecasts);
         addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(18), dt.plusDays(1).withHourOfDay(0)), forecasts);
-        return new MeteoExtrasForecastDay(forecasts, dt.toDate());
+        return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
     }
 
     public MeteoExtrasForecastDay createSimpleForcastForDay(DateTime dt) throws MeteoException {
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
         addForecastToList(findNearestForecast(dt.withHourOfDay(14).toDate()), forecasts);
-        return new MeteoExtrasForecastDay(forecasts, dt.toDate());
+        return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
     }
 
     private void addForecastToList(MeteoExtrasForecast mef, List<MeteoExtrasForecast> lst) {
@@ -190,7 +190,7 @@ public final class LocationForecastHelper {
     private void validateIndexer() throws MeteoException {
         if (indexer == null) {
             throw new MeteoException("Indexer haven't been initialized. " +
-                    "Something went wrong during fetching of the data");
+                                             "Something went wrong during fetching of the data");
         }
     }
 
@@ -238,16 +238,16 @@ public final class LocationForecastHelper {
                 } else if (chosenForecast == null) {
                     chosenForecast = pointForecast;
                 } else if (isNearerDate(new DateTime(pointForecast.getFromTime()), date,
-                        new DateTime(chosenForecast.getFromTime()))) {
+                                        new DateTime(chosenForecast.getFromTime()))) {
                     chosenForecast = pointForecast;
                 }
             }
         }
         return (chosenForecast == null ?
                 null :
-                new MeteoExtrasForecast(
-                        indexer.getWidestFitPeriodForecast(
-                                new DateTime(chosenForecast.getFromTime())), chosenForecast));
+                new MeteoExtrasForecast(chosenForecast,
+                                        indexer.getWidestFitPeriodForecast(
+                                                new DateTime(chosenForecast.getFromTime()))));
     }
 
     private boolean isNearerDate(DateTime pointTime, DateTime dateTime, DateTime chosenTime) {

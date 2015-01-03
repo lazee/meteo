@@ -198,17 +198,17 @@ public enum BeaufortLevel {
             new BeaufortRange(64, Double.MAX_VALUE));
 
 
-    private int id;
+    private final int id;
 
-    private String nameEN;
+    private final String nameEN;
 
-    private String nameNO;
+    private final String nameNO;
 
-    private BeaufortRange ms;
+    private final BeaufortRange ms;
 
-    private BeaufortRange kmh;
+    private final BeaufortRange kmh;
 
-    private BeaufortRange kn;
+    private final BeaufortRange kn;
 
     BeaufortLevel(int id, String nameEN, String nameNO, BeaufortRange ms, BeaufortRange kmh, BeaufortRange kn) {
         this.nameEN = nameEN;

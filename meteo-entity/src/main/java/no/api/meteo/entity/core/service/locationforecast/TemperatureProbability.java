@@ -16,19 +16,16 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
+
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class TemperatureProbability extends ProbabilityEntity {
 
-    /**
-     * Constructor with no initial values
-     */
-    public TemperatureProbability() {
-        super();
-    }
-
     public TemperatureProbability(String unit, Integer value) {
-        setUnit(unit);
-        setValue(value);
-
+        super(unit, value);
     }
-
 }

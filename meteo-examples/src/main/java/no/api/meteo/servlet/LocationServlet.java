@@ -69,7 +69,7 @@ public class LocationServlet extends HttpServlet {
                 LocationForecastHelper helper = new LocationForecastHelper(meteoData.getResult());
 
                 req.setAttribute("data", meteoData.getResult());
-                req.setAttribute("raw", meteoData.getRawResult());
+                req.setAttribute("raw", meteoData.getResponse().getData());
 
                 List<MeteoExtrasForecast> last24 = helper.findHourlyPointForecastsFromNow(HOURS_24);
                 req.setAttribute("last24", last24);

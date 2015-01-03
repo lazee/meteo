@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2013 Amedia AS.
+ * Copyright (c) 2011-2015 Amedia AS.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
-package no.api.meteo.entity.extras;
+package no.api.meteo.util;
 
-import lombok.AllArgsConstructor;
-import lombok.Value;
+/**
+ * Helper interface for the parsers
+ *
+ * @param <E>
+ *         The type of object the builder will produce.
+ */
+public interface EntityBuilder<E> {
 
-import java.util.List;
-
-@Value
-@AllArgsConstructor
-public class MeteoExtrasLongTermForecast {
-
-    private final List<MeteoExtrasForecastDay> forecastDays;
+    /**
+     * Build the immutable object.
+     *
+     * @return Instance of the object that was built by the builder.
+     */
+    E build();
 
 }

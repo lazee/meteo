@@ -19,6 +19,7 @@ package no.api.meteo.locationgroups.config;
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.extras.locationgroup.ExtendedLocation;
 import no.api.meteo.entity.extras.locationgroup.LocationGroup;
+import no.api.meteo.locationgroups.config.builder.LocationGroupBuilder;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.MeteoDataParserException;
 import no.api.meteo.util.MeteoXppUtils;
@@ -55,7 +56,7 @@ public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>>
             Map<String, LocationGroup> groups = new TreeMap<>();
 
             int eventType = xpp.getEventType();
-            Stack<LocationGroup> stack = new Stack<>();
+            Stack<LocationGroupBuilder> stack = new Stack<>();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
                     handleStartTags(xpp, stack);
@@ -74,24 +75,26 @@ public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>>
         }
     }
 
-    private void handleStartTags(XmlPullParser xpp, Stack<LocationGroup> stack) {
+    private void handleStartTags(XmlPullParser xpp, Stack<LocationGroupBuilder> stack) {
         String n = xpp.getName();
         if ("group".equals(n)) {
-            stack.push(new LocationGroup(getString(xpp, "id")));
+            LocationGroupBuilder locationGroupBuilder = new LocationGroupBuilder();
+            locationGroupBuilder.setId(getString(xpp, "id"));
+            stack.push(locationGroupBuilder);
         } else if ("location".equals(n)) {
-            LocationGroup locationGroup = stack.peek();
-            locationGroup.getLocations().add(new ExtendedLocation(
-                    getString(xpp, "name"),
+            LocationGroupBuilder locationGroupBuilder = stack.peek();
+            locationGroupBuilder.getLocations().add(new ExtendedLocation(
                     getDouble(xpp, "longitude"),
                     getDouble(xpp, "latitude"),
-                    getDouble(xpp, "moh")));
+                    getDouble(xpp, "moh"),
+                    getString(xpp, "name")));
         }
     }
 
-    private void handleEndTags(Map<String, LocationGroup> groups, XmlPullParser xpp, Stack<LocationGroup> stack) {
+    private void handleEndTags(Map<String, LocationGroup> groups, XmlPullParser xpp, Stack<LocationGroupBuilder> stack) {
         if ("group".equals(xpp.getName())) {
-            LocationGroup locationGroup = stack.pop();
-            groups.put(locationGroup.getId(), locationGroup);
+            LocationGroupBuilder locationGroupBuilder = stack.pop();
+            groups.put(locationGroupBuilder.getId(), locationGroupBuilder.build());
         } else {
             log.trace("Unhandled end tag: " + xpp.getName());
         }

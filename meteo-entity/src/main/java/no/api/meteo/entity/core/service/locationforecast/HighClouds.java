@@ -16,19 +16,17 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 import no.api.meteo.entity.core.PercentEntity;
 
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class HighClouds extends PercentEntity {
 
-    /**
-     * Constructor with no initial values
-     */
-    public HighClouds() {
-        super();
-    }
-
     public HighClouds(String id, Double percent) {
-        setId(id);
-        setPercent(percent);
+        super(id, percent);
     }
 }

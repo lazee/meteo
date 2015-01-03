@@ -16,58 +16,32 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.IdEntity;
 
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public final class WindSpeed extends IdEntity {
 
     @NotNull
-    private Integer beaufort;
+    private final Integer beaufort;
 
     @NotNull
-    private Double mps;
+    private final Double mps;
 
     @NotNull
     @NotEmpty
-    private String name;
+    private final String name;
 
-    /**
-     * Constructor with no initial values
-     */
-    public WindSpeed() {
-        super();
-    }
-
-    public WindSpeed(String id, Integer beaufort,
-                     Double mps, String name) {
-        setId(id);
+    public WindSpeed(String id, Integer beaufort, Double mps, String name) {
+        super(id);
         this.beaufort = beaufort;
         this.mps = mps;
-        this.name = name;
-    }
-
-    public Integer getBeaufort() {
-        return beaufort;
-    }
-
-    public void setBeaufort(Integer beaufort) {
-        this.beaufort = beaufort;
-    }
-
-    public Double getMps() {
-        return mps;
-    }
-
-    public void setMps(Double mps) {
-        this.mps = mps;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 }

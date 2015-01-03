@@ -16,67 +16,25 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
 import java.util.Date;
 
+@Value
+@AllArgsConstructor
 public class Model {
 
-    private Date to;
+    private final Date to;
 
-    private Date from;
+    private final Date from;
 
-    private Date runEnded;
+    private final Date runEnded;
 
-    private Date nextRun;
+    private final Date nextRun;
 
-    private Date termin;
+    private final Date termin;
 
-    private String name;
+    private final String name;
 
-    public Date getFrom() {
-        return (from == null ? null : (Date) from.clone());
-    }
-
-    public void setFrom(Date from) {
-        this.from = (from == null ? null : (Date) from.clone());
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getNextRun() {
-        return (nextRun == null ? null : (Date) nextRun.clone());
-    }
-
-    public void setNextRun(Date nextRun) {
-        this.nextRun = (nextRun == null ? null : (Date) nextRun.clone());
-    }
-
-    public Date getRunEnded() {
-        return (runEnded == null ? null : (Date) runEnded.clone());
-    }
-
-    public void setRunEnded(Date runEnded) {
-        this.runEnded = (runEnded == null ? null : (Date) runEnded.clone());
-    }
-
-    public Date getTermin() {
-        return (termin == null ? null : (Date) termin.clone());
-    }
-
-    public void setTermin(Date termin) {
-        this.termin = (termin == null ? null : (Date) termin.clone());
-    }
-
-    public Date getTo() {
-        return (to == null ? null : (Date) to.clone());
-    }
-
-    public void setTo(Date to) {
-        this.to = (to == null ? null : (Date) to.clone());
-    }
 }

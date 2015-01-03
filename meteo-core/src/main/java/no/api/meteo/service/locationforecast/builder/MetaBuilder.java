@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2013 Amedia AS.
+ * Copyright (c) 2011-2015 Amedia AS.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,32 @@
  * limitations under the License.
  */
 
-package no.api.meteo.entity.core;
+package no.api.meteo.service.locationforecast.builder;
 
-import lombok.AllArgsConstructor;
-import lombok.Value;
-import net.sf.oval.constraint.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.service.locationforecast.Model;
+import no.api.meteo.util.EntityBuilder;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
-@Value
-@AllArgsConstructor
-public class Meta {
+@NoArgsConstructor
+public class MetaBuilder implements EntityBuilder<Meta> {
 
-    @NotNull
-    private final URL licenseUrl;
+    @Setter
+    @Getter
+    private URL licenseUrl;
 
-    private final List<Model> models;
+    @Setter
+    @Getter
+    private List<Model> models = new ArrayList<>();
 
+    @Override
+    public Meta build() {
+        return new Meta(licenseUrl, models);
+    }
 }

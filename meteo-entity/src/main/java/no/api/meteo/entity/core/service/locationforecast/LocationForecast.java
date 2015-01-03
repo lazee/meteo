@@ -16,36 +16,32 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.Location;
+import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.RootEntity;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class LocationForecast extends RootEntity {
 
     @NotNull
-    private Location location;
+    private final Location location;
 
     @NotNull
-    private List<Forecast> forecasts = new ArrayList<>();
+    private final List<Forecast> forecasts;
 
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
+    public LocationForecast(Date created, Meta meta, Location location, List<Forecast> forecasts) {
+        super(created, meta);
         this.location = location;
+        this.forecasts = forecasts;
     }
 
-    public List<Forecast> getForecasts() {
-        return forecasts;
-    }
-
-    public void setForecasts(List<Forecast> forecasts) {
-        if (forecasts != null) {
-            this.forecasts = forecasts;
-        }
-    }
 }

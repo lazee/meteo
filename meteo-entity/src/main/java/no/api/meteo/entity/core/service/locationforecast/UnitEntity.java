@@ -16,32 +16,25 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.Getter;
 import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.IdEntity;
 
-public class UnitEntity extends IdEntity {
+public abstract class UnitEntity extends IdEntity {
 
     @NotNull
     @NotEmpty
-    private String unit;
+    @Getter
+    private final String unit;
 
     @NotNull
-    private Double value;
+    @Getter
+    private final Double value;
 
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
+    public UnitEntity(String id, String unit, Double value) {
+        super(id);
         this.unit = unit;
-    }
-
-    public Double getValue() {
-        return value;
-    }
-
-    public void setValue(Double value) {
         this.value = value;
     }
 }

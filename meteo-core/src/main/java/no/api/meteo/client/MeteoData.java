@@ -16,28 +16,26 @@
 
 package no.api.meteo.client;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
 import java.util.List;
 
+@Value
+@AllArgsConstructor
 public class MeteoData<E> {
 
-    private E result;
+    private final E result;
 
-    private MeteoResponse response;
+    private final MeteoResponse response;
 
-    public MeteoData(E result, MeteoResponse response) {
-        this.result = result;
-        this.response = response;
-    }
-
+    @Deprecated
     public String getRawResult() {
-        return response.getData();
+        return response == null ? null : response.getData();
     }
 
-    public E getResult() {
-        return result;
-    }
-
+    @Deprecated
     public List<MeteoResponseHeader> getHttpHeaders() {
-        return response.getResponseHeaders();
+        return response == null ? null : response.getResponseHeaders();
     }
 }

@@ -17,21 +17,17 @@
 package no.api.meteo.entity.core.service.locationforecast;
 
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 import no.api.meteo.entity.core.PercentEntity;
 
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Cloudiness extends PercentEntity {
 
-    /**
-     * Constructor with no initial values
-     */
-    public Cloudiness() {
-        super();
-    }
-
     public Cloudiness(String id, Double percent) {
-        setId(id);
-        setPercent(percent);
+        super(id, percent);
     }
-
-
 }

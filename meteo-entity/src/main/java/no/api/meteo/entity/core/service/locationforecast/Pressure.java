@@ -16,18 +16,16 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
+
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Pressure extends UnitEntity {
 
-    /**
-     * Constructor with no initial values
-     */
-    public Pressure() {
-        super();
-    }
-
     public Pressure(String id, String unit, Double value) {
-        setId(id);
-        setUnit(unit);
-        setValue(value);
+        super(id, unit, value);
     }
 }

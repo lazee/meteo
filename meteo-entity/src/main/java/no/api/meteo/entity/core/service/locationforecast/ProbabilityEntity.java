@@ -16,32 +16,19 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.AllArgsConstructor;
 import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 
-public class ProbabilityEntity {
+@AllArgsConstructor
+public abstract class ProbabilityEntity {
 
     @NotNull
     @NotEmpty
-    private String unit;
+    private final String unit;
 
     @NotNull
-    private Integer value;
+    private final Integer value;
 
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public Integer getValue() {
-        return value;
-    }
-
-    public void setValue(Integer value) {
-        this.value = value;
-    }
 
 }

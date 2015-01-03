@@ -16,36 +16,27 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
+
+import java.util.Date;
+
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class PeriodForecast extends AbstractForecast implements Forecast {
 
-    private Precipitation precipitation;
+    private final Precipitation precipitation;
 
-    private Symbol symbol;
+    private final Symbol symbol;
 
-    private SymbolProbability symbolProbability;
+    private final SymbolProbability symbolProbability;
 
-    public Precipitation getPrecipitation() {
-        return precipitation;
-    }
-
-    public void setPrecipitation(Precipitation precipitation) {
+    public PeriodForecast(Date fromTime, Date toTime, Precipitation precipitation, Symbol symbol, SymbolProbability symbolProbability) {
+        super(fromTime, toTime);
         this.precipitation = precipitation;
-    }
-
-    public Symbol getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(Symbol symbol) {
         this.symbol = symbol;
-    }
-
-    public SymbolProbability getSymbolProbability() {
-        return symbolProbability;
-    }
-
-    public void setSymbolProbability(SymbolProbability symbolProbability) {
         this.symbolProbability = symbolProbability;
     }
-
 }

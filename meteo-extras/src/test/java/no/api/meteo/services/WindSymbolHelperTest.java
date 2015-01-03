@@ -16,10 +16,10 @@
 
 package no.api.meteo.services;
 
-import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.core.service.locationforecast.WindDirection;
 import no.api.meteo.entity.core.service.locationforecast.WindSpeed;
 import no.api.meteo.entity.extras.BeaufortLevel;
+import no.api.meteo.service.locationforecast.builder.PointForecastBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -29,14 +29,17 @@ public class WindSymbolHelperTest {
     public void testCreateWindSymbolName() throws Exception {
         WindSpeed windSpeed = new WindSpeed("ff", 2, 0.0, "Light breeze");
         WindDirection windDirection = new WindDirection("dd", "SW", 0.0);
-        PointForecast pointForecast = new PointForecast();
+
+        PointForecastBuilder pointForecastBuilder = new PointForecastBuilder();
         Assert.assertNull(WindSymbolHelper.createWindSymbolName(null));
-        Assert.assertNull(WindSymbolHelper.createWindSymbolName(pointForecast));
-        pointForecast.setWindDirection(windDirection);
-        Assert.assertNull(WindSymbolHelper.createWindSymbolName(pointForecast));
-        pointForecast.setWindSpeed(windSpeed);
-        Assert.assertNotNull(WindSymbolHelper.createWindSymbolName(pointForecast));
-        Assert.assertEquals("sw02", WindSymbolHelper.createWindSymbolName(pointForecast));
+        Assert.assertNull(WindSymbolHelper.createWindSymbolName(pointForecastBuilder.build()));
+
+        pointForecastBuilder.setWindDirection(windDirection);
+        Assert.assertNull(WindSymbolHelper.createWindSymbolName(pointForecastBuilder.build()));
+
+        pointForecastBuilder.setWindSpeed(windSpeed);
+        Assert.assertNotNull(WindSymbolHelper.createWindSymbolName(pointForecastBuilder.build()));
+        Assert.assertEquals("sw02", WindSymbolHelper.createWindSymbolName(pointForecastBuilder.build()));
     }
 
     @Test
@@ -44,12 +47,14 @@ public class WindSymbolHelperTest {
         WindSpeed windSpeed = new WindSpeed("ff", 2, 0.0, "Light breeze");
         WindDirection windDirection = new WindDirection("dd", "SW", 0.0);
         Assert.assertNull(WindSymbolHelper.findBeaufortLevel(null));
-        PointForecast pointForecast = new PointForecast();
-        Assert.assertNull(WindSymbolHelper.findBeaufortLevel(pointForecast));
-        pointForecast.setWindDirection(windDirection);
-        Assert.assertNull(WindSymbolHelper.findBeaufortLevel(pointForecast));
-        pointForecast.setWindSpeed(windSpeed);
-        Assert.assertNotNull(WindSymbolHelper.findBeaufortLevel(pointForecast));
-        Assert.assertEquals(BeaufortLevel.LIGHT_BREEZE, WindSymbolHelper.findBeaufortLevel(pointForecast));
+        PointForecastBuilder pointForecastBuilder = new PointForecastBuilder();
+        Assert.assertNull(WindSymbolHelper.findBeaufortLevel(pointForecastBuilder.build()));
+
+        pointForecastBuilder.setWindDirection(windDirection);
+        Assert.assertNull(WindSymbolHelper.findBeaufortLevel(pointForecastBuilder.build()));
+
+        pointForecastBuilder.setWindSpeed(windSpeed);
+        Assert.assertNotNull(WindSymbolHelper.findBeaufortLevel(pointForecastBuilder.build()));
+        Assert.assertEquals(BeaufortLevel.LIGHT_BREEZE, WindSymbolHelper.findBeaufortLevel(pointForecastBuilder.build()));
     }
 }

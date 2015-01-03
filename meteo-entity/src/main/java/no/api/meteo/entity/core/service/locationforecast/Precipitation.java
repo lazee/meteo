@@ -16,68 +16,29 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 import net.sf.oval.constraint.NotNull;
 
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public final class Precipitation extends UnitEntity {
 
     @NotNull
-    private Double minValue;
+    private final Double minValue;
 
     @NotNull
-    private Double value;
+    private final Double maxValue;
 
     @NotNull
-    private Double probability;
+    private final Double probability;
 
-    @NotNull
-    private Double maxValue;
-
-    /**
-     * Constructor with no initial values
-     */
-    public Precipitation() {
-        super();
-    }
-
-    public Precipitation(String id, String unit, Double minValue, Double value,
-                         Double probability, Double maxValue) {
-        setId(id);
-        setUnit(unit);
-        setMinValue(minValue);
-        setValue(value);
-        setMaxValue(maxValue);
-        setProbability(probability);
-    }
-
-    public Double getMinValue() {
-        return minValue;
-    }
-
-    public void setMinValue(Double minValue) {
+    public Precipitation(String id, String unit, Double value, Double minValue, Double maxValue, Double probability) {
+        super(id, unit, value);
         this.minValue = minValue;
-    }
-
-    public Double getValue() {
-        return value;
-    }
-
-    public void setValue(Double value) {
-        this.value = value;
-    }
-
-    public Double getProbability() {
-        return probability;
-    }
-
-    public void setProbability(Double probability) {
-        this.probability = probability;
-    }
-
-    public Double getMaxValue() {
-        return maxValue;
-    }
-
-    public void setMaxValue(Double maxValue) {
         this.maxValue = maxValue;
+        this.probability = probability;
     }
 }

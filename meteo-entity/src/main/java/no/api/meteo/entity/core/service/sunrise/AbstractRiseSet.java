@@ -16,28 +16,18 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.util.Date;
 
+@AllArgsConstructor
 public abstract class AbstractRiseSet {
 
-    private Date rise;
+    @Getter
+    private final Date rise;
 
-    private Date set;
-
-    public Date getRise() {
-        return (rise == null ? null : (Date) rise.clone());
-    }
-
-    public void setRise(Date rise) {
-        this.rise = (rise == null ? null : (Date) rise.clone());
-    }
-
-    public Date getSet() {
-        return (set == null ? null : (Date) set.clone());
-    }
-
-    public void setSet(Date set) {
-        this.set = (set == null ? null : (Date) set.clone());
-    }
+    @Getter
+    private final Date set;
 
 }

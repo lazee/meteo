@@ -16,40 +16,26 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
-import java.util.ArrayList;
+import lombok.Getter;
+
+import java.util.Date;
 import java.util.List;
 
 public abstract class AbstractType extends AbstractRiseSet {
 
-    private Boolean neverRise;
+    @Getter
+    private final Boolean neverRise;
 
-    private Boolean neverSet;
+    @Getter
+    private final Boolean neverSet;
 
-    private List<ErrorType> error = new ArrayList<>();
+    @Getter
+    private final List<ErrorType> error;
 
-    public Boolean isNeverRise() {
-        return neverRise;
-    }
-
-    public void setNeverRise(Boolean neverRise) {
+    public AbstractType(Date rise, Date set, Boolean neverRise, Boolean neverSet, List<ErrorType> error) {
+        super(rise, set);
         this.neverRise = neverRise;
-    }
-
-    public Boolean isNeverSet() {
-        return neverSet;
-    }
-
-    public void setNeverSet(Boolean neverSet) {
         this.neverSet = neverSet;
-    }
-
-    public List<ErrorType> getError() {
-        return error;
-    }
-
-    public void setError(List<ErrorType> error) {
-        if (error != null) {
-            this.error = error;
-        }
+        this.error = error;
     }
 }

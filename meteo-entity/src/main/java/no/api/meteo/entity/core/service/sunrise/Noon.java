@@ -16,37 +16,18 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
 import java.util.Date;
 
+@Value
+@AllArgsConstructor
 public class Noon {
 
-    private Date time;
+    private final Date time;
 
-    private Double altitude;
+    private final Double altitude;
 
-    private Double direction;
-
-    public Double getAltitude() {
-        return altitude;
-    }
-
-    public void setAltitude(Double altitude) {
-        this.altitude = altitude;
-    }
-
-    public Double getDirection() {
-        return direction;
-    }
-
-    public void setDirection(Double direction) {
-        this.direction = direction;
-    }
-
-    public Date getTime() {
-        return (time == null ? null : (Date) time.clone());
-    }
-
-    public void setTime(Date time) {
-        this.time = (time == null ? null : (Date) time.clone());
-    }
+    private final Double direction;
 }

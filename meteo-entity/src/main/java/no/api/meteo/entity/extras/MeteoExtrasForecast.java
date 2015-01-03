@@ -16,35 +16,27 @@
 
 package no.api.meteo.entity.extras;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 
 /**
  * This is a special customized forecast containing a mix of information for a given period of time.
- *
+ * <p/>
  * As explained in the api.met.no faq (http://api.met.no/faq.html#times) it doesn't make sense to give symbols and
  * precipitation for a given point in time. This only make sense for a given period.
- *
- * But in the Extras api we sometimes wants to return a PointForecast with a corresponding PeriodForecast, meaning
- * a PeriodForecast for the period that the PointForecast is in. We also want to add information of whether the period
- * is at night or not. More data will be added along the way.
+ * <p/>
+ * But in the Extras api we sometimes wants to return a PointForecast with a corresponding PeriodForecast, meaning a
+ * PeriodForecast for the period that the PointForecast is in. We also want to add information of whether the period is
+ * at night or not. More data will be added along the way.
  */
+@Value
+@AllArgsConstructor
 public class MeteoExtrasForecast {
 
-    private PointForecast pointForecast;
+    private final PointForecast pointForecast;
 
-    private PeriodForecast periodForecast;
+    private final PeriodForecast periodForecast;
 
-    public MeteoExtrasForecast(PeriodForecast periodForecast, PointForecast pointForecast) {
-        this.periodForecast = periodForecast;
-        this.pointForecast = pointForecast;
-    }
-
-    public PeriodForecast getPeriodForecast() {
-        return periodForecast;
-    }
-
-    public PointForecast getPointForecast() {
-        return pointForecast;
-    }
 }

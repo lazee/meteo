@@ -18,11 +18,16 @@ package no.api.meteo.entity.core.service.sunrise;
 
 public enum PhaseType {
 
-    NEW_MOON("New moon"), WAXING_CRESCENT("Waxing crescent"), FIRST_QUARTER("First quarter"),
-    WAXING_GIBBOUS("Waxing gibbous"), FULL_MOON("Full moon"), WANING_GIBBOUS("Waning gibbous"),
-    THIRD_QUARTER("Third quarter"), WANING_CRESCENT("Waning crescent");
+    NEW_MOON("New moon"),
+    WAXING_CRESCENT("Waxing crescent"),
+    FIRST_QUARTER("First quarter"),
+    WAXING_GIBBOUS("Waxing gibbous"),
+    FULL_MOON("Full moon"),
+    WANING_GIBBOUS("Waning gibbous"),
+    THIRD_QUARTER("Third quarter"),
+    WANING_CRESCENT("Waning crescent");
 
-    private String value;
+    private final String value;
 
     PhaseType(String value) {
         this.value = value;

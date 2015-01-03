@@ -16,15 +16,23 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
+
+import java.util.Date;
+import java.util.List;
+
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Moon extends AbstractType {
 
-    private PhaseType phase;
+    private final PhaseType phase;
 
-    public PhaseType getPhase() {
-        return phase;
-    }
-
-    public void setPhase(PhaseType phase) {
+    public Moon(Date rise, Date set, Boolean neverRise, Boolean neverSet,
+                List<ErrorType> error, PhaseType phase) {
+        super(rise, set, neverRise, neverSet, error);
         this.phase = phase;
     }
 }

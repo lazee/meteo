@@ -16,24 +16,17 @@
 
 package no.api.meteo.entity.extras.locationgroup;
 
-import java.util.ArrayList;
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
 import java.util.List;
 
+@Value
+@AllArgsConstructor
 public class LocationGroup {
 
-    private String id;
+    private final String id;
 
-    private List<ExtendedLocation> locations = new ArrayList<>();
+    private final List<ExtendedLocation> locations;
 
-    public LocationGroup(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public List<ExtendedLocation> getLocations() {
-        return locations;
-    }
 }

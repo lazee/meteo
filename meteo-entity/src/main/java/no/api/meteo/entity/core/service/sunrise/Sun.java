@@ -16,7 +16,11 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
-import java.util.ArrayList;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
+
+import java.util.Date;
 import java.util.List;
 
 /*
@@ -24,41 +28,22 @@ Solar related information, including solar noon.  All timestamps are given in UT
 The rise and set values are computed when the angle to the Sun is -0.21 degrees.  Civil twilight is -6 degrees,
 nautical -12 and astronomical -18.
 */
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Sun extends AbstractType {
 
-    private Double daylength;
+    private final Double daylength;
 
-    private List<Noon> noon = new ArrayList<>();
+    private final List<Noon> noon;
 
-    private List<TwilightType> twilight = new ArrayList<>();
+    private final List<TwilightType> twilight;
 
-    public Double getDaylength() {
-        return daylength;
-    }
-
-    public void setDaylength(Double daylength) {
+    public Sun(Date rise, Date set, Boolean neverRise, Boolean neverSet,
+               List<ErrorType> error, Double daylength, List<Noon> noon, List<TwilightType> twilight) {
+        super(rise, set, neverRise, neverSet, error);
         this.daylength = daylength;
+        this.noon = noon;
+        this.twilight = twilight;
     }
-
-    public List<Noon> getNoon() {
-        return noon;
-    }
-
-    public void setNoon(List<Noon> noon) {
-        if (noon != null) {
-            this.noon = noon;
-        }
-    }
-
-    public List<TwilightType> getTwilight() {
-        return twilight;
-    }
-
-    public void setTwilight(List<TwilightType> twilight) {
-        if (twilight != null) {
-            this.twilight = twilight;
-        }
-    }
-
-
 }

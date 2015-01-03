@@ -21,6 +21,7 @@ import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.service.locationforecast.LocationforcastLTSParser;
+import no.api.meteo.service.locationforecast.builder.PointForecastBuilder;
 import no.api.meteo.test.MeteoTestException;
 import no.api.meteo.test.MeteoTestUtils;
 import org.joda.time.DateTime;
@@ -52,8 +53,10 @@ public class MeteoForecastIndexerTest {
         Assert.assertEquals(16, periodForecastList.size());
 
         DateTime nonTime = (new DateTime()).withYear(1960);
-        pointForecast.setFromTime(nonTime.toDate());
-        pointForecast.setToTime(nonTime.toDate());
+        PointForecastBuilder builder = PointForecastBuilder.fromPointForecast(pointForecast);
+        builder.setFromTime(nonTime.toDate());
+        builder.setToTime(nonTime.toDate());
+        pointForecast = builder.build();
         Assert.assertEquals(0, indexer.getMatchingPeriodForecasts(new DateTime(pointForecast.getFromTime())).size());
     }
 

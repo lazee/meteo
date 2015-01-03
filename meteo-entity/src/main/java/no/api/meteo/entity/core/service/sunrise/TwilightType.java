@@ -18,9 +18,11 @@ package no.api.meteo.entity.core.service.sunrise;
 
 public enum TwilightType {
 
-    CIVILIAN("civilian"), NAUTICAL("nautical"), ASTRONOMICAL("astronomical");
+    CIVILIAN("civilian"),
+    NAUTICAL("nautical"),
+    ASTRONOMICAL("astronomical");
 
-    private String value;
+    private final String value;
 
     TwilightType(String value) {
         this.value = value;

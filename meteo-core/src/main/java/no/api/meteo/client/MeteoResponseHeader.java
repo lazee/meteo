@@ -16,22 +16,15 @@
 
 package no.api.meteo.client;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
+@Value
+@AllArgsConstructor
 public class MeteoResponseHeader {
 
-    private String name;
+    private final String name;
 
-    private String value;
+    private final String value;
 
-    public MeteoResponseHeader(String name, String value) {
-        this.name = name;
-        this.value = value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getValue() {
-        return value;
-    }
 }

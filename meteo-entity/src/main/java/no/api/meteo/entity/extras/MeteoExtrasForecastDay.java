@@ -16,25 +16,18 @@
 
 package no.api.meteo.entity.extras;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
 import java.util.Date;
 import java.util.List;
 
+@Value
+@AllArgsConstructor
 public class MeteoExtrasForecastDay {
 
-    private Date day;
+    private final Date day;
 
-    private List<MeteoExtrasForecast> forecasts;
+    private final List<MeteoExtrasForecast> forecasts;
 
-    public MeteoExtrasForecastDay(List<MeteoExtrasForecast> forecasts, Date date) {
-        this.forecasts = forecasts;
-        this.day = date == null ? null : (Date) date.clone();
-    }
-
-    public List<MeteoExtrasForecast> getForecasts() {
-        return forecasts;
-    }
-
-    public Date getDay() {
-        return (Date) day.clone();
-    }
 }

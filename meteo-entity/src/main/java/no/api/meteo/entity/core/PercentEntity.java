@@ -16,18 +16,17 @@
 
 package no.api.meteo.entity.core;
 
+import lombok.Getter;
 import net.sf.oval.constraint.NotNull;
 
 public abstract class PercentEntity extends IdEntity {
 
     @NotNull
-    private Double percent;
+    @Getter
+    private final Double percent;
 
-    public Double getPercent() {
-        return percent;
-    }
-
-    public void setPercent(Double percent) {
+    public PercentEntity(String id, Double percent) {
+        super(id);
         this.percent = percent;
     }
 }

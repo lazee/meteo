@@ -16,125 +16,75 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
+
+import java.util.Date;
+
+
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class PointForecast extends AbstractForecast implements Forecast {
 
-    private Fog fog;
+    private final Fog fog;
 
-    private Pressure pressure;
+    private final Pressure pressure;
 
-    private HighClouds highClouds;
+    private final HighClouds highClouds;
 
-    private MediumClouds mediumClouds;
+    private final MediumClouds mediumClouds;
 
-    private Cloudiness cloudiness;
+    private final Cloudiness cloudiness;
 
-    private LowClouds lowClouds;
+    private final LowClouds lowClouds;
 
-    private WindDirection windDirection;
+    private final WindDirection windDirection;
 
-    private WindSpeed windSpeed;
+    private final WindSpeed windSpeed;
 
-    private Humidity humidity;
+    private final Humidity humidity;
 
-    private Temperature temperature;
+    private final Temperature temperature;
 
-    private WindProbability windProbability;
+    private final WindProbability windProbability;
 
-    private TemperatureProbability temperatureProbability;
+    private final TemperatureProbability temperatureProbability;
 
-    public WindProbability getWindProbability() {
-        return windProbability;
-    }
-
-    public void setWindProbability(WindProbability windProbability) {
+    public PointForecast(Date fromTime, Date toTime, Fog fog, Pressure pressure, HighClouds highClouds,
+                         MediumClouds mediumClouds, Cloudiness cloudiness, LowClouds lowClouds,
+                         WindDirection windDirection, WindSpeed windSpeed, Humidity humidity, Temperature temperature,
+                         WindProbability windProbability, TemperatureProbability temperatureProbability) {
+        super(fromTime, toTime);
+        this.fog = fog;
+        this.pressure = pressure;
+        this.highClouds = highClouds;
+        this.mediumClouds = mediumClouds;
+        this.cloudiness = cloudiness;
+        this.lowClouds = lowClouds;
+        this.windDirection = windDirection;
+        this.windSpeed = windSpeed;
+        this.humidity = humidity;
+        this.temperature = temperature;
         this.windProbability = windProbability;
-    }
-
-    public TemperatureProbability getTemperatureProbability() {
-        return temperatureProbability;
-    }
-
-    public void setTemperatureProbability(TemperatureProbability temperatureProbability) {
         this.temperatureProbability = temperatureProbability;
     }
 
-    public Fog getFog() {
-        return fog;
+    public PointForecast(Date fromTime, Date toTime) {
+        super(fromTime, toTime);
+        this.fog = null;
+        this.pressure = null;
+        this.highClouds = null;
+        this.mediumClouds = null;
+        this.cloudiness = null;
+        this.lowClouds = null;
+        this.windDirection = null;
+        this.windSpeed = null;
+        this.humidity = null;
+        this.temperature = null;
+        this.windProbability = null;
+        this.temperatureProbability = null;
     }
 
-    public void setFog(Fog fog) {
-        this.fog = fog;
-    }
-
-    public Pressure getPressure() {
-        return pressure;
-    }
-
-    public void setPressure(Pressure pressure) {
-        this.pressure = pressure;
-    }
-
-    public HighClouds getHighClouds() {
-        return highClouds;
-    }
-
-    public void setHighClouds(HighClouds highClouds) {
-        this.highClouds = highClouds;
-    }
-
-    public MediumClouds getMediumClouds() {
-        return mediumClouds;
-    }
-
-    public void setMediumClouds(MediumClouds mediumClouds) {
-        this.mediumClouds = mediumClouds;
-    }
-
-    public Cloudiness getCloudiness() {
-        return cloudiness;
-    }
-
-    public void setCloudiness(Cloudiness cloudiness) {
-        this.cloudiness = cloudiness;
-    }
-
-    public LowClouds getLowClouds() {
-        return lowClouds;
-    }
-
-    public void setLowClouds(LowClouds lowClouds) {
-        this.lowClouds = lowClouds;
-    }
-
-    public WindDirection getWindDirection() {
-        return windDirection;
-    }
-
-    public void setWindDirection(WindDirection windDirection) {
-        this.windDirection = windDirection;
-    }
-
-    public WindSpeed getWindSpeed() {
-        return windSpeed;
-    }
-
-    public void setWindSpeed(WindSpeed windSpeed) {
-        this.windSpeed = windSpeed;
-    }
-
-    public Humidity getHumidity() {
-        return humidity;
-    }
-
-    public void setHumidity(Humidity humidity) {
-        this.humidity = humidity;
-    }
-
-    public Temperature getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(Temperature temperature) {
-        this.temperature = temperature;
-    }
 }

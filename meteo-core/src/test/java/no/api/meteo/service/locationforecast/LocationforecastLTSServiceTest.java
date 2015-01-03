@@ -49,10 +49,10 @@ public class LocationforecastLTSServiceTest {
         Assert.assertNotNull(service);
         Assert.assertNotNull(data);
         Assert.assertNotNull(data.getResult());
-        Assert.assertNotNull(data.getRawResult());
-        Assert.assertNotNull(data.getHttpHeaders());
-        Assert.assertEquals(1, data.getHttpHeaders().size());
-        Assert.assertEquals("foo", data.getHttpHeaders().get(0).getName());
-        Assert.assertEquals("bar", data.getHttpHeaders().get(0).getValue());
+        Assert.assertNotNull(data.getResponse().getData());
+        Assert.assertNotNull(data.getResponse().getResponseHeaders());
+        Assert.assertEquals(1, data.getResponse().getResponseHeaders().size());
+        Assert.assertEquals("foo", data.getResponse().getResponseHeaders().get(0).getName());
+        Assert.assertEquals("bar", data.getResponse().getResponseHeaders().get(0).getValue());
     }
 }

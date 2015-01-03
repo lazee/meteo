@@ -16,31 +16,22 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.IdEntity;
 
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Symbol extends IdEntity {
 
     @NotNull
-    private Integer number;
-
-    /**
-     * Constructor with no initial values
-     */
-    public Symbol() {
-        super();
-    }
+    private final Integer number;
 
     public Symbol(String id, Integer number) {
-        setId(id);
-        this.number = number;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
+        super(id);
         this.number = number;
     }
 }

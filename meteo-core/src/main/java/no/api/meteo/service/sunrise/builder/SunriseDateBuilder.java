@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2013 Amedia AS.
+ * Copyright (c) 2011-2015 Amedia AS.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,33 @@
  * limitations under the License.
  */
 
-package no.api.meteo.entity.core;
+package no.api.meteo.service.sunrise.builder;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import net.sf.oval.constraint.NotNull;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import no.api.meteo.entity.core.service.sunrise.SunriseDate;
+import no.api.meteo.util.EntityBuilder;
 
 import java.util.Date;
 
-@AllArgsConstructor
-public abstract class RootEntity {
+@NoArgsConstructor
+public class SunriseDateBuilder implements EntityBuilder<SunriseDate> {
 
-    @NotNull
+    @Setter
     @Getter
-    private final Date created;
+    private Date date;
 
+    @Setter
     @Getter
-    private final Meta meta;
+    private SunBuilder sunBuilder;
 
+    @Setter
+    @Getter
+    private MoonBuilder moonBuilder;
+
+    @Override
+    public SunriseDate build() {
+        return new SunriseDate(date, sunBuilder.build(), moonBuilder.build());
+    }
 }

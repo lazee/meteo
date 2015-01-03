@@ -16,31 +16,21 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import net.sf.oval.constraint.NotNull;
 
 import java.util.Date;
 
-public class AbstractForecast {
+@AllArgsConstructor
+public abstract class AbstractForecast {
 
     @NotNull
-    private Date fromTime;
+    @Getter
+    private final Date fromTime;
 
     @NotNull
-    private Date toTime;
+    @Getter
+    private final Date toTime;
 
-    public Date getFromTime() {
-        return (fromTime == null ? null : (Date) fromTime.clone());
-    }
-
-    public void setFromTime(Date fromTime) {
-        this.fromTime = (fromTime == null ? null : (Date) fromTime.clone());
-    }
-
-    public Date getToTime() {
-        return (toTime == null ? null : (Date) toTime.clone());
-    }
-
-    public void setToTime(Date toTime) {
-        this.toTime = (toTime == null ? null : (Date) toTime.clone());
-    }
 }

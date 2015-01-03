@@ -16,24 +16,17 @@
 
 package no.api.meteo.client;
 
+import lombok.AllArgsConstructor;
+import lombok.Value;
+
 import java.util.List;
 
+@Value
+@AllArgsConstructor
 public class MeteoResponse {
 
-    private String data;
+    private final String data;
 
-    private List<MeteoResponseHeader> responseHeaders;
+    private final List<MeteoResponseHeader> responseHeaders;
 
-    public MeteoResponse(String data, List<MeteoResponseHeader> responseHeaders) {
-        this.data = data;
-        this.responseHeaders = responseHeaders;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public List<MeteoResponseHeader> getResponseHeaders() {
-        return responseHeaders;
-    }
 }

@@ -16,15 +16,13 @@
 
 package no.api.meteo.entity.core;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
 public abstract class IdEntity {
 
-    private String id;
+    @Getter
+    private final String id;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }

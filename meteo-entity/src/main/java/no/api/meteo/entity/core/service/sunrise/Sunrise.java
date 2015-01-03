@@ -16,33 +16,28 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 import no.api.meteo.entity.core.Location;
+import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.RootEntity;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Sunrise extends RootEntity {
 
-   private Location location;
+    private final Location location;
 
-   private List<SunriseDate> dates = new ArrayList<>();
+    private final List<SunriseDate> dates;
 
-    public List<SunriseDate> getDates() {
-        return dates;
-    }
-
-    public void setDates(List<SunriseDate> dates) {
-        if (dates != null) {
-            this.dates = dates;
-        }
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
+    public Sunrise(Date created, Meta meta, Location location, List<SunriseDate> dates) {
+        super(created, meta);
         this.location = location;
+        this.dates = dates;
     }
 }

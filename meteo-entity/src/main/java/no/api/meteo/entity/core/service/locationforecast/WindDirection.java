@@ -16,45 +16,28 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Value;
 import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.IdEntity;
 
+@Value
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public final class WindDirection extends IdEntity {
 
     @NotNull
     @NotEmpty
-    private String name;
+    private final String name;
 
     @NotNull
-    private Double deg;
-
-    /**
-     * Constructor with no initial values
-     */
-    public WindDirection() {
-        super();
-    }
+    private final Double deg;
 
     public WindDirection(String id, String name, Double deg) {
-        setId(id);
+        super(id);
         this.name = name;
-        this.deg = deg;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Double getDeg() {
-        return deg;
-    }
-
-    public void setDeg(Double deg) {
         this.deg = deg;
     }
 }

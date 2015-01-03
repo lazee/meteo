@@ -16,28 +16,27 @@
 
 package no.api.meteo.service.sunrise;
 
+import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.Meta;
-import no.api.meteo.entity.core.service.sunrise.Moon;
 import no.api.meteo.entity.core.service.sunrise.Noon;
 import no.api.meteo.entity.core.service.sunrise.PhaseType;
-import no.api.meteo.entity.core.service.sunrise.Sun;
 import no.api.meteo.entity.core.service.sunrise.Sunrise;
-import no.api.meteo.entity.core.service.sunrise.SunriseDate;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.MeteoDataParserException;
+import no.api.meteo.service.sunrise.builder.MoonBuilder;
+import no.api.meteo.service.sunrise.builder.SunBuilder;
+import no.api.meteo.service.sunrise.builder.SunriseBuilder;
+import no.api.meteo.service.sunrise.builder.SunriseDateBuilder;
 import no.api.meteo.util.MeteoConstants;
 import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.util.MeteoXppUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Stack;
 
 import static no.api.meteo.util.MeteoConstants.ATTR_ALTITUDE;
@@ -48,17 +47,16 @@ import static no.api.meteo.util.MeteoConstants.ATTR_LONGITUDE;
 import static no.api.meteo.util.MeteoConstants.TAG_LOCATION;
 import static no.api.meteo.util.MeteoConstants.TAG_META;
 import static no.api.meteo.util.MeteoConstants.TAG_TIME;
-import static no.api.meteo.util.MeteoXppUtils.getString;
 import static no.api.meteo.util.MeteoXppUtils.getBoolean;
 import static no.api.meteo.util.MeteoXppUtils.getDate;
 import static no.api.meteo.util.MeteoXppUtils.getDouble;
 import static no.api.meteo.util.MeteoXppUtils.getSimpleDate;
+import static no.api.meteo.util.MeteoXppUtils.getString;
 
+@Slf4j
 public class SunriseParser implements MeteoDataParser<Sunrise> {
 
     private static final String COULD_NOT_CONVERT_DATE_FROM_XML = "Could not convert date from xml";
-
-    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public Sunrise parse(String data) throws MeteoException {
@@ -72,21 +70,20 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
 
     public Sunrise doParse(XmlPullParser xpp) throws MeteoException {
         try {
-            Sunrise sunrise = new Sunrise();
-            sunrise.setDates(new ArrayList<SunriseDate>());
+            SunriseBuilder sunriseBuilder = new SunriseBuilder();
             int eventType = xpp.getEventType();
-            Stack<SunriseDate> stack = new Stack<>();
+            Stack<SunriseDateBuilder> stack = new Stack<>();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
-                    handleStartTags(sunrise, xpp, stack);
+                    handleStartTags(sunriseBuilder, xpp, stack);
                 } else if (eventType == XmlPullParser.END_TAG) {
-                    handleEndTags(sunrise, xpp, stack);
+                    handleEndTags(sunriseBuilder, xpp, stack);
                 } else {
                     log.trace("Skipping event type : " + eventType);
                 }
                 eventType = xpp.next();
             }
-            return sunrise;
+            return sunriseBuilder.build();
         } catch (XmlPullParserException e) {
             throw new MeteoDataParserException("A parsing problem occurred", e);
         } catch (IOException e) {
@@ -94,62 +91,62 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
         }
     }
 
-    private void handleStartTags(Sunrise sunrise, XmlPullParser xpp, Stack<SunriseDate> stack) { // NOSONAR The complexity is quit alright :)
+    private void handleStartTags(SunriseBuilder sunriseBuilder, XmlPullParser xpp,
+                                 Stack<SunriseDateBuilder> stack) { // NOSONAR The complexity is quit alright :)
         String n = xpp.getName();
         switch (n) {
             case TAG_META:
-                Meta meta = new Meta();
+
                 try {
-                    meta.setLicenseUrl(MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)));
+                    Meta meta = new Meta(MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)), null);
+                    sunriseBuilder.setMeta(meta);
                 } catch (MeteoException e) {
                     log.warn("License url not found in feed");
                 }
-                   sunrise.setMeta(meta);
                 break;
             case TAG_TIME: {
-                SunriseDate sunriseDate = new SunriseDate();
                 try {
-                    sunriseDate.setDate(getSimpleDate(xpp, ATTR_DATE));
+                    SunriseDateBuilder sunriseDateBuilder = new SunriseDateBuilder();
+                    sunriseDateBuilder.setDate(getSimpleDate(xpp, ATTR_DATE));
+                    stack.push(sunriseDateBuilder);
                 } catch (MeteoException e) {
                     log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
                 }
-                stack.push(sunriseDate);
                 break;
             }
             case TAG_LOCATION:
-                if (sunrise.getLocation() == null) {
-                    sunrise.setLocation(new Location(getDouble(xpp, ATTR_LONGITUDE),
-                            getDouble(xpp, ATTR_LATITUDE), null));
+                if (sunriseBuilder.getLocation() == null) {
+                    sunriseBuilder.setLocation(new Location(getDouble(xpp, ATTR_LONGITUDE),
+                                                            getDouble(xpp, ATTR_LATITUDE), null));
                 } else {
                     log.trace("Skipping locations since it is already added.");
                 }
                 break;
             case MeteoConstants.TAG_SUN: {
-                SunriseDate sunriseDate = stack.peek();
-                Sun sun = new Sun();
-                sun.setDaylength(getDouble(xpp, MeteoConstants.ATTR_DAYLENGTH));
+                SunriseDateBuilder sunriseDateBuilder = stack.peek();
                 try {
-                    sun.setRise(getDate(xpp, MeteoConstants.ATTR_RISE));
-                    sun.setSet(getDate(xpp, MeteoConstants.ATTR_SET));
+                    SunBuilder sunBuilder = new SunBuilder();
+                    sunBuilder.setRise(getDate(xpp, MeteoConstants.ATTR_RISE));
+                    sunBuilder.setSet(getDate(xpp, MeteoConstants.ATTR_SET));
+                    sunBuilder.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
+                    sunBuilder.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
+                    sunBuilder.setDaylength(getDouble(xpp, MeteoConstants.ATTR_DAYLENGTH));
+                    sunriseDateBuilder.setSunBuilder(sunBuilder);
                 } catch (MeteoException e) {
                     log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
                 }
-                sun.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
-                sun.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
-                sunriseDate.setSun(sun);
                 break;
             }
             case MeteoConstants.TAG_NOON: {
-                SunriseDate sunriseDate = stack.peek();
-                Noon noon = new Noon();
-                noon.setAltitude(getDouble(xpp, ATTR_ALTITUDE));
-                noon.setDirection(getDouble(xpp, MeteoConstants.ATTR_DIRECTION));
+                SunriseDateBuilder sunriseDateBuilder = stack.peek();
+
                 try {
-                    noon.setTime(getDate(xpp, MeteoConstants.TIME));
+                    Noon noon = new Noon(getDate(xpp, MeteoConstants.TIME), getDouble(xpp, ATTR_ALTITUDE),
+                                         getDouble(xpp, MeteoConstants.ATTR_DIRECTION));
+                    sunriseDateBuilder.getSunBuilder().getNoon().add(noon);
                 } catch (MeteoException e) {
                     log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
                 }
-                sunriseDate.getSun().getNoon().add(noon);
                 break;
             }
             case "error":
@@ -161,18 +158,19 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
                 log.trace("Got twilight tag. This is not implemented yet");
                 break;
             case "moon": {
-                SunriseDate sunriseDate = stack.peek();
-                Moon moon = new Moon();
+                SunriseDateBuilder sunriseDate = stack.peek();
+
                 try {
-                    moon.setRise(getDate(xpp, MeteoConstants.ATTR_RISE));
-                    moon.setSet(getDate(xpp, MeteoConstants.ATTR_SET));
+                    MoonBuilder moonBuilder = new MoonBuilder();
+                    moonBuilder.setRise(getDate(xpp, MeteoConstants.ATTR_RISE));
+                    moonBuilder.setSet(getDate(xpp, MeteoConstants.ATTR_SET));
+                    moonBuilder.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
+                    moonBuilder.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
+                    moonBuilder.setPhase(PhaseType.findByValue(getString(xpp, MeteoConstants.ATTR_PHASE)));
+                    sunriseDate.setMoonBuilder(moonBuilder);
                 } catch (MeteoException e) {
                     log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
                 }
-                moon.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
-                moon.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
-                moon.setPhase(PhaseType.findByValue(getString(xpp, MeteoConstants.ATTR_PHASE)));
-                sunriseDate.setMoon(moon);
                 break;
             }
             default:
@@ -181,9 +179,9 @@ public class SunriseParser implements MeteoDataParser<Sunrise> {
         }
     }
 
-    private void handleEndTags(Sunrise sunrise, XmlPullParser xpp, Stack<SunriseDate> stack) {
+    private void handleEndTags(SunriseBuilder sunriseBuilder, XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         if (TAG_TIME.equals(xpp.getName())) {
-            sunrise.getDates().add(stack.pop());
+            sunriseBuilder.getDates().add(stack.pop().build());
         } else {
             log.trace("Unhandled end tag: " + xpp.getName());
         }
