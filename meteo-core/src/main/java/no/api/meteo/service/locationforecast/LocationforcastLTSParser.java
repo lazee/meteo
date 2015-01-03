@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011-2013 Amedia AS.
+ * Copyright (c) 2011-2015 Amedia Utvikling AS.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -220,7 +220,8 @@ public class LocationforcastLTSParser implements MeteoDataParser<LocationForecas
             case TAG_META:
 
                 try {
-                    locationForecastBuilder.getMetaBuilder().setLicenseUrl(MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)));
+                    locationForecastBuilder.getMetaBuilder().setLicenseUrl(
+                            MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)));
                 } catch (MeteoException e) {
                     log.debug("License url not found in feed");
                 }
