@@ -67,6 +67,7 @@ public class SunBuilder implements EntityBuilder<Sun> {
 
     @Override
     public Sun build() {
-        return new Sun(rise, set, neverRise, neverSet, error, daylength, noon, twilight);
+        return new Sun(getRise(), getSet(), getNeverRise(), getNeverSet(), getError(), getDaylength(), getNoon(),
+                       getTwilight());
     }
 }

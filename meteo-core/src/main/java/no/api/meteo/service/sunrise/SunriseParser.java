@@ -40,6 +40,7 @@ import java.io.InputStream;
 import java.util.Stack;
 
 import static no.api.meteo.util.MeteoConstants.ATTR_ALTITUDE;
+import static no.api.meteo.util.MeteoConstants.ATTR_CREATED;
 import static no.api.meteo.util.MeteoConstants.ATTR_DATE;
 import static no.api.meteo.util.MeteoConstants.ATTR_LATITUDE;
 import static no.api.meteo.util.MeteoConstants.ATTR_LICENSEURL;
@@ -100,6 +101,7 @@ public final class SunriseParser implements MeteoDataParser<Sunrise> {
                 try {
                     Meta meta = new Meta(MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)), null);
                     sunriseBuilder.setMeta(meta);
+                    sunriseBuilder.setCreated(getSimpleDate(xpp, ATTR_CREATED));
                 } catch (MeteoException e) {
                     log.warn("License url not found in feed");
                 }

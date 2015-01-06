@@ -17,9 +17,13 @@
 package no.api.meteo.entity.core;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 @AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public abstract class IdEntity {
 
     @Getter

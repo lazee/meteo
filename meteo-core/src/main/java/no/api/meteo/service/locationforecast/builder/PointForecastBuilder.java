@@ -113,10 +113,11 @@ public class PointForecastBuilder implements EntityBuilder<PointForecast> {
         builder.setTemperatureProbability(pointForecast.getTemperatureProbability());
         return builder;
     }
+
     @Override
     public PointForecast build() {
-        return new PointForecast(fromTime, toTime, fog, pressure, highClouds, mediumClouds, cloudiness, lowClouds,
-                                 windDirection, windSpeed, humidity, temperature, windProbability,
-                                 temperatureProbability);
+        return new PointForecast(getFromTime(), getToTime(), getFog(), getPressure(), getHighClouds(),
+                                 getMediumClouds(), getCloudiness(), getLowClouds(), getWindDirection(), getWindSpeed(),
+                                 getHumidity(), getTemperature(), getWindProbability(), getTemperatureProbability());
     }
 }

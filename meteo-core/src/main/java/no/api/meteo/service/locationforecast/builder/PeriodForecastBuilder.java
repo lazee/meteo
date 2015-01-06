@@ -52,6 +52,6 @@ public class PeriodForecastBuilder implements EntityBuilder<PeriodForecast> {
 
     @Override
     public PeriodForecast build() {
-        return new PeriodForecast(fromTime, toTime, precipitation, symbol, symbolProbability);
+        return new PeriodForecast(getFromTime(), getToTime(), getPrecipitation(), getSymbol(), getSymbolProbability());
     }
 }

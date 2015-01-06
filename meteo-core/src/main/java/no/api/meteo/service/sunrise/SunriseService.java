@@ -60,7 +60,7 @@ public final class SunriseService extends AbstractMeteoService {
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
-    public URL createServiceUrl(double longitude, double latitude, Date date) throws MeteoException {
+    private URL createServiceUrl(double longitude, double latitude, Date date) throws MeteoException {
         Map<String, Object> queryParameters = new HashMap<>();
         queryParameters.put(PARAM_LONGITUDE, longitude);
         queryParameters.put(PARAM_LATITUDE, latitude);
@@ -68,7 +68,7 @@ public final class SunriseService extends AbstractMeteoService {
         return createRequestUrl(queryParameters);
     }
 
-    public URL createServiceUrlFromTo(double longitude, double latitude, Date from, Date to) throws MeteoException {
+    private URL createServiceUrlFromTo(double longitude, double latitude, Date from, Date to) throws MeteoException {
         Map<String, Object> queryParameters = new HashMap<>();
         queryParameters.put(PARAM_LONGITUDE, longitude);
         queryParameters.put(PARAM_LATITUDE, latitude);
@@ -76,5 +76,4 @@ public final class SunriseService extends AbstractMeteoService {
         queryParameters.put(PARAM_TO, MeteoDateUtils.dateToYyyyMMdd(to));
         return createRequestUrl(queryParameters);
     }
-
 }

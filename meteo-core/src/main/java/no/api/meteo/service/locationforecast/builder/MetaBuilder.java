@@ -40,6 +40,6 @@ public class MetaBuilder implements EntityBuilder<Meta> {
 
     @Override
     public Meta build() {
-        return new Meta(licenseUrl, models);
+        return new Meta(getLicenseUrl(), getModels());
     }
 }

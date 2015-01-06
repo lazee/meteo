@@ -16,13 +16,17 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public abstract class AbstractType extends AbstractRiseSet {
 
     @Getter

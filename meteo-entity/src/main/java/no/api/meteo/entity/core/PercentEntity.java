@@ -16,9 +16,13 @@
 
 package no.api.meteo.entity.core;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 import net.sf.oval.constraint.NotNull;
 
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public abstract class PercentEntity extends IdEntity {
 
     @NotNull

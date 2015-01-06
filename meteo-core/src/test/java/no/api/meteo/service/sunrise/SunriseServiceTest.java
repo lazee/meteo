@@ -16,22 +16,31 @@
 
 package no.api.meteo.service.sunrise;
 
+import no.api.meteo.client.MeteoData;
+import no.api.meteo.client.MeteoTestClient;
+import no.api.meteo.entity.core.service.sunrise.Sunrise;
+import no.api.meteo.entity.core.service.sunrise.SunriseDate;
+import no.api.meteo.test.MeteoTestUtils;
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Date;
 
 public final class SunriseServiceTest {
 
     @Test
     public void testFetchContent() throws Exception {
-
+        SunriseService service = new SunriseService(new MeteoTestClient(
+                MeteoTestUtils.getTextResource("/META-INF/meteo/sunrise/sunrise1.xml")));
+        MeteoData<Sunrise> sunriseMeteoData = service.fetchContent(19, 70, new Date());
+        Assert.assertNotNull(sunriseMeteoData);
+        Assert.assertNotNull(sunriseMeteoData.getResult());
+        Assert.assertNotNull(sunriseMeteoData.getResult().getDates());
+        SunriseDate sunriseDate = sunriseMeteoData.getResult().getDates().get(0);
+        Assert.assertNotNull(sunriseDate);
+        Assert.assertNotNull(sunriseDate.getSun());
+        Assert.assertNotNull(sunriseDate.getMoon());
+        Assert.assertTrue(sunriseDate.getSun().getNeverSet());
     }
 
-    @Test
-    public void testCreateServiceUrl() throws Exception {
-
-    }
-
-    @Test
-    public void testCreateServiceUrlFromTo() throws Exception {
-
-    }
 }

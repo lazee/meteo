@@ -50,6 +50,6 @@ public class SunriseBuilder implements EntityBuilder<Sunrise> {
 
     @Override
     public Sunrise build() {
-        return new Sunrise(created, meta, location, dates);
+        return new Sunrise(getCreated(), getMeta(), getLocation(), getDates());
     }
 }

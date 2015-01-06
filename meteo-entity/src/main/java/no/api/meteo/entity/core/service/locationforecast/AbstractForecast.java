@@ -17,12 +17,16 @@
 package no.api.meteo.entity.core.service.locationforecast;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 import net.sf.oval.constraint.NotNull;
 
 import java.util.Date;
 
 @AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public abstract class AbstractForecast {
 
     @NotNull

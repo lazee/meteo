@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<astrodata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/sunrise/1.0/schema">
+    <meta licenseurl="http://api.met.no/license_data.html"/>
+    <time date="2015-06-07">
+        <location latitude="70" longitude="19">
+            <sun never_set="true"/>
+            <moon phase="Third quarter" rise="2015-06-06T23:18:41Z" set="2015-06-07T06:13:18Z"/>
+        </location>
+    </time>
+</astrodata>

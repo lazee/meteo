@@ -41,6 +41,6 @@ public class SunriseDateBuilder implements EntityBuilder<SunriseDate> {
 
     @Override
     public SunriseDate build() {
-        return new SunriseDate(date, sunBuilder.build(), moonBuilder.build());
+        return new SunriseDate(getDate(), getSunBuilder().build(), getMoonBuilder().build());
     }
 }

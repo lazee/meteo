@@ -16,11 +16,15 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.IdEntity;
 
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public abstract class UnitEntity extends IdEntity {
 
     @NotNull

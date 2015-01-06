@@ -1,5 +1,5 @@
 <weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/locationforecast/1.8/schema"
+             xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/locationforecast/1.9/schema"
              created="2011-05-12T08:26:14Z">
     <meta>
         <model name="YR" termin="2011-05-12T00:00:00Z" runended="2011-05-12T04:31:47Z" nextrun="2011-05-12T08:30:00Z"

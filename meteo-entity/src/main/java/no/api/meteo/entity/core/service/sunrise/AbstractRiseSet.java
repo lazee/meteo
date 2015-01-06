@@ -17,11 +17,15 @@
 package no.api.meteo.entity.core.service.sunrise;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.util.Date;
 
 @AllArgsConstructor
+@ToString(callSuper = true)
+@EqualsAndHashCode
 public abstract class AbstractRiseSet {
 
     @Getter
