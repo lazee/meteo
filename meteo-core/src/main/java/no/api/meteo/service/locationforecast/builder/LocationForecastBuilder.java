@@ -19,7 +19,6 @@ package no.api.meteo.service.locationforecast.builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
@@ -28,11 +27,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@ToString
 @NoArgsConstructor
 public class LocationForecastBuilder {
 
     @Setter
+    @Getter
     private Date created;
 
     @Getter
@@ -47,6 +46,6 @@ public class LocationForecastBuilder {
     private List<Forecast> forecasts = new ArrayList<>();
 
     public LocationForecast build() {
-        return new LocationForecast(created, metaBuilder.build(), location, forecasts);
+        return new LocationForecast(getCreated(), getMetaBuilder().build(), getLocation(), getForecasts());
     }
 }

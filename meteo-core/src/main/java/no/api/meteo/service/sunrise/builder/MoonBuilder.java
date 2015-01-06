@@ -56,6 +56,6 @@ public class MoonBuilder implements EntityBuilder<Moon> {
 
     @Override
     public Moon build() {
-        return new Moon(rise, set, neverRise, neverSet, error, phase);
+        return new Moon(getRise(), getSet(), getNeverRise(), getNeverSet(), getError(), getPhase());
     }
 }

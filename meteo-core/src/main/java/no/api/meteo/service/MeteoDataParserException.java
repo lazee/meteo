@@ -20,21 +20,6 @@ import no.api.meteo.MeteoException;
 
 public class MeteoDataParserException extends MeteoException {
 
-    /**
-     * Empty constructor
-     */
-    public MeteoDataParserException() {
-        super();
-    }
-
-    public MeteoDataParserException(Throwable cause) {
-        super(cause);
-    }
-
-    public MeteoDataParserException(String message) {
-        super(message);
-    }
-
     public MeteoDataParserException(String message, Throwable cause) {
         super(message, cause);
     }
