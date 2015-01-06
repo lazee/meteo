@@ -24,12 +24,10 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class MeteoDateUtilsTest {
+public final class MeteoDateUtilsTest {
 
     private static TimeZone systemTimezone;
 
@@ -42,15 +40,6 @@ public class MeteoDateUtilsTest {
     @AfterClass
     public static void after() {
         TimeZone.setDefault(systemTimezone);
-    }
-
-    @Test
-    public void testConstructor() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException,
-            InstantiationException {
-        Constructor c = MeteoDateUtils.class.getDeclaredConstructor();
-        Assert.assertFalse(c.isAccessible());
-        c.setAccessible(true);
-        c.newInstance();
     }
 
     @Test(expected = MeteoException.class)

@@ -16,69 +16,28 @@
 
 package no.api.meteo.services.internal;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 import org.joda.time.DateTime;
 
-public class DayIndexKey {
+@EqualsAndHashCode(of = {"day", "month", "year"}, doNotUseGetters = true)
+@ToString(of = {"day", "month", "year"})
+public final class DayIndexKey {
 
-    public static final int HASH_NUMBER = 31;
+    @Getter
+    private final DateTime dateTime;
 
-    private DateTime dateTime;
+    private final int day;
 
-    private int day;
+    private final int month;
 
-    private int month;
-
-    private int year;
+    private final int year;
 
     public DayIndexKey(DateTime dateTime) {
         this.dateTime = dateTime.withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0);
         this.day = dateTime.getDayOfMonth();
         this.month = dateTime.getMonthOfYear();
         this.year = dateTime.getYear();
-    }
-
-    public DateTime getDateTime() {
-        return dateTime;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
-        DayIndexKey that = (DayIndexKey) o;
-
-        if (day != that.day) {
-            return false;
-        }
-        if (month != that.month) {
-            return false;
-        }
-        if (year != that.year) {
-            return false;
-        }
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = day;
-        result = HASH_NUMBER * result + month;
-        result = HASH_NUMBER * result + year;
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "DayIndexKey{" +
-                "day=" + day +
-                ", month=" + month +
-                ", year=" + year +
-                '}';
     }
 }

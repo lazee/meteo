@@ -16,31 +16,16 @@
 
 package no.api.meteo.services.internal;
 
+import lombok.Value;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 
+@Value
 public class ScoreForecast {
 
-    private PeriodForecast periodForecast;
+    private final PeriodForecast periodForecast;
 
-    private int pointTightScore;
+    private final int pointTightScore;
 
-    private int pointWideScore;
+    private final int pointWideScore;
 
-    public ScoreForecast(PeriodForecast periodForecast, int pointTightScore, int pointWideScore) {
-        this.periodForecast = periodForecast;
-        this.pointTightScore = pointTightScore;
-        this.pointWideScore = pointWideScore;
-    }
-
-    public PeriodForecast getPeriodForecast() {
-        return periodForecast;
-    }
-
-    public int getPointTightScore() {
-        return pointTightScore;
-    }
-
-    public int getPointWideScore() {
-        return pointWideScore;
-    }
 }

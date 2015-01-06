@@ -20,25 +20,14 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.xmlpull.v1.XmlPullParser;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class MeteoXppUtilsTest {
+public final class MeteoXppUtilsTest {
 
     private String testXml = "<test><entry string=\"foo\" integer=\"7\" double=\"1.2\"" +
             " boolean=\"true\" date=\"2011-05-06T05:09:00Z\" simple=\"2011-02-03\"/></test>";
-
-    @Test
-    public void testConstructor() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException,
-            InstantiationException {
-        Constructor c = MeteoXppUtils.class.getDeclaredConstructor();
-        Assert.assertFalse(c.isAccessible());
-        c.setAccessible(true);
-        c.newInstance();
-    }
 
     @Test
     public void testCreateNewPullParser() throws Exception {

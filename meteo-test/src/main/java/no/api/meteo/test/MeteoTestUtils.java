@@ -24,7 +24,7 @@ import java.io.InputStreamReader;
 public final class MeteoTestUtils {
 
     private MeteoTestUtils() {
-        // Intentional
+        throw new UnsupportedOperationException();
     }
 
     public static InputStream getResource(String uri) {

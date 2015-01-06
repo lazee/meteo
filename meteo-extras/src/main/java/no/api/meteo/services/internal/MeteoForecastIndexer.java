@@ -16,14 +16,13 @@
 
 package no.api.meteo.services.internal;
 
+import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,9 +31,8 @@ import java.util.Map;
 
 import static org.joda.time.Hours.hoursBetween;
 
+@Slf4j
 public class MeteoForecastIndexer {
-
-    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     private List<Forecast> forecasts;
 
@@ -299,6 +297,5 @@ public class MeteoForecastIndexer {
     private HourIndexKey createHourIndexKey(DateTime pointInTime) {
         return new HourIndexKey(pointInTime);
     }
-
 
 }

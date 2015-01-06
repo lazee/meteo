@@ -27,7 +27,7 @@ import org.junit.Test;
 
 import java.net.URL;
 
-public class LocationforecastLTSServiceTest {
+public final class LocationforecastLTSServiceTest {
 
     @Test(expected = MeteoClientException.class)
     public void testException() throws Exception {

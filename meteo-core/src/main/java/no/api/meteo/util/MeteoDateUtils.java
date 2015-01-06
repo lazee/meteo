@@ -36,7 +36,7 @@ public final class MeteoDateUtils {
     private static final String FULLFORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
     private MeteoDateUtils() {
-        // Intentional
+        throw new UnsupportedOperationException();
     }
 
     public static Date fullFormatToDate(String dateStr) throws MeteoException {

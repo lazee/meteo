@@ -28,4 +28,6 @@ public final class Temperature extends UnitEntity {
     public Temperature(String id, String unit, Double value) {
         super(id, unit, value);
     }
+
+
 }

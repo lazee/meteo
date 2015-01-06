@@ -27,7 +27,7 @@ import java.net.URL;
 public final class MeteoNetUtils {
 
     private MeteoNetUtils() {
-        // Intentional
+        throw new UnsupportedOperationException();
     }
 
     /**

@@ -25,7 +25,7 @@ import java.util.Map;
 public final class ConfigLoader {
 
     private ConfigLoader() {
-        // Intentional
+        throw new UnsupportedOperationException();
     }
 
     public static Map<String, LocationGroup> load(InputStream inputStream) throws MeteoException {

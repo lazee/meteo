@@ -16,11 +16,9 @@
 
 package no.api.meteo.client;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
 @Value
-@AllArgsConstructor
 public class MeteoResponseHeader {
 
     private final String name;

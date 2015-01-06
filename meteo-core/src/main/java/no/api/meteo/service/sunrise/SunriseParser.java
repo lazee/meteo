@@ -54,7 +54,7 @@ import static no.api.meteo.util.MeteoXppUtils.getSimpleDate;
 import static no.api.meteo.util.MeteoXppUtils.getString;
 
 @Slf4j
-public class SunriseParser implements MeteoDataParser<Sunrise> {
+public final class SunriseParser implements MeteoDataParser<Sunrise> {
 
     private static final String COULD_NOT_CONVERT_DATE_FROM_XML = "Could not convert date from xml";
 

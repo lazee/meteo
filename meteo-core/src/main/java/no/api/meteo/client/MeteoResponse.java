@@ -16,17 +16,23 @@
 
 package no.api.meteo.client;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Value
-@AllArgsConstructor
 public class MeteoResponse {
 
     private final String data;
 
     private final List<MeteoResponseHeader> responseHeaders;
+
+    public List<MeteoResponseHeader> getResponseHeaders() {
+        return responseHeaders == null
+                ? new ArrayList<MeteoResponseHeader>()
+                : Collections.unmodifiableList(responseHeaders);
+    }
 
 }

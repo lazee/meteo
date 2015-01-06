@@ -24,6 +24,8 @@ import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.RootEntity;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -42,6 +44,10 @@ public final class LocationForecast extends RootEntity {
         super(created, meta);
         this.location = location;
         this.forecasts = forecasts;
+    }
+
+    public List<Forecast> getForecasts() {
+        return forecasts == null ? new ArrayList<Forecast>() : Collections.unmodifiableList(forecasts);
     }
 
 }

@@ -16,6 +16,7 @@
 
 package no.api.meteo.client;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
@@ -27,8 +28,6 @@ import org.apache.http.impl.conn.SchemeRegistryFactory;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.util.EntityUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -37,15 +36,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 public class DefaultMeteoClient implements MeteoClient {
 
     public static final int MAXIMUM_CONTENT_LENGTH = 1024000;
 
     public static final String CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT = "Caught exception while fetching content";
 
-    private Logger log = LoggerFactory.getLogger(this.getClass());
-
     private DefaultHttpClient httpClient;
+
 
     public DefaultMeteoClient() {
         httpClient = new DefaultHttpClient(new ThreadSafeClientConnManager());
@@ -58,8 +57,7 @@ public class DefaultMeteoClient implements MeteoClient {
 
     @Override
     public void setProxy(String hostname, int port) {
-        HttpHost proxy = new HttpHost(hostname, port);
-        httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxy);
+        httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, new HttpHost(hostname, port));
     }
 
     @Override
@@ -103,11 +101,9 @@ public class DefaultMeteoClient implements MeteoClient {
         List<MeteoResponseHeader> headers = new ArrayList<>();
         for (Header header : response.getAllHeaders()) {
             log.debug("Adding header : " + header.toString());
-
             headers.add(new MeteoResponseHeader(header.getName(), header.getValue()));
         }
         return headers;
     }
-
 
 }

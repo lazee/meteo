@@ -16,13 +16,11 @@
 
 package no.api.meteo.client;
 
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
 import java.util.List;
 
 @Value
-@AllArgsConstructor
 public class MeteoData<E> {
 
     private final E result;

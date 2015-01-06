@@ -20,9 +20,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MeteoTestClient implements MeteoClient {
+public final class MeteoTestClient implements MeteoClient {
 
-    private String content;
+    private final String content;
 
     public MeteoTestClient(String content) {
         this.content = content;

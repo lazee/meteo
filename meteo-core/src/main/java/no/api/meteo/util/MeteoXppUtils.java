@@ -35,7 +35,7 @@ public final class MeteoXppUtils {
     private static Logger log = LoggerFactory.getLogger(MeteoXppUtils.class);
 
     private MeteoXppUtils() {
-        // Intentional
+        throw new UnsupportedOperationException();
     }
 
     public static XmlPullParser createPullParser(String data) throws MeteoException {

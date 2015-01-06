@@ -23,6 +23,8 @@ import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.RootEntity;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -39,5 +41,9 @@ public class Sunrise extends RootEntity {
         super(created, meta);
         this.location = location;
         this.dates = dates;
+    }
+
+    public List<SunriseDate> getDates() {
+        return dates == null ? new ArrayList<SunriseDate>() : Collections.unmodifiableList(dates);
     }
 }

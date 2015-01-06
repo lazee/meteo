@@ -16,6 +16,7 @@
 
 package no.api.meteo.locationgroups.config;
 
+import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.extras.locationgroup.ExtendedLocation;
 import no.api.meteo.entity.extras.locationgroup.LocationGroup;
@@ -37,9 +38,8 @@ import java.util.TreeMap;
 import static no.api.meteo.util.MeteoXppUtils.getString;
 import static no.api.meteo.util.MeteoXppUtils.getDouble;
 
+@Slf4j
 public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>> {
-
-    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public Map<String, LocationGroup> parse(String data) throws MeteoException {

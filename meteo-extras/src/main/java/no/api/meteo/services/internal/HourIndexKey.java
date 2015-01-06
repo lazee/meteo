@@ -16,12 +16,16 @@
 
 package no.api.meteo.services.internal;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 import org.joda.time.DateTime;
 
+@EqualsAndHashCode(of = {"day", "month", "year", "hour"}, doNotUseGetters = true)
+@ToString(of = {"day", "month", "year", "hour"})
 public class HourIndexKey {
 
-    public static final int HASH_NUMBER = 31;
-
+    @Getter
     private DateTime dateTime;
 
     private int day;
@@ -40,53 +44,4 @@ public class HourIndexKey {
         this.hour = dateTime.getHourOfDay();
     }
 
-    public DateTime getDateTime() {
-        return dateTime;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
-        HourIndexKey that = (HourIndexKey) o;
-
-        if (day != that.day) {
-            return false;
-        }
-        if (hour != that.hour) {
-            return false;
-        }
-        if (month != that.month) {
-            return false;
-        }
-        if (year != that.year) {
-            return false;
-        }
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = day;
-        result = HASH_NUMBER * result + month;
-        result = HASH_NUMBER * result + year;
-        result = HASH_NUMBER * result + hour;
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "PeriodIndexKey{" +
-                "day=" + day +
-                ", month=" + month +
-                ", year=" + year +
-                ", hour=" + hour +
-                '}';
-    }
 }

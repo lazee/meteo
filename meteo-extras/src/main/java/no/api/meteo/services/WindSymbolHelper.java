@@ -26,10 +26,10 @@ import java.text.DecimalFormat;
  */
 public final class WindSymbolHelper {
 
-    private static DecimalFormat idFormat = new DecimalFormat("00");
+    private static final DecimalFormat idFormat = new DecimalFormat("00");
 
     private WindSymbolHelper() {
-        // Intentional
+        throw new UnsupportedOperationException();
     }
 
     /**

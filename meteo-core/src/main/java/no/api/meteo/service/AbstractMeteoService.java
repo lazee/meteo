@@ -28,9 +28,9 @@ public abstract class AbstractMeteoService {
 
     private static final String API_MET_NO_SERVICE_PREFIX = "http://api.met.no/weatherapi/";
 
-    private MeteoServiceVersion serviceVersion;
+    private final MeteoServiceVersion serviceVersion;
 
-    private String metServiceName;
+    private final String metServiceName;
 
     private final MeteoClient meteoClient;
     
@@ -38,7 +38,6 @@ public abstract class AbstractMeteoService {
         this.meteoClient = meteoClient;
         this.metServiceName = metServiceName;
         this.serviceVersion = serviceVersion;
-        
     }
 
     protected MeteoClient getMeteoClient() {
@@ -57,6 +56,5 @@ public abstract class AbstractMeteoService {
             }
             return MeteoNetUtils.createUrl(sb.toString());
     }
-
 
 }

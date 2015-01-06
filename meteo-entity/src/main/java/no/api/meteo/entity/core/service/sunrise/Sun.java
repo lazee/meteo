@@ -20,6 +20,8 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -45,5 +47,13 @@ public final class Sun extends AbstractType {
         this.daylength = daylength;
         this.noon = noon;
         this.twilight = twilight;
+    }
+
+    public List<Noon> getNoon() {
+        return noon == null ? new ArrayList<Noon>() : Collections.unmodifiableList(noon);
+    }
+
+    public List<TwilightType> getTwilight() {
+        return noon == null ? new ArrayList<TwilightType>() : Collections.unmodifiableList(twilight);
     }
 }

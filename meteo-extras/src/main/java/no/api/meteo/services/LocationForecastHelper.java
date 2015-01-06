@@ -39,6 +39,7 @@ public final class LocationForecastHelper {
 
     private String title = null;
 
+
     public LocationForecastHelper(LocationForecast locationForecast, String title) {
         init(locationForecast);
         this.title = title;
@@ -143,7 +144,6 @@ public final class LocationForecastHelper {
             MeteoExtrasForecastDay mefd = createForcastForDay(dt);
             if (mefd != null && mefd.getForecasts().size() > 0) {
                 lst.add(mefd);
-
             }
         }
     }
@@ -153,7 +153,6 @@ public final class LocationForecastHelper {
             MeteoExtrasForecastDay mefd = createSimpleForcastForDay(dt);
             if (mefd != null && mefd.getForecasts().size() > 0) {
                 lst.add(mefd);
-
             }
         }
     }
@@ -176,15 +175,11 @@ public final class LocationForecastHelper {
     private void addForecastToList(MeteoExtrasForecast mef, List<MeteoExtrasForecast> lst) {
         if (mef != null) {
             lst.add(mef);
-
         }
     }
 
     private boolean validData() {
-        if (locationForecast == null) {
-            return false;
-        }
-        return true;
+        return locationForecast != null;
     }
 
     private void validateIndexer() throws MeteoException {
@@ -251,21 +246,15 @@ public final class LocationForecastHelper {
     }
 
     private boolean isNearerDate(DateTime pointTime, DateTime dateTime, DateTime chosenTime) {
-        if (Math.abs(pointTime.getMillis() - dateTime.getMillis()) <
-                Math.abs(chosenTime.getMillis() - dateTime.getMillis())) {
-            return true;
-        }
-        return false;
+        return Math.abs(pointTime.getMillis() - dateTime.getMillis())
+                < Math.abs(chosenTime.getMillis() - dateTime.getMillis());
     }
 
     private boolean isDateMatch(DateTime requestedDate, DateTime actualDate) {
-        if (requestedDate.getYear() == actualDate.getYear() &&
+        return requestedDate.getYear() == actualDate.getYear() &&
                 requestedDate.getMonthOfYear() == actualDate.getMonthOfYear()
                 && requestedDate.getDayOfMonth() == actualDate.getDayOfMonth() &&
-                requestedDate.getHourOfDay() == actualDate.getHourOfDay()) {
-            return true;
-        }
-        return false;
+                requestedDate.getHourOfDay() == actualDate.getHourOfDay();
     }
 
 

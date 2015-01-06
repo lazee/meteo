@@ -18,7 +18,7 @@ package no.api.meteo.service.sunrise;
 
 import org.junit.Test;
 
-public class SunriseServiceTest {
+public final class SunriseServiceTest {
 
     @Test
     public void testFetchContent() throws Exception {

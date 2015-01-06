@@ -37,13 +37,13 @@ import static no.api.meteo.util.MeteoConstants.PARAM_LATITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_TO;
 
-public class SunriseService extends AbstractMeteoService {
+public final class SunriseService extends AbstractMeteoService {
 
     private static final String MET_SERVICE_NAME = "sunrise";
 
     private static final MeteoServiceVersion VERSION = new MeteoServiceVersion(1, 0);
 
-    private MeteoDataParser<Sunrise> parser;
+    private final MeteoDataParser<Sunrise> parser;
 
     public SunriseService(MeteoClient meteoClient) {
         super(meteoClient, MET_SERVICE_NAME, VERSION);

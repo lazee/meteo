@@ -59,7 +59,7 @@ import static no.api.meteo.util.MeteoXppUtils.getInteger;
 import static no.api.meteo.util.MeteoXppUtils.getString;
 
 @Slf4j
-public class LocationforcastLTSParser implements MeteoDataParser<LocationForecast> {
+public final class LocationforcastLTSParser implements MeteoDataParser<LocationForecast> {
 
     @Override
     public LocationForecast parse(String data) throws MeteoException {

@@ -20,19 +20,7 @@ import no.api.meteo.MeteoException;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-
 public class MeteoNetUtilsTest {
-
-    @Test
-    public void testConstructor() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException,
-            InstantiationException {
-        Constructor c = MeteoNetUtils.class.getDeclaredConstructor();
-        Assert.assertFalse(c.isAccessible());
-        c.setAccessible(true);
-        c.newInstance();
-    }
 
     @Test(expected = MeteoException.class)
     public void test_create_url_error() throws Exception {

@@ -35,7 +35,7 @@ import static no.api.meteo.util.MeteoConstants.*;
  * http://api.met.no/weatherapi/locationforecastlts/1.0/documentation
  * http://api.met.no/weatherapi/locationforecast/1.9/documentation
  */
-public class LocationforecastLTSService extends AbstractMeteoService {
+public final class LocationforecastLTSService extends AbstractMeteoService {
 
     // Due to a "bug" in the MET API we need to use the locationforecast service until the LTS feed is fixed.
     //private static final String MET_SERVICE_NAME = "locationforecastlts";
@@ -45,7 +45,7 @@ public class LocationforecastLTSService extends AbstractMeteoService {
     //private static final MeteoServiceVersion version = new MeteoServiceVersion(1, 0);
     private static final MeteoServiceVersion VERSION = new MeteoServiceVersion(1, 9);
 
-    private MeteoDataParser<LocationForecast> parser;
+    private final MeteoDataParser<LocationForecast> parser;
 
     public LocationforecastLTSService(MeteoClient meteoClient) {
         super(meteoClient, MET_SERVICE_NAME, VERSION);

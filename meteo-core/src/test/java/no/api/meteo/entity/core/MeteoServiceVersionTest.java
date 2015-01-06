@@ -19,7 +19,7 @@ package no.api.meteo.entity.core;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MeteoServiceVersionTest {
+public final class MeteoServiceVersionTest {
 
     @Test
     public void testToStringVersion() throws Exception {

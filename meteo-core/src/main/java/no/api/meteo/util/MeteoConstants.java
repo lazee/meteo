@@ -22,7 +22,7 @@ package no.api.meteo.util;
 public final class MeteoConstants {
 
     private MeteoConstants() {
-        // Intentional
+        throw new UnsupportedOperationException();
     }
 
     public static final String TAG_SUN = "sun";

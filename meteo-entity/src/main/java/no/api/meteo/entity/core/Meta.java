@@ -21,6 +21,8 @@ import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.service.locationforecast.Model;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Value
@@ -30,5 +32,9 @@ public final class Meta {
     private final URL licenseUrl;
 
     private final List<Model> models;
+
+    public List<Model> getModels() {
+        return models == null ? new ArrayList<Model>() : Collections.unmodifiableList(models);
+    }
 
 }
