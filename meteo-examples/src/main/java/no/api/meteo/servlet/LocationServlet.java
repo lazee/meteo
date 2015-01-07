@@ -94,7 +94,7 @@ public class LocationServlet extends HttpServlet {
             req.setAttribute("search", false);
         }
 
-        getServletContext().getRequestDispatcher("/WEB-INF/jsp/location.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/jsp/locationtest.jsp").forward(req, resp);
     }
 
 
