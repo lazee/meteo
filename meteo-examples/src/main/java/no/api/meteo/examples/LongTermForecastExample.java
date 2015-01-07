@@ -35,13 +35,13 @@ public class LongTermForecastExample {
 
     //longitude=5.32&latitude=60.39&moh=3.0
 
-    public static final double LONGITUDE_OSLO = 10.7460923576733;
+    //public static final double LONGITUDE_OSLO = 10.7460923576733;
     public static final double LONGITUDE_BERGEN = 5.32;
 
-    public static final double LATITUDE_OSLO = 59.912726542422;
+    //public static final double LATITUDE_OSLO = 59.912726542422;
     public static final double LATITUDE_BERGEN = 60.39;
 
-    public static final int ALTITUDE_OSLO = 14;
+    //public static final int ALTITUDE_OSLO = 14;
     public static final int ALTITUDE_BERGEN = 3;
 
     private MeteoClient meteoClient;
