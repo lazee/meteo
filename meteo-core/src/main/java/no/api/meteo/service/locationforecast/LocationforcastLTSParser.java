@@ -74,8 +74,9 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
     public LocationForecast doParse(XmlPullParser xpp) throws MeteoException {
         try {
             LocationForecastBuilder locationForecastBuilder = new LocationForecastBuilder();
-            int eventType = xpp.getEventType();
             Stack<EntityBuilder> stack = new Stack<>();
+
+            int eventType = xpp.getEventType();
             while (isMoreToParse(eventType)) {
                 if (eventType == XmlPullParser.START_TAG) {
                     handleStartTags(locationForecastBuilder, xpp, stack);
@@ -100,8 +101,7 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
 
     private void handleStartTags(LocationForecastBuilder locationForecastBuilder, XmlPullParser xpp,
                                  Stack<EntityBuilder> stack) { // NOSONAR The complexity is quit alright :)
-        String n = xpp.getName();
-        switch (n) {
+        switch (xpp.getName()) {
             case TAG_WEATHERDATA:
                 handleWeatherDataTag(locationForecastBuilder, xpp);
                 break;
@@ -109,7 +109,6 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 handleTimeDataTag(stack, xpp);
                 break;
             case TAG_LOCATION:
-
                 if (locationForecastBuilder.getLocation() == null) {
                     handleLocationDataTag(locationForecastBuilder, xpp);
                 } else {
@@ -118,7 +117,7 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 break;
             case TAG_PRECIPITATION:
                 switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
-                ((PeriodForecastBuilder) stack.peek()).setPrecipitation(
+                periodPeek(stack).setPrecipitation(
                         new Precipitation(
                                 null,
                                 getString(xpp, ATTR_UNIT),
@@ -129,49 +128,49 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 break;
             case TAG_SYMBOL:
                 switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
-                ((PeriodForecastBuilder) stack.peek()).setSymbol(
+                periodPeek(stack).setSymbol(
                         new Symbol(getString(xpp, ATTR_ID),
                                    getInteger(xpp, ATTR_NUMBER)));
                 break;
             case TAG_FOG:
-                ((PointForecastBuilder) stack.peek()).setFog(
+                pointPeek(stack).setFog(
                         new Fog(getString(xpp, ATTR_ID),
                                 getDouble(xpp, ATTR_PERCENT)));
                 break;
             case TAG_PRESSURE:
-                ((PointForecastBuilder) stack.peek()).setPressure(
+                pointPeek(stack).setPressure(
                         new Pressure(
                                 getString(xpp, ATTR_ID),
                                 getString(xpp, ATTR_UNIT),
                                 getDouble(xpp, ATTR_VALUE)));
                 break;
             case TAG_HIGH_CLOUDS:
-                ((PointForecastBuilder) stack.peek()).setHighClouds(
+                pointPeek(stack).setHighClouds(
                         new HighClouds(
                                 getString(xpp, ATTR_ID),
                                 getDouble(xpp, ATTR_PERCENT)));
                 break;
             case TAG_MEDIUM_CLOUDS:
-                ((PointForecastBuilder) stack.peek()).setMediumClouds(
+                pointPeek(stack).setMediumClouds(
                         new MediumClouds(
                                 getString(xpp, ATTR_ID),
                                 getDouble(xpp, ATTR_PERCENT)));
                 break;
             case TAG_LOW_CLOUDS:
-                ((PointForecastBuilder) stack.peek()).setLowClouds(
+                pointPeek(stack).setLowClouds(
                         new LowClouds(
                                 getString(xpp, ATTR_ID),
                                 getDouble(xpp, ATTR_PERCENT)));
                 break;
             case TAG_WIND_DIRECTION:
-                ((PointForecastBuilder) stack.peek()).setWindDirection(
+                pointPeek(stack).setWindDirection(
                         new WindDirection(
                                 getString(xpp, ATTR_ID),
                                 getString(xpp, ATTR_NAME),
                                 getDouble(xpp, ATTR_DEG)));
                 break;
             case TAG_WIND_SPEED:
-                ((PointForecastBuilder) stack.peek()).setWindSpeed(
+                pointPeek(stack).setWindSpeed(
                         new WindSpeed(
                                 getString(xpp, ATTR_ID),
                                 getInteger(xpp, ATTR_BEAUFORT),
@@ -179,46 +178,45 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                                 getString(xpp, ATTR_NAME)));
                 break;
             case TAG_CLOUDINESS:
-                ((PointForecastBuilder) stack.peek()).setCloudiness(
+                pointPeek(stack).setCloudiness(
                         new Cloudiness(
                                 getString(xpp, ATTR_ID),
                                 getDouble(xpp, ATTR_PERCENT)));
                 break;
             case TAG_HUMIDITY:
-                ((PointForecastBuilder) stack.peek()).setHumidity(
+                pointPeek(stack).setHumidity(
                         new Humidity(
                                 getString(xpp, ATTR_ID),
                                 getString(xpp, ATTR_UNIT),
                                 getDouble(xpp, ATTR_VALUE)));
                 break;
             case TAG_TEMPERATURE:
-                ((PointForecastBuilder) stack.peek()).setTemperature(
+                pointPeek(stack).setTemperature(
                         new Temperature(
                                 getString(xpp, ATTR_ID),
                                 getString(xpp, ATTR_UNIT),
                                 getDouble(xpp, ATTR_VALUE)));
                 break;
             case TAG_WIND_PROBABILITY:
-                ((PointForecastBuilder) stack.peek()).setWindProbability(
+                pointPeek(stack).setWindProbability(
                         new WindProbability(
                                 getString(xpp, ATTR_UNIT),
                                 getInteger(xpp, ATTR_VALUE)));
                 break;
             case TAG_SYMBOL_PROBABILITY:
                 switchStackedObjectToPeriodForecastIfPeriodForecast(stack);
-                ((PeriodForecastBuilder) stack.peek()).setSymbolProbability(
+                periodPeek(stack).setSymbolProbability(
                         new SymbolProbability(
                                 getString(xpp, ATTR_UNIT),
                                 getInteger(xpp, ATTR_VALUE)));
                 break;
             case TAG_TEMPERATURE_PROBABILITY:
-                ((PointForecastBuilder) stack.peek()).setTemperatureProbability(
+                pointPeek(stack).setTemperatureProbability(
                         new TemperatureProbability(
                                 getString(xpp, ATTR_UNIT),
                                 getInteger(xpp, ATTR_VALUE)));
                 break;
             case TAG_META:
-
                 try {
                     locationForecastBuilder.getMetaBuilder().setLicenseUrl(
                             MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)));
@@ -227,7 +225,6 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 }
                 break;
             case TAG_MODEL:
-
                 try {
                     Model model = new Model(getDate(xpp, "to"),
                                             getDate(xpp, "from"),
@@ -239,13 +236,19 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 } catch (MeteoException e) {
                     log.warn("Could not convert model dates found in returned xml", e);
                 }
-
-
                 break;
             default:
                 log.trace("Unhandled start tag: " + xpp.getName());
                 break;
         }
+    }
+
+    private PeriodForecastBuilder periodPeek(Stack<EntityBuilder> stack) {
+        return (PeriodForecastBuilder) stack.peek();
+    }
+
+    private PointForecastBuilder pointPeek(Stack<EntityBuilder> stack) {
+        return (PointForecastBuilder) stack.peek();
     }
 
     private boolean isStackedObjectPointForecast(Stack<EntityBuilder> stack) {

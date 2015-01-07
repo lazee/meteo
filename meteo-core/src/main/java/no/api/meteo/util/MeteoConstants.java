@@ -27,6 +27,12 @@ public final class MeteoConstants {
 
     public static final String TAG_SUN = "sun";
 
+    public static final String TAG_MOON = "moon";
+
+    public static final String TAG_ERROR = "error";
+
+    public static final String TAG_TWILIGHT = "twilight";
+
     public static final String ATTR_DAYLENGTH = "daylength";
 
     public static final String ATTR_RISE = "rise";
