@@ -84,8 +84,7 @@ public final class SunriseParser implements MeteoDataParser<Sunrise> {
         }
     }
 
-    private void handleStartTags(SunriseBuilder sunriseBuilder, XmlPullParser xpp,
-                                 Stack<SunriseDateBuilder> stack) { // NOSONAR The complexity is quit alright :)
+    private void handleStartTags(SunriseBuilder sunriseBuilder, XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         switch (xpp.getName()) {
             case TAG_META:
                 handleMetaTag(sunriseBuilder, xpp);
