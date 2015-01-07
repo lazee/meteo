@@ -16,6 +16,12 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import java.util.Date;
+
 public interface Forecast {
+
+    Date getFromTime();
+
+    Date getToTime();
 
 }
