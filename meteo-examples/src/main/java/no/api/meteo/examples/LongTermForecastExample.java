@@ -60,7 +60,7 @@ public class LongTermForecastExample {
 
             LocationForecastHelper locationForecastHelper = new LocationForecastHelper(data.getResult());
 
-            for (MeteoExtrasForecastDay day : locationForecastHelper.createSimpleLongTermForecast().getForecastDays()) {
+            for (MeteoExtrasForecastDay day : locationForecastHelper.createLongTermForecast().getForecastDays()) {
                 print("\nDATE : " + day.getDay());
 
                 for (MeteoExtrasForecast forecast : day.getForecasts()) {

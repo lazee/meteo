@@ -29,10 +29,30 @@ public class MeteoResponse {
 
     private final List<MeteoResponseHeader> responseHeaders;
 
+    private final int status;
+
+    private final String statusPhrase;
+
     public List<MeteoResponseHeader> getResponseHeaders() {
         return responseHeaders == null
                 ? new ArrayList<MeteoResponseHeader>()
                 : Collections.unmodifiableList(responseHeaders);
     }
 
+    /**
+     * Tells whether the MET API version used in the request is deprecated or not.
+     *
+     * @return <code>true</code> if the MET API version is deprecated, else <code>false</code>
+     */
+    public boolean isDeprecated() {
+        /*
+            From the MET documentation on http://api.met.no:
+
+            Since a product can change its API, there is a version number as part of every product URL. If you try to
+            use a product version which is deprecated, you will get the data you expect, but with the HTTP status
+            code 203 Non-Authoritative Information. It is important for client software to accept 203-responses, but
+            you should implement appropriate checks or alarms on the return codes.
+         */
+        return status == 203;
+    }
 }

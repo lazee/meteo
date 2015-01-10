@@ -37,7 +37,7 @@ public final class MeteoTestClient implements MeteoClient {
         }
         List<MeteoResponseHeader> list = new ArrayList<>();
         list.add(new MeteoResponseHeader("foo", "bar"));
-        return new MeteoResponse(content, list);
+        return new MeteoResponse(content, list, 200, "");
     }
 
     @Override

@@ -78,15 +78,18 @@ public class DefaultMeteoClient implements MeteoClient {
             HttpGet httpget = new HttpGet(url.toURI());
 
             HttpResponse response = httpClient.execute(httpget);
-            if (response.getStatusLine().getStatusCode() != 200) {
+            if (response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 203) {
                 throw new MeteoClientException(
                         "The request failed with error code " + response.getStatusLine().getStatusCode() + " : " +
-                        response.getStatusLine().getReasonPhrase());
+                                response.getStatusLine().getReasonPhrase());
             }
             HttpEntity entity = response.getEntity();
 
             if (entity != null) {
-                return new MeteoResponse(EntityUtils.toString(entity), createMeteoResponseHeaders(response));
+                return new MeteoResponse(EntityUtils.toString(entity),
+                                         createMeteoResponseHeaders(response),
+                                         response.getStatusLine().getStatusCode(),
+                                         response.getStatusLine().getReasonPhrase());
             } else {
                 throw new MeteoClientException("No content returned from request: " + url.toString());
             }
