@@ -16,6 +16,7 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -31,10 +32,12 @@ public abstract class AbstractForecast {
 
     @NotNull
     @Getter
+    @JsonProperty
     private final Date fromTime;
 
     @NotNull
     @Getter
+    @JsonProperty
     private final Date toTime;
 
 }

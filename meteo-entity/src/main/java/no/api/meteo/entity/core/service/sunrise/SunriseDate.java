@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 import java.util.Date;
@@ -23,10 +25,21 @@ import java.util.Date;
 @Value
 public final class SunriseDate {
 
+    @JsonProperty
     private final Date date;
 
+    @JsonProperty
     private final Sun sun;
 
+    @JsonProperty
     private final Moon moon;
 
+    @JsonCreator
+    public SunriseDate(@JsonProperty("date") Date date,
+                       @JsonProperty("sun") Sun sun,
+                       @JsonProperty("moon") Moon moon) {
+        this.date = date;
+        this.sun = sun;
+        this.moon = moon;
+    }
 }

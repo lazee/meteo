@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -28,34 +30,57 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 public final class PointForecast extends AbstractForecast implements Forecast {
 
+    @JsonProperty
     private final Fog fog;
 
+    @JsonProperty
     private final Pressure pressure;
 
+    @JsonProperty
     private final HighClouds highClouds;
 
+    @JsonProperty
     private final MediumClouds mediumClouds;
 
+    @JsonProperty
     private final Cloudiness cloudiness;
 
+    @JsonProperty
     private final LowClouds lowClouds;
 
+    @JsonProperty
     private final WindDirection windDirection;
 
+    @JsonProperty
     private final WindSpeed windSpeed;
 
+    @JsonProperty
     private final Humidity humidity;
 
+    @JsonProperty
     private final Temperature temperature;
 
+    @JsonProperty
     private final WindProbability windProbability;
 
+    @JsonProperty
     private final TemperatureProbability temperatureProbability;
 
-    public PointForecast(Date fromTime, Date toTime, Fog fog, Pressure pressure, HighClouds highClouds,
-                         MediumClouds mediumClouds, Cloudiness cloudiness, LowClouds lowClouds,
-                         WindDirection windDirection, WindSpeed windSpeed, Humidity humidity, Temperature temperature,
-                         WindProbability windProbability, TemperatureProbability temperatureProbability) {
+    @JsonCreator
+    public PointForecast(@JsonProperty("fromTime") Date fromTime,
+                         @JsonProperty("toTime") Date toTime,
+                         @JsonProperty("fog") Fog fog,
+                         @JsonProperty("pressure") Pressure pressure,
+                         @JsonProperty("highClouds") HighClouds highClouds,
+                         @JsonProperty("mediumClouds") MediumClouds mediumClouds,
+                         @JsonProperty("cloudiness") Cloudiness cloudiness,
+                         @JsonProperty("lowClouds") LowClouds lowClouds,
+                         @JsonProperty("windDirection") WindDirection windDirection,
+                         @JsonProperty("windSpeed") WindSpeed windSpeed,
+                         @JsonProperty("humidity") Humidity humidity,
+                         @JsonProperty("temperature") Temperature temperature,
+                         @JsonProperty("windProbability") WindProbability windProbability,
+                         @JsonProperty("temperatureProbability") TemperatureProbability temperatureProbability) {
         super(fromTime, toTime);
         this.fog = fog;
         this.pressure = pressure;

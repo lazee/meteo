@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -29,16 +31,23 @@ import no.api.meteo.entity.core.IdEntity;
 public final class WindSpeed extends IdEntity {
 
     @NotNull
+    @JsonProperty
     private final Integer beaufort;
 
     @NotNull
+    @JsonProperty
     private final Double mps;
 
     @NotNull
     @NotEmpty
+    @JsonProperty
     private final String name;
 
-    public WindSpeed(String id, Integer beaufort, Double mps, String name) {
+    @JsonCreator
+    public WindSpeed(@JsonProperty("id") String id,
+                     @JsonProperty("beaufort") Integer beaufort,
+                     @JsonProperty("mps") Double mps,
+                     @JsonProperty("name") String name) {
         super(id);
         this.beaufort = beaufort;
         this.mps = mps;

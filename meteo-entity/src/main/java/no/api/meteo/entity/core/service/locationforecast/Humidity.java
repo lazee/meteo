@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -25,7 +27,10 @@ import lombok.Value;
 @EqualsAndHashCode(callSuper = true)
 public class Humidity extends UnitEntity {
 
-    public Humidity(String id, String unit, Double value) {
+    @JsonCreator
+    public Humidity(@JsonProperty("id") String id,
+                    @JsonProperty("unit") String unit,
+                    @JsonProperty("value") Double value) {
         super(id, unit, value);
     }
 }

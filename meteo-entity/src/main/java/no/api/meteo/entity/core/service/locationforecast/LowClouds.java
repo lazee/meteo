@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -26,7 +28,9 @@ import no.api.meteo.entity.core.PercentEntity;
 @EqualsAndHashCode(callSuper = true)
 public class LowClouds extends PercentEntity {
 
-    public LowClouds(String id, Double percent) {
+    @JsonCreator
+    public LowClouds(@JsonProperty("id") String id,
+                     @JsonProperty("percent") Double percent) {
         super(id, percent);
     }
 }

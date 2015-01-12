@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -35,12 +37,18 @@ import java.util.List;
 public final class LocationForecast extends RootEntity {
 
     @NotNull
+    @JsonProperty
     private final Location location;
 
     @NotNull
+    @JsonProperty
     private final List<Forecast> forecasts;
 
-    public LocationForecast(Date created, Meta meta, Location location, List<Forecast> forecasts) {
+    @JsonCreator
+    public LocationForecast(@JsonProperty("created") Date created,
+                            @JsonProperty("meta") Meta meta,
+                            @JsonProperty("location") Location location,
+                            @JsonProperty("forecasts") List<Forecast> forecasts) {
         super(created, meta);
         this.location = location;
         this.forecasts = forecasts;

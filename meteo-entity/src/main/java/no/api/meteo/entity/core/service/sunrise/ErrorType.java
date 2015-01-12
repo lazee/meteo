@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -27,7 +29,9 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 public final class ErrorType extends AbstractRiseSet {
 
-    public ErrorType(Date rise, Date set) {
+    @JsonCreator
+    public ErrorType(@JsonProperty("rise") Date rise,
+                     @JsonProperty("set") Date set) {
         super(rise, set);
     }
 }

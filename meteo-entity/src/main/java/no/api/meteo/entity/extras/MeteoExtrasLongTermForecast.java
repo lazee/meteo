@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.extras;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 import java.util.List;
@@ -23,6 +25,11 @@ import java.util.List;
 @Value
 public final class MeteoExtrasLongTermForecast {
 
+    @JsonProperty
     private final List<MeteoExtrasForecastDay> forecastDays;
 
+    @JsonCreator
+    public MeteoExtrasLongTermForecast(@JsonProperty("forecastDays") List<MeteoExtrasForecastDay> forecastDays) {
+        this.forecastDays = forecastDays;
+    }
 }

@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.extras.locationgroup;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 import java.util.List;
@@ -27,4 +29,10 @@ public final class LocationGroup {
 
     private final List<ExtendedLocation> locations;
 
+    @JsonCreator
+    public LocationGroup(@JsonProperty("id") String id,
+                         @JsonProperty("locations") List<ExtendedLocation> locations) {
+        this.id = id;
+        this.locations = locations;
+    }
 }

@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -25,7 +27,9 @@ import lombok.Value;
 @EqualsAndHashCode(callSuper = true)
 public final class SymbolProbability extends ProbabilityEntity {
 
-    public SymbolProbability(String unit, Integer value) {
+    @JsonCreator
+    public SymbolProbability(@JsonProperty("unit") String unit,
+                             @JsonProperty("value") Integer value) {
         super(unit, value);
     }
 }

@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -27,13 +29,22 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 public final class PeriodForecast extends AbstractForecast implements Forecast {
 
+    @JsonProperty
     private final Precipitation precipitation;
 
+    @JsonProperty
     private final Symbol symbol;
 
+    @JsonProperty
     private final SymbolProbability symbolProbability;
 
-    public PeriodForecast(Date fromTime, Date toTime, Precipitation precipitation, Symbol symbol, SymbolProbability symbolProbability) {
+    @JsonCreator
+    public PeriodForecast(
+            @JsonProperty("fromTime") Date fromTime,
+            @JsonProperty("toTime") Date toTime,
+            @JsonProperty("precipitation") Precipitation precipitation,
+            @JsonProperty("symbol") Symbol symbol,
+            @JsonProperty("symbolProbability") SymbolProbability symbolProbability) {
         super(fromTime, toTime);
         this.precipitation = precipitation;
         this.symbol = symbol;

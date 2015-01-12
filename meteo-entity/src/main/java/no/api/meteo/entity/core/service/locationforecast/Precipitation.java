@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -27,15 +29,24 @@ import net.sf.oval.constraint.NotNull;
 public final class Precipitation extends UnitEntity {
 
     @NotNull
+    @JsonProperty
     private final Double minValue;
 
     @NotNull
+    @JsonProperty
     private final Double maxValue;
 
     @NotNull
+    @JsonProperty
     private final Double probability;
 
-    public Precipitation(String id, String unit, Double value, Double minValue, Double maxValue, Double probability) {
+    @JsonCreator
+    public Precipitation(@JsonProperty("id") String id,
+                         @JsonProperty("unit") String unit,
+                         @JsonProperty("value") Double value,
+                         @JsonProperty("minValue") Double minValue,
+                         @JsonProperty("maxValue") Double maxValue,
+                         @JsonProperty("probability") Double probability) {
         super(id, unit, value);
         this.minValue = minValue;
         this.maxValue = maxValue;

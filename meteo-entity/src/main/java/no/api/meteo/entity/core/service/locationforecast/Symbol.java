@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -28,9 +30,12 @@ import no.api.meteo.entity.core.IdEntity;
 public final class Symbol extends IdEntity {
 
     @NotNull
+    @JsonProperty
     private final Integer number;
 
-    public Symbol(String id, Integer number) {
+    @JsonCreator
+    public Symbol(@JsonProperty("id") String id,
+                  @JsonProperty("number") Integer number) {
         super(id);
         this.number = number;
     }

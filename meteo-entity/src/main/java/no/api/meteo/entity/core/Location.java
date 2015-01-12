@@ -16,24 +16,36 @@
 
 package no.api.meteo.entity.core;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import net.sf.oval.constraint.NotNegative;
 import net.sf.oval.constraint.NotNull;
 
 @Data
-@AllArgsConstructor
 public class Location {
 
     @NotNull
     @NotNegative
+    @JsonProperty
     private final Double longitude;
 
     @NotNull
     @NotNegative
+    @JsonProperty
     private final Double latitude;
 
     @NotNegative
+    @JsonProperty
     private final Double altitude;
 
+    @JsonCreator
+    public Location(@JsonProperty("longitude") Double longitude,
+                    @JsonProperty("latitude") Double latitude,
+                    @JsonProperty("altitude") Double altitude) {
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.altitude = altitude;
+    }
 }

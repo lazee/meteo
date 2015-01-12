@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 import java.util.Date;
@@ -23,16 +25,36 @@ import java.util.Date;
 @Value
 public final class Model {
 
+    @JsonProperty
     private final Date to;
 
+    @JsonProperty
     private final Date from;
 
+    @JsonProperty
     private final Date runEnded;
 
+    @JsonProperty
     private final Date nextRun;
 
+    @JsonProperty
     private final Date termin;
 
+    @JsonProperty
     private final String name;
 
+    @JsonCreator
+    public Model(@JsonProperty("to") Date to,
+                 @JsonProperty("from") Date from,
+                 @JsonProperty("runEnded") Date runEnded,
+                 @JsonProperty("nextRun") Date nextRun,
+                 @JsonProperty("termin") Date termin,
+                 @JsonProperty("name") String name) {
+        this.to = to;
+        this.from = from;
+        this.runEnded = runEnded;
+        this.nextRun = nextRun;
+        this.termin = termin;
+        this.name = name;
+    }
 }

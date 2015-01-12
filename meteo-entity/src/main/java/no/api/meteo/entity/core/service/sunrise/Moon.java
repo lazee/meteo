@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -28,10 +30,16 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public final class Moon extends AbstractType {
 
+    @JsonProperty
     private final PhaseType phase;
 
-    public Moon(Date rise, Date set, Boolean neverRise, Boolean neverSet,
-                List<ErrorType> error, PhaseType phase) {
+    @JsonCreator
+    public Moon(@JsonProperty("rise") Date rise,
+                @JsonProperty("set") Date set,
+                @JsonProperty("neverRise") Boolean neverRise,
+                @JsonProperty("neverSet") Boolean neverSet,
+                @JsonProperty("error") List<ErrorType> error,
+                @JsonProperty("phase") PhaseType phase) {
         super(rise, set, neverRise, neverSet, error);
         this.phase = phase;
     }

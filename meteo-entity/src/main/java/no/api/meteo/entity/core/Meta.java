@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.service.locationforecast.Model;
@@ -29,9 +31,17 @@ import java.util.List;
 public final class Meta {
 
     @NotNull
+    @JsonProperty
     private final URL licenseUrl;
 
+    @JsonProperty
     private final List<Model> models;
+
+    @JsonCreator
+    public Meta(URL licenseUrl, List<Model> models) {
+        this.licenseUrl = licenseUrl;
+        this.models = models;
+    }
 
     public List<Model> getModels() {
         return models == null ? new ArrayList<Model>() : Collections.unmodifiableList(models);

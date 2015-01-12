@@ -16,14 +16,24 @@
 
 package no.api.meteo.entity.core;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 @Value
 public final class MeteoServiceVersion {
 
+    @JsonProperty
     private final int major;
 
+    @JsonProperty
     private final int minor;
+
+    @JsonCreator
+    public MeteoServiceVersion(@JsonProperty("major") int major, @JsonProperty("minor") int minor) {
+        this.major = major;
+        this.minor = minor;
+    }
 
     public String toStringVersion() {
         return String.format("%s.%s", major, minor);

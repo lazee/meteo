@@ -16,6 +16,7 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -29,9 +30,11 @@ import java.util.Date;
 public abstract class AbstractRiseSet {
 
     @Getter
+    @JsonProperty
     private final Date rise;
 
     @Getter
+    @JsonProperty
     private final Date set;
 
 }

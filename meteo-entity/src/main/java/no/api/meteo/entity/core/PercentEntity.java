@@ -16,6 +16,7 @@
 
 package no.api.meteo.entity.core;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -27,6 +28,7 @@ public abstract class PercentEntity extends IdEntity {
 
     @NotNull
     @Getter
+    @JsonProperty
     private final Double percent;
 
     public PercentEntity(String id, Double percent) {

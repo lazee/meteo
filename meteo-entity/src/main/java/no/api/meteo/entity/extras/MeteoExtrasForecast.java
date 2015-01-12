@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.extras;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.PointForecast;
@@ -33,8 +35,16 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 @Value
 public final class MeteoExtrasForecast {
 
+    @JsonProperty
     private final PointForecast pointForecast;
 
+    @JsonProperty
     private final PeriodForecast periodForecast;
 
+    @JsonCreator
+    public MeteoExtrasForecast(@JsonProperty("pointForecast") PointForecast pointForecast,
+                               @JsonProperty("periodForecast") PeriodForecast periodForecast) {
+        this.pointForecast = pointForecast;
+        this.periodForecast = periodForecast;
+    }
 }

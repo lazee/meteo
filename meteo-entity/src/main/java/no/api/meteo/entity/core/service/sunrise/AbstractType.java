@@ -16,6 +16,7 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -30,11 +31,14 @@ import java.util.List;
 public abstract class AbstractType extends AbstractRiseSet {
 
     @Getter
+    @JsonProperty
     private final Boolean neverRise;
 
     @Getter
+    @JsonProperty
     private final Boolean neverSet;
 
+    @JsonProperty
     private final List<ErrorType> error;
 
     public AbstractType(Date rise, Date set, Boolean neverRise, Boolean neverSet, List<ErrorType> error) {

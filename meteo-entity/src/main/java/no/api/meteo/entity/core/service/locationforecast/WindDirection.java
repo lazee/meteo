@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -30,12 +32,17 @@ public final class WindDirection extends IdEntity {
 
     @NotNull
     @NotEmpty
+    @JsonProperty
     private final String name;
 
     @NotNull
+    @JsonProperty
     private final Double deg;
 
-    public WindDirection(String id, String name, Double deg) {
+    @JsonCreator
+    public WindDirection(@JsonProperty("id") String id,
+                         @JsonProperty("name") String name,
+                         @JsonProperty("deg") Double deg) {
         super(id);
         this.name = name;
         this.deg = deg;

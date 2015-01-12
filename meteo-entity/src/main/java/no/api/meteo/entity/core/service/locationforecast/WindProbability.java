@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -25,7 +27,8 @@ import lombok.Value;
 @EqualsAndHashCode(callSuper = true)
 public final class WindProbability extends ProbabilityEntity{
 
-    public WindProbability(String unit, Integer value) {
+    @JsonCreator
+    public WindProbability(@JsonProperty("unit") String unit, @JsonProperty("value") Integer value) {
         super(unit, value);
     }
 }

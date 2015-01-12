@@ -16,13 +16,23 @@
 
 package no.api.meteo.entity.extras;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 @Value
 public final class BeaufortRange {
 
+    @JsonProperty
     private final double start;
 
+    @JsonProperty
     private final double stop;
 
+    @JsonCreator
+    public BeaufortRange(@JsonProperty("start") double start,
+                         @JsonProperty("stop") double stop) {
+        this.start = start;
+        this.stop = stop;
+    }
 }

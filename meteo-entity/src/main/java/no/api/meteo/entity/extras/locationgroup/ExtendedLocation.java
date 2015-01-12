@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.extras.locationgroup;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -28,7 +30,11 @@ public final class ExtendedLocation extends Location {
 
     private final String name;
 
-    public ExtendedLocation(Double longitude, Double latitude, Double altitude, String name) {
+    @JsonCreator
+    public ExtendedLocation(@JsonProperty("longitude") Double longitude,
+                            @JsonProperty("latitude") Double latitude,
+                            @JsonProperty("altitude") Double altitude,
+                            @JsonProperty("name") String name) {
         super(longitude, latitude, altitude);
         this.name = name;
     }

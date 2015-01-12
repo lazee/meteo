@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -33,11 +35,17 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class Sunrise extends RootEntity {
 
+    @JsonProperty
     private final Location location;
 
+    @JsonProperty
     private final List<SunriseDate> dates;
 
-    public Sunrise(Date created, Meta meta, Location location, List<SunriseDate> dates) {
+    @JsonCreator
+    public Sunrise(@JsonProperty("created") Date created,
+                   @JsonProperty("meta") Meta meta,
+                   @JsonProperty("location") Location location,
+                   @JsonProperty("dates") List<SunriseDate> dates) {
         super(created, meta);
         this.location = location;
         this.dates = dates;

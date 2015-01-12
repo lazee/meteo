@@ -16,6 +16,7 @@
 
 package no.api.meteo.entity.core;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -27,6 +28,7 @@ import lombok.ToString;
 public abstract class IdEntity {
 
     @Getter
+    @JsonProperty
     private final String id;
 
 }

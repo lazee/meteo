@@ -16,6 +16,7 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -29,9 +30,11 @@ public abstract class ProbabilityEntity {
 
     @NotNull
     @NotEmpty
+    @JsonProperty
     private final String unit;
 
     @NotNull
+    @JsonProperty
     private final Integer value;
 
 

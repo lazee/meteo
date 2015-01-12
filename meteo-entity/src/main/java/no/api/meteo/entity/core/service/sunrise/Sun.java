@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
@@ -35,14 +37,24 @@ nautical -12 and astronomical -18.
 @EqualsAndHashCode(callSuper = true)
 public final class Sun extends AbstractType {
 
+    @JsonProperty
     private final Double daylength;
 
+    @JsonProperty
     private final List<Noon> noon;
 
+    @JsonProperty
     private final List<TwilightType> twilight;
 
-    public Sun(Date rise, Date set, Boolean neverRise, Boolean neverSet,
-               List<ErrorType> error, Double daylength, List<Noon> noon, List<TwilightType> twilight) {
+    @JsonCreator
+    public Sun(@JsonProperty("rise") Date rise,
+               @JsonProperty("set") Date set,
+               @JsonProperty("neverRise") Boolean neverRise,
+               @JsonProperty("neverSet") Boolean neverSet,
+               @JsonProperty("error") List<ErrorType> error,
+               @JsonProperty("daylength") Double daylength,
+               @JsonProperty("noon") List<Noon> noon,
+               @JsonProperty("twilight") List<TwilightType> twilight) {
         super(rise, set, neverRise, neverSet, error);
         this.daylength = daylength;
         this.noon = noon;

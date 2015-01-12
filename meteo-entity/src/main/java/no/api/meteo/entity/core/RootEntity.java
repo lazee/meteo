@@ -16,6 +16,7 @@
 
 package no.api.meteo.entity.core;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -31,9 +32,11 @@ public abstract class RootEntity {
 
     @NotNull
     @Getter
+    @JsonProperty
     private final Date created;
 
     @Getter
+    @JsonProperty
     private final Meta meta;
 
 }
