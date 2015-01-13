@@ -16,17 +16,11 @@
 
 package no.api.meteo.service;
 
-import no.api.meteo.MeteoException;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.entity.core.MeteoServiceVersion;
-import no.api.meteo.util.MeteoNetUtils;
-
-import java.net.URL;
-import java.util.Map;
+import no.api.meteo.util.METServiceUrlBuilder;
 
 public abstract class AbstractMeteoService {
-
-    private static final String API_MET_NO_SERVICE_PREFIX = "http://api.met.no/weatherapi/";
 
     private final MeteoServiceVersion serviceVersion;
 
@@ -44,17 +38,8 @@ public abstract class AbstractMeteoService {
         return meteoClient;
     }
 
-    protected URL createRequestUrl(Map<String, Object> queryParameters) throws MeteoException {
-            StringBuilder sb = new StringBuilder();
-            sb.append(API_MET_NO_SERVICE_PREFIX).append(metServiceName).append("/").append(
-                    serviceVersion.toStringVersion()).append("/?");
-
-            boolean first = true;
-            for (Map.Entry<String, Object> e : queryParameters.entrySet()) {
-                sb.append(first ? "" : "&").append(e.getKey()).append("=").append(e.getValue().toString());
-                first = false;
-            }
-            return MeteoNetUtils.createUrl(sb.toString());
+    protected METServiceUrlBuilder createServiceUrlBuilder() {
+        return METServiceUrlBuilder.create(metServiceName, serviceVersion);
     }
 
 }

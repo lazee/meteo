@@ -24,18 +24,15 @@ import no.api.meteo.entity.core.MeteoServiceVersion;
 import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.service.AbstractMeteoService;
 import no.api.meteo.service.MeteoDataParser;
-import no.api.meteo.util.MeteoDateUtils;
 
-import java.net.URL;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import static no.api.meteo.util.MeteoConstants.PARAM_DATE;
 import static no.api.meteo.util.MeteoConstants.PARAM_FROM;
 import static no.api.meteo.util.MeteoConstants.PARAM_LATITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_TO;
+import static no.api.meteo.util.MeteoDateUtils.dateToYyyyMMdd;
 
 public final class SunriseService extends AbstractMeteoService {
 
@@ -51,29 +48,24 @@ public final class SunriseService extends AbstractMeteoService {
     }
 
     public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date date) throws MeteoException {
-        MeteoResponse response = getMeteoClient().fetchContent(createServiceUrl(longitude, latitude, date));
+        MeteoResponse response = getMeteoClient().fetchContent(
+                createServiceUrlBuilder()
+                        .addParameter(PARAM_LONGITUDE, longitude)
+                        .addParameter(PARAM_LATITUDE, latitude)
+                        .addParameter(PARAM_DATE, dateToYyyyMMdd(date)).build());
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
-    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date from, Date to) throws MeteoException {
-        MeteoResponse response = getMeteoClient().fetchContent(createServiceUrlFromTo(longitude, latitude, from, to));
+    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date from, Date to)
+            throws MeteoException {
+        MeteoResponse response = getMeteoClient().fetchContent(
+                createServiceUrlBuilder()
+                        .addParameter(PARAM_LONGITUDE, longitude)
+                        .addParameter(PARAM_LATITUDE, latitude)
+                        .addParameter(PARAM_FROM, dateToYyyyMMdd(from))
+                        .addParameter(PARAM_TO, dateToYyyyMMdd(to)).build()
+        );
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
-    private URL createServiceUrl(double longitude, double latitude, Date date) throws MeteoException {
-        Map<String, Object> queryParameters = new HashMap<>();
-        queryParameters.put(PARAM_LONGITUDE, longitude);
-        queryParameters.put(PARAM_LATITUDE, latitude);
-        queryParameters.put(PARAM_DATE, MeteoDateUtils.dateToYyyyMMdd(date));
-        return createRequestUrl(queryParameters);
-    }
-
-    private URL createServiceUrlFromTo(double longitude, double latitude, Date from, Date to) throws MeteoException {
-        Map<String, Object> queryParameters = new HashMap<>();
-        queryParameters.put(PARAM_LONGITUDE, longitude);
-        queryParameters.put(PARAM_LATITUDE, latitude);
-        queryParameters.put(PARAM_FROM, MeteoDateUtils.dateToYyyyMMdd(from));
-        queryParameters.put(PARAM_TO, MeteoDateUtils.dateToYyyyMMdd(to));
-        return createRequestUrl(queryParameters);
-    }
 }

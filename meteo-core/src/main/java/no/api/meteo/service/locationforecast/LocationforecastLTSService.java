@@ -25,15 +25,13 @@ import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.service.AbstractMeteoService;
 import no.api.meteo.service.MeteoDataParser;
 
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-
-import static no.api.meteo.util.MeteoConstants.*;
+import static no.api.meteo.util.MeteoConstants.PARAM_ALTITUDE;
+import static no.api.meteo.util.MeteoConstants.PARAM_LATITUDE;
+import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
 
 /**
- * http://api.met.no/weatherapi/locationforecastlts/1.0/documentation
- * http://api.met.no/weatherapi/locationforecast/1.9/documentation
+ * http://api.met.no/weatherapi/locationforecastlts/1.0/documentation http://api.met.no/weatherapi/locationforecast/1
+ * .9/documentation
  */
 public final class LocationforecastLTSService extends AbstractMeteoService {
 
@@ -52,24 +50,24 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
         parser = new LocationforcastLTSParser();
     }
 
-    public MeteoData<LocationForecast> fetchContent(double longitude, double latitude, double altitude) throws MeteoException {
-        MeteoResponse response = getMeteoClient().fetchContent(createServiceUrl(longitude, latitude, altitude, false));
+    public MeteoData<LocationForecast> fetchContent(double longitude, double latitude, double altitude)
+            throws MeteoException {
+        MeteoResponse response = getMeteoClient().fetchContent(
+                createServiceUrlBuilder()
+                        .addParameter(PARAM_LONGITUDE, longitude)
+                        .addParameter(PARAM_LATITUDE, latitude)
+                        .addParameter(PARAM_ALTITUDE, altitude).build()
+        );
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
     public MeteoData<LocationForecast> fetchContent(double longitude, double latitude) throws MeteoException {
-        MeteoResponse response = getMeteoClient().fetchContent(createServiceUrl(longitude, latitude, 0, true));
+        MeteoResponse response = getMeteoClient().fetchContent(
+                createServiceUrlBuilder()
+                        .addParameter(PARAM_LONGITUDE, longitude)
+                        .addParameter(PARAM_LATITUDE, latitude).build()
+        );
         return new MeteoData<>(parser.parse(response.getData()), response);
-    }
-
-    private URL createServiceUrl(double longitude, double latitude, double altitude, boolean skipAltitude) throws MeteoException {
-        Map<String, Object> queryParameters = new HashMap<>();
-        queryParameters.put(PARAM_LONGITUDE, longitude);
-        queryParameters.put(PARAM_LATITUDE, latitude);
-        if (!skipAltitude) {
-            queryParameters.put(PARAM_ALTITUDE, (int) altitude);
-        }
-        return createRequestUrl(queryParameters);
     }
 
 }
