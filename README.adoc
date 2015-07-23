@@ -14,7 +14,7 @@ Meteo does not have a solution for this out of the box. However, it is possible 
 cache headers quite easily (Maybe this will be added to Meteo later).
 
 Also make sure to read this http://api.met.no/license_data.html.
----------
+
 
 ## Getting started
 
