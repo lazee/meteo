@@ -33,7 +33,7 @@ public final class ExtendedLocation extends Location {
     @JsonCreator
     public ExtendedLocation(@JsonProperty("longitude") Double longitude,
                             @JsonProperty("latitude") Double latitude,
-                            @JsonProperty("altitude") Double altitude,
+                            @JsonProperty("altitude") Integer altitude,
                             @JsonProperty("name") String name) {
         super(longitude, latitude, altitude);
         this.name = name;

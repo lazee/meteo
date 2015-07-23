@@ -25,7 +25,7 @@ public interface MeteoClient {
      * @return Response object containing the fetched content.
      * @throws MeteoClientException If invalid url or content couldn't be fetched.
      */
-    public abstract MeteoResponse fetchContent(URL url) throws MeteoClientException;
+    MeteoResponse fetchContent(URL url) throws MeteoClientException;
 
     /**
      * Set proxy settings for the client.
@@ -33,13 +33,13 @@ public interface MeteoClient {
      * @param hostName The proxy hostname to be used.
      * @param port The proxy port to be used.
      */
-    public abstract void setProxy(String hostName, int port);
+    void setProxy(String hostName, int port);
 
-    public abstract void setTimeout(int timeout);
+    void setTimeout(int timeout);
 
     /**
      * When HttpClient instance is no longer needed, shut down the client to ensure immediate deallocation
      * of all system resources.
      */
-    public abstract void shutdown();
+    void shutdown();
 }

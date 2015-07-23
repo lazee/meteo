@@ -39,23 +39,19 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
     //private static final String MET_SERVICE_NAME = "locationforecastlts";
     private static final String MET_SERVICE_NAME = "locationforecast";
 
-    // Changed for the same reason as MET_SERVICE_NAME
-    //private static final MeteoServiceVersion version = new MeteoServiceVersion(1, 0);
-    private static final MeteoServiceVersion VERSION = new MeteoServiceVersion(1, 9);
-
     private final MeteoDataParser<LocationForecast> parser;
 
     public LocationforecastLTSService(MeteoClient meteoClient) {
-        super(meteoClient, MET_SERVICE_NAME, VERSION);
+        super(meteoClient, MET_SERVICE_NAME, new MeteoServiceVersion(1, 9));
         parser = new LocationforcastLTSParser();
     }
 
-    public MeteoData<LocationForecast> fetchContent(double longitude, double latitude, double altitude)
+    public MeteoData<LocationForecast> fetchContent(double longitude, double latitude, int altitude)
             throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUrlBuilder()
-                        .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_LATITUDE, latitude)
+                        .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_ALTITUDE, altitude).build()
         );
         return new MeteoData<>(parser.parse(response.getData()), response);
@@ -64,8 +60,8 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
     public MeteoData<LocationForecast> fetchContent(double longitude, double latitude) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUrlBuilder()
-                        .addParameter(PARAM_LONGITUDE, longitude)
-                        .addParameter(PARAM_LATITUDE, latitude).build()
+                        .addParameter(PARAM_LATITUDE, latitude)
+                        .addParameter(PARAM_LONGITUDE, longitude).build()
         );
         return new MeteoData<>(parser.parse(response.getData()), response);
     }

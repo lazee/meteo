@@ -36,22 +36,18 @@ import static no.api.meteo.util.MeteoDateUtils.dateToYyyyMMdd;
 
 public final class SunriseService extends AbstractMeteoService {
 
-    private static final String MET_SERVICE_NAME = "sunrise";
-
-    private static final MeteoServiceVersion VERSION = new MeteoServiceVersion(1, 0);
-
     private final MeteoDataParser<Sunrise> parser;
 
     public SunriseService(MeteoClient meteoClient) {
-        super(meteoClient, MET_SERVICE_NAME, VERSION);
+        super(meteoClient, "sunrise", new MeteoServiceVersion(1, 0));
         parser = new SunriseParser();
     }
 
     public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date date) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUrlBuilder()
-                        .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_LATITUDE, latitude)
+                        .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_DATE, dateToYyyyMMdd(date)).build());
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
@@ -60,8 +56,8 @@ public final class SunriseService extends AbstractMeteoService {
             throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUrlBuilder()
-                        .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_LATITUDE, latitude)
+                        .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_FROM, dateToYyyyMMdd(from))
                         .addParameter(PARAM_TO, dateToYyyyMMdd(to)).build()
         );

@@ -24,8 +24,6 @@ import no.api.meteo.locationgroups.config.builder.LocationGroupBuilder;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.MeteoDataParserException;
 import no.api.meteo.util.MeteoXppUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -35,8 +33,9 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.TreeMap;
 
-import static no.api.meteo.util.MeteoXppUtils.getString;
 import static no.api.meteo.util.MeteoXppUtils.getDouble;
+import static no.api.meteo.util.MeteoXppUtils.getInteger;
+import static no.api.meteo.util.MeteoXppUtils.getString;
 
 @Slf4j
 public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>> {
@@ -86,7 +85,7 @@ public class ConfigParser implements MeteoDataParser<Map<String, LocationGroup>>
             locationGroupBuilder.getLocations().add(new ExtendedLocation(
                     getDouble(xpp, "longitude"),
                     getDouble(xpp, "latitude"),
-                    getDouble(xpp, "moh"),
+                    getInteger(xpp, "moh"),
                     getString(xpp, "name")));
         }
     }

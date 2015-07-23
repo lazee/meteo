@@ -301,6 +301,6 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
         locationForecastBuilder.setLocation(
                 new Location(getDouble(xpp, ATTR_LONGITUDE),
                              getDouble(xpp, ATTR_LATITUDE),
-                             getDouble(xpp, ATTR_ALTITUDE)));
+                             getInteger(xpp, ATTR_ALTITUDE)));
     }
 }

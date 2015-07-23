@@ -20,8 +20,8 @@ import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.MeteoServiceVersion;
 
 import java.net.URL;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class METServiceUrlBuilder {
 
@@ -31,16 +31,16 @@ public final class METServiceUrlBuilder {
 
     private final String serviceName;
 
-    private final Map<String, Object> parameters;
+    private final List<Pair> parameters;
 
     private METServiceUrlBuilder(String serviceName, MeteoServiceVersion serviceVersion) {
         this.serviceName = serviceName;
         this.serviceVersion = serviceVersion;
-        this.parameters = new TreeMap<>();
+        this.parameters = new ArrayList<>();
     }
 
     public METServiceUrlBuilder addParameter(String name, Object value) {
-        parameters.put(name, value);
+        parameters.add(new Pair(name, value));
         return this;
     }
 
@@ -50,8 +50,8 @@ public final class METServiceUrlBuilder {
                 serviceVersion.toStringVersion()).append("/?");
 
         boolean first = true;
-        for (Map.Entry<String, Object> e : parameters.entrySet()) {
-            sb.append(first ? "" : "&").append(e.getKey()).append("=").append(e.getValue().toString());
+        for (Pair pair : parameters) {
+            sb.append(first ? "" : "&").append(pair.getKey()).append("=").append(pair.getValue().toString());
             first = false;
         }
         return MeteoNetUtils.createUrl(sb.toString());
@@ -59,5 +59,25 @@ public final class METServiceUrlBuilder {
 
     public static METServiceUrlBuilder create(String serviceName, MeteoServiceVersion serviceVersion) {
         return new METServiceUrlBuilder(serviceName, serviceVersion);
+    }
+
+    private static final class Pair {
+
+        private final String key;
+
+        private final Object value;
+
+        public Pair(String key, Object value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public String getKey() {
+            return key;
+        }
+
+        public Object getValue() {
+            return value;
+        }
     }
 }
