@@ -1,4 +1,13 @@
-Meteo is a Java library for fetching data made public available by the Norwegian Meteorological Institute.
+# METEO
+
+Meteo is a Java library/client for fetching data made public available by the Norwegian Meteorological Institute.
+
+The main purpose of Meteo is to have a Java client that can fetch Weather data from the MET API and then present the
+data within a Java API.
+
+However, it is hard to interpret all the raw data provided by the MET API. Therefore Meteos also offers an extra library
+that helps creating real weather reports (meteo-extras).
+
 
 
 IMPORTANT
