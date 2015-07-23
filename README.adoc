@@ -1,26 +1,18 @@
 # METEO
 
-Meteo is a Java library/client for fetching data made public available by the Norwegian Meteorological Institute.
+Meteo is mainly a Java client that can fetch Weather data from the http://api.met.no.
+But Meteo also offers an extra library (meteo-extras) that can help you create those nice weather reports for your
+website.
 
-The main purpose of Meteo is to have a Java client that can fetch Weather data from the MET API and then present the
-data within a Java API.
-
-However, it is hard to interpret all the raw data provided by the MET API. Therefore Meteos also offers an extra library
-that helps creating real weather reports (meteo-extras).
-
+Please note that Meteo is in no way affiliated with the Norwegian Meteorological Institute
+except for the fact that we use their awesome API to provide you this client.
 
 
-IMPORTANT
+## IMPORTANT
+
+Make sure to read the http://api.met.no/conditions_service.html[Conditions for use of the service] before you start
+using Meteo. You must take care of the caching issues yourself. Meteo do not have a solution for this out of the box.
+
+Also make sure to give credit to MET on your site or in you app : http://api.met.no/license_data.html
 ---------
-http://api.met.no/#english
-http://api.met.no/lisens_data.html
----------
 
-The Norwegian Meteorological Institute holds ownership and Intellectual Property Rights to the data and products
-produced by the institute (hereinafter referred to as PRODUCTS). Access and the right to use the selection of
-PRODUCTS available here, shall not have the effect of transfer of such rights.
-
-The Norwegian Meteorological Institute shall not be held liable for any consequences of the use made of the PRODUCTS.
-
-The Norwegian Meteorological Institute does not guarantee regularity in updating of PRODUCTS, and changes in the
-PRODUCTS may occur without notice.
