@@ -1,10 +1,15 @@
 # METEO
 
 Meteo is an Open-Source Java based project for dealing with weather data from http://api.met.no.
-It mainly consists of two parts. A client and a helper library for converting the raw data into weather reports.
+It mainly consists of two parts: A Java client and a library that helps you convert the raw data into
+usable weather reports.
 
 Please note that Meteo is in no way affiliated with the Norwegian Meteorological Institute
-except for the fact that it use their awesome API to provide you with weather data.
+except for the fact that it use their API to provide you with weather data.
+
+Meteo is developed and maintained by Amedia Utvikling AS. It is in use within all the Amedia sites (more than 70).
+It mainly supports the services that Amedia needs at any given time. But we will consider adding other services as
+well upon request.
 
 ## IMPORTANT
 
@@ -16,5 +21,59 @@ cache headers quite easily (Maybe this will be added to Meteo later).
 Also make sure to read this http://api.met.no/license_data.html.
 
 
-## Getting started
+## Usage
+
+You find Meteo in the central maven repository:
+http://search.maven.org/#search|ga|1|a%3A%22meteo%22
+
+For Maven you would add this to your pom:
+
+[source, xml]
+----
+<dependency>
+    <groupId>no.api.opensource</groupId>
+    <artifactId>meteo-client</artifactId>
+    <version>2.0.2</version>
+</dependency>
+----
+
+If you want access to the extra helper libraries you must also add this to your pom:
+
+[source, xml]
+----
+<dependency>
+    <groupId>no.api.opensource</groupId>
+    <artifactId>meteo-client</artifactId>
+    <version>2.0.2</version>
+</dependency>
+----
+
+The meteo package is organized in a set of services where each service represents on of the services in the MET API.
+Each service will need access to a Meteo client in order to be able to fetch data. You can either implement your own
+client or use the default client found in the meteo-client package.
+
+### Creating a default client
+
+[source, java]
+----
+MeteoClient client = new DefaultMeteoClient();
+----
+
+#### Use of services
+
+At the moment we have a LocationForecast service and a Sunrise service implemented. The usage of these are pretty
+ simple.
+
+[source, java]
+----
+LocationforecastLTSService service = LocationforecastLTSService(client);
+try {
+    MeteoData<Sunrise> fetchContent(longitude, latitude, date);
+} catch (MeteoException e) {
+    // Handle exception.
+}
+----
+
+
+
 

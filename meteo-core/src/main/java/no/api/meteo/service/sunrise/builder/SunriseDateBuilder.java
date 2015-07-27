@@ -25,22 +25,20 @@ import no.api.meteo.util.EntityBuilder;
 import java.util.Date;
 
 @NoArgsConstructor
+@Setter
+@Getter
 public class SunriseDateBuilder implements EntityBuilder<SunriseDate> {
 
-    @Setter
-    @Getter
     private Date date;
 
-    @Setter
-    @Getter
     private SunBuilder sunBuilder;
 
-    @Setter
-    @Getter
     private MoonBuilder moonBuilder;
 
     @Override
     public SunriseDate build() {
-        return new SunriseDate(getDate(), getSunBuilder().build(), getMoonBuilder().build());
+        return new SunriseDate(getDate(),
+                               getSunBuilder().build(),
+                               getMoonBuilder().build());
     }
 }

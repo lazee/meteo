@@ -21,8 +21,8 @@ import java.net.URL;
 public interface MeteoClient {
 
     /**
-     * @param url The url pointing to the location where the content should be fetched from.
-     * @return Response object containing the fetched content.
+     * @param url The MET API uri.
+     * @return Response object containing the MET data.
      * @throws MeteoClientException If invalid url or content couldn't be fetched.
      */
     MeteoResponse fetchContent(URL url) throws MeteoClientException;
@@ -35,6 +35,11 @@ public interface MeteoClient {
      */
     void setProxy(String hostName, int port);
 
+    /**
+     * Set the connection timeout to be used when fetching data from the MET API.
+     *
+     * @param timeout The timeout in seconds.
+     */
     void setTimeout(int timeout);
 
     /**

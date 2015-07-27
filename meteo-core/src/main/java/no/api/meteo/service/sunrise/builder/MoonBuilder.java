@@ -28,34 +28,29 @@ import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
+@Setter
+@Getter
 public class MoonBuilder implements EntityBuilder<Moon> {
 
-    @Setter
-    @Getter
     private Date rise;
 
-    @Setter
-    @Getter
     private Date set;
 
-    @Setter
-    @Getter
     private Boolean neverRise;
 
-    @Setter
-    @Getter
     private Boolean neverSet;
 
-    @Setter
-    @Getter
     private List<ErrorType> error;
 
-    @Setter
-    @Getter
     private PhaseType phase;
 
     @Override
     public Moon build() {
-        return new Moon(getRise(), getSet(), getNeverRise(), getNeverSet(), getError(), getPhase());
+        return new Moon(getRise(),
+                        getSet(),
+                        getNeverRise(),
+                        getNeverSet(),
+                        getError(),
+                        getPhase());
     }
 }

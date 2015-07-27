@@ -16,6 +16,7 @@
 
 package no.api.meteo.services;
 
+import lombok.NonNull;
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
@@ -24,60 +25,70 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecastDay;
 import no.api.meteo.entity.extras.MeteoExtrasLongTermForecast;
-import no.api.meteo.services.internal.MeteoForecastIndexer;
 import org.joda.time.DateTime;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
+/**
+ * Helper class that will save you from the dirty job of interpreting the forecast data yourself.
+ *
+ * <p>Interpreting the location forecast data can be pretty hard. This is an implementation of how we at Amedia
+ * Utvikling chooses to do it.</p>
+ */
 public final class LocationForecastHelper {
 
-    private LocationForecast locationForecast;
+    private final LocationForecast locationForecast;
 
     private MeteoForecastIndexer indexer = null;
 
     private String title = null;
 
-
-    public LocationForecastHelper(LocationForecast locationForecast, String title) {
-        init(locationForecast);
+    /**
+     * Construct a new instance of this helper
+     *
+     * @param locationForecast
+     *         The location forecast this helper will work on.
+     * @param title
+     *         Set a title for the forecast. Eg: The name of the location. Like a city.
+     */
+    public LocationForecastHelper(@NonNull LocationForecast locationForecast, String title) {
         this.title = title;
-    }
-
-    public LocationForecastHelper(LocationForecast locationForecast) {
-        init(locationForecast);
-    }
-
-    private void init(LocationForecast locationForecast) {
         this.locationForecast = locationForecast;
-        if (this.locationForecast != null) {
-            indexer = new MeteoForecastIndexer(locationForecast.getForecasts());
-        }
+        init();
     }
 
+    /**
+     * Construct a new instance of this helper without any title set.
+     *
+     * @param locationForecast
+     *         The location forecast this helper will work on.
+     */
+    public LocationForecastHelper(@NonNull LocationForecast locationForecast) {
+        this.locationForecast = locationForecast;
+        init();
+    }
+
+    /**
+     * Get the title
+     *
+     * @return The title as set upon construction of this helper.
+     */
     public String getTitle() {
         return title;
     }
 
+
     /**
-     * @deprecated Use LocationForecasHelper.getHourlyPointForecastsFromNow(hoursAhead) instead.
+     * Get all point forecasts from now and to the given hours ahead.
+     *
+     * @param hoursAhead The number of hours to look ahead for point forecasts.
+     * @return List of found forecasts.
      */
-    @Deprecated
-    public List<MeteoExtrasForecast> getPointForecastsByHour(int hours) throws MeteoException {
-        return findHourlyPointForecastsFromNow(hours);
-    }
-
-    public List<MeteoExtrasForecast> findHourlyPointForecastsFromNow(int hoursAhead)
-            throws MeteoException {
-
-        validateIndexer();
-        if (!validData()) {
-            return null;
-        }
-
+    public List<MeteoExtrasForecast> findHourlyPointForecastsFromNow(int hoursAhead) {
         List<MeteoExtrasForecast> pointExtrasForecasts = new ArrayList<>();
-
         DateTime timeNow = new DateTime();
         for (int i = 0; i < hoursAhead; i++) {
             DateTime dataTime = timeNow.plusHours(i);
@@ -92,51 +103,133 @@ public final class LocationForecastHelper {
     }
 
     /**
-     * @deprecated Use #findBestForecastForPeriod(from, to) instead
+     * Get what we consider the best forecast for a given period of time within the location forecast.
+     *
+     * @param from
+     *         The start time.
+     * @param to
+     *         The end time.
+     *
+     * @return Optional containing a forecast or {@link Optional#empty()} if no forecast could be created.
      */
-    @Deprecated
-    public MeteoExtrasForecast getBestForecastForPeriod(DateTime from, DateTime to) {
-        return findBestForecastForPeriod(from, to);
-    }
-
-    public MeteoExtrasForecast findBestForecastForPeriod(DateTime from, DateTime to) {
+    public Optional<MeteoExtrasForecast> findBestForecastForPeriod(DateTime from, DateTime to) {
         PeriodForecast periodForecast = indexer.getBestFitPeriodForecast(from, to);
         if (periodForecast == null) {
-            return null;
+            return Optional.empty();
         }
         PointForecast pointForecast = indexer.getPointForecast(new DateTime(periodForecast.getFromTime()));
         if (pointForecast == null) {
-            return null;
+            return Optional.empty();
         }
-        return new MeteoExtrasForecast(pointForecast, periodForecast);
+        return Optional.of(new MeteoExtrasForecast(pointForecast, periodForecast));
     }
 
+    /**
+     * Create a longterm forecast.
+     *
+     * @return A long term forecast, which is a week in our view of the world. But how many days you will get in this
+     * forecast depends on the given location forecast. So from 0-7 can be expected.
+     */
     public MeteoExtrasLongTermForecast createLongTermForecast() {
         List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
         DateTime dt = DateTime.now();
-        addForecastForDay(dt, forecastDays);
-        addForecastForDay(dt.plusDays(1), forecastDays);
-        addForecastForDay(dt.plusDays(2), forecastDays);
-        addForecastForDay(dt.plusDays(3), forecastDays);
-        addForecastForDay(dt.plusDays(4), forecastDays);
-        addForecastForDay(dt.plusDays(5), forecastDays);
-        addForecastForDay(dt.plusDays(6), forecastDays);
-
+        for (int i = 0; i <= 6; i++) {
+            addForecastForDay(dt.plusDays(i), forecastDays);
+        }
         return new MeteoExtrasLongTermForecast(forecastDays);
     }
 
+    /**
+     * Create a longterm forecast, but only with a small subset of the weather data fields. Typically for use in simple
+     * weather reports where you only show the predicted weather icon and temperature, and not all the weather details.
+     *
+     * @return A long term forecast, which is a week in our view of the world.
+     */
     public MeteoExtrasLongTermForecast createSimpleLongTermForecast() throws MeteoException {
         List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
         DateTime dt = DateTime.now();
-        addSimpleForecastForDay(dt, forecastDays);
-        addSimpleForecastForDay(dt.plusDays(1), forecastDays);
-        addSimpleForecastForDay(dt.plusDays(2), forecastDays);
-        addSimpleForecastForDay(dt.plusDays(3), forecastDays);
-        addSimpleForecastForDay(dt.plusDays(4), forecastDays);
-        addSimpleForecastForDay(dt.plusDays(5), forecastDays);
-        addSimpleForecastForDay(dt.plusDays(6), forecastDays);
-
+        for (int i = 0; i <= 6; i++) {
+            addSimpleForecastForDay(dt.plusDays(i), forecastDays);
+        }
         return new MeteoExtrasLongTermForecast(forecastDays);
+    }
+
+    /**
+     * Create a detailed forecast for a given date within this location forecast.
+     *
+     * @param dt
+     *         The date to create the forecast for.
+     *
+     * @return The detailed forecast for the given date. Will be empty if data is not found.
+     */
+    public MeteoExtrasForecastDay createForcastForDay(DateTime dt) {
+        List<MeteoExtrasForecast> forecasts = new ArrayList<>();
+        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(0), dt.withHourOfDay(6)), forecasts);
+        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(6), dt.withHourOfDay(12)), forecasts);
+        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(12), dt.withHourOfDay(18)), forecasts);
+        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(18), dt.plusDays(1).withHourOfDay(0)), forecasts);
+        return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
+    }
+
+    public MeteoExtrasForecastDay createSimpleForcastForDay(DateTime dt) throws MeteoException {
+        List<MeteoExtrasForecast> forecasts = new ArrayList<>();
+        addForecastToList(findNearestForecast(dt.withHourOfDay(14).toDate()), forecasts);
+        return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
+    }
+
+    /**
+     * Get the most accurate forecast for the current time.
+     *
+     * @return A forecast that best matches the time right now.
+     */
+    public Optional<MeteoExtrasForecast> getNearestForecast() {
+        return findNearestForecast(new Date());
+    }
+
+    /**
+     * Get the most accurate forecast for the given date.
+     *
+     * @param date The date to get the forecast for.
+     * @return Optional containing the forecast if found, else {@link Optional#empty()}
+     */
+    public Optional<MeteoExtrasForecast> findNearestForecast(Date date) {
+        if (date == null) {
+            return Optional.empty();
+        }
+        return findNearestForecast(new DateTime(date));
+    }
+
+    /**
+     * Get the most accurate forecast for the given date.
+     *
+     * @param date The date to get the forecast for.
+     * @return Optional containing the forecast if found, else {@link Optional#empty()}
+     */
+    public Optional<MeteoExtrasForecast> findNearestForecast(DateTime date) {
+        PointForecast chosenForecast = null;
+        for (Forecast forecast : locationForecast.getForecasts()) {
+            if (forecast instanceof PointForecast) {
+                PointForecast pointForecast = (PointForecast) forecast;
+                if (isDateMatch(date, new DateTime(pointForecast.getFromTime()))) {
+                    chosenForecast = pointForecast;
+                    break;
+                } else if (chosenForecast == null) {
+                    chosenForecast = pointForecast;
+                } else if (isNearerDate(new DateTime(pointForecast.getFromTime()), date,
+                                        new DateTime(chosenForecast.getFromTime()))) {
+                    chosenForecast = pointForecast;
+                }
+            }
+        }
+        return (chosenForecast == null ?
+                Optional.<MeteoExtrasForecast>empty() :
+                Optional.of(new MeteoExtrasForecast(chosenForecast,
+                                                    indexer.getWidestFitPeriodForecast(
+                                                            new DateTime(chosenForecast.getFromTime())))));
+    }
+
+    private void init() {
+        indexer = new MeteoForecastIndexer(locationForecast.getForecasts());
     }
 
     private void addForecastForDay(DateTime dt, List<MeteoExtrasForecastDay> lst) {
@@ -157,92 +250,10 @@ public final class LocationForecastHelper {
         }
     }
 
-    public MeteoExtrasForecastDay createForcastForDay(DateTime dt) {
-        List<MeteoExtrasForecast> forecasts = new ArrayList<>();
-        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(0), dt.withHourOfDay(6)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(6), dt.withHourOfDay(12)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(12), dt.withHourOfDay(18)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(18), dt.plusDays(1).withHourOfDay(0)), forecasts);
-        return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
-    }
-
-    public MeteoExtrasForecastDay createSimpleForcastForDay(DateTime dt) throws MeteoException {
-        List<MeteoExtrasForecast> forecasts = new ArrayList<>();
-        addForecastToList(findNearestForecast(dt.withHourOfDay(14).toDate()), forecasts);
-        return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
-    }
-
-    private void addForecastToList(MeteoExtrasForecast mef, List<MeteoExtrasForecast> lst) {
-        if (mef != null) {
-            lst.add(mef);
+    private void addForecastToList(Optional<MeteoExtrasForecast> mef, List<MeteoExtrasForecast> lst) {
+        if (mef.isPresent()) {
+            lst.add(mef.get());
         }
-    }
-
-    private boolean validData() {
-        return locationForecast != null;
-    }
-
-    private void validateIndexer() throws MeteoException {
-        if (indexer == null) {
-            throw new MeteoException("Indexer haven't been initialized. " +
-                                             "Something went wrong during fetching of the data");
-        }
-    }
-
-    public MeteoExtrasForecast getNearestForecast() throws MeteoException {
-        return findNearestForecast(new Date());
-    }
-
-    /**
-     * @deprecated
-     */
-    @Deprecated
-    public MeteoExtrasForecast getNearestForecast(Date date) throws MeteoException {
-        return findNearestForecast(date);
-    }
-
-    public MeteoExtrasForecast findNearestForecast(Date date) throws MeteoException {
-        if (date == null) {
-            throw new MeteoException("Input date is null");
-        }
-        return findNearestForecast(new DateTime(date));
-    }
-
-    /**
-     * @deprecated
-     */
-    @Deprecated
-    public MeteoExtrasForecast getNearestForecast(DateTime date) throws MeteoException {
-        return findNearestForecast(date);
-    }
-
-    public MeteoExtrasForecast findNearestForecast(DateTime date) throws MeteoException {
-        validateIndexer();
-
-        if (!validData()) {
-            return null;
-        }
-
-        PointForecast chosenForecast = null;
-        for (Forecast forecast : locationForecast.getForecasts()) {
-            if (forecast instanceof PointForecast) {
-                PointForecast pointForecast = (PointForecast) forecast;
-                if (isDateMatch(date, new DateTime(pointForecast.getFromTime()))) {
-                    chosenForecast = pointForecast;
-                    break;
-                } else if (chosenForecast == null) {
-                    chosenForecast = pointForecast;
-                } else if (isNearerDate(new DateTime(pointForecast.getFromTime()), date,
-                                        new DateTime(chosenForecast.getFromTime()))) {
-                    chosenForecast = pointForecast;
-                }
-            }
-        }
-        return (chosenForecast == null ?
-                null :
-                new MeteoExtrasForecast(chosenForecast,
-                                        indexer.getWidestFitPeriodForecast(
-                                                new DateTime(chosenForecast.getFromTime()))));
     }
 
     private boolean isNearerDate(DateTime pointTime, DateTime dateTime, DateTime chosenTime) {

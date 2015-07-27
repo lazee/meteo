@@ -252,10 +252,7 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
     }
 
     private boolean isStackedObjectPointForecast(Stack<EntityBuilder> stack) {
-        if (stack.peek() instanceof PointForecastBuilder) {
-            return true;
-        }
-        return false;
+        return stack.peek() instanceof PointForecastBuilder;
     }
 
     private void switchStackedObjectToPeriodForecastIfPeriodForecast(Stack<EntityBuilder> stack) {

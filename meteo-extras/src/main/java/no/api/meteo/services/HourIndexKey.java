@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package no.api.meteo.services.internal;
+package no.api.meteo.services;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -23,7 +23,7 @@ import org.joda.time.DateTime;
 
 @EqualsAndHashCode(of = {"day", "month", "year", "hour"}, doNotUseGetters = true)
 @ToString(of = {"day", "month", "year", "hour"})
-public class HourIndexKey {
+class HourIndexKey {
 
     @Getter
     private DateTime dateTime;
@@ -36,7 +36,7 @@ public class HourIndexKey {
 
     private int hour;
 
-    public HourIndexKey(DateTime dateTime) {
+    HourIndexKey(DateTime dateTime) {
         this.dateTime = dateTime;
         this.day = dateTime.getDayOfMonth();
         this.month = dateTime.getMonthOfYear();

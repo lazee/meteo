@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package no.api.meteo.services.internal;
+package no.api.meteo.services;
 
 import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
@@ -32,7 +32,7 @@ import java.util.Map;
 import static org.joda.time.Hours.hoursBetween;
 
 @Slf4j
-public class MeteoForecastIndexer {
+class MeteoForecastIndexer {
 
     private List<Forecast> forecasts;
 
@@ -40,7 +40,7 @@ public class MeteoForecastIndexer {
 
     private Map<DayIndexKey, List<PeriodForecast>> dayIndex;
 
-    public MeteoForecastIndexer(List<Forecast> forecasts) {
+    MeteoForecastIndexer(List<Forecast> forecasts) {
         this.forecasts = forecasts;
         init();
     }
@@ -51,7 +51,7 @@ public class MeteoForecastIndexer {
      * @param dateTime Date object used to find a matching PointForecast.
      * @return A matching PointForecast if found, else <code>null</code>.
      */
-    public PointForecast getPointForecast(DateTime dateTime) {
+    PointForecast getPointForecast(DateTime dateTime) {
         for (Forecast forecast : forecasts) {
             if (forecast instanceof PointForecast) {
                 PointForecast pointForecast = (PointForecast) forecast;
@@ -64,7 +64,7 @@ public class MeteoForecastIndexer {
         return null;
     }
 
-    public List<PeriodForecast> getMatchingPeriodForecasts(DateTime from) {
+    List<PeriodForecast> getMatchingPeriodForecasts(DateTime from) {
         List<PeriodForecast> periodForecasts = new ArrayList<>();
         List<ScoreForecast> scoreForecasts = getMatchingScoreForecasts(from);
         if (scoreForecasts == null) {
@@ -76,7 +76,7 @@ public class MeteoForecastIndexer {
         return periodForecasts;
     }
 
-    protected List<ScoreForecast> getMatchingScoreForecasts(DateTime from) {
+    List<ScoreForecast> getMatchingScoreForecasts(DateTime from) {
         return hourIndex.get(createHourIndexKey(new DateTime(from)));
     }
 
@@ -103,7 +103,7 @@ public class MeteoForecastIndexer {
     * span (4) and the distance (1) we get the tightScore (5).</p>
     *
     */
-    public PeriodForecast getTightestFitPeriodForecast(DateTime from) {
+    PeriodForecast getTightestFitPeriodForecast(DateTime from) {
         ScoreForecast scoreForecast = getTightestFitScoreForecast(from);
         if (scoreForecast == null) {
             return null;
@@ -111,11 +111,11 @@ public class MeteoForecastIndexer {
         return scoreForecast.getPeriodForecast();
     }
 
-    public boolean hasForecastsForDay(DateTime from) {
+    boolean hasForecastsForDay(DateTime from) {
         return dayIndex.containsKey(new DayIndexKey(from));
     }
 
-    protected ScoreForecast getTightestFitScoreForecast(DateTime from) {
+    ScoreForecast getTightestFitScoreForecast(DateTime from) {
         return getXScoreForecast(from, false);
     }
 
@@ -126,7 +126,7 @@ public class MeteoForecastIndexer {
     * that we invert the span tightScore. Meaning that a large span will tightScore lower than a small span</p>
     *
     */
-    public PeriodForecast getWidestFitPeriodForecast(DateTime from) {
+    PeriodForecast getWidestFitPeriodForecast(DateTime from) {
         ScoreForecast scoreForecast = getWidestFitScoreForecast(from);
         if (scoreForecast == null) {
             return null;
@@ -141,7 +141,7 @@ public class MeteoForecastIndexer {
      * this function only can find a period forecast that covers parts of the requested period, then the forecast
      * covering the most will be used.
      */
-    public PeriodForecast getBestFitPeriodForecast(DateTime from, DateTime to) {
+    PeriodForecast getBestFitPeriodForecast(DateTime from, DateTime to) {
         if (from == null || to == null) {
             return null;
         }
@@ -199,7 +199,7 @@ public class MeteoForecastIndexer {
         return chosenForecast;
     }
 
-    protected ScoreForecast getWidestFitScoreForecast(DateTime time) {
+    ScoreForecast getWidestFitScoreForecast(DateTime time) {
         return getXScoreForecast(time, true);
     }
 

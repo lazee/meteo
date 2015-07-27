@@ -22,7 +22,7 @@ import no.api.meteo.entity.extras.BeaufortLevel;
 import java.text.DecimalFormat;
 
 /**
- * Class that helps getting extra information about wind speed.
+ * Helper class for wind symbols.
  */
 public final class WindSymbolHelper {
 
@@ -55,7 +55,7 @@ public final class WindSymbolHelper {
      * This provides you with extra information about the wind speed specified in the forecast.
      *
      * @param pointForecast Point forecast containing information about the wind speed.
-     * @return Matching Beaufort level object. <code>null</code> if wind speed information is missing in the given
+     * @return Matching Beaufort level object. <code>null</code> if wind speed information is missing from the given
      *         forecast.
      */
     public static BeaufortLevel findBeaufortLevel(PointForecast pointForecast) {

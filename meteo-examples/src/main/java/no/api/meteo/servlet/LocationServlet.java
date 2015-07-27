@@ -34,6 +34,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * This is a demo servlet that we use to test weather data.
@@ -77,15 +78,21 @@ public class LocationServlet extends HttpServlet {
                 DateTime firstDate = new DateTime();
                 firstDate = firstDate.withHourOfDay(TWELVE_O_CLOCK).withMinuteOfHour(0).withSecondOfMinute(0);
 
-                MeteoExtrasForecast todayForecast = helper.findNearestForecast(firstDate.toDate());
-                req.setAttribute("today", todayForecast);
+                Optional<MeteoExtrasForecast> todayForecast = helper.findNearestForecast(firstDate.toDate());
+                if (todayForecast.isPresent()) {
+                    req.setAttribute("today", todayForecast.get());
+                }
 
-                MeteoExtrasForecast tomorrowForecast = helper.findNearestForecast(firstDate.plusDays(1).toDate());
-                req.setAttribute("tomorrow", tomorrowForecast);
+                Optional<MeteoExtrasForecast> tomorrowForecast = helper.findNearestForecast(firstDate.plusDays(1).toDate());
+                if (tomorrowForecast.isPresent()) {
+                    req.setAttribute("tomorrow", tomorrowForecast.get());
+                }
 
-                MeteoExtrasForecast afterForecast = helper.findNearestForecast(firstDate.plusDays(2).toDate());
-                req.setAttribute("thedayaftertomorrow", afterForecast);
-                
+                Optional<MeteoExtrasForecast> afterForecast = helper.findNearestForecast(firstDate.plusDays(2).toDate());
+                if (afterForecast.isPresent()) {
+                    req.setAttribute("thedayaftertomorrow", afterForecast.get());
+                }
+
             } catch (MeteoException e) {
                 log.error("Caught exception", e);
             }

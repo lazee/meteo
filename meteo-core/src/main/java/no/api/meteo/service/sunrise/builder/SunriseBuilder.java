@@ -30,26 +30,23 @@ import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
+@Setter
+@Getter
 public class SunriseBuilder implements EntityBuilder<Sunrise> {
 
-    @Setter
-    @Getter
     private Date created;
 
-    @Setter
-    @Getter
     private Meta meta;
 
-    @Setter
-    @Getter
     private Location location;
 
-    @Setter
-    @Getter
     private List<SunriseDate> dates = new ArrayList<>();
 
     @Override
     public Sunrise build() {
-        return new Sunrise(getCreated(), getMeta(), getLocation(), getDates());
+        return new Sunrise(getCreated(),
+                           getMeta(),
+                           getLocation(),
+                           getDates());
     }
 }

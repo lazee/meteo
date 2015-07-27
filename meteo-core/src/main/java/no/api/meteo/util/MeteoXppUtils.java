@@ -16,9 +16,8 @@
 
 package no.api.meteo.util;
 
+import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.MeteoException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -30,9 +29,8 @@ import java.util.Date;
 /**
  * Util class for simplifying different XPP tasks.
  */
+@Slf4j
 public final class MeteoXppUtils {
-
-    private static Logger log = LoggerFactory.getLogger(MeteoXppUtils.class);
 
     private MeteoXppUtils() {
         throw new UnsupportedOperationException();

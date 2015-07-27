@@ -30,44 +30,35 @@ import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
+@Setter
+@Getter
 public class SunBuilder implements EntityBuilder<Sun> {
 
-    @Setter
-    @Getter
     private Date rise;
 
-    @Setter
-    @Getter
     private Date set;
 
-    @Setter
-    @Getter
     private Boolean neverRise;
 
-    @Setter
-    @Getter
     private Boolean neverSet;
 
-    @Setter
-    @Getter
     private List<ErrorType> error;
 
-    @Setter
-    @Getter
     private Double daylength;
 
-    @Setter
-    @Getter
     private List<Noon> noon = new ArrayList<>();
 
-    @Setter
-    @Getter
     private List<TwilightType> twilight = new ArrayList<>();
-
 
     @Override
     public Sun build() {
-        return new Sun(getRise(), getSet(), getNeverRise(), getNeverSet(), getError(), getDaylength(), getNoon(),
+        return new Sun(getRise(),
+                       getSet(),
+                       getNeverRise(),
+                       getNeverSet(),
+                       getError(),
+                       getDaylength(),
+                       getNoon(),
                        getTwilight());
     }
 }

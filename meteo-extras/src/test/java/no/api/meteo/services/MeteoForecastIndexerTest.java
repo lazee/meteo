@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package no.api.meteo.services.internal;
+package no.api.meteo.services;
 
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;

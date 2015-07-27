@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package no.api.meteo.services.internal;
+package no.api.meteo.services;
 
 import lombok.Value;
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 
 @Value
-public class ScoreForecast {
+class ScoreForecast {
 
     private final PeriodForecast periodForecast;
 

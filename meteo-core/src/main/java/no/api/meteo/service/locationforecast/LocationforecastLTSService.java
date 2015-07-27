@@ -36,7 +36,7 @@ import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
 public final class LocationforecastLTSService extends AbstractMeteoService {
 
     // Due to a "bug" in the MET API we need to use the locationforecast service until the LTS feed is fixed.
-    //private static final String MET_SERVICE_NAME = "locationforecastlts";
+    // private static final String MET_SERVICE_NAME = "locationforecastlts";
     private static final String MET_SERVICE_NAME = "locationforecast";
 
     private final MeteoDataParser<LocationForecast> parser;
