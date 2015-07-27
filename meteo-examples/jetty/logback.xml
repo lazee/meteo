@@ -5,7 +5,7 @@
             <pattern>%d [%-5p] [%X] [%c][%M][%L] - %m%n</pattern>
         </encoder>
     </appender>
-    <logger name="no.api.opensource.meteo" level="DEBUG"/>
+    <logger name="no.api.meteo" level="DEBUG"/>
     <root level="INFO">
         <appender-ref ref="A1"/>
     </root>

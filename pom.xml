@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>no.api.opensource</groupId>
+    <groupId>no.api.meteo</groupId>
     <artifactId>meteo</artifactId>
     <version>2.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -191,27 +191,27 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>no.api.opensource.meteo</groupId>
+                <groupId>no.api.meteo</groupId>
                 <artifactId>meteo-entity</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>no.api.opensource.meteo</groupId>
+                <groupId>no.api.meteo</groupId>
                 <artifactId>meteo-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>no.api.opensource.meteo</groupId>
+                <groupId>no.api.meteo</groupId>
                 <artifactId>meteo-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>no.api.opensource.meteo</groupId>
+                <groupId>no.api.meteo</groupId>
                 <artifactId>meteo-extras</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>no.api.opensource.meteo</groupId>
+                <groupId>no.api.meteo</groupId>
                 <artifactId>meteo-test</artifactId>
                 <version>${project.version}</version>
                 <scope>test</scope>

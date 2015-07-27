@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>meteo</artifactId>
-        <groupId>no.api.opensource</groupId>
+        <groupId>no.api.meteo</groupId>
         <version>2.0.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>no.api.opensource.meteo</groupId>
+    <groupId>no.api.meteo</groupId>
     <artifactId>meteo-examples</artifactId>
     <version>2.0.2-SNAPSHOT</version>
     <name>meteo-examples</name>
@@ -98,15 +98,15 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>no.api.opensource.meteo</groupId>
+            <groupId>no.api.meteo</groupId>
             <artifactId>meteo-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>no.api.opensource.meteo</groupId>
+            <groupId>no.api.meteo</groupId>
             <artifactId>meteo-extras</artifactId>
         </dependency>
         <dependency>
-            <groupId>no.api.opensource.meteo</groupId>
+            <groupId>no.api.meteo</groupId>
             <artifactId>meteo-client</artifactId>
         </dependency>
         <dependency>

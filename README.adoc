@@ -31,7 +31,7 @@ For Maven you would add this to your pom:
 [source, xml]
 ----
 <dependency>
-    <groupId>no.api.opensource</groupId>
+    <groupId>no.api.meteo</groupId>
     <artifactId>meteo-client</artifactId>
     <version>2.0.2</version>
 </dependency>
@@ -42,7 +42,7 @@ If you want access to the extra helper libraries you must also add this to your 
 [source, xml]
 ----
 <dependency>
-    <groupId>no.api.opensource</groupId>
+    <groupId>no.api.meteo</groupId>
     <artifactId>meteo-client</artifactId>
     <version>2.0.2</version>
 </dependency>
