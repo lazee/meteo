@@ -3,13 +3,13 @@
     <parent>
         <artifactId>meteo</artifactId>
         <groupId>no.api.meteo</groupId>
-        <version>2.0.2-SNAPSHOT</version>
+        <version>2.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>no.api.meteo</groupId>
     <artifactId>meteo-test</artifactId>
-    <version>2.0.2-SNAPSHOT</version>
+    <version>2.0.2</version>
     <name>meteo-test</name>
     <description>Meteo test package</description>
 
