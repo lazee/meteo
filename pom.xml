@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
     <name>meteo</name>
     <description>Java library for fetching weather data from api.met.no</description>
+    <url>http://github.com/amedia/meteo</url>
 
     <organization>
         <name>Amedia</name>
@@ -81,10 +82,10 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <distributionManagement>
-                <!--snapshotRepository>
+                <snapshotRepository>
                     <id>ossrh</id>
                     <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository-->
+                </snapshotRepository>
                 <repository>
                     <id>ossrh</id>
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
@@ -167,10 +168,10 @@
 
     </profiles>
 
-    <distributionManagement>
+   <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
@@ -206,15 +207,6 @@
         </extensions>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                    <configuration>
-                        <encoding>UTF-8</encoding>
-                        <javadocVersion>1.8</javadocVersion>
-                    </configuration>
-                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
