@@ -56,7 +56,7 @@ public class LongTermForecastExample {
         try {
             // Fetch the data from api.met.no
             MeteoData<LocationForecast> data =  ltsService.fetchContent(LONGITUDE_BERGEN, LATITUDE_BERGEN, ALTITUDE_BERGEN);
-            //MeteoData<LocationForecast> data =  ltsService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
+            //MeteoData<LocationForecast> data =  ltsService.fetchResource(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
 
             LocationForecastHelper locationForecastHelper = new LocationForecastHelper(data.getResult());
 

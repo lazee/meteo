@@ -22,10 +22,9 @@ import no.api.meteo.client.MeteoData;
 import no.api.meteo.client.MeteoTestClient;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.test.MeteoTestUtils;
+import no.api.meteo.util.MeteoNetUtils;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.net.URL;
 
 public final class LocationforecastLTSServiceTest {
 
@@ -38,7 +37,7 @@ public final class LocationforecastLTSServiceTest {
     @Test(expected = MeteoClientException.class)
     public void testException2() throws Exception {
         MeteoClient client = new MeteoTestClient(null);
-        client.fetchContent(new URL("http://www.fo.no"));
+        client.fetchContent(MeteoNetUtils.createUri("http://www.fo.no"));
     }
 
     @Test

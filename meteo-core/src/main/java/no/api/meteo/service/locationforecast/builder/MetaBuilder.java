@@ -23,7 +23,7 @@ import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.service.locationforecast.Model;
 import no.api.meteo.util.EntityBuilder;
 
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class MetaBuilder implements EntityBuilder<Meta> {
 
     @Setter
     @Getter
-    private URL licenseUrl;
+    private URI licenseUri;
 
     @Setter
     @Getter
@@ -40,6 +40,6 @@ public class MetaBuilder implements EntityBuilder<Meta> {
 
     @Override
     public Meta build() {
-        return new Meta(getLicenseUrl(), getModels());
+        return new Meta(getLicenseUri(), getModels());
     }
 }

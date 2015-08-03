@@ -22,7 +22,7 @@ import lombok.Value;
 import net.sf.oval.constraint.NotNull;
 import no.api.meteo.entity.core.service.locationforecast.Model;
 
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -32,19 +32,19 @@ public final class Meta {
 
     @NotNull
     @JsonProperty
-    private final URL licenseUrl;
+    private final URI licenseUrl;
 
     @JsonProperty
     private final List<Model> models;
 
     @JsonCreator
-    public Meta(URL licenseUrl, List<Model> models) {
+    public Meta(URI licenseUrl, List<Model> models) {
         this.licenseUrl = licenseUrl;
         this.models = models;
     }
 
     public List<Model> getModels() {
-        return models == null ? new ArrayList<Model>() : Collections.unmodifiableList(models);
+        return models == null ? new ArrayList<>() : Collections.unmodifiableList(models);
     }
 
 }

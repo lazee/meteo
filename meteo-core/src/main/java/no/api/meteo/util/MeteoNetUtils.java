@@ -18,8 +18,8 @@ package no.api.meteo.util;
 
 import no.api.meteo.MeteoException;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 /**
  * Util class for dealing with different net issues.
@@ -34,14 +34,17 @@ public final class MeteoNetUtils {
      * Wrap the construction of URL's to avoid throwing of checked MalformedURLException. Instead MeteoException
      * is thrown.
      *
-     * @param url The url string to be used as the spec for the create URL object.
+     * @param uri The url string to be used as the spec for the create URL object.
      * @return URL object created from the given url spec.
      * @throws no.api.meteo.MeteoException If a URL couldn't be created from the given url spec.
      */
-    public static URL createUrl(String url) throws MeteoException {
+    public static URI createUri(String uri) throws MeteoException {
+        if (uri == null) {
+            throw new MeteoException("URI is null");
+        }
         try {
-            return new URL(url);
-        } catch (MalformedURLException e) {
+            return new URI(uri);
+        } catch (URISyntaxException e) {
             throw new MeteoException(e);
         }
     }

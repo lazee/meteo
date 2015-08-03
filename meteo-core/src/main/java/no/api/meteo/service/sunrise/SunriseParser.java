@@ -124,7 +124,7 @@ public final class SunriseParser implements MeteoDataParser<Sunrise> {
 
     private void handleMetaTag(SunriseBuilder sunriseBuilder, XmlPullParser xpp) {
         try {
-            Meta meta = new Meta(MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)), null);
+            Meta meta = new Meta(MeteoNetUtils.createUri(getString(xpp, ATTR_LICENSEURL)), null);
             sunriseBuilder.setMeta(meta);
             sunriseBuilder.setCreated(getSimpleDate(xpp, ATTR_CREATED));
         } catch (MeteoException e) {

@@ -18,7 +18,7 @@ package no.api.meteo.service;
 
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.entity.core.MeteoServiceVersion;
-import no.api.meteo.util.METServiceUrlBuilder;
+import no.api.meteo.util.METServiceUriBuilder;
 
 public abstract class AbstractMeteoService {
 
@@ -38,8 +38,8 @@ public abstract class AbstractMeteoService {
         return meteoClient;
     }
 
-    protected METServiceUrlBuilder createServiceUrlBuilder() {
-        return METServiceUrlBuilder.create(metServiceName, serviceVersion);
+    protected METServiceUriBuilder createServiceUriBuilder() {
+        return METServiceUriBuilder.create(metServiceName, serviceVersion);
     }
 
 }

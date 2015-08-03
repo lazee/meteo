@@ -45,7 +45,7 @@ public final class SunriseService extends AbstractMeteoService {
 
     public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date date) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
-                createServiceUrlBuilder()
+                createServiceUriBuilder()
                         .addParameter(PARAM_LATITUDE, latitude)
                         .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_DATE, dateToYyyyMMdd(date)).build());
@@ -55,7 +55,7 @@ public final class SunriseService extends AbstractMeteoService {
     public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date from, Date to)
             throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
-                createServiceUrlBuilder()
+                createServiceUriBuilder()
                         .addParameter(PARAM_LATITUDE, latitude)
                         .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_FROM, dateToYyyyMMdd(from))

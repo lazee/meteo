@@ -49,7 +49,7 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
     public MeteoData<LocationForecast> fetchContent(double longitude, double latitude, int altitude)
             throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
-                createServiceUrlBuilder()
+                createServiceUriBuilder()
                         .addParameter(PARAM_LATITUDE, latitude)
                         .addParameter(PARAM_LONGITUDE, longitude)
                         .addParameter(PARAM_ALTITUDE, altitude).build()
@@ -59,7 +59,7 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
 
     public MeteoData<LocationForecast> fetchContent(double longitude, double latitude) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
-                createServiceUrlBuilder()
+                createServiceUriBuilder()
                         .addParameter(PARAM_LATITUDE, latitude)
                         .addParameter(PARAM_LONGITUDE, longitude).build()
         );

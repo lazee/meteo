@@ -35,7 +35,7 @@ public class MeteoResponse {
 
     public List<MeteoResponseHeader> getResponseHeaders() {
         return responseHeaders == null
-                ? new ArrayList<MeteoResponseHeader>()
+                ? new ArrayList<>()
                 : Collections.unmodifiableList(responseHeaders);
     }
 

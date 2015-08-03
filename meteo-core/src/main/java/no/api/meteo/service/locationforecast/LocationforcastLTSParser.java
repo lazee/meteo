@@ -218,8 +218,8 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 break;
             case TAG_META:
                 try {
-                    locationForecastBuilder.getMetaBuilder().setLicenseUrl(
-                            MeteoNetUtils.createUrl(getString(xpp, ATTR_LICENSEURL)));
+                    locationForecastBuilder.getMetaBuilder().setLicenseUri(
+                            MeteoNetUtils.createUri(getString(xpp, ATTR_LICENSEURL)));
                 } catch (MeteoException e) {
                     log.debug("License url not found in feed");
                 }

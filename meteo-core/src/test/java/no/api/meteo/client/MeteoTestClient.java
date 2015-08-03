@@ -16,7 +16,7 @@
 
 package no.api.meteo.client;
 
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,10 +29,10 @@ public final class MeteoTestClient implements MeteoClient {
     }
 
     @Override
-    public MeteoResponse fetchContent(URL url) throws MeteoClientException {
-        if (url == null) {
+    public MeteoResponse fetchContent(URI uri) throws MeteoClientException {
+        if (uri == null) {
             throw new MeteoClientException("url is null");
-        } else if ("http://www.fo.no".equals(url.toString())) {
+        } else if ("http://www.fo.no".equals(uri.toString())) {
             throw new MeteoClientException("url is empty", new IllegalArgumentException("foo"));
         }
         List<MeteoResponseHeader> list = new ArrayList<>();

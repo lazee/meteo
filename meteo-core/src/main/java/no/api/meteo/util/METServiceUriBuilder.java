@@ -19,11 +19,11 @@ package no.api.meteo.util;
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.MeteoServiceVersion;
 
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class METServiceUrlBuilder {
+public final class METServiceUriBuilder {
 
     private static final String API_MET_NO_SERVICE_PREFIX = "http://api.met.no/weatherapi/";
 
@@ -33,18 +33,18 @@ public final class METServiceUrlBuilder {
 
     private final List<Pair> parameters;
 
-    private METServiceUrlBuilder(String serviceName, MeteoServiceVersion serviceVersion) {
+    private METServiceUriBuilder(String serviceName, MeteoServiceVersion serviceVersion) {
         this.serviceName = serviceName;
         this.serviceVersion = serviceVersion;
         this.parameters = new ArrayList<>();
     }
 
-    public METServiceUrlBuilder addParameter(String name, Object value) {
+    public METServiceUriBuilder addParameter(String name, Object value) {
         parameters.add(new Pair(name, value));
         return this;
     }
 
-    public URL build() throws MeteoException {
+    public URI build() throws MeteoException {
         StringBuilder sb = new StringBuilder();
         sb.append(API_MET_NO_SERVICE_PREFIX).append(serviceName).append("/").append(
                 serviceVersion.toStringVersion()).append("/?");
@@ -54,11 +54,11 @@ public final class METServiceUrlBuilder {
             sb.append(first ? "" : "&").append(pair.getKey()).append("=").append(pair.getValue().toString());
             first = false;
         }
-        return MeteoNetUtils.createUrl(sb.toString());
+        return MeteoNetUtils.createUri(sb.toString());
     }
 
-    public static METServiceUrlBuilder create(String serviceName, MeteoServiceVersion serviceVersion) {
-        return new METServiceUrlBuilder(serviceName, serviceVersion);
+    public static METServiceUriBuilder create(String serviceName, MeteoServiceVersion serviceVersion) {
+        return new METServiceUriBuilder(serviceName, serviceVersion);
     }
 
     private static final class Pair {

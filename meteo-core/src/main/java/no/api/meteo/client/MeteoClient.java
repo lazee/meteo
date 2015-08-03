@@ -16,16 +16,16 @@
 
 package no.api.meteo.client;
 
-import java.net.URL;
+import java.net.URI;
 
 public interface MeteoClient {
 
     /**
-     * @param url The MET API uri.
+     * @param uri The MET API uri.
      * @return Response object containing the MET data.
      * @throws MeteoClientException If invalid url or content couldn't be fetched.
      */
-    MeteoResponse fetchContent(URL url) throws MeteoClientException;
+    MeteoResponse fetchContent(URI uri) throws MeteoClientException;
 
     /**
      * Set proxy settings for the client.

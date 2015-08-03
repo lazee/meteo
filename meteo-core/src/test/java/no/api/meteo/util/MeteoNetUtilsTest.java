@@ -24,11 +24,11 @@ public class MeteoNetUtilsTest {
 
     @Test(expected = MeteoException.class)
     public void test_create_url_error() throws Exception {
-        MeteoNetUtils.createUrl("htt://www.ap dm .no");
+        MeteoNetUtils.createUri("htt://www.ap dm .no");
     }
 
     @Test
     public void test_create_url() throws Exception {
-        Assert.assertEquals("http://www.apdm.no", MeteoNetUtils.createUrl("http://www.apdm.no").toString());
+        Assert.assertEquals("http://www.apdm.no", MeteoNetUtils.createUri("http://www.apdm.no").toString());
     }
 }

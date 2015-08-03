@@ -30,8 +30,7 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -72,13 +71,14 @@ public class DefaultMeteoClient implements MeteoClient {
     }
 
     @Override
-    public MeteoResponse fetchContent(URL url) throws MeteoClientException {
+    public MeteoResponse fetchContent(URI uri) throws MeteoClientException {
         try {
-            log.debug("Going to fetch: " + url.toString());
-            HttpGet httpget = new HttpGet(url.toURI());
+            log.debug("Going to fetch: " + uri.toString());
+            HttpGet httpget = new HttpGet(uri);
 
             HttpResponse response = httpClient.execute(httpget);
-            if (response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 203) {
+            if (response.getStatusLine().getStatusCode() != 200 &&
+                    response.getStatusLine().getStatusCode() != 203) {
                 throw new MeteoClientException(
                         "The request failed with error code " + response.getStatusLine().getStatusCode() + " : " +
                                 response.getStatusLine().getReasonPhrase());
@@ -91,9 +91,9 @@ public class DefaultMeteoClient implements MeteoClient {
                                          response.getStatusLine().getStatusCode(),
                                          response.getStatusLine().getReasonPhrase());
             } else {
-                throw new MeteoClientException("No content returned from request: " + url.toString());
+                throw new MeteoClientException("No content returned from request: " + uri.toString());
             }
-        } catch (URISyntaxException | IOException e) {
+        } catch (IOException e) {
             throw new MeteoClientException(CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT, e);
         } finally {
             httpClient.getConnectionManager().closeExpiredConnections();
