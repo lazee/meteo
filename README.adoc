@@ -76,7 +76,7 @@ In the https://github.com/amedia/meteo/tree/master/meteo-examples/src/main/java/
 
 [source]
 ----
-meteo-extras> mvn jetty:run
+meteo-examples> mvn jetty:run
 ----
 
 #### Creating a default client
