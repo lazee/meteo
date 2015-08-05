@@ -30,7 +30,7 @@ https://github.com/amedia/meteo/blob/master/meteo-core/src/main/java/no/api/mete
 that respects these requirements.
 
 The https://github.com/amedia/meteo/blob/master/meteo-client/src/main/java/no/api/meteo/client/DefaultMeteoClient.java[default implementation]
-of MeteoClient that ships with Meteo does not have any caching what so ever, but it does support configuring a proxy.
+of MeteoClient does not have any caching what so ever, but it does support configuring a proxy.
 
 ## The core library and client
 
@@ -139,10 +139,10 @@ try {
 ## The extras library
 
 The data you get from MET are not ready to be used in traditional weather reports like what you find on yr.no. You
-will have to do some processing if you want to create beautiful weather reports like the ones you find on online weather
+will have to do some processing if you want to create beautiful weather reports like the ones you find in online weather
  services. This is where the meteos-extras package comes in handy. It can help you answering questions like "What is the
  most accurate forecast for a given point of time?", or "What is the right Beaufort level for a given forecast?".
- Things you need when presenting the weather in your service.
+ Things you need when creating a weather report.
 
 ### Installation
 
