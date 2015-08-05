@@ -49,6 +49,6 @@ public abstract class AbstractType extends AbstractRiseSet {
     }
 
     public List<ErrorType> getError() {
-        return error == null ? new ArrayList<ErrorType>() : Collections.unmodifiableList(error);
+        return error == null ? new ArrayList<>() : Collections.unmodifiableList(error);
     }
 }

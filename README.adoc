@@ -1,6 +1,7 @@
 # METEO
 
-Meteo is an Open-Source Java based project for dealing with weather data from http://api.met.no.
+Meteo is an Open-Source Java based library/client for handling weather data from http://api.met.no.
+
 It mainly consists of two parts: A Java client and a library that helps you convert the raw data into
 usable weather reports.
 
@@ -11,20 +12,29 @@ Meteo is developed and maintained by Amedia Utvikling AS. It is in use within al
 It mainly supports the services that Amedia needs at any given time. But we will consider adding other services as
 well upon request.
 
-## IMPORTANT
+## The MET terms of use
 
 Make sure to read the http://api.met.no/conditions_service.html[Conditions for use of the service] from
-the Norwegian Meteorological Institute. You must take care of the caching issues yourself.
-Meteo does not have a solution for this out of the box. However, it is possible to create a client that respects the
-cache headers quite easily (Maybe this will be added to Meteo later).
+the Norwegian Meteorological Institute.
 
 Also make sure to read this http://api.met.no/license_data.html.
 
+## Reverse proxying
+
+As MET states in their terms of use, you must respect their cache headers. Meaning that you should only fetch one
+resource one time within the TTL set by MET in each response.
+
+The easiest way to achieve this is by installing a https://en.wikipedia.org/wiki/Reverse_proxy[Reverse Proxy]
+like http://wiki.squid-cache.org/SquidFaq/ReverseProxy[Squid]. An alternative solution is to implement your own
+https://github.com/amedia/meteo/blob/master/meteo-core/src/main/java/no/api/meteo/client/MeteoClient.java[MeteoClient]
+that respects these requirements.
+
+The default implementation of MeteoClient that ships with Meteo does not have any caching what so ever, but it does
+ support configuring a proxy.
 
 ## Usage
 
-You find Meteo in the central maven repository:
-http://search.maven.org/#search|ga|1|a%3A%22meteo%22
+You will find Meteo in the central maven repository: http://search.maven.org/#search|ga|1|a%3A%22meteo%22
 
 For Maven you would add this to your pom:
 
