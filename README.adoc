@@ -32,10 +32,15 @@ that respects these requirements.
 The https://github.com/amedia/meteo/blob/master/meteo-client/src/main/java/no/api/meteo/client/DefaultMeteoClient.java[default implementation]
 of MeteoClient that ships with Meteo does not have any caching what so ever, but it does support configuring a proxy.
 
-## The Meteo core library and client
+## The core library and client
 
-This library is all about offering access to the raw MET data through a Java API. As stated earlier we have only
-implemented support for the services that Amedia needs or that is requested/implemented by other users.
+The core library in Meteo is all about offering access to the raw MET data through a Java API.
+As stated earlier we have only implemented support for the services that Amedia needs or that is requested/implemented
+by other users (Please send pull requests).
+
+### Requirements
+
+Meteo requires Java 8.x or later.
 
 ### Installation
 
@@ -67,42 +72,62 @@ If you want to use the default implementation of a MeteoClient, then you would a
 
 #### Creating a default client
 
-If you feel fine with the default MeteoClient shipped with Meteo, then you can create a client like this:
+If you feel fine with the default MeteoClient shipped with Meteo, then create a client like this:
 
 [source, java]
 ----
-MeteoClient client = new DefaultMeteoClient();
+MeteoClient meteoClient = new DefaultMeteoClient();
 ----
 
 This client allows you to configure a proxy and connection timeout if needed:
 
 [source, java]
 ----
-client.setProxy("myproxy.host", 9000);
-client.setTimeout(1000);
+meteoClient.setProxy("myproxy.host", 9000);
+meteoClient.setTimeout(1000);
 ----
 
 ### Services
 
 The Meteo core library is organized in a set of services where each service represents on of the services in the MET API.
-Each service will need access to a Meteo client in order to be able to fetch data. You can either implement your own
-client or use the default client found in the meteo-client package.
+Each service will need an Meteo client to be able to fetch data.
 
+Current services:
 
-At the moment we have a LocationForecast service and a Sunrise service implemented. The usage of these are pretty
- simple.
+* Location forecast
+* Sunrise
+* Text forecast (Under development)
+
+#### Location forecast service
+
+This is the service for fetching raw data from http://api.met.no/weatherapi/locationforecast/1.9/documentation.
+(We would like to use the long time supported version of this API, but it has p.t. some errors.)
 
 [source, java]
 ----
-LocationforecastLTSService service = LocationforecastLTSService(client);
+LocationforecastLTSService service = new LocationforecastLTSService(meteoClient);
 try {
-    MeteoData<Sunrise> fetchContent(longitude, latitude, date);
+    MeteoData<LocationForecast> data = service.fetchContent(longitude, latitude, altitude);
 } catch (MeteoException e) {
     // Handle exception.
 }
 ----
 
-## The Meteo extras library
+#### Sunrise service
+
+This is the service for fetching raw data from http://api.met.no/weatherapi/sunrise/1.0/documentation.
+
+[source, java]
+----
+SunriseService service = new SunriseService(meteoClient);
+try {
+    MeteoData<Sunrise> data = service.fetchContent(longitude, latitude, date);
+} catch (MeteoException e) {
+    // Handle exception.
+}
+----
+
+## The extras library
 
 The data you get from MET are not ready to be used in traditional weather reports like what you find on yr.no. You
 will have to do some processing if you want to create beautiful weather reports like the ones you find on online weather
@@ -123,3 +148,7 @@ If you also want access to the extra weather helper functions, then add this to 
 </dependency>
 ----
 
+## General developer notes
+
+Meteo uses checked exceptions at the moment. This will change in the next major release. In that release we will
+ hopefully also switch from Joda time to the new date API in Java 8.
