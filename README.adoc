@@ -70,6 +70,15 @@ If you want to use the default implementation of a MeteoClient, then you would a
 
 ### Usage
 
+In the https://github.com/amedia/meteo/tree/master/meteo-examples/src/main/java/no/api/meteo/examples[meteo-examples]
+ module you will find several useful examples that should get you up and running. This module is also a demo app that
+ can be started like this:
+
+[source]
+----
+meteo-extras> mvn jetty:run
+----
+
 #### Creating a default client
 
 If you feel fine with the default MeteoClient shipped with Meteo, then create a client like this:
