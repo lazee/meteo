@@ -171,7 +171,7 @@ public final class LocationForecastHelper {
         return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
     }
 
-    public MeteoExtrasForecastDay createSimpleForcastForDay(DateTime dt) throws MeteoException {
+    public MeteoExtrasForecastDay createSimpleForcastForDay(DateTime dt) {
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
         addForecastToList(findNearestForecast(dt.withHourOfDay(14).toDate()), forecasts);
         return new MeteoExtrasForecastDay(dt.toDate(), forecasts);

@@ -42,7 +42,7 @@ public class DefaultMeteoClient implements MeteoClient {
 
     public static final String CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT = "Caught exception while fetching content";
 
-    private DefaultHttpClient httpClient;
+    private final DefaultHttpClient httpClient;
 
 
     public DefaultMeteoClient() {

@@ -26,7 +26,7 @@ import java.util.GregorianCalendar;
 
 public final class MeteoXppUtilsTest {
 
-    private String testXml = "<test><entry string=\"foo\" integer=\"7\" double=\"1.2\"" +
+    private final String testXml = "<test><entry string=\"foo\" integer=\"7\" double=\"1.2\"" +
             " boolean=\"true\" date=\"2011-05-06T05:09:00Z\" simple=\"2011-02-03\"/></test>";
 
     @Test

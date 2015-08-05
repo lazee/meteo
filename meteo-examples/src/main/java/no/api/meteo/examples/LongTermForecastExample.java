@@ -44,7 +44,7 @@ public class LongTermForecastExample {
     //public static final int ALTITUDE_OSLO = 14;
     public static final int ALTITUDE_BERGEN = 3;
 
-    private MeteoClient meteoClient;
+    private final MeteoClient meteoClient;
 
     public LongTermForecastExample() {
         meteoClient = new DefaultMeteoClient();

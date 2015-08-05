@@ -34,7 +34,7 @@ import static org.joda.time.Hours.hoursBetween;
 @Slf4j
 class MeteoForecastIndexer {
 
-    private List<Forecast> forecasts;
+    private final List<Forecast> forecasts;
 
     private Map<HourIndexKey, List<ScoreForecast>> hourIndex;
 

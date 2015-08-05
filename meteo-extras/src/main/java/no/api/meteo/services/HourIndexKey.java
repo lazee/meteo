@@ -26,15 +26,15 @@ import org.joda.time.DateTime;
 class HourIndexKey {
 
     @Getter
-    private DateTime dateTime;
+    private final DateTime dateTime;
 
-    private int day;
+    private final int day;
 
-    private int month;
+    private final int month;
 
-    private int year;
+    private final int year;
 
-    private int hour;
+    private final int hour;
 
     HourIndexKey(DateTime dateTime) {
         this.dateTime = dateTime;

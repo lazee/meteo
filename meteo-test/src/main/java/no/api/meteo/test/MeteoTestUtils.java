@@ -38,13 +38,9 @@ public final class MeteoTestUtils {
              InputStreamReader reader = new InputStreamReader(inputStream, "UTF8");
              BufferedReader in = new BufferedReader(reader)) {
 
-            if (inputStream == null) {
-                throw new MeteoTestException("Could not open stream to " + uri);
-            }
-
             str = in.readLine();
             while (str != null) {
-                stringBuilder.append(str + "\n");
+                stringBuilder.append(str).append("\n");
                 str = in.readLine();
             }
         } catch (IOException e) {

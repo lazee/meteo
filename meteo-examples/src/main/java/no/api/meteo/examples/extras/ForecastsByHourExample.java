@@ -45,7 +45,7 @@ public class ForecastsByHourExample extends AbstractExample {
 
     public static final int TWELVE_O_CLOCK = 12;
 
-    private MeteoClient meteoClient;
+    private final MeteoClient meteoClient;
 
     public ForecastsByHourExample() {
         meteoClient = new DefaultMeteoClient();

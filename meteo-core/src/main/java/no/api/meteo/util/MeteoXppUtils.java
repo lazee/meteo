@@ -74,7 +74,7 @@ public final class MeteoXppUtils {
 
     public static Boolean getBoolean(XmlPullParser xpp, String name) {
         String v = getString(xpp, name);
-        return  v == null ? false : Boolean.parseBoolean(v);
+        return v != null && Boolean.parseBoolean(v);
     }
 
     public static Integer getInteger(XmlPullParser xpp, String name) {

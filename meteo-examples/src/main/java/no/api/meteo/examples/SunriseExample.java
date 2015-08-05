@@ -37,7 +37,7 @@ public class SunriseExample {
 
     private static final Logger log = LoggerFactory.getLogger(LocationExample.class);
 
-    private MeteoClient meteoClient;
+    private final MeteoClient meteoClient;
 
     public SunriseExample() {
         meteoClient = new DefaultMeteoClient();
