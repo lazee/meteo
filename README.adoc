@@ -32,17 +32,27 @@ that respects these requirements.
 The https://github.com/amedia/meteo/blob/master/meteo-client/src/main/java/no/api/meteo/client/DefaultMeteoClient.java[default implementation]
 of MeteoClient that ships with Meteo does not have any caching what so ever, but it does support configuring a proxy.
 
-## The core library
+## The Meteo core library and client
 
 This library is all about offering access to the raw MET data through a Java API. As stated earlier we have only
 implemented support for the services that Amedia needs or that is requested/implemented by other users.
 
-
-### Usage
+### Installation
 
 You will find Meteo in the central maven repository: http://search.maven.org/#search|ga|1|a%3A%22meteo%22
 
 For Maven you would add this to your pom:
+
+[source, xml]
+----
+<dependency>
+    <groupId>no.api.meteo</groupId>
+    <artifactId>meteo-core</artifactId>
+    <version>2.0.2</version>
+</dependency>
+----
+
+If you want to use the default implementation of a MeteoClient, then you would also have to add this:
 
 [source, xml]
 ----
@@ -53,29 +63,31 @@ For Maven you would add this to your pom:
 </dependency>
 ----
 
-If you want access to the extra helper libraries you must also add this to your pom:
-
-[source, xml]
-----
-<dependency>
-    <groupId>no.api.meteo</groupId>
-    <artifactId>meteo-extras</artifactId>
-    <version>2.0.2</version>
-</dependency>
-----
-
-The Meteo core library is organized in a set of services where each service represents on of the services in the MET API.
-Each service will need access to a Meteo client in order to be able to fetch data. You can either implement your own
-client or use the default client found in the meteo-client package.
+### Usage
 
 #### Creating a default client
+
+If you feel fine with the default MeteoClient shipped with Meteo, then you can create a client like this:
 
 [source, java]
 ----
 MeteoClient client = new DefaultMeteoClient();
 ----
 
-#### Use of services
+This client allows you to configure a proxy and connection timeout if needed:
+
+[source, java]
+----
+client.setProxy("myproxy.host", 9000);
+client.setTimeout(1000);
+----
+
+### Services
+
+The Meteo core library is organized in a set of services where each service represents on of the services in the MET API.
+Each service will need access to a Meteo client in order to be able to fetch data. You can either implement your own
+client or use the default client found in the meteo-client package.
+
 
 At the moment we have a LocationForecast service and a Sunrise service implemented. The usage of these are pretty
  simple.
@@ -90,6 +102,24 @@ try {
 }
 ----
 
+## The Meteo extras library
 
+The data you get from MET are not ready to be used in traditional weather reports like what you find on yr.no. You
+will have to do some processing if you want to create beautiful weather reports like the ones you find on online weather
+ services. This is where the meteos-extras package comes in handy. It can help you answering questions like "What is the
+ most accurate forecast for a given point of time?", or "What is the right Beaufort level for a given forecast?".
+ Things you need when presenting the weather in your service.
 
+### Installation
+
+If you also want access to the extra weather helper functions, then add this to your pom:
+
+[source, xml]
+----
+<dependency>
+    <groupId>no.api.meteo</groupId>
+    <artifactId>meteo-extras</artifactId>
+    <version>2.0.2</version>
+</dependency>
+----
 
