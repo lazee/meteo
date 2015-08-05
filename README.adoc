@@ -29,10 +29,16 @@ like http://wiki.squid-cache.org/SquidFaq/ReverseProxy[Squid]. An alternative so
 https://github.com/amedia/meteo/blob/master/meteo-core/src/main/java/no/api/meteo/client/MeteoClient.java[MeteoClient]
 that respects these requirements.
 
-The default implementation of MeteoClient that ships with Meteo does not have any caching what so ever, but it does
- support configuring a proxy.
+The https://github.com/amedia/meteo/blob/master/meteo-client/src/main/java/no/api/meteo/client/DefaultMeteoClient.java[default implementation]
+of MeteoClient that ships with Meteo does not have any caching what so ever, but it does support configuring a proxy.
 
-## Usage
+## The core library
+
+This library is all about offering access to the raw MET data through a Java API. As stated earlier we have only
+implemented support for the services that Amedia needs or that is requested/implemented by other users.
+
+
+### Usage
 
 You will find Meteo in the central maven repository: http://search.maven.org/#search|ga|1|a%3A%22meteo%22
 
@@ -53,16 +59,16 @@ If you want access to the extra helper libraries you must also add this to your 
 ----
 <dependency>
     <groupId>no.api.meteo</groupId>
-    <artifactId>meteo-client</artifactId>
+    <artifactId>meteo-extras</artifactId>
     <version>2.0.2</version>
 </dependency>
 ----
 
-The meteo package is organized in a set of services where each service represents on of the services in the MET API.
+The Meteo core library is organized in a set of services where each service represents on of the services in the MET API.
 Each service will need access to a Meteo client in order to be able to fetch data. You can either implement your own
 client or use the default client found in the meteo-client package.
 
-### Creating a default client
+#### Creating a default client
 
 [source, java]
 ----
