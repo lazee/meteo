@@ -126,7 +126,7 @@ public final class SunriseParser implements MeteoDataParser<Sunrise> {
         try {
             Meta meta = new Meta(MeteoNetUtils.createUri(getString(xpp, ATTR_LICENSEURL)), null);
             sunriseBuilder.setMeta(meta);
-            // FIXME sunriseBuilder.setCreated(getSimpleDate(xpp, ATTR_CREATED));
+            sunriseBuilder.setCreated(getZoneDateTime(xpp, ATTR_CREATED));
         } catch (MeteoException e) {
             log.warn("License url not found in feed");
         }
