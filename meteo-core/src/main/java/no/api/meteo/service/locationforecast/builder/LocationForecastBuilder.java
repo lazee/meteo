@@ -23,8 +23,8 @@ import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
@@ -32,7 +32,7 @@ public class LocationForecastBuilder {
 
     @Setter
     @Getter
-    private Date created;
+    private ZonedDateTime created;
 
     @Getter
     private MetaBuilder metaBuilder = new MetaBuilder();

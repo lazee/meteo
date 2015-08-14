@@ -23,7 +23,7 @@ import lombok.Getter;
 import lombok.ToString;
 import net.sf.oval.constraint.NotNull;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @AllArgsConstructor
 @ToString
@@ -33,7 +33,7 @@ public abstract class RootEntity {
     @NotNull
     @Getter
     @JsonProperty
-    private final Date created;
+    private final ZonedDateTime created;
 
     @Getter
     @JsonProperty

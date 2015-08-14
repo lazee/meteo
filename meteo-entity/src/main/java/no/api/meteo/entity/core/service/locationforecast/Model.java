@@ -20,35 +20,35 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @Value
 public final class Model {
 
     @JsonProperty
-    private final Date to;
+    private final ZonedDateTime to;
 
     @JsonProperty
-    private final Date from;
+    private final ZonedDateTime from;
 
     @JsonProperty
-    private final Date runEnded;
+    private final ZonedDateTime runEnded;
 
     @JsonProperty
-    private final Date nextRun;
+    private final ZonedDateTime nextRun;
 
     @JsonProperty
-    private final Date termin;
+    private final ZonedDateTime termin;
 
     @JsonProperty
     private final String name;
 
     @JsonCreator
-    public Model(@JsonProperty("to") Date to,
-                 @JsonProperty("from") Date from,
-                 @JsonProperty("runEnded") Date runEnded,
-                 @JsonProperty("nextRun") Date nextRun,
-                 @JsonProperty("termin") Date termin,
+    public Model(@JsonProperty("to") ZonedDateTime to,
+                 @JsonProperty("from") ZonedDateTime from,
+                 @JsonProperty("runEnded") ZonedDateTime runEnded,
+                 @JsonProperty("nextRun") ZonedDateTime nextRun,
+                 @JsonProperty("termin") ZonedDateTime termin,
                  @JsonProperty("name") String name) {
         this.to = to;
         this.from = from;

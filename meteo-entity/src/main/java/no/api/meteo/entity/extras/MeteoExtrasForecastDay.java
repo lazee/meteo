@@ -20,20 +20,20 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Value
 public final class MeteoExtrasForecastDay {
 
     @JsonProperty
-    private final Date day;
+    private final LocalDate day;
 
     @JsonProperty
     private final List<MeteoExtrasForecast> forecasts;
 
     @JsonCreator
-    public MeteoExtrasForecastDay(@JsonProperty("day") Date day,
+    public MeteoExtrasForecastDay(@JsonProperty("day") LocalDate day,
                                   @JsonProperty("forecasts") List<MeteoExtrasForecast> forecasts) {
         this.day = day;
         this.forecasts = forecasts;

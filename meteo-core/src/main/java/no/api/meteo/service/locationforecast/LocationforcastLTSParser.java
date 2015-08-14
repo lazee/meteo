@@ -53,10 +53,10 @@ import java.io.InputStream;
 import java.util.Stack;
 
 import static no.api.meteo.util.MeteoConstants.*;
-import static no.api.meteo.util.MeteoXppUtils.getDate;
 import static no.api.meteo.util.MeteoXppUtils.getDouble;
 import static no.api.meteo.util.MeteoXppUtils.getInteger;
 import static no.api.meteo.util.MeteoXppUtils.getString;
+import static no.api.meteo.util.MeteoXppUtils.getZoneDateTime;
 
 @Slf4j
 public final class LocationforcastLTSParser implements MeteoDataParser<LocationForecast> {
@@ -226,11 +226,11 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 break;
             case TAG_MODEL:
                 try {
-                    Model model = new Model(getDate(xpp, "to"),
-                                            getDate(xpp, "from"),
-                                            getDate(xpp, "runended"),
-                                            getDate(xpp, "nextrun"),
-                                            getDate(xpp, "termin"),
+                    Model model = new Model(getZoneDateTime(xpp, "to"),
+                                            getZoneDateTime(xpp, "from"),
+                                            getZoneDateTime(xpp, "runended"),
+                                            getZoneDateTime(xpp, "nextrun"),
+                                            getZoneDateTime(xpp, "termin"),
                                             getString(xpp, "name"));
                     locationForecastBuilder.getMetaBuilder().getModels().add(model);
                 } catch (MeteoException e) {
@@ -277,8 +277,8 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
     private void handleTimeDataTag(Stack<EntityBuilder> stack, XmlPullParser xpp) {
         try {
             PointForecastBuilder pointForecastBuilder = new PointForecastBuilder();
-            pointForecastBuilder.setToTime(getDate(xpp, ATTR_TO));
-            pointForecastBuilder.setFromTime(getDate(xpp, ATTR_FROM));
+            pointForecastBuilder.setToTime(getZoneDateTime(xpp, ATTR_TO));
+            pointForecastBuilder.setFromTime(getZoneDateTime(xpp, ATTR_FROM));
             stack.push(pointForecastBuilder);
         } catch (MeteoException e) {
             log.warn("Could not convert time dates from xml", e);
@@ -288,7 +288,7 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
 
     private void handleWeatherDataTag(LocationForecastBuilder locationForecastBuilder, XmlPullParser xpp) {
         try {
-            locationForecastBuilder.setCreated(getDate(xpp, ATTR_CREATED));
+            locationForecastBuilder.setCreated(getZoneDateTime(xpp, ATTR_CREATED));
         } catch (MeteoException e) {
             log.warn("Could not convert created data from weatherData tag", e);
         }

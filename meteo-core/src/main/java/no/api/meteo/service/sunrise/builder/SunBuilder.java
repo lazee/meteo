@@ -25,8 +25,8 @@ import no.api.meteo.entity.core.service.sunrise.Sun;
 import no.api.meteo.entity.core.service.sunrise.TwilightType;
 import no.api.meteo.util.EntityBuilder;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
@@ -34,9 +34,9 @@ import java.util.List;
 @Getter
 public class SunBuilder implements EntityBuilder<Sun> {
 
-    private Date rise;
+    private ZonedDateTime rise;
 
-    private Date set;
+    private ZonedDateTime set;
 
     private Boolean neverRise;
 

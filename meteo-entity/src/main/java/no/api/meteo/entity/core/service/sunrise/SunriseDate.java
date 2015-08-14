@@ -20,13 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Value
 public final class SunriseDate {
 
     @JsonProperty
-    private final Date date;
+    private final LocalDate date;
 
     @JsonProperty
     private final Sun sun;
@@ -35,7 +35,7 @@ public final class SunriseDate {
     private final Moon moon;
 
     @JsonCreator
-    public SunriseDate(@JsonProperty("date") Date date,
+    public SunriseDate(@JsonProperty("date") LocalDate date,
                        @JsonProperty("sun") Sun sun,
                        @JsonProperty("moon") Moon moon) {
         this.date = date;

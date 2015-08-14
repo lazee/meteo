@@ -23,7 +23,7 @@ import lombok.Getter;
 import lombok.ToString;
 import net.sf.oval.constraint.NotNull;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @AllArgsConstructor
 @ToString
@@ -33,11 +33,11 @@ public abstract class AbstractForecast {
     @NotNull
     @Getter
     @JsonProperty
-    private final Date fromTime;
+    private final ZonedDateTime fromTime;
 
     @NotNull
     @Getter
     @JsonProperty
-    private final Date toTime;
+    private final ZonedDateTime toTime;
 
 }

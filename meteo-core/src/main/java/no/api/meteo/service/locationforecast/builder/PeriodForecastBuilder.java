@@ -25,18 +25,18 @@ import no.api.meteo.entity.core.service.locationforecast.Symbol;
 import no.api.meteo.entity.core.service.locationforecast.SymbolProbability;
 import no.api.meteo.util.EntityBuilder;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @NoArgsConstructor
 public class PeriodForecastBuilder implements EntityBuilder<PeriodForecast> {
 
     @Getter
     @Setter
-    private Date fromTime;
+    private ZonedDateTime fromTime;
 
     @Getter
     @Setter
-    private Date toTime;
+    private ZonedDateTime toTime;
 
     @Getter
     @Setter

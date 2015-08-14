@@ -24,7 +24,8 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.InputStream;
 import java.io.StringReader;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 /**
  * Util class for simplifying different XPP tasks.
@@ -87,12 +88,12 @@ public final class MeteoXppUtils {
         }
     }
 
-    public static Date getDate(XmlPullParser xpp, String name) throws MeteoException {
-        return MeteoDateUtils.fullFormatToDate(getString(xpp, name));
+    public static ZonedDateTime getZoneDateTime(XmlPullParser xpp, String name) throws MeteoException {
+        return MeteoDateUtils.fullFormatToZonedDateTime(getString(xpp, name));
     }
 
-    public static Date getSimpleDate(XmlPullParser xpp, String name) throws MeteoException {
-        return MeteoDateUtils.yyyyMMddToDate(getString(xpp, name));
+    public static LocalDate getLocalDate(XmlPullParser xpp, String name) throws MeteoException {
+        return MeteoDateUtils.yyyyMMddToLocalDate(getString(xpp, name));
     }
 
 }

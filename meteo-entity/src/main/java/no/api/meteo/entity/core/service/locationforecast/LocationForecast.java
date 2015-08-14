@@ -26,9 +26,9 @@ import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.RootEntity;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 @Value
@@ -45,7 +45,7 @@ public final class LocationForecast extends RootEntity {
     private final List<Forecast> forecasts;
 
     @JsonCreator
-    public LocationForecast(@JsonProperty("created") Date created,
+    public LocationForecast(@JsonProperty("created") ZonedDateTime created,
                             @JsonProperty("meta") Meta meta,
                             @JsonProperty("location") Location location,
                             @JsonProperty("forecasts") List<Forecast> forecasts) {
@@ -55,7 +55,7 @@ public final class LocationForecast extends RootEntity {
     }
 
     public List<Forecast> getForecasts() {
-        return forecasts == null ? new ArrayList<Forecast>() : Collections.unmodifiableList(forecasts);
+        return forecasts == null ? new ArrayList<>() : Collections.unmodifiableList(forecasts);
     }
 
 }

@@ -25,9 +25,9 @@ import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.RootEntity;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 @Value
@@ -42,7 +42,7 @@ public class Sunrise extends RootEntity {
     private final List<SunriseDate> dates;
 
     @JsonCreator
-    public Sunrise(@JsonProperty("created") Date created,
+    public Sunrise(@JsonProperty("created") ZonedDateTime created,
                    @JsonProperty("meta") Meta meta,
                    @JsonProperty("location") Location location,
                    @JsonProperty("dates") List<SunriseDate> dates) {
@@ -52,6 +52,6 @@ public class Sunrise extends RootEntity {
     }
 
     public List<SunriseDate> getDates() {
-        return dates == null ? new ArrayList<SunriseDate>() : Collections.unmodifiableList(dates);
+        return dates == null ? new ArrayList<>() : Collections.unmodifiableList(dates);
     }
 }

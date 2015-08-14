@@ -22,7 +22,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @Value
 @ToString(callSuper = true)
@@ -40,8 +40,8 @@ public final class PeriodForecast extends AbstractForecast implements Forecast {
 
     @JsonCreator
     public PeriodForecast(
-            @JsonProperty("fromTime") Date fromTime,
-            @JsonProperty("toTime") Date toTime,
+            @JsonProperty("fromTime") ZonedDateTime fromTime,
+            @JsonProperty("toTime") ZonedDateTime toTime,
             @JsonProperty("precipitation") Precipitation precipitation,
             @JsonProperty("symbol") Symbol symbol,
             @JsonProperty("symbolProbability") SymbolProbability symbolProbability) {

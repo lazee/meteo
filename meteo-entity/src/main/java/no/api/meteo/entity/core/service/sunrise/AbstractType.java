@@ -21,9 +21,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 @ToString(callSuper = true)
@@ -41,7 +41,7 @@ public abstract class AbstractType extends AbstractRiseSet {
     @JsonProperty
     private final List<ErrorType> error;
 
-    public AbstractType(Date rise, Date set, Boolean neverRise, Boolean neverSet, List<ErrorType> error) {
+    public AbstractType(ZonedDateTime rise, ZonedDateTime set, Boolean neverRise, Boolean neverSet, List<ErrorType> error) {
         super(rise, set);
         this.neverRise = neverRise;
         this.neverSet = neverSet;

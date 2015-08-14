@@ -18,11 +18,9 @@ package no.api.meteo.util;
 
 import no.api.meteo.MeteoException;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Util class for dealing with different date issues in Meteo.
@@ -33,51 +31,36 @@ public final class MeteoDateUtils {
 
     private static final String HHMM = "HH:mm";
 
-    private static final String FULLFORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-
     private MeteoDateUtils() {
         throw new UnsupportedOperationException();
     }
 
-    public static Date fullFormatToDate(String dateStr) throws MeteoException {
-        return stringToDate(new SimpleDateFormat(FULLFORMAT), dateStr);
+    public static ZonedDateTime fullFormatToZonedDateTime(String dateStr) throws MeteoException {
+        return ZonedDateTime.parse(dateStr);
     }
 
-    public static Date yyyyMMddToDate(String dateStr) throws MeteoException {
-        return stringToDate(new SimpleDateFormat(YYYYMMDD), dateStr);
+    public static LocalDate yyyyMMddToLocalDate(String dateStr) throws MeteoException {
+        return LocalDate.parse("20.01.2014", DateTimeFormatter.ofPattern(YYYYMMDD));
     }
 
-    private static Date stringToDate(DateFormat format, String dateStr) throws MeteoException {
-        if (dateStr == null) {
+    public static String localDateToString(LocalDate localDate, String pattern) {
+        if (localDate == null || pattern == null) {
             return null;
         }
-        format.setTimeZone(TimeZone.getTimeZone("Z"));
-        try {
-            return format.parse(dateStr);
-        } catch (ParseException e) {
-            throw new MeteoException("Could not parse the date : " + dateStr, e);
-        }
+        return localDate.format(DateTimeFormatter.ofPattern(pattern));
     }
 
-    public static String dateToString(Date date, String pattern) {
-        if (date == null || pattern == null) {
-            return null;
-        }
-        DateFormat df = new SimpleDateFormat(pattern);
-        return df.format(date);
+    public static String zonedDateTimeToYyyyMMdd(LocalDate localDate) {
+        return localDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
     }
 
-    public static String dateToYyyyMMdd(Date date) {
-        if (date == null) {
-            return null;
-        }
-        return (new SimpleDateFormat(YYYYMMDD)).format(date);
+    public static String zonedDateTimeToHHMM(ZonedDateTime zonedDateTime) {
+        return zonedDateTime.format(DateTimeFormatter.ofPattern(HHMM));
     }
 
-    public static String dateToHHmm(Date date) {
-        if (date == null) {
-            return null;
-        }
-        return (new SimpleDateFormat(HHMM)).format(date);
+    public static ZonedDateTime cloneZonedDateTime(ZonedDateTime zonedDateTime) {
+        return zonedDateTime.minusSeconds(0);
     }
+
+
 }

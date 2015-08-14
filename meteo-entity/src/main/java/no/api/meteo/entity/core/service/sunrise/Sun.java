@@ -22,9 +22,9 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 /*
@@ -47,8 +47,8 @@ public final class Sun extends AbstractType {
     private final List<TwilightType> twilight;
 
     @JsonCreator
-    public Sun(@JsonProperty("rise") Date rise,
-               @JsonProperty("set") Date set,
+    public Sun(@JsonProperty("rise") ZonedDateTime rise,
+               @JsonProperty("set") ZonedDateTime set,
                @JsonProperty("neverRise") Boolean neverRise,
                @JsonProperty("neverSet") Boolean neverSet,
                @JsonProperty("error") List<ErrorType> error,

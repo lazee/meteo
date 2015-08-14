@@ -20,9 +20,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.xmlpull.v1.XmlPullParser;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 public final class MeteoXppUtilsTest {
 
@@ -57,19 +56,15 @@ public final class MeteoXppUtilsTest {
                     Assert.assertEquals(Boolean.TRUE, MeteoXppUtils.getBoolean(xpp, "boolean"));
                     Assert.assertFalse(MeteoXppUtils.getBoolean(xpp, "foo"));
                     // Simple date
-                    Date simpleDate = MeteoXppUtils.getSimpleDate(xpp, "simple");
-                    Assert.assertNull(MeteoXppUtils.getSimpleDate(xpp, "foo"));
-                    Calendar calendar = new GregorianCalendar();
-                    calendar.setTime(simpleDate);
-                    Assert.assertEquals(2011, calendar.get(Calendar.YEAR));
-                    Assert.assertEquals(3, calendar.get(Calendar.DAY_OF_MONTH));
-                    Assert.assertEquals(1, calendar.get(Calendar.MONTH));
+                    Assert.assertNull(MeteoXppUtils.getLocalDate(xpp, "foo"));
+                    LocalDate simpleDate = MeteoXppUtils.getLocalDate(xpp, "simple");
+                    Assert.assertEquals(2011, simpleDate.getYear());
+                    Assert.assertEquals(3, simpleDate.getDayOfMonth());
+                    Assert.assertEquals(1, simpleDate.getMonthValue());
                     // Full date 2011-05-06T05:00:00Z
-                    Date date = MeteoXppUtils.getDate(xpp, "date");
-                    Assert.assertNull(MeteoXppUtils.getDate(xpp, "foo"));
-                    calendar = new GregorianCalendar();
-                    calendar.setTime(date);
-                    Assert.assertEquals(9, calendar.get(Calendar.MINUTE));
+                    Assert.assertNull(MeteoXppUtils.getZoneDateTime(xpp, "foo"));
+                    ZonedDateTime dateTime = MeteoXppUtils.getZoneDateTime(xpp, "date");
+                    Assert.assertEquals(10, dateTime.getHour());
                 }
             }
             eventType = xpp.next();

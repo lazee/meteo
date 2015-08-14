@@ -21,10 +21,9 @@ import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoData;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
+import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
 import no.api.meteo.services.LocationForecastHelper;
-import no.api.meteo.entity.extras.MeteoExtrasForecast;
-import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +32,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -75,20 +76,20 @@ public class LocationServlet extends HttpServlet {
                 List<MeteoExtrasForecast> last24 = helper.findHourlyPointForecastsFromNow(HOURS_24);
                 req.setAttribute("last24", last24);
 
-                DateTime firstDate = new DateTime();
-                firstDate = firstDate.withHourOfDay(TWELVE_O_CLOCK).withMinuteOfHour(0).withSecondOfMinute(0);
+                ZonedDateTime firstDate = ZonedDateTime.now(ZoneId.of("Z"));
+                firstDate = firstDate.withHour(TWELVE_O_CLOCK).withMinute(0).withSecond(0);
 
-                Optional<MeteoExtrasForecast> todayForecast = helper.findNearestForecast(firstDate.toDate());
+                Optional<MeteoExtrasForecast> todayForecast = helper.findNearestForecast(firstDate);
                 if (todayForecast.isPresent()) {
                     req.setAttribute("today", todayForecast.get());
                 }
 
-                Optional<MeteoExtrasForecast> tomorrowForecast = helper.findNearestForecast(firstDate.plusDays(1).toDate());
+                Optional<MeteoExtrasForecast> tomorrowForecast = helper.findNearestForecast(firstDate.plusDays(1));
                 if (tomorrowForecast.isPresent()) {
                     req.setAttribute("tomorrow", tomorrowForecast.get());
                 }
 
-                Optional<MeteoExtrasForecast> afterForecast = helper.findNearestForecast(firstDate.plusDays(2).toDate());
+                Optional<MeteoExtrasForecast> afterForecast = helper.findNearestForecast(firstDate.plusDays(2));
                 if (afterForecast.isPresent()) {
                     req.setAttribute("thedayaftertomorrow", afterForecast.get());
                 }

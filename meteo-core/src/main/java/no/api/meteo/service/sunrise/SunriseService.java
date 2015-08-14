@@ -25,14 +25,14 @@ import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.service.AbstractMeteoService;
 import no.api.meteo.service.MeteoDataParser;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import static no.api.meteo.util.MeteoConstants.PARAM_DATE;
 import static no.api.meteo.util.MeteoConstants.PARAM_FROM;
 import static no.api.meteo.util.MeteoConstants.PARAM_LATITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_TO;
-import static no.api.meteo.util.MeteoDateUtils.dateToYyyyMMdd;
+import static no.api.meteo.util.MeteoDateUtils.zonedDateTimeToYyyyMMdd;
 
 public final class SunriseService extends AbstractMeteoService {
 
@@ -43,23 +43,23 @@ public final class SunriseService extends AbstractMeteoService {
         parser = new SunriseParser();
     }
 
-    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date date) throws MeteoException {
+    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, LocalDate date) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUriBuilder()
                         .addParameter(PARAM_LATITUDE, latitude)
                         .addParameter(PARAM_LONGITUDE, longitude)
-                        .addParameter(PARAM_DATE, dateToYyyyMMdd(date)).build());
+                        .addParameter(PARAM_DATE, zonedDateTimeToYyyyMMdd(date)).build());
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
-    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date from, Date to)
+    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, LocalDate from, LocalDate to)
             throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUriBuilder()
                         .addParameter(PARAM_LATITUDE, latitude)
                         .addParameter(PARAM_LONGITUDE, longitude)
-                        .addParameter(PARAM_FROM, dateToYyyyMMdd(from))
-                        .addParameter(PARAM_TO, dateToYyyyMMdd(to)).build()
+                        .addParameter(PARAM_FROM, zonedDateTimeToYyyyMMdd(from))
+                        .addParameter(PARAM_TO, zonedDateTimeToYyyyMMdd(to)).build()
         );
         return new MeteoData<>(parser.parse(response.getData()), response);
     }

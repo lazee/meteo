@@ -19,14 +19,15 @@ package no.api.meteo.services;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-import org.joda.time.DateTime;
+
+import java.time.ZonedDateTime;
 
 @EqualsAndHashCode(of = {"day", "month", "year", "hour"}, doNotUseGetters = true)
 @ToString(of = {"day", "month", "year", "hour"})
 class HourIndexKey {
 
     @Getter
-    private final DateTime dateTime;
+    private final ZonedDateTime dateTime;
 
     private final int day;
 
@@ -36,12 +37,12 @@ class HourIndexKey {
 
     private final int hour;
 
-    HourIndexKey(DateTime dateTime) {
+    HourIndexKey(ZonedDateTime dateTime) {
         this.dateTime = dateTime;
         this.day = dateTime.getDayOfMonth();
-        this.month = dateTime.getMonthOfYear();
+        this.month = dateTime.getMonthValue();
         this.year = dateTime.getYear();
-        this.hour = dateTime.getHourOfDay();
+        this.hour = dateTime.getHour();
     }
 
 }

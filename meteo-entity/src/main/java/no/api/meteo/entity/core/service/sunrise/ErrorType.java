@@ -22,7 +22,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @Value
 @ToString(callSuper = true)
@@ -30,8 +30,8 @@ import java.util.Date;
 public final class ErrorType extends AbstractRiseSet {
 
     @JsonCreator
-    public ErrorType(@JsonProperty("rise") Date rise,
-                     @JsonProperty("set") Date set) {
+    public ErrorType(@JsonProperty("rise") ZonedDateTime rise,
+                     @JsonProperty("set") ZonedDateTime set) {
         super(rise, set);
     }
 }

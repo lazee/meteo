@@ -24,8 +24,8 @@ class ScoreForecast {
 
     private final PeriodForecast periodForecast;
 
-    private final int pointTightScore;
+    private final long pointTightScore;
 
-    private final int pointWideScore;
+    private final long pointWideScore;
 
 }

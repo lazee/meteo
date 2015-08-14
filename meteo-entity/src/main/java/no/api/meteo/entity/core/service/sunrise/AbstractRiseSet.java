@@ -22,7 +22,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @AllArgsConstructor
 @ToString(callSuper = true)
@@ -31,10 +31,10 @@ public abstract class AbstractRiseSet {
 
     @Getter
     @JsonProperty
-    private final Date rise;
+    private final ZonedDateTime rise;
 
     @Getter
     @JsonProperty
-    private final Date set;
+    private final ZonedDateTime set;
 
 }

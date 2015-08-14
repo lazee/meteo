@@ -27,7 +27,7 @@ import no.api.meteo.util.MeteoDateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class SunriseExample {
 
@@ -46,7 +46,7 @@ public class SunriseExample {
     public MeteoData<Sunrise> runExample() {
         SunriseService sunriseService = new SunriseService(meteoClient);
         try {
-            return sunriseService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, new Date());
+            return sunriseService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, LocalDate.now());
         } catch (MeteoException e) {
             // Got client exception. No data available
             log.error("Caught exception : " + e.getMessage());
@@ -67,8 +67,8 @@ public class SunriseExample {
             log.error("Something went wrong!");
         } else {
             SunriseDate sunriseDate = data.getResult().getDates().get(0);
-            log.info("On " + MeteoDateUtils.dateToYyyyMMdd(sunriseDate.getDate()) + " the sun will rise at " +
-                    MeteoDateUtils.dateToHHmm(sunriseDate.getSun().getRise()) + " in Oslo");
+            log.info("On " + MeteoDateUtils.zonedDateTimeToYyyyMMdd(sunriseDate.getDate()) + " the sun will rise at " +
+                    MeteoDateUtils.zonedDateTimeToHHMM(sunriseDate.getSun().getRise()) + " in Oslo");
         }
     }
 }

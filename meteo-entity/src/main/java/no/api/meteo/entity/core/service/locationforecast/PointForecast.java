@@ -22,7 +22,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 
 @Value
@@ -67,8 +67,8 @@ public final class PointForecast extends AbstractForecast implements Forecast {
     private final TemperatureProbability temperatureProbability;
 
     @JsonCreator
-    public PointForecast(@JsonProperty("fromTime") Date fromTime,
-                         @JsonProperty("toTime") Date toTime,
+    public PointForecast(@JsonProperty("fromTime") ZonedDateTime fromTime,
+                         @JsonProperty("toTime") ZonedDateTime toTime,
                          @JsonProperty("fog") Fog fog,
                          @JsonProperty("pressure") Pressure pressure,
                          @JsonProperty("highClouds") HighClouds highClouds,
@@ -96,7 +96,7 @@ public final class PointForecast extends AbstractForecast implements Forecast {
         this.temperatureProbability = temperatureProbability;
     }
 
-    public PointForecast(Date fromTime, Date toTime) {
+    public PointForecast(ZonedDateTime fromTime, ZonedDateTime toTime) {
         super(fromTime, toTime);
         this.fog = null;
         this.pressure = null;

@@ -25,8 +25,8 @@ import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.entity.core.service.sunrise.SunriseDate;
 import no.api.meteo.util.EntityBuilder;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
@@ -34,7 +34,7 @@ import java.util.List;
 @Getter
 public class SunriseBuilder implements EntityBuilder<Sunrise> {
 
-    private Date created;
+    private ZonedDateTime created;
 
     private Meta meta;
 

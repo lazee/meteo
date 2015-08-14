@@ -22,7 +22,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Value
@@ -34,8 +34,8 @@ public final class Moon extends AbstractType {
     private final PhaseType phase;
 
     @JsonCreator
-    public Moon(@JsonProperty("rise") Date rise,
-                @JsonProperty("set") Date set,
+    public Moon(@JsonProperty("rise") ZonedDateTime rise,
+                @JsonProperty("set") ZonedDateTime set,
                 @JsonProperty("neverRise") Boolean neverRise,
                 @JsonProperty("neverSet") Boolean neverSet,
                 @JsonProperty("error") List<ErrorType> error,

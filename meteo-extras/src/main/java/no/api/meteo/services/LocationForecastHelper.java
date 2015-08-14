@@ -25,12 +25,14 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecastDay;
 import no.api.meteo.entity.extras.MeteoExtrasLongTermForecast;
-import org.joda.time.DateTime;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+import static no.api.meteo.util.MeteoDateUtils.cloneZonedDateTime;
 
 /**
  * Helper class that will save you from the dirty job of interpreting the forecast data yourself.
@@ -46,6 +48,8 @@ public final class LocationForecastHelper {
 
     private String title = null;
 
+    private final ZoneId zoneId;
+
     /**
      * Construct a new instance of this helper
      *
@@ -57,6 +61,7 @@ public final class LocationForecastHelper {
     public LocationForecastHelper(@NonNull LocationForecast locationForecast, String title) {
         this.title = title;
         this.locationForecast = locationForecast;
+        zoneId = ZoneId.of("Z");
         init();
     }
 
@@ -68,6 +73,7 @@ public final class LocationForecastHelper {
      */
     public LocationForecastHelper(@NonNull LocationForecast locationForecast) {
         this.locationForecast = locationForecast;
+        zoneId = ZoneId.of("Z");
         init();
     }
 
@@ -89,17 +95,21 @@ public final class LocationForecastHelper {
      */
     public List<MeteoExtrasForecast> findHourlyPointForecastsFromNow(int hoursAhead) {
         List<MeteoExtrasForecast> pointExtrasForecasts = new ArrayList<>();
-        DateTime timeNow = new DateTime();
+        ZonedDateTime now = getNow();
         for (int i = 0; i < hoursAhead; i++) {
-            DateTime dataTime = timeNow.plusHours(i);
-            PointForecast pointForecast = indexer.getPointForecast(dataTime);
+            ZonedDateTime ahead = now.plusHours(i);
+            PointForecast pointForecast = indexer.getPointForecast(ahead);
             if (pointForecast != null) {
                 PeriodForecast periodForecast =
-                        indexer.getTightestFitPeriodForecast(new DateTime(pointForecast.getFromTime()));
+                        indexer.getTightestFitPeriodForecast(cloneZonedDateTime(pointForecast.getFromTime()));
                 pointExtrasForecasts.add(new MeteoExtrasForecast(pointForecast, periodForecast));
             }
         }
         return pointExtrasForecasts;
+    }
+
+    private ZonedDateTime getNow() {
+        return ZonedDateTime.now(zoneId);
     }
 
     /**
@@ -112,12 +122,12 @@ public final class LocationForecastHelper {
      *
      * @return Optional containing a forecast or {@link Optional#empty()} if no forecast could be created.
      */
-    public Optional<MeteoExtrasForecast> findBestForecastForPeriod(DateTime from, DateTime to) {
+    public Optional<MeteoExtrasForecast> findBestForecastForPeriod(ZonedDateTime from, ZonedDateTime to) {
         PeriodForecast periodForecast = indexer.getBestFitPeriodForecast(from, to);
         if (periodForecast == null) {
             return Optional.empty();
         }
-        PointForecast pointForecast = indexer.getPointForecast(new DateTime(periodForecast.getFromTime()));
+        PointForecast pointForecast = indexer.getPointForecast(cloneZonedDateTime(periodForecast.getFromTime()));
         if (pointForecast == null) {
             return Optional.empty();
         }
@@ -132,7 +142,7 @@ public final class LocationForecastHelper {
      */
     public MeteoExtrasLongTermForecast createLongTermForecast() {
         List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
-        DateTime dt = DateTime.now();
+        ZonedDateTime dt = getNow();
         for (int i = 0; i <= 6; i++) {
             addForecastForDay(dt.plusDays(i), forecastDays);
         }
@@ -147,7 +157,7 @@ public final class LocationForecastHelper {
      */
     public MeteoExtrasLongTermForecast createSimpleLongTermForecast() throws MeteoException {
         List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
-        DateTime dt = DateTime.now();
+        ZonedDateTime dt = getNow();
         for (int i = 0; i <= 6; i++) {
             addSimpleForecastForDay(dt.plusDays(i), forecastDays);
         }
@@ -162,19 +172,19 @@ public final class LocationForecastHelper {
      *
      * @return The detailed forecast for the given date. Will be empty if data is not found.
      */
-    public MeteoExtrasForecastDay createForcastForDay(DateTime dt) {
+    public MeteoExtrasForecastDay createForcastForDay(ZonedDateTime dt) {
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
-        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(0), dt.withHourOfDay(6)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(6), dt.withHourOfDay(12)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(12), dt.withHourOfDay(18)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHourOfDay(18), dt.plusDays(1).withHourOfDay(0)), forecasts);
-        return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
+        addForecastToList(findBestForecastForPeriod(dt.withHour(0), dt.withHour(6)), forecasts);
+        addForecastToList(findBestForecastForPeriod(dt.withHour(6), dt.withHour(12)), forecasts);
+        addForecastToList(findBestForecastForPeriod(dt.withHour(12), dt.withHour(18)), forecasts);
+        addForecastToList(findBestForecastForPeriod(dt.withHour(18), dt.plusDays(1).withHour(0)), forecasts);
+        return new MeteoExtrasForecastDay(dt.toLocalDate(), forecasts);
     }
 
-    public MeteoExtrasForecastDay createSimpleForcastForDay(DateTime dt) {
+    public MeteoExtrasForecastDay createSimpleForcastForDay(ZonedDateTime dt) {
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
-        addForecastToList(findNearestForecast(dt.withHourOfDay(14).toDate()), forecasts);
-        return new MeteoExtrasForecastDay(dt.toDate(), forecasts);
+        addForecastToList(findNearestForecast(dt.withHour(14)), forecasts);
+        return new MeteoExtrasForecastDay(dt.toLocalDate(), forecasts);
     }
 
     /**
@@ -183,8 +193,9 @@ public final class LocationForecastHelper {
      * @return A forecast that best matches the time right now.
      */
     public Optional<MeteoExtrasForecast> getNearestForecast() {
-        return findNearestForecast(new Date());
+        return findNearestForecast(getNow());
     }
+
 
     /**
      * Get the most accurate forecast for the given date.
@@ -192,31 +203,18 @@ public final class LocationForecastHelper {
      * @param date The date to get the forecast for.
      * @return Optional containing the forecast if found, else {@link Optional#empty()}
      */
-    public Optional<MeteoExtrasForecast> findNearestForecast(Date date) {
-        if (date == null) {
-            return Optional.empty();
-        }
-        return findNearestForecast(new DateTime(date));
-    }
-
-    /**
-     * Get the most accurate forecast for the given date.
-     *
-     * @param date The date to get the forecast for.
-     * @return Optional containing the forecast if found, else {@link Optional#empty()}
-     */
-    public Optional<MeteoExtrasForecast> findNearestForecast(DateTime date) {
+    public Optional<MeteoExtrasForecast> findNearestForecast(ZonedDateTime date) {
         PointForecast chosenForecast = null;
         for (Forecast forecast : locationForecast.getForecasts()) {
             if (forecast instanceof PointForecast) {
                 PointForecast pointForecast = (PointForecast) forecast;
-                if (isDateMatch(date, new DateTime(pointForecast.getFromTime()))) {
+                if (isDateMatch(date, cloneZonedDateTime(pointForecast.getFromTime()))) {
                     chosenForecast = pointForecast;
                     break;
                 } else if (chosenForecast == null) {
                     chosenForecast = pointForecast;
-                } else if (isNearerDate(new DateTime(pointForecast.getFromTime()), date,
-                                        new DateTime(chosenForecast.getFromTime()))) {
+                } else if (isNearerDate(cloneZonedDateTime(pointForecast.getFromTime()), date,
+                                        cloneZonedDateTime(chosenForecast.getFromTime()))) {
                     chosenForecast = pointForecast;
                 }
             }
@@ -225,14 +223,14 @@ public final class LocationForecastHelper {
                 Optional.<MeteoExtrasForecast>empty() :
                 Optional.of(new MeteoExtrasForecast(chosenForecast,
                                                     indexer.getWidestFitPeriodForecast(
-                                                            new DateTime(chosenForecast.getFromTime())))));
+                                                            cloneZonedDateTime(chosenForecast.getFromTime())))));
     }
 
     private void init() {
         indexer = new MeteoForecastIndexer(locationForecast.getForecasts());
     }
 
-    private void addForecastForDay(DateTime dt, List<MeteoExtrasForecastDay> lst) {
+    private void addForecastForDay(ZonedDateTime dt, List<MeteoExtrasForecastDay> lst) {
         if (indexer.hasForecastsForDay(dt)) {
             MeteoExtrasForecastDay mefd = createForcastForDay(dt);
             if (mefd != null && mefd.getForecasts().size() > 0) {
@@ -241,7 +239,7 @@ public final class LocationForecastHelper {
         }
     }
 
-    private void addSimpleForecastForDay(DateTime dt, List<MeteoExtrasForecastDay> lst) throws MeteoException {
+    private void addSimpleForecastForDay(ZonedDateTime dt, List<MeteoExtrasForecastDay> lst) throws MeteoException {
         if (indexer.hasForecastsForDay(dt)) {
             MeteoExtrasForecastDay mefd = createSimpleForcastForDay(dt);
             if (mefd != null && mefd.getForecasts().size() > 0) {
@@ -256,16 +254,16 @@ public final class LocationForecastHelper {
         }
     }
 
-    private boolean isNearerDate(DateTime pointTime, DateTime dateTime, DateTime chosenTime) {
-        return Math.abs(pointTime.getMillis() - dateTime.getMillis())
-                < Math.abs(chosenTime.getMillis() - dateTime.getMillis());
+    private boolean isNearerDate(ZonedDateTime pointTime, ZonedDateTime dateTime, ZonedDateTime chosenTime) {
+        return Math.abs(pointTime.toInstant().getEpochSecond() - dateTime.toInstant().getEpochSecond())
+                < Math.abs(chosenTime.toInstant().getEpochSecond() - dateTime.toInstant().getEpochSecond());
     }
 
-    private boolean isDateMatch(DateTime requestedDate, DateTime actualDate) {
+    private boolean isDateMatch(ZonedDateTime requestedDate, ZonedDateTime actualDate) {
         return requestedDate.getYear() == actualDate.getYear() &&
-                requestedDate.getMonthOfYear() == actualDate.getMonthOfYear()
+                requestedDate.getMonthValue() == actualDate.getMonthValue()
                 && requestedDate.getDayOfMonth() == actualDate.getDayOfMonth() &&
-                requestedDate.getHourOfDay() == actualDate.getHourOfDay();
+                requestedDate.getHour() == actualDate.getHour();
     }
 
 

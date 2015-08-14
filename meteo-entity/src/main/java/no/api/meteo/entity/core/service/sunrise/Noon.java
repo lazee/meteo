@@ -20,13 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @Value
 public final class Noon {
 
     @JsonProperty
-    private final Date time;
+    private final ZonedDateTime time;
 
     @JsonProperty
     private final Double altitude;
@@ -35,7 +35,7 @@ public final class Noon {
     private final Double direction;
 
     @JsonCreator
-    public Noon(@JsonProperty("time") Date time,
+    public Noon(@JsonProperty("time") ZonedDateTime time,
                 @JsonProperty("altitude") Double altitude,
                 @JsonProperty("direction") Double direction) {
         this.time = time;

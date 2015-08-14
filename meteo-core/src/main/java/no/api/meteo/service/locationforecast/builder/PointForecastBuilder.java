@@ -34,18 +34,18 @@ import no.api.meteo.entity.core.service.locationforecast.WindProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindSpeed;
 import no.api.meteo.util.EntityBuilder;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @NoArgsConstructor
 public class PointForecastBuilder implements EntityBuilder<PointForecast> {
 
     @Getter
     @Setter
-    private Date fromTime;
+    private ZonedDateTime fromTime;
 
     @Getter
     @Setter
-    private Date toTime;
+    private ZonedDateTime toTime;
 
     @Getter
     @Setter

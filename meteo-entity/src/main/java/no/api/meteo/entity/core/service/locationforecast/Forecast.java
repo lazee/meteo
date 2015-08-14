@@ -16,12 +16,12 @@
 
 package no.api.meteo.entity.core.service.locationforecast;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 public interface Forecast {
 
-    Date getFromTime();
+    ZonedDateTime getFromTime();
 
-    Date getToTime();
+    ZonedDateTime getToTime();
 
 }
