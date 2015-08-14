@@ -60,11 +60,11 @@ public final class MeteoXppUtilsTest {
                     LocalDate simpleDate = MeteoXppUtils.getLocalDate(xpp, "simple");
                     Assert.assertEquals(2011, simpleDate.getYear());
                     Assert.assertEquals(3, simpleDate.getDayOfMonth());
-                    Assert.assertEquals(1, simpleDate.getMonthValue());
+                    Assert.assertEquals(2, simpleDate.getMonthValue());
                     // Full date 2011-05-06T05:00:00Z
                     Assert.assertNull(MeteoXppUtils.getZoneDateTime(xpp, "foo"));
                     ZonedDateTime dateTime = MeteoXppUtils.getZoneDateTime(xpp, "date");
-                    Assert.assertEquals(10, dateTime.getHour());
+                    Assert.assertEquals(5, dateTime.getHour());
                 }
             }
             eventType = xpp.next();

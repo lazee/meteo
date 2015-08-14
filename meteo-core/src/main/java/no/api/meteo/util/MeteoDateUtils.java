@@ -21,6 +21,7 @@ import no.api.meteo.MeteoException;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 /**
  * Util class for dealing with different date issues in Meteo.
@@ -36,11 +37,21 @@ public final class MeteoDateUtils {
     }
 
     public static ZonedDateTime fullFormatToZonedDateTime(String dateStr) throws MeteoException {
-        return ZonedDateTime.parse(dateStr);
+        if (dateStr == null) {
+            return null;
+        }
+        try {
+            return ZonedDateTime.parse(dateStr);
+        } catch (DateTimeParseException e) {
+            throw new MeteoException(e);
+        }
     }
 
     public static LocalDate yyyyMMddToLocalDate(String dateStr) throws MeteoException {
-        return LocalDate.parse("20.01.2014", DateTimeFormatter.ofPattern(YYYYMMDD));
+        if (dateStr == null) {
+            return null;
+        }
+        return LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(YYYYMMDD));
     }
 
     public static String localDateToString(LocalDate localDate, String pattern) {
@@ -51,14 +62,23 @@ public final class MeteoDateUtils {
     }
 
     public static String zonedDateTimeToYyyyMMdd(LocalDate localDate) {
+        if (localDate == null) {
+            return null;
+        }
         return localDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
     }
 
     public static String zonedDateTimeToHHMM(ZonedDateTime zonedDateTime) {
+        if (zonedDateTime == null) {
+            return null;
+        }
         return zonedDateTime.format(DateTimeFormatter.ofPattern(HHMM));
     }
 
     public static ZonedDateTime cloneZonedDateTime(ZonedDateTime zonedDateTime) {
+        if (zonedDateTime == null) {
+            return null;
+        }
         return zonedDateTime.minusSeconds(0);
     }
 
