@@ -95,17 +95,17 @@
                                     <c:if test="${foo == 'even'}">
                                     <td class="hourpres" width="65">
                                         <c:set var="periodInfo">
-                                            <span class="hourdate">Date: <fmt:formatDate value="${pair.pointForecast.fromTime}" pattern="dd-MM-yy"/></span><br/>
+                                            <span class="hourdate">Date: <%--fmt:formatDate value="${pair.pointForecast.fromTime}" pattern="dd-MM-yy"/>--%></span><br/>
                                             From PeriodForecast:<br/>
-                                            {<fmt:formatDate value="${pair.periodForecast.fromTime}" timeZone="Z" pattern="dd-MM-yy HH:mm 'Z'"/>
+                                            {<%--<fmt:formatDate value="${pair.periodForecast.fromTime}" timeZone="Z" pattern="dd-MM-yy HH:mm 'Z'"/>--%>
                                             <br/>
-                                            <fmt:formatDate value="${pair.periodForecast.toTime}" timeZone="Z" pattern="dd-MM-yy HH:mm 'Z'"/>}
+                                            <%--<fmt:formatDate value="${pair.periodForecast.toTime}" timeZone="Z" pattern="dd-MM-yy HH:mm 'Z'"/>}--%>
                                             <br/>
                                             Symbol : ${pair.periodForecast.symbol.number}
                                         </c:set>
                                         <img  data-toggle="tooltip" title="" data-original-title="<c:out value="${periodInfo}" escapeXml="true"/>" src="<c:url value="/images/weather/${pair.periodForecast.symbol.number}.png"/>"/><br/>
 
-                                        <span class="hourdate"><fmt:formatDate value="${pair.pointForecast.fromTime}" pattern="HH:mm"/></span><br/>
+                                        <span class="hourdate"><%--<fmt:formatDate value="${pair.pointForecast.fromTime}" pattern="HH:mm"/>--%></span><br/>
                                         <span class="hourtemp"><fmt:formatNumber value="${pair.pointForecast.temperature.value}" pattern="0"/>&#8451;</span><br/>
                                 <span class="hourpre"><fmt:formatNumber
                                         value="${pair.periodForecast.precipitation.minValue}" pattern="0.0"/> - <fmt:formatNumber
@@ -131,19 +131,19 @@
                         <table class="dataTable">
                             <tr>
                                 <td class="hourpres">
-                                    <c:set var="periodInfo">From:<fmt:formatDate value="${today.periodForecast.fromTime}"
+                                    <c:set var="periodInfo">From:<%--fmt:formatDate value="${today.periodForecast.fromTime}"
                                                                                  timeZone="Z"
-                                                                                 pattern="dd-MM-yy HH:mm 'Z'"/><br/>To:<fmt:formatDate
+                                                                                 pattern="dd-MM-yy HH:mm 'Z'"/--%><br/>To:<%--fmt:formatDate
                                             value="${today.periodForecast.toTime}" timeZone="Z"
-                                            pattern="dd-MM-yy HH:mm 'Z'"/></c:set>
+                                            pattern="dd-MM-yy HH:mm 'Z'"/--%></c:set>
                             <span onmouseover="tooltip.show('<c:out value="${periodInfo}" escapeXml="true"/>', 200);"
                                   onmouseout="tooltip.hide();">
                             <img src="<c:url value="/images/weather/${today.periodForecast.symbol.number}.png"/>"/><br/>
                             </span>
-                    <span class="hourdate"><fmt:formatDate value="${today.pointForecast.fromTime}"
-                                                           pattern="dd-MM-yy"/></span><br/>
-                    <span class="hourdate"><fmt:formatDate value="${today.pointForecast.fromTime}"
-                                                           pattern="HH:mm"/></span><br/>
+                    <span class="hourdate"><%--fmt:formatDate value="${today.pointForecast.fromTime}"
+                                                           pattern="dd-MM-yy"/--%></span><br/>
+                    <span class="hourdate"><%--fmt:formatDate value="${today.pointForecast.fromTime}"
+                                                            pattern="HH:mm"/--%></span><br/>
                     <span class="hourtemp"><fmt:formatNumber
                             value="${today.pointForecast.temperature.value}"
                             pattern="0"/>&#8451;</span><br/>
@@ -157,19 +157,19 @@
                                     <span class="hourdate">${today.pointForecast.windDirection.name} (${today.pointForecast.windDirection.deg})</span><br/>
                                 </td>
                                 <td class="hourpres">
-                                    <c:set var="periodInfo">From:<fmt:formatDate value="${tomorrow.periodForecast.fromTime}"
+                                    <c:set var="periodInfo">From:<%--fmt:formatDate value="${tomorrow.periodForecast.fromTime}"
                                                                                  timeZone="Z"
-                                                                                 pattern="dd-MM-yy HH:mm 'Z'"/><br/>To:<fmt:formatDate
+                                                                                 pattern="dd-MM-yy HH:mm 'Z'"/--%><br/>To:<%--fmt:formatDate
                                             value="${tomorrow.periodForecast.toTime}" timeZone="Z"
-                                            pattern="dd-MM-yy HH:mm 'Z'"/></c:set>
+                                            pattern="dd-MM-yy HH:mm 'Z'"/--%></c:set>
                             <span onmouseover="tooltip.show('<c:out value="${periodInfo}" escapeXml="true"/>', 200);"
                                   onmouseout="tooltip.hide();">
                             <img src="<c:url value="/images/weather/${tomorrow.periodForecast.symbol.number}.png"/>"/><br/>
                             </span>
-                    <span class="hourdate"><fmt:formatDate value="${tomorrow.pointForecast.fromTime}"
-                                                           pattern="dd-MM-yy"/></span><br/>
-                    <span class="hourdate"><fmt:formatDate value="${tomorrow.pointForecast.fromTime}"
-                                                           pattern="HH:mm"/></span><br/>
+                    <span class="hourdate"><%--fmt:formatDate value="${tomorrow.pointForecast.fromTime}"
+                                                           pattern="dd-MM-yy"/--%></span><br/>
+                    <span class="hourdate"><%--fmt:formatDate value="${tomorrow.pointForecast.fromTime}"
+                                                           pattern="HH:mm"/--%></span><br/>
                     <span class="hourtemp"><fmt:formatNumber
                             value="${tomorrow.pointForecast.temperature.value}"
                             pattern="0"/>&#8451;</span><br/>
@@ -183,21 +183,21 @@
                                     <span class="hourdate">${tomorrow.pointForecast.windDirection.name} (${tomorrow.pointForecast.windDirection.deg})</span><br/>
                                 </td>
                                 <td class="hourpres">
-                                    <c:set var="periodInfo">From:<fmt:formatDate value="${thedayaftertomorrow.periodForecast.fromTime}"
+                                    <c:set var="periodInfo">From:<%--fmt:formatDate value="${thedayaftertomorrow.periodForecast.fromTime}"
                                                                                  timeZone="Z"
-                                                                                 pattern="dd-MM-yy HH:mm 'Z'"/><br/>To:<fmt:formatDate
+                                                                                   pattern="dd-MM-yy HH:mm 'Z'"/---%><br/>To:<%--fmt:formatDate
                                             value="${thedayaftertomorrow.periodForecast.toTime}" timeZone="Z"
-                                            pattern="dd-MM-yy HH:mm 'Z'"/></c:set>
+                                            pattern="dd-MM-yy HH:mm 'Z'"/--%></c:set>
                             <span onmouseover="tooltip.show('<c:out value="${periodInfo}" escapeXml="true"/>', 200);"
                                   onmouseout="tooltip.hide();">
                             <img src="<c:url value="/images/weather/${thedayaftertomorrow.periodForecast.symbol.number}.png"/>"/><br/>
                             </span>
-                                <span class="hourdate"><fmt:formatDate
+                                <span class="hourdate"><%--fmt:formatDate
                                         value="${thedayaftertomorrow.pointForecast.fromTime}"
-                                        pattern="dd-MM-yy"/></span><br/>
-                                <span class="hourdate"><fmt:formatDate
+                                        pattern="dd-MM-yy"/--%></span><br/>
+                                <span class="hourdate"><%--fmt:formatDate
                                         value="${thedayaftertomorrow.pointForecast.fromTime}"
-                                        pattern="HH:mm"/></span><br/>
+                                        pattern="HH:mm"/--%></span><br/>
                                 <span class="hourtemp"><fmt:formatNumber
                                         value="${thedayaftertomorrow.pointForecast.temperature.value}"
                                         pattern="0"/>&#8451;</span><br/>
