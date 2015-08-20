@@ -3,11 +3,10 @@
     <parent>
         <artifactId>meteo</artifactId>
         <groupId>no.api.meteo</groupId>
-        <version>2.0.3-SNAPSHOT</version>
+        <version>3.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>no.api.meteo</groupId>
     <artifactId>meteo-extras</artifactId>
     <name>meteo-extras</name>
     <description>Meteo Extras package</description>

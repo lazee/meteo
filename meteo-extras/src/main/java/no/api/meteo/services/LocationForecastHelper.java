@@ -100,8 +100,7 @@ public final class LocationForecastHelper {
             ZonedDateTime ahead = now.plusHours(i);
             PointForecast pointForecast = indexer.getPointForecast(ahead);
             if (pointForecast != null) {
-                PeriodForecast periodForecast =
-                        indexer.getTightestFitPeriodForecast(cloneZonedDateTime(pointForecast.getFromTime()));
+                PeriodForecast periodForecast = indexer.getTightestFitPeriodForecast(pointForecast.getFromTime());
                 pointExtrasForecasts.add(new MeteoExtrasForecast(pointForecast, periodForecast));
             }
         }
@@ -123,11 +122,16 @@ public final class LocationForecastHelper {
      * @return Optional containing a forecast or {@link Optional#empty()} if no forecast could be created.
      */
     public Optional<MeteoExtrasForecast> findBestForecastForPeriod(ZonedDateTime from, ZonedDateTime to) {
-        PeriodForecast periodForecast = indexer.getBestFitPeriodForecast(from, to);
+
+        // Make sure the given input dates are converted to UTC before moving on.
+        PeriodForecast periodForecast = indexer.getBestFitPeriodForecast(
+                from.withZoneSameInstant(zoneId),
+                to.withZoneSameInstant(zoneId));
+
         if (periodForecast == null) {
             return Optional.empty();
         }
-        PointForecast pointForecast = indexer.getPointForecast(cloneZonedDateTime(periodForecast.getFromTime()));
+        PointForecast pointForecast = indexer.getPointForecast(periodForecast.getFromTime());
         if (pointForecast == null) {
             return Optional.empty();
         }
@@ -167,12 +171,13 @@ public final class LocationForecastHelper {
     /**
      * Create a detailed forecast for a given date within this location forecast.
      *
-     * @param dt
+     * @param dateTime
      *         The date to create the forecast for.
      *
      * @return The detailed forecast for the given date. Will be empty if data is not found.
      */
-    public MeteoExtrasForecastDay createForcastForDay(ZonedDateTime dt) {
+    public MeteoExtrasForecastDay createForcastForDay(ZonedDateTime dateTime) {
+        ZonedDateTime dt = dateTime.withZoneSameInstant(zoneId);
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
         addForecastToList(findBestForecastForPeriod(dt.withHour(0), dt.withHour(6)), forecasts);
         addForecastToList(findBestForecastForPeriod(dt.withHour(6), dt.withHour(12)), forecasts);
@@ -181,7 +186,8 @@ public final class LocationForecastHelper {
         return new MeteoExtrasForecastDay(dt.toLocalDate(), forecasts);
     }
 
-    public MeteoExtrasForecastDay createSimpleForcastForDay(ZonedDateTime dt) {
+    public MeteoExtrasForecastDay createSimpleForcastForDay(ZonedDateTime dateTime) {
+        ZonedDateTime dt = dateTime.withZoneSameInstant(zoneId);
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
         addForecastToList(findNearestForecast(dt.withHour(14)), forecasts);
         return new MeteoExtrasForecastDay(dt.toLocalDate(), forecasts);
@@ -203,18 +209,18 @@ public final class LocationForecastHelper {
      * @param date The date to get the forecast for.
      * @return Optional containing the forecast if found, else {@link Optional#empty()}
      */
-    public Optional<MeteoExtrasForecast> findNearestForecast(ZonedDateTime date) {
+    public Optional<MeteoExtrasForecast> findNearestForecast(ZonedDateTime dateTime) {
+        ZonedDateTime dt = dateTime.withZoneSameInstant(zoneId);
         PointForecast chosenForecast = null;
         for (Forecast forecast : locationForecast.getForecasts()) {
             if (forecast instanceof PointForecast) {
                 PointForecast pointForecast = (PointForecast) forecast;
-                if (isDateMatch(date, cloneZonedDateTime(pointForecast.getFromTime()))) {
+                if (isDateMatch(dt, cloneZonedDateTime(pointForecast.getFromTime()))) {
                     chosenForecast = pointForecast;
                     break;
                 } else if (chosenForecast == null) {
                     chosenForecast = pointForecast;
-                } else if (isNearerDate(cloneZonedDateTime(pointForecast.getFromTime()), date,
-                                        cloneZonedDateTime(chosenForecast.getFromTime()))) {
+                } else if (isNearerDate(pointForecast.getFromTime(), dt, chosenForecast.getFromTime())) {
                     chosenForecast = pointForecast;
                 }
             }
@@ -222,8 +228,7 @@ public final class LocationForecastHelper {
         return (chosenForecast == null ?
                 Optional.<MeteoExtrasForecast>empty() :
                 Optional.of(new MeteoExtrasForecast(chosenForecast,
-                                                    indexer.getWidestFitPeriodForecast(
-                                                            cloneZonedDateTime(chosenForecast.getFromTime())))));
+                                                    indexer.getWidestFitPeriodForecast(chosenForecast.getFromTime()))));
     }
 
     private void init() {

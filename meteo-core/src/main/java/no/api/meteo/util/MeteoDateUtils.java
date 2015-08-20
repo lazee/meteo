@@ -19,6 +19,7 @@ package no.api.meteo.util;
 import no.api.meteo.MeteoException;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -79,7 +80,7 @@ public final class MeteoDateUtils {
         if (zonedDateTime == null) {
             return null;
         }
-        return zonedDateTime.minusSeconds(0);
+        return zonedDateTime.withZoneSameInstant(ZoneId.of("Z"));
     }
 
 
