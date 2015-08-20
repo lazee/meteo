@@ -66,36 +66,7 @@
         </profile>
     </profiles>
     
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.25</version>
-                <configuration>
-                    <webDefaultXml>jetty/webdefault.xml</webDefaultXml>
-                    <jettyConfig>jetty/jetty.xml</jettyConfig>
-                    <contextPath>/</contextPath>
-                    <scanIntervalSeconds>${scan.interval.seconds}</scanIntervalSeconds>
-                    <connectors>
-                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>8888</port>
-                        </connector>
-                    </connectors>
-                    <systemProperties>
-                        <systemProperty>
-                            <name>logback.configurationFile</name>
-                            <value>./jetty/logback.xml</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>file.encoding</name>
-                            <value>UTF-8</value>
-                        </systemProperty>
-                    </systemProperties>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
     <dependencies>
         <dependency>
             <groupId>no.api.meteo</groupId>
@@ -110,24 +81,16 @@
             <artifactId>meteo-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty</artifactId>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>start</artifactId>
+            <groupId>no.api.freemarker</groupId>
+            <artifactId>freemarker-java8</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-2.1-jetty</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-naming</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-client</artifactId>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
     </dependencies>
 </project>

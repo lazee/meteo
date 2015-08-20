@@ -1,10 +1,10 @@
 
 <div class="container">
-<hr>
+    <hr>
 
-<footer>
-    <p><a href="http://github.com/amedia/meteo">The Meteo project</a></p>
-</footer>
+    <footer>
+        <p><a href="http://github.com/amedia/meteo">The Meteo project</a></p>
+    </footer>
 </div>
 <!-- /container -->
 
