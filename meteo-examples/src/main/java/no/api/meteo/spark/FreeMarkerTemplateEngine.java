@@ -16,7 +16,6 @@
 
 package no.api.meteo.spark;
 
-import freemarker.cache.NullCacheStorage;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -27,6 +26,8 @@ import spark.TemplateEngine;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.time.ZoneId;
+import java.util.TimeZone;
 
 @Slf4j
 public class FreeMarkerTemplateEngine extends TemplateEngine {
@@ -52,8 +53,8 @@ public class FreeMarkerTemplateEngine extends TemplateEngine {
 
     private Configuration createFreeMarkerConfiguration() {
         Configuration configuration = new Configuration();
+        configuration.setTimeZone(TimeZone.getTimeZone(ZoneId.of("Europe/Oslo")));
         configuration.setClassForTemplateLoading(FreeMarkerTemplateEngine.class, "/");
-        configuration.setCacheStorage(new NullCacheStorage());
         configuration.setObjectWrapper(new Java8ObjectWrapper(Configuration.VERSION_2_3_23));
         return configuration;
     }

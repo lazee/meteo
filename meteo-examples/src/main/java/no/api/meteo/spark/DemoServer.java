@@ -55,48 +55,50 @@ public class DemoServer {
 
         get("/location", (req, rest) -> {
             Map<String, Object> attributes = new HashMap<>();
-            
             if (req.queryParams("issearch") != null && req.queryParams("issearch").equals("true")) {
-
-                attributes.put("search", true);
-                String p = req.queryParams("p");
-                attributes.put("p", p == null ? "0" : p);
-                attributes.put("longitude", req.queryParams("longitude"));
-                attributes.put("latitude", req.queryParams("latitude"));
-                attributes.put("altitude", req.queryParams("altitude"));
-
-                try {
-                    MeteoData<LocationForecast> meteoData = fetchLocationForecast(req);
-                    attributes.put("data", meteoData.getResult());
-                    attributes.put("raw", meteoData.getResponse().getData());
-
-                    LocationForecastHelper helper = new LocationForecastHelper(meteoData.getResult());
-                    attributes.put("last24", helper.findHourlyPointForecastsFromNow(24));
-
-                    ZonedDateTime firstDate = (ZonedDateTime.now(ZoneId.of("Z")).withHour(12).withMinute(0).withSecond(0));
-                    Optional<MeteoExtrasForecast> todayForecast = helper.findNearestForecast(firstDate);
-                    if (todayForecast.isPresent()) {
-                        attributes.put("today", todayForecast.get());
-                    }
-
-                    Optional<MeteoExtrasForecast> tomorrowForecast = helper.findNearestForecast(firstDate.plusDays(1));
-                    if (tomorrowForecast.isPresent()) {
-                        attributes.put("tomorrow", tomorrowForecast.get());
-                    }
-
-                    Optional<MeteoExtrasForecast> afterForecast = helper.findNearestForecast(firstDate.plusDays(2));
-                    if (afterForecast.isPresent()) {
-                        attributes.put("thedayaftertomorrow", afterForecast.get());
-                    }
-                } catch (MeteoException e) {
-                    log.error("Caught exception", e);
-                }
+                prepareLocationResult(req, attributes);
             } else {
                 attributes.put("search", false);
             }
             return new ModelAndView(attributes, "location");
         }, new FreeMarkerTemplateEngine());
 
+    }
+
+    private static void prepareLocationResult(Request req, Map<String, Object> attributes) {
+        attributes.put("search", true);
+        String p = req.queryParams("p");
+        attributes.put("p", p == null ? "0" : p);
+        attributes.put("longitude", req.queryParams("longitude"));
+        attributes.put("latitude", req.queryParams("latitude"));
+        attributes.put("altitude", req.queryParams("altitude"));
+
+        try {
+            MeteoData<LocationForecast> meteoData = fetchLocationForecast(req);
+            attributes.put("data", meteoData.getResult());
+            attributes.put("raw", meteoData.getResponse().getData());
+
+            LocationForecastHelper helper = new LocationForecastHelper(meteoData.getResult());
+            attributes.put("last24", helper.findHourlyPointForecastsFromNow(24));
+
+            ZonedDateTime firstDate = (ZonedDateTime.now(ZoneId.of("Z")).withHour(12).withMinute(0).withSecond(0));
+            Optional<MeteoExtrasForecast> todayForecast = helper.findNearestForecast(firstDate);
+            if (todayForecast.isPresent()) {
+                attributes.put("today", todayForecast.get());
+            }
+
+            Optional<MeteoExtrasForecast> tomorrowForecast = helper.findNearestForecast(firstDate.plusDays(1));
+            if (tomorrowForecast.isPresent()) {
+                attributes.put("tomorrow", tomorrowForecast.get());
+            }
+
+            Optional<MeteoExtrasForecast> afterForecast = helper.findNearestForecast(firstDate.plusDays(2));
+            if (afterForecast.isPresent()) {
+                attributes.put("thedayaftertomorrow", afterForecast.get());
+            }
+        } catch (MeteoException e) {
+            log.error("Caught exception", e);
+        }
     }
 
     private static MeteoData<LocationForecast> fetchLocationForecast(Request req) throws MeteoException {
