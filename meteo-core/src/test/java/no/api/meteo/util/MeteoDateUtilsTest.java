@@ -49,7 +49,7 @@ public final class MeteoDateUtilsTest {
     @Test
     public void testLocalDateToYyyyMMdd() throws Exception {
         LocalDate firstDate = LocalDate.of(2010, 5, 17);
-        Assert.assertEquals("20100517", MeteoDateUtils.zonedDateTimeToYyyyMMdd(firstDate));
+        Assert.assertEquals("2010-05-17", MeteoDateUtils.zonedDateTimeToYyyyMMdd(firstDate));
 
     }
 
@@ -81,7 +81,7 @@ public final class MeteoDateUtilsTest {
     public void testDateToYyyyMMdd() throws Exception {
         Assert.assertNull(MeteoDateUtils.zonedDateTimeToYyyyMMdd(null));
         LocalDate dt = LocalDate.of(1977, 3, 21);
-        Assert.assertEquals("19770321", MeteoDateUtils.zonedDateTimeToYyyyMMdd(dt));
+        Assert.assertEquals("1977-03-21", MeteoDateUtils.zonedDateTimeToYyyyMMdd(dt));
 
     }
 

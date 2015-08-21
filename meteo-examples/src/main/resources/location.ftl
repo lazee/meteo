@@ -43,7 +43,10 @@
             <div id="myTabContent" class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="view" aria-labelledBy="view-tab">
                     <h3>Forecast for the next days</h3>
-                    <h4>Today</h4>
+
+                    <p>Please note that we do not show night symbols in this demo as it required a combined use with the Sunrise API.</p>
+
+                    <!--<h4>Today</h4>
                     <table class="dataTable">
                         <thead>
                         <tr>
@@ -61,7 +64,7 @@
                             <td>22</td>
                             <td>22</td>
                         </tr>
-                    </table>
+                    </table>-->
 
                     <h4>Tomorrow (From yr.no for comparison)</h4>
 

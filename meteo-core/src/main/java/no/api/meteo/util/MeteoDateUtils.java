@@ -66,7 +66,7 @@ public final class MeteoDateUtils {
         if (localDate == null) {
             return null;
         }
-        return localDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        return localDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
     public static String zonedDateTimeToHHMM(ZonedDateTime zonedDateTime) {
