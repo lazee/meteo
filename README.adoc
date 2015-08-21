@@ -53,7 +53,7 @@ For Maven you would add this to your pom:
 <dependency>
     <groupId>no.api.meteo</groupId>
     <artifactId>meteo-core</artifactId>
-    <version>2.0.2</version>
+    <version>2.0.3</version>
 </dependency>
 ----
 
@@ -64,7 +64,7 @@ If you want to use the default implementation of a MeteoClient, then you would a
 <dependency>
     <groupId>no.api.meteo</groupId>
     <artifactId>meteo-client</artifactId>
-    <version>2.0.2</version>
+    <version>2.0.3</version>
 </dependency>
 ----
 
