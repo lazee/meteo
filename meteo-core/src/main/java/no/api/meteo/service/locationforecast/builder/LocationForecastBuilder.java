@@ -22,13 +22,14 @@ import lombok.Setter;
 import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
+import no.api.meteo.util.EntityBuilder;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
-public class LocationForecastBuilder {
+public class LocationForecastBuilder implements EntityBuilder<LocationForecast> {
 
     @Setter
     @Getter

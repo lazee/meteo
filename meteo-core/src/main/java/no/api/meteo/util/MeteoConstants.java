@@ -103,6 +103,15 @@ public final class MeteoConstants {
     public static final String TAG_TEMPERATURE = "temperature";
 
 
+    public static final String TAG_AVAILABLE = "available";
+    public static final String TAG_QUERY = "query";
+    public static final String TAG_PARAMETER = "parameter";
+    public static final String TAG_NAME = "name";
+    public static final String TAG_VALUE = "value";
+    public static final String TAG_LABEL = "label";
+    public static final String TAG_URI = "uri";
+
+
     public static final String ATTR_LICENSEURL = "licenseurl";
 
     public static final String ATTR_DATE = "date";

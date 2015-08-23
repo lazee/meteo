@@ -158,6 +158,7 @@ public final class LocationForecastHelper {
      * weather reports where you only show the predicted weather icon and temperature, and not all the weather details.
      *
      * @return A long term forecast, which is a week in our view of the world.
+     * @throws MeteoException If an error occured while creating the simple longterm forecast.
      */
     public MeteoExtrasLongTermForecast createSimpleLongTermForecast() throws MeteoException {
         List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
@@ -206,7 +207,7 @@ public final class LocationForecastHelper {
     /**
      * Get the most accurate forecast for the given date.
      *
-     * @param date The date to get the forecast for.
+     * @param dateTime The date to get the forecast for.
      * @return Optional containing the forecast if found, else {@link Optional#empty()}
      */
     public Optional<MeteoExtrasForecast> findNearestForecast(ZonedDateTime dateTime) {

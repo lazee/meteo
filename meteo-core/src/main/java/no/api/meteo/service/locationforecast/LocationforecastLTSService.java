@@ -30,8 +30,7 @@ import static no.api.meteo.util.MeteoConstants.PARAM_LATITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
 
 /**
- * http://api.met.no/weatherapi/locationforecastlts/1.0/documentation http://api.met.no/weatherapi/locationforecast/1
- * .9/documentation
+ * Service object for fetching data for the LocationforecastLTS service in the MET API.
  */
 public final class LocationforecastLTSService extends AbstractMeteoService {
 
@@ -41,11 +40,32 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
 
     private final MeteoDataParser<LocationForecast> parser;
 
+    /**
+     * Constructor requiring an MeteoClient instance.
+     *
+     * @param meteoClient
+     *         An instance of MeteoClient that the service will use to fetch the data.
+     */
     public LocationforecastLTSService(MeteoClient meteoClient) {
         super(meteoClient, MET_SERVICE_NAME, new MeteoServiceVersion(1, 9));
         parser = new LocationforcastLTSParser();
     }
 
+    /**
+     * Fetch a LocationforecastLTS from the MET API, based on longitude, latitude and altitude.
+     *
+     * @param longitude
+     *         The longitude of the location where the forecast should be fetched for.
+     * @param latitude
+     *         The latitude of the location where the forecast should be fetched for.
+     * @param altitude
+     *         The altitude of the location where the forecast should be fetched for.
+     *
+     * @return A MeteoData object containing response information and data converted into a LocationForcast object.
+     *
+     * @throws MeteoException
+     *         If a problem occurred while fetching or parsing the MET data.
+     */
     public MeteoData<LocationForecast> fetchContent(double longitude, double latitude, int altitude)
             throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
@@ -57,6 +77,19 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
+    /**
+     * Fetch a LocationforecastLTS from the MET API, based on longitude, and latitude.
+     *
+     * @param longitude
+     *         The longitude of the location where the forecast should be fetched for.
+     * @param latitude
+     *         The latitude of the location where the forecast should be fetched for.
+     *
+     * @return A MeteoData object containing response information and data converted into a LocationForcast object.
+     *
+     * @throws MeteoException
+     *         If a problem occurred while fetching or parsing the MET data.
+     */
     public MeteoData<LocationForecast> fetchContent(double longitude, double latitude) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUriBuilder()

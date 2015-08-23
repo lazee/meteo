@@ -21,6 +21,8 @@ import java.net.URI;
 public interface MeteoClient {
 
     /**
+     * Fetch a MET resource from the given uri.
+     *
      * @param uri The MET API uri.
      * @return Response object containing the MET data.
      * @throws MeteoClientException If invalid url or content couldn't be fetched.

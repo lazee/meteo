@@ -37,8 +37,8 @@ import no.api.meteo.entity.core.service.locationforecast.TemperatureProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindDirection;
 import no.api.meteo.entity.core.service.locationforecast.WindProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindSpeed;
+import no.api.meteo.service.AbstractMeteoDataParser;
 import no.api.meteo.service.MeteoDataParser;
-import no.api.meteo.service.MeteoDataParserException;
 import no.api.meteo.service.locationforecast.builder.LocationForecastBuilder;
 import no.api.meteo.service.locationforecast.builder.PeriodForecastBuilder;
 import no.api.meteo.service.locationforecast.builder.PointForecastBuilder;
@@ -46,9 +46,7 @@ import no.api.meteo.util.EntityBuilder;
 import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.util.MeteoXppUtils;
 import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Stack;
 
@@ -59,58 +57,30 @@ import static no.api.meteo.util.MeteoXppUtils.getString;
 import static no.api.meteo.util.MeteoXppUtils.getZoneDateTime;
 
 @Slf4j
-public final class LocationforcastLTSParser implements MeteoDataParser<LocationForecast> {
+public final class LocationforcastLTSParser extends AbstractMeteoDataParser<LocationForecast, EntityBuilder>  implements MeteoDataParser<LocationForecast> {
 
     @Override
     public LocationForecast parse(String data) throws MeteoException {
-        return doParse(MeteoXppUtils.createPullParser(data));
+        return doParse(MeteoXppUtils.createPullParser(data), new LocationForecastBuilder());
     }
 
     @Override
     public LocationForecast parse(InputStream inputStream) throws MeteoException {
-        return doParse(MeteoXppUtils.createPullParser(inputStream));
+        return doParse(MeteoXppUtils.createPullParser(inputStream), new LocationForecastBuilder());
     }
 
-    public LocationForecast doParse(XmlPullParser xpp) throws MeteoException {
-        try {
-            LocationForecastBuilder locationForecastBuilder = new LocationForecastBuilder();
-            Stack<EntityBuilder> stack = new Stack<>();
-
-            int eventType = xpp.getEventType();
-            while (isMoreToParse(eventType)) {
-                if (eventType == XmlPullParser.START_TAG) {
-                    handleStartTags(locationForecastBuilder, xpp, stack);
-                } else if (eventType == XmlPullParser.END_TAG) {
-                    handleEndTags(locationForecastBuilder, xpp, stack);
-                } else {
-                    log.trace("Skipping event type : " + eventType);
-                }
-                eventType = xpp.next();
-            }
-            return locationForecastBuilder.build();
-        } catch (IOException e) {
-            throw new MeteoDataParserException("An IO problem occurred", e);
-        } catch (XmlPullParserException e) {
-            throw new MeteoDataParserException("A parsing problem occurred", e);
-        }
-    }
-
-    private boolean isMoreToParse(int eventType) {
-        return eventType != XmlPullParser.END_DOCUMENT;
-    }
-
-    private void handleStartTags(LocationForecastBuilder locationForecastBuilder, XmlPullParser xpp,
-                                 Stack<EntityBuilder> stack) { // NOSONAR The complexity is quit alright :)
+    @Override
+    public void handleStartTags(XmlPullParser xpp, Stack<EntityBuilder> stack) {
         switch (xpp.getName()) {
             case TAG_WEATHERDATA:
-                handleWeatherDataTag(locationForecastBuilder, xpp);
+                handleWeatherDataTag((LocationForecastBuilder) getEntityBuilder(), xpp);
                 break;
             case TAG_TIME:
                 handleTimeDataTag(stack, xpp);
                 break;
             case TAG_LOCATION:
-                if (locationForecastBuilder.getLocation() == null) {
-                    handleLocationDataTag(locationForecastBuilder, xpp);
+                if (((LocationForecastBuilder) getEntityBuilder()).getLocation() == null) {
+                    handleLocationDataTag((LocationForecastBuilder) getEntityBuilder(), xpp);
                 } else {
                     log.trace("Skipping locations since it is already added.");
                 }
@@ -218,7 +188,7 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 break;
             case TAG_META:
                 try {
-                    locationForecastBuilder.getMetaBuilder().setLicenseUri(
+                    ((LocationForecastBuilder) getEntityBuilder()).getMetaBuilder().setLicenseUri(
                             MeteoNetUtils.createUri(getString(xpp, ATTR_LICENSEURL)));
                 } catch (MeteoException e) {
                     log.debug("License url not found in feed");
@@ -232,7 +202,7 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                                             getZoneDateTime(xpp, "nextrun"),
                                             getZoneDateTime(xpp, "termin"),
                                             getString(xpp, "name"));
-                    locationForecastBuilder.getMetaBuilder().getModels().add(model);
+                    ((LocationForecastBuilder) getEntityBuilder()).getMetaBuilder().getModels().add(model);
                 } catch (MeteoException e) {
                     log.warn("Could not convert model dates found in returned xml", e);
                 }
@@ -242,6 +212,16 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                 break;
         }
     }
+
+    @Override
+    public void handleEndTags(EntityBuilder<LocationForecast> builder, XmlPullParser xpp, Stack<EntityBuilder> stack) {
+        if (TAG_TIME.equals(xpp.getName())) {
+            ((LocationForecastBuilder) getEntityBuilder()).getForecasts().add((Forecast) stack.pop().build());
+        } else {
+            log.trace("Unhandled end tag: " + xpp.getName());
+        }
+    }
+
 
     private PeriodForecastBuilder periodPeek(Stack<EntityBuilder> stack) {
         return (PeriodForecastBuilder) stack.peek();
@@ -262,15 +242,6 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
             periodForecastBuilder.setFromTime(pointForecast.getFromTime());
             periodForecastBuilder.setToTime(pointForecast.getToTime());
             stack.push(periodForecastBuilder);
-        }
-    }
-
-    private void handleEndTags(LocationForecastBuilder locationForecastBuilder, XmlPullParser xpp,
-                               Stack<EntityBuilder> stack) {
-        if (TAG_TIME.equals(xpp.getName())) {
-            locationForecastBuilder.getForecasts().add((Forecast) stack.pop().build());
-        } else {
-            log.trace("Unhandled end tag: " + xpp.getName());
         }
     }
 
@@ -300,4 +271,6 @@ public final class LocationforcastLTSParser implements MeteoDataParser<LocationF
                              getDouble(xpp, ATTR_LATITUDE),
                              getInteger(xpp, ATTR_ALTITUDE)));
     }
+
+
 }

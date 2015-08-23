@@ -14,22 +14,29 @@
  * limitations under the License.
  */
 
-package no.api.meteo.client;
+package no.api.meteo.service.textforecast.available.builder;
 
-import no.api.meteo.MeteoException;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import no.api.meteo.entity.core.service.textforecast.available.Parameter;
+import no.api.meteo.entity.core.service.textforecast.available.Query;
+import no.api.meteo.util.EntityBuilder;
 
-/**
- * Exception thrown by client implementations if any exception occurs during fetching and parsing of date from
- * http://api.met.no.
- */
-public class MeteoClientException extends MeteoException {
+import java.net.URI;
+import java.util.List;
 
-    public MeteoClientException(String message) {
-        super(message);
+@NoArgsConstructor
+@Setter
+@Getter
+public class QueryBuilder implements EntityBuilder<Query> {
+
+    private URI uri;
+
+    private List<Parameter> parameters;
+
+    @Override
+    public Query build() {
+        return new Query(parameters, uri);
     }
-
-    public MeteoClientException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
 }
