@@ -10,7 +10,7 @@ except for the fact that it use their API to provide you with weather data.
 
 Meteo is developed and maintained by Amedia Utvikling AS. It is in use within all the Amedia sites (more than 70).
 It mainly supports the services that Amedia needs at any given time. But we will consider adding other services as
-well upon request.
+well upon request (or send a pull request).
 
 ## The MET terms of use
 
@@ -40,7 +40,7 @@ by other users (Please send pull requests).
 
 ### Requirements
 
-Meteo requires Java 8.x or later.
+Meteo requires Java 8.x or later, due to heavy use of the new wonderful java.time API. 
 
 ### Installation
 
