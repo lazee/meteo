@@ -49,7 +49,7 @@ public class TextforecastService extends AbstractMeteoService {
     public MeteoData<Weather> fetchContent(ForecastQuery query) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUriBuilder()
-                        .addParameter("forcast", query.getName())
+                        .addParameter("forecast", query.getName())
                         .addParameter("language", query.getLanguage().getValue())
                         .build());
         return new MeteoData<>(parser.parse(response.getData()), response);
