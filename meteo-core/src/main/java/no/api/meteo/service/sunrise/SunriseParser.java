@@ -19,11 +19,10 @@ package no.api.meteo.service.sunrise;
 import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.Location;
-import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.service.sunrise.Noon;
 import no.api.meteo.entity.core.service.sunrise.PhaseType;
 import no.api.meteo.entity.core.service.sunrise.Sunrise;
-import no.api.meteo.service.AbstractMeteoDataParser;
+import no.api.meteo.service.AbstractMetaMeteoDataParser;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.sunrise.builder.MoonBuilder;
 import no.api.meteo.service.sunrise.builder.SunBuilder;
@@ -31,7 +30,6 @@ import no.api.meteo.service.sunrise.builder.SunriseBuilder;
 import no.api.meteo.service.sunrise.builder.SunriseDateBuilder;
 import no.api.meteo.util.EntityBuilder;
 import no.api.meteo.util.MeteoConstants;
-import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.util.MeteoXppUtils;
 import org.xmlpull.v1.XmlPullParser;
 
@@ -46,7 +44,8 @@ import static no.api.meteo.util.MeteoXppUtils.getString;
 import static no.api.meteo.util.MeteoXppUtils.getZoneDateTime;
 
 @Slf4j
-public final class SunriseParser extends AbstractMeteoDataParser<Sunrise, SunriseDateBuilder> implements MeteoDataParser<Sunrise> {
+public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, SunriseDateBuilder>
+        implements MeteoDataParser<Sunrise> {
 
     private static final String COULD_NOT_CONVERT_DATE_FROM_XML = "Could not convert date from xml";
 
@@ -64,14 +63,14 @@ public final class SunriseParser extends AbstractMeteoDataParser<Sunrise, Sunris
     public void handleStartTags(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         switch (xpp.getName()) {
             case TAG_META:
-                handleMetaTag((SunriseBuilder) getEntityBuilder(), xpp);
+                handleMetaTag(getSunriseBuilder(), xpp);
                 break;
             case TAG_TIME: {
                 handleTimeTag(xpp, stack);
                 break;
             }
             case TAG_LOCATION:
-                handleLocationTag((SunriseBuilder) getEntityBuilder(), xpp);
+                handleLocationTag(getSunriseBuilder(), xpp);
                 break;
             case TAG_SUN: {
                 handleSunTag(xpp, stack);
@@ -102,21 +101,12 @@ public final class SunriseParser extends AbstractMeteoDataParser<Sunrise, Sunris
     @Override
     public void handleEndTags(EntityBuilder<Sunrise> builder, XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         if (TAG_TIME.equals(xpp.getName())) {
-            ((SunriseBuilder) builder).getDates().add(stack.pop().build());
+            getSunriseBuilder().getDates().add(stack.pop().build());
         } else {
             log.trace("Unhandled end tag: " + xpp.getName());
         }
     }
 
-    private void handleMetaTag(SunriseBuilder sunriseBuilder, XmlPullParser xpp) {
-        try {
-            Meta meta = new Meta(MeteoNetUtils.createUri(getString(xpp, ATTR_LICENSEURL)), null);
-            sunriseBuilder.setMeta(meta);
-            sunriseBuilder.setCreated(getZoneDateTime(xpp, ATTR_CREATED));
-        } catch (MeteoException e) {
-            log.warn("License url not found in feed");
-        }
-    }
 
     private void handleTimeTag(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         try {
@@ -175,6 +165,9 @@ public final class SunriseParser extends AbstractMeteoDataParser<Sunrise, Sunris
         }
     }
 
+    private SunriseBuilder getSunriseBuilder() {
+        return getSunriseBuilder();
+    }
 
 
 }

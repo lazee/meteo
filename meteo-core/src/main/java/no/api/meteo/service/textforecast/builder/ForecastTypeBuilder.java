@@ -14,39 +14,36 @@
  * limitations under the License.
  */
 
-package no.api.meteo.service.sunrise.builder;
+package no.api.meteo.service.textforecast.builder;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import no.api.meteo.entity.core.Location;
-import no.api.meteo.entity.core.Meta;
-import no.api.meteo.entity.core.service.sunrise.Sunrise;
-import no.api.meteo.entity.core.service.sunrise.SunriseDate;
-import no.api.meteo.util.MetaEntityBuilder;
+import no.api.meteo.entity.core.service.textforecast.Area;
+import no.api.meteo.entity.core.service.textforecast.ForecastType;
+import no.api.meteo.util.EntityBuilder;
 
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
 @Setter
 @Getter
-public class SunriseBuilder implements MetaEntityBuilder<Sunrise> {
+public class ForecastTypeBuilder implements EntityBuilder<ForecastType> {
 
-    private ZonedDateTime created;
+    private String name;
 
-    private Meta meta;
+    private List<Area> areas = new ArrayList<>();
 
-    private Location location;
+    private AreaBuilder areaBuilder = new AreaBuilder();
 
-    private List<SunriseDate> dates = new ArrayList<>();
+    public void pushAreaBuilder() {
+        areas.add(areaBuilder.build());
+        areaBuilder = new AreaBuilder();
+    }
 
     @Override
-    public Sunrise build() {
-        return new Sunrise(getCreated(),
-                           getMeta(),
-                           getLocation(),
-                           getDates());
+    public ForecastType build() {
+        return new ForecastType(getName(), getAreas());
     }
 }

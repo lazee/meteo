@@ -14,39 +14,31 @@
  * limitations under the License.
  */
 
-package no.api.meteo.service.sunrise.builder;
+package no.api.meteo.service.textforecast.builder;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import no.api.meteo.entity.core.Location;
-import no.api.meteo.entity.core.Meta;
-import no.api.meteo.entity.core.service.sunrise.Sunrise;
-import no.api.meteo.entity.core.service.sunrise.SunriseDate;
-import no.api.meteo.util.MetaEntityBuilder;
+import no.api.meteo.entity.core.service.textforecast.Time;
+import no.api.meteo.util.EntityBuilder;
 
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @NoArgsConstructor
 @Setter
 @Getter
-public class SunriseBuilder implements MetaEntityBuilder<Sunrise> {
+public class TimeBuilder implements EntityBuilder<Time> {
 
-    private ZonedDateTime created;
+    private ZonedDateTime to;
 
-    private Meta meta;
+    private ZonedDateTime from;
 
-    private Location location;
+    private String forecastOrigin;
 
-    private List<SunriseDate> dates = new ArrayList<>();
+    private ForecastTypeBuilder forecastTypeBuilder = new ForecastTypeBuilder();
 
     @Override
-    public Sunrise build() {
-        return new Sunrise(getCreated(),
-                           getMeta(),
-                           getLocation(),
-                           getDates());
+    public Time build() {
+        return new Time(getFrom(), getTo(), getForecastOrigin(), getForecastTypeBuilder().build());
     }
 }

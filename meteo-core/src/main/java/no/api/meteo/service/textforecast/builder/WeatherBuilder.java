@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-package no.api.meteo.service.sunrise.builder;
+package no.api.meteo.service.textforecast.builder;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.Meta;
-import no.api.meteo.entity.core.service.sunrise.Sunrise;
-import no.api.meteo.entity.core.service.sunrise.SunriseDate;
+import no.api.meteo.entity.core.service.textforecast.Time;
+import no.api.meteo.entity.core.service.textforecast.Weather;
 import no.api.meteo.util.MetaEntityBuilder;
 
 import java.time.ZonedDateTime;
@@ -32,21 +31,23 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 @Getter
-public class SunriseBuilder implements MetaEntityBuilder<Sunrise> {
-
-    private ZonedDateTime created;
+public class WeatherBuilder implements MetaEntityBuilder<Weather> {
 
     private Meta meta;
 
-    private Location location;
+    private String productDescription;
 
-    private List<SunriseDate> dates = new ArrayList<>();
+    private String title;
+
+    private List<Time> times = new ArrayList<>();
 
     @Override
-    public Sunrise build() {
-        return new Sunrise(getCreated(),
-                           getMeta(),
-                           getLocation(),
-                           getDates());
+    public Weather build() {
+        return new Weather(getTitle(), getMeta(), getProductDescription(), getTimes());
+    }
+
+    @Override
+    public void setCreated(ZonedDateTime timestamp) {
+        // Required by the interface, but not present for textforecasts.
     }
 }

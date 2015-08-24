@@ -100,12 +100,16 @@ public class AvailableTextforecastsParser extends AbstractMeteoDataParser<Availa
     @Override
     public void handleEndTags(EntityBuilder<Available> builder, XmlPullParser xpp, Stack<QueryBuilder> stack) {
         if (TAG_QUERY.equals(xpp.getName())) {
-            ((AvailableBuilder) builder).getQueries().add(stack.pop().build());
+            getAvailableBuilder().getQueries().add(stack.pop().build());
         } else if (TAG_PARAMETER.equals(xpp.getName())) {
             stack.peek().getParameters().add(parameterBuilder.build());
         } else {
             log.trace("Unhandled end tag: " + xpp.getName());
         }
+    }
+
+    private AvailableBuilder getAvailableBuilder() {
+        return (AvailableBuilder) getEntityBuilder();
     }
 
 }

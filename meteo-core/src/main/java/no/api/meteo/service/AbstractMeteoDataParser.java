@@ -58,4 +58,5 @@ public abstract class AbstractMeteoDataParser<E, F> {
     public abstract void handleStartTags(XmlPullParser xpp, Stack<F> stack);
 
     public abstract void handleEndTags(EntityBuilder<E> builder, XmlPullParser xpp, Stack<F> stack);
+
 }

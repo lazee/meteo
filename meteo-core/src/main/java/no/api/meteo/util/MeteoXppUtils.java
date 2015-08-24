@@ -26,7 +26,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Util class for simplifying different XPP tasks.
@@ -91,6 +94,12 @@ public final class MeteoXppUtils {
 
     public static ZonedDateTime getZoneDateTime(XmlPullParser xpp, String name) throws MeteoException {
         return MeteoDateUtils.fullFormatToZonedDateTime(getString(xpp, name));
+    }
+
+    public static ZonedDateTime getZoneDateTimeNorway(XmlPullParser xpp, String name) throws MeteoException {
+        LocalDateTime parse =
+                LocalDateTime.parse(getString(xpp, name), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        return parse.atZone(ZoneId.of("Europe/Oslo"));
     }
 
     public static LocalDate getLocalDate(XmlPullParser xpp, String name) throws MeteoException {

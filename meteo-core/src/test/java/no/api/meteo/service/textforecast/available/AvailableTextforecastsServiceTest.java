@@ -16,29 +16,14 @@
 
 package no.api.meteo.service.textforecast.available;
 
-import no.api.meteo.client.MeteoClient;
-import no.api.meteo.client.MeteoClientException;
 import no.api.meteo.client.MeteoData;
 import no.api.meteo.client.MeteoTestClient;
 import no.api.meteo.entity.core.service.textforecast.available.Available;
 import no.api.meteo.test.MeteoTestUtils;
-import no.api.meteo.util.MeteoNetUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class AvailableTextforecastsServiceTest {
-
-    @Test(expected = MeteoClientException.class)
-    public void testException() throws Exception {
-        MeteoClient client = new MeteoTestClient(null);
-        client.fetchContent(null);
-    }
-
-    @Test(expected = MeteoClientException.class)
-    public void testException2() throws Exception {
-        MeteoClient client = new MeteoTestClient(null);
-        client.fetchContent(MeteoNetUtils.createUri("http://www.fo.no"));
-    }
 
     @Test
     public void testFetchContent() throws Exception {
