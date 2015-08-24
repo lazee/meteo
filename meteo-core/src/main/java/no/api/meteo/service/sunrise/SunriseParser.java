@@ -166,7 +166,7 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
     }
 
     private SunriseBuilder getSunriseBuilder() {
-        return getSunriseBuilder();
+        return (SunriseBuilder) getEntityBuilder();
     }
 
 
