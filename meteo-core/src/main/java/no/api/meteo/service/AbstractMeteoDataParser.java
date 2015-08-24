@@ -33,15 +33,13 @@ public abstract class AbstractMeteoDataParser<E, F> {
     public E doParse(XmlPullParser xpp, EntityBuilder<E> entityBuilder) throws MeteoException {
         this.entityBuilder = entityBuilder;
         try {
-            int eventType = xpp.getEventType();
             Stack<F> stack = new Stack<>();
+            int eventType = xpp.getEventType();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
                     handleStartTags(xpp, stack);
                 } else if (eventType == XmlPullParser.END_TAG) {
                     handleEndTags(entityBuilder, xpp, stack);
-                } else {
-                    log.trace("Skipping event type : " + eventType);
                 }
                 eventType = xpp.next();
             }

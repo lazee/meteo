@@ -22,6 +22,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.time.LocalDate;
@@ -96,4 +97,17 @@ public final class MeteoXppUtils {
         return MeteoDateUtils.yyyyMMddToLocalDate(getString(xpp, name));
     }
 
+    public static String readText(XmlPullParser xpp) {
+        String result = null;
+        try {
+            if (xpp.next() == XmlPullParser.TEXT) {
+                result = xpp.getText();
+                xpp.nextTag();
+            }
+        } catch (XmlPullParserException | IOException e) {
+            log.error("Problem while reading tag body", e);
+        }
+        return result;
+
+    }
 }

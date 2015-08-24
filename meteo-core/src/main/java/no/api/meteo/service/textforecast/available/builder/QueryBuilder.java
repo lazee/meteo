@@ -24,6 +24,7 @@ import no.api.meteo.entity.core.service.textforecast.available.Query;
 import no.api.meteo.util.EntityBuilder;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -33,7 +34,7 @@ public class QueryBuilder implements EntityBuilder<Query> {
 
     private URI uri;
 
-    private List<Parameter> parameters;
+    private List<Parameter> parameters = new ArrayList<>();
 
     @Override
     public Query build() {

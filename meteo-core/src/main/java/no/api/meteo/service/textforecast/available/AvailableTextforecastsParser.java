@@ -39,6 +39,7 @@ import static no.api.meteo.util.MeteoConstants.TAG_PARAMETER;
 import static no.api.meteo.util.MeteoConstants.TAG_QUERY;
 import static no.api.meteo.util.MeteoConstants.TAG_URI;
 import static no.api.meteo.util.MeteoConstants.TAG_VALUE;
+import static no.api.meteo.util.MeteoXppUtils.readText;
 
 @Slf4j
 public class AvailableTextforecastsParser extends AbstractMeteoDataParser<Available, QueryBuilder>
@@ -69,19 +70,25 @@ public class AvailableTextforecastsParser extends AbstractMeteoDataParser<Availa
                 parameterBuilder = new ParameterBuilder();
                 break;
             case TAG_NAME: {
-                parameterBuilder.setName(xpp.getText());
+                parameterBuilder.setName(readText(xpp));
                 break;
             }
             case TAG_VALUE: {
-                parameterBuilder.setName(xpp.getText());
+                parameterBuilder.setValue(readText(xpp));
                 break;
             }
             case TAG_LABEL: {
-                parameterBuilder.setName(xpp.getText());
+                parameterBuilder.setLabel(readText(xpp));
                 break;
             }
             case TAG_URI: {
-                stack.peek().setUri(URI.create(xpp.getText()));
+                String uri = null;
+                try {
+                    uri = readText(xpp);
+                    stack.peek().setUri(URI.create(uri));
+                } catch (IllegalArgumentException e) {
+                    log.error("Could not parse as uri: " + uri, e);
+                }
                 break;
             }
             default:

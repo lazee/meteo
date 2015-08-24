@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<available xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi-files/schemas/list-0.2.xsd">
+
+
+    <query>
+        <parameter>
+            <name>forecast</name>
+            <value>aw_engm</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=aw_engm;language=en;</uri>
+
+    </query>
+
+    <query>
+        <parameter>
+            <name>forecast</name>
+            <value>coast</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=coast;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>coast</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=coast;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>gale</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=gale;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>gale</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=gale;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>iga_fbno41</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=iga_fbno41;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>iga_fbno42</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=iga_fbno42;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>iga_fbno44</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=iga_fbno44;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>iga_fbno45</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=iga_fbno45;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>land</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=land;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>landday0</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=landday0;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>landday1</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=landday1;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>landday2</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=landday2;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>landlong</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=landlong;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>landmerge</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=landmerge;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>minrk0_clean</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=minrk0_clean;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>obs</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=obs;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>obs_va</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=obs_va;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>obs_vv</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=obs_vv;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno69</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno69;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno70</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno70;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno72</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno72;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno74</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno74;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno75</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno75;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno76</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno76;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno77</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno77;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno78</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno78;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno79</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno79;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>route_fbno80</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=route_fbno80;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>seabank</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=seabank;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>seabankday2</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=seabankday2;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>seabanklong</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=seabanklong;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>seahigh</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=seahigh;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>seahigh</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>en</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=seahigh;language=en;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>seaoslofjord</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=seaoslofjord;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>valand0</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=valand0;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>valand1</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=valand1;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>valand2</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=valand2;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>vnland0</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=vnland0;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>vnland1</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=vnland1;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>vnland2</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=vnland2;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>vvland0</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=vvland0;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>vvland1</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=vvland1;language=nb;</uri>
+
+    </query>
+
+    <query>
+
+        <parameter>
+            <name>forecast</name>
+            <value>vvland2</value>
+            <label></label>
+        </parameter>
+
+        <parameter>
+            <name>language</name>
+            <value>nb</value>
+            <label></label>
+        </parameter>
+
+
+        <uri>http://api.met.no/weatherapi/textforecast/1.6/?forecast=vvland2;language=nb;</uri>
+
+    </query>
+
+
+</available>

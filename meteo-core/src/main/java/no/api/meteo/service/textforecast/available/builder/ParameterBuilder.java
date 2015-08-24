@@ -19,12 +19,14 @@ package no.api.meteo.service.textforecast.available.builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.entity.core.service.textforecast.available.Parameter;
 import no.api.meteo.util.EntityBuilder;
 
 @NoArgsConstructor
 @Setter
 @Getter
+@Slf4j
 public class ParameterBuilder implements EntityBuilder<Parameter> {
 
     private String name;

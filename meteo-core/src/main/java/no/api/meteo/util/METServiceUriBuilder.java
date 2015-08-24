@@ -51,7 +51,11 @@ public final class METServiceUriBuilder {
 
         boolean first = true;
         for (Pair pair : parameters) {
-            sb.append(first ? "" : "&").append(pair.getKey()).append("=").append(pair.getValue().toString());
+            sb.append(first ? "" : "&").append(pair.getKey());
+
+            if (pair.getValue() != null) {
+                sb.append("=").append(pair.getValue().toString());
+            }
             first = false;
         }
         return MeteoNetUtils.createUri(sb.toString());

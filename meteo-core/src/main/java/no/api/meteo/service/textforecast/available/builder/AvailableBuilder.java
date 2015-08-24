@@ -23,6 +23,7 @@ import no.api.meteo.entity.core.service.textforecast.available.Available;
 import no.api.meteo.entity.core.service.textforecast.available.Query;
 import no.api.meteo.util.EntityBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -30,7 +31,7 @@ import java.util.List;
 @Getter
 public class AvailableBuilder implements EntityBuilder<Available> {
 
-    private List<Query> queries;
+    private List<Query> queries = new ArrayList<>();
 
     @Override
     public Available build() {
