@@ -14,42 +14,36 @@
  * limitations under the License.
  */
 
-package no.api.meteo.entity.core.service.textforecast;
+package no.api.meteo.entity.core.service.textlocation;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
-import no.api.meteo.entity.core.Meta;
 
-import java.util.List;
+import java.time.ZonedDateTime;
 
 @Value
 @ToString
 @EqualsAndHashCode
-public class Weather {
+public class TextLocationTime {
 
     @JsonProperty
-    private String title;
+    private ZonedDateTime from;
 
     @JsonProperty
-    private Meta meta;
+    private ZonedDateTime to;
 
     @JsonProperty
-    private String productionDescription;
-
-    @JsonProperty
-    private List<Time> times;
+    private TextLocation textLocation;
 
     @JsonCreator
-    public Weather(@JsonProperty("title") String title,
-                   @JsonProperty("meta") Meta meta,
-                   @JsonProperty("productionDescription") String productionDescription,
-                   @JsonProperty("times") List<Time> times) {
-        this.title = title;
-        this.meta = meta;
-        this.productionDescription = productionDescription;
-        this.times = times;
+    public TextLocationTime(@JsonProperty("from") ZonedDateTime from,
+                            @JsonProperty("to") ZonedDateTime to,
+                            @JsonProperty("location") TextLocation textLocation) {
+        this.from = from;
+        this.to = to;
+        this.textLocation = textLocation;
     }
 }

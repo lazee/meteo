@@ -14,16 +14,9 @@
  * limitations under the License.
  */
 
-package no.api.meteo.util;
+package no.api.meteo;
 
-import no.api.meteo.MetaBuilder;
+public class ObjectStacker {
 
-import java.time.ZonedDateTime;
-
-public interface MetaEntityBuilder<E> extends EntityBuilder<E> {
-
-    MetaBuilder getMetaBuilder();
-
-    void setCreated(ZonedDateTime timestamp);
 
 }

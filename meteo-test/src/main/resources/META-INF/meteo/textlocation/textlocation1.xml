@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weather>
+    <meta licenseurl="http://api.met.no/license_data.html"/>
+    <productdescription prodname="Forecasts for 59.9,10.6"/>
+    <time from="2015-08-24T08:14:35+0200" to="2015-08-25T09:14:35+0200">
+        <location name="Vest-Agder, Aust-Agder, Telemark, Vestfold, Østfold, Buskerud, Oslo, Akershus og Oppland" id="50083" issuer="MET Norway" type="obsforecast">
+            <forecast>Mye nedbør ventes tirsdag, 25 til 45 mm, stedvis 60 mm. Mest nedbør i Aust-Agder, Telemark, Vestfold og Buskerud. Fare for lokale oversvemmelser , små jordskred og/eller flomskred der kraftig nedbør ventes.</forecast>
+        </location>
+    </time>
+    <time from="2015-08-24T18:00:00+0200" to="2015-08-25T00:00:00+0200">
+        <location name="Østlandet" id="0503" issuer="MET Norway" type="land_vaday0">
+            <forecast>Østlig bris, på kysten periodevis opp i liten kuling. Regnbyger som brer seg nordover. Lokal torden.</forecast>
+        </location>
+    </time>
+    <time from="2015-08-25T00:00:00+0200" to="2015-08-26T00:00:00+0200">
+        <location name="Østlandet" id="0503" issuer="MET Norway" type="land_vaday1">
+            <forecast>Østlig senere sørlig bris, på kysten til dels frisk bris. Regn, stedvis mye nedbør vest for Oslo. Lokal torden. Nord for Mjøsa oppholdsvær først på dagen.</forecast>
+        </location>
+    </time>
+    <time from="2015-08-26T00:00:00+0200" to="2015-08-27T00:00:00+0200">
+        <location name="Østlandet" id="0503" issuer="MET Norway" type="land_vaday2">
+            <forecast>Overveiende sørlig bris. Spredte regnbyger i indre strøk, perioder med sol.</forecast>
+        </location>
+    </time>
+    <time from="2015-08-27T00:00:00+0200" to="2015-08-28T00:00:00+0200">
+        <location name="Agder, Telemark, Østlandet" id="0503_0608_0609_0610" issuer="MET Norway" type="long">
+            <forecast>Sørvestlig bris, periodevis kuling på kysten. For det meste skyet. Regnbyger. Omtrent uendret temperatur.</forecast>
+        </location>
+    </time>
+    <time from="2015-08-28T00:00:00+0200" to="2015-08-30T00:00:00+0200">
+        <location name="Østafjells" id="0513" issuer="MET Norway" type="long">
+            <forecast>Sørvestlig bris, periodevis kuling på kysten. Enkelte regnbyger nord på Østlandet og vest i Agder, ellers stort sett opphold og til dels pent vær. Uendret temperatur</forecast>
+        </location>
+    </time>
+    <time from="2015-08-30T00:00:00+0200" to="2015-09-03T00:00:00+0200">
+        <location name="Sør-Norge" id="51503" issuer="MET Norway" type="long">
+            <forecast>Lavtrykksaktivitet i Skandinavia vil gi vind mellom vest og nordvest, av og til kuling på kysten og i fjellet. Perioder med regnbyger og fallende temperatur.</forecast>
+        </location>
+    </time>
+</weather>

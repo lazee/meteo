@@ -19,6 +19,7 @@ package no.api.meteo.util;
 import no.api.meteo.MeteoException;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -37,6 +38,21 @@ public final class MeteoDateUtils {
         throw new UnsupportedOperationException();
     }
 
+    public static ZonedDateTime fullOffsetFormatToZonedDateTime(String dateStr) throws MeteoException {
+        if (dateStr == null) {
+            return null;
+        }
+        String d = dateStr;
+        // Fix for invalid zone ids in the MET api
+        if (d.charAt(19) == '+') {
+            d = dateStr.substring(0, 22) + ":" + dateStr.substring(22);
+        }
+        try {
+            return OffsetDateTime.parse(d).atZoneSameInstant(ZoneId.of("Z"));
+        } catch (DateTimeParseException e) {
+            throw new MeteoException(e);
+        }
+    }
     public static ZonedDateTime fullFormatToZonedDateTime(String dateStr) throws MeteoException {
         if (dateStr == null) {
             return null;

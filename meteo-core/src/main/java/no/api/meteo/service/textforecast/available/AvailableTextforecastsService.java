@@ -51,7 +51,7 @@ public class AvailableTextforecastsService extends AbstractMeteoService {
      */
     public MeteoData<Available> fetchContent() throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
-                createServiceUriBuilder().addParameter("available", null).build());
+                createServiceUriBuilder().addParameter("available", null).skipQuestionMarkInUrl().build());
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 

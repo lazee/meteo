@@ -21,7 +21,7 @@ import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoData;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
-import no.api.meteo.entity.core.service.locationforecast.Model;
+import no.api.meteo.entity.core.Model;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package no.api.meteo.entity.core.service.locationforecast;
+package no.api.meteo.entity.core;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

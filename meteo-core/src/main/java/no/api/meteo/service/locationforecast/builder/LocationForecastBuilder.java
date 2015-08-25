@@ -19,17 +19,18 @@ package no.api.meteo.service.locationforecast.builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import no.api.meteo.MetaBuilder;
 import no.api.meteo.entity.core.Location;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
-import no.api.meteo.util.EntityBuilder;
+import no.api.meteo.util.MetaEntityBuilder;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
-public class LocationForecastBuilder implements EntityBuilder<LocationForecast> {
+public class LocationForecastBuilder implements MetaEntityBuilder<LocationForecast> {
 
     @Setter
     @Getter
@@ -49,4 +50,5 @@ public class LocationForecastBuilder implements EntityBuilder<LocationForecast> 
     public LocationForecast build() {
         return new LocationForecast(getCreated(), getMetaBuilder().build(), getLocation(), getForecasts());
     }
+
 }

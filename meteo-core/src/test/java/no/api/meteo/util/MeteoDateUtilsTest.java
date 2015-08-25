@@ -91,4 +91,9 @@ public final class MeteoDateUtilsTest {
         ZonedDateTime dateTime = MeteoDateUtils.fullFormatToZonedDateTime("2015-08-14T20:01:00Z");
         Assert.assertEquals("20:01", MeteoDateUtils.zonedDateTimeToHHMM(dateTime));
     }
+
+    @Test
+    public void testOffsetDate() throws MeteoException {
+        ZonedDateTime zonedDateTime = MeteoDateUtils.fullOffsetFormatToZonedDateTime("2015-08-24T08:14:35+0200");
+    }
 }

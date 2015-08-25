@@ -18,7 +18,7 @@ package no.api.meteo.service;
 
 import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.MeteoException;
-import no.api.meteo.entity.core.Meta;
+import no.api.meteo.entity.core.Model;
 import no.api.meteo.util.MetaEntityBuilder;
 import no.api.meteo.util.MeteoNetUtils;
 import org.xmlpull.v1.XmlPullParser;
@@ -26,9 +26,15 @@ import org.xmlpull.v1.XmlPullParser;
 import java.time.ZonedDateTime;
 
 import static no.api.meteo.util.MeteoConstants.ATTR_CREATED;
+import static no.api.meteo.util.MeteoConstants.ATTR_FROM;
 import static no.api.meteo.util.MeteoConstants.ATTR_LICENSEURL;
+import static no.api.meteo.util.MeteoConstants.ATTR_NAME;
+import static no.api.meteo.util.MeteoConstants.ATTR_NEXTRUN;
+import static no.api.meteo.util.MeteoConstants.ATTR_RUNENDED;
+import static no.api.meteo.util.MeteoConstants.ATTR_TERMIN;
+import static no.api.meteo.util.MeteoConstants.ATTR_TO;
 import static no.api.meteo.util.MeteoXppUtils.getString;
-import static no.api.meteo.util.MeteoXppUtils.getZoneDateTime;
+import static no.api.meteo.util.MeteoXppUtils.getZonedDateTime;
 
 @Slf4j
 public abstract class AbstractMetaMeteoDataParser<E, F> extends AbstractMeteoDataParser<E, F> {
@@ -41,16 +47,33 @@ public abstract class AbstractMetaMeteoDataParser<E, F> extends AbstractMeteoDat
         return (MetaEntityBuilder<E>) super.getEntityBuilder();
     }
 
-    public void handleMetaTag(MetaEntityBuilder<E> builder, XmlPullParser xpp) {
+    public void handleMetaTag(XmlPullParser xpp) {
         try {
-            Meta meta = new Meta(MeteoNetUtils.createUri(getString(xpp, ATTR_LICENSEURL)), null);
-            builder.setMeta(meta);
-            ZonedDateTime zoneDateTime = getZoneDateTime(xpp, ATTR_CREATED);
+            String uriStr = getString(xpp, ATTR_LICENSEURL);
+            if (uriStr != null) {
+                getEntityBuilder().getMetaBuilder().setLicenseUri(MeteoNetUtils.createUri(uriStr));
+            }
+            ZonedDateTime zoneDateTime = getZonedDateTime(xpp, ATTR_CREATED);
             if (zoneDateTime != null) {
-                builder.setCreated(zoneDateTime);
+                getEntityBuilder().setCreated(zoneDateTime);
             }
         } catch (MeteoException e) {
             log.warn("Meta information not found in xml data");
         }
     }
+
+    public void handleModelTag(XmlPullParser xpp) {
+        try {
+            Model model = new Model(getZonedDateTime(xpp, ATTR_TO),
+                                    getZonedDateTime(xpp, ATTR_FROM),
+                                    getZonedDateTime(xpp, ATTR_RUNENDED),
+                                    getZonedDateTime(xpp, ATTR_NEXTRUN),
+                                    getZonedDateTime(xpp, ATTR_TERMIN),
+                                    getString(xpp, ATTR_NAME));
+            getEntityBuilder().getMetaBuilder().getModels().add(model);
+        } catch (MeteoException e) {
+            log.warn("Could not convert model dates found in returned xml", e);
+        }
+    }
+
 }

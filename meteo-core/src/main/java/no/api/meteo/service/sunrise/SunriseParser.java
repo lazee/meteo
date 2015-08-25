@@ -41,7 +41,7 @@ import static no.api.meteo.util.MeteoXppUtils.getBoolean;
 import static no.api.meteo.util.MeteoXppUtils.getDouble;
 import static no.api.meteo.util.MeteoXppUtils.getLocalDate;
 import static no.api.meteo.util.MeteoXppUtils.getString;
-import static no.api.meteo.util.MeteoXppUtils.getZoneDateTime;
+import static no.api.meteo.util.MeteoXppUtils.getZonedDateTime;
 
 @Slf4j
 public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, SunriseDateBuilder>
@@ -63,7 +63,7 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
     public void handleStartTags(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         switch (xpp.getName()) {
             case TAG_META:
-                handleMetaTag(getSunriseBuilder(), xpp);
+                handleMetaTag(xpp);
                 break;
             case TAG_TIME: {
                 handleTimeTag(xpp, stack);
@@ -130,8 +130,8 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
     private void handleSunTag(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         try {
             SunBuilder sunBuilder = new SunBuilder();
-            sunBuilder.setRise(getZoneDateTime(xpp, MeteoConstants.ATTR_RISE));
-            sunBuilder.setSet(getZoneDateTime(xpp, MeteoConstants.ATTR_SET));
+            sunBuilder.setRise(getZonedDateTime(xpp, MeteoConstants.ATTR_RISE));
+            sunBuilder.setSet(getZonedDateTime(xpp, MeteoConstants.ATTR_SET));
             sunBuilder.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
             sunBuilder.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
             sunBuilder.setDaylength(getDouble(xpp, MeteoConstants.ATTR_DAYLENGTH));
@@ -143,7 +143,7 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
 
     private void handleNoonTag(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         try {
-            Noon noon = new Noon(getZoneDateTime(xpp, MeteoConstants.TIME), getDouble(xpp, ATTR_ALTITUDE),
+            Noon noon = new Noon(getZonedDateTime(xpp, MeteoConstants.TIME), getDouble(xpp, ATTR_ALTITUDE),
                                  getDouble(xpp, MeteoConstants.ATTR_DIRECTION));
             stack.peek().getSunBuilder().getNoon().add(noon);
         } catch (MeteoException e) {
@@ -154,8 +154,8 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
     private void handleMoonTag(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
         try {
             MoonBuilder moonBuilder = new MoonBuilder();
-            moonBuilder.setRise(getZoneDateTime(xpp, MeteoConstants.ATTR_RISE));
-            moonBuilder.setSet(getZoneDateTime(xpp, MeteoConstants.ATTR_SET));
+            moonBuilder.setRise(getZonedDateTime(xpp, MeteoConstants.ATTR_RISE));
+            moonBuilder.setSet(getZonedDateTime(xpp, MeteoConstants.ATTR_SET));
             moonBuilder.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
             moonBuilder.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
             moonBuilder.setPhase(PhaseType.findByValue(getString(xpp, MeteoConstants.ATTR_PHASE)));

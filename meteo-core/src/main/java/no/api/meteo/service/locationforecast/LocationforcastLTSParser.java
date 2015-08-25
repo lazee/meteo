@@ -27,7 +27,6 @@ import no.api.meteo.entity.core.service.locationforecast.Humidity;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.entity.core.service.locationforecast.LowClouds;
 import no.api.meteo.entity.core.service.locationforecast.MediumClouds;
-import no.api.meteo.entity.core.service.locationforecast.Model;
 import no.api.meteo.entity.core.service.locationforecast.Precipitation;
 import no.api.meteo.entity.core.service.locationforecast.Pressure;
 import no.api.meteo.entity.core.service.locationforecast.Symbol;
@@ -37,13 +36,12 @@ import no.api.meteo.entity.core.service.locationforecast.TemperatureProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindDirection;
 import no.api.meteo.entity.core.service.locationforecast.WindProbability;
 import no.api.meteo.entity.core.service.locationforecast.WindSpeed;
-import no.api.meteo.service.AbstractMeteoDataParser;
+import no.api.meteo.service.AbstractMetaMeteoDataParser;
 import no.api.meteo.service.MeteoDataParser;
 import no.api.meteo.service.locationforecast.builder.LocationForecastBuilder;
 import no.api.meteo.service.locationforecast.builder.PeriodForecastBuilder;
 import no.api.meteo.service.locationforecast.builder.PointForecastBuilder;
 import no.api.meteo.util.EntityBuilder;
-import no.api.meteo.util.MeteoNetUtils;
 import no.api.meteo.util.MeteoXppUtils;
 import org.xmlpull.v1.XmlPullParser;
 
@@ -54,10 +52,12 @@ import static no.api.meteo.util.MeteoConstants.*;
 import static no.api.meteo.util.MeteoXppUtils.getDouble;
 import static no.api.meteo.util.MeteoXppUtils.getInteger;
 import static no.api.meteo.util.MeteoXppUtils.getString;
-import static no.api.meteo.util.MeteoXppUtils.getZoneDateTime;
+import static no.api.meteo.util.MeteoXppUtils.getZonedDateTime;
 
 @Slf4j
-public final class LocationforcastLTSParser extends AbstractMeteoDataParser<LocationForecast, EntityBuilder>  implements MeteoDataParser<LocationForecast> {
+public final class LocationforcastLTSParser
+        extends AbstractMetaMeteoDataParser<LocationForecast, EntityBuilder>
+        implements MeteoDataParser<LocationForecast> {
 
     @Override
     public LocationForecast parse(String data) throws MeteoException {
@@ -187,28 +187,13 @@ public final class LocationforcastLTSParser extends AbstractMeteoDataParser<Loca
                                 getInteger(xpp, ATTR_VALUE)));
                 break;
             case TAG_META:
-                try {
-                    ((LocationForecastBuilder) getEntityBuilder()).getMetaBuilder().setLicenseUri(
-                            MeteoNetUtils.createUri(getString(xpp, ATTR_LICENSEURL)));
-                } catch (MeteoException e) {
-                    log.debug("License url not found in feed");
-                }
+                handleMetaTag(xpp);
                 break;
             case TAG_MODEL:
-                try {
-                    Model model = new Model(getZoneDateTime(xpp, "to"),
-                                            getZoneDateTime(xpp, "from"),
-                                            getZoneDateTime(xpp, "runended"),
-                                            getZoneDateTime(xpp, "nextrun"),
-                                            getZoneDateTime(xpp, "termin"),
-                                            getString(xpp, "name"));
-                    ((LocationForecastBuilder) getEntityBuilder()).getMetaBuilder().getModels().add(model);
-                } catch (MeteoException e) {
-                    log.warn("Could not convert model dates found in returned xml", e);
-                }
+                handleModelTag(xpp);
                 break;
             default:
-                log.trace("Unhandled start tag: " + xpp.getName());
+                log.trace(MSG_UNHANDLED_START_TAG, xpp.getName());
                 break;
         }
     }
@@ -218,10 +203,9 @@ public final class LocationforcastLTSParser extends AbstractMeteoDataParser<Loca
         if (TAG_TIME.equals(xpp.getName())) {
             ((LocationForecastBuilder) getEntityBuilder()).getForecasts().add((Forecast) stack.pop().build());
         } else {
-            log.trace("Unhandled end tag: " + xpp.getName());
+            log.trace(MSG_UNHANDLED_END_TAG, xpp.getName());
         }
     }
-
 
     private PeriodForecastBuilder periodPeek(Stack<EntityBuilder> stack) {
         return (PeriodForecastBuilder) stack.peek();
@@ -248,8 +232,8 @@ public final class LocationforcastLTSParser extends AbstractMeteoDataParser<Loca
     private void handleTimeDataTag(Stack<EntityBuilder> stack, XmlPullParser xpp) {
         try {
             PointForecastBuilder pointForecastBuilder = new PointForecastBuilder();
-            pointForecastBuilder.setToTime(getZoneDateTime(xpp, ATTR_TO));
-            pointForecastBuilder.setFromTime(getZoneDateTime(xpp, ATTR_FROM));
+            pointForecastBuilder.setToTime(getZonedDateTime(xpp, ATTR_TO));
+            pointForecastBuilder.setFromTime(getZonedDateTime(xpp, ATTR_FROM));
             stack.push(pointForecastBuilder);
         } catch (MeteoException e) {
             log.warn("Could not convert time dates from xml", e);
@@ -259,7 +243,7 @@ public final class LocationforcastLTSParser extends AbstractMeteoDataParser<Loca
 
     private void handleWeatherDataTag(LocationForecastBuilder locationForecastBuilder, XmlPullParser xpp) {
         try {
-            locationForecastBuilder.setCreated(getZoneDateTime(xpp, ATTR_CREATED));
+            locationForecastBuilder.setCreated(getZonedDateTime(xpp, ATTR_CREATED));
         } catch (MeteoException e) {
             log.warn("Could not convert created data from weatherData tag", e);
         }

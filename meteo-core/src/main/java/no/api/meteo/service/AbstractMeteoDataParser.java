@@ -55,7 +55,7 @@ public abstract class AbstractMeteoDataParser<E, F> {
         return entityBuilder;
     }
 
-    public abstract void handleStartTags(XmlPullParser xpp, Stack<F> stack);
+    public abstract void handleStartTags(XmlPullParser xpp, Stack<F> stack) throws MeteoException;
 
     public abstract void handleEndTags(EntityBuilder<E> builder, XmlPullParser xpp, Stack<F> stack);
 

@@ -37,7 +37,7 @@ public class TextforecastParserTest {
                         new MeteoTestClient(
                                 MeteoTestUtils.getTextResource("/META-INF/meteo/textforecast/land.xml")));
         MeteoData<Weather> data = service.fetchContent(
-                ForecastQuery.AW_ENGM_EN); // Really doesn't matter what we pick here since we are using a mock.
+                ForecastQuery.LAND_NB); // Really doesn't matter what we pick here since we are using a mock.
         Assert.assertNotNull(service);
         Assert.assertNotNull(data);
         Weather result = data.getResult();
@@ -45,7 +45,7 @@ public class TextforecastParserTest {
         Assert.assertNotNull(data.getResponse().getData());
         Assert.assertNotNull(data.getResponse().getResponseHeaders());
         Assert.assertEquals(1, data.getResponse().getResponseHeaders().size());
-        Assert.assertEquals("merged", result.getProductionDescripton());
+        Assert.assertEquals("merged", result.getProductionDescription());
         Assert.assertEquals("Tekstvarsel for Norge", result.getTitle());
 
         List<Time> times = result.getTimes();

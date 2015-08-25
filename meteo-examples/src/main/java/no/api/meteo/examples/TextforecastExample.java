@@ -16,37 +16,28 @@
 
 package no.api.meteo.examples;
 
+import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.MeteoException;
 import no.api.meteo.client.DefaultMeteoClient;
 import no.api.meteo.client.MeteoClient;
 import no.api.meteo.client.MeteoData;
-import no.api.meteo.entity.core.service.sunrise.Sunrise;
-import no.api.meteo.entity.core.service.sunrise.SunriseDate;
-import no.api.meteo.service.sunrise.SunriseService;
-import no.api.meteo.util.MeteoDateUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import no.api.meteo.entity.core.service.textforecast.Time;
+import no.api.meteo.entity.core.service.textforecast.Weather;
+import no.api.meteo.entity.core.service.textforecast.query.ForecastQuery;
+import no.api.meteo.service.textforecast.TextforecastService;
 
-import java.time.LocalDate;
-
-public class SunriseExample {
-
-    public static final double LONGITUDE_OSLO = 10.7460923576733;
-
-    public static final double LATITUDE_OSLO = 59.912726542422;
-
-    private static final Logger log = LoggerFactory.getLogger(LocationExample.class);
-
+@Slf4j
+public class TextforecastExample {
     private final MeteoClient meteoClient;
 
-    public SunriseExample() {
+    public TextforecastExample() {
         meteoClient = new DefaultMeteoClient();
     }
 
-    public MeteoData<Sunrise> runExample() {
-        SunriseService sunriseService = new SunriseService(meteoClient);
+    public MeteoData<Weather> runExample() {
+        TextforecastService service = new TextforecastService(meteoClient);
         try {
-            return sunriseService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, LocalDate.now());
+            return service.fetchContent(ForecastQuery.LAND_NB);
         } catch (MeteoException e) {
             log.error("Caught exception : " + e.getMessage());
             return null;
@@ -58,13 +49,12 @@ public class SunriseExample {
     }
 
     public static void main(String[] args) {
-        SunriseExample example = new SunriseExample();
-        MeteoData<Sunrise> data = example.runExample();
-        SunriseDate sunriseDate = data.getResult().getDates().get(0);
-        log.info("On " + MeteoDateUtils.zonedDateTimeToYyyyMMdd(sunriseDate.getDate()) + " the sun will rise at " +
-                         MeteoDateUtils.zonedDateTimeToHHMM(sunriseDate.getSun().getRise()) + " in Oslo");
+        TextforecastExample example = new TextforecastExample();
+        MeteoData<Weather> data = example.runExample();
+        log.info("Textforecast for %", data.getResult().getTitle());
+        for (Time time : data.getResult().getTimes()) {
+            log.info(time.toString());
+        }
         example.shutDown();
-
     }
 }
-

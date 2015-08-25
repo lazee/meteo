@@ -92,11 +92,15 @@ public final class MeteoXppUtils {
         }
     }
 
-    public static ZonedDateTime getZoneDateTime(XmlPullParser xpp, String name) throws MeteoException {
+    public static ZonedDateTime getZonedDateTime(XmlPullParser xpp, String name) throws MeteoException {
         return MeteoDateUtils.fullFormatToZonedDateTime(getString(xpp, name));
     }
 
-    public static ZonedDateTime getZoneDateTimeNorway(XmlPullParser xpp, String name) throws MeteoException {
+    public static ZonedDateTime getOffsetDateTime(XmlPullParser xpp, String name) throws MeteoException {
+        return MeteoDateUtils.fullOffsetFormatToZonedDateTime(getString(xpp, name));
+    }
+
+    public static ZonedDateTime getZonedDateTimeNorway(XmlPullParser xpp, String name) {
         LocalDateTime parse =
                 LocalDateTime.parse(getString(xpp, name), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         return parse.atZone(ZoneId.of("Europe/Oslo"));
@@ -111,6 +115,9 @@ public final class MeteoXppUtils {
         try {
             if (xpp.next() == XmlPullParser.TEXT) {
                 result = xpp.getText();
+                if (result != null) {
+                    result = result.trim();
+                }
                 xpp.nextTag();
             }
         } catch (XmlPullParserException | IOException e) {

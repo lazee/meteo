@@ -33,6 +33,8 @@ public final class METServiceUriBuilder {
 
     private final List<Pair> parameters;
 
+    private boolean skipQuestionMarkInUrl = false;
+
     private METServiceUriBuilder(String serviceName, MeteoServiceVersion serviceVersion) {
         this.serviceName = serviceName;
         this.serviceVersion = serviceVersion;
@@ -44,10 +46,19 @@ public final class METServiceUriBuilder {
         return this;
     }
 
+    public METServiceUriBuilder skipQuestionMarkInUrl() {
+        skipQuestionMarkInUrl = true;
+        return this;
+    }
+
     public URI build() throws MeteoException {
         StringBuilder sb = new StringBuilder();
         sb.append(API_MET_NO_SERVICE_PREFIX).append(serviceName).append("/").append(
-                serviceVersion.toStringVersion()).append("/?");
+                serviceVersion.toStringVersion()).append("/");
+
+        if (!skipQuestionMarkInUrl) {
+            sb.append("?");
+        }
 
         boolean first = true;
         for (Pair pair : parameters) {

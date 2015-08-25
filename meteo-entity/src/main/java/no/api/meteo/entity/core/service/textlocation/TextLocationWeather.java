@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package no.api.meteo.entity.core.service.textforecast;
+package no.api.meteo.entity.core.service.textlocation;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,10 +28,7 @@ import java.util.List;
 @Value
 @ToString
 @EqualsAndHashCode
-public class Weather {
-
-    @JsonProperty
-    private String title;
+public class TextLocationWeather {
 
     @JsonProperty
     private Meta meta;
@@ -40,16 +37,14 @@ public class Weather {
     private String productionDescription;
 
     @JsonProperty
-    private List<Time> times;
+    private List<TextLocationTime> textLocationTimes;
 
     @JsonCreator
-    public Weather(@JsonProperty("title") String title,
-                   @JsonProperty("meta") Meta meta,
-                   @JsonProperty("productionDescription") String productionDescription,
-                   @JsonProperty("times") List<Time> times) {
-        this.title = title;
+    public TextLocationWeather(@JsonProperty("meta") Meta meta,
+                               @JsonProperty("productionDescription") String productionDescription,
+                               @JsonProperty("times") List<TextLocationTime> textLocationTimes) {
         this.meta = meta;
         this.productionDescription = productionDescription;
-        this.times = times;
+        this.textLocationTimes = textLocationTimes;
     }
 }

@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package no.api.meteo.util;
+package no.api.meteo.service.textlocation;
 
-import no.api.meteo.MetaBuilder;
+public enum TextLocationLanguage {
 
-import java.time.ZonedDateTime;
+    NB("nb"),
 
-public interface MetaEntityBuilder<E> extends EntityBuilder<E> {
+    EN("en");
 
-    MetaBuilder getMetaBuilder();
+    private String value;
 
-    void setCreated(ZonedDateTime timestamp);
+    TextLocationLanguage(String value) {
+        this.value = value;
+    }
 
+    public String getValue() {
+        return value;
+    }
 }

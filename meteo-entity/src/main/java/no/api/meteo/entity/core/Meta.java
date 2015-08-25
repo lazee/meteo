@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 import net.sf.oval.constraint.NotNull;
-import no.api.meteo.entity.core.service.locationforecast.Model;
 
 import java.net.URI;
 import java.util.ArrayList;

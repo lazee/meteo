@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package no.api.meteo.service.locationforecast.builder;
+package no.api.meteo;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import no.api.meteo.entity.core.Meta;
-import no.api.meteo.entity.core.service.locationforecast.Model;
+import no.api.meteo.entity.core.Model;
 import no.api.meteo.util.EntityBuilder;
 
 import java.net.URI;

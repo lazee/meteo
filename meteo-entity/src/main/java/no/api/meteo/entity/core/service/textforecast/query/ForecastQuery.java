@@ -16,23 +16,27 @@
 
 package no.api.meteo.entity.core.service.textforecast.query;
 
-import static no.api.meteo.entity.core.service.textforecast.query.Language.EN;
 import static no.api.meteo.entity.core.service.textforecast.query.Language.NB;
-import static no.api.meteo.entity.core.service.textforecast.query.Language.NN;
 
+/**
+ * As the different text forecasts are in a different format, and no good XSDs are available, we only support the
+ * land forecast now, as that is what we needed at the time.
+ *
+ * It will be a real mess to support the other formats. Still thinking about how to solve this.
+ */
 public enum ForecastQuery {
 
-    LANDDAY0_NB("landday0", NB),
+    /*LANDDAY0_NB("landday0", NB),
 
     LANDDAY1_NB("landday1", NB),
 
     LANDDAY2_NB("landday2", NB),
 
-    LANDLONG_NB("landlong", NB),
+    LANDLONG_NB("landlong", NB), */
 
-    LAND_NB("land", NB),
+    LAND_NB("land", NB);
 
-    COAST_NB("coast", NB),
+    /*COAST_NB("coast", NB),
 
     COAST_EN("coast", EN),
 
@@ -96,7 +100,7 @@ public enum ForecastQuery {
 
     ROUTE_FBNO79_EN("route_fbno79", EN),
 
-    ROUTE_FBNO80_EN("route_fbno80", EN);
+    ROUTE_FBNO80_EN("route_fbno80", EN);*/
 
     private String name;
 

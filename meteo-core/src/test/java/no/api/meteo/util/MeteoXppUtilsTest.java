@@ -62,13 +62,14 @@ public final class MeteoXppUtilsTest {
                     Assert.assertEquals(3, simpleDate.getDayOfMonth());
                     Assert.assertEquals(2, simpleDate.getMonthValue());
                     // Full date 2011-05-06T05:00:00Z
-                    Assert.assertNull(MeteoXppUtils.getZoneDateTime(xpp, "foo"));
-                    ZonedDateTime dateTime = MeteoXppUtils.getZoneDateTime(xpp, "date");
+                    Assert.assertNull(MeteoXppUtils.getZonedDateTime(xpp, "foo"));
+                    ZonedDateTime dateTime = MeteoXppUtils.getZonedDateTime(xpp, "date");
                     Assert.assertEquals(5, dateTime.getHour());
                 }
             }
             eventType = xpp.next();
         }
     }
+
 
 }
