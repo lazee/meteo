@@ -89,4 +89,6 @@ public final class Sun extends AbstractType {
         return false;
     }
 
+    // TODO add isSun(from, to)
+
 }

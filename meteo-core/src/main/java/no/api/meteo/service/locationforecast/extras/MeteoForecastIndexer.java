@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package no.api.meteo.services;
+package no.api.meteo.service.locationforecast.extras;
 
 import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;

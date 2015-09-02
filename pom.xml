@@ -192,7 +192,6 @@
         <module>meteo-core</module>
         <module>meteo-client</module>
         <module>meteo-examples</module>
-        <module>meteo-extras</module>
     </modules>
 
     <build>

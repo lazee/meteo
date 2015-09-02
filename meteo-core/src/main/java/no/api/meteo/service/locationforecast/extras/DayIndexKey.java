@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package no.api.meteo.services;
+package no.api.meteo.service.locationforecast.extras;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-import net.sf.oval.constraint.NotNull;
 
 import java.time.ZonedDateTime;
 
-@EqualsAndHashCode(of = {"day", "month", "year", "hour"}, doNotUseGetters = true)
-@ToString(of = {"day", "month", "year", "hour"})
-class HourMatcher {
+@EqualsAndHashCode(of = {"day", "month", "year"}, doNotUseGetters = true)
+@ToString(of = {"day", "month", "year"})
+final class DayIndexKey {
 
     @Getter
     private final ZonedDateTime dateTime;
@@ -36,14 +35,10 @@ class HourMatcher {
 
     private final int year;
 
-    private final int hour;
-
-    HourMatcher(@NotNull ZonedDateTime dateTime) {
-        this.dateTime = dateTime;
+    DayIndexKey(ZonedDateTime dateTime) {
+        this.dateTime = dateTime.withHour(0).withMinute(0).withSecond(0).withNano(0);
         this.day = dateTime.getDayOfMonth();
         this.month = dateTime.getMonthValue();
         this.year = dateTime.getYear();
-        this.hour = dateTime.getHour();
     }
-
 }
