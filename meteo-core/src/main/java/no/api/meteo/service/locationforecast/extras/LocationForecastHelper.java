@@ -17,6 +17,7 @@
 package no.api.meteo.service.locationforecast.extras;
 
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
@@ -41,6 +42,7 @@ import static no.api.meteo.util.MeteoDateUtils.cloneZonedDateTime;
  * <p>Interpreting the location forecast data can be pretty hard. This is an implementation of how we at Amedia
  * Utvikling chooses to do it.</p>
  */
+@Slf4j
 public final class LocationForecastHelper {
 
     private final LocationForecast locationForecast;
@@ -108,14 +110,17 @@ public final class LocationForecastHelper {
                 to.withZoneSameInstant(zoneId));
 
         if (!periodForecast.isPresent()) {
+            log.error("Could not find period forecast for " + from.toString() + " -- " + to.toString());
             return Optional.empty();
         }
 
-        Duration d = Duration.between(periodForecast.get().getFrom(), periodForecast.get().getFrom());
-        long distance = d.getSeconds() / 60 / 60 / 2;
+        Duration d = Duration.between(periodForecast.get().getFrom(), periodForecast.get().getTo());
+        long distance = (d.getSeconds() / 60 / 60 / 2);
+        ZonedDateTime dateTime = periodForecast.get().getFrom().plusHours(distance);
         Optional<PointForecast> pointForecast =
-                indexer.getPointForecast(periodForecast.get().getFrom().plusHours(distance));
+                indexer.getPointForecast(dateTime);
         if (!pointForecast.isPresent()) {
+            log.error("Could not find point forecast for " + dateTime.toString());
             return Optional.empty();
         }
         return Optional.of(new MeteoExtrasForecast(pointForecast.get(), periodForecast.get()));
