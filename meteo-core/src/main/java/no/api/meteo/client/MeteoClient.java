@@ -18,6 +18,11 @@ package no.api.meteo.client;
 
 import java.net.URI;
 
+/**
+ * Meteo Client Interface.
+ *
+ * A client is responsible for fetching the raw data from the MET api.
+ */
 public interface MeteoClient {
 
     /**

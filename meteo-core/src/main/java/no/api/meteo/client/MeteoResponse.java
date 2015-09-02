@@ -25,8 +25,7 @@ import java.util.List;
 /**
  * Meteo client response object.
  *
- * The object will contain reponse headers, response status and the actual content fetched from http://api.met.no as a
- * string.
+ * The object will contain response headers, response status and the actual content fetched from http://api.met.no.
  */
 @Value
 public class MeteoResponse {

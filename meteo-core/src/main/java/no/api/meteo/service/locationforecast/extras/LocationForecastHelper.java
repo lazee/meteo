@@ -46,24 +46,7 @@ public final class LocationForecastHelper {
 
     private MeteoForecastIndexer indexer = null;
 
-    private String title = null;
-
     private final ZoneId zoneId;
-
-    /**
-     * Construct a new instance of this helper
-     *
-     * @param locationForecast
-     *         The location forecast this helper will work on.
-     * @param title
-     *         Set a title for the forecast. Eg: The name of the location. Like a city.
-     */
-    public LocationForecastHelper(@NonNull LocationForecast locationForecast, String title) {
-        this.title = title;
-        this.locationForecast = locationForecast;
-        zoneId = ZoneId.of("Z");
-        init();
-    }
 
     /**
      * Construct a new instance of this helper without any title set.
@@ -74,18 +57,8 @@ public final class LocationForecastHelper {
     public LocationForecastHelper(@NonNull LocationForecast locationForecast) {
         this.locationForecast = locationForecast;
         zoneId = ZoneId.of("Z");
-        init();
+        indexer = new MeteoForecastIndexer(locationForecast.getForecasts());
     }
-
-    /**
-     * Get the title
-     *
-     * @return The title as set upon construction of this helper.
-     */
-    public String getTitle() {
-        return title;
-    }
-
 
     /**
      * Get all point forecasts from now and to the given hours ahead.
@@ -165,13 +138,19 @@ public final class LocationForecastHelper {
      * @return A long term forecast, which is a week in our view of the world.
      *
      * @throws MeteoException
-     *         If an error occured while creating the simple longterm forecast.
+     *         If an error occurred while creating the simple longterm forecast.
      */
     public MeteoExtrasLongTermForecast createSimpleLongTermForecast() throws MeteoException {
         List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
         ZonedDateTime dt = getNow();
         for (int i = 0; i <= 6; i++) {
-            addSimpleForecastForDay(dt.plusDays(i), forecastDays);
+            ZonedDateTime dti = dt.plusDays(i);
+            if (indexer.hasForecastsForDay(dti)) {
+                MeteoExtrasForecastDay mefd = createSimpleForcastForDay(dti);
+                if (mefd != null && mefd.getForecasts().size() > 0) {
+                    forecastDays.add(mefd);
+                }
+            }
         }
         return new MeteoExtrasLongTermForecast(forecastDays);
     }
@@ -187,17 +166,17 @@ public final class LocationForecastHelper {
     public MeteoExtrasForecastDay createForcastForDay(ZonedDateTime dateTime) {
         ZonedDateTime dt = dateTime.withZoneSameInstant(zoneId);
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
-        addForecastToList(findBestForecastForPeriod(dt.withHour(0), dt.withHour(6)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHour(6), dt.withHour(12)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHour(12), dt.withHour(18)), forecasts);
-        addForecastToList(findBestForecastForPeriod(dt.withHour(18), dt.plusDays(1).withHour(0)), forecasts);
+        findBestForecastForPeriod(dt.withHour(0), dt.withHour(6)).ifPresent(forecasts::add);
+        findBestForecastForPeriod(dt.withHour(6), dt.withHour(12)).ifPresent(forecasts::add);
+        findBestForecastForPeriod(dt.withHour(12), dt.withHour(18)).ifPresent(forecasts::add);
+        findBestForecastForPeriod(dt.withHour(18), dt.plusDays(1).withHour(0)).ifPresent(forecasts::add);
         return new MeteoExtrasForecastDay(dt.toLocalDate(), forecasts);
     }
 
     public MeteoExtrasForecastDay createSimpleForcastForDay(ZonedDateTime dateTime) {
         ZonedDateTime dt = dateTime.withZoneSameInstant(zoneId);
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
-        addForecastToList(findNearestForecast(dt.withHour(14)), forecasts);
+        findNearestForecast(dt.withHour(14)).ifPresent(forecasts::add);
         return new MeteoExtrasForecastDay(dt.toLocalDate(), forecasts);
     }
 
@@ -231,31 +210,12 @@ public final class LocationForecastHelper {
                         chosenForecast, indexer.getWidestFitPeriodForecast(chosenForecast.getFromTime()).get()));
     }
 
-    private void init() {
-        indexer = new MeteoForecastIndexer(locationForecast.getForecasts());
-    }
-
     private void addForecastForDay(ZonedDateTime dt, List<MeteoExtrasForecastDay> lst) {
         if (indexer.hasForecastsForDay(dt)) {
             MeteoExtrasForecastDay mefd = createForcastForDay(dt);
             if (mefd != null && mefd.getForecasts().size() > 0) {
                 lst.add(mefd);
             }
-        }
-    }
-
-    private void addSimpleForecastForDay(ZonedDateTime dt, List<MeteoExtrasForecastDay> lst) {
-        if (indexer.hasForecastsForDay(dt)) {
-            MeteoExtrasForecastDay mefd = createSimpleForcastForDay(dt);
-            if (mefd != null && mefd.getForecasts().size() > 0) {
-                lst.add(mefd);
-            }
-        }
-    }
-
-    private void addForecastToList(Optional<MeteoExtrasForecast> mef, List<MeteoExtrasForecast> lst) {
-        if (mef.isPresent()) {
-            lst.add(mef.get());
         }
     }
 
@@ -270,6 +230,5 @@ public final class LocationForecastHelper {
                 && requestedDate.getDayOfMonth() == actualDate.getDayOfMonth() &&
                 requestedDate.getHour() == actualDate.getHour();
     }
-
 
 }
