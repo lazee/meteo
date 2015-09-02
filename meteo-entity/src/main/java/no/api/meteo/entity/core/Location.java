@@ -25,6 +25,9 @@ import net.sf.oval.constraint.NotNull;
 @Data
 public class Location {
 
+    @JsonProperty
+    private final String name;
+
     @NotNull
     @NotNegative
     @JsonProperty
@@ -46,5 +49,17 @@ public class Location {
         this.longitude = longitude;
         this.latitude = latitude;
         this.altitude = altitude;
+        this.name = null;
+    }
+
+    @JsonCreator
+    public Location(@JsonProperty("longitude") Double longitude,
+                    @JsonProperty("latitude") Double latitude,
+                    @JsonProperty("altitude") Integer altitude,
+                    @JsonProperty("name") String name) {
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.altitude = altitude;
+        this.name = name;
     }
 }

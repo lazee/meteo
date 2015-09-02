@@ -34,9 +34,7 @@ import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
  */
 public final class LocationforecastLTSService extends AbstractMeteoService {
 
-    // Due to a "bug" in the MET API we need to use the locationforecast service until the LTS feed is fixed.
-    // private static final String MET_SERVICE_NAME = "locationforecastlts";
-    private static final String MET_SERVICE_NAME = "locationforecast";
+    private static final String MET_SERVICE_NAME = "locationforecastlts";
 
     private final MeteoDataParser<LocationForecast> parser;
 
@@ -47,7 +45,7 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
      *         An instance of MeteoClient that the service will use to fetch the data.
      */
     public LocationforecastLTSService(MeteoClient meteoClient) {
-        super(meteoClient, MET_SERVICE_NAME, new MeteoServiceVersion(1, 9));
+        super(meteoClient, MET_SERVICE_NAME, new MeteoServiceVersion(1, 2));
         parser = new LocationforcastLTSParser();
     }
 

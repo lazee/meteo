@@ -29,22 +29,22 @@ import lombok.Value;
 public class TextLocation {
 
     @JsonProperty
-    private String header;
+    private final String header;
 
     @JsonProperty
-    private String forecast;
+    private final String forecast;
 
     @JsonProperty
-    private String name;
+    private final String name;
 
     @JsonPropertyOrder
-    private String id;
+    private final String id;
 
     @JsonProperty
-    private String type;
+    private final String type;
 
     @JsonProperty
-    private String issuer;
+    private final String issuer;
 
     // From XSD : http://api.met.no/weatherapi/textlocation/1.0/schema
     // But isn't in use in the actual feed.

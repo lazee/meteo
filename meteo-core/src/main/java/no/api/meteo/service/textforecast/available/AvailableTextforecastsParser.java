@@ -58,7 +58,7 @@ public class AvailableTextforecastsParser extends AbstractMeteoDataParser<Availa
     }
 
     @Override
-    public void handleStartTags(XmlPullParser xpp, Stack<QueryBuilder> stack) {
+    public void handleStartTags(XmlPullParser xpp, Stack<QueryBuilder> stack) throws MeteoException {
         switch (xpp.getName()) {
             case TAG_AVAILABLE:
                 break;

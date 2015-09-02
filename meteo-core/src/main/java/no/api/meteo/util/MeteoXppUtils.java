@@ -67,13 +67,13 @@ public final class MeteoXppUtils {
         return xpp.getAttributeValue(null, name);
     }
 
-    public static Double getDouble(XmlPullParser xpp, String name) {
+    public static Double getDouble(XmlPullParser xpp, String name) throws MeteoException {
         try {
             String v = getString(xpp, name);
             return v == null ? null : Double.parseDouble(v);
         } catch (NumberFormatException e) {
             log.error("Number format exception: " + e.getMessage());
-            return null;
+            throw new MeteoException(e);
         }
     }
 
@@ -82,13 +82,13 @@ public final class MeteoXppUtils {
         return v != null && Boolean.parseBoolean(v);
     }
 
-    public static Integer getInteger(XmlPullParser xpp, String name) {
+    public static Integer getInteger(XmlPullParser xpp, String name) throws MeteoException {
         try {
             String v = getString(xpp, name);
             return v == null ? null : Integer.parseInt(v);
         } catch (NumberFormatException e) {
             log.error("Number format exception: " + e.getMessage());
-            return null;
+            throw new MeteoException(e);
         }
     }
 
@@ -110,7 +110,7 @@ public final class MeteoXppUtils {
         return MeteoDateUtils.yyyyMMddToLocalDate(getString(xpp, name));
     }
 
-    public static String readText(XmlPullParser xpp) {
+    public static String readText(XmlPullParser xpp) throws MeteoException {
         String result = null;
         try {
             if (xpp.next() == XmlPullParser.TEXT) {
@@ -122,6 +122,7 @@ public final class MeteoXppUtils {
             }
         } catch (XmlPullParserException | IOException e) {
             log.error("Problem while reading tag body", e);
+            throw new MeteoException(e);
         }
         return result;
 

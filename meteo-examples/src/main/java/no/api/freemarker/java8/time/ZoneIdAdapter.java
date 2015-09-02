@@ -42,7 +42,7 @@ public class ZoneIdAdapter extends AbstractAdapter<ZoneId>
     }
 
     @Override
-    public String getAsString() throws TemplateModelException {
+    public String getAsString() {
         return getObject().getDisplayName(TextStyle.FULL, Environment.getCurrentEnvironment().getLocale());
     }
 

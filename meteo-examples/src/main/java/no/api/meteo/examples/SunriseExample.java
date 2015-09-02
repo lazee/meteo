@@ -43,21 +43,17 @@ public class SunriseExample {
         meteoClient = new DefaultMeteoClient();
     }
 
-    public MeteoData<Sunrise> runExample() {
+    public MeteoData<Sunrise> runExample() throws MeteoException {
         SunriseService sunriseService = new SunriseService(meteoClient);
-        try {
-            return sunriseService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, LocalDate.now());
-        } catch (MeteoException e) {
-            log.error("Caught exception : " + e.getMessage());
-            return null;
-        }
+        return sunriseService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, LocalDate.now());
+
     }
 
     public void shutDown() {
         meteoClient.shutdown();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MeteoException {
         SunriseExample example = new SunriseExample();
         MeteoData<Sunrise> data = example.runExample();
         SunriseDate sunriseDate = data.getResult().getDates().get(0);

@@ -28,16 +28,16 @@ import lombok.Value;
 public class Area {
 
     @JsonProperty
-    private String type;
+    private final String type;
 
     @JsonProperty
-    private String name;
+    private final String name;
 
     @JsonProperty
-    private Integer id;
+    private final Integer id;
 
     @JsonProperty
-    private Location location;
+    private final Location location;
 
     @JsonCreator
     public Area(@JsonProperty("type") String type,

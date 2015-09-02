@@ -64,7 +64,7 @@ public final class MeteoDateUtils {
         }
     }
 
-    public static LocalDate yyyyMMddToLocalDate(String dateStr) throws MeteoException {
+    public static LocalDate yyyyMMddToLocalDate(String dateStr) {
         if (dateStr == null) {
             return null;
         }

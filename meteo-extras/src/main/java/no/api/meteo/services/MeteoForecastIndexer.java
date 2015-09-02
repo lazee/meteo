@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static no.api.meteo.util.MeteoDateUtils.cloneZonedDateTime;
@@ -37,7 +38,7 @@ class MeteoForecastIndexer {
 
     private final List<Forecast> forecasts;
 
-    private Map<HourIndexKey, List<ScoreForecast>> hourIndex;
+    private Map<HourMatcher, List<ScoreForecast>> hourIndex;
 
     private Map<DayIndexKey, List<PeriodForecast>> dayIndex;
 
@@ -47,24 +48,24 @@ class MeteoForecastIndexer {
     }
 
     /**
-     * Get the PointForecast that matches the given date.
+     * Get the PointForecast that matches the given time.
      *
      * @param dateTime
      *         Date object used to find a matching PointForecast.
      *
      * @return A matching PointForecast if found, else <code>null</code>.
      */
-    PointForecast getPointForecast(ZonedDateTime dateTime) {
+    Optional<PointForecast> getPointForecast(ZonedDateTime dateTime) {
         for (Forecast forecast : forecasts) {
             if (forecast instanceof PointForecast) {
                 PointForecast pointForecast = (PointForecast) forecast;
                 if (createHourIndexKey(dateTime)
                         .equals(createHourIndexKey(cloneZonedDateTime(pointForecast.getFromTime())))) {
-                    return pointForecast;
+                    return Optional.of(pointForecast);
                 }
             }
         }
-        return null;
+        return Optional.empty();
     }
 
     List<PeriodForecast> getMatchingPeriodForecasts(ZonedDateTime from) {
@@ -108,19 +109,24 @@ class MeteoForecastIndexer {
     * span (4) and the distance (1) we get the tightScore (5).</p>
     *
     */
-    PeriodForecast getTightestFitPeriodForecast(ZonedDateTime from) {
-        ScoreForecast scoreForecast = getTightestFitScoreForecast(from);
-        if (scoreForecast == null) {
-            return null;
+    Optional<PeriodForecast> getTightestFitPeriodForecast(ZonedDateTime from) {
+        if (from == null) {
+            return Optional.empty();
         }
-        return scoreForecast.getPeriodForecast();
+        Optional<ScoreForecast> scoreForecast = getTightestFitScoreForecast(from);
+        return scoreForecast.isPresent()
+                ? Optional.of(scoreForecast.get().getPeriodForecast())
+                : Optional.empty();
     }
 
     boolean hasForecastsForDay(ZonedDateTime from) {
         return dayIndex.containsKey(new DayIndexKey(from));
     }
 
-    ScoreForecast getTightestFitScoreForecast(ZonedDateTime from) {
+    Optional<ScoreForecast> getTightestFitScoreForecast(ZonedDateTime from) {
+        if (from == null) {
+            return Optional.empty();
+        }
         return getXScoreForecast(from, false);
     }
 
@@ -131,12 +137,14 @@ class MeteoForecastIndexer {
     * that we invert the span tightScore. Meaning that a large span will tightScore lower than a small span</p>
     *
     */
-    PeriodForecast getWidestFitPeriodForecast(ZonedDateTime from) {
-        ScoreForecast scoreForecast = getWidestFitScoreForecast(from);
-        if (scoreForecast == null) {
-            return null;
+    Optional<PeriodForecast> getWidestFitPeriodForecast(ZonedDateTime from) {
+        if (from == null) {
+            return Optional.empty();
         }
-        return scoreForecast.getPeriodForecast();
+        Optional<ScoreForecast> scoreForecast = getWidestFitScoreForecast(from);
+        return scoreForecast.isPresent()
+                ? Optional.of(scoreForecast.get().getPeriodForecast())
+                : Optional.empty();
     }
 
     /**
@@ -146,19 +154,19 @@ class MeteoForecastIndexer {
      * this function only can find a period forecast that covers parts of the requested period, then the forecast
      * covering the most will be used.
      */
-    PeriodForecast getBestFitPeriodForecast(ZonedDateTime from, ZonedDateTime to) {
+    Optional<PeriodForecast> getBestFitPeriodForecast(ZonedDateTime from, ZonedDateTime to) {
         if (from == null || to == null) {
-            return null;
+            return Optional.empty();
         }
 
         // Making sure that we remove minutes, seconds and milliseconds from the request timestamps
         ZonedDateTime requestFrom = from.withMinute(0).withSecond(0).withNano(0);
         ZonedDateTime requestTo = to.withMinute(0).withSecond(0).withNano(0);
 
-        //  Get list of period forecasts for the requested day. Return null if date isn't present
+        //  Get list of period forecasts for the requested day. Return empty if date isn't present
         List<PeriodForecast> forecastsList = dayIndex.get(new DayIndexKey(requestFrom));
         if (forecastsList == null) {
-            return null;
+            return Optional.empty();
         }
 
         PeriodForecast chosenForecast = null;
@@ -170,7 +178,7 @@ class MeteoForecastIndexer {
             ZonedDateTime actualTo = cloneZonedDateTime(forecast.getToTime());
 
             if (requestFrom.equals(actualFrom) && requestTo.equals(actualTo)) {
-                return forecast;
+                return Optional.of(forecast);
             } else if (
                     (requestFrom.isBefore(actualFrom) && requestTo.isBefore(actualFrom)) ||
                             (requestFrom.isAfter(actualTo) && requestTo.isAfter(actualTo)) ||
@@ -201,77 +209,77 @@ class MeteoForecastIndexer {
             }
         }
 
-        return chosenForecast;
+        return Optional.ofNullable(chosenForecast);
     }
 
 
-
-    ScoreForecast getWidestFitScoreForecast(ZonedDateTime time) {
+    Optional<ScoreForecast> getWidestFitScoreForecast(ZonedDateTime time) {
+        if (time == null) {
+            return Optional.empty();
+        }
         return getXScoreForecast(time, true);
     }
 
 
-    private ScoreForecast getXScoreForecast(ZonedDateTime time, boolean widest) {
-        if (time == null) {
-            return null;
+    private Optional<ScoreForecast> getXScoreForecast(ZonedDateTime time, boolean widest) {
+        HourMatcher hourMatcher = createHourIndexKey(cloneZonedDateTime(time));
+        if (!hourIndex.containsKey(hourMatcher)) {
+            return Optional.empty();
         }
-        HourIndexKey hourIndexKey = createHourIndexKey(cloneZonedDateTime(time));
-        List<ScoreForecast> scoreForecasts = hourIndex.get(hourIndexKey);
-        if (scoreForecasts == null) {
-            return null;
-        }
-        ScoreForecast lowest = null;
+        List<ScoreForecast> scoreForecasts = hourIndex.get(hourMatcher);
+        ScoreForecast forecast = null;
         for (ScoreForecast scoreForecast : scoreForecasts) {
-            if (lowest == null) {
-                lowest = scoreForecast;
+            if (forecast == null) {
+                forecast = scoreForecast;
             } else {
-                long lowestScore = (widest ? lowest.getPointWideScore() : lowest.getPointTightScore());
+                long lowestScore = (widest ? forecast.getPointWideScore() : forecast.getPointTightScore());
                 long forecastScore = (widest ? scoreForecast.getPointWideScore() : scoreForecast.getPointTightScore());
                 if (forecastScore < lowestScore) {
-                    lowest = scoreForecast;
+                    forecast = scoreForecast;
                 }
             }
         }
-        return lowest;
+        return Optional.ofNullable(forecast);
     }
 
     private void init() {
         hourIndex = new HashMap<>();
         dayIndex = new HashMap<>();
-        for (Forecast forecast : forecasts) {
+        // Handle hour index
+        // Handle period index
+        forecasts.stream()
+                .filter(forecast -> forecast instanceof PeriodForecast)
+                .forEach(forecast -> {
+                    PeriodForecast periodForecast = (PeriodForecast) forecast;
 
-            if (forecast instanceof PeriodForecast) {
-                PeriodForecast periodForecast = (PeriodForecast) forecast;
+                    // Handle hour index
+                    List<HourMatcher> indexKeys = createIndexKeysFromPeriodForecast(periodForecast);
+                    for (HourMatcher hourMatcher : indexKeys) {
+                        ScoreForecast scoreForecast =
+                                new ScoreForecast(periodForecast, calculatePointScore(periodForecast, hourMatcher, 1),
+                                                  calculatePointScore(periodForecast, hourMatcher, -1));
+                        addForecastToHourIndex(hourMatcher, scoreForecast);
+                    }
 
-                // Handle hour index
-                List<HourIndexKey> indexKeys = createIndexKeysFromPeriodForecast(periodForecast);
-                for (HourIndexKey hourIndexKey : indexKeys) {
-                    ScoreForecast scoreForecast =
-                            new ScoreForecast(periodForecast, calculatePointScore(periodForecast, hourIndexKey, 1),
-                                              calculatePointScore(periodForecast, hourIndexKey, -1));
-                    addForecastToHourIndex(hourIndexKey, scoreForecast);
-                }
-
-                // Handle period index
-                DayIndexKey dayIndexKey = new DayIndexKey(cloneZonedDateTime(periodForecast.getFromTime()));
-                addForecastToPeriodIndex(dayIndexKey, periodForecast);
-            }
-        }
+                    // Handle period index
+                    DayIndexKey dayIndexKey = new DayIndexKey(cloneZonedDateTime(periodForecast.getFromTime()));
+                    addForecastToPeriodIndex(dayIndexKey, periodForecast);
+                });
     }
 
-    private long calculatePointScore(PeriodForecast periodForecast, HourIndexKey hourIndexKey, int spanWeight) {
+    private long calculatePointScore(PeriodForecast periodForecast, HourMatcher hourMatcher, int spanWeight) {
         ZonedDateTime periodFromTime = cloneZonedDateTime(periodForecast.getFromTime());
         ZonedDateTime periodToTime = cloneZonedDateTime(periodForecast.getToTime());
         return (hoursBetween(periodFromTime, periodToTime) * spanWeight) +
-                hoursBetween(periodFromTime, hourIndexKey.getDateTime());
+                hoursBetween(periodFromTime, hourMatcher.getDateTime());
     }
 
     private long hoursBetween(ZonedDateTime from, ZonedDateTime to) {
         return Duration.between(from.toInstant(), to.toInstant()).toHours();
     }
 
-    private List<HourIndexKey> createIndexKeysFromPeriodForecast(PeriodForecast periodForecast) {
-        List<HourIndexKey> keyList = new ArrayList<>();
+    private List<HourMatcher> createIndexKeysFromPeriodForecast(PeriodForecast periodForecast) {
+        List<HourMatcher> keyList = new ArrayList<>();
         ZonedDateTime fromTime = cloneZonedDateTime(periodForecast.getFromTime());
         ZonedDateTime activeTime = cloneZonedDateTime(periodForecast.getToTime());
         while (activeTime.isAfter(fromTime)) {
@@ -282,7 +290,7 @@ class MeteoForecastIndexer {
         return keyList;
     }
 
-    private void addForecastToHourIndex(HourIndexKey key, ScoreForecast scoreForecast) {
+    private void addForecastToHourIndex(HourMatcher key, ScoreForecast scoreForecast) {
         if (hourIndex.containsKey(key)) {
             hourIndex.get(key).add(scoreForecast);
         } else {
@@ -302,8 +310,8 @@ class MeteoForecastIndexer {
         }
     }
 
-    private HourIndexKey createHourIndexKey(ZonedDateTime pointInTime) {
-        return new HourIndexKey(pointInTime);
+    private HourMatcher createHourIndexKey(ZonedDateTime pointInTime) {
+        return new HourMatcher(pointInTime);
     }
 
 }

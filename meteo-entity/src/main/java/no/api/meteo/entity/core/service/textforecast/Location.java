@@ -29,19 +29,19 @@ import lombok.Value;
 public class Location {
 
     @JsonProperty
-    private String type;
+    private final String type;
 
     @JsonProperty
-    private String name;
+    private final String name;
 
     @JsonPropertyOrder
-    private String id;
+    private final String id;
 
     @JsonProperty
-    private String header;
+    private final String header;
 
     @JsonProperty
-    private String in;
+    private final String in;
 
     @JsonCreator
     public Location(@JsonProperty("type") String type,

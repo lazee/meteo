@@ -60,7 +60,7 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
     }
 
     @Override
-    public void handleStartTags(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
+    public void handleStartTags(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) throws MeteoException {
         switch (xpp.getName()) {
             case TAG_META:
                 handleMetaTag(xpp);
@@ -118,7 +118,7 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
         }
     }
 
-    private void handleLocationTag(SunriseBuilder sunriseBuilder, XmlPullParser xpp) {
+    private void handleLocationTag(SunriseBuilder sunriseBuilder, XmlPullParser xpp) throws MeteoException {
         if (sunriseBuilder.getLocation() == null) {
             sunriseBuilder.setLocation(new Location(getDouble(xpp, ATTR_LONGITUDE),
                                                     getDouble(xpp, ATTR_LATITUDE), null));
@@ -151,18 +151,14 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
         }
     }
 
-    private void handleMoonTag(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) {
-        try {
-            MoonBuilder moonBuilder = new MoonBuilder();
-            moonBuilder.setRise(getZonedDateTime(xpp, MeteoConstants.ATTR_RISE));
-            moonBuilder.setSet(getZonedDateTime(xpp, MeteoConstants.ATTR_SET));
-            moonBuilder.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
-            moonBuilder.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
-            moonBuilder.setPhase(PhaseType.findByValue(getString(xpp, MeteoConstants.ATTR_PHASE)));
-            stack.peek().setMoonBuilder(moonBuilder);
-        } catch (MeteoException e) {
-            log.warn(COULD_NOT_CONVERT_DATE_FROM_XML, e);
-        }
+    private void handleMoonTag(XmlPullParser xpp, Stack<SunriseDateBuilder> stack) throws MeteoException {
+        MoonBuilder moonBuilder = new MoonBuilder();
+        moonBuilder.setRise(getZonedDateTime(xpp, MeteoConstants.ATTR_RISE));
+        moonBuilder.setSet(getZonedDateTime(xpp, MeteoConstants.ATTR_SET));
+        moonBuilder.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
+        moonBuilder.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
+        moonBuilder.setPhase(PhaseType.findByValue(getString(xpp, MeteoConstants.ATTR_PHASE)).get());
+        stack.peek().setMoonBuilder(moonBuilder);
     }
 
     private SunriseBuilder getSunriseBuilder() {

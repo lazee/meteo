@@ -55,7 +55,7 @@ public class TextforecastParser extends AbstractMetaMeteoDataParser<Weather, Tim
 
 
     @Override
-    public void handleStartTags(XmlPullParser xpp, Stack<TimeBuilder> stack) {
+    public void handleStartTags(XmlPullParser xpp, Stack<TimeBuilder> stack) throws MeteoException {
         switch (xpp.getName()) {
             case TAG_META:
                 handleMetaTag(xpp);
@@ -117,7 +117,7 @@ public class TextforecastParser extends AbstractMetaMeteoDataParser<Weather, Tim
         locationBuilder.setId(getString(xpp, ATTR_ID));
     }
 
-    private void handleAreaTag(XmlPullParser xpp, Stack<TimeBuilder> stack) {
+    private void handleAreaTag(XmlPullParser xpp, Stack<TimeBuilder> stack) throws MeteoException {
         AreaBuilder areaBuilder = stack.peek().getForecastTypeBuilder().getAreaBuilder();
         areaBuilder.setType(getString(xpp, ATTR_TYPE));
         areaBuilder.setName(getString(xpp, ATTR_NAME));

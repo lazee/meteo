@@ -31,16 +31,16 @@ import java.util.List;
 public class Weather {
 
     @JsonProperty
-    private String title;
+    private final String title;
 
     @JsonProperty
-    private Meta meta;
+    private final Meta meta;
 
     @JsonProperty
-    private String productionDescription;
+    private final String productionDescription;
 
     @JsonProperty
-    private List<Time> times;
+    private final List<Time> times;
 
     @JsonCreator
     public Weather(@JsonProperty("title") String title,

@@ -54,7 +54,7 @@ public class ClockAdapter extends AbstractAdapter<Clock> implements AdapterTempl
      * @throws TemplateModelException If no string representation could be created.
      */
     @Override
-    public String getAsString() throws TemplateModelException {
+    public String getAsString() {
         return getObject().toString();
     }
 

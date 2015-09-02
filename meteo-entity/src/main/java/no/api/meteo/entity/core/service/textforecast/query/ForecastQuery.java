@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.textforecast.query;
 
+import java.util.Optional;
+
 import static no.api.meteo.entity.core.service.textforecast.query.Language.NB;
 
 /**
@@ -102,9 +104,9 @@ public enum ForecastQuery {
 
     ROUTE_FBNO80_EN("route_fbno80", EN);*/
 
-    private String name;
+    private final String name;
 
-    private Language language;
+    private final Language language;
 
     ForecastQuery(String name, Language language) {
         this.name = name;
@@ -119,15 +121,15 @@ public enum ForecastQuery {
         return language;
     }
 
-    public static ForecastQuery findByValue(String name, Language language) {
+    public static Optional<ForecastQuery> findByValue(String name, Language language) {
         if (name == null || language == null) {
-            return null;
+            return Optional.empty();
         }
         for (ForecastQuery type : ForecastQuery.values()) {
             if (type.getName().equals(name) && type.getLanguage() == language) {
-                return type;
+                return Optional.of(type);
             }
         }
-        return null;
+        return Optional.empty();
     }
 }

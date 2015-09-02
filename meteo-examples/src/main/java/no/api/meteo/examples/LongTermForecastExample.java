@@ -91,6 +91,7 @@ public class LongTermForecastExample {
     public static void main(String[] args) {
         LongTermForecastExample longTermForecastExample = new LongTermForecastExample();
         longTermForecastExample.runExample();
+        longTermForecastExample.shutDown();
     }
 
 }

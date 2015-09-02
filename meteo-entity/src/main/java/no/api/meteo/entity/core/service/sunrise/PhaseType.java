@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import java.util.Optional;
+
 public enum PhaseType {
 
     NEW_MOON("New moon"),
@@ -37,15 +39,15 @@ public enum PhaseType {
         return value;
     }
 
-    public static PhaseType findByValue(String value) {
+    public static Optional<PhaseType> findByValue(String value) {
         if (value == null) {
-            return null;
+            return Optional.empty();
         }
         for (PhaseType type : PhaseType.values()) {
             if (type.getValue().equals(value)) {
-                return type;
+                return Optional.of(type);
             }
         }
-        return null;
+        return Optional.empty();
     }
 }

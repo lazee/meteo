@@ -31,13 +31,13 @@ import java.util.List;
 public class TextLocationWeather {
 
     @JsonProperty
-    private Meta meta;
+    private final Meta meta;
 
     @JsonProperty
-    private String productionDescription;
+    private final String productionDescription;
 
     @JsonProperty
-    private List<TextLocationTime> textLocationTimes;
+    private final List<TextLocationTime> textLocationTimes;
 
     @JsonCreator
     public TextLocationWeather(@JsonProperty("meta") Meta meta,

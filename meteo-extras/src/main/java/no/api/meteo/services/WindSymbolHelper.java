@@ -20,6 +20,9 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.BeaufortLevel;
 
 import java.text.DecimalFormat;
+import java.util.Optional;
+
+import static no.api.meteo.entity.extras.BeaufortLevel.findUnitById;
 
 /**
  * Helper class for wind symbols.
@@ -38,15 +41,18 @@ public final class WindSymbolHelper {
      * This will be created as a mix of the Beaufort wind speed id and the wind direction. This name can be used to
      * identify what wind icon that should be used for a forecast.
      *
-     * @param pointForecast The point forecast to create a wind symbol name for.
+     * @param pointForecast
+     *         The point forecast to create a wind symbol name for.
+     *
      * @return A wind symbol name. <code>null</code> if wind information was missing from the given point forecast.
      */
-    public static String createWindSymbolName(PointForecast pointForecast) {
+    public static Optional<String> createWindSymbolName(PointForecast pointForecast) {
         if (pointForecast == null || pointForecast.getWindDirection() == null || pointForecast.getWindSpeed() == null) {
-            return null;
+            return Optional.empty();
         }
-        return pointForecast.getWindDirection().getName().toLowerCase() +
-                idFormat.format(pointForecast.getWindSpeed().getBeaufort());
+        return Optional.of(
+                pointForecast.getWindDirection().getName().toLowerCase()
+                        + idFormat.format(pointForecast.getWindSpeed().getBeaufort()));
     }
 
     /**
@@ -54,15 +60,17 @@ public final class WindSymbolHelper {
      *
      * This provides you with extra information about the wind speed specified in the forecast.
      *
-     * @param pointForecast Point forecast containing information about the wind speed.
+     * @param pointForecast
+     *         Point forecast containing information about the wind speed.
+     *
      * @return Matching Beaufort level object. <code>null</code> if wind speed information is missing from the given
-     *         forecast.
+     * forecast.
      */
-    public static BeaufortLevel findBeaufortLevel(PointForecast pointForecast) {
+    public static Optional<BeaufortLevel> findBeaufortLevel(PointForecast pointForecast) {
         if (pointForecast == null || pointForecast.getWindSpeed() == null) {
-            return null;
+            return Optional.empty();
         }
-        return BeaufortLevel.findUnitById(pointForecast.getWindSpeed().getBeaufort());
+        return Optional.ofNullable(findUnitById(pointForecast.getWindSpeed().getBeaufort()));
     }
 
 }

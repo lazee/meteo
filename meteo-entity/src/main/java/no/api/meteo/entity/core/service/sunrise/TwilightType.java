@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.sunrise;
 
+import java.util.Optional;
+
 public enum TwilightType {
 
     CIVILIAN("civilian"),
@@ -32,15 +34,15 @@ public enum TwilightType {
         return value;
     }
 
-    public static TwilightType findByValue(String value) {
+    public static Optional<TwilightType> findByValue(String value) {
         if (value == null) {
-            return null;
+            return Optional.empty();
         }
         for (TwilightType type : TwilightType.values()) {
             if (type.getValue().equals(value)) {
-                return type;
+                return Optional.of(type);
             }
         }
-        return null;
+        return Optional.empty();
     }
 }

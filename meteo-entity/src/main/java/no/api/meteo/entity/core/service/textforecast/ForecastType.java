@@ -30,10 +30,10 @@ import java.util.List;
 public class ForecastType {
 
     @JsonProperty
-    private String name;
+    private final String name;
 
     @JsonProperty
-    private List<Area> areas;
+    private final List<Area> areas;
 
     @JsonCreator
     public ForecastType(@JsonProperty("name") String name,

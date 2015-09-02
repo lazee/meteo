@@ -34,23 +34,19 @@ public class AvailableTextforecastsExample {
         meteoClient = new DefaultMeteoClient();
     }
 
-    public MeteoData<Available> runExample() {
+    public MeteoData<Available> fetchDate() throws MeteoException {
         AvailableTextforecastsService service = new AvailableTextforecastsService(meteoClient);
-        try {
-            return service.fetchContent();
-        } catch (MeteoException e) {
-            log.error("Caught exception : " + e.getMessage());
-            return null;
-        }
+        return service.fetchContent();
+
     }
 
     public void shutDown() {
         meteoClient.shutdown();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MeteoException {
         AvailableTextforecastsExample example = new AvailableTextforecastsExample();
-        MeteoData<Available> data = example.runExample();
+        MeteoData<Available> data = example.fetchDate();
         for (Query query : data.getResult().getQueries()) {
             log.info(query.toString());
         }

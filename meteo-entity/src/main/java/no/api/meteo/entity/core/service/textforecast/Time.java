@@ -30,16 +30,16 @@ import java.time.ZonedDateTime;
 public class Time {
 
     @JsonProperty
-    private ZonedDateTime from;
+    private final ZonedDateTime from;
 
     @JsonProperty
-    private ZonedDateTime to;
+    private final ZonedDateTime to;
 
     @JsonProperty
-    private String forecastOrigin;
+    private final String forecastOrigin;
 
     @JsonProperty
-    private ForecastType forecastType;
+    private final ForecastType forecastType;
 
     @JsonCreator
     public Time(@JsonProperty("from") ZonedDateTime from,

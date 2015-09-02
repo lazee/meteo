@@ -16,6 +16,8 @@
 
 package no.api.meteo.entity.core.service.textforecast.query;
 
+import java.util.Optional;
+
 public enum Language {
 
     NB("nb"),
@@ -24,7 +26,7 @@ public enum Language {
 
     NN("nn");
 
-    private String value;
+    private final String value;
 
     Language(String value) {
         this.value = value;
@@ -34,15 +36,15 @@ public enum Language {
         return value;
     }
 
-    public static Language findByValue(String value) {
+    public static Optional<Language> findByValue(String value) {
         if (value == null) {
-            return null;
+            return Optional.empty();
         }
         for (Language type : Language.values()) {
             if (type.getValue().equals(value)) {
-                return type;
+                return Optional.of(type);
             }
         }
-        return null;
+        return Optional.empty();
     }
 }

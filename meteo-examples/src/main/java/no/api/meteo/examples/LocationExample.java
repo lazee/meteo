@@ -42,30 +42,21 @@ public class LocationExample {
         meteoClient = new DefaultMeteoClient();
     }
 
-    public MeteoData<LocationForecast> runExample() {
+    public MeteoData<LocationForecast> runExample() throws MeteoException {
         LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
-        try {
-            // Fetch the data from api.met.no
-
-            return ltsService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
-        } catch (MeteoException e) {
-            // Got client exception. No data available
-            log.error("Caught exception : " + e.getMessage());
-            return null;
-        }
+        return ltsService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
     }
 
     public void shutDown() {
         meteoClient.shutdown();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MeteoException {
         LocationExample locationExample = new LocationExample();
         MeteoData<LocationForecast> data = locationExample.runExample();
-        // Just to prove that we have data
-        //log.info(data.getResult().getMeta().getLicenseUrl().toString());
         for (Model m : data.getResult().getMeta().getModels()) {
             log.info("Model Name: " + m.getName());
         }
+        locationExample.shutDown();
     }
 }

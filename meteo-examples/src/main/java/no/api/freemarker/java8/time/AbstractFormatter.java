@@ -26,7 +26,7 @@ package no.api.freemarker.java8.time;
  */
 public abstract class AbstractFormatter<E> {
 
-    private E obj;
+    private final E obj;
 
     public AbstractFormatter(E obj) {
         this.obj = obj;

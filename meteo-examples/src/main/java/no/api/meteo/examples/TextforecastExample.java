@@ -28,27 +28,23 @@ import no.api.meteo.service.textforecast.TextforecastService;
 
 @Slf4j
 public class TextforecastExample {
+
     private final MeteoClient meteoClient;
 
     public TextforecastExample() {
         meteoClient = new DefaultMeteoClient();
     }
 
-    public MeteoData<Weather> runExample() {
+    public MeteoData<Weather> runExample() throws MeteoException {
         TextforecastService service = new TextforecastService(meteoClient);
-        try {
-            return service.fetchContent(ForecastQuery.LAND_NB);
-        } catch (MeteoException e) {
-            log.error("Caught exception : " + e.getMessage());
-            return null;
-        }
+        return service.fetchContent(ForecastQuery.LAND_NB);
     }
 
     public void shutDown() {
         meteoClient.shutdown();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MeteoException {
         TextforecastExample example = new TextforecastExample();
         MeteoData<Weather> data = example.runExample();
         log.info("Textforecast for %", data.getResult().getTitle());

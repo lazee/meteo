@@ -39,7 +39,7 @@ public class WindSymbolHelperTest {
 
         pointForecastBuilder.setWindSpeed(windSpeed);
         Assert.assertNotNull(WindSymbolHelper.createWindSymbolName(pointForecastBuilder.build()));
-        Assert.assertEquals("sw02", WindSymbolHelper.createWindSymbolName(pointForecastBuilder.build()));
+        Assert.assertEquals("sw02", WindSymbolHelper.createWindSymbolName(pointForecastBuilder.build()).get());
     }
 
     @Test
@@ -55,6 +55,6 @@ public class WindSymbolHelperTest {
 
         pointForecastBuilder.setWindSpeed(windSpeed);
         Assert.assertNotNull(WindSymbolHelper.findBeaufortLevel(pointForecastBuilder.build()));
-        Assert.assertEquals(BeaufortLevel.LIGHT_BREEZE, WindSymbolHelper.findBeaufortLevel(pointForecastBuilder.build()));
+        Assert.assertEquals(BeaufortLevel.LIGHT_BREEZE, WindSymbolHelper.findBeaufortLevel(pointForecastBuilder.build()).get());
     }
 }

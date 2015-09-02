@@ -30,13 +30,13 @@ import java.time.ZonedDateTime;
 public class TextLocationTime {
 
     @JsonProperty
-    private ZonedDateTime from;
+    private final ZonedDateTime from;
 
     @JsonProperty
-    private ZonedDateTime to;
+    private final ZonedDateTime to;
 
     @JsonProperty
-    private TextLocation textLocation;
+    private final TextLocation textLocation;
 
     @JsonCreator
     public TextLocationTime(@JsonProperty("from") ZonedDateTime from,

@@ -31,13 +31,13 @@ public abstract class AbstractAdapter<E>
         extends WrappingTemplateModel
         implements AdapterTemplateModel, TemplateHashModel {
 
-    private E obj;
+    private final E obj;
 
     public AbstractAdapter(E obj) {
         this.obj = obj;
     }
 
-    public String getAsString() throws TemplateModelException {
+    public String getAsString() {
         return getObject().toString();
     }
 

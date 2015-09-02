@@ -46,12 +46,9 @@ public final class MeteoXppUtilsTest {
                     Assert.assertNull(MeteoXppUtils.getString(xpp, "foo"));
                     // Integer
                     Assert.assertEquals(new Integer(7), MeteoXppUtils.getInteger(xpp, "integer"));
-                    Assert.assertNull(MeteoXppUtils.getInteger(xpp, "string"));
-                    Assert.assertNull(MeteoXppUtils.getInteger(xpp, "foo"));
+
                     // Double
                     Assert.assertEquals(1.2, MeteoXppUtils.getDouble(xpp, "double"), 0.0);
-                    Assert.assertNull(MeteoXppUtils.getDouble(xpp, "string"));
-                    Assert.assertNull(MeteoXppUtils.getDouble(xpp, "foo"));
                     // Boolean
                     Assert.assertEquals(Boolean.TRUE, MeteoXppUtils.getBoolean(xpp, "boolean"));
                     Assert.assertFalse(MeteoXppUtils.getBoolean(xpp, "foo"));

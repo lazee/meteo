@@ -34,7 +34,7 @@ public class QueryBuilder implements EntityBuilder<Query> {
 
     private URI uri;
 
-    private List<Parameter> parameters = new ArrayList<>();
+    private final List<Parameter> parameters = new ArrayList<>();
 
     @Override
     public Query build() {

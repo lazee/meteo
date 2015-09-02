@@ -70,7 +70,7 @@ public final class LocationforcastLTSParser
     }
 
     @Override
-    public void handleStartTags(XmlPullParser xpp, Stack<EntityBuilder> stack) {
+    public void handleStartTags(XmlPullParser xpp, Stack<EntityBuilder> stack) throws MeteoException {
         switch (xpp.getName()) {
             case TAG_WEATHERDATA:
                 handleWeatherDataTag((LocationForecastBuilder) getEntityBuilder(), xpp);
@@ -249,7 +249,8 @@ public final class LocationforcastLTSParser
         }
     }
 
-    private void handleLocationDataTag(LocationForecastBuilder locationForecastBuilder, XmlPullParser xpp) {
+    private void handleLocationDataTag(LocationForecastBuilder locationForecastBuilder, XmlPullParser xpp)
+            throws MeteoException {
         locationForecastBuilder.setLocation(
                 new Location(getDouble(xpp, ATTR_LONGITUDE),
                              getDouble(xpp, ATTR_LATITUDE),

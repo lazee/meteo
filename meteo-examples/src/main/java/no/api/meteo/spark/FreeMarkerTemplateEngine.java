@@ -32,7 +32,7 @@ import java.util.TimeZone;
 @Slf4j
 public class FreeMarkerTemplateEngine extends TemplateEngine {
 
-    private Configuration configuration;
+    private final Configuration configuration;
 
     public FreeMarkerTemplateEngine() {
         this.configuration = createFreeMarkerConfiguration();
@@ -52,7 +52,7 @@ public class FreeMarkerTemplateEngine extends TemplateEngine {
     }
 
     private Configuration createFreeMarkerConfiguration() {
-        Configuration configuration = new Configuration();
+        Configuration configuration = new Configuration(Configuration.VERSION_2_3_23);
         configuration.setTimeZone(TimeZone.getTimeZone(ZoneId.of("Europe/Oslo")));
         configuration.setClassForTemplateLoading(FreeMarkerTemplateEngine.class, "/");
         configuration.setObjectWrapper(new Java8ObjectWrapper(Configuration.VERSION_2_3_23));

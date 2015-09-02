@@ -33,7 +33,7 @@ public class ForecastTypeBuilder implements EntityBuilder<ForecastType> {
 
     private String name;
 
-    private List<Area> areas = new ArrayList<>();
+    private final List<Area> areas = new ArrayList<>();
 
     private AreaBuilder areaBuilder = new AreaBuilder();
 

@@ -19,12 +19,13 @@ package no.api.meteo.services;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
+import net.sf.oval.constraint.NotNull;
 
 import java.time.ZonedDateTime;
 
 @EqualsAndHashCode(of = {"day", "month", "year", "hour"}, doNotUseGetters = true)
 @ToString(of = {"day", "month", "year", "hour"})
-class HourIndexKey {
+class HourMatcher {
 
     @Getter
     private final ZonedDateTime dateTime;
@@ -37,7 +38,7 @@ class HourIndexKey {
 
     private final int hour;
 
-    HourIndexKey(ZonedDateTime dateTime) {
+    HourMatcher(@NotNull ZonedDateTime dateTime) {
         this.dateTime = dateTime;
         this.day = dateTime.getDayOfMonth();
         this.month = dateTime.getMonthValue();

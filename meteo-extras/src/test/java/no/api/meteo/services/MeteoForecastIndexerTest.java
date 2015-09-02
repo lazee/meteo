@@ -31,6 +31,7 @@ import org.junit.Test;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static no.api.meteo.util.MeteoDateUtils.cloneZonedDateTime;
 import static no.api.meteo.util.MeteoDateUtils.fullFormatToZonedDateTime;
@@ -41,7 +42,7 @@ public class MeteoForecastIndexerTest {
 
     private MeteoForecastIndexer indexer;
 
-    private ZoneId zoneId = ZoneId.of("Z");
+    private final ZoneId zoneId = ZoneId.of("Z");
 
     @Before
     public void loadResources() throws MeteoTestException, MeteoException {
@@ -70,103 +71,109 @@ public class MeteoForecastIndexerTest {
 
     @Test
     public void testGetBestFitPeriodForecast1() throws Exception {
-        PeriodForecast p = indexer.getBestFitPeriodForecast(fullFormatToZonedDateTime("2015-01-07T04:00:00Z"), fullFormatToZonedDateTime(
-                "2015-01-07T10:00:00Z"));
-        Assert.assertNotNull(p);
-        Assert.assertEquals(new Integer(15), p.getSymbol().getNumber());
-        Assert.assertEquals("Fog", p.getSymbol().getId());
-        ZonedDateTime dt = cloneZonedDateTime(p.getFromTime());
+        Optional<PeriodForecast> p = indexer.getBestFitPeriodForecast(
+                fullFormatToZonedDateTime("2015-01-07T04:00:00Z"),
+                fullFormatToZonedDateTime("2015-01-07T10:00:00Z"));
+        Assert.assertTrue(p.isPresent());
+        Assert.assertEquals(new Integer(15), p.get().getSymbol().getNumber());
+        Assert.assertEquals("Fog", p.get().getSymbol().getId());
+        ZonedDateTime dt = cloneZonedDateTime(p.get().getFromTime());
         Assert.assertEquals(4, dt.getHour());
-        ZonedDateTime tt = cloneZonedDateTime(p.getToTime());
+        ZonedDateTime tt = cloneZonedDateTime(p.get().getToTime());
         Assert.assertEquals(10, tt.getHour());
     }
 
     @Test
     public void testGetBestFitPeriodForecast2() throws Exception {
-        PeriodForecast p = indexer.getBestFitPeriodForecast(fullFormatToZonedDateTime("2015-01-07T03:00:00Z"), fullFormatToZonedDateTime(
-                "2015-01-07T11:00:00Z"));
-        Assert.assertNotNull(p);
-        Assert.assertEquals(new Integer(15), p.getSymbol().getNumber());
-        Assert.assertEquals("Fog", p.getSymbol().getId());
-        ZonedDateTime dt = cloneZonedDateTime(p.getFromTime());
+        Optional<PeriodForecast> p = indexer.getBestFitPeriodForecast(
+                fullFormatToZonedDateTime("2015-01-07T03:00:00Z"),
+                fullFormatToZonedDateTime("2015-01-07T11:00:00Z"));
+        Assert.assertTrue(p.isPresent());
+        Assert.assertEquals(new Integer(15), p.get().getSymbol().getNumber());
+        Assert.assertEquals("Fog", p.get().getSymbol().getId());
+        ZonedDateTime dt = cloneZonedDateTime(p.get().getFromTime());
         Assert.assertEquals(3, dt.getHour());
-        ZonedDateTime tt = cloneZonedDateTime(p.getToTime());
+        ZonedDateTime tt = cloneZonedDateTime(p.get().getToTime());
         Assert.assertEquals(9, tt.getHour()); // TODO Really 9????
     }
 
     @Test
     public void testGetBestFitPeriodForecast3() throws Exception {
-        PeriodForecast p = indexer.getBestFitPeriodForecast(fullFormatToZonedDateTime("2015-01-07T01:00:00Z"), fullFormatToZonedDateTime("2015-01-07T07:00:00Z"));
-        Assert.assertNotNull(p);
-        Assert.assertEquals(new Integer(44), p.getSymbol().getNumber());
-        Assert.assertEquals("LightSnowSun", p.getSymbol().getId());
-        ZonedDateTime dt = cloneZonedDateTime(p.getFromTime());
+        Optional<PeriodForecast> p = indexer.getBestFitPeriodForecast(
+                fullFormatToZonedDateTime("2015-01-07T01:00:00Z"),
+                fullFormatToZonedDateTime("2015-01-07T07:00:00Z"));
+        Assert.assertTrue(p.isPresent());
+        Assert.assertEquals(new Integer(44), p.get().getSymbol().getNumber());
+        Assert.assertEquals("LightSnowSun", p.get().getSymbol().getId());
+        ZonedDateTime dt = cloneZonedDateTime(p.get().getFromTime());
         Assert.assertEquals(1, dt.getHour());
-        ZonedDateTime tt = cloneZonedDateTime(p.getToTime());
+        ZonedDateTime tt = cloneZonedDateTime(p.get().getToTime());
         Assert.assertEquals(7, tt.getHour());
 
     }
 
     @Test
     public void testGetTightestFitPeriodForecast() throws Exception {
-        Assert.assertNull(indexer.getTightestFitScoreForecast(null));
-        Assert.assertNull(indexer.getTightestFitPeriodForecast(null));
+        Assert.assertFalse(indexer.getTightestFitScoreForecast(null).isPresent());
+        Assert.assertFalse(indexer.getTightestFitPeriodForecast(null).isPresent());
         PointForecast pointForecast = (PointForecast) locationForecast.getForecasts().get(10);
         Assert.assertNotNull(pointForecast);
-        ScoreForecast matchingScoreForecast =
+        Optional<ScoreForecast> matchingScoreForecast =
                 indexer.getTightestFitScoreForecast(cloneZonedDateTime(pointForecast.getFromTime()));
-        Assert.assertNotNull(matchingScoreForecast);
-        Assert.assertEquals(1, matchingScoreForecast.getPointTightScore());
+        Assert.assertTrue(matchingScoreForecast.isPresent());
+        Assert.assertEquals(1, matchingScoreForecast.get().getPointTightScore());
 
-        PeriodForecast periodForecast = indexer.getTightestFitPeriodForecast(cloneZonedDateTime(
+        Optional<PeriodForecast> periodForecast = indexer.getTightestFitPeriodForecast(cloneZonedDateTime(
                 pointForecast.getFromTime()));
-        Assert.assertEquals(periodForecast.getFromTime(), matchingScoreForecast.getPeriodForecast().getFromTime());
+        Assert.assertEquals(periodForecast.get().getFromTime(),
+                            matchingScoreForecast.get().getPeriodForecast().getFromTime());
     }
 
     @Test
     public void testGetWidestFitPeriodForecast() throws Exception {
-        Assert.assertNull(indexer.getWidestFitScoreForecast(null));
-        Assert.assertNull(indexer.getWidestFitPeriodForecast(null));
+        Assert.assertFalse(indexer.getWidestFitScoreForecast(null).isPresent());
+        Assert.assertFalse(indexer.getWidestFitPeriodForecast(null).isPresent());
         PointForecast pointForecast = (PointForecast) locationForecast.getForecasts().get(10);
         Assert.assertNotNull(pointForecast);
-        ScoreForecast matchingScoreForecast = indexer.getWidestFitScoreForecast(cloneZonedDateTime(
+        Optional<ScoreForecast> matchingScoreForecast = indexer.getWidestFitScoreForecast(cloneZonedDateTime(
                 pointForecast.getFromTime()));
-        Assert.assertNotNull(matchingScoreForecast);
-        PeriodForecast periodForecast = indexer.getWidestFitPeriodForecast(cloneZonedDateTime(
+        Assert.assertTrue(matchingScoreForecast.isPresent());
+        Optional<PeriodForecast> periodForecast = indexer.getWidestFitPeriodForecast(cloneZonedDateTime(
                 pointForecast.getFromTime()));
-        Assert.assertNotNull(periodForecast);
-        Assert.assertNotNull(periodForecast.getFromTime());
-        Assert.assertNotNull(periodForecast.getToTime());
-        ZonedDateTime ft = cloneZonedDateTime(periodForecast.getFromTime());
-        ZonedDateTime tt = cloneZonedDateTime(periodForecast.getToTime());
-        // TODO Add real tests here . Remember to convert into GMT to avoid tests from failing when summer time is over in Norway
+        Assert.assertTrue(periodForecast.isPresent());
+        Assert.assertNotNull(periodForecast.get().getFromTime());
+        Assert.assertNotNull(periodForecast.get().getToTime());
+        ZonedDateTime ft = cloneZonedDateTime(periodForecast.get().getFromTime());
+        ZonedDateTime tt = cloneZonedDateTime(periodForecast.get().getToTime());
+        // TODO Add real tests here . Remember to convert into GMT to avoid tests from failing when summer time is
+        // over in Norway
     }
 
     @Test
     public void testPeriodIndexKey() throws Exception {
-        HourIndexKey p1 = new HourIndexKey(ZonedDateTime.now(zoneId).withYear(1970));
-        HourIndexKey p2 = new HourIndexKey(ZonedDateTime.now(zoneId).withYear(1980));
+        HourMatcher p1 = new HourMatcher(ZonedDateTime.now(zoneId).withYear(1970));
+        HourMatcher p2 = new HourMatcher(ZonedDateTime.now(zoneId).withYear(1980));
         Assert.assertFalse(p1.equals(null));
         Assert.assertFalse(p2.equals(null));
         Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
-        p1 = new HourIndexKey(ZonedDateTime.now(zoneId).withMonth(2));
-        p2 = new HourIndexKey(ZonedDateTime.now(zoneId).withMonth(3));
+        p1 = new HourMatcher(ZonedDateTime.now(zoneId).withMonth(2));
+        p2 = new HourMatcher(ZonedDateTime.now(zoneId).withMonth(3));
         Assert.assertFalse(p1.equals(null));
         Assert.assertFalse(p2.equals(null));
         Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
-        p1 = new HourIndexKey(ZonedDateTime.now(zoneId).withDayOfMonth(1));
-        p2 = new HourIndexKey(ZonedDateTime.now(zoneId).withDayOfMonth(2));
+        p1 = new HourMatcher(ZonedDateTime.now(zoneId).withDayOfMonth(1));
+        p2 = new HourMatcher(ZonedDateTime.now(zoneId).withDayOfMonth(2));
         Assert.assertFalse(p1.equals(null));
         Assert.assertFalse(p2.equals(null));
         Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
-        p1 = new HourIndexKey(ZonedDateTime.now(zoneId).withHour(3));
-        p2 = new HourIndexKey(ZonedDateTime.now(zoneId).withHour(5));
+        p1 = new HourMatcher(ZonedDateTime.now(zoneId).withHour(3));
+        p2 = new HourMatcher(ZonedDateTime.now(zoneId).withHour(5));
         Assert.assertFalse(p1.equals(null));
         Assert.assertFalse(p2.equals(null));
         Assert.assertTrue(p1.equals(p1));
@@ -176,12 +183,12 @@ public class MeteoForecastIndexerTest {
     @Test
     public void testGetPointForecast() throws Exception {
         ZonedDateTime testTime = ZonedDateTime.now(zoneId).withYear(2015).withMonth(1).withDayOfMonth(7).withHour(16);
-        PointForecast pointForecast = indexer.getPointForecast(testTime);
-        Assert.assertNotNull(pointForecast);
-        Assert.assertEquals(100.0, pointForecast.getHighClouds().getPercent(), 0.);
+        Optional<PointForecast> pointForecast = indexer.getPointForecast(testTime);
+        Assert.assertTrue(pointForecast.isPresent());
+        Assert.assertEquals(100.0, pointForecast.get().getHighClouds().getPercent(), 0.);
 
         testTime = ZonedDateTime.now(zoneId).withYear(2001).withMonth(5).withDayOfMonth(6).withHour(16);
         pointForecast = indexer.getPointForecast(testTime);
-        Assert.assertNull(pointForecast);
+        Assert.assertFalse(pointForecast.isPresent());
     }
 }

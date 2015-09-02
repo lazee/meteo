@@ -22,7 +22,7 @@ public enum TextLocationLanguage {
 
     EN("en");
 
-    private String value;
+    private final String value;
 
     TextLocationLanguage(String value) {
         this.value = value;
