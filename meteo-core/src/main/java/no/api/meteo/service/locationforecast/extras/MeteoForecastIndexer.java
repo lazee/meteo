@@ -60,7 +60,7 @@ class MeteoForecastIndexer {
             if (forecast instanceof PointForecast) {
                 PointForecast pointForecast = (PointForecast) forecast;
                 if (createHourIndexKey(dateTime)
-                        .equals(createHourIndexKey(cloneZonedDateTime(pointForecast.getFromTime())))) {
+                        .equals(createHourIndexKey(cloneZonedDateTime(pointForecast.getFrom())))) {
                     return Optional.of(pointForecast);
                 }
             }
@@ -96,7 +96,7 @@ class MeteoForecastIndexer {
     *
     * <h3>Example</h3>
     *
-    * <p>Lets says we have a PeriodForecast with fromTime set to 12:00 PM and toTime set to 04:00 PM. This gives us a 4
+    * <p>Lets says we have a PeriodForecast with from time set to 12:00 PM and toTime set to 04:00 PM. This gives us a 4
     * hour span.</p>
     *
     * <pre>
@@ -174,8 +174,8 @@ class MeteoForecastIndexer {
         long tmpScore = 0;
 
         for (PeriodForecast forecast : forecastsList) {
-            ZonedDateTime actualFrom = cloneZonedDateTime(forecast.getFromTime());
-            ZonedDateTime actualTo = cloneZonedDateTime(forecast.getToTime());
+            ZonedDateTime actualFrom = cloneZonedDateTime(forecast.getFrom());
+            ZonedDateTime actualTo = cloneZonedDateTime(forecast.getTo());
 
             if (requestFrom.equals(actualFrom) && requestTo.equals(actualTo)) {
                 return Optional.of(forecast);
@@ -262,16 +262,16 @@ class MeteoForecastIndexer {
                     }
 
                     // Handle period index
-                    DayIndexKey dayIndexKey = new DayIndexKey(cloneZonedDateTime(periodForecast.getFromTime()));
+                    DayIndexKey dayIndexKey = new DayIndexKey(cloneZonedDateTime(periodForecast.getFrom()));
                     addForecastToPeriodIndex(dayIndexKey, periodForecast);
                 });
     }
 
     private long calculatePointScore(PeriodForecast periodForecast, HourMatcher hourMatcher, int spanWeight) {
-        ZonedDateTime periodFromTime = cloneZonedDateTime(periodForecast.getFromTime());
-        ZonedDateTime periodToTime = cloneZonedDateTime(periodForecast.getToTime());
-        return (hoursBetween(periodFromTime, periodToTime) * spanWeight) +
-                hoursBetween(periodFromTime, hourMatcher.getDateTime());
+        ZonedDateTime periodFrom = cloneZonedDateTime(periodForecast.getFrom());
+        ZonedDateTime periodTo = cloneZonedDateTime(periodForecast.getTo());
+        return (hoursBetween(periodFrom, periodTo) * spanWeight) +
+                hoursBetween(periodFrom, hourMatcher.getDateTime());
     }
 
     private long hoursBetween(ZonedDateTime from, ZonedDateTime to) {
@@ -280,13 +280,13 @@ class MeteoForecastIndexer {
 
     private List<HourMatcher> createIndexKeysFromPeriodForecast(PeriodForecast periodForecast) {
         List<HourMatcher> keyList = new ArrayList<>();
-        ZonedDateTime fromTime = cloneZonedDateTime(periodForecast.getFromTime());
-        ZonedDateTime activeTime = cloneZonedDateTime(periodForecast.getToTime());
-        while (activeTime.isAfter(fromTime)) {
+        ZonedDateTime from = cloneZonedDateTime(periodForecast.getFrom());
+        ZonedDateTime activeTime = cloneZonedDateTime(periodForecast.getTo());
+        while (activeTime.isAfter(from)) {
             keyList.add(createHourIndexKey(activeTime));
             activeTime = activeTime.minusHours(1);
         }
-        keyList.add(createHourIndexKey(fromTime));
+        keyList.add(createHourIndexKey(from));
         return keyList;
     }
 

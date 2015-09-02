@@ -223,8 +223,8 @@ public final class LocationforcastLTSParser
         if (isStackedObjectPointForecast(stack)) {
             PointForecastBuilder pointForecast = (PointForecastBuilder) stack.pop();
             PeriodForecastBuilder periodForecastBuilder = new PeriodForecastBuilder();
-            periodForecastBuilder.setFromTime(pointForecast.getFromTime());
-            periodForecastBuilder.setToTime(pointForecast.getToTime());
+            periodForecastBuilder.setFrom(pointForecast.getFrom());
+            periodForecastBuilder.setTo(pointForecast.getTo());
             stack.push(periodForecastBuilder);
         }
     }
@@ -232,8 +232,8 @@ public final class LocationforcastLTSParser
     private void handleTimeDataTag(Stack<EntityBuilder> stack, XmlPullParser xpp) {
         try {
             PointForecastBuilder pointForecastBuilder = new PointForecastBuilder();
-            pointForecastBuilder.setToTime(getZonedDateTime(xpp, ATTR_TO));
-            pointForecastBuilder.setFromTime(getZonedDateTime(xpp, ATTR_FROM));
+            pointForecastBuilder.setTo(getZonedDateTime(xpp, ATTR_TO));
+            pointForecastBuilder.setFrom(getZonedDateTime(xpp, ATTR_FROM));
             stack.push(pointForecastBuilder);
         } catch (MeteoException e) {
             log.warn("Could not convert time dates from xml", e);

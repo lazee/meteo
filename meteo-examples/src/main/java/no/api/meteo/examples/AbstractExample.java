@@ -33,8 +33,8 @@ public abstract class AbstractExample {
         } else {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
             log.error("Period forecast -> from:" +
-                    periodForecast.getFromTime().format(formatter) + ", to:" +
-                    periodForecast.getToTime().format(formatter));
+                    periodForecast.getFrom().format(formatter) + ", to:" +
+                    periodForecast.getTo().format(formatter));
             prettyLogPrecipitation(periodForecast.getPrecipitation());
         }
     }

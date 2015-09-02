@@ -69,26 +69,5 @@ public final class Sun extends AbstractType {
         return noon == null ? new ArrayList<>() : Collections.unmodifiableList(twilight);
     }
 
-    /**
-     * Check if the sun is shining for a given time.
-     *
-     * @param currentDate
-     *         The time (date) to be checked.
-     *
-     * @return <code>true</code> if the sun has raised, else <code>false</code>.
-     */
-    public boolean isSun(ZonedDateTime currentDate) {
-        boolean timeWithinSunPeriod = currentDate.equals(getRise()) || currentDate.equals(getSet()) ||
-                currentDate.isAfter(getRise()) && currentDate.isBefore(getSet());
-
-        if (getNeverRise()) {
-            return false;
-        } else if (getNeverSet() || timeWithinSunPeriod) {
-            return true;
-        }
-        return false;
-    }
-
-    // TODO add isSun(from, to)
 
 }

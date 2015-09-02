@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 @Value
 public final class SunriseDate {
@@ -42,4 +43,34 @@ public final class SunriseDate {
         this.sun = sun;
         this.moon = moon;
     }
+
+    public boolean isPolarNight() {
+        return getSun().getNeverRise();
+    }
+
+    public boolean isNight(ZonedDateTime time) {
+        return isPolarNight() ? true : !isSun(time);
+    }
+
+    /**
+     * Check if the sun is shining for a given time.
+     *
+     * @param currentDate
+     *         The time (date) to be checked.
+     *
+     * @return <code>true</code> if the sun has raised, else <code>false</code>.
+     */
+    public boolean isSun(ZonedDateTime currentDate) {
+        boolean timeWithinSunPeriod = currentDate.equals(getSun().getRise()) || currentDate.equals(getSun().getSet()) ||
+                currentDate.isAfter(getSun().getRise()) && currentDate.isBefore(getSun().getSet());
+
+        if (getSun().getNeverRise()) {
+            return false;
+        } else if (getSun().getNeverSet() || timeWithinSunPeriod) {
+            return true;
+        }
+        return false;
+    }
+
+
 }

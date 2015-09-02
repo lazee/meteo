@@ -32,11 +32,11 @@ public class PeriodForecastBuilder implements EntityBuilder<PeriodForecast> {
 
     @Getter
     @Setter
-    private ZonedDateTime fromTime;
+    private ZonedDateTime from;
 
     @Getter
     @Setter
-    private ZonedDateTime toTime;
+    private ZonedDateTime to;
 
     @Getter
     @Setter
@@ -52,6 +52,6 @@ public class PeriodForecastBuilder implements EntityBuilder<PeriodForecast> {
 
     @Override
     public PeriodForecast build() {
-        return new PeriodForecast(getFromTime(), getToTime(), getPrecipitation(), getSymbol(), getSymbolProbability());
+        return new PeriodForecast(getFrom(), getTo(), getPrecipitation(), getSymbol(), getSymbolProbability());
     }
 }

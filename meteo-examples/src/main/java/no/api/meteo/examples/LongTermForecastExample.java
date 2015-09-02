@@ -68,8 +68,8 @@ public class LongTermForecastExample {
                 for (MeteoExtrasForecast forecast : day.getForecasts()) {
                     PeriodForecast p = forecast.getPeriodForecast();
                     PointForecast po = forecast.getPointForecast();
-                    ZonedDateTime df = cloneZonedDateTime(p.getFromTime());
-                    ZonedDateTime dt = cloneZonedDateTime(p.getToTime());
+                    ZonedDateTime df = cloneZonedDateTime(p.getFrom());
+                    ZonedDateTime dt = cloneZonedDateTime(p.getTo());
                     print(df.format(fmt)+"-"+dt.format(fmt)+" | "+p.getSymbol().getId()+" | "+Math.round(po.getTemperature().getValue()) + " | "+p.getPrecipitation().getMinValue() + "-" + p.getPrecipitation().getMaxValue() + "," + p.getPrecipitation().getValue());
                 }
             }

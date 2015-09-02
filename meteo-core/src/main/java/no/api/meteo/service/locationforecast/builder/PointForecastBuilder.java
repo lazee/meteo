@@ -41,11 +41,11 @@ public class PointForecastBuilder implements EntityBuilder<PointForecast> {
 
     @Getter
     @Setter
-    private ZonedDateTime fromTime;
+    private ZonedDateTime from;
 
     @Getter
     @Setter
-    private ZonedDateTime toTime;
+    private ZonedDateTime to;
 
     @Getter
     @Setter
@@ -97,8 +97,8 @@ public class PointForecastBuilder implements EntityBuilder<PointForecast> {
 
     public static PointForecastBuilder fromPointForecast(PointForecast pointForecast) {
         PointForecastBuilder builder = new PointForecastBuilder();
-        builder.setFromTime(pointForecast.getFromTime());
-        builder.setToTime(pointForecast.getToTime());
+        builder.setFrom(pointForecast.getFrom());
+        builder.setTo(pointForecast.getTo());
         builder.setFog(pointForecast.getFog());
         builder.setPressure(pointForecast.getPressure());
         builder.setHighClouds(pointForecast.getHighClouds());
@@ -116,7 +116,7 @@ public class PointForecastBuilder implements EntityBuilder<PointForecast> {
 
     @Override
     public PointForecast build() {
-        return new PointForecast(getFromTime(), getToTime(), getFog(), getPressure(), getHighClouds(),
+        return new PointForecast(getFrom(), getTo(), getFog(), getPressure(), getHighClouds(),
                                  getMediumClouds(), getCloudiness(), getLowClouds(), getWindDirection(), getWindSpeed(),
                                  getHumidity(), getTemperature(), getWindProbability(), getTemperatureProbability());
     }

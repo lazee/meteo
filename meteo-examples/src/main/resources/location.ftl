@@ -88,15 +88,15 @@
                                     <#if pair?is_even_item>
                                         <td class="hourpres" width="65">
                                             <#assign periodInfo>
-                                                <span class="hourdate">Date: ${pair.pointForecast.fromTime.format('dd-MM-yy')}</span><br/>
-                                                From PeriodForecast:<br/>${pair.periodForecast.fromTime.format('dd-MM-yy HH:mm Z')}
+                                                <span class="hourdate">Date: ${pair.pointForecast.from.format('dd-MM-yy')}</span><br/>
+                                                From PeriodForecast:<br/>${pair.periodForecast.from.format('dd-MM-yy HH:mm Z')}
                                                 <br/>
-                                                ${pair.periodForecast.toTime.format('dd-MM-yy HH:mm Z')}
+                                                ${pair.periodForecast.to.format('dd-MM-yy HH:mm Z')}
                                                 <br/>
                                                 Symbol : ${pair.periodForecast.symbol.number}
                                             </#assign>
                                             <img  data-toggle="tooltip" title="" data-original-title="${periodInfo?html}" src="/images/weather/${pair.periodForecast.symbol.number}.png"/><br/>
-                                            <span class="hourdate">${pair.pointForecast.fromTime.format('HH:mm')}</span><br/>
+                                            <span class="hourdate">${pair.pointForecast.from.format('HH:mm')}</span><br/>
                                             <span class="hourtemp">${pair.pointForecast.temperature.value?string["0"]}&#8451;</span><br/>
                                             <span class="hourpre">${pair.periodForecast.precipitation.minValue?string["0.0"]} - ${pair.periodForecast.precipitation.maxValue?string["0.0"]}"mm</span><br/>
                                             <img src="/images/wind/${pair.pointForecast.windDirection.name?lower_case}${pair.pointForecast.windSpeed.beaufort?string["00"]}.png"/>
@@ -124,14 +124,14 @@
                         <tr>
                             <td class="hourpres">
                                 <#assign periodInfo>
-                                    From: ${tpe.fromTime.format('HH:mm')}<br/>
-                                    To: ${tpe.toTime.format('dd-MM-yy HH:mm Z')}
+                                    From: ${tpe.from.format('HH:mm')}<br/>
+                                    To: ${tpe.to.format('dd-MM-yy HH:mm Z')}
                                 </#assign>
                                 <span onmouseover="tooltip.show('${periodInfo?html}', 200);" onmouseout="tooltip.hide();">
                                     <img src="/images/weather/${tpe.symbol.number}.png"/><br/>
                                 </span>
-                                <span class="hourdate">${tpo.fromTime.format('dd-MM-yy')}</span><br/>
-                                <span class="hourdate">${tpo.fromTime.format('HH:mm')}</span><br/>
+                                <span class="hourdate">${tpo.from.format('dd-MM-yy')}</span><br/>
+                                <span class="hourdate">${tpo.from.format('HH:mm')}</span><br/>
                                 <span class="hourtemp">${tpo.temperature.value?string["0"]}&#8451;</span><br/>
                                 <span class="hourpre">${tpe.precipitation.minValue?string["0.0"]} - ${tpe.precipitation.maxValue?string["0.0"]}mm</span><br
                                 <img src="/images/wind/${tpo.windDirection.name?lower_case}${tpo.windSpeed.beaufort?string["0"]}.png"/>
@@ -139,15 +139,15 @@
                             </td>
                             <td class="hourpres">
                                 <#assign periodInfo>
-                                    From: ${tope.fromTime}
+                                    From: ${tope.from}
                                     <br/>
-                                    To: ${tope.toTime.format('dd-MM-yy HH:mm Z')}
+                                    To: ${tope.to.format('dd-MM-yy HH:mm Z')}
                                 </#assign>
                                 <span onmouseover="tooltip.show('${periodInfo?html}', 200);" onmouseout="tooltip.hide();">
                                     <img src="/images/weather/${tope.symbol.number}.png"/><br/>
                                 </span>
-                                <span class="hourdate">${topo.fromTime.format('dd-MM-yy')}</span><br/>
-                                <span class="hourdate">${topo.fromTime.format('HH:mm')}</span><br/>
+                                <span class="hourdate">${topo.from.format('dd-MM-yy')}</span><br/>
+                                <span class="hourdate">${topo.from.format('HH:mm')}</span><br/>
                                 <span class="hourtemp">${topo.temperature.value?string["0"]}&#8451;</span><br/>
                                 <span class="hourpre">${tope.precipitation.minValue?string["0.0"]} - ${tope.precipitation.maxValue?string["0.0"]}mm</span><br/>
                                 <img src="/images/wind/${topo.windDirection.name?lower_case}${topo.windSpeed.beaufort?string["00"]}.png"/>
@@ -155,18 +155,18 @@
                             </td>
                             <td class="hourpres">
                                 <#assign periodInfo>
-                                    From:${thpe.fromTime.format('dd-MM-yy HH:mm Z')}<br/>
-                                    To:${thpe.toTime.format('dd-MM-yy HH:mm Z')}
+                                    From:${thpe.from.format('dd-MM-yy HH:mm Z')}<br/>
+                                    To:${thpe.to.format('dd-MM-yy HH:mm Z')}
                                 </#assign>
                                 <span onmouseover="tooltip.show('${periodInfo?html}', 200);" onmouseout="tooltip.hide();">
                                     <img src="/images/weather/${thpe.symbol.number}.png"/><br/>
                                 </span>
                                 <span class="hourdate">
-                                    ${thpo.fromTime.format('dd-MM-yy')}
+                                    ${thpo.from.format('dd-MM-yy')}
                                 </span>
                                 <br/>
                                 <span class="hourdate">
-                                    ${thpo.fromTime.format('HH:mm')}
+                                    ${thpo.from.format('HH:mm')}
                                 </span>
                                 <br/>
                                 <span class="hourtemp">

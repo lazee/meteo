@@ -67,8 +67,8 @@ public final class PointForecast extends AbstractForecast implements Forecast {
     private final TemperatureProbability temperatureProbability;
 
     @JsonCreator
-    public PointForecast(@JsonProperty("fromTime") ZonedDateTime fromTime,
-                         @JsonProperty("toTime") ZonedDateTime toTime,
+    public PointForecast(@JsonProperty("fromTime") ZonedDateTime from,
+                         @JsonProperty("toTime") ZonedDateTime to,
                          @JsonProperty("fog") Fog fog,
                          @JsonProperty("pressure") Pressure pressure,
                          @JsonProperty("highClouds") HighClouds highClouds,
@@ -81,7 +81,7 @@ public final class PointForecast extends AbstractForecast implements Forecast {
                          @JsonProperty("temperature") Temperature temperature,
                          @JsonProperty("windProbability") WindProbability windProbability,
                          @JsonProperty("temperatureProbability") TemperatureProbability temperatureProbability) {
-        super(fromTime, toTime);
+        super(from, to);
         this.fog = fog;
         this.pressure = pressure;
         this.highClouds = highClouds;
@@ -96,8 +96,8 @@ public final class PointForecast extends AbstractForecast implements Forecast {
         this.temperatureProbability = temperatureProbability;
     }
 
-    public PointForecast(ZonedDateTime fromTime, ZonedDateTime toTime) {
-        super(fromTime, toTime);
+    public PointForecast(ZonedDateTime from, ZonedDateTime to) {
+        super(from, to);
         this.fog = null;
         this.pressure = null;
         this.highClouds = null;

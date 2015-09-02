@@ -20,8 +20,8 @@ import java.time.ZonedDateTime;
 
 public interface Forecast {
 
-    ZonedDateTime getFromTime();
+    ZonedDateTime getFrom();
 
-    ZonedDateTime getToTime();
+    ZonedDateTime getTo();
 
 }

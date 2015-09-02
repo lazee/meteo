@@ -19,12 +19,13 @@ package no.api.meteo.entity.core.service.sunrise;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 import static no.api.meteo.util.MeteoDateUtils.fullFormatToZonedDateTime;
 
-public class SunTest {
+public class SunriseDateTest {
 
     @Test
     public void testIsSun1() throws Exception {
@@ -35,12 +36,13 @@ public class SunTest {
         ZonedDateTime set = fullFormatToZonedDateTime("2015-08-05T19:43:21Z");
 
         Sun sun = new Sun(rise, set, false, false, null, null, null, null);
-
+        SunriseDate sunrise = new SunriseDate(LocalDate.of(2015, 8, 05), sun, null);
         ZonedDateTime time = fullFormatToZonedDateTime("2015-08-05T21:05:09Z");
-        Assert.assertFalse(sun.isSun(time));
+
+        Assert.assertFalse(sunrise.isSun(time));
 
         time = fullFormatToZonedDateTime("2015-08-05T07:05:09Z");
-        Assert.assertTrue(sun.isSun(time));
+        Assert.assertTrue(sunrise.isSun(time));
 
     }
 
@@ -52,13 +54,16 @@ public class SunTest {
         ZonedDateTime after = now.plusHours(1);
 
         Sun sun = new Sun(before, after, false, true, null, null, null, null);
-        Assert.assertTrue(sun.isSun(now));
+        SunriseDate sunrise = new SunriseDate(LocalDate.of(now.getYear(), now.getMonth(), now.getDayOfMonth()), sun, null);
+        Assert.assertTrue(sunrise.isSun(now));
 
         sun = new Sun(before, after, true, true, null, null, null, null);
-        Assert.assertFalse(sun.isSun(now));
+        sunrise = new SunriseDate(LocalDate.of(now.getYear(), now.getMonth(), now.getDayOfMonth()), sun, null);
+        Assert.assertFalse(sunrise.isSun(now));
 
         sun = new Sun(before, after, false, false, null, null, null, null);
-        Assert.assertTrue(sun.isSun(now));
+        sunrise = new SunriseDate(LocalDate.of(now.getYear(), now.getMonth(), now.getDayOfMonth()), sun, null);
+        Assert.assertTrue(sunrise.isSun(now));
 
     }
 

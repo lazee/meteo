@@ -40,12 +40,12 @@ public final class PeriodForecast extends AbstractForecast implements Forecast {
 
     @JsonCreator
     public PeriodForecast(
-            @JsonProperty("fromTime") ZonedDateTime fromTime,
-            @JsonProperty("toTime") ZonedDateTime toTime,
+            @JsonProperty("fromTime") ZonedDateTime from,
+            @JsonProperty("toTime") ZonedDateTime to,
             @JsonProperty("precipitation") Precipitation precipitation,
             @JsonProperty("symbol") Symbol symbol,
             @JsonProperty("symbolProbability") SymbolProbability symbolProbability) {
-        super(fromTime, toTime);
+        super(from, to);
         this.precipitation = precipitation;
         this.symbol = symbol;
         this.symbolProbability = symbolProbability;

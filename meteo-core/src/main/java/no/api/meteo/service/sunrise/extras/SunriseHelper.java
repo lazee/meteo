@@ -14,30 +14,16 @@
  * limitations under the License.
  */
 
-package no.api.meteo.entity.core.service.locationforecast;
+package no.api.meteo.service.sunrise.extras;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
-import net.sf.oval.constraint.NotNull;
-
+import java.time.Duration;
 import java.time.ZonedDateTime;
 
-@AllArgsConstructor
-@ToString
-@EqualsAndHashCode
-public abstract class AbstractForecast {
+public class SunriseHelper {
 
-    @NotNull
-    @Getter
-    @JsonProperty
-    private final ZonedDateTime from;
-
-    @NotNull
-    @Getter
-    @JsonProperty
-    private final ZonedDateTime to;
-
+    public static ZonedDateTime calculateTimeForSunrise(ZonedDateTime from, ZonedDateTime to) {
+        Duration d = Duration.between(from, to);
+        long distance = d.getSeconds() / 60 / 60 / 2;
+        return from.plusHours(distance);
+    }
 }
