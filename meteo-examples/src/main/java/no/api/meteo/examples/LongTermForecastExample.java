@@ -26,7 +26,7 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecastDay;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
-import no.api.meteo.services.LocationForecastHelper;
+import no.api.meteo.service.locationforecast.extras.LocationForecastHelper;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;

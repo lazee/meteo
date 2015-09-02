@@ -53,12 +53,12 @@
         </dependency>
         <dependency>
             <groupId>no.api.meteo</groupId>
-            <artifactId>meteo-entity</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>no.api.meteo</groupId>
             <artifactId>meteo-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
         </dependency>
     </dependencies>
 </project>

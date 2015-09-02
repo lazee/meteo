@@ -25,7 +25,7 @@ import no.api.meteo.client.MeteoData;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
-import no.api.meteo.services.LocationForecastHelper;
+import no.api.meteo.service.locationforecast.extras.LocationForecastHelper;
 import spark.ModelAndView;
 import spark.Request;
 

@@ -73,10 +73,6 @@
         </dependency>
         <dependency>
             <groupId>no.api.meteo</groupId>
-            <artifactId>meteo-extras</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>no.api.meteo</groupId>
             <artifactId>meteo-client</artifactId>
         </dependency>
         <dependency>
