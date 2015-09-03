@@ -28,8 +28,7 @@ import no.api.meteo.service.MeteoDataParser;
 /**
  * Service object for fetching data for the Textforcast/Available service at http://api.met.no.
  *
- * {@link <a href="http://api.met.no/weatherapi/textforecast/1.6/documentation">http://api.met
- * .no/weatherapi/textforecast/1.6/documentation</a>}
+ * http://api.met.no/weatherapi/textforecast/1.6/documentation
  */
 public class AvailableTextforecastsService extends AbstractMeteoService {
 

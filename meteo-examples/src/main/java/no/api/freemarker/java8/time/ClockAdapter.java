@@ -30,7 +30,7 @@ import static no.api.freemarker.java8.time.DateTimeTools.METHOD_FORMAT;
 import static no.api.freemarker.java8.time.DateTimeTools.METHOD_UNKNOWN_MSG;
 
 /**
- * ClockAdapter adds basic format support for {@link Clock} too FreeMarker 2.3.23 and above.
+ * ClockAdapter adds basic format support for Clock too FreeMarker 2.3.23 and above.
  */
 public class ClockAdapter extends AbstractAdapter<Clock> implements AdapterTemplateModel,
         TemplateScalarModel, TemplateHashModel {
@@ -51,7 +51,6 @@ public class ClockAdapter extends AbstractAdapter<Clock> implements AdapterTempl
      * This is a quit silly implementation. Normally you would like to convert to an Instant when printing the clock.
      *
      * @return String representation of the clock.
-     * @throws TemplateModelException If no string representation could be created.
      */
     @Override
     public String getAsString() {
