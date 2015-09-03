@@ -1,0 +1,17 @@
+
+In order to release Meteo you need a Sonatype account connected to the Meteo project. Contact Jakob to get help on this.
+
+Releasing Meteo:
+
+* mvn release:prepare
+* mvn release:perform
+* Goto https://oss.sonatype.org/ and log in.
+* Click on staging repositories and find your release.
+* Click on the release and hit the close button, then the release button.
+
+The release will be available in the Central Repo within a day.
+
+
+More info:
+
+http://central.sonatype.org/pages/releasing-the-deployment.html
