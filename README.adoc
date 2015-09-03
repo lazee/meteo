@@ -2,8 +2,8 @@
 
 Meteo is an Open-Source Java based library/client for handling weather data from http://api.met.no.
 
-It mainly consists of two parts: A Java client and a library that helps you convert the raw data into
-usable weather reports.
+It mainly consists of two parts: A Java client that parses data from the MET api into java objects and helper tools to help you
+pick the right kind of data for different scenarios.
 
 Please note that Meteo is in no way affiliated with the Norwegian Meteorological Institute
 except for the fact that it use their API to provide you with weather data.
@@ -40,7 +40,7 @@ by other users (Please send pull requests).
 
 ### Requirements
 
-Meteo requires Java 8.x or later, due to heavy use of the new wonderful java.time API. 
+Meteo requires Java 8.x or later.
 
 ### Installation
 
@@ -53,7 +53,7 @@ For Maven you would add this to your pom:
 <dependency>
     <groupId>no.api.meteo</groupId>
     <artifactId>meteo-core</artifactId>
-    <version>2.0.3</version>
+    <version>3.0.0</version>
 </dependency>
 ----
 
@@ -71,13 +71,7 @@ If you want to use the default implementation of a MeteoClient, then you would a
 ### Usage
 
 In the https://github.com/amedia/meteo/tree/master/meteo-examples/src/main/java/no/api/meteo/examples[meteo-examples]
- module you will find several useful examples that should get you up and running. This module is also a demo app that
- can be started like this:
-
-[source]
-----
-meteo-examples> mvn jetty:run
-----
+ module you will find several useful examples that should get you up and running
 
 #### Creating a default client
 
@@ -96,6 +90,8 @@ meteoClient.setProxy("myproxy.host", 9000);
 meteoClient.setTimeout(1000);
 ----
 
+You can also create you own client easily by implementing the MeteoClient interface in your own class.
+
 ### Services
 
 The Meteo core library is organized in a set of services where each service represents on of the services in the MET API.
@@ -105,12 +101,12 @@ Current services:
 
 * Location forecast
 * Sunrise
-* Text forecast (Under development)
+* Text forecast (Experimental)
+* Text locations (Experimental)
 
 #### Location forecast service
 
-This is the service for fetching raw data from http://api.met.no/weatherapi/locationforecast/1.9/documentation.
-(We would like to use the long time supported version of this API, but it has p.t. some errors.)
+This is the service for fetching raw data from http://api.met.no/weatherapi/locationforecastlts/1.2/documentation.
 
 [source, java]
 ----
@@ -138,5 +134,4 @@ try {
 
 ## General developer notes
 
-Meteo uses checked exceptions at the moment. This will change in the next major release. In that release we will
- hopefully also switch from Joda time to the new date API in Java 8.
+Meteo uses checked exceptions at the moment. This will change in the 3.1.x versions.
