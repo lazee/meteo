@@ -64,7 +64,7 @@ If you want to use the default implementation of a MeteoClient, then you would a
 <dependency>
     <groupId>no.api.meteo</groupId>
     <artifactId>meteo-client</artifactId>
-    <version>2.0.3</version>
+    <version>3.0.0</version>
 </dependency>
 ----
 
