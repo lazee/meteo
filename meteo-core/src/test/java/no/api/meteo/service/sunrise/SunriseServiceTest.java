@@ -24,7 +24,7 @@ import no.api.meteo.test.MeteoTestUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public final class SunriseServiceTest {
 
@@ -32,7 +32,7 @@ public final class SunriseServiceTest {
     public void testFetchContent() throws Exception {
         SunriseService service = new SunriseService(new MeteoTestClient(
                 MeteoTestUtils.getTextResource("/META-INF/meteo/sunrise/sunrise1.xml")));
-        MeteoData<Sunrise> sunriseMeteoData = service.fetchContent(19, 70, new Date());
+        MeteoData<Sunrise> sunriseMeteoData = service.fetchContent(19, 70, LocalDate.now());
         Assert.assertNotNull(sunriseMeteoData);
         Assert.assertNotNull(sunriseMeteoData.getResult());
         Assert.assertNotNull(sunriseMeteoData.getResult().getDates());

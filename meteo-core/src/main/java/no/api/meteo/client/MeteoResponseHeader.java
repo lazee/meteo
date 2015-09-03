@@ -18,6 +18,9 @@ package no.api.meteo.client;
 
 import lombok.Value;
 
+/**
+ * Simple HTTP header implementation for headers returned by the MET api.
+ */
 @Value
 public class MeteoResponseHeader {
 

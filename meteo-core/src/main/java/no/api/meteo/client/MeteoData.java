@@ -18,6 +18,11 @@ package no.api.meteo.client;
 
 import lombok.Value;
 
+/**
+ * Data holder object keeping the parsed MET data object and HTTP response information.
+ *
+ * @param <E> The type of MET object held by the data object.
+ */
 @Value
 public class MeteoData<E> {
 

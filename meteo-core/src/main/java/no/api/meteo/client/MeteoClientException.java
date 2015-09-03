@@ -18,6 +18,10 @@ package no.api.meteo.client;
 
 import no.api.meteo.MeteoException;
 
+/**
+ * Exception thrown by client implementations if any exception occurs during fetching and parsing of date from
+ * http://api.met.no.
+ */
 public class MeteoClientException extends MeteoException {
 
     public MeteoClientException(String message) {

@@ -19,33 +19,38 @@ package no.api.meteo.service.sunrise.builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import no.api.meteo.MetaBuilder;
 import no.api.meteo.entity.core.Location;
-import no.api.meteo.entity.core.Meta;
 import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.entity.core.service.sunrise.SunriseDate;
-import no.api.meteo.util.EntityBuilder;
+import no.api.meteo.util.MetaEntityBuilder;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
-@Setter
-@Getter
-public class SunriseBuilder implements EntityBuilder<Sunrise> {
+public class SunriseBuilder implements MetaEntityBuilder<Sunrise> {
 
-    private Date created;
+    @Setter
+    @Getter
+    private ZonedDateTime created;
 
-    private Meta meta;
+    @Getter
+    private MetaBuilder metaBuilder = new MetaBuilder();
 
+    @Setter
+    @Getter
     private Location location;
 
+    @Setter
+    @Getter
     private List<SunriseDate> dates = new ArrayList<>();
 
     @Override
     public Sunrise build() {
         return new Sunrise(getCreated(),
-                           getMeta(),
+                           getMetaBuilder().build(),
                            getLocation(),
                            getDates());
     }

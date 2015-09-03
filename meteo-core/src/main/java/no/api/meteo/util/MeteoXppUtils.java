@@ -22,9 +22,14 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Util class for simplifying different XPP tasks.
@@ -62,13 +67,13 @@ public final class MeteoXppUtils {
         return xpp.getAttributeValue(null, name);
     }
 
-    public static Double getDouble(XmlPullParser xpp, String name) {
+    public static Double getDouble(XmlPullParser xpp, String name) throws MeteoException {
         try {
             String v = getString(xpp, name);
             return v == null ? null : Double.parseDouble(v);
         } catch (NumberFormatException e) {
             log.error("Number format exception: " + e.getMessage());
-            return null;
+            throw new MeteoException(e);
         }
     }
 
@@ -77,22 +82,49 @@ public final class MeteoXppUtils {
         return v != null && Boolean.parseBoolean(v);
     }
 
-    public static Integer getInteger(XmlPullParser xpp, String name) {
+    public static Integer getInteger(XmlPullParser xpp, String name) throws MeteoException {
         try {
             String v = getString(xpp, name);
             return v == null ? null : Integer.parseInt(v);
         } catch (NumberFormatException e) {
             log.error("Number format exception: " + e.getMessage());
-            return null;
+            throw new MeteoException(e);
         }
     }
 
-    public static Date getDate(XmlPullParser xpp, String name) throws MeteoException {
-        return MeteoDateUtils.fullFormatToDate(getString(xpp, name));
+    public static ZonedDateTime getZonedDateTime(XmlPullParser xpp, String name) throws MeteoException {
+        return MeteoDateUtils.fullFormatToZonedDateTime(getString(xpp, name));
     }
 
-    public static Date getSimpleDate(XmlPullParser xpp, String name) throws MeteoException {
-        return MeteoDateUtils.yyyyMMddToDate(getString(xpp, name));
+    public static ZonedDateTime getOffsetDateTime(XmlPullParser xpp, String name) throws MeteoException {
+        return MeteoDateUtils.fullOffsetFormatToZonedDateTime(getString(xpp, name));
     }
 
+    public static ZonedDateTime getZonedDateTimeNorway(XmlPullParser xpp, String name) {
+        LocalDateTime parse =
+                LocalDateTime.parse(getString(xpp, name), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        return parse.atZone(ZoneId.of("Europe/Oslo"));
+    }
+
+    public static LocalDate getLocalDate(XmlPullParser xpp, String name) throws MeteoException {
+        return MeteoDateUtils.yyyyMMddToLocalDate(getString(xpp, name));
+    }
+
+    public static String readText(XmlPullParser xpp) throws MeteoException {
+        String result = null;
+        try {
+            if (xpp.next() == XmlPullParser.TEXT) {
+                result = xpp.getText();
+                if (result != null) {
+                    result = result.trim();
+                }
+                xpp.nextTag();
+            }
+        } catch (XmlPullParserException | IOException e) {
+            log.error("Problem while reading tag body", e);
+            throw new MeteoException(e);
+        }
+        return result;
+
+    }
 }

@@ -17,14 +17,13 @@
 package no.api.meteo.util;
 
 import no.api.meteo.MeteoException;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.TimeZone;
 
 public final class MeteoDateUtilsTest {
@@ -44,46 +43,57 @@ public final class MeteoDateUtilsTest {
 
     @Test(expected = MeteoException.class)
     public void testBadDateString() throws Exception {
-        MeteoDateUtils.fullFormatToDate("ddd");
+        MeteoDateUtils.fullFormatToZonedDateTime("ddd");
+    }
+
+    @Test
+    public void testLocalDateToYyyyMMdd() throws Exception {
+        LocalDate firstDate = LocalDate.of(2010, 5, 17);
+        Assert.assertEquals("2010-05-17", MeteoDateUtils.zonedDateTimeToYyyyMMdd(firstDate));
+
     }
 
     @Test
     public void testFullFormatToDate() throws Exception {
-        Assert.assertNull(MeteoDateUtils.fullFormatToDate(null));
-        Date d = MeteoDateUtils.fullFormatToDate("2011-05-10T03:00:00Z");
-        Assert.assertNotNull(d);
-        Assert.assertEquals("Tue May 10 05:00:00 GMT+02:00 2011", d.toString());
+        Assert.assertNull(MeteoDateUtils.fullFormatToZonedDateTime(null));
+        ZonedDateTime dateTime = MeteoDateUtils.fullFormatToZonedDateTime("2011-05-10T03:00:00Z");
+        Assert.assertNotNull(dateTime);
+        Assert.assertEquals("2011-05-10T03:00Z", dateTime.toString());
     }
 
     @Test
     public void testYyyyMMddToDate() throws Exception {
-        Date d = MeteoDateUtils.yyyyMMddToDate("2011-05-10");
-        Assert.assertNotNull(d);
-        Assert.assertEquals("Tue May 10 02:00:00 GMT+02:00 2011", d.toString());
+        LocalDate localDate = MeteoDateUtils.yyyyMMddToLocalDate("2011-05-10");
+        Assert.assertNotNull(localDate);
+        Assert.assertEquals("2011-05-10", localDate.toString());
 
     }
 
     @Test
     public void testDateToString() throws Exception {
-        Assert.assertNull(MeteoDateUtils.dateToString(null, null));
-        DateTime dt = new DateTime().withYear(1977).withDayOfMonth(21).withMonthOfYear(3);
-        Assert.assertEquals("0321", MeteoDateUtils.dateToString(dt.toDate(), "MMdd"));
+        Assert.assertNull(MeteoDateUtils.localDateToString(null, null));
+        LocalDate dt = LocalDate.of(1977, 3, 21);
+        Assert.assertEquals("0321", MeteoDateUtils.localDateToString(dt, "MMdd"));
 
     }
 
     @Test
     public void testDateToYyyyMMdd() throws Exception {
-        Assert.assertNull(MeteoDateUtils.dateToYyyyMMdd(null));
-        DateTime dt = new DateTime().withYear(1977).withDayOfMonth(21).withMonthOfYear(3);
-        Assert.assertEquals("1977-03-21", MeteoDateUtils.dateToYyyyMMdd(dt.toDate()));
+        Assert.assertNull(MeteoDateUtils.zonedDateTimeToYyyyMMdd(null));
+        LocalDate dt = LocalDate.of(1977, 3, 21);
+        Assert.assertEquals("1977-03-21", MeteoDateUtils.zonedDateTimeToYyyyMMdd(dt));
 
     }
 
     @Test
     public void testDateToHHmm() throws Exception {
-        Assert.assertNull(MeteoDateUtils.dateToHHmm(null));
-        DateTime dt = new DateTime().withZone(
-                DateTimeZone.forTimeZone(TimeZone.getTimeZone("GMT+2"))).withHourOfDay(13).withMinuteOfHour(14);
-        Assert.assertEquals("13:14", MeteoDateUtils.dateToHHmm(dt.toDate()));
+        Assert.assertNull(MeteoDateUtils.zonedDateTimeToHHMM(null));
+        ZonedDateTime dateTime = MeteoDateUtils.fullFormatToZonedDateTime("2015-08-14T20:01:00Z");
+        Assert.assertEquals("20:01", MeteoDateUtils.zonedDateTimeToHHMM(dateTime));
+    }
+
+    @Test
+    public void testOffsetDate() throws MeteoException {
+        ZonedDateTime zonedDateTime = MeteoDateUtils.fullOffsetFormatToZonedDateTime("2015-08-24T08:14:35+0200");
     }
 }

@@ -26,10 +26,12 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecastDay;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
-import no.api.meteo.services.LocationForecastHelper;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
+import no.api.meteo.service.locationforecast.extras.LocationForecastHelper;
+
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
+import static no.api.meteo.util.MeteoDateUtils.cloneZonedDateTime;
 
 public class LongTermForecastExample {
 
@@ -51,7 +53,7 @@ public class LongTermForecastExample {
     }
 
     public void runExample() {
-        DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
         try {
             // Fetch the data from api.met.no
@@ -66,9 +68,9 @@ public class LongTermForecastExample {
                 for (MeteoExtrasForecast forecast : day.getForecasts()) {
                     PeriodForecast p = forecast.getPeriodForecast();
                     PointForecast po = forecast.getPointForecast();
-                    DateTime df = new DateTime(p.getFromTime());
-                    DateTime dt = new DateTime(p.getToTime());
-                    print(df.toString(fmt)+"-"+dt.toString(fmt)+" | "+p.getSymbol().getId()+" | "+Math.round(po.getTemperature().getValue()) + " | "+p.getPrecipitation().getMinValue() + "-" + p.getPrecipitation().getMaxValue() + "," + p.getPrecipitation().getValue());
+                    ZonedDateTime df = cloneZonedDateTime(p.getFrom());
+                    ZonedDateTime dt = cloneZonedDateTime(p.getTo());
+                    print(df.format(fmt)+"-"+dt.format(fmt)+" | "+p.getSymbol().getId()+" | "+Math.round(po.getTemperature().getValue()) + " | "+p.getPrecipitation().getMinValue() + "-" + p.getPrecipitation().getMaxValue() + "," + p.getPrecipitation().getValue());
                 }
             }
 
@@ -89,6 +91,7 @@ public class LongTermForecastExample {
     public static void main(String[] args) {
         LongTermForecastExample longTermForecastExample = new LongTermForecastExample();
         longTermForecastExample.runExample();
+        longTermForecastExample.shutDown();
     }
 
 }

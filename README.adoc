@@ -10,7 +10,7 @@ except for the fact that it use their API to provide you with weather data.
 
 Meteo is developed and maintained by Amedia Utvikling AS. It is in use within all the Amedia sites (more than 70).
 It mainly supports the services that Amedia needs at any given time. But we will consider adding other services as
-well upon request.
+well upon request (or send a pull request).
 
 ## The MET terms of use
 
@@ -40,7 +40,7 @@ by other users (Please send pull requests).
 
 ### Requirements
 
-Meteo requires Java 8.x or later.
+Meteo requires Java 8.x or later, due to heavy use of the new wonderful java.time API. 
 
 ### Installation
 
@@ -134,27 +134,6 @@ try {
 } catch (MeteoException e) {
     // Handle exception.
 }
-----
-
-## The extras library
-
-The data you get from MET are not ready to be used in traditional weather reports like what you find on yr.no. You
-will have to do some processing if you want to create beautiful weather reports like the ones you find in online weather
- services. This is where the meteos-extras package comes in handy. It can help you answering questions like "What is the
- most accurate forecast for a given point of time?", or "What is the right Beaufort level for a given forecast?".
- Things you need when creating a weather report.
-
-### Installation
-
-If you also want access to the extra weather helper functions, then add this to your pom:
-
-[source, xml]
-----
-<dependency>
-    <groupId>no.api.meteo</groupId>
-    <artifactId>meteo-extras</artifactId>
-    <version>2.0.2</version>
-</dependency>
 ----
 
 ## General developer notes

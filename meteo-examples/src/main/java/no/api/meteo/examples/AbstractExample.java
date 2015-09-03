@@ -18,9 +18,10 @@ package no.api.meteo.examples;
 
 import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.Precipitation;
-import no.api.meteo.util.MeteoDateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.time.format.DateTimeFormatter;
 
 public abstract class AbstractExample {
 
@@ -30,9 +31,10 @@ public abstract class AbstractExample {
         if (periodForecast == null) {
             log.error("Period forecast -> null");
         } else {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
             log.error("Period forecast -> from:" +
-                    MeteoDateUtils.dateToString(periodForecast.getFromTime(), "yyyy-MM-dd HH:mm") + ", to:" +
-                    MeteoDateUtils.dateToString(periodForecast.getToTime(), "yyyy-MM-dd HH:mm"));
+                    periodForecast.getFrom().format(formatter) + ", to:" +
+                    periodForecast.getTo().format(formatter));
             prettyLogPrecipitation(periodForecast.getPrecipitation());
         }
     }

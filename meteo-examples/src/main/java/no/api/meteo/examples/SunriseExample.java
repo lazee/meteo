@@ -27,7 +27,7 @@ import no.api.meteo.util.MeteoDateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class SunriseExample {
 
@@ -43,33 +43,24 @@ public class SunriseExample {
         meteoClient = new DefaultMeteoClient();
     }
 
-    public MeteoData<Sunrise> runExample() {
+    public MeteoData<Sunrise> runExample() throws MeteoException {
         SunriseService sunriseService = new SunriseService(meteoClient);
-        try {
-            return sunriseService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, new Date());
-        } catch (MeteoException e) {
-            // Got client exception. No data available
-            log.error("Caught exception : " + e.getMessage());
-            return null;
-        }
+        return sunriseService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, LocalDate.now());
+
     }
 
     public void shutDown() {
         meteoClient.shutdown();
     }
 
-    public static void main(String[] args) {
-        SunriseExample sunriseExample = new SunriseExample();
-        MeteoData<Sunrise> data = sunriseExample.runExample();
-        // Just to prove that we have data
-        if (data == null || data.getResult() == null || data.getResult().getDates() == null ||
-                data.getResult().getDates().size() < 1) {
-            log.error("Something went wrong!");
-        } else {
-            SunriseDate sunriseDate = data.getResult().getDates().get(0);
-            log.info("On " + MeteoDateUtils.dateToYyyyMMdd(sunriseDate.getDate()) + " the sun will rise at " +
-                    MeteoDateUtils.dateToHHmm(sunriseDate.getSun().getRise()) + " in Oslo");
-        }
+    public static void main(String[] args) throws MeteoException {
+        SunriseExample example = new SunriseExample();
+        MeteoData<Sunrise> data = example.runExample();
+        SunriseDate sunriseDate = data.getResult().getDates().get(0);
+        log.info("On " + MeteoDateUtils.zonedDateTimeToYyyyMMdd(sunriseDate.getDate()) + " the sun will rise at " +
+                         MeteoDateUtils.zonedDateTimeToHHMM(sunriseDate.getSun().getRise()) + " in Oslo");
+        example.shutDown();
+
     }
 }
 

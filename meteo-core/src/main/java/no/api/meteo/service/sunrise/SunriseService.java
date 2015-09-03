@@ -25,41 +25,85 @@ import no.api.meteo.entity.core.service.sunrise.Sunrise;
 import no.api.meteo.service.AbstractMeteoService;
 import no.api.meteo.service.MeteoDataParser;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import static no.api.meteo.util.MeteoConstants.PARAM_DATE;
 import static no.api.meteo.util.MeteoConstants.PARAM_FROM;
 import static no.api.meteo.util.MeteoConstants.PARAM_LATITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_LONGITUDE;
 import static no.api.meteo.util.MeteoConstants.PARAM_TO;
-import static no.api.meteo.util.MeteoDateUtils.dateToYyyyMMdd;
+import static no.api.meteo.util.MeteoDateUtils.zonedDateTimeToYyyyMMdd;
 
+/**
+ * Service object for fetching data for the Sunrise service in the MET API.
+ *
+ * {@link <a href="http://api.met.no/weatherapi/sunrise/1.0/documentation">http://api.met.no/weatherapi/sunrise/1
+ * .0/documentation</a>}
+ */
 public final class SunriseService extends AbstractMeteoService {
 
     private final MeteoDataParser<Sunrise> parser;
 
+    /**
+     * Constructor requiring an MeteoClient instance.
+     *
+     * @param meteoClient
+     *         An instance of MeteoClient that the service will use to fetch the data.
+     */
     public SunriseService(MeteoClient meteoClient) {
         super(meteoClient, "sunrise", new MeteoServiceVersion(1, 0));
         parser = new SunriseParser();
     }
 
-    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date date) throws MeteoException {
+    /**
+     * Fetch a Sunrise from the MET API based on a given longitude, latitude and date.
+     *
+     * @param longitude
+     *         The longitude of the location where the Sunrise should be fetched from.
+     * @param latitude
+     *         The latitude of the location where the Sunrise should be fetched from.
+     * @param date
+     *         The date to fetch the Sunrise object for.
+     *
+     * @return A MeteoData object containing response information and sunrise result converted into a Sunrise object.
+     *
+     * @throws MeteoException
+     *         If a problem occurred while fetching or parsing the MET data.
+     */
+    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, LocalDate date) throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUriBuilder()
                         .addParameter(PARAM_LATITUDE, latitude)
                         .addParameter(PARAM_LONGITUDE, longitude)
-                        .addParameter(PARAM_DATE, dateToYyyyMMdd(date)).build());
+                        .addParameter(PARAM_DATE, zonedDateTimeToYyyyMMdd(date)).build());
         return new MeteoData<>(parser.parse(response.getData()), response);
     }
 
-    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, Date from, Date to)
+    /**
+     * Fetch a Sunrise from the MET API based on a given longitude, latitude and date range.
+     *
+     * @param longitude
+     *         The longitude of the location where the Sunrise should be fetched from.
+     * @param latitude
+     *         The latitude of the location where the Sunrise should be fetched from.
+     * @param from
+     *         The date to fetch the Sunrise object from.
+     * @param to
+     *         The date to fetch the Sunrise object to.
+     *
+     * @return A MeteoData object containing response information and sunrise result converted into a Sunrise object.
+     *
+     * @throws MeteoException
+     *         If a problem occurred while fetching or parsing the MET data.
+     */
+    public MeteoData<Sunrise> fetchContent(double longitude, double latitude, LocalDate from, LocalDate to)
             throws MeteoException {
         MeteoResponse response = getMeteoClient().fetchContent(
                 createServiceUriBuilder()
                         .addParameter(PARAM_LATITUDE, latitude)
                         .addParameter(PARAM_LONGITUDE, longitude)
-                        .addParameter(PARAM_FROM, dateToYyyyMMdd(from))
-                        .addParameter(PARAM_TO, dateToYyyyMMdd(to)).build()
+                        .addParameter(PARAM_FROM, zonedDateTimeToYyyyMMdd(from))
+                        .addParameter(PARAM_TO, zonedDateTimeToYyyyMMdd(to)).build()
         );
         return new MeteoData<>(parser.parse(response.getData()), response);
     }

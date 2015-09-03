@@ -22,14 +22,14 @@ import lombok.Setter;
 import no.api.meteo.entity.core.service.sunrise.SunriseDate;
 import no.api.meteo.util.EntityBuilder;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @Setter
 @Getter
 public class SunriseDateBuilder implements EntityBuilder<SunriseDate> {
 
-    private Date date;
+    private LocalDate date;
 
     private SunBuilder sunBuilder;
 

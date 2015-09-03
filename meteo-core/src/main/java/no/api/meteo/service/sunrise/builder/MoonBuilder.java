@@ -24,7 +24,7 @@ import no.api.meteo.entity.core.service.sunrise.Moon;
 import no.api.meteo.entity.core.service.sunrise.PhaseType;
 import no.api.meteo.util.EntityBuilder;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @NoArgsConstructor
@@ -32,9 +32,9 @@ import java.util.List;
 @Getter
 public class MoonBuilder implements EntityBuilder<Moon> {
 
-    private Date rise;
+    private ZonedDateTime rise;
 
-    private Date set;
+    private ZonedDateTime set;
 
     private Boolean neverRise;
 

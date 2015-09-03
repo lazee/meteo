@@ -3,12 +3,12 @@
     <parent>
         <artifactId>meteo</artifactId>
         <groupId>no.api.meteo</groupId>
-        <version>2.0.4-SNAPSHOT</version>
+        <version>3.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>meteo-core</artifactId>
-    <version>2.0.4-SNAPSHOT</version>
     <name>meteo-core</name>
     <description>Core Meteo package</description>
 
@@ -53,12 +53,12 @@
         </dependency>
         <dependency>
             <groupId>no.api.meteo</groupId>
-            <artifactId>meteo-entity</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>no.api.meteo</groupId>
             <artifactId>meteo-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
         </dependency>
     </dependencies>
 </project>

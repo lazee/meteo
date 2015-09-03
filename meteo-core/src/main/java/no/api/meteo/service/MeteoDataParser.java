@@ -26,4 +26,5 @@ public interface MeteoDataParser<E> {
 
     E parse(InputStream inputStream) throws MeteoException;
 
+
 }

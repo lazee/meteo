@@ -35,20 +35,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * The default Meteo Client using the Apache HTTPClient for fetching data from http://api.met.no
+ */
 @Slf4j
 public class DefaultMeteoClient implements MeteoClient {
-
-    public static final int MAXIMUM_CONTENT_LENGTH = 1024000;
 
     public static final String CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT = "Caught exception while fetching content";
 
     private final DefaultHttpClient httpClient;
 
-
+    /**
+     * Client constructor using default timeout settings.
+     */
     public DefaultMeteoClient() {
         httpClient = new DefaultHttpClient(new ThreadSafeClientConnManager());
     }
 
+    /**
+     * Client constructor that takes connection time as input.
+     *
+     * @param timeout The connection timeout in seconds.
+     */
     public DefaultMeteoClient(int timeout) {
         httpClient = new DefaultHttpClient(
                 new ThreadSafeClientConnManager(SchemeRegistryFactory.createDefault(), timeout, TimeUnit.SECONDS));

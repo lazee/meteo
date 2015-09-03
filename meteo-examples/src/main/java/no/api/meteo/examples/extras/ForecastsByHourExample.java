@@ -24,11 +24,12 @@ import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.examples.AbstractExample;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
-import no.api.meteo.services.LocationForecastHelper;
-import org.joda.time.DateTime;
+import no.api.meteo.service.locationforecast.extras.LocationForecastHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 public class ForecastsByHourExample extends AbstractExample {
@@ -62,9 +63,10 @@ public class ForecastsByHourExample extends AbstractExample {
             for (MeteoExtrasForecast extras : list) {
                 prettyLogPeriodForecast(extras.getPeriodForecast());
             }
-            DateTime dateTime = new DateTime();
-            dateTime = dateTime.withHourOfDay(TWELVE_O_CLOCK).withMinuteOfHour(0).withSecondOfMinute(0);
-            locationForecastHelper.findNearestForecast(dateTime.plusDays(2).toDate());
+
+            ZonedDateTime dateTime = ZonedDateTime.now(ZoneId.of("Z"));
+            dateTime = dateTime.withHour(TWELVE_O_CLOCK).withMinute(0).withSecond(0);
+            locationForecastHelper.findNearestForecast(dateTime.plusDays(2));
 
         } catch (MeteoException e) {
             log.error("Something went wrong", e);

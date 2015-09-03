@@ -1,0 +1,833 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<weather>
+    <meta licenseurl="http://api.met.no/license.html"/>
+    <productdescription prodname="merged"/>
+    <title>
+        Tekstvarsel for Norge
+    </title>
+    <time from="2015-08-24 06:00:00" to="2015-08-25 00:00:00" forecast_origin="MIkortfylk">
+        <forecasttype name="normal">
+            <area type="county" name="Spitsbergen" id="3011">
+                <location type="county" name="Nordenskiöld Land på Spitsbergen" id="9018">
+                    <header>
+                        Nordenskiöld Land på Spitsbergen
+                    </header>
+                    <in>
+                        Skiftende bris. Litt regn. Lokal tåke.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Hordaland" id="0612">
+                <location type="county" name="Rogaland og Hordaland" id="0611_0612">
+                    <header>
+                        Rogaland og Hordaland
+                    </header>
+                    <in>
+                        Østlig bris, opp i liten kuling utsatte steder. Stort sett pent vær. Fra i ettermiddag opp i østlig stiv kuling utsatte steder. Skyet eller delvis skyet, mulighet for enkelte regnbyger, særlig i indre strøk. Kan hende med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Troms" id="0619">
+                <location type="county" name="Troms" id="0619">
+                    <header>
+                        Troms
+                    </header>
+                    <in>
+                        Skiftende bris. Skyet, i nord spredt regn, men etter hvert oppholdsvær. Lokal tåke. Fra i ettermiddag nordaustlig bris. Til dels pent vær.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Akershus" id="0602">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris, på kysten periodevis liten kuling. Pent vær, men etter hvert tilskyende. Fra ut på ettermiddagen regnbyger som brer seg fra sør. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Vest-Agder" id="0610">
+                <location type="county" name="Telemark og Agder" id="0502_0608">
+                    <header>
+                        Telemark og Agder
+                    </header>
+                    <in>
+                        Østlig frisk bris utsatte steder. På kysten nordøstlig opp i stiv kuling. Delvis skyet, fra i formiddag perioder med regnbyger. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Sør-Trøndelag" id="0616">
+                <location type="county" name="Trøndelag" id="0504">
+                    <header>
+                        Trøndelag
+                    </header>
+                    <in>
+                        Sørøst bris, frisk bris utsatte steder. Pent vær.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Telemark" id="0608">
+                <location type="county" name="Telemark og Agder" id="0502_0608">
+                    <header>
+                        Telemark og Agder
+                    </header>
+                    <in>
+                        Østlig frisk bris utsatte steder. På kysten nordøstlig opp i stiv kuling. Delvis skyet, fra i formiddag perioder med regnbyger. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Aust-Agder" id="0609">
+                <location type="county" name="Telemark og Agder" id="0502_0608">
+                    <header>
+                        Telemark og Agder
+                    </header>
+                    <in>
+                        Østlig frisk bris utsatte steder. På kysten nordøstlig opp i stiv kuling. Delvis skyet, fra i formiddag perioder med regnbyger. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Hedmark" id="0604">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris, på kysten periodevis liten kuling. Pent vær, men etter hvert tilskyende. Fra ut på ettermiddagen regnbyger som brer seg fra sør. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Finnmark" id="0620">
+                <location type="county" name="Finnmark" id="0620">
+                    <header>
+                        Finnmark
+                    </header>
+                    <in>
+                        Skiftende bris, i kyststrøkene aust for Nordkapp vest og nordvest frisk bris. Spredt regn, senere oppholdsvær. Etter hvert perioder med sol på Vidda.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Nordland" id="0618">
+                <location type="county" name="Nordland" id="0618">
+                    <header>
+                        Nordland
+                    </header>
+                    <in>
+                        Austlig bris, på kysten nordaustlig opptil frisk bris. Først på dagen lokal tåke i Vesterålen og på yttersiden av Lofoten, ellers stort sett pent vær.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Buskerud" id="0606">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris, på kysten periodevis liten kuling. Pent vær, men etter hvert tilskyende. Fra ut på ettermiddagen regnbyger som brer seg fra sør. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Nord-Trøndelag" id="0617">
+                <location type="county" name="Trøndelag" id="0504">
+                    <header>
+                        Trøndelag
+                    </header>
+                    <in>
+                        Sørøst bris, frisk bris utsatte steder. Pent vær.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Oppland" id="0605">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris, på kysten periodevis liten kuling. Pent vær, men etter hvert tilskyende. Fra ut på ettermiddagen regnbyger som brer seg fra sør. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Møre og Romsdal" id="0615">
+                <location type="county" name="Møre og Romsdal" id="0615">
+                    <header>
+                        Møre og Romsdal
+                    </header>
+                    <in>
+                        Sørøst bris, frisk bris utsatte steder, fra i ettermiddag nordøst bris på kysten. Pent vær, sent i kveld tilskyende.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Oslo" id="0603">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris, på kysten periodevis liten kuling. Pent vær, men etter hvert tilskyende. Fra ut på ettermiddagen regnbyger som brer seg fra sør. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Østfold" id="0601">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris, på kysten periodevis liten kuling. Pent vær, men etter hvert tilskyende. Fra ut på ettermiddagen regnbyger som brer seg fra sør. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Rogaland" id="0611">
+                <location type="county" name="Rogaland og Hordaland" id="0611_0612">
+                    <header>
+                        Rogaland og Hordaland
+                    </header>
+                    <in>
+                        Østlig bris, opp i liten kuling utsatte steder. Stort sett pent vær. Fra i ettermiddag opp i østlig stiv kuling utsatte steder. Skyet eller delvis skyet, mulighet for enkelte regnbyger, særlig i indre strøk. Kan hende med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Vestfold" id="0607">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris, på kysten periodevis liten kuling. Pent vær, men etter hvert tilskyende. Fra ut på ettermiddagen regnbyger som brer seg fra sør. Lokalt med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Sogn og Fjordane" id="0614">
+                <location type="county" name="Sogn og Fjordane" id="0614">
+                    <header>
+                        Sogn og Fjordane
+                    </header>
+                    <in>
+                        Østlig bris, frisk bris utsatte steder. Stort sett pent vær. I kveld østlig liten kuling utsatte steder. Skyet eller delvis skyet. Spredte regnbyger, særlig i indre strøk.
+                    </in>
+                </location>
+            </area>
+        </forecasttype>
+    </time>
+    <time from="2015-08-25 00:00:00" to="2015-08-26 00:00:00" forecast_origin="MIland_dag1">
+        <forecasttype name="normal">
+            <area type="county" name="Spitsbergen" id="3011">
+                <location type="county" name="Nordenskiöld Land på Spitsbergen" id="9018">
+                    <header>
+                        Nordenskiöld Land på Spitsbergen
+                    </header>
+                    <in>
+                        Skiftende bris. Litt regn, senere oppholdsvær.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Hordaland" id="0612">
+                <location type="county" name="Rogaland og Hordaland" id="0611_0612">
+                    <header>
+                        Rogaland og Hordaland
+                    </header>
+                    <in>
+                        Østlig opp i stiv kuling utsatte steder, fra tirsdag ettermiddag dreiende sør og sørøst. Perioder med regn og regnbyger, utrygt for torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Troms" id="0619">
+                <location type="county" name="Troms" id="0619">
+                    <header>
+                        Troms
+                    </header>
+                    <in>
+                        Nordaustlig bris. På kysten nordaustlig frisk bris, lengst sør liten kuling. Til dels pent vær.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Akershus" id="0602">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris. På kysten sørøstlig periodevis liten kuling, om kveld sørvestlig opp i stiv kuling. Regn, senere regnbyger, først i sør. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Vest-Agder" id="0610">
+                <location type="county" name="Agder" id="0502">
+                    <header>
+                        Agder
+                    </header>
+                    <in>
+                        Sørøstlig periodevis liten kuling, om kvelden dreiende sørvestlig. Regn, senere regnbyger. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Sør-Trøndelag" id="0616">
+                <location type="county" name="Trøndelag" id="0504">
+                    <header>
+                        Trøndelag
+                    </header>
+                    <in>
+                        Østlig bris, liten kuling utsatte steder. Opphold og til dels pent vær, fra tirsdag ettermiddag utrygt for regn og regnbyger i sør, kan hende med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Telemark" id="0608">
+                <location type="county" name="Telemark" id="0608">
+                    <header>
+                        Telemark
+                    </header>
+                    <in>
+                        Sørøstlig bris, på kysten periodevis liten kuling, om kvelden dreiende sørvestlig. Regn, senere regnbyger. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Aust-Agder" id="0609">
+                <location type="county" name="Agder" id="0502">
+                    <header>
+                        Agder
+                    </header>
+                    <in>
+                        Sørøstlig periodevis liten kuling, om kvelden dreiende sørvestlig. Regn, senere regnbyger. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Hedmark" id="0604">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris. På kysten sørøstlig periodevis liten kuling, om kveld sørvestlig opp i stiv kuling. Regn, senere regnbyger, først i sør. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Finnmark" id="0620">
+                <location type="county" name="Finnmark" id="0620">
+                    <header>
+                        Finnmark
+                    </header>
+                    <in>
+                        Skiftende bris. Stort sett oppholdsvær.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Nordland" id="0618">
+                <location type="county" name="Helgeland, Saltfjellet, Salten og Ofoten" id="9001_9002_9003_9005">
+                    <header>
+                        Helgeland, Saltfjellet, Salten og Ofoten
+                    </header>
+                    <in>
+                        Aust og nordaust bris, om kvelden søraustlig liten kuling på Sør-Helgeland. For det meste pent vær.
+                    </in>
+                </location>
+                <location type="county" name="Lofoten og Vesterålen" id="9004_9006">
+                    <header>
+                        Lofoten og Vesterålen
+                    </header>
+                    <in>
+                        Nordaustlig frisk bris utsatte steder, i vest perioder med liten kuling. For det meste pent vær.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Buskerud" id="0606">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris. På kysten sørøstlig periodevis liten kuling, om kveld sørvestlig opp i stiv kuling. Regn, senere regnbyger, først i sør. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Nord-Trøndelag" id="0617">
+                <location type="county" name="Trøndelag" id="0504">
+                    <header>
+                        Trøndelag
+                    </header>
+                    <in>
+                        Østlig bris, liten kuling utsatte steder. Opphold og til dels pent vær, fra tirsdag ettermiddag utrygt for regn og regnbyger i sør, kan hende med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Oppland" id="0605">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris. På kysten sørøstlig periodevis liten kuling, om kveld sørvestlig opp i stiv kuling. Regn, senere regnbyger, først i sør. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Møre og Romsdal" id="0615">
+                <location type="county" name="Møre og Romsdal" id="0615">
+                    <header>
+                        Møre og Romsdal
+                    </header>
+                    <in>
+                        Øst og nordøst periodevis frisk bris, til dels stiv kuling i utsatte fjordstrøk, om kvelden bris. Tilskyende, oppholdsvær, fra tirsdag ettermiddag regn og regnbyger, kan hende med torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Oslo" id="0603">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris. På kysten sørøstlig periodevis liten kuling, om kveld sørvestlig opp i stiv kuling. Regn, senere regnbyger, først i sør. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Østfold" id="0601">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris. På kysten sørøstlig periodevis liten kuling, om kveld sørvestlig opp i stiv kuling. Regn, senere regnbyger, først i sør. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Rogaland" id="0611">
+                <location type="county" name="Rogaland og Hordaland" id="0611_0612">
+                    <header>
+                        Rogaland og Hordaland
+                    </header>
+                    <in>
+                        Østlig opp i stiv kuling utsatte steder, fra tirsdag ettermiddag dreiende sør og sørøst. Perioder med regn og regnbyger, utrygt for torden.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Vestfold" id="0607">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Østlig bris. På kysten sørøstlig periodevis liten kuling, om kveld sørvestlig opp i stiv kuling. Regn, senere regnbyger, først i sør. Lokalt mye nedbør.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Sogn og Fjordane" id="0614">
+                <location type="county" name="Sogn og Fjordane" id="0614">
+                    <header>
+                        Sogn og Fjordane
+                    </header>
+                    <in>
+                        Østlig til dels stiv kuling utsatte steder, tirsdag kveld dreiende sørlig på kysten. Perioder med regn og regnbyger, utrygt for torden.
+                    </in>
+                </location>
+            </area>
+        </forecasttype>
+    </time>
+    <time from="2015-08-26 00:00:00" to="2015-08-27 00:00:00" forecast_origin="MIland_dag2">
+        <forecasttype name="normal">
+            <area type="county" name="Spitsbergen" id="3011">
+                <location type="county" name="Spitsbergen" id="3011">
+                    <header>
+                        Spitsbergen
+                    </header>
+                    <in>
+                        For det meste skiftende bris. Stort sett oppholdsvær, litt sol av og til. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Hordaland" id="0612">
+                <location type="county" name="Vestlandet sør for Stad" id="0505">
+                    <header>
+                        Vestlandet sør for Stad
+                    </header>
+                    <in>
+                        Bris omkring sør, opp i sterk kuling på kysten. Perioder med regnbyger, til kvelden økende bygeaktivitet. Litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Troms" id="0619">
+                <location type="county" name="Troms" id="0619">
+                    <header>
+                        Troms
+                    </header>
+                    <in>
+                        Østlig eller skiftende bris. På kysten nordøstlig bris, liten kuling først på dagen. Stort sett pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Akershus" id="0602">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Stort sett oppholdsvær, men til kvelden regn og regnbyger, først i sør. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Vest-Agder" id="0610">
+                <location type="county" name="Telemark og Agder" id="0502_0608">
+                    <header>
+                        Telemark og Agder
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Spredte regnbyger, til kvelden økende bygeaktivitet. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Sør-Trøndelag" id="0616">
+                <location type="county" name="Møre og Romsdal og Trøndelag" id="0615_0616_0617">
+                    <header>
+                        Møre og Romsdal og Trøndelag
+                    </header>
+                    <in>
+                        Sørlig eller skiftende bris, til kvelden sørøstlig bris. Enkelte regnbyger, til kvelden minkende bygeaktivitet. Lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Telemark" id="0608">
+                <location type="county" name="Telemark og Agder" id="0502_0608">
+                    <header>
+                        Telemark og Agder
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Spredte regnbyger, til kvelden økende bygeaktivitet. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Aust-Agder" id="0609">
+                <location type="county" name="Telemark og Agder" id="0502_0608">
+                    <header>
+                        Telemark og Agder
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Spredte regnbyger, til kvelden økende bygeaktivitet. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Hedmark" id="0604">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Stort sett oppholdsvær, men til kvelden regn og regnbyger, først i sør. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Finnmark" id="0620">
+                <location type="county" name="Finnmark" id="0620">
+                    <header>
+                        Finnmark
+                    </header>
+                    <in>
+                        For det meste østlig bris, opp i frisk bris utsatte steder i vest. Stort sett oppholdsvær, litt sol av og til. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Nordland" id="0618">
+                <location type="county" name="Nordland" id="0618">
+                    <header>
+                        Nordland
+                    </header>
+                    <in>
+                        Østlig eller skiftende bris. I Lofoten og Vesterålen nordøstlig bris, liten kuling først på dagen. Opphold og til dels pent vær, men utover dagen tilskyende fra sør og til kvelden regn og regnbyger på Helgeland. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Buskerud" id="0606">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Stort sett oppholdsvær, men til kvelden regn og regnbyger, først i sør. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Nord-Trøndelag" id="0617">
+                <location type="county" name="Møre og Romsdal og Trøndelag" id="0615_0616_0617">
+                    <header>
+                        Møre og Romsdal og Trøndelag
+                    </header>
+                    <in>
+                        Sørlig eller skiftende bris, til kvelden sørøstlig bris. Enkelte regnbyger, til kvelden minkende bygeaktivitet. Lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Oppland" id="0605">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Stort sett oppholdsvær, men til kvelden regn og regnbyger, først i sør. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Møre og Romsdal" id="0615">
+                <location type="county" name="Møre og Romsdal og Trøndelag" id="0615_0616_0617">
+                    <header>
+                        Møre og Romsdal og Trøndelag
+                    </header>
+                    <in>
+                        Sørlig eller skiftende bris, til kvelden sørøstlig bris. Enkelte regnbyger, til kvelden minkende bygeaktivitet. Lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Oslo" id="0603">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Stort sett oppholdsvær, men til kvelden regn og regnbyger, først i sør. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Østfold" id="0601">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Stort sett oppholdsvær, men til kvelden regn og regnbyger, først i sør. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Rogaland" id="0611">
+                <location type="county" name="Vestlandet sør for Stad" id="0505">
+                    <header>
+                        Vestlandet sør for Stad
+                    </header>
+                    <in>
+                        Bris omkring sør, opp i sterk kuling på kysten. Perioder med regnbyger, til kvelden økende bygeaktivitet. Litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Vestfold" id="0607">
+                <location type="county" name="Østlandet" id="0503">
+                    <header>
+                        Østlandet
+                    </header>
+                    <in>
+                        Bris omkring sør, perioder med liten kuling på kysten. Stort sett oppholdsvær, men til kvelden regn og regnbyger, først i sør. Uendret eller litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Sogn og Fjordane" id="0614">
+                <location type="county" name="Vestlandet sør for Stad" id="0505">
+                    <header>
+                        Vestlandet sør for Stad
+                    </header>
+                    <in>
+                        Bris omkring sør, opp i sterk kuling på kysten. Perioder med regnbyger, til kvelden økende bygeaktivitet. Litt lavere temperatur.
+                    </in>
+                </location>
+            </area>
+        </forecasttype>
+    </time>
+    <time from="2015-08-27 00:00:00" to="2015-08-29 00:00:00" forecast_origin="MIlangfylk">
+        <forecasttype name="normal">
+            <area type="county" name="Spitsbergen" id="3011">
+                <location type="county" name="Spitsbergen" id="3011">
+                    <header>
+                        Spitsbergen
+                    </header>
+                    <in>
+                        Stort sett skiftende bris. Av og til litt regn. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Hordaland" id="0612">
+                <location type="county" name="Vestlandet og Trøndelag" id="0510">
+                    <header>
+                        Vestlandet og Trøndelag
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger. Fredag minkende bygeaktivitet, men fortsatt en del regnbyger på Vestlandet sør for Stad og i Nord-Trøndelag. Uendret eller litt synkende temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Troms" id="0619">
+                <location type="county" name="Troms og Finnmark" id="50890">
+                    <header>
+                        Troms og Finnmark
+                    </header>
+                    <in>
+                        Overveiende østlig bris, perioder med kuling på kysten av Finnmark. For det meste oppholdsvær, av og til litt sol. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Akershus" id="0602">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Vest-Agder" id="0610">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Sør-Trøndelag" id="0616">
+                <location type="county" name="Vestlandet og Trøndelag" id="0510">
+                    <header>
+                        Vestlandet og Trøndelag
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger. Fredag minkende bygeaktivitet, men fortsatt en del regnbyger på Vestlandet sør for Stad og i Nord-Trøndelag. Uendret eller litt synkende temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Telemark" id="0608">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Aust-Agder" id="0609">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Hedmark" id="0604">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Finnmark" id="0620">
+                <location type="county" name="Troms og Finnmark" id="50890">
+                    <header>
+                        Troms og Finnmark
+                    </header>
+                    <in>
+                        Overveiende østlig bris, perioder med kuling på kysten av Finnmark. For det meste oppholdsvær, av og til litt sol. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Nordland" id="0618">
+                <location type="county" name="Nordland" id="0618">
+                    <header>
+                        Nordland
+                    </header>
+                    <in>
+                        Overveiende østlig bris, dreiende sørvestlig. Stort sett oppholdsvær, men fra torsdag kveld regnbyger fra sør. Fredag regn og regnbyger, vesentlig sør for Vestfjorden. Uendret eller litt synkende temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Buskerud" id="0606">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Nord-Trøndelag" id="0617">
+                <location type="county" name="Vestlandet og Trøndelag" id="0510">
+                    <header>
+                        Vestlandet og Trøndelag
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger. Fredag minkende bygeaktivitet, men fortsatt en del regnbyger på Vestlandet sør for Stad og i Nord-Trøndelag. Uendret eller litt synkende temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Oppland" id="0605">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Møre og Romsdal" id="0615">
+                <location type="county" name="Vestlandet og Trøndelag" id="0510">
+                    <header>
+                        Vestlandet og Trøndelag
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger. Fredag minkende bygeaktivitet, men fortsatt en del regnbyger på Vestlandet sør for Stad og i Nord-Trøndelag. Uendret eller litt synkende temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Oslo" id="0603">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Østfold" id="0601">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Rogaland" id="0611">
+                <location type="county" name="Vestlandet og Trøndelag" id="0510">
+                    <header>
+                        Vestlandet og Trøndelag
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger. Fredag minkende bygeaktivitet, men fortsatt en del regnbyger på Vestlandet sør for Stad og i Nord-Trøndelag. Uendret eller litt synkende temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Vestfold" id="0607">
+                <location type="county" name="Østafjells og fjellet i Sør-Norge" id="0515">
+                    <header>
+                        Østafjells og fjellet i Sør-Norge
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger, utover dagen lettere vær. Fredag stort sett opphold og til dels pent vær. Omtrent uendret temperatur.
+                    </in>
+                </location>
+            </area>
+            <area type="county" name="Sogn og Fjordane" id="0614">
+                <location type="county" name="Vestlandet og Trøndelag" id="0510">
+                    <header>
+                        Vestlandet og Trøndelag
+                    </header>
+                    <in>
+                        For det meste sørvestlig bris, lange perioder med kuling utsatte steder. Torsdag regn og regnbyger. Fredag minkende bygeaktivitet, men fortsatt en del regnbyger på Vestlandet sør for Stad og i Nord-Trøndelag. Uendret eller litt synkende temperatur.
+                    </in>
+                </location>
+            </area>
+        </forecasttype>
+    </time>
+</weather>

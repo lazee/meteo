@@ -63,7 +63,6 @@ public final class MeteoConstants {
 
     public static final String PARAM_DATE = "date";
 
-
     public static final String TAG_META = "meta";
 
     public static final String TAG_WIND_PROBABILITY = "windProbability";
@@ -102,6 +101,31 @@ public final class MeteoConstants {
 
     public static final String TAG_TEMPERATURE = "temperature";
 
+    public static final String TAG_PRODUCT_DESCRIPTION = "productdescription";
+
+    public static final String TAG_TITLE = "title";
+
+    public static final String TAG_FORECAST_TYPE = "forecasttype";
+
+    public static final String TAG_AREA = "area";
+
+    public static final String TAG_HEADER = "header";
+
+    public static final String TAG_IN = "in";
+
+    public static final String TAG_AVAILABLE = "available";
+
+    public static final String TAG_QUERY = "query";
+
+    public static final String TAG_PARAMETER = "parameter";
+
+    public static final String TAG_NAME = "name";
+
+    public static final String TAG_VALUE = "value";
+
+    public static final String TAG_LABEL = "label";
+
+    public static final String TAG_URI = "uri";
 
     public static final String ATTR_LICENSEURL = "licenseurl";
 
@@ -144,4 +168,23 @@ public final class MeteoConstants {
     public static final String ATTR_PROBABILITY = "probability";
 
     public static final String ATTR_MAXVALUE = "maxvalue";
+
+    public static final String ATTR_TYPE = "type";
+
+    public static final String ATTR_FORECAST_ORIGIN = "forecast_origin";
+
+    public static final String ATTR_PRODNAME = "prodname";
+
+    public static final String ATTR_RUNENDED = "runended";
+
+    public static final String ATTR_NEXTRUN = "nextrun";
+
+    public static final String ATTR_TERMIN = "termin";
+
+
+    public static final String MSG_UNHANDLED_START_TAG = "Unhandled start tag: %";
+
+    public static final String MSG_UNHANDLED_END_TAG = "Unhandled end tag: %";
+
+
 }
