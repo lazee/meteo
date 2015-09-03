@@ -1,6 +1,8 @@
 
 In order to release Meteo you need a Sonatype account connected to the Meteo project. Contact Jakob to get help on this.
 
+You also need to configure a special settings.xml to use when releasing. Also ask Jakob about this.
+
 Releasing Meteo:
 
 * mvn release:prepare
