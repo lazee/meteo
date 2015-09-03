@@ -193,7 +193,6 @@ public final class LocationForecastHelper {
      */
     public MeteoExtrasForecastDay createForcastForDay(ZonedDateTime dateTime) {
         ZonedDateTime dt = toZeroHMSN(dateTime.withZoneSameInstant(zoneId));
-        log.error("Create for : " + dt.toString());
         List<MeteoExtrasForecast> forecasts = new ArrayList<>();
         findBestForecastForPeriod(dt.minusHours(2),
                                   dt.plusHours(4)).ifPresent(forecasts::add);
