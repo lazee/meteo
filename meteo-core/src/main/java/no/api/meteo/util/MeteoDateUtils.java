@@ -99,5 +99,12 @@ public final class MeteoDateUtils {
         return zonedDateTime.withZoneSameInstant(ZoneId.of("Z"));
     }
 
+    public static ZonedDateTime toZeroMSN(ZonedDateTime dateTime) {
+        return dateTime.withMinute(0).withSecond(0).withNano(0);
+    }
+
+    public static ZonedDateTime toZeroHMSN(ZonedDateTime dateTime) {
+        return dateTime.withHour(0).withMinute(0).withSecond(0).withNano(0);
+    }
 
 }

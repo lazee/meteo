@@ -32,6 +32,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static no.api.meteo.util.MeteoDateUtils.cloneZonedDateTime;
+import static no.api.meteo.util.MeteoDateUtils.toZeroMSN;
 
 @Slf4j
 class MeteoForecastIndexer {
@@ -160,8 +161,8 @@ class MeteoForecastIndexer {
         }
 
         // Making sure that we remove minutes, seconds and milliseconds from the request timestamps
-        ZonedDateTime requestFrom = from.withMinute(0).withSecond(0).withNano(0);
-        ZonedDateTime requestTo = to.withMinute(0).withSecond(0).withNano(0);
+        ZonedDateTime requestFrom = toZeroMSN(from);
+        ZonedDateTime requestTo = toZeroMSN(to);
 
         //  Get list of period forecasts for the requested day. Return empty if date isn't present
         List<PeriodForecast> forecastsList = dayIndex.get(new DayIndexKey(requestFrom));
@@ -175,6 +176,7 @@ class MeteoForecastIndexer {
 
         for (PeriodForecast forecast : forecastsList) {
             ZonedDateTime actualFrom = cloneZonedDateTime(forecast.getFrom());
+
             ZonedDateTime actualTo = cloneZonedDateTime(forecast.getTo());
 
             if (requestFrom.equals(actualFrom) && requestTo.equals(actualTo)) {
