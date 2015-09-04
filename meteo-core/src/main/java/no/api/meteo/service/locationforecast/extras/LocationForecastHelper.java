@@ -16,7 +16,6 @@
 
 package no.api.meteo.service.locationforecast.extras;
 
-import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.entity.core.service.locationforecast.Forecast;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
@@ -41,11 +40,8 @@ import static no.api.meteo.util.MeteoDateUtils.toZeroMSN;
  * Utvikling chooses to do it.</p>
  */
 @Slf4j
-public final class LocationForecastHelper {
+public final class LocationForecastHelper extends AbstractForecastHelper {
 
-    private final LocationForecast locationForecast;
-
-    private MeteoForecastIndexer indexer = null;
 
     /**
      * Construct a new instance of this helper without any title set.
@@ -53,9 +49,8 @@ public final class LocationForecastHelper {
      * @param locationForecast
      *         The location forecast this helper will work on.
      */
-    public LocationForecastHelper(@NonNull LocationForecast locationForecast) {
-        this.locationForecast = locationForecast;
-        indexer = new MeteoForecastIndexer(locationForecast.getForecasts());
+    public LocationForecastHelper(LocationForecast locationForecast) {
+        super(locationForecast);
     }
 
     /**
@@ -71,10 +66,10 @@ public final class LocationForecastHelper {
         ZonedDateTime now = getNow();
         for (int i = 0; i < hoursAhead; i++) {
             ZonedDateTime ahead = now.plusHours(i);
-            Optional<PointForecast> pointForecast = indexer.getPointForecast(ahead);
+            Optional<PointForecast> pointForecast = getIndexer().getPointForecast(ahead);
             if (pointForecast.isPresent()) {
                 Optional<PeriodForecast> periodForecast =
-                        indexer.getTightestFitPeriodForecast(pointForecast.get().getFrom());
+                        getIndexer().getTightestFitPeriodForecast(pointForecast.get().getFrom());
                 if (periodForecast.isPresent()) {
                     pointExtrasForecasts.add(new MeteoExtrasForecast(pointForecast.get(), periodForecast.get()));
                 }
@@ -94,7 +89,7 @@ public final class LocationForecastHelper {
     public Optional<MeteoExtrasForecast> findNearestForecast(ZonedDateTime dateTime) {
         ZonedDateTime dt = toZeroMSN(dateTime.withZoneSameInstant(METZONE));
         PointForecast chosenForecast = null;
-        for (Forecast forecast : locationForecast.getForecasts()) {
+        for (Forecast forecast : getLocationForecast().getForecasts()) {
             if (forecast instanceof PointForecast) {
                 PointForecast pointForecast = (PointForecast) forecast;
                 if (isDateMatch(dt, cloneZonedDateTime(pointForecast.getFrom()))) {
@@ -110,7 +105,7 @@ public final class LocationForecastHelper {
         return chosenForecast == null
                 ? Optional.empty()
                 : Optional.of(new MeteoExtrasForecast(
-                        chosenForecast, indexer.getWidestFitPeriodForecast(chosenForecast.getFrom()).get()));
+                        chosenForecast, getIndexer().getWidestFitPeriodForecast(chosenForecast.getFrom()).get()));
     }
 
     private boolean isNearerDate(ZonedDateTime pointTime, ZonedDateTime dateTime, ZonedDateTime chosenTime) {

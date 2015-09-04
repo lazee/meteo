@@ -17,10 +17,14 @@
 package no.api.meteo.entity.core.service.sunrise;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
+import no.api.meteo.util.jackson.ZonedDateTimeDeserializer;
+import no.api.meteo.util.jackson.ZonedDateTimeSerializer;
 
 import java.time.ZonedDateTime;
 
@@ -31,10 +35,14 @@ public abstract class AbstractRiseSet {
 
     @Getter
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime rise;
 
     @Getter
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime set;
 
 }

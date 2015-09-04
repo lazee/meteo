@@ -18,7 +18,11 @@ package no.api.meteo.entity.core.service.sunrise;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Value;
+import no.api.meteo.util.jackson.ZonedDateTimeDeserializer;
+import no.api.meteo.util.jackson.ZonedDateTimeSerializer;
 
 import java.time.ZonedDateTime;
 
@@ -26,6 +30,8 @@ import java.time.ZonedDateTime;
 public final class Noon {
 
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime time;
 
     @JsonProperty

@@ -30,18 +30,15 @@ public class LongtermTimeSeries {
         series = new ArrayList<>();
 
         LongtermTimeSerie closeSerie = new LongtermTimeSerie().add(-2, 4).add(4, 10).add(10, 16).add(16, 22);
-        series.add(closeSerie);
-        series.add(closeSerie);
-
         LongtermTimeSerie distantSerie = new LongtermTimeSerie().add(0, 6).add(6, 12).add(12, 18).add(18, 24);
-        series.add(distantSerie);
-        series.add(distantSerie);
-        series.add(distantSerie);
-        series.add(distantSerie);
-        series.add(distantSerie);
-        series.add(distantSerie);
 
-        series.add(new LongtermTimeSerie().add(0, 6).add(6, 12).add(12, 18));
+        for (int i = 0; i < 9; i++) {
+            if (i < 2) {
+                series.add(closeSerie);
+            } else {
+                series.add(distantSerie);
+            }
+        }
     }
 
     public class LongtermTimeSerie {

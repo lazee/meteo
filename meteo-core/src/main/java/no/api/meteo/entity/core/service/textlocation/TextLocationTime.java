@@ -18,9 +18,13 @@ package no.api.meteo.entity.core.service.textlocation;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
+import no.api.meteo.util.jackson.ZonedDateTimeDeserializer;
+import no.api.meteo.util.jackson.ZonedDateTimeSerializer;
 
 import java.time.ZonedDateTime;
 
@@ -30,9 +34,13 @@ import java.time.ZonedDateTime;
 public class TextLocationTime {
 
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime from;
 
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime to;
 
     @JsonProperty

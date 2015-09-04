@@ -16,17 +16,13 @@
 
 package no.api.meteo.service.locationforecast.extras;
 
-import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
-import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
-import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecastDay;
 import no.api.meteo.entity.extras.MeteoExtrasLongTermForecast;
 
-import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +34,7 @@ import static no.api.meteo.util.MeteoDateUtils.toZeroHMSN;
 import static no.api.meteo.util.MeteoDateUtils.toZeroMSN;
 
 @Slf4j
-public class LongtermForecastHelper {
-
-    private MeteoForecastIndexer indexer = null;
+public class LongtermForecastHelper extends AbstractForecastHelper {
 
     private final LongtermTimeSeries series;
 
@@ -50,9 +44,9 @@ public class LongtermForecastHelper {
      * @param locationForecast
      *         The location forecast this helper will work on.
      */
-    public LongtermForecastHelper(@NonNull LocationForecast locationForecast) {
-        indexer = new MeteoForecastIndexer(locationForecast.getForecasts());
-        series = new LongtermTimeSeries();
+    public LongtermForecastHelper(LocationForecast locationForecast) {
+        super(locationForecast);
+        this.series = new LongtermTimeSeries();
     }
 
     /**
@@ -69,7 +63,7 @@ public class LongtermForecastHelper {
         ZonedDateTime dt = getNow();
         for (int i = 0; i <= 6; i++) {
             ZonedDateTime dti = dt.plusDays(i);
-            if (indexer.hasForecastsForDay(dti)) {
+            if (getIndexer().hasForecastsForDay(dti)) {
                 MeteoExtrasForecastDay mefd = createSimpleForcastForDay(dti);
                 if (mefd != null && mefd.getForecasts().size() > 0) {
                     forecastDays.add(mefd);
@@ -92,7 +86,7 @@ public class LongtermForecastHelper {
 
         for (int i = 0; i < series.getSeries().size(); i++) {
             createLongTermForecastDay(dt.plusDays(i), series.getSeries().get(i))
-                    .ifPresent(e -> forecastDays.add(e));
+                    .ifPresent(forecastDays::add);
 
         }
 
@@ -101,7 +95,7 @@ public class LongtermForecastHelper {
 
     private Optional<MeteoExtrasForecastDay> createLongTermForecastDay(ZonedDateTime dt,
                                                                        LongtermTimeSeries.LongtermTimeSerie serie) {
-        if (!indexer.hasForecastsForDay(dt)) {
+        if (!getIndexer().hasForecastsForDay(dt)) {
             return Optional.empty();
         }
 
@@ -116,44 +110,7 @@ public class LongtermForecastHelper {
                 : Optional.empty();
     }
 
-    private Optional<MeteoExtrasForecast> getForecastForPeriod(ZonedDateTime from, ZonedDateTime to) {
-        Optional<PeriodForecast> periodForecast = indexer.getExactFitPeriodForecast(from, to);
-        if (!periodForecast.isPresent()) {
-            log.error("Could not find period forecast for " + from.toString() + " -- " + to.toString());
-            return Optional.empty();
-        }
 
-        Optional<PointForecast> pointForecast = getPointForecastForPeriod(from, periodForecast);
-        if (!pointForecast.isPresent()) {
-            log.error("No point forecast for " + from.toString() + "  :" + from.toString() + " -- " +
-                              to.toString());
-            return Optional.empty();
-        }
-        return Optional.of(new MeteoExtrasForecast(pointForecast.get(), periodForecast.get()));
-    }
-
-    private Optional<PointForecast> getPointForecastForPeriod(ZonedDateTime from,
-                                                              Optional<PeriodForecast> periodForecast) {
-        Duration d = Duration.between(periodForecast.get().getFrom(), periodForecast.get().getTo());
-        long distance = (d.getSeconds() / 60 / 60 / 2);
-        ZonedDateTime dateTime = periodForecast.get().getFrom().plusHours(distance);
-        Optional<PointForecast> pointForecast = indexer.getPointForecast(dateTime);
-
-        // Try to find point forecast in the middle of period
-        if (!pointForecast.isPresent()) {
-
-            // Try to find period forecast for the from time and five hours ahead.
-            // Might be a little bit dirty implementation, but it should do for now.
-            pointForecast = Optional.empty();
-
-            for (int i = 0; i < 5; i++) {
-                if (!pointForecast.isPresent()) {
-                    pointForecast = indexer.getPointForecast(from.plusHours(i));
-                }
-            }
-        }
-        return pointForecast;
-    }
 
     public MeteoExtrasForecastDay createSimpleForcastForDay(ZonedDateTime dateTime) {
         ZonedDateTime dt = toZeroMSN(dateTime.withZoneSameInstant(METZONE));

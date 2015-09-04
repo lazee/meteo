@@ -18,7 +18,11 @@ package no.api.meteo.entity.core;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Value;
+import no.api.meteo.util.jackson.ZonedDateTimeDeserializer;
+import no.api.meteo.util.jackson.ZonedDateTimeSerializer;
 
 import java.time.ZonedDateTime;
 
@@ -26,18 +30,28 @@ import java.time.ZonedDateTime;
 public final class Model {
 
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime to;
 
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime from;
 
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime runEnded;
 
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime nextRun;
 
     @JsonProperty
+    @JsonSerialize(using = ZonedDateTimeSerializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private final ZonedDateTime termin;
 
     @JsonProperty
