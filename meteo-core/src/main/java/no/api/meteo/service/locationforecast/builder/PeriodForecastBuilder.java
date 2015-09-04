@@ -23,6 +23,7 @@ import no.api.meteo.entity.core.service.locationforecast.PeriodForecast;
 import no.api.meteo.entity.core.service.locationforecast.Precipitation;
 import no.api.meteo.entity.core.service.locationforecast.Symbol;
 import no.api.meteo.entity.core.service.locationforecast.SymbolProbability;
+import no.api.meteo.entity.core.service.locationforecast.Temperature;
 import no.api.meteo.util.EntityBuilder;
 
 import java.time.ZonedDateTime;
@@ -44,6 +45,14 @@ public class PeriodForecastBuilder implements EntityBuilder<PeriodForecast> {
 
     @Getter
     @Setter
+    private Temperature minTemperature;
+
+    @Getter
+    @Setter
+    private Temperature maxTemperature;
+
+    @Getter
+    @Setter
     private Symbol symbol;
 
     @Getter
@@ -52,6 +61,7 @@ public class PeriodForecastBuilder implements EntityBuilder<PeriodForecast> {
 
     @Override
     public PeriodForecast build() {
-        return new PeriodForecast(getFrom(), getTo(), getPrecipitation(), getSymbol(), getSymbolProbability());
+        return new PeriodForecast(getFrom(), getTo(), getPrecipitation(), getMinTemperature(), getMaxTemperature(),
+                                  getSymbol(), getSymbolProbability());
     }
 }

@@ -17,12 +17,14 @@
 package no.api.meteo.entity.core;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import net.sf.oval.constraint.NotNegative;
 import net.sf.oval.constraint.NotNull;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = false)
 public class Location {
 
     @JsonProperty
@@ -41,16 +43,6 @@ public class Location {
     @NotNegative
     @JsonProperty
     private final Integer altitude;
-
-    @JsonCreator
-    public Location(@JsonProperty("longitude") Double longitude,
-                    @JsonProperty("latitude") Double latitude,
-                    @JsonProperty("altitude") Integer altitude) {
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.altitude = altitude;
-        this.name = null;
-    }
 
     @JsonCreator
     public Location(@JsonProperty("longitude") Double longitude,

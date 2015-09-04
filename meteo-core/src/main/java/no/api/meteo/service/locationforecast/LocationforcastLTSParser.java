@@ -139,8 +139,8 @@ public final class LocationforcastLTSParser
                                 getString(xpp, ATTR_NAME),
                                 getDouble(xpp, ATTR_DEG)));
                 break;
-            case TAG_WIND_SPEED:
-                pointPeek(stack).setWindSpeed(
+            case TAG_WIND_GUST:
+                pointPeek(stack).setWindGust(
                         new WindSpeed(
                                 getString(xpp, ATTR_ID),
                                 getInteger(xpp, ATTR_BEAUFORT),
@@ -162,6 +162,27 @@ public final class LocationforcastLTSParser
                 break;
             case TAG_TEMPERATURE:
                 pointPeek(stack).setTemperature(
+                        new Temperature(
+                                getString(xpp, ATTR_ID),
+                                getString(xpp, ATTR_UNIT),
+                                getDouble(xpp, ATTR_VALUE)));
+                break;
+            case TAG_DEWPOINT_TEMPERATURE:
+                pointPeek(stack).setDewpointTemperature(
+                        new Temperature(
+                                getString(xpp, ATTR_ID),
+                                getString(xpp, ATTR_UNIT),
+                                getDouble(xpp, ATTR_VALUE)));
+                break;
+            case TAG_MIN_TEMPERATURE:
+                periodPeek(stack).setMinTemperature(
+                        new Temperature(
+                                getString(xpp, ATTR_ID),
+                                getString(xpp, ATTR_UNIT),
+                                getDouble(xpp, ATTR_VALUE)));
+                break;
+            case TAG_MAX_TEMPERATURE:
+                periodPeek(stack).setMaxTemperature(
                         new Temperature(
                                 getString(xpp, ATTR_ID),
                                 getString(xpp, ATTR_UNIT),
@@ -254,7 +275,7 @@ public final class LocationforcastLTSParser
         locationForecastBuilder.setLocation(
                 new Location(getDouble(xpp, ATTR_LONGITUDE),
                              getDouble(xpp, ATTR_LATITUDE),
-                             getInteger(xpp, ATTR_ALTITUDE)));
+                             getInteger(xpp, ATTR_ALTITUDE), ""));
     }
 
 

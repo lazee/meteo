@@ -34,6 +34,8 @@ public final class MeteoDateUtils {
 
     private static final String HHMM = "HH:mm";
 
+    public static final ZoneId METZONE = ZoneId.of("Z");
+
     private MeteoDateUtils() {
         throw new UnsupportedOperationException();
     }
@@ -48,7 +50,7 @@ public final class MeteoDateUtils {
             d = dateStr.substring(0, 22) + ":" + dateStr.substring(22);
         }
         try {
-            return OffsetDateTime.parse(d).atZoneSameInstant(ZoneId.of("Z"));
+            return OffsetDateTime.parse(d).atZoneSameInstant(METZONE);
         } catch (DateTimeParseException e) {
             throw new MeteoException(e);
         }
@@ -96,7 +98,7 @@ public final class MeteoDateUtils {
         if (zonedDateTime == null) {
             return null;
         }
-        return zonedDateTime.withZoneSameInstant(ZoneId.of("Z"));
+        return zonedDateTime.withZoneSameInstant(METZONE);
     }
 
     public static ZonedDateTime toZeroMSN(ZonedDateTime dateTime) {
@@ -105,6 +107,10 @@ public final class MeteoDateUtils {
 
     public static ZonedDateTime toZeroHMSN(ZonedDateTime dateTime) {
         return dateTime.withHour(0).withMinute(0).withSecond(0).withNano(0);
+    }
+
+    public static ZonedDateTime getNow() {
+        return ZonedDateTime.now(METZONE);
     }
 
 }

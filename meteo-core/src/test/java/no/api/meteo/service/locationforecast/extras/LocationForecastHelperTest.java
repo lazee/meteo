@@ -18,7 +18,6 @@ package no.api.meteo.service.locationforecast.extras;
 
 import no.api.meteo.MeteoException;
 import no.api.meteo.entity.core.service.locationforecast.LocationForecast;
-import no.api.meteo.entity.extras.MeteoExtrasForecastDay;
 import no.api.meteo.entity.extras.MeteoExtrasLongTermForecast;
 import no.api.meteo.service.locationforecast.LocationforcastLTSParser;
 import no.api.meteo.test.MeteoTestException;
@@ -29,13 +28,13 @@ import org.junit.Test;
 
 import java.time.ZoneId;
 
-import static no.api.meteo.util.MeteoDateUtils.fullFormatToZonedDateTime;
-
 public class LocationForecastHelperTest {
 
     private LocationForecast locationForecast;
 
     private LocationForecastHelper helper;
+
+    private LongtermForecastHelper longtermForecastHelper;
 
     private final ZoneId zoneId = ZoneId.of("Z");
 
@@ -45,21 +44,22 @@ public class LocationForecastHelperTest {
         LocationforcastLTSParser parser = new LocationforcastLTSParser();
         locationForecast = parser.parse(resource);
         helper = new LocationForecastHelper(locationForecast);
+        longtermForecastHelper = new LongtermForecastHelper(locationForecast);
     }
 
 
-    @Test
+   /* @Test
     public void testCreateForcastForDay() throws Exception {
         MeteoExtrasForecastDay forcastForDay =
-                helper.createForcastForDay(fullFormatToZonedDateTime("2015-09-03T04:00:00Z"));
+                longtermForecastHelper.createForcastForDay(fullFormatToZonedDateTime("2015-09-03T04:00:00Z"));
         Assert.assertNotNull(forcastForDay.getForecasts());
         Assert.assertEquals(4, forcastForDay.getForecasts().size());
 
-    }
+    }*/
 
     @Test
     public void testCreateLongTermForecast() {
-        MeteoExtrasLongTermForecast longTermForecast = helper.createLongTermForecast();
+        MeteoExtrasLongTermForecast longTermForecast = longtermForecastHelper.createLongTermForecast();
         Assert.assertEquals(7, longTermForecast.getForecastDays().size());
     }
 }

@@ -33,6 +33,12 @@ public final class PeriodForecast extends AbstractForecast implements Forecast {
     private final Precipitation precipitation;
 
     @JsonProperty
+    private final Temperature minTemperature;
+
+    @JsonProperty
+    private final Temperature maxTemperature;
+
+    @JsonProperty
     private final Symbol symbol;
 
     @JsonProperty
@@ -43,10 +49,14 @@ public final class PeriodForecast extends AbstractForecast implements Forecast {
             @JsonProperty("fromTime") ZonedDateTime from,
             @JsonProperty("toTime") ZonedDateTime to,
             @JsonProperty("precipitation") Precipitation precipitation,
+            @JsonProperty("minTemperature") Temperature minTemperature,
+            @JsonProperty("maxTemperature") Temperature maxTemperature,
             @JsonProperty("symbol") Symbol symbol,
             @JsonProperty("symbolProbability") SymbolProbability symbolProbability) {
         super(from, to);
         this.precipitation = precipitation;
+        this.minTemperature = minTemperature;
+        this.maxTemperature = maxTemperature;
         this.symbol = symbol;
         this.symbolProbability = symbolProbability;
     }

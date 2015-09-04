@@ -29,7 +29,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static no.api.meteo.util.MeteoDateUtils.cloneZonedDateTime;
 import static no.api.meteo.util.MeteoDateUtils.toZeroMSN;
@@ -69,7 +68,26 @@ class MeteoForecastIndexer {
         return Optional.empty();
     }
 
-    List<PeriodForecast> getMatchingPeriodForecasts(ZonedDateTime from) {
+    Optional<PeriodForecast> getExactFitPeriodForecast(ZonedDateTime from, ZonedDateTime to) {
+        if (from == null || to == null) {
+            return Optional.empty();
+        }
+
+        List<PeriodForecast> forecastsList = dayIndex.get(new DayIndexKey(from));
+        if (forecastsList == null) {
+            return Optional.empty();
+        }
+
+        for (PeriodForecast forecast : forecastsList) {
+            if (forecast.getFrom().equals(from) && forecast.getTo().equals(to)) {
+                return Optional.of(forecast);
+            }
+        }
+        return Optional.empty();
+    }
+
+
+    /*List<PeriodForecast> getMatchingPeriodForecasts(ZonedDateTime from) {
         List<PeriodForecast> periodForecasts = new ArrayList<>();
         List<ScoreForecast> scoreForecasts = getMatchingScoreForecasts(from);
         if (scoreForecasts == null) {
@@ -81,11 +99,11 @@ class MeteoForecastIndexer {
                         .map(ScoreForecast::getPeriodForecast)
                         .collect(Collectors.toList()));
         return periodForecasts;
-    }
+    }*/
 
-    List<ScoreForecast> getMatchingScoreForecasts(ZonedDateTime from) {
+    /*List<ScoreForecast> getMatchingScoreForecasts(ZonedDateTime from) {
         return hourIndex.get(createHourIndexKey(cloneZonedDateTime(from)));
-    }
+    }*/
 
     /*
     * Find the period forecast that is the tightest fit for a point forecast.
@@ -114,7 +132,7 @@ class MeteoForecastIndexer {
         if (from == null) {
             return Optional.empty();
         }
-        Optional<ScoreForecast> scoreForecast = getTightestFitScoreForecast(from);
+        Optional<ScoreForecast> scoreForecast = getXScoreForecast(from, false);
         return scoreForecast.isPresent()
                 ? Optional.of(scoreForecast.get().getPeriodForecast())
                 : Optional.empty();
@@ -122,13 +140,6 @@ class MeteoForecastIndexer {
 
     boolean hasForecastsForDay(ZonedDateTime from) {
         return dayIndex.containsKey(new DayIndexKey(from));
-    }
-
-    Optional<ScoreForecast> getTightestFitScoreForecast(ZonedDateTime from) {
-        if (from == null) {
-            return Optional.empty();
-        }
-        return getXScoreForecast(from, false);
     }
 
     /*

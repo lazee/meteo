@@ -55,10 +55,16 @@ public final class PointForecast extends AbstractForecast implements Forecast {
     private final WindSpeed windSpeed;
 
     @JsonProperty
+    private final WindSpeed windGust;
+
+    @JsonProperty
     private final Humidity humidity;
 
     @JsonProperty
     private final Temperature temperature;
+
+    @JsonProperty
+    private final Temperature dewpointTemperature;
 
     @JsonProperty
     private final WindProbability windProbability;
@@ -77,8 +83,10 @@ public final class PointForecast extends AbstractForecast implements Forecast {
                          @JsonProperty("lowClouds") LowClouds lowClouds,
                          @JsonProperty("windDirection") WindDirection windDirection,
                          @JsonProperty("windSpeed") WindSpeed windSpeed,
+                         @JsonProperty("windGust") WindSpeed windGust,
                          @JsonProperty("humidity") Humidity humidity,
                          @JsonProperty("temperature") Temperature temperature,
+                         @JsonProperty("dewpointTemperature") Temperature dewpointTemperature,
                          @JsonProperty("windProbability") WindProbability windProbability,
                          @JsonProperty("temperatureProbability") TemperatureProbability temperatureProbability) {
         super(from, to);
@@ -90,8 +98,10 @@ public final class PointForecast extends AbstractForecast implements Forecast {
         this.lowClouds = lowClouds;
         this.windDirection = windDirection;
         this.windSpeed = windSpeed;
+        this.windGust = windGust;
         this.humidity = humidity;
         this.temperature = temperature;
+        this.dewpointTemperature = dewpointTemperature;
         this.windProbability = windProbability;
         this.temperatureProbability = temperatureProbability;
     }
@@ -106,8 +116,10 @@ public final class PointForecast extends AbstractForecast implements Forecast {
         this.lowClouds = null;
         this.windDirection = null;
         this.windSpeed = null;
+        this.windGust = null;
         this.humidity = null;
         this.temperature = null;
+        this.dewpointTemperature = null;
         this.windProbability = null;
         this.temperatureProbability = null;
     }

@@ -95,11 +95,19 @@ public final class MeteoConstants {
 
     public static final String TAG_WIND_SPEED = "windSpeed";
 
+    public static final String TAG_WIND_GUST = "windGust";
+
     public static final String TAG_CLOUDINESS = "cloudiness";
 
     public static final String TAG_HUMIDITY = "humidity";
 
     public static final String TAG_TEMPERATURE = "temperature";
+
+    public static final String TAG_MIN_TEMPERATURE = "minTemperature";
+
+    public static final String TAG_MAX_TEMPERATURE = "maxTemperature";
+
+    public static final String TAG_DEWPOINT_TEMPERATURE = "dewpointTemperature";
 
     public static final String TAG_PRODUCT_DESCRIPTION = "productdescription";
 

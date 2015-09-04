@@ -121,7 +121,7 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
     private void handleLocationTag(SunriseBuilder sunriseBuilder, XmlPullParser xpp) throws MeteoException {
         if (sunriseBuilder.getLocation() == null) {
             sunriseBuilder.setLocation(new Location(getDouble(xpp, ATTR_LONGITUDE),
-                                                    getDouble(xpp, ATTR_LATITUDE), null));
+                                                    getDouble(xpp, ATTR_LATITUDE), null, ""));
         } else {
             log.trace("Skipping locations since it is already added.");
         }

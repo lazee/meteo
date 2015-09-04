@@ -26,7 +26,7 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecast;
 import no.api.meteo.entity.extras.MeteoExtrasForecastDay;
 import no.api.meteo.service.locationforecast.LocationforecastLTSService;
-import no.api.meteo.service.locationforecast.extras.LocationForecastHelper;
+import no.api.meteo.service.locationforecast.extras.LongtermForecastHelper;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -53,16 +53,18 @@ public class LongTermForecastExample {
     }
 
     public void runExample() {
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM HH:mm ZZ");
         LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
         try {
             // Fetch the data from api.met.no
-            MeteoData<LocationForecast> data =  ltsService.fetchContent(LONGITUDE_BERGEN, LATITUDE_BERGEN, ALTITUDE_BERGEN);
-            //MeteoData<LocationForecast> data =  ltsService.fetchResource(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
+            MeteoData<LocationForecast> data =
+                    ltsService.fetchContent(LONGITUDE_BERGEN, LATITUDE_BERGEN, ALTITUDE_BERGEN);
+            //MeteoData<LocationForecast> data =  ltsService.fetchResource(LONGITUDE_OSLO, LATITUDE_OSLO,
+            // ALTITUDE_OSLO);
 
-            LocationForecastHelper locationForecastHelper = new LocationForecastHelper(data.getResult());
+            LongtermForecastHelper helper = new LongtermForecastHelper(data.getResult());
 
-            for (MeteoExtrasForecastDay day : locationForecastHelper.createLongTermForecast().getForecastDays()) {
+            for (MeteoExtrasForecastDay day : helper.createLongTermForecast().getForecastDays()) {
                 print("\nDATE : " + day.getDay());
 
                 for (MeteoExtrasForecast forecast : day.getForecasts()) {
@@ -70,7 +72,18 @@ public class LongTermForecastExample {
                     PointForecast po = forecast.getPointForecast();
                     ZonedDateTime df = cloneZonedDateTime(p.getFrom());
                     ZonedDateTime dt = cloneZonedDateTime(p.getTo());
-                    print(df.format(fmt)+"-"+dt.format(fmt)+" | "+p.getSymbol().getId()+" | "+Math.round(po.getTemperature().getValue()) + " | "+p.getPrecipitation().getMinValue() + "-" + p.getPrecipitation().getMaxValue() + "," + p.getPrecipitation().getValue());
+                    print(df.format(fmt) +
+                                  "-" +
+                                  dt.format(fmt) +
+                                  " | " + p.getSymbol().getId() +
+                                  " | " +
+                                  Math.round(po.getTemperature().getValue()) +
+                                  " | " +
+                                  p.getPrecipitation().getMinValue() +
+                                  "-" +
+                                  p.getPrecipitation().getMaxValue() +
+                                  "," +
+                                  p.getPrecipitation().getValue());
                 }
             }
 

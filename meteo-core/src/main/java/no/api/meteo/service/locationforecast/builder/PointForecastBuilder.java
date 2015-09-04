@@ -81,11 +81,19 @@ public class PointForecastBuilder implements EntityBuilder<PointForecast> {
 
     @Getter
     @Setter
+    private WindSpeed windGust;
+
+    @Getter
+    @Setter
     private Humidity humidity;
 
     @Getter
     @Setter
     private Temperature temperature;
+
+    @Getter
+    @Setter
+    private Temperature dewpointTemperature;
 
     @Getter
     @Setter
@@ -107,8 +115,10 @@ public class PointForecastBuilder implements EntityBuilder<PointForecast> {
         builder.setLowClouds(pointForecast.getLowClouds());
         builder.setWindDirection(pointForecast.getWindDirection());
         builder.setWindSpeed(pointForecast.getWindSpeed());
+        builder.setWindGust(pointForecast.getWindGust());
         builder.setHumidity(pointForecast.getHumidity());
         builder.setTemperature(pointForecast.getTemperature());
+        builder.setDewpointTemperature(pointForecast.getDewpointTemperature());
         builder.setWindProbability(pointForecast.getWindProbability());
         builder.setTemperatureProbability(pointForecast.getTemperatureProbability());
         return builder;
@@ -118,6 +128,7 @@ public class PointForecastBuilder implements EntityBuilder<PointForecast> {
     public PointForecast build() {
         return new PointForecast(getFrom(), getTo(), getFog(), getPressure(), getHighClouds(),
                                  getMediumClouds(), getCloudiness(), getLowClouds(), getWindDirection(), getWindSpeed(),
-                                 getHumidity(), getTemperature(), getWindProbability(), getTemperatureProbability());
+                                 getWindGust(), getHumidity(), getTemperature(), getDewpointTemperature(),
+                                 getWindProbability(), getTemperatureProbability());
     }
 }
