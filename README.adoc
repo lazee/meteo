@@ -12,12 +12,14 @@ Meteo is developed and maintained by Amedia Utvikling AS. It is in use within al
 It mainly supports the services that Amedia needs at any given time. But we will consider adding other services as
 well upon request (or send a pull request).
 
+
 ## The MET terms of use
 
 Make sure to read the http://api.met.no/conditions_service.html[Conditions for use of the service] from
 the Norwegian Meteorological Institute.
 
 Also make sure to read this http://api.met.no/license_data.html.
+
 
 ## Reverse proxying
 
@@ -38,9 +40,11 @@ The core library in Meteo is all about offering access to the raw MET data throu
 As stated earlier we have only implemented support for the services that Amedia needs or that is requested/implemented
 by other users (Please send pull requests).
 
+
 ### Requirements
 
 Meteo requires Java 8.x or later.
+
 
 ### Installation
 
@@ -68,10 +72,12 @@ If you want to use the default implementation of a MeteoClient, then you would a
 </dependency>
 ----
 
+
 ### Usage
 
 In the https://github.com/amedia/meteo/tree/master/meteo-examples/src/main/java/no/api/meteo/examples[meteo-examples]
  module you will find several useful examples that should get you up and running
+
 
 #### Creating a default client
 
@@ -104,6 +110,7 @@ Current services:
 * Text forecast (Experimental)
 * Text locations (Experimental)
 
+
 #### Location forecast service
 
 This is the service for fetching raw data from http://api.met.no/weatherapi/locationforecastlts/1.2/documentation.
@@ -118,6 +125,7 @@ try {
 }
 ----
 
+
 #### Sunrise service
 
 This is the service for fetching raw data from http://api.met.no/weatherapi/sunrise/1.0/documentation.
@@ -131,6 +139,7 @@ try {
     // Handle exception.
 }
 ----
+
 
 ## General developer notes
 
