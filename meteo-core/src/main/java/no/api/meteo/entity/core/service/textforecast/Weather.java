@@ -37,7 +37,7 @@ public class Weather {
     private final Meta meta;
 
     @JsonProperty
-    private final String productionDescription;
+    private final String productDescription;
 
     @JsonProperty
     private final List<Time> times;
@@ -45,11 +45,11 @@ public class Weather {
     @JsonCreator
     public Weather(@JsonProperty("title") String title,
                    @JsonProperty("meta") Meta meta,
-                   @JsonProperty("productionDescription") String productionDescription,
+                   @JsonProperty("productDescription") String productDescription,
                    @JsonProperty("times") List<Time> times) {
         this.title = title;
         this.meta = meta;
-        this.productionDescription = productionDescription;
+        this.productDescription = productDescription;
         this.times = times;
     }
 }

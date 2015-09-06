@@ -34,17 +34,17 @@ public class TextLocationWeather {
     private final Meta meta;
 
     @JsonProperty
-    private final String productionDescription;
+    private final String productDescription;
 
     @JsonProperty
     private final List<TextLocationTime> textLocationTimes;
 
     @JsonCreator
     public TextLocationWeather(@JsonProperty("meta") Meta meta,
-                               @JsonProperty("productionDescription") String productionDescription,
+                               @JsonProperty("productDescription") String productDescription,
                                @JsonProperty("times") List<TextLocationTime> textLocationTimes) {
         this.meta = meta;
-        this.productionDescription = productionDescription;
+        this.productDescription = productDescription;
         this.textLocationTimes = textLocationTimes;
     }
 }

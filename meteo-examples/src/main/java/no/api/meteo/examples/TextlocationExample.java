@@ -51,7 +51,7 @@ public class TextlocationExample {
         TextlocationExample example = new TextlocationExample();
         MeteoData<TextLocationWeather> data = example.runExample();
         log.info("Textforecast for % - %", LONGITUDE_OSLO, LATITUDE_OSLO);
-        log.info("Product description: " + data.getResult().getProductionDescription());
+        log.info("Product description: " + data.getResult().getProductDescription());
 
         for (TextLocationTime time : data.getResult().getTextLocationTimes()) {
             log.info("From: " + time.getFrom().toString());

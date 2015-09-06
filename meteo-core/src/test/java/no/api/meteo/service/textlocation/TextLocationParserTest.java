@@ -40,7 +40,7 @@ public class TextLocationParserTest {
         Assert.assertNotNull(data.getResponse().getData());
         Assert.assertNotNull(data.getResponse().getResponseHeaders());
         Assert.assertEquals(1, data.getResponse().getResponseHeaders().size());
-        Assert.assertEquals("Forecasts for 59.9,10.6", result.getProductionDescription());
+        Assert.assertEquals("Forecasts for 59.9,10.6", result.getProductDescription());
 
         Assert.assertEquals(7, result.getTextLocationTimes().size());
 

@@ -45,7 +45,7 @@ public class TextforecastParserTest {
         Assert.assertNotNull(data.getResponse().getData());
         Assert.assertNotNull(data.getResponse().getResponseHeaders());
         Assert.assertEquals(1, data.getResponse().getResponseHeaders().size());
-        Assert.assertEquals("merged", result.getProductionDescription());
+        Assert.assertEquals("merged", result.getProductDescription());
         Assert.assertEquals("Tekstvarsel for Norge", result.getTitle());
 
         List<Time> times = result.getTimes();
