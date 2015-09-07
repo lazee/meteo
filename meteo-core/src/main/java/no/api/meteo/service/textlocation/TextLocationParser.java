@@ -97,7 +97,7 @@ public class TextLocationParser
     private void handleTimeTag(XmlPullParser xpp, Stack<TextLocationTimeBuilder> stack) throws MeteoException {
         TextLocationTimeBuilder timeBuilder = new TextLocationTimeBuilder();
         timeBuilder.setFrom(getOffsetDateTime(xpp, ATTR_FROM));
-        timeBuilder.setTo(getOffsetDateTime(xpp, ATTR_FROM));
+        timeBuilder.setTo(getOffsetDateTime(xpp, ATTR_TO));
         stack.push(timeBuilder);
     }
 
