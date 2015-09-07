@@ -81,7 +81,7 @@ public class LongtermForecastHelper extends AbstractForecastHelper {
      */
     public MeteoExtrasLongTermForecast createLongTermForecast() {
         List<MeteoExtrasForecastDay> forecastDays = new ArrayList<>();
-        ZonedDateTime dt = toZeroHMSN(getNow().plusDays(1));
+        ZonedDateTime dt = toZeroHMSN(getLocationForecast().getCreated().plusDays(1));
 
 
         for (int i = 0; i < series.getSeries().size(); i++) {

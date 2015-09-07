@@ -46,7 +46,7 @@ public class TextLocationParserTest {
 
         TextLocationTime textLocationTime = result.getTextLocationTimes().get(2);
         Assert.assertEquals("2015-08-24T22:00Z", textLocationTime.getFrom().toString());
-        Assert.assertEquals("2015-08-24T22:00Z", textLocationTime.getTo().toString());
+        Assert.assertEquals("2015-08-25T22:00Z", textLocationTime.getTo().toString());
         Assert.assertEquals("Østlig senere sørlig bris, på kysten til dels frisk bris. Regn, stedvis mye nedbør vest for Oslo. Lokal torden. Nord for Mjøsa oppholdsvær først på dagen.", textLocationTime.getTextLocation().getForecast());
 
     }
