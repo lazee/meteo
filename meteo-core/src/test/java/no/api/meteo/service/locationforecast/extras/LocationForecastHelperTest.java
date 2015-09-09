@@ -60,6 +60,6 @@ public class LocationForecastHelperTest {
     @Test
     public void testCreateLongTermForecast() {
         MeteoExtrasLongTermForecast longTermForecast = longtermForecastHelper.createLongTermForecast();
-        Assert.assertEquals(9, longTermForecast.getForecastDays().size());
+        Assert.assertEquals(90, longTermForecast.getForecastDays().size());
     }
 }

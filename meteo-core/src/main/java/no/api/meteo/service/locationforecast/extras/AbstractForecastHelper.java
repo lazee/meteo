@@ -49,7 +49,7 @@ public class AbstractForecastHelper {
         ZonedDateTime toz = toZeroMSN(to.withZoneSameInstant(METZONE));
         Optional<PeriodForecast> periodForecast = getIndexer().getExactFitPeriodForecast(fromz, toz);
         if (!periodForecast.isPresent()) {
-            log.error("Could not find period forecast for " + fromz.toString() + " -- " + toz.toString());
+            log.debug("Could not find period forecast for " + fromz.toString() + " -- " + toz.toString());
             return Optional.empty();
         }
 

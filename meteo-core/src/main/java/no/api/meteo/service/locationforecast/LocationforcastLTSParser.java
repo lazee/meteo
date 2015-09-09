@@ -147,6 +147,14 @@ public final class LocationforcastLTSParser
                                 getDouble(xpp, ATTR_MPS),
                                 getString(xpp, ATTR_NAME)));
                 break;
+            case TAG_WIND_SPEED:
+                pointPeek(stack).setWindSpeed(
+                        new WindSpeed(
+                                getString(xpp, ATTR_ID),
+                                getInteger(xpp, ATTR_BEAUFORT),
+                                getDouble(xpp, ATTR_MPS),
+                                getString(xpp, ATTR_NAME)));
+                break;
             case TAG_CLOUDINESS:
                 pointPeek(stack).setCloudiness(
                         new Cloudiness(
