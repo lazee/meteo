@@ -11,7 +11,7 @@
 
     <groupId>no.api.meteo</groupId>
     <artifactId>meteo</artifactId>
-    <version>3.0.6-SNAPSHOT</version>
+    <version>3.0.7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>meteo</name>
     <description>Java library for fetching weather data from api.met.no</description>
