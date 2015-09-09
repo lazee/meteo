@@ -30,10 +30,6 @@ import java.time.ZoneId;
 
 public class LocationForecastHelperTest {
 
-    private LocationForecast locationForecast;
-
-    private LocationForecastHelper helper;
-
     private LongtermForecastHelper longtermForecastHelper;
 
     private final ZoneId zoneId = ZoneId.of("Z");
@@ -42,8 +38,8 @@ public class LocationForecastHelperTest {
     public void loadResources() throws MeteoTestException, MeteoException {
         String resource = MeteoTestUtils.getTextResource("/META-INF/meteo/locationsforecastlts/test2.xml");
         LocationforcastLTSParser parser = new LocationforcastLTSParser();
-        locationForecast = parser.parse(resource);
-        helper = new LocationForecastHelper(locationForecast);
+        final LocationForecast locationForecast = parser.parse(resource);
+        //final LocationForecastHelper helper = new LocationForecastHelper(locationForecast);
         longtermForecastHelper = new LongtermForecastHelper(locationForecast);
     }
 
