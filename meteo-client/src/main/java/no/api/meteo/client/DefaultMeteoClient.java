@@ -72,7 +72,7 @@ public class DefaultMeteoClient implements MeteoClient {
 
     @Override
     public MeteoResponse fetchContent(URI uri) throws MeteoClientException {
-        log.debug("Going to fetch content from : {}", uri.toString());
+        log.debug("Going to fetch content from : %", uri.toString());
         CloseableHttpClient client = createClient();
         CloseableHttpResponse response = null;
 
