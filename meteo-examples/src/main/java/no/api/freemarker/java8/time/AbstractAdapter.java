@@ -17,6 +17,7 @@
 package no.api.freemarker.java8.time;
 
 import freemarker.template.AdapterTemplateModel;
+import freemarker.template.ObjectWrapper;
 import freemarker.template.TemplateHashModel;
 import freemarker.template.TemplateModelException;
 import freemarker.template.WrappingTemplateModel;
@@ -33,7 +34,8 @@ public abstract class AbstractAdapter<E>
 
     private final E obj;
 
-    public AbstractAdapter(E obj) {
+    public AbstractAdapter(E obj, ObjectWrapper objectWrapper) {
+        super(objectWrapper);
         this.obj = obj;
     }
 

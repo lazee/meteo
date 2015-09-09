@@ -17,6 +17,7 @@
 package no.api.freemarker.java8.time;
 
 import freemarker.template.AdapterTemplateModel;
+import freemarker.template.ObjectWrapper;
 import freemarker.template.TemplateHashModel;
 import freemarker.template.TemplateMethodModelEx;
 import freemarker.template.TemplateModel;
@@ -36,8 +37,8 @@ import static no.api.freemarker.java8.time.DateTimeTools.createDateTimeFormatter
 public class MonthDayAdapter extends AbstractAdapter<MonthDay> implements AdapterTemplateModel,
         TemplateScalarModel, TemplateHashModel {
 
-    public MonthDayAdapter(MonthDay obj) {
-        super(obj);
+    public MonthDayAdapter(MonthDay obj, ObjectWrapper objectWrapper) {
+        super(obj, objectWrapper);
     }
 
     @Override

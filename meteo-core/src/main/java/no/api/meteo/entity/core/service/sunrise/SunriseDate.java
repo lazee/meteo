@@ -55,7 +55,7 @@ public final class SunriseDate {
     }
 
     public boolean isNight(ZonedDateTime time) {
-        return isPolarNight() ? true : !isSun(time);
+        return isPolarNight() || !isSun(time);
     }
 
     /**

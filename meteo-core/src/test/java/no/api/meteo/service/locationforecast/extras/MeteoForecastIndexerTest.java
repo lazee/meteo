@@ -151,30 +151,18 @@ public class MeteoForecastIndexerTest {
     public void testPeriodIndexKey() throws Exception {
         HourMatcher p1 = new HourMatcher(ZonedDateTime.now(zoneId).withYear(1970));
         HourMatcher p2 = new HourMatcher(ZonedDateTime.now(zoneId).withYear(1980));
-        Assert.assertFalse(p1.equals(null));
-        Assert.assertFalse(p2.equals(null));
-        Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
         p1 = new HourMatcher(ZonedDateTime.now(zoneId).withMonth(2));
         p2 = new HourMatcher(ZonedDateTime.now(zoneId).withMonth(3));
-        Assert.assertFalse(p1.equals(null));
-        Assert.assertFalse(p2.equals(null));
-        Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
         p1 = new HourMatcher(ZonedDateTime.now(zoneId).withDayOfMonth(1));
         p2 = new HourMatcher(ZonedDateTime.now(zoneId).withDayOfMonth(2));
-        Assert.assertFalse(p1.equals(null));
-        Assert.assertFalse(p2.equals(null));
-        Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
 
         p1 = new HourMatcher(ZonedDateTime.now(zoneId).withHour(3));
         p2 = new HourMatcher(ZonedDateTime.now(zoneId).withHour(5));
-        Assert.assertFalse(p1.equals(null));
-        Assert.assertFalse(p2.equals(null));
-        Assert.assertTrue(p1.equals(p1));
         Assert.assertFalse(p1.equals(p2));
     }
 

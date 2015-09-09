@@ -17,6 +17,7 @@
 package no.api.freemarker.java8.time;
 
 import freemarker.template.AdapterTemplateModel;
+import freemarker.template.ObjectWrapper;
 import freemarker.template.TemplateHashModel;
 import freemarker.template.TemplateMethodModelEx;
 import freemarker.template.TemplateModel;
@@ -37,8 +38,8 @@ public class YearAdapter extends AbstractAdapter<Year> implements AdapterTemplat
         TemplateScalarModel, TemplateHashModel {
 
 
-    public YearAdapter(Year obj) {
-        super(obj);
+    public YearAdapter(Year obj, ObjectWrapper objectWrapper) {
+        super(obj, objectWrapper);
     }
 
     @Override

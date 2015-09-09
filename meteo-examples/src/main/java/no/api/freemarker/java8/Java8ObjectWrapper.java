@@ -64,35 +64,35 @@ public class Java8ObjectWrapper extends DefaultObjectWrapper {
     @Override
     protected TemplateModel handleUnknownType(Object obj) throws TemplateModelException {
         if (obj instanceof Clock) {
-            return new ClockAdapter((Clock) obj);
+            return new ClockAdapter((Clock) obj, this);
         } else if (obj instanceof Duration) {
-            return new DurationAdapter((Duration) obj);
+            return new DurationAdapter((Duration) obj, this);
         } else if (obj instanceof Instant) {
-            return new InstantAdapter((Instant) obj);
+            return new InstantAdapter((Instant) obj, this);
         } else if (obj instanceof LocalDate) {
-            return new LocalDateAdapter((LocalDate) obj);
+            return new LocalDateAdapter((LocalDate) obj, this);
         } else if (obj instanceof LocalDateTime) {
-            return new LocalDateTimeAdapter((LocalDateTime) obj);
+            return new LocalDateTimeAdapter((LocalDateTime) obj, this);
         } else if (obj instanceof LocalTime) {
-            return new LocalTimeAdapter((LocalTime) obj);
+            return new LocalTimeAdapter((LocalTime) obj, this);
         } else if (obj instanceof MonthDay) {
-            return new MonthDayAdapter((MonthDay) obj);
+            return new MonthDayAdapter((MonthDay) obj, this);
         } else if (obj instanceof OffsetDateTime) {
-            return new OffsetDateTimeAdapter((OffsetDateTime) obj);
+            return new OffsetDateTimeAdapter((OffsetDateTime) obj, this);
         } else if (obj instanceof OffsetTime) {
-            return new OffsetTimeAdapter((OffsetTime) obj);
+            return new OffsetTimeAdapter((OffsetTime) obj, this);
         } else if (obj instanceof Period) {
-            return new PeriodAdapter((Period) obj);
+            return new PeriodAdapter((Period) obj, this);
         } else if (obj instanceof Year) {
-            return new YearAdapter((Year) obj);
+            return new YearAdapter((Year) obj, this);
         } else if (obj instanceof YearMonth) {
-            return new YearMonthAdapter((YearMonth) obj);
+            return new YearMonthAdapter((YearMonth) obj, this);
         } else if (obj instanceof ZonedDateTime) {
-            return new ZonedDateTimeAdapter((ZonedDateTime) obj);
+            return new ZonedDateTimeAdapter((ZonedDateTime) obj, this);
         } else if (obj instanceof ZoneId) {
-            return new ZoneIdAdapter((ZoneId) obj);
+            return new ZoneIdAdapter((ZoneId) obj, this);
         } else if (obj instanceof ZoneOffset) {
-            return new ZoneOffsetAdapter((ZoneOffset) obj);
+            return new ZoneOffsetAdapter((ZoneOffset) obj, this);
         }
         return super.handleUnknownType(obj);
     }

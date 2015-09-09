@@ -18,6 +18,7 @@ package no.api.freemarker.java8.time;
 
 import freemarker.core.Environment;
 import freemarker.template.AdapterTemplateModel;
+import freemarker.template.ObjectWrapper;
 import freemarker.template.TemplateHashModel;
 import freemarker.template.TemplateMethodModelEx;
 import freemarker.template.TemplateModel;
@@ -37,8 +38,8 @@ import static no.api.freemarker.java8.time.DateTimeTools.METHOD_UNKNOWN_MSG;
 public class ZoneIdAdapter extends AbstractAdapter<ZoneId>
         implements AdapterTemplateModel, TemplateScalarModel, TemplateHashModel {
 
-    public ZoneIdAdapter(ZoneId obj) {
-        super(obj);
+    public ZoneIdAdapter(ZoneId obj, ObjectWrapper objectWrapper) {
+        super(obj, objectWrapper);
     }
 
     @Override

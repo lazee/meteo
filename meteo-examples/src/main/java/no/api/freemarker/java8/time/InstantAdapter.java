@@ -17,6 +17,7 @@
 package no.api.freemarker.java8.time;
 
 import freemarker.template.AdapterTemplateModel;
+import freemarker.template.ObjectWrapper;
 import freemarker.template.TemplateHashModel;
 import freemarker.template.TemplateMethodModelEx;
 import freemarker.template.TemplateModel;
@@ -36,8 +37,8 @@ public class InstantAdapter extends AbstractAdapter<Instant> implements AdapterT
         TemplateScalarModel, TemplateHashModel {
 
 
-    public InstantAdapter(Instant obj) {
-        super(obj);
+    public InstantAdapter(Instant obj, ObjectWrapper objectWrapper) {
+        super(obj, objectWrapper);
     }
 
     @Override

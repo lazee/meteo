@@ -17,6 +17,7 @@
 package no.api.freemarker.java8.time;
 
 import freemarker.template.AdapterTemplateModel;
+import freemarker.template.ObjectWrapper;
 import freemarker.template.SimpleNumber;
 import freemarker.template.TemplateHashModel;
 import freemarker.template.TemplateModel;
@@ -36,8 +37,8 @@ import static no.api.freemarker.java8.time.DateTimeTools.METHOD_UNKNOWN_MSG;
 public class DurationAdapter extends AbstractAdapter<Duration> implements AdapterTemplateModel,
         TemplateScalarModel, TemplateHashModel {
 
-    public DurationAdapter(Duration obj) {
-        super(obj);
+    public DurationAdapter(Duration obj, ObjectWrapper objectWrapper) {
+        super(obj, objectWrapper);
     }
 
     @Override

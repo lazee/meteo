@@ -39,7 +39,7 @@ public class LocationExample {
     private final MeteoClient meteoClient;
 
     public LocationExample() {
-        meteoClient = new DefaultMeteoClient();
+        meteoClient = new DefaultMeteoClient(5);
     }
 
     public MeteoData<LocationForecast> runExample() throws MeteoException {

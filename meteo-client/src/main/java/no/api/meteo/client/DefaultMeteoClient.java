@@ -21,97 +21,170 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.config.CookieSpecs;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.conn.params.ConnRoutePNames;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.conn.SchemeRegistryFactory;
-import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
-import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
- * The default Meteo Client using the Apache HTTPClient for fetching data from http://api.met.no
+ * Default Meteo Client implementation.
+ *
+ * This implementation is using the PoolingHttpClientConnectionManager for managing connections against the MET API.
+ * It should be thread safe, but don't take the word for it until you have tested it properly in your own environment.
  */
 @Slf4j
 public class DefaultMeteoClient implements MeteoClient {
 
-    public static final String CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT = "Caught exception while fetching content";
+    private final PoolingHttpClientConnectionManager connManager;
 
-    private final DefaultHttpClient httpClient;
+    private RequestConfig defaultRequestConfig;
+
+    private int timeout = 2000;
 
     /**
-     * Client constructor using default timeout settings.
+     * Constructor for this Meteo Client implementation with max number of total connections set to 200
      */
     public DefaultMeteoClient() {
-        httpClient = new DefaultHttpClient(new ThreadSafeClientConnManager());
+        this.connManager = new PoolingHttpClientConnectionManager();
+        init(200);
     }
 
     /**
-     * Client constructor that takes connection time as input.
+     * Constructor for this Meteo Client implementation asking for the maximum number of simultaneous connections
+     * allowed.
      *
-     * @param timeout The connection timeout in seconds.
+     * @param maxTotalConnections
+     *         The number of simultaneous connections allowed.
      */
-    public DefaultMeteoClient(int timeout) {
-        httpClient = new DefaultHttpClient(
-                new ThreadSafeClientConnManager(SchemeRegistryFactory.createDefault(), timeout, TimeUnit.SECONDS));
-    }
-
-    @Override
-    public void setProxy(String hostname, int port) {
-        httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, new HttpHost(hostname, port));
-    }
-
-    @Override
-    public void setTimeout(int timeout) {
-        HttpConnectionParams.setConnectionTimeout(httpClient.getParams(), timeout);
-        HttpConnectionParams.setSoTimeout(httpClient.getParams(), timeout);
-    }
-
-    @Override
-    public void shutdown() {
-        httpClient.getConnectionManager().shutdown();
+    public DefaultMeteoClient(int maxTotalConnections) {
+        this.connManager = new PoolingHttpClientConnectionManager();
+        init(maxTotalConnections);
     }
 
     @Override
     public MeteoResponse fetchContent(URI uri) throws MeteoClientException {
+        log.debug("Going to fetch content from : {}", uri.toString());
+        CloseableHttpClient client = createClient();
+        CloseableHttpResponse response = null;
+
         try {
-            log.debug("Going to fetch: " + uri.toString());
-            HttpGet httpget = new HttpGet(uri);
+            response = client.execute(prepareHttpGet(uri));
+            validateResponse(response);
+            return handleEntity(uri, response);
+        } catch (IOException e) {
+            throw new MeteoClientException("Got IOException while fetching content for: " + uri.toString(), e);
+        } finally {
+            closeResponse(response);
+            closeClient(client);
+        }
+    }
 
-            HttpResponse response = httpClient.execute(httpget);
-            if (response.getStatusLine().getStatusCode() != 200 &&
-                    response.getStatusLine().getStatusCode() != 203) {
-                throw new MeteoClientException(
-                        "The request failed with error code " + response.getStatusLine().getStatusCode() + " : " +
-                                response.getStatusLine().getReasonPhrase());
-            }
-            HttpEntity entity = response.getEntity();
+    @Override
+    public void setProxy(String hostname, int port) {
+        defaultRequestConfig = RequestConfig
+                .copy(defaultRequestConfig)
+                .setProxy(new HttpHost(hostname, port))
+                .build();
+    }
 
-            if (entity != null) {
-                return new MeteoResponse(EntityUtils.toString(entity),
-                                         createMeteoResponseHeaders(response),
-                                         response.getStatusLine().getStatusCode(),
-                                         response.getStatusLine().getReasonPhrase());
-            } else {
-                throw new MeteoClientException("No content returned from request: " + uri.toString());
+    @Override
+    public void setTimeout(int timeout) {
+        this.timeout = timeout;
+    }
+
+    @Override
+    public void shutdown() {
+        connManager.shutdown();
+    }
+
+    private void init(int maxTotalConnections) {
+        connManager.setMaxTotal(maxTotalConnections);
+        connManager.setDefaultMaxPerRoute(maxTotalConnections);
+        defaultRequestConfig = RequestConfig.custom()
+                .setCookieSpec(CookieSpecs.IGNORE_COOKIES)
+                .setExpectContinueEnabled(false)
+                .build();
+    }
+
+
+    private HttpGet prepareHttpGet(URI uri) {
+        HttpGet get = new HttpGet(uri);
+        get.setConfig(createRequestConfig());
+        return get;
+    }
+
+    private void validateResponse(CloseableHttpResponse response) throws MeteoClientException {
+        if (response.getStatusLine().getStatusCode() != 200 &&
+                response.getStatusLine().getStatusCode() != 203) {
+            throw new MeteoClientException(
+                    "The request failed with error code " + response.getStatusLine().getStatusCode() + " : " +
+                            response.getStatusLine().getReasonPhrase());
+        }
+    }
+
+    private MeteoResponse handleEntity(URI uri, CloseableHttpResponse response)
+            throws IOException, MeteoClientException {
+        HttpEntity entity = response.getEntity();
+
+        if (entity != null) {
+            return new MeteoResponse(EntityUtils.toString(entity),
+                                     createMeteoResponseHeaders(response),
+                                     response.getStatusLine().getStatusCode(),
+                                     response.getStatusLine().getReasonPhrase());
+        } else {
+            throw new MeteoClientException("No content returned from response for: " + uri.toString());
+        }
+    }
+
+    private RequestConfig createRequestConfig() {
+        return RequestConfig.copy(defaultRequestConfig)
+                .setSocketTimeout(timeout)
+                .setConnectTimeout(timeout)
+                .setConnectionRequestTimeout(timeout)
+                .build();
+    }
+
+    private CloseableHttpClient createClient() {
+        return HttpClients
+                .custom()
+                .setConnectionManager(connManager)
+                .setConnectionManagerShared(true)
+                .build();
+    }
+
+    private void closeClient(CloseableHttpClient client) {
+        try {
+            if (client != null) {
+                client.close();
             }
         } catch (IOException e) {
-            throw new MeteoClientException(CAUGHT_EXCEPTION_WHILE_FETCHING_CONTENT, e);
-        } finally {
-            httpClient.getConnectionManager().closeExpiredConnections();
+            log.warn("Could not close http client. This might cause trouble further down.", e);
+        }
+    }
+
+    private void closeResponse(CloseableHttpResponse response) {
+        try {
+            if (response != null) {
+                response.close();
+            }
+        } catch (IOException e) {
+            log.warn("Could not close http response. This might cause trouble further down.", e);
         }
     }
 
     private List<MeteoResponseHeader> createMeteoResponseHeaders(HttpResponse response) {
         List<MeteoResponseHeader> headers = new ArrayList<>();
         for (Header header : response.getAllHeaders()) {
-            log.debug("Adding header : " + header.toString());
+            log.debug("Adding response header : " + header.toString());
             headers.add(new MeteoResponseHeader(header.getName(), header.getValue()));
         }
         return headers;

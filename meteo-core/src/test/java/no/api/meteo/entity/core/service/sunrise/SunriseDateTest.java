@@ -36,7 +36,7 @@ public class SunriseDateTest {
         ZonedDateTime set = fullFormatToZonedDateTime("2015-08-05T19:43:21Z");
 
         Sun sun = new Sun(rise, set, false, false, null, null, null, null);
-        SunriseDate sunrise = new SunriseDate(LocalDate.of(2015, 8, 05), sun, null);
+        SunriseDate sunrise = new SunriseDate(LocalDate.of(2015, 8, 5), sun, null);
         ZonedDateTime time = fullFormatToZonedDateTime("2015-08-05T21:05:09Z");
 
         Assert.assertFalse(sunrise.isSun(time));

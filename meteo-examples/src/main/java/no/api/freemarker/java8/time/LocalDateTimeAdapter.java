@@ -17,6 +17,7 @@
 package no.api.freemarker.java8.time;
 
 import freemarker.template.AdapterTemplateModel;
+import freemarker.template.ObjectWrapper;
 import freemarker.template.TemplateHashModel;
 import freemarker.template.TemplateMethodModelEx;
 import freemarker.template.TemplateModel;
@@ -38,8 +39,8 @@ public class LocalDateTimeAdapter extends AbstractAdapter<LocalDateTime> impleme
         TemplateScalarModel, TemplateHashModel {
 
 
-    public LocalDateTimeAdapter(LocalDateTime obj) {
-        super(obj);
+    public LocalDateTimeAdapter(LocalDateTime obj, ObjectWrapper objectWrapper) {
+        super(obj, objectWrapper);
     }
 
     @Override
