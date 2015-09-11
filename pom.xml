@@ -6,7 +6,7 @@
     <parent>
         <groupId>no.api.maven-projects</groupId>
         <artifactId>v3-super-pom</artifactId>
-        <version>3.55</version>
+        <version>3.56</version>
     </parent>
 
     <groupId>no.api.meteo</groupId>
