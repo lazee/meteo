@@ -37,15 +37,19 @@ public class LongTermForecastExample {
 
     //longitude=5.32&latitude=60.39&moh=3.0
 
-    //public static final double LONGITUDE_OSLO = 10.7460923576733;
+    public static final double LONGITUDE_OSLO = 10.7460923576733;
     public static final double LONGITUDE_BERGEN = 5.32;
+    public static final double LONGITUDE_GJOVIK = 10.69;
 
-    //public static final double LATITUDE_OSLO = 59.912726542422;
+    public static final double LATITUDE_OSLO = 59.912726542422;
     public static final double LATITUDE_BERGEN = 60.39;
+    public static final double LATITUDE_GJOVIK = 60.8;
 
-    //public static final int ALTITUDE_OSLO = 14;
+    public static final int ALTITUDE_OSLO = 14;
     public static final int ALTITUDE_BERGEN = 3;
-
+    public static final int ALTITUDE_GJOVIK = 136;
+    
+    
     private final MeteoClient meteoClient;
 
     public LongTermForecastExample() {
@@ -58,9 +62,7 @@ public class LongTermForecastExample {
         try {
             // Fetch the data from api.met.no
             MeteoData<LocationForecast> data =
-                    ltsService.fetchContent(LONGITUDE_BERGEN, LATITUDE_BERGEN, ALTITUDE_BERGEN);
-            //MeteoData<LocationForecast> data =  ltsService.fetchResource(LONGITUDE_OSLO, LATITUDE_OSLO,
-            // ALTITUDE_OSLO);
+                    ltsService.fetchContent(LONGITUDE_GJOVIK, LATITUDE_GJOVIK, ALTITUDE_GJOVIK );
 
             LongtermForecastHelper helper = new LongtermForecastHelper(data.getResult());
 
