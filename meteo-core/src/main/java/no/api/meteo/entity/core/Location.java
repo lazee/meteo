@@ -23,9 +23,14 @@ import lombok.Data;
 import net.sf.oval.constraint.NotNegative;
 import net.sf.oval.constraint.NotNull;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @Data
 @JsonIgnoreProperties(ignoreUnknown = false)
 public class Location {
+
+    private static Pattern P = Pattern.compile("(\\d{1,3}\\.\\d{1,3}),(\\d{1,3}\\.\\d{1,3})(,\\d{1,4})?");
 
     @JsonProperty
     private final String name;
@@ -53,5 +58,36 @@ public class Location {
         this.latitude = latitude;
         this.altitude = altitude;
         this.name = name;
+    }
+
+    /**
+     * Create an untitled Location from coordinate string.
+     *
+     * @param coordinates Coordinate string on the format longitude,latitude,altitude. Eg: 20.3,123.3,123 or 20.3,123.3
+     * @return Instance of the location with the coordinates from the input string.
+     */
+    public static Location fromCoordinates(String coordinates) {
+        if (coordinates == null) {
+            throw new IllegalArgumentException("Cannot create Location from null input.");
+        }
+        Matcher m = P.matcher(coordinates);
+        if (!m.matches()) {
+            throw new IllegalArgumentException(
+                    coordinates + " must be on the pattern (longitude,latitude,altitude) : " + P.pattern());
+        }
+
+        try {
+            Double longitude = Double.valueOf(m.group(1));
+            Double latitude = Double.valueOf(m.group(2));
+            Integer altitude = 0;
+            if (m.group(3) != null) {
+                altitude = Integer.valueOf(m.group(3).substring(1));
+            }
+            return new Location(longitude, latitude, altitude, "");
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(
+                    coordinates + " must be on the pattern (longitude,latitude,altitude) : " + P.pattern());
+        }
+
     }
 }
