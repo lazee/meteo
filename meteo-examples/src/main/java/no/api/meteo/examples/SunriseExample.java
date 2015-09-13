@@ -31,9 +31,12 @@ import java.time.LocalDate;
 
 public class SunriseExample {
 
-    public static final double LONGITUDE_OSLO = 10.7460923576733;
+    //public static final double LONGITUDE_OSLO = 10.7460923576733;
+    public static final double LONGITUDE_SARPSBORG = 11.11;
 
-    public static final double LATITUDE_OSLO = 59.912726542422;
+    //public static final double LATITUDE_OSLO = 59.912726542422;
+    public static final double LATITUDE_SARPSBORG = 59.28;
+
 
     private static final Logger log = LoggerFactory.getLogger(LocationExample.class);
 
@@ -45,7 +48,7 @@ public class SunriseExample {
 
     public MeteoData<Sunrise> runExample() throws MeteoException {
         SunriseService sunriseService = new SunriseService(meteoClient);
-        return sunriseService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, LocalDate.now());
+        return sunriseService.fetchContent(LONGITUDE_SARPSBORG, LATITUDE_SARPSBORG, LocalDate.now());
 
     }
 
@@ -58,7 +61,7 @@ public class SunriseExample {
         MeteoData<Sunrise> data = example.runExample();
         SunriseDate sunriseDate = data.getResult().getDates().get(0);
         log.info("On " + MeteoDateUtils.zonedDateTimeToYyyyMMdd(sunriseDate.getDate()) + " the sun will rise at " +
-                         MeteoDateUtils.zonedDateTimeToHHMM(sunriseDate.getSun().getRise()) + " in Oslo");
+                         MeteoDateUtils.zonedDateTimeToHHMM(sunriseDate.getSun().getRise()));
         example.shutDown();
 
     }
