@@ -48,25 +48,23 @@ You will find Meteo in the central maven repository: http://search.maven.org/#se
 
 For Maven you would add this to your pom:
 
-[source, xml]
-----
+~~~ java
 <dependency>
     <groupId>no.api.meteo</groupId>
     <artifactId>meteo-core</artifactId>
     <version>3.0.0</version>
 </dependency>
-----
+~~~
 
 If you want to use the default implementation of a MeteoClient, then you would also have to add this:
 
-[source, xml]
-----
+~~~ xml
 <dependency>
     <groupId>no.api.meteo</groupId>
     <artifactId>meteo-client</artifactId>
     <version>3.0.0</version>
 </dependency>
-----
+~~~
 
 ### Usage
 
@@ -77,18 +75,16 @@ In the https://github.com/amedia/meteo/tree/master/meteo-examples/src/main/java/
 
 If you feel fine with the default MeteoClient shipped with Meteo, then create a client like this:
 
-[source, java]
-----
+~~~ java
 MeteoClient meteoClient = new DefaultMeteoClient();
-----
+~~~
 
 This client allows you to configure a proxy and connection timeout if needed:
 
-[source, java]
-----
+~~~ java
 meteoClient.setProxy("myproxy.host", 9000);
 meteoClient.setTimeout(1000);
-----
+~~~
 
 You can also create you own client easily by implementing the MeteoClient interface in your own class.
 
@@ -108,29 +104,27 @@ Current services:
 
 This is the service for fetching raw data from http://api.met.no/weatherapi/locationforecastlts/1.2/documentation.
 
-[source, java]
-----
+~~~ java
 LocationforecastLTSService service = new LocationforecastLTSService(meteoClient);
 try {
     MeteoData<LocationForecast> data = service.fetchContent(longitude, latitude, altitude);
 } catch (MeteoException e) {
     // Handle exception.
 }
-----
+~~~
 
 #### Sunrise service
 
 This is the service for fetching raw data from http://api.met.no/weatherapi/sunrise/1.0/documentation.
 
-[source, java]
-----
+~~~ java
 SunriseService service = new SunriseService(meteoClient);
 try {
     MeteoData<Sunrise> data = service.fetchContent(longitude, latitude, date);
 } catch (MeteoException e) {
     // Handle exception.
 }
-----
+~~~
 
 ## General developer notes
 
