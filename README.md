@@ -5,8 +5,6 @@ Stack: Java
 ---
 <!--(Maintained Duplo labels above. Read more on http://info.api.no/handbook/guidelines/GitHub-guidelines.html)-->
 
-<!--(Maintained Duplo labels above. Read more on http://info.api.no/handbook/guidelines/GitHub-guidelines.html)-->
-
 # METEO
 
 Meteo is an Open-Source Java based library/client for handling weather data from http://api.met.no.
