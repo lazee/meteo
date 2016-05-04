@@ -1,0 +1,213 @@
+en:
+    wind.direction.N: noth
+    wind.direction.NW: north-west
+    wind.direction.W: west
+    wind.direction.SW: south-west
+    wind.direction.S: south
+    wind.direction.SE: south-east
+    wind.direction.E: east
+    wind.direction.NE: north-east
+    wind.direction.ig.N:
+    wind.direction.ig.NW:
+    wind.direction.ig.W:
+    wind.direction.ig.SW:
+    wind.direction.ig.S:
+    wind.direction.ig.SE:
+    wind.direction.ig.E:
+    wind.direction.ig.NE:
+    wind.speed.0: Calm
+    wind.speed.1: Light air
+    wind.speed.2: Light breeze
+    wind.speed.3: Gentle breeze
+    wind.speed.4: Moderate breeze
+    wind.speed.5: Fresh breeze
+    wind.speed.6: Strong breeze
+    wind.speed.7: High wind
+    wind.speed.8: Gale
+    wind.speed.9: Strong gale
+    wind.speed.10: Storm
+    wind.speed.11: Violent storm
+    wind.speed.12: Hurricane
+    symbol.1: Sun/Clear sky
+    symbol.2: Fair
+    symbol.3: Partly cloudy
+    symbol.4: Cloudy
+    symbol.5: Rain showers
+    symbol.6: Rain showers and thunder
+    symbol.7: Slett showers
+    symbol.8: Snow showers
+    symbol.9: Rain
+    symbol.10: Heavy rain
+    symbol.11: Heavy rain and thunder
+    symbol.12: Sleet
+    symbol.13: Snow
+    symbol.14: Snow and thunder
+    symbol.15: Fog
+    symbol.20: Sleet showers and thunder
+    symbol.21: Snow showers and thunder
+    symbol.22: Rain and thunder
+    symbol.23: Sleet and thunder
+    symbol.24: Light rain showers and thunder
+    symbol.25: Heavy rain showers and thunder
+    symbol.26: Light sleet showers and thunder
+    symbol.27: Heavy sleet showers and thunder
+    symbol.28: Light snow showers and thunder
+    symbol.29: Heavy snow showers and thunder
+    symbol.30: Light rain and thunder
+    symbol.31: Light sleet and thunder
+    symbol.32: Heavy sleet and thunder
+    symbol.33: Light snow and thunder
+    symbol.34: Heavy snow and thunder
+    symbol.40: Light rain showers
+    symbol.41: Heavy rain showers
+    symbol.42: Light sleet showers
+    symbol.43: Heavy sleet showers
+    symbol.44: Light snow showers
+    symbol.45: Heavy snow showers
+    symbol.46: Light rain
+    symbol.47: Light sleet
+    symbol.48: Heavy sleet
+    symbol.49: Light snow
+    symbol.50: Heavy snow
+nb:
+    wind.direction.N: nord
+    wind.direction.NW: nordvest
+    wind.direction.W: vest
+    wind.direction.SW: sørvest
+    wind.direction.S: sør
+    wind.direction.SE: sørøst
+    wind.direction.E: øst
+    wind.direction.NE: nordøst
+    wind.direction.ig.N: nordlig
+    wind.direction.ig.NW: nordvestlig
+    wind.direction.ig.W: vestlig
+    wind.direction.ig.SW: sørvestlig
+    wind.direction.ig.S: sørlig
+    wind.direction.ig.SE: sørøstlig
+    wind.direction.ig.E: østlig
+    wind.direction.ig.NE: nordøstlig
+    wind.speed.0: Stille
+    wind.speed.1: Flau vind
+    wind.speed.2: Svak vind
+    wind.speed.3: Lett bris
+    wind.speed.4: Laber bris
+    wind.speed.5: Frisk bris
+    wind.speed.6: Liten kuling
+    wind.speed.7: Stiv kuling
+    wind.speed.8: Sterk kuling
+    wind.speed.9: Liten storm
+    wind.speed.10: Full storm
+    wind.speed.11: Sterk storm
+    wind.speed.12: Orkan
+    symbol.1: Sol/Klarvær
+    symbol.2: Lettskyet
+    symbol.3: Delvis skyet
+    symbol.4: Skyet
+    symbol.5: Regnbyger
+    symbol.6: Regnbyger og torden
+    symbol.7: Sluddbyger
+    symbol.8: Snøbyger
+    symbol.9: Regn
+    symbol.10: Kraftig regn
+    symbol.11: Kraftig regn og torden
+    symbol.12: Sludd
+    symbol.13: Snø
+    symbol.14: Snø og torden
+    symbol.15: Tåke
+    symbol.20: Sluddbyger og torden
+    symbol.21: Snøbyger og torden
+    symbol.22: Regn og torden
+    symbol.23: Sludd og torden
+    symbol.24: Lette regnbyger og torden
+    symbol.25: Kraftige regnbyger og torden
+    symbol.26: Lette sluddbyger og torden
+    symbol.27: Kraftige sluddbyger og torden
+    symbol.28: Lette snøbyger og torden
+    symbol.29: Kraftige snøbyger og torden
+    symbol.30: Lett regn og torden
+    symbol.31: Lett sludd og torden
+    symbol.32: Kraftig sludd og torden
+    symbol.33: Lett snø og torden
+    symbol.34: Kraftig snø og torden
+    symbol.40: Lette regnbyger
+    symbol.41: Kraftige regnbyger
+    symbol.42: Lette sluddbyger
+    symbol.43: Kraftige sluddbyger
+    symbol.44: Lette snøbyger
+    symbol.45: Kraftige snøbyger
+    symbol.46: Lett regn
+    symbol.47: Lett sludd
+    symbol.48: Kraftig sludd
+    symbol.49: Lett snø
+    symbol.50: Kraftig snø
+nn:
+    wind.direction.N: nord
+    wind.direction.NW: nordvest
+    wind.direction.W: vest
+    wind.direction.SW: sørvest
+    wind.direction.S: sør
+    wind.direction.SE: søraust
+    wind.direction.E: aust
+    wind.direction.NE: nordaust
+    wind.direction.ig.N: nordlig
+    wind.direction.ig.NW: nordvestlig
+    wind.direction.ig.W: vestlig
+    wind.direction.ig.SW: sørvestlig
+    wind.direction.ig.S: sørlig
+    wind.direction.ig.SE: søraustlig
+    wind.direction.ig.E: austlig
+    wind.direction.ig.NE: nordaustlig
+    wind.speed.0: Stille
+    wind.speed.1: Flau vind
+    wind.speed.2: Svak vind
+    wind.speed.3: Lett bris
+    wind.speed.4: Laber bris
+    wind.speed.5: Frisk bris
+    wind.speed.6: Liten kuling
+    wind.speed.7: Stiv kuling
+    wind.speed.8: Sterk kuling
+    wind.speed.9: Liten storm
+    wind.speed.10: Full storm
+    wind.speed.11: Sterk storm
+    wind.speed.12: Orkan
+    symbol.1: Sol/klårvêr
+    symbol.2: Lettskya
+    symbol.3: Delvis skya
+    symbol.4: Skya
+    symbol.5: Regnbyer
+    symbol.6: Regnbyer og torevêr
+    symbol.7: Sluddbyer
+    symbol.8: Snøbyer
+    symbol.9: Regn
+    symbol.10: Kraftig regn
+    symbol.11: Kraftig regn og torevêr
+    symbol.12: Sludd
+    symbol.13: Snø
+    symbol.14: Snø og torevêr
+    symbol.15: Skodde
+    symbol.20: Sluddbyer og torevêr
+    symbol.21: Snøbyer og torevêr
+    symbol.22: Regn og torevêr
+    symbol.23: Sludd og torevêr
+    symbol.24: Lette regnbyer og torevêr
+    symbol.25: Kraftige regnbyer og torevêr
+    symbol.26: Lette sluddbyer og torevêr
+    symbol.27: Kraftige sluddbyer og torevêr
+    symbol.28: Lette snøbyer og torevêr
+    symbol.29: Kraftige snøbyer og torevêr
+    symbol.30: Lett regn og torevêr
+    symbol.31: Lett sludd og torevêr
+    symbol.32: Kraftig sludd og torevêr
+    symbol.33: Lett snø og torevêr
+    symbol.34: Kraftig snø og torevêr
+    symbol.40: Lette regnbyer
+    symbol.41: Kraftige regnbyer
+    symbol.42: Lette sluddbyer
+    symbol.43: Kraftige sluddbyer
+    symbol.44: Lette snøbyer
+    symbol.45: Kraftige snøbyer
+    symbol.46: Lett regn
+    symbol.47: Lett sludd
+    symbol.48: Kraftig sludd
+    symbol.49: Lett snø
+    symbol.50: Kraftig snø
