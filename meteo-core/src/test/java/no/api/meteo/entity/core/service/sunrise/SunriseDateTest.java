@@ -67,4 +67,27 @@ public class SunriseDateTest {
 
     }
 
+    @Test
+    public void testSummerInNorth() throws Exception {
+        /*
+        http://api.met.no/weatherapi/sunrise/1.0/?lat=70.66;lon=23.68;date=2016-06-13
+
+        <astrodata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/sunrise/1.0/schema">
+            <meta licenseurl="http://api.met.no/license_data.html" />
+            <time date="2016-06-13">
+                <location latitude="70.66" longitude="23.68">
+                    <sun never_set="true" />
+                    <moon phase="First quarter" rise="2016-06-13T11:27:40Z" set="2016-06-12T23:11:09Z" />
+                </location>
+            </time>
+        </astrodata>
+         */
+        Sun sun = new Sun(null, null, false, true, null, null, null, null);
+        SunriseDate sunriseDate = new SunriseDate(LocalDate.of(2016, 6, 13), sun, null);
+        Assert.assertFalse(sunriseDate.isNight(ZonedDateTime.of(2016, 6, 13, 19, 0, 0, 0, ZoneId.of("Z"))));
+        Assert.assertFalse(sunriseDate.isNight(ZonedDateTime.of(2016, 6, 13, 13, 0, 0, 0, ZoneId.of("Z"))));
+        Assert.assertFalse(sunriseDate.isNight(ZonedDateTime.of(2016, 6, 13, 10, 0, 0, 0, ZoneId.of("Z"))));
+        Assert.assertFalse(sunriseDate.isNight(ZonedDateTime.of(2016, 6, 13, 23, 0, 0, 0, ZoneId.of("Z"))));
+    }
+
 }

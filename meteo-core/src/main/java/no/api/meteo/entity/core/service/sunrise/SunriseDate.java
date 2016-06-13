@@ -67,15 +67,20 @@ public final class SunriseDate {
      * @return <code>true</code> if the sun has raised, else <code>false</code>.
      */
     public boolean isSun(ZonedDateTime currentDate) {
-        boolean timeWithinSunPeriod = currentDate.equals(getSun().getRise()) || currentDate.equals(getSun().getSet()) ||
-                currentDate.isAfter(getSun().getRise()) && currentDate.isBefore(getSun().getSet());
-
         if (getSun().getNeverRise()) {
             return false;
-        } else if (getSun().getNeverSet() || timeWithinSunPeriod) {
+        } else if (getSun().getNeverSet()) {
             return true;
         }
-        return false;
+        return timeWithinPeriod(currentDate);
+    }
+
+    private boolean timeWithinPeriod(ZonedDateTime currentDate) {
+        return currentDate.equals(getSun().getRise()) ||
+                currentDate.equals(getSun().getSet()) ||
+                (
+                        currentDate.isAfter(getSun().getRise()) && currentDate.isBefore(getSun().getSet())
+                );
     }
 
 
