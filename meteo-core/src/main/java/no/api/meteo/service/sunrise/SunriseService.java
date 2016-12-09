@@ -50,7 +50,7 @@ public final class SunriseService extends AbstractMeteoService {
      *         An instance of MeteoClient that the service will use to fetch the data.
      */
     public SunriseService(MeteoClient meteoClient) {
-        super(meteoClient, "sunrise", new MeteoServiceVersion(1, 0));
+        super(meteoClient, "sunrise", new MeteoServiceVersion(1, 1));
         parser = new SunriseParser();
     }
 

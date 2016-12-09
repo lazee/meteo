@@ -18,6 +18,8 @@ package no.api.meteo.service.locationforecast.extras;
 
 import lombok.Getter;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +31,19 @@ public class LongtermTimeSeries {
     public LongtermTimeSeries() {
         series = new ArrayList<>();
 
-        LongtermTimeSerie closeSerie = new LongtermTimeSerie().add(-2, 4).add(4, 10).add(10, 16).add(16, 22);
-        LongtermTimeSerie distantSerie = new LongtermTimeSerie().add(0, 6).add(6, 12).add(12, 18).add(18, 24);
+        int td = timeDifference();
+
+        LongtermTimeSerie closeSerie = new LongtermTimeSerie()
+                .add(0 - td, 6 - td)
+                .add(6 - td, 12 - td)
+                .add(12 - td, 18 - td)
+                .add(18 - td, 24 - td);
+        LongtermTimeSerie distantSerie = new LongtermTimeSerie()
+                .add(0, 6)
+                .add(6, 12)
+                .add(12, 18)
+                .add(18, 24);
+
 
         for (int i = 0; i < 9; i++) {
             if (i < 2) {
@@ -39,6 +52,11 @@ public class LongtermTimeSeries {
                 series.add(distantSerie);
             }
         }
+    }
+
+    protected static int timeDifference() {
+        return 12 - ZonedDateTime.now().withZoneSameLocal(ZoneId.of("CET")).withHour(12)
+                .withZoneSameInstant(ZoneId.of("UTC")).getHour();
     }
 
     public class LongtermTimeSerie {

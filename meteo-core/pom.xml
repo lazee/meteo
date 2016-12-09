@@ -12,36 +12,6 @@
     <name>meteo-core</name>
     <description>Core Meteo package</description>
 
-    <profiles>
-        <profile>
-            <id>jrebel</id>
-            <activation>
-                <property>
-                    <name>env</name>
-                    <value>jrebel</value>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.zeroturnaround</groupId>
-                        <artifactId>jrebel-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>generate-rebel-xml</id>
-                                <phase>process-resources</phase>
-                                <goals>
-                                    <goal>generate</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
-
     <dependencies>
         <dependency>
             <groupId>xpp3</groupId>
