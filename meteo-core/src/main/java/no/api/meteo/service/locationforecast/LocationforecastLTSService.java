@@ -45,7 +45,7 @@ public final class LocationforecastLTSService extends AbstractMeteoService {
      *         An instance of MeteoClient that the service will use to fetch the data.
      */
     public LocationforecastLTSService(MeteoClient meteoClient) {
-        super(meteoClient, MET_SERVICE_NAME, new MeteoServiceVersion(1, 2));
+        super(meteoClient, MET_SERVICE_NAME, new MeteoServiceVersion(1, 3));
         parser = new LocationforcastLTSParser();
     }
 
