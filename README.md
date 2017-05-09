@@ -1,9 +1,3 @@
----
-Team: HappyDesk
-Stack: Java
-
----
-<!--(Maintained Duplo labels above. Read more on http://info.api.no/handbook/guidelines/GitHub-guidelines.html)-->
 
 # METEO
 
