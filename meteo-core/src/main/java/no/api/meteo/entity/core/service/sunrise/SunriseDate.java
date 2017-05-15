@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
 import no.api.meteo.util.jackson.LocalDateDeserializer;
 import no.api.meteo.util.jackson.LocalDateSerializer;
 
@@ -28,6 +29,7 @@ import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 @Value
+@Slf4j
 public final class SunriseDate {
 
     @JsonProperty
@@ -76,12 +78,17 @@ public final class SunriseDate {
     }
 
     private boolean timeWithinPeriod(ZonedDateTime currentDate) {
-        return currentDate.equals(getSun().getRise()) ||
-                currentDate.equals(getSun().getSet()) ||
-                (
-                        currentDate.isAfter(getSun().getRise()) && currentDate.isBefore(getSun().getSet())
-                );
+        if (currentDate.equals(getSun().getRise())) {
+            return true;
+        } else if (currentDate.equals(getSun().getSet())) {
+            return true;
+        } else if (getSun().getRise() != null && getSun().getSet() != null) {
+            return currentDate.isAfter(getSun().getRise()) && currentDate.isBefore(getSun().getSet());
+        } else if (getSun().getRise() != null) {
+            return currentDate.isAfter(getSun().getRise());
+        } else {
+            log.error("Something went wrong. Couldn't check if time is within period as getSet == null. Returning true.");
+            return true;
+        }
     }
-
-
 }
