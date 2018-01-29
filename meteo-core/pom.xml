@@ -3,7 +3,7 @@
     <parent>
         <artifactId>meteo</artifactId>
         <groupId>no.api.meteo</groupId>
-        <version>3.0.15-SNAPSHOT</version>
+        <version>3.0.15</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
