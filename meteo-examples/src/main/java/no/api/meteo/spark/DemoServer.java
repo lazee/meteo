@@ -40,7 +40,7 @@ import static spark.SparkBase.staticFileLocation;
 @Slf4j
 public class DemoServer {
 
-    private static final MeteoClient METEO_CLIENT = new DefaultMeteoClient();
+    private static final MeteoClient METEO_CLIENT = new DefaultMeteoClient("MyExampleApp");
 
     public static void main(String[] args) {
         staticFileLocation("/public");

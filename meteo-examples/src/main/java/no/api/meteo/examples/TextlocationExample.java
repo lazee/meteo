@@ -35,7 +35,7 @@ public class TextlocationExample {
     private final MeteoClient meteoClient;
 
     public TextlocationExample() {
-        meteoClient = new DefaultMeteoClient();
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
     public MeteoData<TextLocationWeather> runExample() throws MeteoException {

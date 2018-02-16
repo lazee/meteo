@@ -25,19 +25,20 @@ import java.util.List;
 
 public final class METServiceUriBuilder {
 
-    private static final String API_MET_NO_SERVICE_PREFIX = "https://api.met.no/weatherapi/";
-
     private final MeteoServiceVersion serviceVersion;
 
     private final String serviceName;
 
     private final List<Pair> parameters;
 
+    private final String metDomain;
+
     private boolean skipQuestionMarkInUrl = false;
 
-    private METServiceUriBuilder(String serviceName, MeteoServiceVersion serviceVersion) {
+    private METServiceUriBuilder(String serviceName, MeteoServiceVersion serviceVersion, String metDomain) {
         this.serviceName = serviceName;
         this.serviceVersion = serviceVersion;
+        this.metDomain = metDomain;
         this.parameters = new ArrayList<>();
     }
 
@@ -53,8 +54,13 @@ public final class METServiceUriBuilder {
 
     public URI build() throws MeteoException {
         StringBuilder sb = new StringBuilder();
-        sb.append(API_MET_NO_SERVICE_PREFIX).append(serviceName).append("/").append(
-                serviceVersion.toStringVersion()).append("/");
+        sb.append("https://")
+                .append(metDomain)
+                .append("/weatherapi/")
+                .append(serviceName)
+                .append("/")
+                .append(serviceVersion.toStringVersion())
+                .append("/");
 
         if (!skipQuestionMarkInUrl) {
             sb.append("?");
@@ -72,8 +78,8 @@ public final class METServiceUriBuilder {
         return MeteoNetUtils.createUri(sb.toString());
     }
 
-    public static METServiceUriBuilder create(String serviceName, MeteoServiceVersion serviceVersion) {
-        return new METServiceUriBuilder(serviceName, serviceVersion);
+    public static METServiceUriBuilder create(String serviceName, MeteoServiceVersion serviceVersion, String metDomain) {
+        return new METServiceUriBuilder(serviceName, serviceVersion, metDomain);
     }
 
     private static final class Pair {

@@ -48,13 +48,18 @@ public class DefaultMeteoClient implements MeteoClient {
 
     private RequestConfig defaultRequestConfig;
 
+    private String metDomain;
+
+    private String userAgent;
+
     private int timeout = 2000;
 
     /**
      * Constructor for this Meteo Client implementation with max number of total connections set to 200
      */
-    public DefaultMeteoClient() {
+    public DefaultMeteoClient(String userAgent) {
         this.connManager = new PoolingHttpClientConnectionManager();
+        this.userAgent = userAgent;
         init(200);
     }
 
@@ -97,6 +102,16 @@ public class DefaultMeteoClient implements MeteoClient {
     }
 
     @Override
+    public void setMetDomain(String metDomain) {
+        this.metDomain = metDomain;
+    }
+
+    @Override
+    public String getMetDomain() {
+        return metDomain;
+    }
+
+    @Override
     public void setTimeout(int timeout) {
         this.timeout = timeout;
     }
@@ -118,7 +133,7 @@ public class DefaultMeteoClient implements MeteoClient {
 
     private HttpGet prepareHttpGet(URI uri) {
         HttpGet get = new HttpGet(uri);
-        get.setHeader("User-Agent", "WeatherService");
+        get.setHeader("User-Agent", userAgent);
         get.setConfig(createRequestConfig());
         return get;
     }

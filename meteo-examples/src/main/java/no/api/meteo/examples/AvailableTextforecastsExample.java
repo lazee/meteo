@@ -31,7 +31,7 @@ public class AvailableTextforecastsExample {
     private final MeteoClient meteoClient;
 
     public AvailableTextforecastsExample() {
-        meteoClient = new DefaultMeteoClient();
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
     public MeteoData<Available> fetchDate() throws MeteoException {

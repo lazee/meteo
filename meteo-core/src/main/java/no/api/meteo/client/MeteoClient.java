@@ -43,6 +43,19 @@ public interface MeteoClient {
     void setProxy(String hostName, int port);
 
     /**
+     * Lets you override the default api.met.no domain.
+     * Some customers gets their own domain.
+     * @param metDomain The domain to use for fetching data from the MET api. Eg. 1234api.met.no
+     */
+    void setMetDomain(String metDomain);
+
+    /**
+     * The domain to be used when fetching data from the MET API.
+     * @return The domain as string.
+     */
+    String getMetDomain();
+
+    /**
      * Set the connection timeout to be used when fetching data from the MET API.
      *
      * @param timeout The timeout in seconds.

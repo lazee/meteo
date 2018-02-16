@@ -43,7 +43,7 @@ public class SunriseExample {
     private final MeteoClient meteoClient;
 
     public SunriseExample() {
-        meteoClient = new DefaultMeteoClient();
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
     public MeteoData<Sunrise> runExample() throws MeteoException {

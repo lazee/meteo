@@ -32,7 +32,7 @@ public class TextforecastExample {
     private final MeteoClient meteoClient;
 
     public TextforecastExample() {
-        meteoClient = new DefaultMeteoClient();
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
     public MeteoData<Weather> runExample() throws MeteoException {

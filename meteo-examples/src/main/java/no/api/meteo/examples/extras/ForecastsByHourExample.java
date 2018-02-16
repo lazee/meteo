@@ -49,7 +49,7 @@ public class ForecastsByHourExample extends AbstractExample {
     private final MeteoClient meteoClient;
 
     public ForecastsByHourExample() {
-        meteoClient = new DefaultMeteoClient();
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
     public void runExample() {

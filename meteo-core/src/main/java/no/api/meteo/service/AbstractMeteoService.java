@@ -39,7 +39,7 @@ public abstract class AbstractMeteoService {
     }
 
     protected METServiceUriBuilder createServiceUriBuilder() {
-        return METServiceUriBuilder.create(metServiceName, serviceVersion);
+        return METServiceUriBuilder.create(metServiceName, serviceVersion, getMeteoClient().getMetDomain());
     }
 
 }

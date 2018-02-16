@@ -53,7 +53,7 @@ public class LongTermForecastExample {
     private final MeteoClient meteoClient;
 
     public LongTermForecastExample() {
-        meteoClient = new DefaultMeteoClient();
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
     public void runExample() {

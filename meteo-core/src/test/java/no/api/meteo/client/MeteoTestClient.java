@@ -46,6 +46,16 @@ public final class MeteoTestClient implements MeteoClient {
     }
 
     @Override
+    public void setMetDomain(String metDomain) {
+        // Not needed for test
+    }
+
+    @Override
+    public String getMetDomain() {
+        return "api.met.no";
+    }
+
+    @Override
     public void setTimeout(int timeout) {
         // Not needed in this client
     }
