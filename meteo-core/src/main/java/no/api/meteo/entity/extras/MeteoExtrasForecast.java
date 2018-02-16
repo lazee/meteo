@@ -25,7 +25,7 @@ import no.api.meteo.entity.core.service.locationforecast.PointForecast;
 /**
  * This is a special customized forecast containing a mix of information for a given period of time.
  *
- * <p>As explained in the api.met.no faq (http://api.met.no/faq.html#times) it doesn't make sense to give symbols and
+ * <p>As explained in the api.met.no faq (https://api.met.no/faq.html#times) it doesn't make sense to give symbols and
  * precipitation for a given point in time. This only make sense for a given period.</p>
  *
  * <p>But in the Extras api we sometimes wants to return a PointForecast with a corresponding PeriodForecast, meaning a

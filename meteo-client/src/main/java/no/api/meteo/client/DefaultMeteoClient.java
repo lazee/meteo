@@ -118,6 +118,7 @@ public class DefaultMeteoClient implements MeteoClient {
 
     private HttpGet prepareHttpGet(URI uri) {
         HttpGet get = new HttpGet(uri);
+        get.setHeader("User-Agent", "WeatherService");
         get.setConfig(createRequestConfig());
         return get;
     }

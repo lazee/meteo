@@ -37,7 +37,7 @@ import static no.api.meteo.util.MeteoDateUtils.zonedDateTimeToYyyyMMdd;
 /**
  * Service object for fetching data for the Sunrise service in the MET API.
  *
- * http://api.met.no/weatherapi/sunrise/1.0/documentation
+ * https://api.met.no/weatherapi/sunrise/1.0/documentation
  */
 public final class SunriseService extends AbstractMeteoService {
 

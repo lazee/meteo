@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Meteo client response object.
  *
- * The object will contain response headers, response status and the actual content fetched from http://api.met.no.
+ * The object will contain response headers, response status and the actual content fetched from https://api.met.no.
  */
 @Value
 public class MeteoResponse {
@@ -53,10 +53,10 @@ public class MeteoResponse {
      * Tells whether the MET API version used in the request is deprecated or not.
      *
      * An API version is by design deprecated if the response status code is 203 instead of the default 200. In these
-     * cases you need to go to http://api.met.no to check when and how you can start using the new version of the API.
+     * cases you need to go to https://api.met.no to check when and how you can start using the new version of the API.
      * Also check if there is a newer version of Meteo available that fixes your problem.
      *
-     * From the MET documentation on http://api.met.no:
+     * From the MET documentation on https://api.met.no:
      *
      * Since a product can change its API, there is a version number as part of every product URL. If you try to use a
      * product version which is deprecated, you will get the data you expect, but with the HTTP status code 203
