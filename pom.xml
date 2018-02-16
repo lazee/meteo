@@ -6,7 +6,7 @@
     <parent>
         <groupId>no.api.maven</groupId>
         <artifactId>amedia-maven</artifactId>
-        <version>0.1.6</version>
+        <version>1.0.7</version>
     </parent>
 
     <groupId>no.api.meteo</groupId>
@@ -214,6 +214,7 @@
             <version>${logback.version}</version>
         </dependency>
     </dependencies>
+
 
     <reporting>
         <plugins>
