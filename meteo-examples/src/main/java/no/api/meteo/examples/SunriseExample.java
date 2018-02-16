@@ -31,28 +31,27 @@ import java.time.LocalDate;
 
 public class SunriseExample {
 
-    //public static final double LONGITUDE_OSLO = 10.7460923576733;
-    public static final double LONGITUDE_SARPSBORG = 11.11;
+    //private static final double LONGITUDE_OSLO = 10.7460923576733;
+    private static final double LONGITUDE_SARPSBORG = 11.11;
 
-    //public static final double LATITUDE_OSLO = 59.912726542422;
-    public static final double LATITUDE_SARPSBORG = 59.28;
-
+    //private static final double LATITUDE_OSLO = 59.912726542422;
+    private static final double LATITUDE_SARPSBORG = 59.28;
 
     private static final Logger log = LoggerFactory.getLogger(LocationExample.class);
 
     private final MeteoClient meteoClient;
 
-    public SunriseExample() {
+    private SunriseExample() {
         meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
-    public MeteoData<Sunrise> runExample() throws MeteoException {
+    private MeteoData<Sunrise> runExample() throws MeteoException {
         SunriseService sunriseService = new SunriseService(meteoClient);
         return sunriseService.fetchContent(LONGITUDE_SARPSBORG, LATITUDE_SARPSBORG, LocalDate.now());
 
     }
 
-    public void shutDown() {
+    private void shutDown() {
         meteoClient.shutdown();
     }
 

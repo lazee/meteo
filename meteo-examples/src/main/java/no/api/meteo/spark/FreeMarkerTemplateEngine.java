@@ -34,7 +34,7 @@ public class FreeMarkerTemplateEngine extends TemplateEngine {
 
     private final Configuration configuration;
 
-    public FreeMarkerTemplateEngine() {
+    FreeMarkerTemplateEngine() {
         this.configuration = createFreeMarkerConfiguration();
     }
 

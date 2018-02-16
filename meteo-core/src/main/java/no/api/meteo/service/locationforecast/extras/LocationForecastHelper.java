@@ -67,13 +67,12 @@ public final class LocationForecastHelper extends AbstractForecastHelper {
         for (int i = 0; i < hoursAhead; i++) {
             ZonedDateTime ahead = now.plusHours(i);
             Optional<PointForecast> pointForecast = getIndexer().getPointForecast(ahead);
-            if (pointForecast.isPresent()) {
+            pointForecast.ifPresent(pof -> {
                 Optional<PeriodForecast> periodForecast =
-                        getIndexer().getTightestFitPeriodForecast(pointForecast.get().getFrom());
-                if (periodForecast.isPresent()) {
-                    pointExtrasForecasts.add(new MeteoExtrasForecast(pointForecast.get(), periodForecast.get()));
-                }
-            }
+                        getIndexer().getTightestFitPeriodForecast(pof.getFrom());
+                periodForecast.ifPresent(pef -> pointExtrasForecasts
+                        .add(new MeteoExtrasForecast(pof, pef)));
+            });
         }
         return pointExtrasForecasts;
     }
@@ -102,10 +101,13 @@ public final class LocationForecastHelper extends AbstractForecastHelper {
                 }
             }
         }
-        return chosenForecast == null
-                ? Optional.empty()
-                : Optional.of(new MeteoExtrasForecast(
-                        chosenForecast, getIndexer().getWidestFitPeriodForecast(chosenForecast.getFrom()).get()));
+        if (chosenForecast == null) {
+            return Optional.empty();
+        }
+        return Optional.of(
+                new MeteoExtrasForecast(
+                        chosenForecast,
+                        getIndexer().getWidestFitPeriodForecast(chosenForecast.getFrom()).orElse(null)));
     }
 
     private boolean isNearerDate(ZonedDateTime pointTime, ZonedDateTime dateTime, ZonedDateTime chosenTime) {

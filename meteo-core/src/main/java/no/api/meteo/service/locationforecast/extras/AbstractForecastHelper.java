@@ -37,7 +37,7 @@ public class AbstractForecastHelper {
     private final LocationForecast locationForecast;
 
     @Getter
-    private MeteoForecastIndexer indexer = null;
+    private MeteoForecastIndexer indexer;
 
     public AbstractForecastHelper(LocationForecast locationForecast) {
         this.locationForecast = locationForecast;
@@ -53,7 +53,7 @@ public class AbstractForecastHelper {
             return Optional.empty();
         }
 
-        Optional<PointForecast> pointForecast = getPointForecastForPeriod(fromz, periodForecast);
+        Optional<PointForecast> pointForecast = getPointForecastForPeriod(fromz, periodForecast.orElse(null));
         if (!pointForecast.isPresent()) {
             log.error("No point forecast for " + fromz.toString() + "  :" + fromz.toString() + " -- " +
                               toz.toString());
@@ -63,10 +63,13 @@ public class AbstractForecastHelper {
     }
 
     private Optional<PointForecast> getPointForecastForPeriod(ZonedDateTime from,
-                                                              Optional<PeriodForecast> periodForecast) {
-        Duration d = Duration.between(periodForecast.get().getFrom(), periodForecast.get().getTo());
+                                                              PeriodForecast periodForecast) {
+        if (periodForecast == null) {
+            return Optional.empty();
+        }
+        Duration d = Duration.between(periodForecast.getFrom(), periodForecast.getTo());
         long distance = (d.getSeconds() / 60 / 60 / 2);
-        ZonedDateTime dateTime = periodForecast.get().getFrom().plusHours(distance);
+        ZonedDateTime dateTime = periodForecast.getFrom().plusHours(distance);
         Optional<PointForecast> pointForecast = getIndexer().getPointForecast(dateTime);
 
         // Try to find point forecast in the middle of period

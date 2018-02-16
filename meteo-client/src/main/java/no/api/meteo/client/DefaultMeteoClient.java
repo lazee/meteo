@@ -48,7 +48,7 @@ public class DefaultMeteoClient implements MeteoClient {
 
     private RequestConfig defaultRequestConfig;
 
-    private String metDomain;
+    private String metDomain = "api.met.no";
 
     private String userAgent;
 

@@ -100,12 +100,16 @@ public class TextforecastParser extends AbstractMetaMeteoDataParser<Weather, Tim
 
     @Override
     public void handleEndTags(EntityBuilder<Weather> builder, XmlPullParser xpp, Stack<TimeBuilder> stack) {
-        if (TAG_AREA.equals(xpp.getName())) {
-            stack.peek().getForecastTypeBuilder().pushAreaBuilder();
-        } else if (TAG_TIME.equals(xpp.getName())) {
-            getWeatherBuilder().getTimes().add(stack.pop().build());
-        } else {
-            log.trace(MSG_UNHANDLED_END_TAG, xpp.getName());
+        switch (xpp.getName()) {
+            case TAG_AREA:
+                stack.peek().getForecastTypeBuilder().pushAreaBuilder();
+                break;
+            case TAG_TIME:
+                getWeatherBuilder().getTimes().add(stack.pop().build());
+                break;
+            default:
+                log.trace(MSG_UNHANDLED_END_TAG, xpp.getName());
+                break;
         }
     }
 
