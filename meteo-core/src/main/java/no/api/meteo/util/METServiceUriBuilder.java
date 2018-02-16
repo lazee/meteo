@@ -25,7 +25,7 @@ import java.util.List;
 
 public final class METServiceUriBuilder {
 
-    private static final String API_MET_NO_SERVICE_PREFIX = "http://api.met.no/weatherapi/";
+    private static final String API_MET_NO_SERVICE_PREFIX = "http://legacy.api.met.no/weatherapi/";
 
     private final MeteoServiceVersion serviceVersion;
 
