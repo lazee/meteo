@@ -1,0 +1,2 @@
+https://api.met.no/weatherapi/extremeforecast/1.0/schema
+https://api.met.no/weatherapi/textforecast/1.6/schema
