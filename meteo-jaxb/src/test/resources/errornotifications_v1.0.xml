@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<errornotifications xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2018-02-17T15:16:04Z" xsi:noNamespaceSchemaLocation="https://api.met.no/weatherapi/errornotifications/1.0/schema">
+  <errornotification>
+    <time from="2018-02-15T11:51:47"/>
+    <product param="radarsite" value="southeast_norway">radar</product>
+    <product param="radarsite" value="southwest_norway">radar</product>
+    <subject language="nob">Radar Hægebostad er dessverre ute av drift på grunn av strømbrudd.</subject>
+    <description language="nob">Radar Hægebostad er dessverre ute av drift på grunn av strømbrudd.&#13;
+Radar Hægebostad is out of service due to a power failure.</description>
+  </errornotification>
+</errornotifications>

@@ -1,0 +1,12 @@
+https://api.met.no/weatherapi/errornotifications/1.0/schema
+https://api.met.no/weatherapi/extremeswwc/1.2/schema
+https://api.met.no/weatherapi/forestfireindex/1.1/schema
+https://api.met.no/weatherapi/locationforecast/1.9/schema
+https://api.met.no/weatherapi/locationforecastlts/1.3/schema
+https://api.met.no/weatherapi/nowcast/0.9/schema
+https://api.met.no/weatherapi/probabilityforecast/1.1/schema
+https://api.met.no/weatherapi/spotwind/1.0/schema
+https://api.met.no/weatherapi/sunrise/1.1/schema
+https://api.met.no/weatherapi/temperatureverification/1.0/schema
+https://api.met.no/weatherapi/textlocation/1.0/schema
+https://api.met.no/weatherapi/uvforecast/1.0/schema

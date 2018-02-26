@@ -157,7 +157,7 @@ public final class SunriseParser extends AbstractMetaMeteoDataParser<Sunrise, Su
         moonBuilder.setSet(getZonedDateTime(xpp, MeteoConstants.ATTR_SET));
         moonBuilder.setNeverRise(getBoolean(xpp, MeteoConstants.ATTR_NEVER_RISE));
         moonBuilder.setNeverSet(getBoolean(xpp, MeteoConstants.ATTR_NEVER_SET));
-        moonBuilder.setPhase(PhaseType.findByValue(getString(xpp, MeteoConstants.ATTR_PHASE)).get());
+        PhaseType.findByValue(getString(xpp, MeteoConstants.ATTR_PHASE)).ifPresent(moonBuilder::setPhase);
         stack.peek().setMoonBuilder(moonBuilder);
     }
 

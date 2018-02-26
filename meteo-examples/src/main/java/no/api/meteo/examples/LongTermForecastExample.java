@@ -35,28 +35,25 @@ import static no.api.meteo.util.MeteoDateUtils.cloneZonedDateTime;
 
 public class LongTermForecastExample {
 
-    //longitude=5.32&latitude=60.39&moh=3.0
+    // private static final double LONGITUDE_OSLO = 10.7460923576733;
+    // private static final double LONGITUDE_BERGEN = 5.32;
+    private static final double LONGITUDE_GJOVIK = 10.69;
 
-    public static final double LONGITUDE_OSLO = 10.7460923576733;
-    public static final double LONGITUDE_BERGEN = 5.32;
-    public static final double LONGITUDE_GJOVIK = 10.69;
+    // private static final double LATITUDE_OSLO = 59.912726542422;
+    // private static final double LATITUDE_BERGEN = 60.39;
+    private static final double LATITUDE_GJOVIK = 60.8;
 
-    public static final double LATITUDE_OSLO = 59.912726542422;
-    public static final double LATITUDE_BERGEN = 60.39;
-    public static final double LATITUDE_GJOVIK = 60.8;
+    // private static final int ALTITUDE_OSLO = 14;
+    // private static final int ALTITUDE_BERGEN = 3;
+    private static final int ALTITUDE_GJOVIK = 136;
 
-    public static final int ALTITUDE_OSLO = 14;
-    public static final int ALTITUDE_BERGEN = 3;
-    public static final int ALTITUDE_GJOVIK = 136;
-    
-    
     private final MeteoClient meteoClient;
 
-    public LongTermForecastExample() {
-        meteoClient = new DefaultMeteoClient();
+    private LongTermForecastExample() {
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
-    public void runExample() {
+    private void runExample() {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM HH:mm ZZ");
         LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
         try {
@@ -96,10 +93,10 @@ public class LongTermForecastExample {
     }
 
     public void print(String s) {
-        System.out.println(s); // NOSONAR This is an example, so println is ok
+        System.out.println(s);
     }
 
-    public void shutDown() {
+    private void shutDown() {
         meteoClient.shutdown();
     }
 

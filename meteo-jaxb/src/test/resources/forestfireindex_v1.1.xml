@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2018-02-17T15:18:35Z" xsi:noNamespaceSchemaLocation="https://api.met.no/weatherapi/forestfireindex/1.1/schema">
+  <product class="forestfireindex">
+    <time from="2018-02-17T06:00:00Z" to="2018-02-17T06:00:00Z">
+      <location stationid="17850" name="Ås" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="19710" name="Asker" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="2650" name="Aurskog II" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4260" name="Skedsmo - Hellerud" county="Akershus">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="4460" name="Hakadal Jernbanestasjon" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4780" name="Gardermoen" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4920" name="Årnes" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="35210" name="Gjerstad Jernbanestasjon" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="36560" name="Nelaug" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="38140" name="Landvik" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="38730" name="Hynnekleiv" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="39750" name="Byglandsfjord - Neset" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="40250" name="Valle" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="40880" name="Hovden - Lundane" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="20301" name="Hønefoss - Høyby" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="24890" name="Nesbyen - Todokk" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="25630" name="Geilo - Oldebråten" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="26820" name="Hokksund" county="Buskerud">
+        <forest-fire unit="danger-index" value="6"/>
+      </location>
+      <location stationid="26900" name="Drammen - Berskog" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="26950" name="Svelvik" county="Buskerud">
+        <forest-fire unit="danger-index" value="7"/>
+      </location>
+      <location stationid="27010" name="Konnerud" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="28380" name="Kongsberg Brannstasjon" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="28922" name="Veggli II" county="Buskerud">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="93301" name="Suolovuopmi - Lulit" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="93700" name="Kautokeino" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="93900" name="Sihccajavri" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="94280" name="Hammerfest Lufthavn" county="Finnmark">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="96850" name="Tana bru" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="97251" name="Karasjok - Markannjarga" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="97350" name="Cuovddatmohkki" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="98550" name="Vardø Radio" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="99460" name="Pasvik - Svanvik" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12180" name="Ilseng" county="Hedmark">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="12290" name="Hamar II" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12320" name="Hamar - Stavsberg" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12550" name="Kise på Hedmark" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="180" name="Trysil vegstasjon" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="5590" name="Kongsvinger" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="6020" name="Flisa II" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="700" name="Drevsjø" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="7420" name="Rena - Ørnhaugen" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="7950" name="Rena Flyplass" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="8880" name="Alvdal" county="Hedmark">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="9160" name="Folldal - Fredheim" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="9580" name="Tynset - Hansmoen" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="25830" name="Finsevatn" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="46430" name="Røldalsfjellet" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="49490" name="Ullensvang" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="49800" name="Fet i Eidfjord" county="Hordalad">
+        <forest-fire unit="danger-index" value="9"/>
+      </location>
+      <location stationid="49910" name="Ulvik - Hjeltnes" county="Hordalad">
+        <forest-fire unit="danger-index" value="16"/>
+      </location>
+      <location stationid="50070" name="Kvamsøy" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="50310" name="Kvamskogen - Jonshøgdi" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="50540" name="Bergen - Florida" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51010" name="Fossmark" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51440" name="Evanger" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51530" name="Vossevangen" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51800" name="Mjølfjell" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51990" name="Myrkdalen - Vetlebotn" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="52310" name="Modalen III" county="Hordalad">
+        <forest-fire unit="danger-index" value="6"/>
+      </location>
+      <location stationid="59610" name="Fiskåbygd" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="60240" name="Åkerneset" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="60500" name="Tafjord" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="14"/>
+      </location>
+      <location stationid="60990" name="Vigra" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="61410" name="Mannen" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="61420" name="Marstein" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="63420" name="Sunndalsøra III" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="64510" name="Tingvoll" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="30"/>
+      </location>
+      <location stationid="64760" name="Surnadal - Sylte" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="16"/>
+      </location>
+      <location stationid="64870" name="Tågdalen" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="69150" name="Kvithamar" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="69380" name="Meråker - Vardetun" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="69655" name="Frosta" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="24"/>
+      </location>
+      <location stationid="70150" name="Verdal - Reppe" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="70850" name="Kjøbli i Snåsa" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="71000" name="Steinkjer - Søndre Egge" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="73500" name="Nordli - Holand" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="73550" name="Gartland" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="74350" name="Namsskogan" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="77280" name="Laksfors" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="77425" name="Majavatn V" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="78360" name="Seljelia" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="78800" name="Varntresk" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="79220" name="Skamdal" county="Nordland">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="79764" name="Hjartåsen" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="80740" name="Reipå" county="Nordland">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="81775" name="Lønsdal stasjon" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="82000" name="Setså" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="82290" name="Bodø VI" county="Nordland">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="83710" name="Drag - Ajluokta" county="Nordland">
+        <forest-fire unit="danger-index" value="11"/>
+      </location>
+      <location stationid="84500" name="Straumsnes" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="86500" name="Sortland" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="11500" name="Østre Toten - Apelsvoll" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12680" name="Lillehammer - Sætherengen" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="13030" name="Gausdal - Follebu" county="Oppland">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="13150" name="Fåvang" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="13420" name="Venabu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="13655" name="Skåbu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="14200" name="Leirflaten" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="15730" name="Bråtå - Slettom" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="15890" name="Grotli III" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="16271" name="Høvringen" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="16560" name="Dombås - Nordigard" county="Oppland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="16610" name="Fokstugu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="20540" name="Gran" county="Oppland">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="23500" name="Løken i Volbu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="23550" name="Beitostølen II" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="54710" name="Filefjell - Kyrkjestølane" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="61630" name="Bjorli" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="9310" name="Hjerkinn II" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="18700" name="Oslo - Blindern" county="Oslo">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="18815" name="Oslo - Bygdøy" county="Oslo">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="43010" name="Eik - Hove" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="44300" name="Særheim" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="44640" name="Stavanger - Våland" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="45350" name="Lysebotn" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="45530" name="Liarvatn" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="45870" name="Fister - Sigmundstad" county="Rogaland">
+        <forest-fire unit="danger-index" value="18"/>
+      </location>
+      <location stationid="46930" name="Vats i Vindafjord" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="52860" name="Takle" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="53101" name="Vangsnes" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="54110" name="Lærdal IV" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="13"/>
+      </location>
+      <location stationid="55770" name="Njøs" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="55820" name="Fjærland - Bremuseet" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="55928" name="Balestrand - Bale" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="18"/>
+      </location>
+      <location stationid="56420" name="Fureneset" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="58070" name="Sandane" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="58900" name="Stryn - Kroken" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="10380" name="Røros Lufthavn" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="10800" name="Sølendet" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="63705" name="Oppdal - Sæter" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="65451" name="Hitra - Sandstad II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="66150" name="Orkdal - Thamshamn" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="67140" name="Skjetlein" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="20"/>
+      </location>
+      <location stationid="67280" name="Soknedal" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="67560" name="Kotsøy" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="68290" name="Selbu II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="68860" name="Trondheim - Voll" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="71320" name="Rissa III" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="24"/>
+      </location>
+      <location stationid="71550" name="Ørland III" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="71780" name="Åfjord II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="30255" name="Porsgrunn - Ås" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="30330" name="Gjerpen - Århus" county="Telemark">
+        <forest-fire unit="danger-index" value="10"/>
+      </location>
+      <location stationid="31620" name="Møsstrand II" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="32060" name="Gvarv - Nes" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="32240" name="Bø" county="Telemark">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="32890" name="Høydalsmo II" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="37230" name="Tveitsund" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="87640" name="Harstad stadion" county="Troms">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="89940" name="Dividalen II" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="90450" name="Tromsø" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="91380" name="Skibotn II" county="Troms">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="91500" name="Nordnesfjellet" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="91740" name="Sørkjosen Lufthavn" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="92350" name="Nordstraum i Kvænangen" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="41825" name="Lyngdal" county="Vest-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="42940" name="Sirdal - Sinnes" county="Vest-Agder">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="26990" name="Sande - Galleberg" county="Vestfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="27450" name="Melsom" county="Vestfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="27780" name="Tjølling" county="Vestfold">
+        <forest-fire unit="danger-index" value="11"/>
+      </location>
+      <location stationid="3190" name="Sarpsborg" county="Østfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="3290" name="Rakkestad" county="Østfold">
+        <forest-fire unit="danger-index" value="7"/>
+      </location>
+    </time>
+    <time from="2018-02-18T06:00:00Z" to="2018-02-18T06:00:00Z">
+      <location stationid="17850" name="Ås" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="19710" name="Asker" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="2650" name="Aurskog II" county="Akershus">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="4260" name="Skedsmo - Hellerud" county="Akershus">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="4460" name="Hakadal Jernbanestasjon" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4780" name="Gardermoen" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4920" name="Årnes" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="35210" name="Gjerstad Jernbanestasjon" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="36560" name="Nelaug" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="38140" name="Landvik" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="38730" name="Hynnekleiv" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="39750" name="Byglandsfjord - Neset" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="40250" name="Valle" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="40880" name="Hovden - Lundane" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="20301" name="Hønefoss - Høyby" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="24890" name="Nesbyen - Todokk" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="25630" name="Geilo - Oldebråten" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="26820" name="Hokksund" county="Buskerud">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="26900" name="Drammen - Berskog" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="26950" name="Svelvik" county="Buskerud">
+        <forest-fire unit="danger-index" value="6"/>
+      </location>
+      <location stationid="27010" name="Konnerud" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="28380" name="Kongsberg Brannstasjon" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="28922" name="Veggli II" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="93301" name="Suolovuopmi - Lulit" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="93700" name="Kautokeino" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="93900" name="Sihccajavri" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="94280" name="Hammerfest Lufthavn" county="Finnmark">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="96850" name="Tana bru" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="97251" name="Karasjok - Markannjarga" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="97350" name="Cuovddatmohkki" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="98550" name="Vardø Radio" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="99460" name="Pasvik - Svanvik" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12180" name="Ilseng" county="Hedmark">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="12290" name="Hamar II" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12320" name="Hamar - Stavsberg" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12550" name="Kise på Hedmark" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="180" name="Trysil vegstasjon" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="5590" name="Kongsvinger" county="Hedmark">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="6020" name="Flisa II" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="700" name="Drevsjø" county="Hedmark">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="7420" name="Rena - Ørnhaugen" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="7950" name="Rena Flyplass" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="8880" name="Alvdal" county="Hedmark">
+        <forest-fire unit="danger-index" value="6"/>
+      </location>
+      <location stationid="9160" name="Folldal - Fredheim" county="Hedmark">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="9580" name="Tynset - Hansmoen" county="Hedmark">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="25830" name="Finsevatn" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="46430" name="Røldalsfjellet" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="49490" name="Ullensvang" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="49800" name="Fet i Eidfjord" county="Hordalad">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="49910" name="Ulvik - Hjeltnes" county="Hordalad">
+        <forest-fire unit="danger-index" value="13"/>
+      </location>
+      <location stationid="50070" name="Kvamsøy" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="50310" name="Kvamskogen - Jonshøgdi" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="50540" name="Bergen - Florida" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51010" name="Fossmark" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51440" name="Evanger" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51530" name="Vossevangen" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51800" name="Mjølfjell" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51990" name="Myrkdalen - Vetlebotn" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="52310" name="Modalen III" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="59610" name="Fiskåbygd" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="60240" name="Åkerneset" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="60500" name="Tafjord" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="14"/>
+      </location>
+      <location stationid="60990" name="Vigra" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="61410" name="Mannen" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="61420" name="Marstein" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="63420" name="Sunndalsøra III" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="64510" name="Tingvoll" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="32"/>
+      </location>
+      <location stationid="64760" name="Surnadal - Sylte" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="18"/>
+      </location>
+      <location stationid="64870" name="Tågdalen" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="69150" name="Kvithamar" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="69380" name="Meråker - Vardetun" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="69655" name="Frosta" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="27"/>
+      </location>
+      <location stationid="70150" name="Verdal - Reppe" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="70850" name="Kjøbli i Snåsa" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="71000" name="Steinkjer - Søndre Egge" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="73500" name="Nordli - Holand" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="73550" name="Gartland" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="74350" name="Namsskogan" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="77280" name="Laksfors" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="77425" name="Majavatn V" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="78360" name="Seljelia" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="78800" name="Varntresk" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="79220" name="Skamdal" county="Nordland">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="79764" name="Hjartåsen" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="80740" name="Reipå" county="Nordland">
+        <forest-fire unit="danger-index" value="6"/>
+      </location>
+      <location stationid="81775" name="Lønsdal stasjon" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="82000" name="Setså" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="82290" name="Bodø VI" county="Nordland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="83710" name="Drag - Ajluokta" county="Nordland">
+        <forest-fire unit="danger-index" value="12"/>
+      </location>
+      <location stationid="84500" name="Straumsnes" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="86500" name="Sortland" county="Nordland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="11500" name="Østre Toten - Apelsvoll" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12680" name="Lillehammer - Sætherengen" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="13030" name="Gausdal - Follebu" county="Oppland">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="13150" name="Fåvang" county="Oppland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="13420" name="Venabu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="13655" name="Skåbu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="14200" name="Leirflaten" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="15730" name="Bråtå - Slettom" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="15890" name="Grotli III" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="16271" name="Høvringen" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="16560" name="Dombås - Nordigard" county="Oppland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="16610" name="Fokstugu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="20540" name="Gran" county="Oppland">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="23500" name="Løken i Volbu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="23550" name="Beitostølen II" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="54710" name="Filefjell - Kyrkjestølane" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="61630" name="Bjorli" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="9310" name="Hjerkinn II" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="18700" name="Oslo - Blindern" county="Oslo">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="18815" name="Oslo - Bygdøy" county="Oslo">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="43010" name="Eik - Hove" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="44300" name="Særheim" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="44640" name="Stavanger - Våland" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="45350" name="Lysebotn" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="45530" name="Liarvatn" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="45870" name="Fister - Sigmundstad" county="Rogaland">
+        <forest-fire unit="danger-index" value="11"/>
+      </location>
+      <location stationid="46930" name="Vats i Vindafjord" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="52860" name="Takle" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="53101" name="Vangsnes" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="54110" name="Lærdal IV" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="14"/>
+      </location>
+      <location stationid="55770" name="Njøs" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="55820" name="Fjærland - Bremuseet" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="55928" name="Balestrand - Bale" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="7"/>
+      </location>
+      <location stationid="56420" name="Fureneset" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="58070" name="Sandane" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="58900" name="Stryn - Kroken" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="10380" name="Røros Lufthavn" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="10800" name="Sølendet" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="63705" name="Oppdal - Sæter" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="65451" name="Hitra - Sandstad II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="66150" name="Orkdal - Thamshamn" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="67140" name="Skjetlein" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="22"/>
+      </location>
+      <location stationid="67280" name="Soknedal" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="67560" name="Kotsøy" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="68290" name="Selbu II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="68860" name="Trondheim - Voll" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="71320" name="Rissa III" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="25"/>
+      </location>
+      <location stationid="71550" name="Ørland III" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="71780" name="Åfjord II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="30255" name="Porsgrunn - Ås" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="30330" name="Gjerpen - Århus" county="Telemark">
+        <forest-fire unit="danger-index" value="6"/>
+      </location>
+      <location stationid="31620" name="Møsstrand II" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="32060" name="Gvarv - Nes" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="32240" name="Bø" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="32890" name="Høydalsmo II" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="37230" name="Tveitsund" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="87640" name="Harstad stadion" county="Troms">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="89940" name="Dividalen II" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="90450" name="Tromsø" county="Troms">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="91380" name="Skibotn II" county="Troms">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="91500" name="Nordnesfjellet" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="91740" name="Sørkjosen Lufthavn" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="92350" name="Nordstraum i Kvænangen" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="41825" name="Lyngdal" county="Vest-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="42940" name="Sirdal - Sinnes" county="Vest-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="26990" name="Sande - Galleberg" county="Vestfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="27450" name="Melsom" county="Vestfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="27780" name="Tjølling" county="Vestfold">
+        <forest-fire unit="danger-index" value="11"/>
+      </location>
+      <location stationid="3190" name="Sarpsborg" county="Østfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="3290" name="Rakkestad" county="Østfold">
+        <forest-fire unit="danger-index" value="7"/>
+      </location>
+    </time>
+    <time from="2018-02-19T06:00:00Z" to="2018-02-19T06:00:00Z">
+      <location stationid="17850" name="Ås" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="19710" name="Asker" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="2650" name="Aurskog II" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4260" name="Skedsmo - Hellerud" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4460" name="Hakadal Jernbanestasjon" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4780" name="Gardermoen" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="4920" name="Årnes" county="Akershus">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="35210" name="Gjerstad Jernbanestasjon" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="36560" name="Nelaug" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="38140" name="Landvik" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="38730" name="Hynnekleiv" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="39750" name="Byglandsfjord - Neset" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="40250" name="Valle" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="40880" name="Hovden - Lundane" county="Aust-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="20301" name="Hønefoss - Høyby" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="24890" name="Nesbyen - Todokk" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="25630" name="Geilo - Oldebråten" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="26820" name="Hokksund" county="Buskerud">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="26900" name="Drammen - Berskog" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="26950" name="Svelvik" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="27010" name="Konnerud" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="28380" name="Kongsberg Brannstasjon" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="28922" name="Veggli II" county="Buskerud">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="93301" name="Suolovuopmi - Lulit" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="93700" name="Kautokeino" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="93900" name="Sihccajavri" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="94280" name="Hammerfest Lufthavn" county="Finnmark">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="96850" name="Tana bru" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="97251" name="Karasjok - Markannjarga" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="97350" name="Cuovddatmohkki" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="98550" name="Vardø Radio" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="99460" name="Pasvik - Svanvik" county="Finnmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12180" name="Ilseng" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12290" name="Hamar II" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12320" name="Hamar - Stavsberg" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12550" name="Kise på Hedmark" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="180" name="Trysil vegstasjon" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="5590" name="Kongsvinger" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="6020" name="Flisa II" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="700" name="Drevsjø" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="7420" name="Rena - Ørnhaugen" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="7950" name="Rena Flyplass" county="Hedmark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="8880" name="Alvdal" county="Hedmark">
+        <forest-fire unit="danger-index" value="6"/>
+      </location>
+      <location stationid="9160" name="Folldal - Fredheim" county="Hedmark">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="9580" name="Tynset - Hansmoen" county="Hedmark">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="25830" name="Finsevatn" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="46430" name="Røldalsfjellet" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="49490" name="Ullensvang" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="49800" name="Fet i Eidfjord" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="49910" name="Ulvik - Hjeltnes" county="Hordalad">
+        <forest-fire unit="danger-index" value="11"/>
+      </location>
+      <location stationid="50070" name="Kvamsøy" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="50310" name="Kvamskogen - Jonshøgdi" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="50540" name="Bergen - Florida" county="Hordalad">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="51010" name="Fossmark" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51440" name="Evanger" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51530" name="Vossevangen" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51800" name="Mjølfjell" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="51990" name="Myrkdalen - Vetlebotn" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="52310" name="Modalen III" county="Hordalad">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="59610" name="Fiskåbygd" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="60240" name="Åkerneset" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="60500" name="Tafjord" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="14"/>
+      </location>
+      <location stationid="60990" name="Vigra" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="61410" name="Mannen" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="61420" name="Marstein" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="63420" name="Sunndalsøra III" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="64510" name="Tingvoll" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="33"/>
+      </location>
+      <location stationid="64760" name="Surnadal - Sylte" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="19"/>
+      </location>
+      <location stationid="64870" name="Tågdalen" county="Møre og Romsdal">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="69150" name="Kvithamar" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="69380" name="Meråker - Vardetun" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="69655" name="Frosta" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="28"/>
+      </location>
+      <location stationid="70150" name="Verdal - Reppe" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="70850" name="Kjøbli i Snåsa" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="71000" name="Steinkjer - Søndre Egge" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="73500" name="Nordli - Holand" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="73550" name="Gartland" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="74350" name="Namsskogan" county="Nord-Trøndelag">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="77280" name="Laksfors" county="Nordland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="77425" name="Majavatn V" county="Nordland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="78360" name="Seljelia" county="Nordland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="78800" name="Varntresk" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="79220" name="Skamdal" county="Nordland">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="79764" name="Hjartåsen" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="80740" name="Reipå" county="Nordland">
+        <forest-fire unit="danger-index" value="8"/>
+      </location>
+      <location stationid="81775" name="Lønsdal stasjon" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="82000" name="Setså" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="82290" name="Bodø VI" county="Nordland">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="83710" name="Drag - Ajluokta" county="Nordland">
+        <forest-fire unit="danger-index" value="14"/>
+      </location>
+      <location stationid="84500" name="Straumsnes" county="Nordland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="86500" name="Sortland" county="Nordland">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="11500" name="Østre Toten - Apelsvoll" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="12680" name="Lillehammer - Sætherengen" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="13030" name="Gausdal - Follebu" county="Oppland">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="13150" name="Fåvang" county="Oppland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="13420" name="Venabu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="13655" name="Skåbu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="14200" name="Leirflaten" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="15730" name="Bråtå - Slettom" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="15890" name="Grotli III" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="16271" name="Høvringen" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="16560" name="Dombås - Nordigard" county="Oppland">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="16610" name="Fokstugu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="20540" name="Gran" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="23500" name="Løken i Volbu" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="23550" name="Beitostølen II" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="54710" name="Filefjell - Kyrkjestølane" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="61630" name="Bjorli" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="9310" name="Hjerkinn II" county="Oppland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="18700" name="Oslo - Blindern" county="Oslo">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="18815" name="Oslo - Bygdøy" county="Oslo">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="43010" name="Eik - Hove" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="44300" name="Særheim" county="Rogaland">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="44640" name="Stavanger - Våland" county="Rogaland">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="45350" name="Lysebotn" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="45530" name="Liarvatn" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="45870" name="Fister - Sigmundstad" county="Rogaland">
+        <forest-fire unit="danger-index" value="13"/>
+      </location>
+      <location stationid="46930" name="Vats i Vindafjord" county="Rogaland">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="52860" name="Takle" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="53101" name="Vangsnes" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="54110" name="Lærdal IV" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="3"/>
+      </location>
+      <location stationid="55770" name="Njøs" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="55820" name="Fjærland - Bremuseet" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="55928" name="Balestrand - Bale" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="56420" name="Fureneset" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="58070" name="Sandane" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="58900" name="Stryn - Kroken" county="Sogn og Fjordane">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="10380" name="Røros Lufthavn" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="10800" name="Sølendet" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="63705" name="Oppdal - Sæter" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="65451" name="Hitra - Sandstad II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="8"/>
+      </location>
+      <location stationid="66150" name="Orkdal - Thamshamn" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="67140" name="Skjetlein" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="24"/>
+      </location>
+      <location stationid="67280" name="Soknedal" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="67560" name="Kotsøy" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="68290" name="Selbu II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="68860" name="Trondheim - Voll" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="71320" name="Rissa III" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="27"/>
+      </location>
+      <location stationid="71550" name="Ørland III" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="71780" name="Åfjord II" county="Sør-Trøndelag">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="30255" name="Porsgrunn - Ås" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="30330" name="Gjerpen - Århus" county="Telemark">
+        <forest-fire unit="danger-index" value="2"/>
+      </location>
+      <location stationid="31620" name="Møsstrand II" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="32060" name="Gvarv - Nes" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="32240" name="Bø" county="Telemark">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="32890" name="Høydalsmo II" county="Telemark">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="37230" name="Tveitsund" county="Telemark">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="87640" name="Harstad stadion" county="Troms">
+        <forest-fire unit="danger-index" value="5"/>
+      </location>
+      <location stationid="89940" name="Dividalen II" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="90450" name="Tromsø" county="Troms">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="91380" name="Skibotn II" county="Troms">
+        <forest-fire unit="danger-index" value="4"/>
+      </location>
+      <location stationid="91500" name="Nordnesfjellet" county="Troms">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="91740" name="Sørkjosen Lufthavn" county="Troms">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="92350" name="Nordstraum i Kvænangen" county="Troms">
+        <forest-fire unit="danger-index" value="1"/>
+      </location>
+      <location stationid="41825" name="Lyngdal" county="Vest-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="42940" name="Sirdal - Sinnes" county="Vest-Agder">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="26990" name="Sande - Galleberg" county="Vestfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="27450" name="Melsom" county="Vestfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="27780" name="Tjølling" county="Vestfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="3190" name="Sarpsborg" county="Østfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+      <location stationid="3290" name="Rakkestad" county="Østfold">
+        <forest-fire unit="danger-index" value="0"/>
+      </location>
+    </time>
+  </product>
+</weatherdata>

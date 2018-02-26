@@ -28,26 +28,26 @@ import org.slf4j.LoggerFactory;
 
 public class LocationExample {
 
-    public static final double LONGITUDE_OSLO = 10.7460923576733;
+    private static final double LONGITUDE_OSLO = 10.7460923576733;
 
-    public static final double LATITUDE_OSLO = 59.912726542422;
+    private static final double LATITUDE_OSLO = 59.912726542422;
 
-    public static final int ALTITUDE_OSLO = 14;
+    private static final int ALTITUDE_OSLO = 14;
 
     private static final Logger log = LoggerFactory.getLogger(LocationExample.class);
 
     private final MeteoClient meteoClient;
 
-    public LocationExample() {
+    private LocationExample() {
         meteoClient = new DefaultMeteoClient(5);
     }
 
-    public MeteoData<LocationForecast> runExample() throws MeteoException {
+    private MeteoData<LocationForecast> runExample() throws MeteoException {
         LocationforecastLTSService ltsService = new LocationforecastLTSService(meteoClient);
         return ltsService.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
     }
 
-    public void shutDown() {
+    private void shutDown() {
         meteoClient.shutdown();
     }
 

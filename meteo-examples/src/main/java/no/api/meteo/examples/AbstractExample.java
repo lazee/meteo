@@ -27,7 +27,7 @@ public abstract class AbstractExample {
 
     private static final Logger log = LoggerFactory.getLogger(AbstractExample.class);
 
-    public void prettyLogPeriodForecast(PeriodForecast periodForecast) {
+    protected void prettyLogPeriodForecast(PeriodForecast periodForecast) {
         if (periodForecast == null) {
             log.error("Period forecast -> null");
         } else {
@@ -39,7 +39,7 @@ public abstract class AbstractExample {
         }
     }
 
-    public void prettyLogPrecipitation(Precipitation precipitation) {
+    private void prettyLogPrecipitation(Precipitation precipitation) {
         if (precipitation == null) {
             log.error("  Precipitation -> null");
         } else {

@@ -46,12 +46,12 @@ public class TextLocation {
     @JsonProperty
     private final String issuer;
 
-    // From XSD : http://api.met.no/weatherapi/textlocation/1.0/schema
+    // From XSD : https://api.met.no/weatherapi/textlocation/1.0/schema
     // But isn't in use in the actual feed.
     //@JsonProperty
     //private String exname;
 
-    // From XSD : http://api.met.no/weatherapi/textlocation/1.0/schema
+    // From XSD : https://api.met.no/weatherapi/textlocation/1.0/schema
     // But isn't in use in the actual feed.
     //@JsonProperty
     //private URI url;

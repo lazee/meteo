@@ -23,6 +23,7 @@ import org.xmlpull.v1.XmlPullParser;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
+@SuppressWarnings("ConstantConditions")
 public final class MeteoXppUtilsTest {
 
     private final String testXml = "<test><entry string=\"foo\" integer=\"7\" double=\"1.2\"" +

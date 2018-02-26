@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<astrodata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://api.met.no/weatherapi/sunrise/1.1/schema">
+    <meta licenseurl="https://api.met.no/license_data.html"/>
+    <time date="2018-02-17">
+        <location latitude="71.0" longitude="-69.58">
+            <sun rise="2018-02-17T13:10:07Z" set="2018-02-17T20:36:03Z">
+                <noon altitude="7.168"/>
+            </sun>
+            <moon phase="Waxing crescent" rise="2018-02-17T13:38:45Z" set="2018-02-17T23:18:21Z"/>
+        </location>
+    </time>
+</astrodata>

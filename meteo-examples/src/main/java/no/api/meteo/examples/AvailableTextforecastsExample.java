@@ -30,17 +30,17 @@ public class AvailableTextforecastsExample {
 
     private final MeteoClient meteoClient;
 
-    public AvailableTextforecastsExample() {
-        meteoClient = new DefaultMeteoClient();
+    private AvailableTextforecastsExample() {
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
-    public MeteoData<Available> fetchDate() throws MeteoException {
+    private MeteoData<Available> fetchDate() throws MeteoException {
         AvailableTextforecastsService service = new AvailableTextforecastsService(meteoClient);
         return service.fetchContent();
 
     }
 
-    public void shutDown() {
+    private void shutDown() {
         meteoClient.shutdown();
     }
 

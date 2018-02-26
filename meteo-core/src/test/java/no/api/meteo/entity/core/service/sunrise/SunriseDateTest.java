@@ -70,10 +70,10 @@ public class SunriseDateTest {
     @Test
     public void testSummerInNorth() throws Exception {
         /*
-        http://api.met.no/weatherapi/sunrise/1.0/?lat=70.66;lon=23.68;date=2016-06-13
+        https://api.met.no/weatherapi/sunrise/1.0/?lat=70.66;lon=23.68;date=2016-06-13
 
-        <astrodata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/sunrise/1.0/schema">
-            <meta licenseurl="http://api.met.no/license_data.html" />
+        <astrodata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://api.met.no/weatherapi/sunrise/1.0/schema">
+            <meta licenseurl="https://api.met.no/license_data.html" />
             <time date="2016-06-13">
                 <location latitude="70.66" longitude="23.68">
                     <sun never_set="true" />

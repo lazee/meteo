@@ -6,7 +6,7 @@
     <parent>
         <groupId>no.api.maven</groupId>
         <artifactId>amedia-maven</artifactId>
-        <version>1.0.7</version>
+        <version>1.1.0</version>
     </parent>
 
     <groupId>no.api.meteo</groupId>
@@ -52,6 +52,7 @@
         <module>meteo-core</module>
         <module>meteo-client</module>
         <module>meteo-examples</module>
+        <module>meteo-jaxb</module>
     </modules>
 
     <dependencyManagement>

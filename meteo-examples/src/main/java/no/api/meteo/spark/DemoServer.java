@@ -40,7 +40,7 @@ import static spark.SparkBase.staticFileLocation;
 @Slf4j
 public class DemoServer {
 
-    private static final MeteoClient METEO_CLIENT = new DefaultMeteoClient();
+    private static final MeteoClient METEO_CLIENT = new DefaultMeteoClient("MyExampleApp");
 
     public static void main(String[] args) {
         staticFileLocation("/public");
@@ -81,19 +81,13 @@ public class DemoServer {
 
             ZonedDateTime firstDate = (ZonedDateTime.now(ZoneId.of("Z")).withHour(12).withMinute(0).withSecond(0));
             Optional<MeteoExtrasForecast> todayForecast = helper.findNearestForecast(firstDate);
-            if (todayForecast.isPresent()) {
-                attributes.put("today", todayForecast.get());
-            }
+            todayForecast.ifPresent(meteoExtrasForecast -> attributes.put("today", meteoExtrasForecast));
 
             Optional<MeteoExtrasForecast> tomorrowForecast = helper.findNearestForecast(firstDate.plusDays(1));
-            if (tomorrowForecast.isPresent()) {
-                attributes.put("tomorrow", tomorrowForecast.get());
-            }
+            tomorrowForecast.ifPresent(meteoExtrasForecast -> attributes.put("tomorrow", meteoExtrasForecast));
 
             Optional<MeteoExtrasForecast> afterForecast = helper.findNearestForecast(firstDate.plusDays(2));
-            if (afterForecast.isPresent()) {
-                attributes.put("thedayaftertomorrow", afterForecast.get());
-            }
+            afterForecast.ifPresent(meteoExtrasForecast -> attributes.put("thedayaftertomorrow", meteoExtrasForecast));
         } catch (MeteoException e) {
             log.error("Caught exception", e);
         }

@@ -31,16 +31,16 @@ public class TextforecastExample {
 
     private final MeteoClient meteoClient;
 
-    public TextforecastExample() {
-        meteoClient = new DefaultMeteoClient();
+    private TextforecastExample() {
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
-    public MeteoData<Weather> runExample() throws MeteoException {
+    private MeteoData<Weather> runExample() throws MeteoException {
         TextforecastService service = new TextforecastService(meteoClient);
         return service.fetchContent(ForecastQuery.LAND_NB);
     }
 
-    public void shutDown() {
+    private void shutDown() {
         meteoClient.shutdown();
     }
 

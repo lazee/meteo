@@ -34,25 +34,25 @@ import java.util.List;
 
 public class ForecastsByHourExample extends AbstractExample {
 
-    public static final double LONGITUDE_OSLO = 10.7460923576733;
+    private static final double LONGITUDE_OSLO = 10.7460923576733;
 
-    public static final double LATITUDE_OSLO = 59.912726542422;
+    private static final double LATITUDE_OSLO = 59.912726542422;
 
-    public static final int ALTITUDE_OSLO = 14;
+    private static final int ALTITUDE_OSLO = 14;
 
     private static final Logger log = LoggerFactory.getLogger(ForecastsByHourExample.class);
 
-    public static final int HOURS = 10;
+    private static final int HOURS = 10;
 
-    public static final int TWELVE_O_CLOCK = 12;
+    private static final int TWELVE_O_CLOCK = 12;
 
     private final MeteoClient meteoClient;
 
-    public ForecastsByHourExample() {
-        meteoClient = new DefaultMeteoClient();
+    private ForecastsByHourExample() {
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
-    public void runExample() {
+    private void runExample() {
         try {
             LocationforecastLTSService service = new LocationforecastLTSService(meteoClient);
             MeteoData<LocationForecast> meteoData = service.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO, ALTITUDE_OSLO);
@@ -71,15 +71,11 @@ public class ForecastsByHourExample extends AbstractExample {
         } catch (MeteoException e) {
             log.error("Something went wrong", e);
         }
-
-    }
-
-    public void shutDown() {
         meteoClient.shutdown();
     }
 
     public static void main(String[] args) {
-        ForecastsByHourExample forecastsByHourExample = new ForecastsByHourExample();
-        forecastsByHourExample.runExample();
+        ForecastsByHourExample example = new ForecastsByHourExample();
+        example.runExample();
     }
 }

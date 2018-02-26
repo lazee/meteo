@@ -34,16 +34,16 @@ public class TextlocationExample {
 
     private final MeteoClient meteoClient;
 
-    public TextlocationExample() {
-        meteoClient = new DefaultMeteoClient();
+    private TextlocationExample() {
+        meteoClient = new DefaultMeteoClient("MyExampleApp");
     }
 
-    public MeteoData<TextLocationWeather> runExample() throws MeteoException {
+    private MeteoData<TextLocationWeather> runExample() throws MeteoException {
         TextLocationService service = new TextLocationService(meteoClient);
         return service.fetchContent(LONGITUDE_OSLO, LATITUDE_OSLO);
     }
 
-    public void shutDown() {
+    private void shutDown() {
         meteoClient.shutdown();
     }
 

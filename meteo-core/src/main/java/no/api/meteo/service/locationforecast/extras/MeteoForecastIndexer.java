@@ -129,13 +129,7 @@ class MeteoForecastIndexer {
     *
     */
     Optional<PeriodForecast> getTightestFitPeriodForecast(ZonedDateTime from) {
-        if (from == null) {
-            return Optional.empty();
-        }
-        Optional<ScoreForecast> scoreForecast = getXScoreForecast(from, false);
-        return scoreForecast.isPresent()
-                ? Optional.of(scoreForecast.get().getPeriodForecast())
-                : Optional.empty();
+        return  getXScoreForecast(from, false).map(ScoreForecast::getPeriodForecast);
     }
 
     boolean hasForecastsForDay(ZonedDateTime from) {
@@ -153,10 +147,7 @@ class MeteoForecastIndexer {
         if (from == null) {
             return Optional.empty();
         }
-        Optional<ScoreForecast> scoreForecast = getWidestFitScoreForecast(from);
-        return scoreForecast.isPresent()
-                ? Optional.of(scoreForecast.get().getPeriodForecast())
-                : Optional.empty();
+        return getWidestFitScoreForecast(from).map(ScoreForecast::getPeriodForecast);
     }
 
     /**
@@ -227,14 +218,14 @@ class MeteoForecastIndexer {
 
 
     Optional<ScoreForecast> getWidestFitScoreForecast(ZonedDateTime time) {
-        if (time == null) {
-            return Optional.empty();
-        }
         return getXScoreForecast(time, true);
     }
 
 
     private Optional<ScoreForecast> getXScoreForecast(ZonedDateTime time, boolean widest) {
+        if (time == null) {
+            return Optional.empty();
+        }
         HourMatcher hourMatcher = createHourIndexKey(cloneZonedDateTime(time));
         if (!hourIndex.containsKey(hourMatcher)) {
             return Optional.empty();

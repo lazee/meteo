@@ -1,0 +1,82 @@
+<weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/locationforecast/1.5/schema" created="2018-02-17T15:20:45Z">
+   <meta>
+      <model name="NowCast" termin="2018-02-17T15:07:30Z" runended="2018-02-17T15:15:45Z" nextrun="2018-02-17T15:23:15Z" from="2018-02-17T15:15:00Z" to="2018-02-17T17:00:00Z" />
+      </meta>
+   <product class="pointData">
+      <time datatype="forecast" from="2018-02-17T15:15:00Z" to="2018-02-17T15:15:00Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:22:30Z" to="2018-02-17T15:22:30Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:30:00Z" to="2018-02-17T15:30:00Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:37:30Z" to="2018-02-17T15:37:30Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:45:00Z" to="2018-02-17T15:45:00Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:52:30Z" to="2018-02-17T15:52:30Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:00:00Z" to="2018-02-17T16:00:00Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:07:30Z" to="2018-02-17T16:07:30Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:15:00Z" to="2018-02-17T16:15:00Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:22:30Z" to="2018-02-17T16:22:30Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:30:00Z" to="2018-02-17T16:30:00Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:37:30Z" to="2018-02-17T16:37:30Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:45:00Z" to="2018-02-17T16:45:00Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:52:30Z" to="2018-02-17T16:52:30Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T17:00:00Z" to="2018-02-17T17:00:00Z">
+         <location latitude="59.9333" longitude="10.7167">
+            <precipitation unit="mm/h" value="0.0"/>
+         </location>
+      </time>
+   </product>
+</weatherdata> 
