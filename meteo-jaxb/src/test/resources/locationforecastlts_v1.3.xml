@@ -1,0 +1,3388 @@
+<weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/locationforecastlts/1.3/schema" created="2018-02-17T15:19:59Z">
+   <meta>
+      <model name="LOCAL" termin="2018-02-17T12:00:00Z" runended="2018-02-17T14:25:23Z" nextrun="2018-02-17T16:00:00Z" from="2018-02-17T16:00:00Z" to="2018-02-20T06:00:00Z" />
+      <model name="EPS" termin="2018-02-17T00:00:00Z" runended="2018-02-17T09:09:01Z" nextrun="2018-02-17T22:00:00Z" from="2018-02-20T12:00:00Z" to="2018-02-26T18:00:00Z" />
+      </meta>
+   <product class="pointData">
+      <time datatype="forecast" from="2018-02-17T16:00:00Z" to="2018-02-17T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.6"/>
+            <windDirection id="dd" deg="120.2" name="SE"/>
+            <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.8"/>
+            <areaMaxWindSpeed mps="2.3"/>
+            <humidity value="89.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.1"/>
+            <cloudiness id="NN" percent="73.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="1.2"/>
+            <mediumClouds id="MEDIUM" percent="45.4"/>
+            <highClouds id="HIGH" percent="52.4"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:00:00Z" to="2018-02-17T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T14:00:00Z" to="2018-02-17T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T13:00:00Z" to="2018-02-17T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T17:00:00Z" to="2018-02-17T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.8"/>
+            <windDirection id="dd" deg="120.7" name="SE"/>
+            <windSpeed id="ff" mps="1.0" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.7"/>
+            <areaMaxWindSpeed mps="2.8"/>
+            <humidity value="88.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.1"/>
+            <cloudiness id="NN" percent="65.1"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="1.1"/>
+            <mediumClouds id="MEDIUM" percent="36.7"/>
+            <highClouds id="HIGH" percent="48.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:00:00Z" to="2018-02-17T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:00:00Z" to="2018-02-17T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T14:00:00Z" to="2018-02-17T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T11:00:00Z" to="2018-02-17T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T18:00:00Z" to="2018-02-17T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.8"/>
+            <windDirection id="dd" deg="130.2" name="SE"/>
+            <windSpeed id="ff" mps="0.5" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.2"/>
+            <areaMaxWindSpeed mps="4.4"/>
+            <humidity value="89.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.3"/>
+            <cloudiness id="NN" percent="78.2"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.2"/>
+            <mediumClouds id="MEDIUM" percent="22.1"/>
+            <highClouds id="HIGH" percent="73.5"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T17:00:00Z" to="2018-02-17T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:00:00Z" to="2018-02-17T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:00:00Z" to="2018-02-17T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T12:00:00Z" to="2018-02-17T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-3.8"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.6"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T19:00:00Z" to="2018-02-17T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.0"/>
+            <windDirection id="dd" deg="116.4" name="SE"/>
+            <windSpeed id="ff" mps="0.6" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="0.7"/>
+            <areaMaxWindSpeed mps="4.4"/>
+            <humidity value="92.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.3"/>
+            <cloudiness id="NN" percent="93.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.2"/>
+            <mediumClouds id="MEDIUM" percent="35.3"/>
+            <highClouds id="HIGH" percent="89.7"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T18:00:00Z" to="2018-02-17T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T17:00:00Z" to="2018-02-17T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:00:00Z" to="2018-02-17T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T13:00:00Z" to="2018-02-17T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.0"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.6"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T20:00:00Z" to="2018-02-17T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.4"/>
+            <windDirection id="dd" deg="119.4" name="SE"/>
+            <windSpeed id="ff" mps="0.8" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.3"/>
+            <areaMaxWindSpeed mps="4.2"/>
+            <humidity value="89.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.3"/>
+            <cloudiness id="NN" percent="92.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.1"/>
+            <mediumClouds id="MEDIUM" percent="43.0"/>
+            <highClouds id="HIGH" percent="84.2"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T19:00:00Z" to="2018-02-17T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T18:00:00Z" to="2018-02-17T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T17:00:00Z" to="2018-02-17T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T14:00:00Z" to="2018-02-17T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.4"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.6"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T21:00:00Z" to="2018-02-17T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.6"/>
+            <windDirection id="dd" deg="112.5" name="SE"/>
+            <windSpeed id="ff" mps="0.5" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="0.9"/>
+            <areaMaxWindSpeed mps="4.4"/>
+            <humidity value="92.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.3"/>
+            <cloudiness id="NN" percent="82.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.1"/>
+            <mediumClouds id="MEDIUM" percent="48.8"/>
+            <highClouds id="HIGH" percent="71.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T20:00:00Z" to="2018-02-17T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T19:00:00Z" to="2018-02-17T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T18:00:00Z" to="2018-02-17T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T15:00:00Z" to="2018-02-17T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.6"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.6"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T22:00:00Z" to="2018-02-17T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.7"/>
+            <windDirection id="dd" deg="164.3" name="S"/>
+            <windSpeed id="ff" mps="0.6" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="0.7"/>
+            <areaMaxWindSpeed mps="4.5"/>
+            <humidity value="94.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.4"/>
+            <cloudiness id="NN" percent="46.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="9.4"/>
+            <highClouds id="HIGH" percent="41.5"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T21:00:00Z" to="2018-02-17T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T20:00:00Z" to="2018-02-17T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T19:00:00Z" to="2018-02-17T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T16:00:00Z" to="2018-02-17T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.6"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T23:00:00Z" to="2018-02-17T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.5"/>
+            <windDirection id="dd" deg="139.8" name="SE"/>
+            <windSpeed id="ff" mps="0.7" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="0.9"/>
+            <areaMaxWindSpeed mps="4.7"/>
+            <humidity value="93.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.4"/>
+            <cloudiness id="NN" percent="30.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.2"/>
+            <mediumClouds id="MEDIUM" percent="10.0"/>
+            <highClouds id="HIGH" percent="22.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T22:00:00Z" to="2018-02-17T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T21:00:00Z" to="2018-02-17T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T20:00:00Z" to="2018-02-17T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T17:00:00Z" to="2018-02-17T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.8"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T00:00:00Z" to="2018-02-18T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.5"/>
+            <windDirection id="dd" deg="160.5" name="S"/>
+            <windSpeed id="ff" mps="1.0" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.2"/>
+            <areaMaxWindSpeed mps="4.5"/>
+            <humidity value="92.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.3"/>
+            <cloudiness id="NN" percent="57.9"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="7.3"/>
+            <mediumClouds id="MEDIUM" percent="36.7"/>
+            <highClouds id="HIGH" percent="31.2"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T23:00:00Z" to="2018-02-18T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T22:00:00Z" to="2018-02-18T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T21:00:00Z" to="2018-02-18T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T18:00:00Z" to="2018-02-18T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.8"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T01:00:00Z" to="2018-02-18T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.2"/>
+            <windDirection id="dd" deg="166.0" name="S"/>
+            <windSpeed id="ff" mps="0.8" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.3"/>
+            <areaMaxWindSpeed mps="3.8"/>
+            <humidity value="90.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.0"/>
+            <cloudiness id="NN" percent="86.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="37.4"/>
+            <mediumClouds id="MEDIUM" percent="68.6"/>
+            <highClouds id="HIGH" percent="26.4"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T00:00:00Z" to="2018-02-18T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T23:00:00Z" to="2018-02-18T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T22:00:00Z" to="2018-02-18T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T19:00:00Z" to="2018-02-18T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T02:00:00Z" to="2018-02-18T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.4"/>
+            <windDirection id="dd" deg="155.7" name="SE"/>
+            <windSpeed id="ff" mps="0.7" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.1"/>
+            <areaMaxWindSpeed mps="3.4"/>
+            <humidity value="93.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.9"/>
+            <cloudiness id="NN" percent="91.3"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="55.2"/>
+            <mediumClouds id="MEDIUM" percent="72.4"/>
+            <highClouds id="HIGH" percent="42.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T01:00:00Z" to="2018-02-18T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T00:00:00Z" to="2018-02-18T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T23:00:00Z" to="2018-02-18T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T20:00:00Z" to="2018-02-18T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T03:00:00Z" to="2018-02-18T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.4"/>
+            <windDirection id="dd" deg="120.7" name="SE"/>
+            <windSpeed id="ff" mps="0.9" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.1"/>
+            <areaMaxWindSpeed mps="3.1"/>
+            <humidity value="91.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.6"/>
+            <cloudiness id="NN" percent="96.7"/>
+            <fog id="FOG" percent="0.3"/>
+            <lowClouds id="LOW" percent="81.0"/>
+            <mediumClouds id="MEDIUM" percent="76.7"/>
+            <highClouds id="HIGH" percent="31.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T02:00:00Z" to="2018-02-18T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T01:00:00Z" to="2018-02-18T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T00:00:00Z" to="2018-02-18T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T21:00:00Z" to="2018-02-18T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T04:00:00Z" to="2018-02-18T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.6"/>
+            <windDirection id="dd" deg="106.5" name="E"/>
+            <windSpeed id="ff" mps="0.9" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.1"/>
+            <areaMaxWindSpeed mps="2.9"/>
+            <humidity value="97.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.3"/>
+            <cloudiness id="NN" percent="99.4"/>
+            <fog id="FOG" percent="0.8"/>
+            <lowClouds id="LOW" percent="94.9"/>
+            <mediumClouds id="MEDIUM" percent="96.5"/>
+            <highClouds id="HIGH" percent="32.5"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T03:00:00Z" to="2018-02-18T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T02:00:00Z" to="2018-02-18T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T01:00:00Z" to="2018-02-18T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T22:00:00Z" to="2018-02-18T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T05:00:00Z" to="2018-02-18T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.7"/>
+            <windDirection id="dd" deg="103.2" name="E"/>
+            <windSpeed id="ff" mps="1.1" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.4"/>
+            <areaMaxWindSpeed mps="2.6"/>
+            <humidity value="95.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.2"/>
+            <cloudiness id="NN" percent="100.0"/>
+            <fog id="FOG" percent="1.2"/>
+            <lowClouds id="LOW" percent="99.7"/>
+            <mediumClouds id="MEDIUM" percent="100.0"/>
+            <highClouds id="HIGH" percent="34.1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T04:00:00Z" to="2018-02-18T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T03:00:00Z" to="2018-02-18T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.5"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T02:00:00Z" to="2018-02-18T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.5"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T23:00:00Z" to="2018-02-18T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.5"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T06:00:00Z" to="2018-02-18T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.7"/>
+            <windDirection id="dd" deg="119.0" name="SE"/>
+            <windSpeed id="ff" mps="1.1" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.6"/>
+            <areaMaxWindSpeed mps="2.7"/>
+            <humidity value="96.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.3"/>
+            <cloudiness id="NN" percent="100.0"/>
+            <fog id="FOG" percent="1.0"/>
+            <lowClouds id="LOW" percent="99.7"/>
+            <mediumClouds id="MEDIUM" percent="100.0"/>
+            <highClouds id="HIGH" percent="9.0"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T05:00:00Z" to="2018-02-18T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T04:00:00Z" to="2018-02-18T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.4" maxvalue="0.8"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T03:00:00Z" to="2018-02-18T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.7" minvalue="0.5" maxvalue="0.9"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T00:00:00Z" to="2018-02-18T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.7" minvalue="0.5" maxvalue="0.9"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="LightSnow" number="49"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T07:00:00Z" to="2018-02-18T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.3"/>
+            <windDirection id="dd" deg="120.7" name="SE"/>
+            <windSpeed id="ff" mps="1.0" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.4"/>
+            <areaMaxWindSpeed mps="3.2"/>
+            <humidity value="97.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.9"/>
+            <cloudiness id="NN" percent="100.0"/>
+            <fog id="FOG" percent="1.5"/>
+            <lowClouds id="LOW" percent="99.3"/>
+            <mediumClouds id="MEDIUM" percent="99.9"/>
+            <highClouds id="HIGH" percent="0.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T06:00:00Z" to="2018-02-18T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.1" maxvalue="0.3"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T05:00:00Z" to="2018-02-18T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.4" maxvalue="0.8"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T04:00:00Z" to="2018-02-18T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.9" minvalue="0.6" maxvalue="1.1"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T01:00:00Z" to="2018-02-18T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.0" minvalue="0.7" maxvalue="1.2"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T08:00:00Z" to="2018-02-18T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.2"/>
+            <windDirection id="dd" deg="121.1" name="SE"/>
+            <windSpeed id="ff" mps="1.1" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.5"/>
+            <areaMaxWindSpeed mps="2.9"/>
+            <humidity value="98.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.7"/>
+            <cloudiness id="NN" percent="100.0"/>
+            <fog id="FOG" percent="3.1"/>
+            <lowClouds id="LOW" percent="99.6"/>
+            <mediumClouds id="MEDIUM" percent="100.0"/>
+            <highClouds id="HIGH" percent="0.2"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T07:00:00Z" to="2018-02-18T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.2" maxvalue="0.3"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T06:00:00Z" to="2018-02-18T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.5" minvalue="0.3" maxvalue="0.6"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T05:00:00Z" to="2018-02-18T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.8" minvalue="0.6" maxvalue="1.0"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T02:00:00Z" to="2018-02-18T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.2" minvalue="0.9" maxvalue="1.5"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T09:00:00Z" to="2018-02-18T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.0"/>
+            <windDirection id="dd" deg="127.4" name="SE"/>
+            <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.6"/>
+            <areaMaxWindSpeed mps="2.3"/>
+            <humidity value="98.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.4"/>
+            <cloudiness id="NN" percent="99.5"/>
+            <fog id="FOG" percent="3.8"/>
+            <lowClouds id="LOW" percent="91.6"/>
+            <mediumClouds id="MEDIUM" percent="98.3"/>
+            <highClouds id="HIGH" percent="0.2"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T08:00:00Z" to="2018-02-18T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T07:00:00Z" to="2018-02-18T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.5" minvalue="0.3" maxvalue="0.7"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T06:00:00Z" to="2018-02-18T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.8" minvalue="0.5" maxvalue="1.0"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T03:00:00Z" to="2018-02-18T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.4" minvalue="1.0" maxvalue="1.9"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.0"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T10:00:00Z" to="2018-02-18T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.6"/>
+            <windDirection id="dd" deg="106.5" name="E"/>
+            <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.9"/>
+            <areaMaxWindSpeed mps="2.0"/>
+            <humidity value="97.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.3"/>
+            <cloudiness id="NN" percent="99.6"/>
+            <fog id="FOG" percent="1.5"/>
+            <lowClouds id="LOW" percent="65.7"/>
+            <mediumClouds id="MEDIUM" percent="99.5"/>
+            <highClouds id="HIGH" percent="0.1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T09:00:00Z" to="2018-02-18T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.1" minvalue="0.0" maxvalue="0.3"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T08:00:00Z" to="2018-02-18T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.2" maxvalue="0.6"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T07:00:00Z" to="2018-02-18T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.3" maxvalue="0.9"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T04:00:00Z" to="2018-02-18T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.5" minvalue="1.0" maxvalue="2.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.6"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T11:00:00Z" to="2018-02-18T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.1"/>
+            <windDirection id="dd" deg="105.1" name="E"/>
+            <windSpeed id="ff" mps="1.1" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.8"/>
+            <areaMaxWindSpeed mps="1.7"/>
+            <humidity value="96.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.2"/>
+            <cloudiness id="NN" percent="78.1"/>
+            <fog id="FOG" percent="0.9"/>
+            <lowClouds id="LOW" percent="44.9"/>
+            <mediumClouds id="MEDIUM" percent="73.1"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-3.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T10:00:00Z" to="2018-02-18T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T09:00:00Z" to="2018-02-18T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.3"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T08:00:00Z" to="2018-02-18T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.2" maxvalue="0.7"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T05:00:00Z" to="2018-02-18T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.2" minvalue="0.8" maxvalue="1.7"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.1"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T12:00:00Z" to="2018-02-18T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-2.7"/>
+            <windDirection id="dd" deg="159.9" name="S"/>
+            <windSpeed id="ff" mps="0.4" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.5"/>
+            <areaMaxWindSpeed mps="1.5"/>
+            <humidity value="98.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1020.7"/>
+            <cloudiness id="NN" percent="35.4"/>
+            <fog id="FOG" percent="6.0"/>
+            <lowClouds id="LOW" percent="32.0"/>
+            <mediumClouds id="MEDIUM" percent="3.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="0"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-3.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T11:00:00Z" to="2018-02-18T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T10:00:00Z" to="2018-02-18T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T09:00:00Z" to="2018-02-18T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.4"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T06:00:00Z" to="2018-02-18T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.9" minvalue="0.5" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.7"/>
+<symbol id="LightSnowSun" number="44"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T13:00:00Z" to="2018-02-18T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-2.3"/>
+            <windDirection id="dd" deg="133.3" name="SE"/>
+            <windSpeed id="ff" mps="0.4" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.2"/>
+            <areaMaxWindSpeed mps="1.3"/>
+            <humidity value="94.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1020.4"/>
+            <cloudiness id="NN" percent="47.6"/>
+            <fog id="FOG" percent="0.2"/>
+            <lowClouds id="LOW" percent="38.6"/>
+            <mediumClouds id="MEDIUM" percent="12.2"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-3.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T12:00:00Z" to="2018-02-18T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T11:00:00Z" to="2018-02-18T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T10:00:00Z" to="2018-02-18T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T07:00:00Z" to="2018-02-18T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.7" minvalue="0.3" maxvalue="1.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.3"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.3"/>
+<symbol id="LightSnowSun" number="44"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T14:00:00Z" to="2018-02-18T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-2.2"/>
+            <windDirection id="dd" deg="132.6" name="SE"/>
+            <windSpeed id="ff" mps="0.9" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.7"/>
+            <areaMaxWindSpeed mps="1.7"/>
+            <humidity value="94.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1020.2"/>
+            <cloudiness id="NN" percent="74.4"/>
+            <fog id="FOG" percent="0.2"/>
+            <lowClouds id="LOW" percent="54.6"/>
+            <mediumClouds id="MEDIUM" percent="43.5"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-3.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T13:00:00Z" to="2018-02-18T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T12:00:00Z" to="2018-02-18T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T11:00:00Z" to="2018-02-18T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T08:00:00Z" to="2018-02-18T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.7"/>
+<minTemperature id="TTT" unit="celsius" value="-4.2"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T15:00:00Z" to="2018-02-18T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-2.3"/>
+            <windDirection id="dd" deg="100.2" name="E"/>
+            <windSpeed id="ff" mps="0.9" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.7"/>
+            <areaMaxWindSpeed mps="1.8"/>
+            <humidity value="98.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1020.3"/>
+            <cloudiness id="NN" percent="85.4"/>
+            <fog id="FOG" percent="2.2"/>
+            <lowClouds id="LOW" percent="71.0"/>
+            <mediumClouds id="MEDIUM" percent="52.9"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-2.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T14:00:00Z" to="2018-02-18T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T13:00:00Z" to="2018-02-18T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T12:00:00Z" to="2018-02-18T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T09:00:00Z" to="2018-02-18T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.4"/>
+<minTemperature id="TTT" unit="celsius" value="-4.0"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T16:00:00Z" to="2018-02-18T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-2.5"/>
+            <windDirection id="dd" deg="80.6" name="E"/>
+            <windSpeed id="ff" mps="0.9" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.3"/>
+            <areaMaxWindSpeed mps="2.0"/>
+            <humidity value="93.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1020.6"/>
+            <cloudiness id="NN" percent="89.3"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="78.8"/>
+            <mediumClouds id="MEDIUM" percent="47.7"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-3.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T15:00:00Z" to="2018-02-18T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T14:00:00Z" to="2018-02-18T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T13:00:00Z" to="2018-02-18T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T10:00:00Z" to="2018-02-18T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-3.6"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T17:00:00Z" to="2018-02-18T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-2.9"/>
+            <windDirection id="dd" deg="84.1" name="E"/>
+            <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="1.6"/>
+            <areaMaxWindSpeed mps="2.5"/>
+            <humidity value="92.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1020.6"/>
+            <cloudiness id="NN" percent="68.1"/>
+            <fog id="FOG" percent="0.2"/>
+            <lowClouds id="LOW" percent="60.9"/>
+            <mediumClouds id="MEDIUM" percent="17.9"/>
+            <highClouds id="HIGH" percent="0.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T16:00:00Z" to="2018-02-18T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T15:00:00Z" to="2018-02-18T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T14:00:00Z" to="2018-02-18T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T11:00:00Z" to="2018-02-18T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-3.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T18:00:00Z" to="2018-02-18T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.5"/>
+            <windDirection id="dd" deg="87.9" name="E"/>
+            <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.7"/>
+            <areaMaxWindSpeed mps="2.7"/>
+            <humidity value="100.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1020.6"/>
+            <cloudiness id="NN" percent="74.0"/>
+            <fog id="FOG" percent="90.2"/>
+            <lowClouds id="LOW" percent="63.0"/>
+            <mediumClouds id="MEDIUM" percent="10.9"/>
+            <highClouds id="HIGH" percent="4.9"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-3.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T17:00:00Z" to="2018-02-18T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T16:00:00Z" to="2018-02-18T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T15:00:00Z" to="2018-02-18T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T12:00:00Z" to="2018-02-18T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-3.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.2"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T19:00:00Z" to="2018-02-18T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.0"/>
+            <windDirection id="dd" deg="82.2" name="E"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.6"/>
+            <areaMaxWindSpeed mps="2.6"/>
+            <humidity value="100.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1020.9"/>
+            <cloudiness id="NN" percent="86.1"/>
+            <fog id="FOG" percent="99.6"/>
+            <lowClouds id="LOW" percent="79.5"/>
+            <mediumClouds id="MEDIUM" percent="4.4"/>
+            <highClouds id="HIGH" percent="12.7"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T18:00:00Z" to="2018-02-18T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T17:00:00Z" to="2018-02-18T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T16:00:00Z" to="2018-02-18T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T13:00:00Z" to="2018-02-18T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-4.0"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T20:00:00Z" to="2018-02-18T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.1"/>
+            <windDirection id="dd" deg="62.3" name="NE"/>
+            <windSpeed id="ff" mps="1.6" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.3"/>
+            <areaMaxWindSpeed mps="3.1"/>
+            <humidity value="100.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.0"/>
+            <cloudiness id="NN" percent="85.0"/>
+            <fog id="FOG" percent="93.3"/>
+            <lowClouds id="LOW" percent="79.4"/>
+            <mediumClouds id="MEDIUM" percent="2.0"/>
+            <highClouds id="HIGH" percent="19.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T19:00:00Z" to="2018-02-18T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T18:00:00Z" to="2018-02-18T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T17:00:00Z" to="2018-02-18T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T14:00:00Z" to="2018-02-18T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-4.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.2"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T21:00:00Z" to="2018-02-18T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.0"/>
+            <windDirection id="dd" deg="56.7" name="NE"/>
+            <windSpeed id="ff" mps="2.4" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="3.1"/>
+            <areaMaxWindSpeed mps="3.1"/>
+            <humidity value="99.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.2"/>
+            <cloudiness id="NN" percent="78.3"/>
+            <fog id="FOG" percent="86.7"/>
+            <lowClouds id="LOW" percent="75.1"/>
+            <mediumClouds id="MEDIUM" percent="1.6"/>
+            <highClouds id="HIGH" percent="11.4"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T20:00:00Z" to="2018-02-18T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T19:00:00Z" to="2018-02-18T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T18:00:00Z" to="2018-02-18T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T15:00:00Z" to="2018-02-18T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-4.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.3"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T22:00:00Z" to="2018-02-18T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.9"/>
+            <windDirection id="dd" deg="57.7" name="NE"/>
+            <windSpeed id="ff" mps="2.4" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="3.2"/>
+            <areaMaxWindSpeed mps="2.7"/>
+            <humidity value="99.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.6"/>
+            <cloudiness id="NN" percent="76.2"/>
+            <fog id="FOG" percent="22.4"/>
+            <lowClouds id="LOW" percent="75.7"/>
+            <mediumClouds id="MEDIUM" percent="2.7"/>
+            <highClouds id="HIGH" percent="0.1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T21:00:00Z" to="2018-02-18T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T20:00:00Z" to="2018-02-18T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T19:00:00Z" to="2018-02-18T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T16:00:00Z" to="2018-02-18T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-4.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.5"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T23:00:00Z" to="2018-02-18T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.0"/>
+            <windDirection id="dd" deg="53.1" name="NE"/>
+            <windSpeed id="ff" mps="2.4" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="3.3"/>
+            <areaMaxWindSpeed mps="2.8"/>
+            <humidity value="98.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.9"/>
+            <cloudiness id="NN" percent="82.8"/>
+            <fog id="FOG" percent="6.6"/>
+            <lowClouds id="LOW" percent="81.5"/>
+            <mediumClouds id="MEDIUM" percent="7.6"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T22:00:00Z" to="2018-02-18T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T21:00:00Z" to="2018-02-18T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T20:00:00Z" to="2018-02-18T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T17:00:00Z" to="2018-02-18T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-4.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.9"/>
+<symbol id="Fog" number="15"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T00:00:00Z" to="2018-02-19T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.2"/>
+            <windDirection id="dd" deg="40.6" name="NE"/>
+            <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="3.0"/>
+            <areaMaxWindSpeed mps="2.7"/>
+            <humidity value="97.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.9"/>
+            <cloudiness id="NN" percent="79.4"/>
+            <fog id="FOG" percent="1.0"/>
+            <lowClouds id="LOW" percent="76.3"/>
+            <mediumClouds id="MEDIUM" percent="8.5"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-4.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T23:00:00Z" to="2018-02-19T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T22:00:00Z" to="2018-02-19T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T21:00:00Z" to="2018-02-19T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T18:00:00Z" to="2018-02-19T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.2"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.5"/>
+<symbol id="Fog" number="15"/>
+<symbolProbability unit="probabilitycode" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T01:00:00Z" to="2018-02-19T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.5"/>
+            <windDirection id="dd" deg="31.0" name="NE"/>
+            <windSpeed id="ff" mps="1.6" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.3"/>
+            <areaMaxWindSpeed mps="2.6"/>
+            <humidity value="95.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.7"/>
+            <cloudiness id="NN" percent="76.3"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="74.3"/>
+            <mediumClouds id="MEDIUM" percent="7.3"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T00:00:00Z" to="2018-02-19T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T23:00:00Z" to="2018-02-19T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T22:00:00Z" to="2018-02-19T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T19:00:00Z" to="2018-02-19T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.9"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T02:00:00Z" to="2018-02-19T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.8"/>
+            <windDirection id="dd" deg="27.6" name="NE"/>
+            <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.5"/>
+            <areaMaxWindSpeed mps="2.8"/>
+            <humidity value="93.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.6"/>
+            <cloudiness id="NN" percent="73.7"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="72.4"/>
+            <mediumClouds id="MEDIUM" percent="5.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T01:00:00Z" to="2018-02-19T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T00:00:00Z" to="2018-02-19T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T23:00:00Z" to="2018-02-19T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T20:00:00Z" to="2018-02-19T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.8"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.9"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T03:00:00Z" to="2018-02-19T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.0"/>
+            <windDirection id="dd" deg="25.6" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.8"/>
+            <areaMaxWindSpeed mps="3.7"/>
+            <humidity value="92.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1021.8"/>
+            <cloudiness id="NN" percent="82.2"/>
+            <fog id="FOG" percent="0.1"/>
+            <lowClouds id="LOW" percent="80.9"/>
+            <mediumClouds id="MEDIUM" percent="8.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T02:00:00Z" to="2018-02-19T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T01:00:00Z" to="2018-02-19T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T00:00:00Z" to="2018-02-19T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T21:00:00Z" to="2018-02-19T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-5.0"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.9"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T04:00:00Z" to="2018-02-19T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.3"/>
+            <windDirection id="dd" deg="21.7" name="N"/>
+            <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="3.2"/>
+            <areaMaxWindSpeed mps="4.3"/>
+            <humidity value="92.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.0"/>
+            <cloudiness id="NN" percent="87.8"/>
+            <fog id="FOG" percent="0.2"/>
+            <lowClouds id="LOW" percent="85.2"/>
+            <mediumClouds id="MEDIUM" percent="12.3"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T03:00:00Z" to="2018-02-19T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T02:00:00Z" to="2018-02-19T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T01:00:00Z" to="2018-02-19T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T22:00:00Z" to="2018-02-19T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-5.3"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.9"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T05:00:00Z" to="2018-02-19T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.4"/>
+            <windDirection id="dd" deg="21.7" name="N"/>
+            <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="4.0"/>
+            <areaMaxWindSpeed mps="5.1"/>
+            <humidity value="93.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.1"/>
+            <cloudiness id="NN" percent="90.8"/>
+            <fog id="FOG" percent="0.2"/>
+            <lowClouds id="LOW" percent="87.7"/>
+            <mediumClouds id="MEDIUM" percent="25.2"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T04:00:00Z" to="2018-02-19T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T03:00:00Z" to="2018-02-19T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T02:00:00Z" to="2018-02-19T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T23:00:00Z" to="2018-02-19T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-5.4"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T06:00:00Z" to="2018-02-19T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.5"/>
+            <windDirection id="dd" deg="10.4" name="N"/>
+            <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="4.0"/>
+            <areaMaxWindSpeed mps="5.4"/>
+            <humidity value="93.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.4"/>
+            <cloudiness id="NN" percent="96.9"/>
+            <fog id="FOG" percent="0.3"/>
+            <lowClouds id="LOW" percent="94.8"/>
+            <mediumClouds id="MEDIUM" percent="46.5"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T05:00:00Z" to="2018-02-19T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T04:00:00Z" to="2018-02-19T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T03:00:00Z" to="2018-02-19T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T00:00:00Z" to="2018-02-19T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<minTemperature id="TTT" unit="celsius" value="-5.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T07:00:00Z" to="2018-02-19T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.3"/>
+            <windDirection id="dd" deg="10.8" name="N"/>
+            <windSpeed id="ff" mps="2.8" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="3.7"/>
+            <areaMaxWindSpeed mps="5.6"/>
+            <humidity value="93.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1022.7"/>
+            <cloudiness id="NN" percent="99.0"/>
+            <fog id="FOG" percent="0.4"/>
+            <lowClouds id="LOW" percent="97.8"/>
+            <mediumClouds id="MEDIUM" percent="60.4"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T06:00:00Z" to="2018-02-19T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T05:00:00Z" to="2018-02-19T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T04:00:00Z" to="2018-02-19T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T01:00:00Z" to="2018-02-19T07:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<minTemperature id="TTT" unit="celsius" value="-5.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.5"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T08:00:00Z" to="2018-02-19T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.1"/>
+            <windDirection id="dd" deg="23.2" name="NE"/>
+            <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="4.2"/>
+            <areaMaxWindSpeed mps="6.1"/>
+            <humidity value="94.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.1"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="0.4"/>
+            <lowClouds id="LOW" percent="99.8"/>
+            <mediumClouds id="MEDIUM" percent="67.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T07:00:00Z" to="2018-02-19T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T06:00:00Z" to="2018-02-19T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T05:00:00Z" to="2018-02-19T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T02:00:00Z" to="2018-02-19T08:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.3"/>
+<minTemperature id="TTT" unit="celsius" value="-5.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.8"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T09:00:00Z" to="2018-02-19T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.7"/>
+            <windDirection id="dd" deg="33.5" name="NE"/>
+            <windSpeed id="ff" mps="4.4" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="6.3"/>
+            <areaMaxWindSpeed mps="6.1"/>
+            <humidity value="95.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1023.5"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="1.1"/>
+            <lowClouds id="LOW" percent="99.8"/>
+            <mediumClouds id="MEDIUM" percent="68.1"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T08:00:00Z" to="2018-02-19T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.1" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T07:00:00Z" to="2018-02-19T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T06:00:00Z" to="2018-02-19T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.3"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T03:00:00Z" to="2018-02-19T09:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.4"/>
+<minTemperature id="TTT" unit="celsius" value="-5.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.7"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T10:00:00Z" to="2018-02-19T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.4"/>
+            <windDirection id="dd" deg="40.7" name="NE"/>
+            <windSpeed id="ff" mps="5.4" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="7.9"/>
+            <areaMaxWindSpeed mps="7.2"/>
+            <humidity value="95.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1024.0"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="0.8"/>
+            <lowClouds id="LOW" percent="99.8"/>
+            <mediumClouds id="MEDIUM" percent="50.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T09:00:00Z" to="2018-02-19T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T08:00:00Z" to="2018-02-19T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T07:00:00Z" to="2018-02-19T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T04:00:00Z" to="2018-02-19T10:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.6"/>
+<minTemperature id="TTT" unit="celsius" value="-5.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.4"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T11:00:00Z" to="2018-02-19T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.4"/>
+            <windDirection id="dd" deg="40.6" name="NE"/>
+            <windSpeed id="ff" mps="5.7" beaufort="4" name="Laber bris"/>
+            <windGust id="ff_gust" mps="8.4"/>
+            <areaMaxWindSpeed mps="7.1"/>
+            <humidity value="95.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1024.6"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="2.4"/>
+            <lowClouds id="LOW" percent="99.9"/>
+            <mediumClouds id="MEDIUM" percent="41.6"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T10:00:00Z" to="2018-02-19T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.2" maxvalue="0.3"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T09:00:00Z" to="2018-02-19T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.5"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T08:00:00Z" to="2018-02-19T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.5" minvalue="0.4" maxvalue="0.6"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T05:00:00Z" to="2018-02-19T11:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.7" minvalue="0.5" maxvalue="0.8"/>
+<minTemperature id="TTT" unit="celsius" value="-5.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T12:00:00Z" to="2018-02-19T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.3"/>
+            <windDirection id="dd" deg="39.8" name="NE"/>
+            <windSpeed id="ff" mps="5.3" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="8.2"/>
+            <areaMaxWindSpeed mps="6.9"/>
+            <humidity value="95.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1025.0"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="3.0"/>
+            <lowClouds id="LOW" percent="99.8"/>
+            <mediumClouds id="MEDIUM" percent="21.9"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="0"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T11:00:00Z" to="2018-02-19T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.2" maxvalue="0.3"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T10:00:00Z" to="2018-02-19T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.5"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T09:00:00Z" to="2018-02-19T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.5" maxvalue="0.7"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T06:00:00Z" to="2018-02-19T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.8" minvalue="0.7" maxvalue="1.0"/>
+<minTemperature id="TTT" unit="celsius" value="-5.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="LightSnow" number="49"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T13:00:00Z" to="2018-02-19T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.3"/>
+            <windDirection id="dd" deg="40.8" name="NE"/>
+            <windSpeed id="ff" mps="5.0" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="7.7"/>
+            <areaMaxWindSpeed mps="6.4"/>
+            <humidity value="96.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1025.2"/>
+            <cloudiness id="NN" percent="99.7"/>
+            <fog id="FOG" percent="3.8"/>
+            <lowClouds id="LOW" percent="99.7"/>
+            <mediumClouds id="MEDIUM" percent="10.3"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T12:00:00Z" to="2018-02-19T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T11:00:00Z" to="2018-02-19T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.5"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T10:00:00Z" to="2018-02-19T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.5" maxvalue="0.7"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T07:00:00Z" to="2018-02-19T13:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.0" minvalue="0.8" maxvalue="1.2"/>
+<minTemperature id="TTT" unit="celsius" value="-5.3"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T14:00:00Z" to="2018-02-19T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.4"/>
+            <windDirection id="dd" deg="44.5" name="NE"/>
+            <windSpeed id="ff" mps="4.9" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="7.4"/>
+            <areaMaxWindSpeed mps="6.4"/>
+            <humidity value="96.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1025.4"/>
+            <cloudiness id="NN" percent="99.6"/>
+            <fog id="FOG" percent="4.1"/>
+            <lowClouds id="LOW" percent="99.6"/>
+            <mediumClouds id="MEDIUM" percent="2.5"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T13:00:00Z" to="2018-02-19T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T12:00:00Z" to="2018-02-19T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.3" maxvalue="0.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T11:00:00Z" to="2018-02-19T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.4" maxvalue="0.7"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T08:00:00Z" to="2018-02-19T14:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.1" minvalue="0.8" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-5.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T15:00:00Z" to="2018-02-19T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.5"/>
+            <windDirection id="dd" deg="50.3" name="NE"/>
+            <windSpeed id="ff" mps="4.6" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="7.2"/>
+            <areaMaxWindSpeed mps="6.5"/>
+            <humidity value="97.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1026.0"/>
+            <cloudiness id="NN" percent="99.6"/>
+            <fog id="FOG" percent="5.7"/>
+            <lowClouds id="LOW" percent="99.5"/>
+            <mediumClouds id="MEDIUM" percent="1.2"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T14:00:00Z" to="2018-02-19T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.1" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T13:00:00Z" to="2018-02-19T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T12:00:00Z" to="2018-02-19T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.5" minvalue="0.4" maxvalue="0.6"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T09:00:00Z" to="2018-02-19T15:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.1" minvalue="0.8" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T16:00:00Z" to="2018-02-19T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.7"/>
+            <windDirection id="dd" deg="52.8" name="NE"/>
+            <windSpeed id="ff" mps="4.4" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="6.8"/>
+            <areaMaxWindSpeed mps="5.9"/>
+            <humidity value="98.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1026.5"/>
+            <cloudiness id="NN" percent="99.6"/>
+            <fog id="FOG" percent="7.6"/>
+            <lowClouds id="LOW" percent="99.6"/>
+            <mediumClouds id="MEDIUM" percent="1.6"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T15:00:00Z" to="2018-02-19T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.1" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T14:00:00Z" to="2018-02-19T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T13:00:00Z" to="2018-02-19T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.6"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T10:00:00Z" to="2018-02-19T16:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.0" minvalue="0.8" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-4.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T17:00:00Z" to="2018-02-19T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.9"/>
+            <windDirection id="dd" deg="58.6" name="NE"/>
+            <windSpeed id="ff" mps="4.1" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="6.4"/>
+            <areaMaxWindSpeed mps="5.0"/>
+            <humidity value="98.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.0"/>
+            <cloudiness id="NN" percent="99.8"/>
+            <fog id="FOG" percent="8.6"/>
+            <lowClouds id="LOW" percent="99.8"/>
+            <mediumClouds id="MEDIUM" percent="1.9"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T16:00:00Z" to="2018-02-19T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T15:00:00Z" to="2018-02-19T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T14:00:00Z" to="2018-02-19T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.6"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T11:00:00Z" to="2018-02-19T17:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.0" minvalue="0.8" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-4.9"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T18:00:00Z" to="2018-02-19T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.2"/>
+            <windDirection id="dd" deg="57.5" name="NE"/>
+            <windSpeed id="ff" mps="4.2" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="6.3"/>
+            <areaMaxWindSpeed mps="5.1"/>
+            <humidity value="98.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.5"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="9.2"/>
+            <lowClouds id="LOW" percent="99.9"/>
+            <mediumClouds id="MEDIUM" percent="0.7"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="0"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T17:00:00Z" to="2018-02-19T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T16:00:00Z" to="2018-02-19T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.2" maxvalue="0.5"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T15:00:00Z" to="2018-02-19T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.5" minvalue="0.4" maxvalue="0.6"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T12:00:00Z" to="2018-02-19T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.0" minvalue="0.7" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-5.2"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="Snow" number="13"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T19:00:00Z" to="2018-02-19T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.7"/>
+            <windDirection id="dd" deg="57.4" name="NE"/>
+            <windSpeed id="ff" mps="4.2" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="6.3"/>
+            <areaMaxWindSpeed mps="4.7"/>
+            <humidity value="97.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1028.0"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="7.6"/>
+            <lowClouds id="LOW" percent="99.9"/>
+            <mediumClouds id="MEDIUM" percent="0.2"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T18:00:00Z" to="2018-02-19T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T17:00:00Z" to="2018-02-19T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.5"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T16:00:00Z" to="2018-02-19T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.4" maxvalue="0.7"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T13:00:00Z" to="2018-02-19T19:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.0" minvalue="0.7" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-5.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T20:00:00Z" to="2018-02-19T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.1"/>
+            <windDirection id="dd" deg="56.8" name="NE"/>
+            <windSpeed id="ff" mps="4.0" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="6.1"/>
+            <areaMaxWindSpeed mps="4.4"/>
+            <humidity value="97.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1028.4"/>
+            <cloudiness id="NN" percent="100.0"/>
+            <fog id="FOG" percent="7.0"/>
+            <lowClouds id="LOW" percent="100.0"/>
+            <mediumClouds id="MEDIUM" percent="0.1"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T19:00:00Z" to="2018-02-19T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T18:00:00Z" to="2018-02-19T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.5"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T17:00:00Z" to="2018-02-19T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.4" maxvalue="0.7"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T14:00:00Z" to="2018-02-19T20:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.0" minvalue="0.7" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-6.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.4"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T21:00:00Z" to="2018-02-19T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.4"/>
+            <windDirection id="dd" deg="57.1" name="NE"/>
+            <windSpeed id="ff" mps="3.6" beaufort="3" name="Lett bris"/>
+            <windGust id="ff_gust" mps="5.8"/>
+            <areaMaxWindSpeed mps="4.3"/>
+            <humidity value="97.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1028.8"/>
+            <cloudiness id="NN" percent="100.0"/>
+            <fog id="FOG" percent="7.2"/>
+            <lowClouds id="LOW" percent="100.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T20:00:00Z" to="2018-02-19T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T19:00:00Z" to="2018-02-19T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.5"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T18:00:00Z" to="2018-02-19T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.4" maxvalue="0.7"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T15:00:00Z" to="2018-02-19T21:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.1" minvalue="0.8" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-6.4"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.5"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T22:00:00Z" to="2018-02-19T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.7"/>
+            <windDirection id="dd" deg="57.7" name="NE"/>
+            <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="5.1"/>
+            <areaMaxWindSpeed mps="4.2"/>
+            <humidity value="97.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.0"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="7.1"/>
+            <lowClouds id="LOW" percent="99.9"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T21:00:00Z" to="2018-02-19T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.1" minvalue="0.1" maxvalue="0.2"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T20:00:00Z" to="2018-02-19T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T19:00:00Z" to="2018-02-19T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.5" minvalue="0.4" maxvalue="0.6"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T16:00:00Z" to="2018-02-19T22:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.1" minvalue="0.8" maxvalue="1.3"/>
+<minTemperature id="TTT" unit="celsius" value="-6.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.7"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T23:00:00Z" to="2018-02-19T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.9"/>
+            <windDirection id="dd" deg="58.8" name="NE"/>
+            <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="4.5"/>
+            <areaMaxWindSpeed mps="4.4"/>
+            <humidity value="97.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.1"/>
+            <cloudiness id="NN" percent="99.2"/>
+            <fog id="FOG" percent="6.0"/>
+            <lowClouds id="LOW" percent="99.2"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T22:00:00Z" to="2018-02-19T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.1" minvalue="0.1" maxvalue="0.1"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T21:00:00Z" to="2018-02-19T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.2" minvalue="0.2" maxvalue="0.3"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T20:00:00Z" to="2018-02-19T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.4" minvalue="0.3" maxvalue="0.5"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T17:00:00Z" to="2018-02-19T23:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="1.0" minvalue="0.8" maxvalue="1.2"/>
+<minTemperature id="TTT" unit="celsius" value="-6.9"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.9"/>
+<symbol id="Snow" number="13"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T00:00:00Z" to="2018-02-20T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.1"/>
+            <windDirection id="dd" deg="51.1" name="NE"/>
+            <windSpeed id="ff" mps="2.4" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="4.2"/>
+            <areaMaxWindSpeed mps="3.5"/>
+            <humidity value="97.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.2"/>
+            <cloudiness id="NN" percent="99.7"/>
+            <fog id="FOG" percent="5.5"/>
+            <lowClouds id="LOW" percent="99.6"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="0"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T23:00:00Z" to="2018-02-20T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T22:00:00Z" to="2018-02-20T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T21:00:00Z" to="2018-02-20T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.3" minvalue="0.3" maxvalue="0.4"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T18:00:00Z" to="2018-02-20T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.9" minvalue="0.7" maxvalue="1.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-5.2"/>
+<symbol id="LightSnow" number="49"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T01:00:00Z" to="2018-02-20T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.2"/>
+            <windDirection id="dd" deg="51.6" name="NE"/>
+            <windSpeed id="ff" mps="2.4" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="3.5"/>
+            <areaMaxWindSpeed mps="3.1"/>
+            <humidity value="97.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.2"/>
+            <cloudiness id="NN" percent="99.8"/>
+            <fog id="FOG" percent="4.7"/>
+            <lowClouds id="LOW" percent="99.8"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T00:00:00Z" to="2018-02-20T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T23:00:00Z" to="2018-02-20T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T22:00:00Z" to="2018-02-20T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.3"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T19:00:00Z" to="2018-02-20T01:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.7" minvalue="0.6" maxvalue="0.9"/>
+<minTemperature id="TTT" unit="celsius" value="-7.2"/>
+<maxTemperature id="TTT" unit="celsius" value="-5.7"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T02:00:00Z" to="2018-02-20T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.2"/>
+            <windDirection id="dd" deg="57.6" name="NE"/>
+            <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="3.3"/>
+            <areaMaxWindSpeed mps="2.6"/>
+            <humidity value="96.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.0"/>
+            <cloudiness id="NN" percent="99.9"/>
+            <fog id="FOG" percent="4.0"/>
+            <lowClouds id="LOW" percent="99.9"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T01:00:00Z" to="2018-02-20T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T00:00:00Z" to="2018-02-20T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T23:00:00Z" to="2018-02-20T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T20:00:00Z" to="2018-02-20T02:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.6" minvalue="0.5" maxvalue="0.7"/>
+<minTemperature id="TTT" unit="celsius" value="-7.2"/>
+<maxTemperature id="TTT" unit="celsius" value="-6.1"/>
+<symbol id="LightSnow" number="49"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T03:00:00Z" to="2018-02-20T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.4"/>
+            <windDirection id="dd" deg="63.7" name="NE"/>
+            <windSpeed id="ff" mps="2.0" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.9"/>
+            <areaMaxWindSpeed mps="2.1"/>
+            <humidity value="96.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1028.9"/>
+            <cloudiness id="NN" percent="99.7"/>
+            <fog id="FOG" percent="3.2"/>
+            <lowClouds id="LOW" percent="99.7"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T02:00:00Z" to="2018-02-20T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T01:00:00Z" to="2018-02-20T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T00:00:00Z" to="2018-02-20T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T21:00:00Z" to="2018-02-20T03:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.5"/>
+<minTemperature id="TTT" unit="celsius" value="-7.4"/>
+<maxTemperature id="TTT" unit="celsius" value="-6.4"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T04:00:00Z" to="2018-02-20T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.6"/>
+            <windDirection id="dd" deg="69.9" name="E"/>
+            <windSpeed id="ff" mps="2.0" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.7"/>
+            <areaMaxWindSpeed mps="2.3"/>
+            <humidity value="95.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1028.8"/>
+            <cloudiness id="NN" percent="90.5"/>
+            <fog id="FOG" percent="1.6"/>
+            <lowClouds id="LOW" percent="90.3"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T03:00:00Z" to="2018-02-20T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T02:00:00Z" to="2018-02-20T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T01:00:00Z" to="2018-02-20T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T22:00:00Z" to="2018-02-20T04:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.4"/>
+<minTemperature id="TTT" unit="celsius" value="-7.6"/>
+<maxTemperature id="TTT" unit="celsius" value="-6.7"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T05:00:00Z" to="2018-02-20T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.8"/>
+            <windDirection id="dd" deg="84.4" name="E"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <windGust id="ff_gust" mps="2.4"/>
+            <areaMaxWindSpeed mps="2.3"/>
+            <humidity value="95.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1028.9"/>
+            <cloudiness id="NN" percent="83.1"/>
+            <fog id="FOG" percent="1.0"/>
+            <lowClouds id="LOW" percent="82.7"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T04:00:00Z" to="2018-02-20T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T03:00:00Z" to="2018-02-20T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T02:00:00Z" to="2018-02-20T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T23:00:00Z" to="2018-02-20T05:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.3"/>
+<minTemperature id="TTT" unit="celsius" value="-7.8"/>
+<maxTemperature id="TTT" unit="celsius" value="-6.9"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T06:00:00Z" to="2018-02-20T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-8.0"/>
+            <windDirection id="dd" deg="90.4" name="E"/>
+            <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"/>
+            <windGust id="ff_gust" mps="2.1"/>
+            <areaMaxWindSpeed mps="2.3"/>
+            <humidity value="96.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.0"/>
+            <cloudiness id="NN" percent="73.1"/>
+            <fog id="FOG" percent="1.4"/>
+            <lowClouds id="LOW" percent="71.7"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="0"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T05:00:00Z" to="2018-02-20T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T04:00:00Z" to="2018-02-20T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T03:00:00Z" to="2018-02-20T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.1"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T00:00:00Z" to="2018-02-20T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.3"/>
+<minTemperature id="TTT" unit="celsius" value="-8.0"/>
+<maxTemperature id="TTT" unit="celsius" value="-7.1"/>
+<symbol id="Cloud" number="4"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T12:00:00Z" to="2018-02-20T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-2.3"/>
+            <windDirection id="dd" deg="147.5" name="SE"/>
+            <windSpeed id="ff" mps="0.9" beaufort="1" name="Flau vind"/>
+            <humidity value="74.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.8"/>
+            <cloudiness id="NN" percent="81.2"/>
+            <lowClouds id="LOW" percent="75.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T06:00:00Z" to="2018-02-20T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-5.2"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.3"/>
+<symbol id="Cloud" number="4"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T18:00:00Z" to="2018-02-20T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.4"/>
+            <windDirection id="dd" deg="132.1" name="SE"/>
+            <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"/>
+            <humidity value="83.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.4"/>
+            <cloudiness id="NN" percent="84.4"/>
+            <lowClouds id="LOW" percent="2.3"/>
+            <mediumClouds id="MEDIUM" percent="8.6"/>
+            <highClouds id="HIGH" percent="77.3"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T12:00:00Z" to="2018-02-20T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-5.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-1.6"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T00:00:00Z" to="2018-02-21T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.7"/>
+            <windDirection id="dd" deg="255.4" name="W"/>
+            <windSpeed id="ff" mps="1.1" beaufort="1" name="Flau vind"/>
+            <humidity value="88.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.4"/>
+            <cloudiness id="NN" percent="96.1"/>
+            <lowClouds id="LOW" percent="7.0"/>
+            <mediumClouds id="MEDIUM" percent="71.1"/>
+            <highClouds id="HIGH" percent="64.1"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T18:00:00Z" to="2018-02-21T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-6.9"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.7"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T06:00:00Z" to="2018-02-21T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.2"/>
+            <windDirection id="dd" deg="255.6" name="W"/>
+            <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"/>
+            <humidity value="87.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.1"/>
+            <cloudiness id="NN" percent="90.6"/>
+            <lowClouds id="LOW" percent="3.1"/>
+            <mediumClouds id="MEDIUM" percent="78.1"/>
+            <highClouds id="HIGH" percent="45.3"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-9.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T00:00:00Z" to="2018-02-21T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-6.1"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T12:00:00Z" to="2018-02-21T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="0.5"/>
+            <windDirection id="dd" deg="193.9" name="S"/>
+            <windSpeed id="ff" mps="1.1" beaufort="1" name="Flau vind"/>
+            <humidity value="60.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1026.7"/>
+            <cloudiness id="NN" percent="50.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="25.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T06:00:00Z" to="2018-02-21T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-8.6"/>
+<maxTemperature id="TTT" unit="celsius" value="0.5"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T18:00:00Z" to="2018-02-21T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.6"/>
+            <windDirection id="dd" deg="279.4" name="W"/>
+            <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"/>
+            <humidity value="78.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.0"/>
+            <cloudiness id="NN" percent="1.6"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T12:00:00Z" to="2018-02-21T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-5.2"/>
+<maxTemperature id="TTT" unit="celsius" value="1.4"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T00:00:00Z" to="2018-02-22T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.8"/>
+            <windDirection id="dd" deg="297.0" name="NW"/>
+            <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"/>
+            <humidity value="87.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.4"/>
+            <cloudiness id="NN" percent="61.7"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="1.6"/>
+            <highClouds id="HIGH" percent="34.4"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-9.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T18:00:00Z" to="2018-02-22T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.3"/>
+<symbol id="Sun" number="1"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T06:00:00Z" to="2018-02-22T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.6"/>
+            <windDirection id="dd" deg="281.1" name="W"/>
+            <windSpeed id="ff" mps="1.6" beaufort="2" name="Svak vind"/>
+            <humidity value="86.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.0"/>
+            <cloudiness id="NN" percent="91.4"/>
+            <lowClouds id="LOW" percent="2.3"/>
+            <mediumClouds id="MEDIUM" percent="3.1"/>
+            <highClouds id="HIGH" percent="51.6"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-9.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T00:00:00Z" to="2018-02-22T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.9"/>
+<maxTemperature id="TTT" unit="celsius" value="-6.2"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T12:00:00Z" to="2018-02-22T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-0.8"/>
+            <windDirection id="dd" deg="154.4" name="SE"/>
+            <windSpeed id="ff" mps="1.2" beaufort="1" name="Flau vind"/>
+            <humidity value="64.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.4"/>
+            <cloudiness id="NN" percent="73.8"/>
+            <lowClouds id="LOW" percent="2.0"/>
+            <mediumClouds id="MEDIUM" percent="7.4"/>
+            <highClouds id="HIGH" percent="48.4"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T06:00:00Z" to="2018-02-22T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-9.5"/>
+<maxTemperature id="TTT" unit="celsius" value="-0.3"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T18:00:00Z" to="2018-02-22T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-4.4"/>
+            <windDirection id="dd" deg="309.1" name="NW"/>
+            <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"/>
+            <humidity value="82.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1026.8"/>
+            <cloudiness id="NN" percent="89.8"/>
+            <lowClouds id="LOW" percent="4.7"/>
+            <mediumClouds id="MEDIUM" percent="14.8"/>
+            <highClouds id="HIGH" percent="69.5"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T12:00:00Z" to="2018-02-22T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.6"/>
+<maxTemperature id="TTT" unit="celsius" value="-0.5"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T00:00:00Z" to="2018-02-23T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.0"/>
+            <windDirection id="dd" deg="242.8" name="SW"/>
+            <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"/>
+            <humidity value="87.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1026.5"/>
+            <cloudiness id="NN" percent="94.9"/>
+            <lowClouds id="LOW" percent="10.5"/>
+            <mediumClouds id="MEDIUM" percent="25.8"/>
+            <highClouds id="HIGH" percent="70.3"/>
+            <temperatureProbability unit="probabilitycode" value="1"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T18:00:00Z" to="2018-02-23T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-6.1"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.6"/>
+<symbol id="Cloud" number="4"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T06:00:00Z" to="2018-02-23T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.9"/>
+            <windDirection id="dd" deg="253.8" name="W"/>
+            <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"/>
+            <humidity value="89.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1025.4"/>
+            <cloudiness id="NN" percent="95.3"/>
+            <lowClouds id="LOW" percent="30.5"/>
+            <mediumClouds id="MEDIUM" percent="24.2"/>
+            <highClouds id="HIGH" percent="75.8"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T00:00:00Z" to="2018-02-23T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-6.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-5.1"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T12:00:00Z" to="2018-02-23T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-0.0"/>
+            <windDirection id="dd" deg="183.4" name="S"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="69.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1026.9"/>
+            <cloudiness id="NN" percent="85.9"/>
+            <lowClouds id="LOW" percent="14.5"/>
+            <mediumClouds id="MEDIUM" percent="4.3"/>
+            <highClouds id="HIGH" percent="54.3"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T06:00:00Z" to="2018-02-23T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.9"/>
+<maxTemperature id="TTT" unit="celsius" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T18:00:00Z" to="2018-02-23T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.8"/>
+            <windDirection id="dd" deg="295.0" name="NW"/>
+            <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"/>
+            <humidity value="83.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.1"/>
+            <cloudiness id="NN" percent="78.9"/>
+            <lowClouds id="LOW" percent="4.7"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="45.3"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T12:00:00Z" to="2018-02-23T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-4.1"/>
+<maxTemperature id="TTT" unit="celsius" value="0.3"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T00:00:00Z" to="2018-02-24T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.1"/>
+            <windDirection id="dd" deg="311.8" name="NW"/>
+            <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"/>
+            <humidity value="87.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1027.6"/>
+            <cloudiness id="NN" percent="87.5"/>
+            <lowClouds id="LOW" percent="54.7"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.8"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T18:00:00Z" to="2018-02-24T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-5.3"/>
+<maxTemperature id="TTT" unit="celsius" value="-3.6"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T06:00:00Z" to="2018-02-24T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.4"/>
+            <windDirection id="dd" deg="254.5" name="W"/>
+            <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"/>
+            <humidity value="86.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1028.2"/>
+            <cloudiness id="NN" percent="77.3"/>
+            <lowClouds id="LOW" percent="48.4"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="6.2"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T00:00:00Z" to="2018-02-24T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-6.8"/>
+<maxTemperature id="TTT" unit="celsius" value="-5.0"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T12:00:00Z" to="2018-02-24T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-0.7"/>
+            <windDirection id="dd" deg="31.7" name="NE"/>
+            <windSpeed id="ff" mps="1.5" beaufort="1" name="Flau vind"/>
+            <humidity value="67.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.8"/>
+            <cloudiness id="NN" percent="91.4"/>
+            <lowClouds id="LOW" percent="27.3"/>
+            <mediumClouds id="MEDIUM" percent="7.8"/>
+            <highClouds id="HIGH" percent="78.1"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T06:00:00Z" to="2018-02-24T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.7"/>
+<maxTemperature id="TTT" unit="celsius" value="-0.7"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T18:00:00Z" to="2018-02-24T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-5.0"/>
+            <windDirection id="dd" deg="247.2" name="SW"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="81.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1029.7"/>
+            <cloudiness id="NN" percent="87.5"/>
+            <lowClouds id="LOW" percent="8.2"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="13.7"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T12:00:00Z" to="2018-02-24T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-5.1"/>
+<maxTemperature id="TTT" unit="celsius" value="0.3"/>
+<symbol id="Cloud" number="4"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T00:00:00Z" to="2018-02-25T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.0"/>
+            <windDirection id="dd" deg="245.7" name="SW"/>
+            <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"/>
+            <humidity value="85.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1031.3"/>
+            <cloudiness id="NN" percent="83.6"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="4.7"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-9.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T18:00:00Z" to="2018-02-25T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.0"/>
+<maxTemperature id="TTT" unit="celsius" value="-4.2"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T06:00:00Z" to="2018-02-25T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-7.5"/>
+            <windDirection id="dd" deg="284.4" name="W"/>
+            <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"/>
+            <humidity value="86.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1032.7"/>
+            <cloudiness id="NN" percent="86.3"/>
+            <lowClouds id="LOW" percent="20.7"/>
+            <mediumClouds id="MEDIUM" percent="0.4"/>
+            <highClouds id="HIGH" percent="7.4"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-9.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T00:00:00Z" to="2018-02-25T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-8.8"/>
+<maxTemperature id="TTT" unit="celsius" value="-7.0"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T12:00:00Z" to="2018-02-25T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="3.2"/>
+            <windDirection id="dd" deg="91.2" name="E"/>
+            <windSpeed id="ff" mps="1.1" beaufort="1" name="Flau vind"/>
+            <humidity value="54.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1033.9"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-5.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T06:00:00Z" to="2018-02-25T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.6"/>
+<maxTemperature id="TTT" unit="celsius" value="3.4"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T18:00:00Z" to="2018-02-25T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.0"/>
+            <windDirection id="dd" deg="253.6" name="W"/>
+            <windSpeed id="ff" mps="1.2" beaufort="1" name="Flau vind"/>
+            <humidity value="80.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1035.9"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-6.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T12:00:00Z" to="2018-02-25T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-3.0"/>
+<maxTemperature id="TTT" unit="celsius" value="3.9"/>
+<symbol id="Sun" number="1"/>
+<symbolProbability unit="probabilitycode" value="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T00:00:00Z" to="2018-02-26T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.3"/>
+            <windDirection id="dd" deg="15.4" name="N"/>
+            <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"/>
+            <humidity value="84.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1037.5"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-8.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T18:00:00Z" to="2018-02-26T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-6.4"/>
+<maxTemperature id="TTT" unit="celsius" value="-2.6"/>
+<symbol id="Sun" number="1"/>
+<symbolProbability unit="probabilitycode" value="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T06:00:00Z" to="2018-02-26T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-6.9"/>
+            <windDirection id="dd" deg="290.6" name="W"/>
+            <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"/>
+            <humidity value="83.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1034.5"/>
+            <cloudiness id="NN" percent="68.8"/>
+            <lowClouds id="LOW" percent="11.7"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.8"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-9.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T00:00:00Z" to="2018-02-26T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-7.0"/>
+<maxTemperature id="TTT" unit="celsius" value="-5.6"/>
+<symbol id="Sun" number="1"/>
+<symbolProbability unit="probabilitycode" value="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T12:00:00Z" to="2018-02-26T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="1.2"/>
+            <windDirection id="dd" deg="22.5" name="NE"/>
+            <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"/>
+            <humidity value="53.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1038.1"/>
+            <cloudiness id="NN" percent="3.1"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T06:00:00Z" to="2018-02-26T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-8.1"/>
+<maxTemperature id="TTT" unit="celsius" value="1.2"/>
+<symbol id="PartlyCloud" number="3"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T18:00:00Z" to="2018-02-26T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <temperature id="TTT" unit="celsius" value="-3.5"/>
+            <windDirection id="dd" deg="250.7" name="W"/>
+            <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"/>
+            <humidity value="76.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1036.3"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <temperatureProbability unit="probabilitycode" value="2"/>
+            <windProbability unit="probabilitycode" value="1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="-7.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T12:00:00Z" to="2018-02-26T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="-3.5"/>
+<maxTemperature id="TTT" unit="celsius" value="2.3"/>
+<symbol id="Sun" number="1"/>
+<symbolProbability unit="probabilitycode" value="1"/>
+         </location>
+      </time>
+   </product>
+</weatherdata> 

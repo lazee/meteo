@@ -1,0 +1,872 @@
+<weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/probabilityforecast/1.1/schema" created="2018-02-17T15:21:36Z">
+   <meta>
+      <model name="EPS" termin="2018-02-17T00:00:00Z" runended="2018-02-17T09:04:01Z" nextrun="2018-02-17T22:00:00Z" from="2018-02-17T18:00:00Z" to="2018-02-26T18:00:00Z" />
+      </meta>
+   <product class="pointData">
+      <time datatype="forecast" from="2018-02-17T18:00:00Z" to="2018-02-17T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-6.9"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-5.8"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-5.0"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.7"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-3.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T00:00:00Z" to="2018-02-18T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-8.6"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-7.6"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-6.8"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-6.0"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-5.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T06:00:00Z" to="2018-02-18T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-7.4"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-5.9"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-5.0"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-4.2"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-3.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T12:00:00Z" to="2018-02-18T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-0.5"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-0.0"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="0.3"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="0.5"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="0.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T18:00:00Z" to="2018-02-18T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-5.6"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-4.7"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-4.3"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.7"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-3.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T00:00:00Z" to="2018-02-19T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-6.9"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-5.9"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-5.2"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-4.7"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-3.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T06:00:00Z" to="2018-02-19T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-7.4"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-5.4"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-4.2"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.5"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-2.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T12:00:00Z" to="2018-02-19T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-2.3"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-1.8"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-1.4"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-1.0"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-0.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T18:00:00Z" to="2018-02-19T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-3.7"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-3.3"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-2.8"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-2.3"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-1.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T00:00:00Z" to="2018-02-20T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-4.4"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-3.6"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-3.1"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-2.5"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-2.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T06:00:00Z" to="2018-02-20T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-5.1"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-4.7"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-3.7"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.3"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-3.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T12:00:00Z" to="2018-02-20T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-3.8"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-2.8"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-2.2"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-1.8"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-1.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T18:00:00Z" to="2018-02-20T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-6.5"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-5.2"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-4.4"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.9"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-3.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T00:00:00Z" to="2018-02-21T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-9.1"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-7.9"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-6.7"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-5.2"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-4.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T06:00:00Z" to="2018-02-21T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-10.8"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-8.5"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-7.0"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-5.8"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-5.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T12:00:00Z" to="2018-02-21T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-4.1"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-2.8"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="0.5"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="2.2"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="3.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T18:00:00Z" to="2018-02-21T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-8.0"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-6.7"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-5.1"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.8"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-2.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T00:00:00Z" to="2018-02-22T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-9.2"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-7.8"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-6.5"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-5.5"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-4.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T06:00:00Z" to="2018-02-22T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-11.0"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-9.1"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-7.6"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-6.1"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-5.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T12:00:00Z" to="2018-02-22T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-4.5"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-3.1"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-0.8"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="0.7"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="2.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T18:00:00Z" to="2018-02-22T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-7.4"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-5.9"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-4.6"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.3"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-1.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T00:00:00Z" to="2018-02-23T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-9.5"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-7.2"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-6.0"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.8"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-2.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T06:00:00Z" to="2018-02-23T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-11.4"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-7.9"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-6.2"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-4.5"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-3.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T12:00:00Z" to="2018-02-23T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-6.8"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-3.6"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="0.1"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="1.6"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="2.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T18:00:00Z" to="2018-02-23T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-9.7"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-6.7"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-4.0"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-1.6"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="0.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T00:00:00Z" to="2018-02-24T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-11.5"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-8.9"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-5.4"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-2.9"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-0.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T06:00:00Z" to="2018-02-24T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-13.8"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-9.9"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-6.4"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-3.6"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-1.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T12:00:00Z" to="2018-02-24T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-9.5"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-4.5"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-0.6"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="2.2"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="4.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T18:00:00Z" to="2018-02-24T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-13.1"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-8.0"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-4.9"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-0.7"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="1.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T00:00:00Z" to="2018-02-25T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-13.3"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-9.8"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-6.4"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-2.8"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-1.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T06:00:00Z" to="2018-02-25T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-14.2"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-11.3"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-7.1"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-4.1"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-1.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T12:00:00Z" to="2018-02-25T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-10.6"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-6.9"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-0.6"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="4.4"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="6.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T18:00:00Z" to="2018-02-25T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-13.1"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-9.4"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-5.6"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-2.3"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="0.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T00:00:00Z" to="2018-02-26T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-12.3"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-9.2"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-6.6"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-4.4"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="0.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T06:00:00Z" to="2018-02-26T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-12.6"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-10.2"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-7.2"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-4.7"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="-0.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T12:00:00Z" to="2018-02-26T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-9.6"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-6.5"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-0.4"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="4.0"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="6.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T18:00:00Z" to="2018-02-26T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="temperature" percentile="10" unit="celsius" value="-12.7"/>
+            <probability type="exact" parameter="temperature" percentile="25" unit="celsius" value="-10.0"/>
+            <probability type="exact" parameter="temperature" percentile="50" unit="celsius" value="-4.5"/>
+            <probability type="exact" parameter="temperature" percentile="75" unit="celsius" value="-1.9"/>
+            <probability type="exact" parameter="temperature" percentile="90" unit="celsius" value="0.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T12:00:00Z" to="2018-02-17T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-17T18:00:00Z" to="2018-02-18T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T00:00:00Z" to="2018-02-18T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.4"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="1.1"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="29"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="22"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T06:00:00Z" to="2018-02-18T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.2"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="1.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="25"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="18"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T12:00:00Z" to="2018-02-18T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-18T18:00:00Z" to="2018-02-19T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.1"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T00:00:00Z" to="2018-02-19T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.2"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.9"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="24"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="16"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T06:00:00Z" to="2018-02-19T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.6"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="1.8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="33"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="27"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="20"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T12:00:00Z" to="2018-02-19T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.3"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="1.3"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="27"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="20"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="14"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-19T18:00:00Z" to="2018-02-20T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.5"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="1.5"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="31"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="24"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="16"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T00:00:00Z" to="2018-02-20T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.7"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="18"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T06:00:00Z" to="2018-02-20T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T12:00:00Z" to="2018-02-20T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-20T18:00:00Z" to="2018-02-21T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.1"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T00:00:00Z" to="2018-02-21T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T06:00:00Z" to="2018-02-21T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T12:00:00Z" to="2018-02-21T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-21T18:00:00Z" to="2018-02-22T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T00:00:00Z" to="2018-02-22T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T06:00:00Z" to="2018-02-22T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T12:00:00Z" to="2018-02-22T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.1"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-22T18:00:00Z" to="2018-02-23T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.1"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T00:00:00Z" to="2018-02-23T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T06:00:00Z" to="2018-02-23T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T12:00:00Z" to="2018-02-23T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.1"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-23T18:00:00Z" to="2018-02-24T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T00:00:00Z" to="2018-02-24T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T06:00:00Z" to="2018-02-24T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.1"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T12:00:00Z" to="2018-02-24T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.0"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-24T18:00:00Z" to="2018-02-25T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T00:00:00Z" to="2018-02-25T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.1"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="2"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T06:00:00Z" to="2018-02-25T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.3"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T12:00:00Z" to="2018-02-25T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.3"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-25T18:00:00Z" to="2018-02-26T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.5"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="14"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T00:00:00Z" to="2018-02-26T06:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.3"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="10"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T06:00:00Z" to="2018-02-26T12:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.6"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="14"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T12:00:00Z" to="2018-02-26T18:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.5"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="14"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2018-02-26T18:00:00Z" to="2018-02-27T00:00:00Z">
+         <location altitude="70" latitude="60.1000" longitude="9.5800">
+            <probability type="exact" parameter="precipitation" percentile="10" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="25" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="50" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="75" unit="mm" value="0.0"/>
+            <probability type="exact" parameter="precipitation" percentile="90" unit="mm" value="0.5"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.2mm" unit="percent" value="14"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="0.5mm" unit="percent" value="12"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="1.0mm" unit="percent" value="8"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="2.0mm" unit="percent" value="4"/>
+            <probability type="lowerlimit" parameter="precipitation" percentile="5.0mm" unit="percent" value="2"/>
+         </location>
+      </time>
+   </product>
+</weatherdata> 

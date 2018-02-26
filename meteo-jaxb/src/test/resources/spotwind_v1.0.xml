@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weatherdata>
+  <product class="spotwinds" observation="2018-02-17T12:00:00Z">
+    <time valid="2018-02-17T15:00:00Z">
+      <location name="NE">
+        <spotWind flightlevel="30" windDirection="240" windSpeed="7" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="261" windSpeed="10" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="297" windSpeed="13" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="314" windSpeed="26" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="311" windSpeed="27" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="299" windSpeed="16" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="298" windSpeed="13" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="297" windSpeed="14" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="301" windSpeed="17" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="298" windSpeed="22" temperature="-51"/>
+      </location>
+      <location name="SE">
+        <spotWind flightlevel="30" windDirection="257" windSpeed="8" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="296" windSpeed="8" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="304" windSpeed="16" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="310" windSpeed="21" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="312" windSpeed="27" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="304" windSpeed="20" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="300" windSpeed="20" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="294" windSpeed="18" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="297" windSpeed="20" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="298" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="SW">
+        <spotWind flightlevel="30" windDirection="192" windSpeed="27" temperature="-1"/>
+        <spotWind flightlevel="50" windDirection="199" windSpeed="27" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="214" windSpeed="28" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="240" windSpeed="18" temperature="-34"/>
+        <spotWind flightlevel="240" windDirection="249" windSpeed="20" temperature="-48"/>
+        <spotWind flightlevel="300" windDirection="295" windSpeed="31" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="302" windSpeed="32" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="301" windSpeed="27" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="303" windSpeed="23" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="299" windSpeed="25" temperature="-50"/>
+      </location>
+      <location name="NW">
+        <spotWind flightlevel="30" windDirection="180" windSpeed="39" temperature="-1"/>
+        <spotWind flightlevel="50" windDirection="190" windSpeed="35" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="211" windSpeed="35" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="204" windSpeed="19" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="230" windSpeed="22" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="271" windSpeed="21" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="287" windSpeed="23" temperature="-48"/>
+        <spotWind flightlevel="390" windDirection="295" windSpeed="22" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="304" windSpeed="19" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="296" windSpeed="24" temperature="-51"/>
+      </location>
+      <location name="TRE">
+        <spotWind flightlevel="30" windDirection="203" windSpeed="6" temperature="-2"/>
+        <spotWind flightlevel="50" windDirection="247" windSpeed="3" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="327" windSpeed="6" temperature="-17"/>
+        <spotWind flightlevel="180" windDirection="321" windSpeed="14" temperature="-37"/>
+        <spotWind flightlevel="240" windDirection="310" windSpeed="8" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="262" windSpeed="1" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="274" windSpeed="4" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="279" windSpeed="7" temperature="-48"/>
+        <spotWind flightlevel="450" windDirection="303" windSpeed="10" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="301" windSpeed="22" temperature="-52"/>
+      </location>
+      <location name="TRW">
+        <spotWind flightlevel="30" windDirection="201" windSpeed="24" temperature="0"/>
+        <spotWind flightlevel="50" windDirection="209" windSpeed="25" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="205" windSpeed="17" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="235" windSpeed="16" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="245" windSpeed="19" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="258" windSpeed="13" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="282" windSpeed="13" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="293" windSpeed="17" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="296" windSpeed="20" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="296" windSpeed="22" temperature="-51"/>
+      </location>
+      <location name="DKW">
+        <spotWind flightlevel="30" windDirection="218" windSpeed="18" temperature="0"/>
+        <spotWind flightlevel="50" windDirection="210" windSpeed="15" temperature="-4"/>
+        <spotWind flightlevel="100" windDirection="211" windSpeed="19" temperature="-14"/>
+        <spotWind flightlevel="180" windDirection="259" windSpeed="14" temperature="-34"/>
+        <spotWind flightlevel="240" windDirection="285" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="300" windDirection="313" windSpeed="40" temperature="-51"/>
+        <spotWind flightlevel="340" windDirection="308" windSpeed="36" temperature="-50"/>
+        <spotWind flightlevel="390" windDirection="302" windSpeed="32" temperature="-49"/>
+        <spotWind flightlevel="450" windDirection="305" windSpeed="31" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="300" windSpeed="24" temperature="-50"/>
+      </location>
+      <location name="DKE">
+        <spotWind flightlevel="30" windDirection="337" windSpeed="12" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="353" windSpeed="14" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="343" windSpeed="17" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="350" windSpeed="40" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="332" windSpeed="33" temperature="-48"/>
+        <spotWind flightlevel="300" windDirection="297" windSpeed="30" temperature="-51"/>
+        <spotWind flightlevel="340" windDirection="294" windSpeed="28" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="295" windSpeed="26" temperature="-48"/>
+        <spotWind flightlevel="450" windDirection="301" windSpeed="25" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="300" windSpeed="21" temperature="-50"/>
+      </location>
+      <location name="ONW">
+        <spotWind flightlevel="30" windDirection="233" windSpeed="6" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="265" windSpeed="9" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="297" windSpeed="14" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="306" windSpeed="22" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="311" windSpeed="25" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="302" windSpeed="16" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="299" windSpeed="15" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="295" windSpeed="15" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="300" windSpeed="17" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="299" windSpeed="22" temperature="-51"/>
+      </location>
+      <location name="ONE">
+        <spotWind flightlevel="30" windDirection="255" windSpeed="7" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="285" windSpeed="8" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="288" windSpeed="11" temperature="-17"/>
+        <spotWind flightlevel="180" windDirection="322" windSpeed="30" temperature="-37"/>
+        <spotWind flightlevel="240" windDirection="319" windSpeed="30" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="304" windSpeed="16" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="298" windSpeed="13" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="297" windSpeed="13" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="302" windSpeed="17" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="300" windSpeed="23" temperature="-51"/>
+      </location>
+      <location name="OSW">
+        <spotWind flightlevel="30" windDirection="246" windSpeed="8" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="275" windSpeed="9" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="282" windSpeed="13" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="300" windSpeed="18" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="311" windSpeed="24" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="301" windSpeed="18" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="298" windSpeed="18" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="292" windSpeed="16" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="294" windSpeed="18" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="299" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="OSE">
+        <spotWind flightlevel="30" windDirection="276" windSpeed="8" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="273" windSpeed="9" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="297" windSpeed="12" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="320" windSpeed="28" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="316" windSpeed="28" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="304" windSpeed="18" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="301" windSpeed="16" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="293" windSpeed="15" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="296" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="300" windSpeed="23" temperature="-51"/>
+      </location>
+      <location name="FNW">
+        <spotWind flightlevel="30" windDirection="253" windSpeed="8" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="262" windSpeed="10" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="281" windSpeed="13" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="296" windSpeed="16" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="307" windSpeed="24" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="303" windSpeed="21" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="299" windSpeed="20" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="296" windSpeed="17" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="297" windSpeed="18" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="299" windSpeed="22" temperature="-50"/>
+      </location>
+      <location name="FSW">
+        <spotWind flightlevel="30" windDirection="253" windSpeed="9" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="264" windSpeed="8" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="283" windSpeed="15" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="294" windSpeed="20" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="303" windSpeed="24" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="303" windSpeed="23" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="300" windSpeed="21" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="299" windSpeed="18" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="301" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="298" windSpeed="22" temperature="-50"/>
+      </location>
+      <location name="FE">
+        <spotWind flightlevel="30" windDirection="258" windSpeed="8" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="285" windSpeed="9" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="304" windSpeed="15" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="309" windSpeed="21" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="314" windSpeed="26" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="303" windSpeed="19" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="300" windSpeed="19" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="293" windSpeed="17" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="296" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="300" windSpeed="23" temperature="-50"/>
+      </location>
+    </time>
+    <time valid="2018-02-17T18:00:00Z">
+      <location name="NE">
+        <spotWind flightlevel="30" windDirection="244" windSpeed="7" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="273" windSpeed="10" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="298" windSpeed="12" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="301" windSpeed="20" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="315" windSpeed="24" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="305" windSpeed="17" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="309" windSpeed="14" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="305" windSpeed="16" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="307" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="311" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="SE">
+        <spotWind flightlevel="30" windDirection="252" windSpeed="11" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="263" windSpeed="8" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="294" windSpeed="14" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="301" windSpeed="21" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="315" windSpeed="25" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="314" windSpeed="23" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="310" windSpeed="22" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="309" windSpeed="22" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="312" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="313" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="SW">
+        <spotWind flightlevel="30" windDirection="187" windSpeed="27" temperature="-1"/>
+        <spotWind flightlevel="50" windDirection="198" windSpeed="26" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="224" windSpeed="30" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="220" windSpeed="24" temperature="-34"/>
+        <spotWind flightlevel="240" windDirection="268" windSpeed="22" temperature="-47"/>
+        <spotWind flightlevel="300" windDirection="308" windSpeed="47" temperature="-51"/>
+        <spotWind flightlevel="340" windDirection="312" windSpeed="40" temperature="-50"/>
+        <spotWind flightlevel="390" windDirection="310" windSpeed="30" temperature="-48"/>
+        <spotWind flightlevel="450" windDirection="307" windSpeed="23" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="316" windSpeed="25" temperature="-50"/>
+      </location>
+      <location name="NW">
+        <spotWind flightlevel="30" windDirection="181" windSpeed="43" temperature="-1"/>
+        <spotWind flightlevel="50" windDirection="192" windSpeed="39" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="215" windSpeed="32" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="201" windSpeed="26" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="216" windSpeed="20" temperature="-48"/>
+        <spotWind flightlevel="300" windDirection="289" windSpeed="29" temperature="-50"/>
+        <spotWind flightlevel="340" windDirection="296" windSpeed="30" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="298" windSpeed="25" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="303" windSpeed="20" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="309" windSpeed="25" temperature="-50"/>
+      </location>
+      <location name="TRE">
+        <spotWind flightlevel="30" windDirection="108" windSpeed="3" temperature="-1"/>
+        <spotWind flightlevel="50" windDirection="194" windSpeed="2" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="304" windSpeed="4" temperature="-17"/>
+        <spotWind flightlevel="180" windDirection="326" windSpeed="17" temperature="-37"/>
+        <spotWind flightlevel="240" windDirection="326" windSpeed="10" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="261" windSpeed="2" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="282" windSpeed="5" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="290" windSpeed="10" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="292" windSpeed="14" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="317" windSpeed="22" temperature="-51"/>
+      </location>
+      <location name="TRW">
+        <spotWind flightlevel="30" windDirection="194" windSpeed="29" temperature="-1"/>
+        <spotWind flightlevel="50" windDirection="205" windSpeed="24" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="221" windSpeed="18" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="207" windSpeed="15" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="229" windSpeed="18" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="271" windSpeed="16" temperature="-51"/>
+        <spotWind flightlevel="340" windDirection="285" windSpeed="19" temperature="-48"/>
+        <spotWind flightlevel="390" windDirection="299" windSpeed="18" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="305" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="309" windSpeed="25" temperature="-50"/>
+      </location>
+      <location name="DKW">
+        <spotWind flightlevel="30" windDirection="220" windSpeed="16" temperature="0"/>
+        <spotWind flightlevel="50" windDirection="216" windSpeed="18" temperature="-4"/>
+        <spotWind flightlevel="100" windDirection="217" windSpeed="22" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="253" windSpeed="15" temperature="-33"/>
+        <spotWind flightlevel="240" windDirection="307" windSpeed="34" temperature="-45"/>
+        <spotWind flightlevel="300" windDirection="322" windSpeed="52" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="319" windSpeed="42" temperature="-51"/>
+        <spotWind flightlevel="390" windDirection="314" windSpeed="34" temperature="-48"/>
+        <spotWind flightlevel="450" windDirection="313" windSpeed="27" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="310" windSpeed="22" temperature="-50"/>
+      </location>
+      <location name="DKE">
+        <spotWind flightlevel="30" windDirection="340" windSpeed="9" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="2" windSpeed="11" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="356" windSpeed="18" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="340" windSpeed="33" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="324" windSpeed="32" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="308" windSpeed="28" temperature="-51"/>
+        <spotWind flightlevel="340" windDirection="306" windSpeed="27" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="303" windSpeed="26" temperature="-48"/>
+        <spotWind flightlevel="450" windDirection="313" windSpeed="19" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="306" windSpeed="21" temperature="-50"/>
+      </location>
+      <location name="ONW">
+        <spotWind flightlevel="30" windDirection="242" windSpeed="9" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="268" windSpeed="9" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="292" windSpeed="11" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="299" windSpeed="18" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="308" windSpeed="24" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="307" windSpeed="18" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="306" windSpeed="17" temperature="-48"/>
+        <spotWind flightlevel="390" windDirection="304" windSpeed="18" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="307" windSpeed="19" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="310" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="ONE">
+        <spotWind flightlevel="30" windDirection="256" windSpeed="6" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="276" windSpeed="10" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="307" windSpeed="14" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="311" windSpeed="22" temperature="-37"/>
+        <spotWind flightlevel="240" windDirection="322" windSpeed="27" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="308" windSpeed="18" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="308" windSpeed="14" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="306" windSpeed="16" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="307" windSpeed="18" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="312" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="OSW">
+        <spotWind flightlevel="30" windDirection="237" windSpeed="10" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="261" windSpeed="9" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="281" windSpeed="12" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="296" windSpeed="15" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="303" windSpeed="22" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="309" windSpeed="21" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="306" windSpeed="21" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="307" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="309" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="313" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="OSE">
+        <spotWind flightlevel="30" windDirection="255" windSpeed="9" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="276" windSpeed="10" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="298" windSpeed="13" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="307" windSpeed="20" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="318" windSpeed="25" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="313" windSpeed="19" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="311" windSpeed="17" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="306" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="308" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="312" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="FNW">
+        <spotWind flightlevel="30" windDirection="259" windSpeed="9" temperature="-2"/>
+        <spotWind flightlevel="50" windDirection="246" windSpeed="10" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="272" windSpeed="13" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="282" windSpeed="15" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="297" windSpeed="20" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="305" windSpeed="24" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="308" windSpeed="23" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="312" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="309" windSpeed="20" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="314" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="FSW">
+        <spotWind flightlevel="30" windDirection="255" windSpeed="12" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="250" windSpeed="13" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="275" windSpeed="11" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="286" windSpeed="18" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="299" windSpeed="22" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="307" windSpeed="25" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="311" windSpeed="25" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="314" windSpeed="24" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="311" windSpeed="22" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="314" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="FE">
+        <spotWind flightlevel="30" windDirection="257" windSpeed="12" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="274" windSpeed="9" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="293" windSpeed="12" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="302" windSpeed="19" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="314" windSpeed="24" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="314" windSpeed="22" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="310" windSpeed="21" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="308" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="312" windSpeed="20" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="313" windSpeed="23" temperature="-50"/>
+      </location>
+    </time>
+    <time valid="2018-02-17T21:00:00Z">
+      <location name="NE">
+        <spotWind flightlevel="30" windDirection="248" windSpeed="7" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="269" windSpeed="12" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="273" windSpeed="13" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="305" windSpeed="17" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="305" windSpeed="22" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="308" windSpeed="21" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="313" windSpeed="20" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="314" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="317" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="322" windSpeed="22" temperature="-51"/>
+      </location>
+      <location name="SE">
+        <spotWind flightlevel="30" windDirection="260" windSpeed="14" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="264" windSpeed="13" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="279" windSpeed="13" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="292" windSpeed="19" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="302" windSpeed="22" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="313" windSpeed="27" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="317" windSpeed="25" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="318" windSpeed="22" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="318" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="320" windSpeed="21" temperature="-50"/>
+      </location>
+      <location name="SW">
+        <spotWind flightlevel="30" windDirection="190" windSpeed="29" temperature="-1"/>
+        <spotWind flightlevel="50" windDirection="195" windSpeed="30" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="234" windSpeed="23" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="231" windSpeed="25" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="296" windSpeed="37" temperature="-45"/>
+        <spotWind flightlevel="300" windDirection="311" windSpeed="48" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="316" windSpeed="42" temperature="-50"/>
+        <spotWind flightlevel="390" windDirection="313" windSpeed="35" temperature="-48"/>
+        <spotWind flightlevel="450" windDirection="310" windSpeed="30" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="322" windSpeed="23" temperature="-50"/>
+      </location>
+      <location name="NW">
+        <spotWind flightlevel="30" windDirection="182" windSpeed="41" temperature="-2"/>
+        <spotWind flightlevel="50" windDirection="197" windSpeed="38" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="211" windSpeed="19" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="196" windSpeed="30" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="264" windSpeed="25" temperature="-46"/>
+        <spotWind flightlevel="300" windDirection="297" windSpeed="42" temperature="-50"/>
+        <spotWind flightlevel="340" windDirection="302" windSpeed="35" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="304" windSpeed="29" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="307" windSpeed="29" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="316" windSpeed="26" temperature="-50"/>
+      </location>
+      <location name="TRE">
+        <spotWind flightlevel="30" windDirection="162" windSpeed="7" temperature="-2"/>
+        <spotWind flightlevel="50" windDirection="134" windSpeed="5" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="244" windSpeed="2" temperature="-17"/>
+        <spotWind flightlevel="180" windDirection="335" windSpeed="18" temperature="-37"/>
+        <spotWind flightlevel="240" windDirection="327" windSpeed="11" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="282" windSpeed="6" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="289" windSpeed="9" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="303" windSpeed="12" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="306" windSpeed="17" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="315" windSpeed="21" temperature="-51"/>
+      </location>
+      <location name="TRW">
+        <spotWind flightlevel="30" windDirection="192" windSpeed="32" temperature="0"/>
+        <spotWind flightlevel="50" windDirection="202" windSpeed="30" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="203" windSpeed="29" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="178" windSpeed="18" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="210" windSpeed="23" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="273" windSpeed="19" temperature="-50"/>
+        <spotWind flightlevel="340" windDirection="291" windSpeed="22" temperature="-48"/>
+        <spotWind flightlevel="390" windDirection="301" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="306" windSpeed="24" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="315" windSpeed="25" temperature="-50"/>
+      </location>
+      <location name="DKW">
+        <spotWind flightlevel="30" windDirection="213" windSpeed="16" temperature="-1"/>
+        <spotWind flightlevel="50" windDirection="231" windSpeed="19" temperature="-4"/>
+        <spotWind flightlevel="100" windDirection="227" windSpeed="22" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="263" windSpeed="17" temperature="-33"/>
+        <spotWind flightlevel="240" windDirection="318" windSpeed="39" temperature="-44"/>
+        <spotWind flightlevel="300" windDirection="323" windSpeed="47" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="321" windSpeed="41" temperature="-51"/>
+        <spotWind flightlevel="390" windDirection="316" windSpeed="32" temperature="-49"/>
+        <spotWind flightlevel="450" windDirection="313" windSpeed="26" temperature="-48"/>
+        <spotWind flightlevel="530" windDirection="315" windSpeed="22" temperature="-50"/>
+      </location>
+      <location name="DKE">
+        <spotWind flightlevel="30" windDirection="329" windSpeed="10" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="358" windSpeed="6" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="354" windSpeed="19" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="328" windSpeed="27" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="321" windSpeed="30" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="318" windSpeed="30" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="315" windSpeed="28" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="313" windSpeed="25" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="304" windSpeed="20" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="308" windSpeed="21" temperature="-50"/>
+      </location>
+      <location name="ONW">
+        <spotWind flightlevel="30" windDirection="252" windSpeed="8" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="256" windSpeed="9" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="267" windSpeed="14" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="296" windSpeed="14" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="297" windSpeed="21" temperature="-50"/>
+        <spotWind flightlevel="300" windDirection="308" windSpeed="22" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="314" windSpeed="22" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="313" windSpeed="20" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="319" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="323" windSpeed="22" temperature="-51"/>
+      </location>
+      <location name="ONE">
+        <spotWind flightlevel="30" windDirection="261" windSpeed="10" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="276" windSpeed="9" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="289" windSpeed="14" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="309" windSpeed="20" temperature="-36"/>
+        <spotWind flightlevel="240" windDirection="312" windSpeed="25" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="311" windSpeed="21" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="314" windSpeed="19" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="317" windSpeed="18" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="315" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="321" windSpeed="21" temperature="-51"/>
+      </location>
+      <location name="OSW">
+        <spotWind flightlevel="30" windDirection="242" windSpeed="13" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="254" windSpeed="13" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="256" windSpeed="14" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="277" windSpeed="13" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="292" windSpeed="18" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="306" windSpeed="24" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="314" windSpeed="24" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="316" windSpeed="22" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="316" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="322" windSpeed="22" temperature="-50"/>
+      </location>
+      <location name="OSE">
+        <spotWind flightlevel="30" windDirection="251" windSpeed="13" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="267" windSpeed="13" temperature="-5"/>
+        <spotWind flightlevel="100" windDirection="286" windSpeed="12" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="300" windSpeed="18" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="307" windSpeed="25" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="311" windSpeed="24" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="317" windSpeed="21" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="318" windSpeed="20" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="320" windSpeed="19" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="320" windSpeed="21" temperature="-50"/>
+      </location>
+      <location name="FNW">
+        <spotWind flightlevel="30" windDirection="256" windSpeed="15" temperature="-2"/>
+        <spotWind flightlevel="50" windDirection="259" windSpeed="10" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="248" windSpeed="16" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="274" windSpeed="14" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="283" windSpeed="18" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="308" windSpeed="27" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="315" windSpeed="27" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="317" windSpeed="25" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="312" windSpeed="24" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="322" windSpeed="21" temperature="-50"/>
+      </location>
+      <location name="FSW">
+        <spotWind flightlevel="30" windDirection="241" windSpeed="14" temperature="-3"/>
+        <spotWind flightlevel="50" windDirection="245" windSpeed="12" temperature="-7"/>
+        <spotWind flightlevel="100" windDirection="253" windSpeed="16" temperature="-15"/>
+        <spotWind flightlevel="180" windDirection="275" windSpeed="16" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="286" windSpeed="21" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="313" windSpeed="30" temperature="-52"/>
+        <spotWind flightlevel="340" windDirection="319" windSpeed="29" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="318" windSpeed="25" temperature="-48"/>
+        <spotWind flightlevel="450" windDirection="314" windSpeed="23" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="320" windSpeed="21" temperature="-50"/>
+      </location>
+      <location name="FE">
+        <spotWind flightlevel="30" windDirection="254" windSpeed="14" temperature="-4"/>
+        <spotWind flightlevel="50" windDirection="261" windSpeed="14" temperature="-6"/>
+        <spotWind flightlevel="100" windDirection="277" windSpeed="13" temperature="-16"/>
+        <spotWind flightlevel="180" windDirection="290" windSpeed="17" temperature="-35"/>
+        <spotWind flightlevel="240" windDirection="299" windSpeed="22" temperature="-49"/>
+        <spotWind flightlevel="300" windDirection="312" windSpeed="26" temperature="-53"/>
+        <spotWind flightlevel="340" windDirection="317" windSpeed="24" temperature="-49"/>
+        <spotWind flightlevel="390" windDirection="319" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="450" windDirection="319" windSpeed="21" temperature="-47"/>
+        <spotWind flightlevel="530" windDirection="320" windSpeed="21" temperature="-50"/>
+      </location>
+    </time>
+  </product>
+</weatherdata>

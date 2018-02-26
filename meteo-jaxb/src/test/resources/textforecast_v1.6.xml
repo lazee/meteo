@@ -1,0 +1,78 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<weather>
+ <meta licenseurl="https://external.api.met.no/license_data.html" />
+ <productdescription prodname="merged by weatherapi"/>
+ <title>Tekstvarsel for Norge</title>
+<time from="2018-02-17 12:00:00" to="2018-02-18 00:00:00" forecast_origin="landday0">
+  
+  
+  <subtitle>Været i Norge og på Spitsbergen som gjelder fra lørdag 17. februar kl. 12 til lørdag 17. februar kl. 24
+  </subtitle>
+  
+  
+  <forecasttype name="normal">
+   <location type="merged_county:region" id="0503_0608" name="Østlandet og Telemark"><header>Østlandet og Telemark</header><in>Bris av skiftende retning. Oppholdsvær og perioder med sol. Stedvis skyet og mulighet for tåke.</in></location>
+   <location type="region" id="0511" name="Sørlandet"><header>Sørlandet</header><in>Sørlig eller skiftende bris. Oppholdsvær og perioder med sol. Utover dagen tilskyende og i kveld litt snø. </in></location>
+   <location type="mountain" id="0710" name="Fjellet i Sør-Norge"><header>Fjellet i Sør-Norge</header><in>Sørlig bris, opp i frisk bris utsatte steder. Oppholdsvær og perioder med sol. I kveld snø i Langfjellene. </in></location>
+   <location type="merged_county" id="0611_0612" name="Rogaland og Hordaland"><header>Rogaland og Hordaland</header><in>Sør og sørøst opp i liten kuling utsatte steder, fra i ettermiddag stiv kuling på kysten nord for Utsira. Stort sett oppholdsvær. I kveld regn, snø i indre og høyere strøk. </in></location>
+   <location type="county" id="0614" name="Sogn og Fjordane"><header>Sogn og Fjordane</header><in>Økning til sør og sørøst stiv kuling utsatte steder. Stort sett oppholdsvær. I kveld litt regn, snø i indre og høyereliggende strøk. </in></location>
+   <location type="county" id="0615" name="Møre og Romsdal"><header>Møre og Romsdal</header><in>Sør og sørøst periodevis frisk bris utsatte steder. Stort sett oppholdsvær og perioder med sol. </in></location>
+   <location type="region" id="0504" name="Trøndelag"><header>Trøndelag</header><in>Dreining til sørøst opp i frisk bris. Litt spredt snø i Namdalen, ellers stort sett oppholdsvær. Etter hvert pent vær, først i sør.</in></location>
+   <location type="county" id="0618" name="Nordland"><header>Nordland</header><in>Sørøstlig frisk bris utsatte steder. Litt snø på Helgeland og ytterst i Lofoten, ellers stort sett oppholdsvær og til dels pent vær. </in></location>
+   <location type="county" id="0619" name="Troms"><header>Troms</header><in>Sørøstlig frisk bris utsatte steder, periodevis liten kuling i lengst nord. For det meste pent vær.</in></location>
+   <location type="county" id="0620" name="Finnmark"><header>Finnmark</header><in>Skiftende bris, i vest sørøstlig liten kuling utsatte steder. Enkelte snøbyger i kyststrøkene øst for Nordkapp, ellers oppholdsvær. </in></location>
+   <location type="district" id="3011" name="Spitsbergen"><header>Spitsbergen</header><in>Østlig bris, liten kuling utsatte steder. Oppholdsvær. </in></location>
+  </forecasttype>
+ </time><time from="2018-02-18 00:00:00" to="2018-02-19 00:00:00" forecast_origin="landday1">
+  
+  
+  <subtitle>Været i Norge og på Spitsbergen som gjelder fra søndag 18. februar kl. 00 til søndag 18. februar kl. 24
+  </subtitle>
+  
+  
+  <forecasttype name="normal">
+   <location type="region" id="0503" name="Østlandet"><header>Østlandet</header><in>Skiftende bris. Perioder med litt snø, vesentlig sør for Lillehammer, nær kysten sludd. Ellers for det meste skyet oppholdsvær.</in></location>
+   <location type="merged_county" id="0608_0609_0610" name="Vest-Agder, Aust-Agder og Telemark"><header>Vest-Agder, Aust-Agder og Telemark</header><in>Skiftende bris. For det meste skyet. Litt snø, om ettermiddagen overgang til snøbyger. Nedbør som sludd eller regn nær kysten.</in></location>
+   <location type="mountain" id="0710" name="Fjellet i Sør-Norge"><header>Fjellet i Sør-Norge</header><in>Skiftende bris. Litt snø først på dagen, vesentlig i Langfjella. Ellers for det meste skyet oppholdsvær.</in></location>
+   <location type="region" id="0505" name="Vestlandet sør for Stad"><header>Vestlandet sør for Stad</header><in>Sørlig opp i liten kuling utsatte steder, fra søndag morgen vestlig bris, om kvelden skiftende bris. Snø. Fra om ettermiddagen overgang til snøbyger, vesentlig i ytre strøk. Nedbør som sludd eller regn i lavlandet.</in></location>
+   <location type="county" id="0615" name="Møre og Romsdal"><header>Møre og Romsdal</header><in>Opp i frisk bris fra omkring sør utsatte steder, om kvelden skiftende bris. Enkelte regnbyger først på dagen, vesentlig på Sunnmøre. Nedbør som snø indre og høyere strøk. Ellers stort sett oppholdsvær og perioder med sol. </in></location>
+   <location type="region" id="0504" name="Trøndelag"><header>Trøndelag</header><in>Sørøst opp i frisk bris utsatte steder. Skyet eller delvis skyet vesentlig i grensetraktene, ellers for det meste lettskyet pent vær. </in></location>
+   <location type="county" id="0618" name="Nordland"><header>Nordland</header><in>Sørøst bris. Kan hende enkelte snø- eller sluddbyger i Lofoten og Ofoten først på dagen, ellers for det meste pent vær.</in></location>
+   <location type="county" id="0619" name="Troms"><header>Troms</header><in>Sørøst bris, periodevis opp i liten kuling i nord. Pent vær.</in></location>
+   <location type="county" id="0620" name="Finnmark"><header>Finnmark</header><in>Bris av skiftende retning, periodevis frisk bris på kysten lengst vest og lengst øst. Snøbyger på kysten i øst og kan hende lokal tåke på Vidda, ellers for det meste pent vær. </in></location>
+   <location type="district" id="3011" name="Spitsbergen"><header>Spitsbergen</header><in>Skiftende bris, sørøstlig frisk bris utsatte steder. Pent vær.</in></location>
+  </forecasttype>
+ </time><time from="2018-02-19 00:00:00" to="2018-02-20 00:00:00" forecast_origin="landday2">
+  
+  
+  <subtitle>Været i Norge og på Spitsbergen som gjelder fra mandag 19. februar kl. 00 til mandag 19. februar kl. 24
+  </subtitle>
+  
+  
+  <forecasttype name="normal">
+   <location type="region" id="0513" name="Østafjells"><header>Østafjells</header><in>Skiftende bris, nordøst liten kuling langs kysten. Skyet og perioder med litt snø.</in></location>
+   <location type="mountain" id="0710" name="Fjellet i Sør-Norge"><header>Fjellet i Sør-Norge</header><in>Skiftende bris. Skyet eller delvis skyet, for det meste oppholdsvær.</in></location>
+   <location type="region" id="0505" name="Vestlandet sør for Stad"><header>Vestlandet sør for Stad</header><in>Østlig bris. For det meste pent vær.</in></location>
+   <location type="merged_county" id="0615_0616_0617" name="Møre og Romsdal og Trøndelag"><header>Møre og Romsdal og Trøndelag</header><in>Øst og sørøst bris. For det meste pent vær.</in></location>
+   <location type="merged_county:subcounty" id="50392" name="Nordland og Troms"><header>Nordland og Troms</header><in>Sørøst bris. Kan hende litt snø på kysten ved Bodø og i Lofoten, ellers mye pent vær. </in></location>
+   <location type="merged_subcounty" id="51210" name="Finnmark"><header>Finnmark</header><in>Skiftende bris. Enkelte snøbyger i ytre strøk, ellers for det meste pent vær.</in></location>
+   <location type="district" id="3011" name="Spitsbergen"><header>Spitsbergen</header><in>Sør og sørvest liten kuling på kysten i nordvest, ellers skiftende bris. Perioder med litt snø i nordlige del, ellers stort sett oppholdsvær. </in></location>
+  </forecasttype>
+ </time><time from="2018-02-20 00:00:00" to="2018-02-21 00:00:00" forecast_origin="landlong">
+  
+  
+  <subtitle>Været i Norge og på Spitsbergen som gjelder fra tirsdag 20. februar kl. 00 til tirsdag 20. februar kl. 24
+  </subtitle>
+  
+  
+  <forecasttype name="normal">
+   <location type="merged_county:mountain" id="0503_0608_0710" name="Telemark, Østlandet og Fjellet i Sør-Norge"><header>Telemark, Østlandet og Fjellet i Sør-Norge</header><in>Skiftende bris. Skyet eller delvis skyet. Oppholdsvær.</in></location>
+   <location type="region" id="0502" name="Agder"><header>Agder</header><in>Nordøstlig bris. Skyet eller delvis skyet. Litt snø i sørlige områder første del av dagen, ellers opphold.</in></location>
+   <location type="region" id="0505" name="Vestlandet sør for Stad"><header>Vestlandet sør for Stad</header><in>Sørøstlig eller østlig bris. Om ettermiddagen økning til sørlig kuling på kysten. Opphold og perioder med sol. Om ettermiddagen tilskyende. Om kvelden litt sludd eller snø nord for Hardangerfjorden, på kysten regn.</in></location>
+   <location type="county" id="0615" name="Møre og Romsdal"><header>Møre og Romsdal</header><in>Sørlig bris, på kysten økning til sørvestlig kuling. Opphold og perioder med sol. Om ettermiddagen tilskyende og om kvelden litt sludd eller snø, på kysten regn. </in></location>
+   <location type="region" id="0504" name="Trøndelag"><header>Trøndelag</header><in>Sørøstlig bris. Om ettermiddagen økning til sørvestlig kuling på kysten. Opphold og perioder med sol. Om ettermiddagen tilskyende og etter hvert litt spredt snø. </in></location>
+   <location type="merged_county:subcounty" id="50392" name="Nordland og Troms"><header>Nordland og Troms</header><in>Sørøstlig bris, utsatte steder kuling. Skyet eller delvis skyet. Kan hende enkelte snøbyger i Lofoten, ellers oppholdsvær. </in></location>
+   <location type="county" id="0620" name="Finnmark"><header>Finnmark</header><in>Skiftende bris. I øst nordvest kuling, om kvelden dreiende nordøst. Enkelte snøbyger i Øst-Finnmark, ellers stort sett oppholdsvær og perioder med sol. </in></location>
+   <location type="district" id="3011" name="Spitsbergen"><header>Spitsbergen</header><in>Skiftende bris, periodevis sørlig kuling på kysten i vest. Delvis skyet oppholdsvær. Utover dagen tilskyende og etter hvert litt snø i sør. </in></location>
+  </forecasttype>
+ </time></weather>

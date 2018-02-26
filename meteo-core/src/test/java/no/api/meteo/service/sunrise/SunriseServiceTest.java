@@ -40,7 +40,7 @@ public final class SunriseServiceTest {
         Assert.assertNotNull(sunriseDate);
         Assert.assertNotNull(sunriseDate.getSun());
         Assert.assertNotNull(sunriseDate.getMoon());
-        Assert.assertTrue(sunriseDate.getSun().getNeverSet());
+        Assert.assertTrue(!sunriseDate.getSun().getNeverSet());
     }
 
 }

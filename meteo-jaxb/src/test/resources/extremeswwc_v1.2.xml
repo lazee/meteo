@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2018-02-17T14:44:39Z" xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/extremeswwc/1.2/schema">
+  <product class="extremes">
+    <time from="2018-02-16T18:00:00z" to="2018-02-17T06:00:00z">
+      <maximumPrecipitations/>
+      <lowestTemperatures>
+        <location climate="89350" name="BARDUFOSS" station_type="normal" wmoid="01023">
+          <lowestTemperature unit="celsius" value="-25.7"/>
+        </location>
+        <location climate="14200" name="LEIRFLATEN" station_type="normal" wmoid="00000">
+          <lowestTemperature unit="celsius" value="-24.9"/>
+        </location>
+        <location climate="89940" name="DIVIDALEN II" station_type="normal" wmoid="01198">
+          <lowestTemperature unit="celsius" value="-24.0"/>
+        </location>
+        <location climate="93700" name="KAUTOKEINO" station_type="normal" wmoid="01047">
+          <lowestTemperature unit="celsius" value="-22.6"/>
+        </location>
+        <location climate="9160" name="FOLLDAL - FREDHEIM" station_type="normal" wmoid="01250">
+          <lowestTemperature unit="celsius" value="-22.5"/>
+        </location>
+        <location climate="29720" name="Dagali lufthavn" station_type="high_altitude" wmoid="01363">
+          <lowestTemperature unit="celsius" value="-21.3"/>
+        </location>
+      </lowestTemperatures>
+      <highestTemperatures>
+        <location climate="65310" name="VEIHOLMEN" station_type="normal" wmoid="01225">
+          <highestTemperature unit="celsius" value="5.7"/>
+        </location>
+        <location climate="60500" name="TAFJORD" station_type="normal" wmoid="01218">
+          <highestTemperature unit="celsius" value="5.3"/>
+        </location>
+        <location climate="65940" name="SULA" station_type="normal" wmoid="01228">
+          <highestTemperature unit="celsius" value="5.3"/>
+        </location>
+        <location climate="57810" name="SVELGEN II" station_type="normal" wmoid="00000">
+          <highestTemperature unit="celsius" value="5.2"/>
+        </location>
+        <location climate="71850" name="HALTEN FYR" station_type="normal" wmoid="01240">
+          <highestTemperature unit="celsius" value="5.1"/>
+        </location>
+        <location climate="60810" name="Lebergsfjellet" station_type="high_altitude" wmoid="01229">
+          <highestTemperature unit="celsius" value="0.1"/>
+        </location>
+      </highestTemperatures>
+    </time>
+    <time from="2018-02-16T06:00:00z" to="2018-02-16T18:00:00z">
+      <maximumPrecipitations>
+        <location climate="39165" name="KRISTIANSAND BRANNSTASJON" station_type="normal" wmoid="00000">
+          <maximumPrecipitation unit="mm" value="13.3"/>
+        </location>
+        <location climate="42160" name="LISTA FYR" station_type="normal" wmoid="01427">
+          <maximumPrecipitation unit="mm" value="11.9"/>
+        </location>
+        <location climate="51010" name="FOSSMARK" station_type="normal" wmoid="01314">
+          <maximumPrecipitation unit="mm" value="10.8"/>
+        </location>
+        <location climate="56420" name="FURENESET" station_type="normal" wmoid="01308">
+          <maximumPrecipitation unit="mm" value="10.1"/>
+        </location>
+        <location climate="50310" name="KVAMSKOGEN - JONSHØGDI" station_type="normal" wmoid="01327">
+          <maximumPrecipitation unit="mm" value="9.5"/>
+        </location>
+        <location climate="51990" name="Myrkdalen-Vetlebotn" station_type="high_altitude" wmoid="00000">
+          <maximumPrecipitation unit="mm" value="6.7"/>
+        </location>
+      </maximumPrecipitations>
+      <lowestTemperatures>
+        <location climate="89350" name="BARDUFOSS" station_type="normal" wmoid="01023">
+          <lowestTemperature unit="celsius" value="-22.8"/>
+        </location>
+        <location climate="89940" name="DIVIDALEN II" station_type="normal" wmoid="01198">
+          <lowestTemperature unit="celsius" value="-19.2"/>
+        </location>
+        <location climate="84900" name="BJØRNFJELL" station_type="normal" wmoid="00000">
+          <lowestTemperature unit="celsius" value="-17.9"/>
+        </location>
+        <location climate="89980" name="TAMOKDALEN" station_type="normal" wmoid="00000">
+          <lowestTemperature unit="celsius" value="-17.2"/>
+        </location>
+        <location climate="93700" name="KAUTOKEINO" station_type="normal" wmoid="01047">
+          <lowestTemperature unit="celsius" value="-17.0"/>
+        </location>
+        <location climate="93301" name="Suolovuopmi Lulit" station_type="high_altitude" wmoid="01058">
+          <lowestTemperature unit="celsius" value="-14.5"/>
+        </location>
+      </lowestTemperatures>
+      <highestTemperatures>
+        <location climate="64510" name="TINGVOLL" station_type="normal" wmoid="00000">
+          <highestTemperature unit="celsius" value="7.1"/>
+        </location>
+        <location climate="64330" name="KRISTIANSUND LUFTHAVN" station_type="normal" wmoid="01223">
+          <highestTemperature unit="celsius" value="6.1"/>
+        </location>
+        <location climate="44610" name="KVITSØY - NORDBØ" station_type="normal" wmoid="01411">
+          <highestTemperature unit="celsius" value="6.0"/>
+        </location>
+        <location climate="47300" name="UTSIRA FYR" station_type="normal" wmoid="01403">
+          <highestTemperature unit="celsius" value="6.0"/>
+        </location>
+        <location climate="60945" name="ÅLESUND IV" station_type="normal" wmoid="01224">
+          <highestTemperature unit="celsius" value="5.7"/>
+        </location>
+        <location climate="51800" name="Mjølfjell" station_type="high_altitude" wmoid="01344">
+          <highestTemperature unit="celsius" value="-0.8"/>
+        </location>
+      </highestTemperatures>
+    </time>
+  </product>
+</weatherdata>

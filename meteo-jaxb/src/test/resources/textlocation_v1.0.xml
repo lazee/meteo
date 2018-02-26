@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weather>
+  <meta licenseurl="https://api.met.no/license_data.html"/>
+  <productdescription prodname="Forecasts for 59.9,10.6"/>
+  <time from="2018-02-17T12:00:00+0100" to="2018-02-18T00:00:00+0100">
+    <location name="Østlandet og Telemark" id="0503_0608" issuer="MET Norway" type="landday0">
+      <forecast>Bris av skiftende retning. Oppholdsvær og perioder med sol. Stedvis skyet og mulighet for tåke.</forecast>
+    </location>
+  </time>
+  <time from="2018-02-18T00:00:00+0100" to="2018-02-19T00:00:00+0100">
+    <location name="Østlandet" id="0503" issuer="MET Norway" type="landday1">
+      <forecast>Skiftende bris. Perioder med litt snø, vesentlig sør for Lillehammer, nær kysten sludd. Ellers for det meste skyet oppholdsvær.</forecast>
+    </location>
+  </time>
+  <time from="2018-02-19T00:00:00+0100" to="2018-02-20T00:00:00+0100">
+    <location name="Østafjells" id="0513" issuer="MET Norway" type="landday2">
+      <forecast>Skiftende bris, nordøst liten kuling langs kysten. Skyet og perioder med litt snø.</forecast>
+    </location>
+  </time>
+  <time from="2018-02-20T00:00:00+0100" to="2018-02-21T00:00:00+0100">
+    <location name="Telemark, Østlandet og Fjellet i Sør-Norge" id="0503_0608_0710" issuer="MET Norway" type="long">
+      <forecast>Skiftende bris. Skyet eller delvis skyet. Oppholdsvær.</forecast>
+    </location>
+  </time>
+</weather>

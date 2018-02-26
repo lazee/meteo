@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2018-02-17T15:23:01Z" xsi:noNamespaceSchemaLocation="https://api.met.no/weatherapi/temperatureverification/1.0/schema">
+  <product class="temperatureverification">
+    <time from="2018-02-11T00:00:00Z" to="2018-02-18T00:00:00Z">
+      <location stationid="3290">
+        <numberofobservations unit="none" value="300"/>
+        <score unit="percent" overall="96" very_good="94" good="4" mediocre="2"/>
+        <bias unit="celcius" value="0.6"/>
+        <meanabsoluteerror unit="celcius" value="0.8"/>
+      </location>
+    </time>
+  </product>
+</weatherdata>
