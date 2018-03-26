@@ -1,0 +1,13 @@
+{
+  "cop.version": 1.0,
+  "builds": [
+    {
+      "build": {
+        "name": "meteo",
+        "type": "lib",
+        "tool": "maven",
+        "access": "private"
+      }
+    }
+  ]
+}
