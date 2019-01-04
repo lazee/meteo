@@ -15,7 +15,7 @@ well upon request (or send a pull request).
 
 ## The MET terms of use
 
-Make sure to read the http://api.met.no/conditions_service.html[Conditions for use of the service] from
+Make sure to read the [Conditions for use of the service](http://api.met.no/conditions_service.html) from
 the Norwegian Meteorological Institute.
 
 Also make sure to read this http://api.met.no/license_data.html.
