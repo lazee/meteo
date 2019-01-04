@@ -25,12 +25,12 @@ Also make sure to read this http://api.met.no/license_data.html.
 As MET states in their terms of use, you must respect their cache headers. Meaning that you should only fetch one
 resource one time within the TTL set by MET in each response.
 
-The easiest way to achieve this is by installing a https://en.wikipedia.org/wiki/Reverse_proxy[Reverse Proxy]
-like http://wiki.squid-cache.org/SquidFaq/ReverseProxy[Squid]. An alternative solution is to implement your own
-https://github.com/amedia/meteo/blob/master/meteo-core/src/main/java/no/api/meteo/client/MeteoClient.java[MeteoClient]
+The easiest way to achieve this is by installing a [Reverse Proxy](https://en.wikipedia.org/wiki/Reverse_proxy)
+like [Squid](http://wiki.squid-cache.org/SquidFaq/ReverseProxy). An alternative solution is to implement your own
+[MeteoClient](https://github.com/amedia/meteo/blob/master/meteo-core/src/main/java/no/api/meteo/client/MeteoClient.java)
 that respects these requirements.
 
-The https://github.com/amedia/meteo/blob/master/meteo-client/src/main/java/no/api/meteo/client/DefaultMeteoClient.java[default implementation]
+The [default implementation](https://github.com/amedia/meteo/blob/master/meteo-client/src/main/java/no/api/meteo/client/DefaultMeteoClient.java)
 of MeteoClient does not have any caching what so ever, but it does support configuring a proxy.
 
 ## The core library and client
@@ -69,7 +69,7 @@ If you want to use the default implementation of a MeteoClient, then you would a
 
 ### Usage
 
-In the https://github.com/amedia/meteo/tree/master/meteo-examples/src/main/java/no/api/meteo/examples[meteo-examples]
+In the [meteo-examples](https://github.com/amedia/meteo/tree/master/meteo-examples/src/main/java/no/api/meteo/examples)
  module you will find several useful examples that should get you up and running
 
 #### Creating a default client
