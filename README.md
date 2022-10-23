@@ -1,6 +1,8 @@
 
 # METEO
 
+DEPRECATED: This client is not maintained anymore.
+
 Meteo is an Open-Source Java based library/client for handling weather data from http://api.met.no.
 
 It mainly consists of two parts: A Java client that parses data from the MET api into java objects and helper tools to help you
